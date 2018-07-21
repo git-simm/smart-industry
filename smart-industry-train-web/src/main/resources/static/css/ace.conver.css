@@ -1,0 +1,19 @@
+﻿/*==========覆盖ace的某些样式 ===============*/
+/*==========页面布局样式 ===============*/
+.navbar {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+}
+
+.main-container {
+    margin-top: 45px;
+}
+
+.sidebar {
+    position: fixed;
+    z-index: 100;
+}
+
+/*==========页面布局样式 end ===============*/

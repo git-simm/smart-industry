@@ -1,0 +1,60 @@
+server:
+  port: 9999
+spring:
+  application:
+    name: 动车自动化测试项目
+  profiles:
+      #激活dev开发环境
+      active: dev
+  datasource:
+      name: train-dev
+      druid:
+        max-active: 20
+        initial-size: 10
+        max-wait: 60000
+        min-idle: 1
+        time-between-eviction-runs-millis: 60000
+        min-evictable-idle-time-millis: 300000
+        validation-query: select 'x'
+        test-while-idle: true
+        test-on-borrow: false
+        test-on-return: false
+        pool-prepared-statements: true
+        max-pool-prepared-statement-per-connection-size: 20
+        filter:
+          stat:
+            enabled: false
+        web-stat-filter:
+          enabled: false
+        stat-view-servlet:
+          enabled: false
+  mvc:
+    servlet:
+      load-on-startup: 0
+  http:
+    encoding:
+      force: true
+  messages:
+    basename: message.restResource
+  freemarker:
+    allow-request-override: false
+    cache: true
+    check-template-location: true
+    charset: utf-8
+    content-type: text/html
+    expose-request-attributes: false
+    expose-session-attributes: false
+    suffix: .ftl
+    templateLoaderPath: classpath:/templates/
+    expose-spring-macro-helpers: false
+    #应用程序发布，如果有上下文路径，则可以使用
+    request-context-attribute: request
+mybatis:
+  type-aliases-package: smart.industry.train.biz.mapper
+  mapper-locations: classpath:mapper/*.xml
+  configuration:
+    # 开启驼峰命名大法
+    map-underscore-to-camel-case: true
+security:
+  basic:
+    authorize-mode: none

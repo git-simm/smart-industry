@@ -1,0 +1,74 @@
+body {
+    background-image: -moz-radial-gradient(#aac9f8, #0173c7);
+    background-image: -webkit-radial-gradient(#aac9f8, #0173c7); /* new syntax */
+    background-image: radial-gradient(#aac9f8, #0173c7);
+}
+
+.signin {
+    width: 400px;
+    height: 300px;
+    margin: 0 auto;
+    background: rgba(240, 240, 240, 0.6);
+    box-shadow: 0 3px 10px #333333;
+}
+
+.form-signin, .form-regist {
+    padding: 43px 15px 15px 15px;
+    margin: 0 auto;
+    /*border: 1px solid #eeeeee;*/
+}
+
+.form-signin .checkbox, .form-regist {
+    margin-bottom: 10px;
+    font-weight: normal;
+}
+
+.form-signin .form-control, .form-regist .form-control {
+    position: relative;
+    font-size: 16px;
+    height: auto;
+    padding: 10px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.form-signin .form-control:focus, .form-regist .form-control:focus {
+    z-index: 2;
+}
+
+.form-signin input[type="text"] {
+    margin-bottom: 14px;
+    border-radius: 0;
+    background: url(images/login_user.png) 0 0 #bdbdbd no-repeat;
+    width: 100%;
+    padding-left: 60px;
+    color: black;
+}
+
+.form-regist input[type="text"] {
+    margin-bottom: 14px;
+    border-radius: 0;
+    color: black;
+}
+
+.form-signin input[type="password"] {
+    margin-bottom: 10px;
+    border-radius: 0;
+    background: url(images/login_pas.png) 0 0 #bdbdbd no-repeat;
+    padding-left: 60px;
+    width: 100%;
+    color: black;
+}
+
+.form-regist input[type="password"] {
+    margin-bottom: 10px;
+    border-radius: 0;
+    color: black;
+}
+
+.form-signin button, .form-regist button {
+    border-radius: 0;
+    width: 100%;
+    font-size: 18px !important;
+}
