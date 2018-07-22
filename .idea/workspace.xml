@@ -7,73 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ca438869-ff4f-47d5-a47e-64243f73bc98" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/static/_resources/common/common.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/static/_resources/easyui/easyui.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/static/_resources/easyui/jquery.easyui.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/static/_resources/easyui/themes/bootstrap/accordion.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/static/_resources/easyui/themes/bootstrap/calendar.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/static/_resources/easyui/themes/bootstrap/combo.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/static/_resources/easyui/themes/bootstrap/combobox.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/static/_resources/easyui/themes/bootstrap/datagrid.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/static/_resources/easyui/themes/bootstrap/datalist.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/static/_resources/easyui/themes/bootstrap/datebox.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/static/_resources/easyui/themes/bootstrap/dialog.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/static/_resources/easyui/themes/bootstrap/easyui.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/static/_resources/easyui/themes/bootstrap/filebox.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/static/_resources/easyui/themes/bootstrap/images/accordion_arrows.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/static/_resources/easyui/themes/bootstrap/images/blank.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/static/_resources/easyui/themes/bootstrap/images/calendar_arrows.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/static/_resources/easyui/themes/bootstrap/images/combo_arrow.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/static/_resources/easyui/themes/bootstrap/images/datagrid_icons.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/static/_resources/easyui/themes/bootstrap/images/datebox_arrow.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/static/_resources/easyui/themes/bootstrap/images/layout_arrows.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/static/_resources/easyui/themes/bootstrap/images/linkbutton_bg.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/static/_resources/easyui/themes/bootstrap/images/loading.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/static/_resources/easyui/themes/bootstrap/images/menu_arrows.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/static/_resources/easyui/themes/bootstrap/images/messager_icons.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/static/_resources/easyui/themes/bootstrap/images/pagination_icons.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/static/_resources/easyui/themes/bootstrap/images/panel_tools.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/static/_resources/easyui/themes/bootstrap/images/passwordbox_close.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/static/_resources/easyui/themes/bootstrap/images/passwordbox_open.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/static/_resources/easyui/themes/bootstrap/images/searchbox_button.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/static/_resources/easyui/themes/bootstrap/images/slider_handle.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/static/_resources/easyui/themes/bootstrap/images/spinner_arrows.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/static/_resources/easyui/themes/bootstrap/images/tabs_icons.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/static/_resources/easyui/themes/bootstrap/images/tree_icons.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/static/_resources/easyui/themes/bootstrap/images/validatebox_warning.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/static/_resources/easyui/themes/bootstrap/layout.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/static/_resources/easyui/themes/bootstrap/linkbutton.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/static/_resources/easyui/themes/bootstrap/menu.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/static/_resources/easyui/themes/bootstrap/menubutton.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/static/_resources/easyui/themes/bootstrap/messager.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/static/_resources/easyui/themes/bootstrap/numberbox.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/static/_resources/easyui/themes/bootstrap/pagination.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/static/_resources/easyui/themes/bootstrap/panel.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/static/_resources/easyui/themes/bootstrap/passwordbox.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/static/_resources/easyui/themes/bootstrap/progressbar.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/static/_resources/easyui/themes/bootstrap/propertygrid.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/static/_resources/easyui/themes/bootstrap/searchbox.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/static/_resources/easyui/themes/bootstrap/slider.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/static/_resources/easyui/themes/bootstrap/spinner.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/static/_resources/easyui/themes/bootstrap/splitbutton.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/static/_resources/easyui/themes/bootstrap/switchbutton.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/static/_resources/easyui/themes/bootstrap/tabs.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/static/_resources/easyui/themes/bootstrap/textbox.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/static/_resources/easyui/themes/bootstrap/tooltip.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/static/_resources/easyui/themes/bootstrap/tree.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/static/_resources/easyui/themes/bootstrap/validatebox.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/static/_resources/easyui/themes/bootstrap/window.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/static/_resources/layout/jquery-ui-latest.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/static/_resources/layout/jquery.layout-latest.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/static/_resources/layout/layout-default-latest.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/static/js/common.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/static/js/manager/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/demo.log" beforeDir="false" afterPath="$PROJECT_DIR$/log/demo.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-train-web/src/main/java/smart/industry/train/web/controllers/IndexController.java" beforeDir="false" afterPath="$PROJECT_DIR$/smart-industry-train-web/src/main/java/smart/industry/train/web/controllers/IndexController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/static/css/train.css" beforeDir="false" afterPath="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/static/css/train.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/templates/base/_base.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/templates/base/_base.ftl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/templates/index.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/templates/index.ftl" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -130,7 +64,7 @@
         <entry file="file://$PROJECT_DIR$/smart-industry-train-web/src/main/java/smart/industry/train/web/controllers/IndexController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="264">
-              <caret line="35" column="5" lean-forward="true" selection-start-line="35" selection-start-column="5" selection-end-line="35" selection-end-column="5" />
+              <caret line="35" column="5" selection-start-line="35" selection-start-column="5" selection-end-line="35" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -171,8 +105,8 @@
       <file leaf-file-name="index.ftl" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/smart-industry-train-web/src/main/resources/templates/index.ftl">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="87">
-              <caret line="60" column="49" selection-start-line="60" selection-start-column="49" selection-end-line="60" selection-end-column="49" />
+            <state relative-caret-position="219">
+              <caret line="66" column="53" selection-start-line="66" selection-start-column="53" selection-end-line="66" selection-end-column="53" />
             </state>
           </provider>
         </entry>
@@ -300,11 +234,11 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-9" />
-    <option name="y" value="-9" />
-    <option name="width" value="1938" />
-    <option name="height" value="1048" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="76" />
+    <option name="y" value="70" />
+    <option name="width" value="1660" />
+    <option name="height" value="864" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -667,7 +601,7 @@
       <updated>1532143579824</updated>
       <workItem from="1532143582723" duration="9265000" />
       <workItem from="1532153712660" duration="15919000" />
-      <workItem from="1532220142793" duration="38000000" />
+      <workItem from="1532220142793" duration="38527000" />
     </task>
     <task id="LOCAL-00001" summary="集成shiro登录验证功能">
       <created>1532255184656</created>
@@ -676,15 +610,21 @@
       <option name="project" value="LOCAL" />
       <updated>1532255184656</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="集成shiro登录验证功能">
+      <created>1532263846767</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1532263846767</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="63184000" />
+    <option name="totallyTimeSpent" value="63711000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
+    <frame x="61" y="56" width="1328" height="691" extended-state="0" />
     <layout>
       <window_info anchor="right" id="Palette" order="5" />
       <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.50067025" side_tool="true" weight="0.42165244" />
@@ -697,7 +637,7 @@
       <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="7" weight="0.25" />
       <window_info id="UI Designer" order="2" />
-      <window_info active="true" anchor="bottom" id="Debug" order="10" visible="true" weight="0.38659057" />
+      <window_info anchor="bottom" id="Debug" order="10" weight="0.4891697" />
       <window_info anchor="bottom" id="TODO" order="13" />
       <window_info anchor="bottom" id="Messages" order="2" weight="0.23109843" />
       <window_info anchor="right" id="Palette&#9;" order="2" />
@@ -709,7 +649,7 @@
       <window_info anchor="bottom" id="Spring" order="0" weight="0.3281027" />
       <window_info anchor="bottom" id="Terminal" order="1" weight="0.32952926" />
       <window_info anchor="bottom" id="Database Console" order="14" weight="0.3281027" />
-      <window_info content_ui="combo" id="Project" order="5" visible="true" weight="0.20174263" />
+      <window_info content_ui="combo" id="Project" order="5" visible="true" weight="0.23700787" />
       <window_info anchor="right" id="Bean Validation" order="4" />
       <window_info id="Web" order="4" side_tool="true" />
       <window_info anchor="bottom" id="Find" order="7" sideWeight="0.49932975" weight="0.4208274" />
@@ -1123,7 +1063,7 @@
     <entry file="file://$PROJECT_DIR$/smart-industry-train-web/src/main/java/smart/industry/train/web/controllers/IndexController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="264">
-          <caret line="35" column="5" lean-forward="true" selection-start-line="35" selection-start-column="5" selection-end-line="35" selection-end-column="5" />
+          <caret line="35" column="5" selection-start-line="35" selection-start-column="5" selection-end-line="35" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1132,8 +1072,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/smart-industry-train-web/src/main/resources/templates/index.ftl">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="87">
-          <caret line="60" column="49" selection-start-line="60" selection-start-column="49" selection-end-line="60" selection-end-column="49" />
+        <state relative-caret-position="219">
+          <caret line="66" column="53" selection-start-line="66" selection-start-column="53" selection-end-line="66" selection-end-column="53" />
         </state>
       </provider>
     </entry>
