@@ -1,5 +1,6 @@
 package smart.industry.train.web.advice;
 
+import org.apache.shiro.web.util.WebUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,9 +15,10 @@ import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.springframework.web.servlet.resource.ResourceUrlProvider;
 import smart.industry.utils.entity.ResponseJson;
-import smart.industry.utils.exceptions.RuleException;
+import smart.industry.utils.exceptions.AjaxException;
 import smart.industry.utils.resource.MessageSourceUtils;
 
 import javax.annotation.Resource;
@@ -83,19 +85,23 @@ public class MyMvcAdvice extends ResponseEntityExceptionHandler {
      * 业务层异常:自定义的业务校验,操作等异常
      */
     @ExceptionHandler({
-            RuleException.class
+            AjaxException.class
     })
-    public final ResponseEntity<ResponseJson> handleThrowable(RuleException ex, WebRequest request) {
+    public final ResponseEntity<ResponseJson> handleThrowable(AjaxException ex, WebRequest request) {
         logger.error("Global catch exception log: ", ex);
-        return ResponseEntity.ok(new ResponseJson(2001, ex.getMessage()));
+        throw ex;
     }
 
+    @ExceptionHandler(org.apache.shiro.authz.AuthorizationException.class)
+    public String handleException(RedirectAttributes redirectAttributes, Exception exception, HttpServletRequest request) {
+        redirectAttributes.addFlashAttribute("message", "抱歉！您没有权限执行这个操作，请联系管理员！");
+        String url = WebUtils.getRequestUri(request);
+        return "redirect:/" + url.split("/")[1];    // 请求的规则 : /page/operate
+    }
     /**
      * 其它异常:未处理的其它异常
      */
-    @ExceptionHandler({
-            Throwable.class
-    })
+    @ExceptionHandler({ Throwable.class })
     public final ResponseEntity<ResponseJson> handleThrowable(Throwable ex, WebRequest request) {
         logger.error("Global catch exception log: ", ex);
         return ResponseEntity.ok(new ResponseJson(2001, ex.getMessage()));

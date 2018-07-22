@@ -227,6 +227,11 @@ Date.prototype.format = function (format) {
 // 统一的错误处理
 $(document).ajaxError(function (event, XMLHttpRequest, ajaxOptions, thrownError) {
     if (typeof (thrownError) != "undefined") {
+        if(XMLHttpRequest.responseJSON!=undefined && XMLHttpRequest.responseJSON.message!=undefined){
+            layer.alert(XMLHttpRequest.responseJSON.message);
+            return;
+        }
+
         var pattern = "";
         if (/msie/.test(navigator.userAgent.toLowerCase())) {
             pattern = new RegExp("<b>Message</b> (.+)</p><p><b>Description</b>");

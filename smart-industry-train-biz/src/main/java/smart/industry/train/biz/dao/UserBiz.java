@@ -13,4 +13,19 @@ public class UserBiz {
     public List<User> getList() {
         return userMapper.selectAll();
     }
+
+    /**
+     * 获取用户信息
+     * @param username
+     * @return
+     */
+    public User findUserByName(String username) {
+        User user = new User();
+        user.setName(username);
+        List<User> users = userMapper.selectByUser(user);
+        if(users!=null && users.size()>0){
+            return users.get(0);
+        }
+        return null;
+    }
 }

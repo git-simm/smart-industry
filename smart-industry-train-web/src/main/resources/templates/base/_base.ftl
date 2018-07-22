@@ -39,5 +39,6 @@
     <@jsRef "/static/_resources/bootstrap/js/bootstrap.min.js"/>
     <@jsRef "/static/_resources/bootstrap/js/bootstrap-table.js"/>
     <@jsRef "/static/_resources/bootstrap/js/bootstrap-table-zh-CN.js"/>
+    <@jsRef "/static/_resources/layer/layer.js"/>
     <#nested "scripts"/>
 </#macro>
