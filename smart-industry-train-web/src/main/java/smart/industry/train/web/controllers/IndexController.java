@@ -27,7 +27,11 @@ public class IndexController {
     }
     @RequestMapping("/index")
     public String index2(Map<String, Object> map){
-        map.put("greeting", "欢迎进入工业智能，有轨车辆动态模拟项目！");
+        Subject subject = SecurityUtils.getSubject();
+        User user = (User)subject.getPrincipal();
+        if(user!=null){
+            map.put("user",user.getName());
+        }
         return "index";
     }
 
@@ -73,8 +77,11 @@ public class IndexController {
         }
         //String exception = (String) request.getAttribute("shiroLoginFailure");
         //System.out.println("exception=" + exception);
-        if(redirect!=null && StringUtils.isNotBlank(redirect.getRequestUrl()))
+        if(redirect!=null && StringUtils.isNotBlank(redirect.getRequestUrl())){
+            if(redirect.getRequestUrl().contains("login"))
+                return "/";
             return redirect.getRequestUrl();
+        }
         return "/";
     }
     /**

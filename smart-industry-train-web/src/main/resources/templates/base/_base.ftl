@@ -26,8 +26,10 @@
         <@cssRef url="/static/_resources/assets/css/ace-ie.min.css"/>
     <![endif]-->
 <#nested "css" />
+<@jsRef url="/static/_resources/assets/js/ace-extra.min.js"/>
 <@jsRef url="/static/_resources/jquery/jquery-2.0.3.min.js"/>
 <@jsRef url="/static/_resources/common/utility.js"/>
+<@jsRef url="/static/_resources/common/common.js"/>
 </head>
 <body class="easyui-layout layout panel-noscroll" style="background-color:white;">
     <#nested "content" />
@@ -40,5 +42,13 @@
     <@jsRef "/static/_resources/bootstrap/js/bootstrap-table.js"/>
     <@jsRef "/static/_resources/bootstrap/js/bootstrap-table-zh-CN.js"/>
     <@jsRef "/static/_resources/layer/layer.js"/>
+    <@jsRef url="/static/_resources/assets/js/jquery-ui-1.10.3.custom.min.js"/>
+    <@jsRef url="/static/_resources/assets/js/jquery.ui.touch-punch.min.js"/>
+    <@jsRef url="/static/_resources/assets/js/jquery.slimscroll.min.js"/>
+    <@jsRef url="/static/_resources/assets/js/jquery.easy-pie-chart.min.js"/>
+    <@jsRef url="/static/_resources/assets/js/jquery.sparkline.min.js"/>
+<!-- ace settings handler -->
+    <@jsRef url="/static/_resources/assets/js/ace-elements.min.js"/>
+    <@jsRef url="/static/_resources/assets/js/ace.min.js"/>
     <#nested "scripts"/>
 </#macro>
