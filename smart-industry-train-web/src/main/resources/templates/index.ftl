@@ -110,28 +110,22 @@
                     </li>
                 </ul>
             </li>
-            <!--<li>
+            <li>
                 <a href="#" class="dropdown-toggle">
                     <i class="icon icon-bar-chart"></i>
-                    <span class="menu-text"> 数据分析 </span>
+                    <span class="menu-text"> 方案管理 </span>
                     <b class="arrow icon-angle-down"></b>
                 </a>
                 <ul class="submenu">
-                    <li onclick="smart.train.index.open('成绩查询', '/score/list')">
+                    <li onclick="smart.train.index.open('文件上传', '/file/uploader')">
                         <a href="javascript:void(0)">
                             <i class="icon-double-angle-right"></i>
-                            成绩查询
-                        </a>
-                    </li>
-                    <li onclick="smart.train.index.open('错误率统计', '/summary/list')">
-                        <a href="javascript:void(0)">
-                            <i class="icon-double-angle-right"></i>
-                            错误率统计
+                            文件上传
                         </a>
                     </li>
                 </ul>
             </li>
-            <li>
+            <!-- <li>
                 <a href="#" class="dropdown-toggle">
                     <i class="icon icon-cog"></i>
                     <span class="menu-text"> 基础配置 </span>

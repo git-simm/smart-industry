@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="" default="fileCopy" basedir=".">
+    <property name="webapp_dir" value="src/main/resources/"/>
+    <property name="to_tomcat" value="target/smart-industry-train-web-1.0/WEB-INF/classes"/>
+    <target name="fileCopy">
+        <copy todir="${to_tomcat}/templates/">
+            <fileset dir="${webapp_dir}/templates/"></fileset>
+        </copy>
+        <copy todir="${to_tomcat}/static/css/">
+            <fileset dir="${webapp_dir}/static/css/"></fileset>
+        </copy>
+        <copy todir="${to_tomcat}/static/js/">
+            <fileset dir="${webapp_dir}/static/js/"></fileset>
+        </copy>
+        <copy todir="${to_tomcat}/static/images/">
+            <fileset dir="${webapp_dir}/static/images/"></fileset>
+        </copy>
+    </target>
+</project>
