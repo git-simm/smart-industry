@@ -3,23 +3,25 @@ jQuery(function() {
     var $ = jQuery,
         $list = $('#thelist'),
         $btn = $('#ctlBtn'),
-        state = 'pending',
-        uploader;
-
-    uploader = WebUploader.create({
-
+        state = 'pending';
+   var uploader = WebUploader.create({
         // 不压缩image
         resize: false,
-
         // swf文件路径
         swf: Zq.Utility.GetPath('/static/_resources/uploader/Uploader.swf'),
-
         // 文件接收服务端。
         server: Zq.Utility.GetPath('/file/upload'),
-
         // 选择文件的按钮。可选。
         // 内部根据当前运行是创建，可能是input元素，也可能是flash.
-        pick: '#picker'
+        pick: '#picker',
+        chunked: true, //] [默认值：false] 是否要分片处理大文件上传。
+        chunkSize: 5242880,//如果要分片，分多大一片？ 默认大小为5M.
+        chunkRetry: 3,//如果某个分片由于网络问题出错，允许自动重传多少次？
+        accept: {
+           title: 'dxf',
+           extensions: 'dxf',
+           mimeTypes: 'application/dxf'
+        }
     });
 
     // 当有文件添加进来的时候
@@ -46,6 +48,12 @@ jQuery(function() {
         $li.find('p.state').text('上传中');
 
         $percent.css( 'width', percentage * 100 + '%' );
+    });
+    //上传文件前，添加参数
+    uploader.on('uploadBeforeSend', function (obj, data, headers) {
+        // data.DelFilePath = parentObj.siblings(".upload-path").val();
+        //  data.ItemCode = $("#txtItemCode").val();
+        data.solutionId= 123;
     });
 
     uploader.on( 'uploadSuccess', function( file ) {

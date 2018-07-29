@@ -1,12 +1,22 @@
 package smart.industry.train.web.controllers;
 
+import freemarker.template.utility.DateUtil;
+import org.apache.tomcat.util.http.fileupload.FileUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
+import smart.industry.utils.entity.MultipartFileParam;
+import smart.industry.utils.files.MultipartFileUploadUtil;
 
 import javax.servlet.http.HttpServletRequest;
-import java.io.*;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.RandomAccessFile;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.concurrent.atomic.AtomicLong;
 
 /**
  * 文件处理请求
@@ -29,9 +39,11 @@ public class FileController {
      */
     @RequestMapping("/upload")
     @ResponseBody
-    public String handleFileUpload(@RequestParam("file") MultipartFile file) {
+    public String handleFileUpload(@RequestParam("file") MultipartFile file,HttpServletRequest req) {
         if (!file.isEmpty()) {
             try {
+                //获取解决方案ID
+                System.out.println(req.getParameter("solutionId"));
                 // 文件保存路径
                 String filePath = request.getSession().getServletContext().getRealPath("/uploader/");
                 File fileSourcePath = new File(filePath);
