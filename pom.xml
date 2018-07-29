@@ -20,12 +20,14 @@
     <properties>
         <java.version>1.8</java.version>
         <logistics.tools.mybatis.version>1.0.0-RELEASE</logistics.tools.mybatis.version>
+        <log4j2-version>2.10.0</log4j2-version>
     </properties>
 
     <modules>
         <module>smart-industry-train-web</module>
         <module>smart-industry-train-biz</module>
         <module>smart-industry-utils</module>
+        <module>smart-industry-kabeja</module>
     </modules>
     <!-- 工具类 -->
     <dependencies>
@@ -91,19 +93,30 @@
         </dependency>
 
         <dependency>
-            <groupId>com.cwbase</groupId>
-            <artifactId>logback-redis-appender</artifactId>
-            <version>1.1.5</version>
-        </dependency>
-
-        <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>fastjson</artifactId>
             <version>1.2.32</version>
         </dependency>
+        <!-- Exclude Spring Boot's Default Logging -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-starter-logging</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <!-- Add Log4j2 Dependency -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-log4j2</artifactId>
+        </dependency>
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
+            <version>4.12</version>
             <scope>test</scope>
         </dependency>
         <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->

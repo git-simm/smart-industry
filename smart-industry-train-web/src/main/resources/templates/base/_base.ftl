@@ -26,8 +26,8 @@
         <@cssRef url="/static/_resources/assets/css/ace-ie.min.css"/>
     <![endif]-->
 <#nested "css" />
-<@jsRef url="/static/_resources/assets/js/ace-extra.min.js"/>
 <@jsRef url="/static/_resources/jquery/jquery-2.0.3.min.js"/>
+<@jsRef url="/static/_resources/assets/js/ace-extra.min.js"/>
 <@jsRef url="/static/_resources/common/utility.js"/>
 <@jsRef url="/static/_resources/common/common.js"/>
 </head>

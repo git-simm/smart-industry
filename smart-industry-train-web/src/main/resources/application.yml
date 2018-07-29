@@ -55,6 +55,8 @@ mybatis:
   configuration:
     # 开启驼峰命名大法
     map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.log4j2.Log4j2Impl
 security:
   basic:
     authorize-mode: none
+

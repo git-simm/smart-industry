@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 设置log4j2的自身log级别为warn -->
+<!-- OFF > FATAL > ERROR > WARN > INFO > DEBUG > TRACE > ALL -->
+<Configuration status="trace">
+	<Appenders>
+		<!-- 控制台输出 -->
+		<console name="console" target="system_out">
+			<patternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+		</console>
+        
+        <RollingFile name="RollingFileDebug" fileName="logs/debug.log" filePattern="logs/$${date:yyyy-MM}/debug-%d{yyyy-MM-dd}-%i.log">
+			<!--控制台只输出level及以上级别的信息（onMatch），其他的直接拒绝（onMismatch）-->        
+			<Filters>
+				<ThresholdFilter level="DEBUG"/>
+				<ThresholdFilter level="INFO" onMatch="DENY" onMismatch="NEUTRAL"/>
+			</Filters>
+			<PatternLayout pattern="[%d{HH:mm:ss:SSS}] [%p] - %l - %m%n"/>
+			<Policies>
+				<TimeBasedTriggeringPolicy/>
+				<SizeBasedTriggeringPolicy size="100 MB"/>
+			</Policies>
+			<!--最多保留20个日志文件-->
+			<DefaultRolloverStrategy max="20" min="0" />  
+		</RollingFile>
+    
+		<RollingFile name="RollingFileInfo" fileName="logs/info.log" filePattern="logs/$${date:yyyy-MM}/info-%d{yyyy-MM-dd}-%i.log">
+			<Filters>
+				<ThresholdFilter level="INFO"/>
+				<ThresholdFilter level="WARN" onMatch="DENY" onMismatch="NEUTRAL"/>
+			</Filters>
+			<PatternLayout pattern="[%d{HH:mm:ss:SSS}] [%p] - %l - %m%n"/>
+			<Policies>
+				<TimeBasedTriggeringPolicy/>
+				<SizeBasedTriggeringPolicy size="100 MB"/>
+			</Policies>
+			<!--最多保留20个日志文件-->
+			<DefaultRolloverStrategy max="20" min="0" />  
+		</RollingFile>
+ 
+		<RollingFile name="RollingFileWarn" fileName="logs/warn.log" filePattern="logs/$${date:yyyy-MM}/warn-%d{yyyy-MM-dd}-%i.log">
+			<Filters>
+				<ThresholdFilter level="WARN"/>
+				<ThresholdFilter level="ERROR" onMatch="DENY" onMismatch="NEUTRAL"/>
+			</Filters>
+			<PatternLayout pattern="[%d{HH:mm:ss:SSS}] [%p] - %l - %m%n"/>
+			<Policies>
+				<TimeBasedTriggeringPolicy/>
+				<SizeBasedTriggeringPolicy size="100 MB"/>
+			</Policies>
+			<!--最多保留20个日志文件-->
+			<DefaultRolloverStrategy max="20" min="0" />  
+		</RollingFile>
+ 
+		<RollingFile name="RollingFileError" fileName="logs/error.log" filePattern="logs/$${date:yyyy-MM}/error-%d{yyyy-MM-dd}-%i.log">
+			<ThresholdFilter level="ERROR"/>
+			<PatternLayout pattern="[%d{HH:mm:ss:SSS}] [%p] - %l - %m%n"/>
+			<Policies>
+				<TimeBasedTriggeringPolicy/>
+				<SizeBasedTriggeringPolicy size="100 MB"/>
+			</Policies>
+			<!--最多保留20个日志文件-->
+			<DefaultRolloverStrategy max="20" min="0" />  
+		</RollingFile>
+		
+		<RollingFile name="RollingFileFatal" fileName="logs/fatal.log" filePattern="logs/$${date:yyyy-MM}/fatal-%d{yyyy-MM-dd}-%i.log">
+			<ThresholdFilter level="FATAL"/>
+			<PatternLayout pattern="[%d{HH:mm:ss:SSS}] [%p] - %l - %m%n"/>
+			<Policies>
+				<TimeBasedTriggeringPolicy/>
+				<SizeBasedTriggeringPolicy size="100 MB"/>
+			</Policies>
+			<!--最多保留20个日志文件-->
+			<DefaultRolloverStrategy max="20" min="0" />  
+		</RollingFile>
+	</Appenders>
+	<Loggers>
+        <!--<logger name="simm.spring.restapi" level="INFO"></logger>-->
+        <Root level="DEBUG">
+        	<appender-ref ref="console"/>
+            <appender-ref ref="RollingFileDebug"/>
+            <appender-ref ref="RollingFileInfo"/>
+            <appender-ref ref="RollingFileWarn"/>
+            <appender-ref ref="RollingFileError"/>
+            <appender-ref ref="RollingFileFatal"/>
+        </Root>
+		<logger name="org.apache.http" level="ERROR" />
+		<!-- Spring -->
+		<logger name="org.springframework" level="ERROR" />
+		<!-- mybatis loggers -->
+		<logger name="com.ibatis" level="INFO" />
+		<logger name="com.ibatis.common.jdbc.SimpleDataSource" level="DEBUG" />
+		<logger name="com.ibatis.common.jdbc.ScriptRunner" level="DEBUG" />
+		<logger name="com.ibatis.sqlmap.engine.impl.SqlMapClientDelegate" level="DEBUG" />
+		<!-- sql loggers -->
+		<logger name="java.sql.Connection" level="DEBUG"  additivity="true"/>
+		<logger name="java.sql.Statement" level="DEBUG" additivity="true" />
+		<logger name="java.sql.PreparedStatement" level="=debug,stdout"  additivity="true"/>
+		<logger name="java.sql.ResultSet" level="DEBUG"  additivity="true"/>
+	</Loggers>
+</Configuration>

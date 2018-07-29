@@ -1,7 +1,7 @@
 package smart.industry.train.web.controllers;
 
-import org.apache.shiro.authc.IncorrectCredentialsException;
-import org.apache.shiro.authc.UnknownAccountException;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -10,14 +10,14 @@ import smart.industry.train.biz.dao.UserBiz;
 import smart.industry.train.biz.entity.User;
 import smart.industry.train.web.models.MyUser;
 
-import javax.servlet.http.HttpServletRequest;
 import java.util.List;
-import java.util.Map;
 import java.util.stream.Collectors;
 
 @Controller
 @RequestMapping("/user")
 public class UserController {
+    private final Logger logger = LoggerFactory.getLogger(this.getClass());
+
     @Autowired
     private UserBiz userBiz;
 
@@ -30,6 +30,11 @@ public class UserController {
     @RequestMapping("/list")
     @ResponseBody
     public List<MyUser> list(){
+        logger.debug("This is a debug message");
+        logger.info("This is an info message");
+        logger.warn("This is a warn message");
+        logger.error("This is an error message");
+
         List<User> users = userBiz.getList();
         List<MyUser> list = users.stream().map(u->getMyUser(u)).collect(Collectors.toList());
         User user = users.stream().max((u1, u2)->(u1.getId()-u2.getId())).get();
