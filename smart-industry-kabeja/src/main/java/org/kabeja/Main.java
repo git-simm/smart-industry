@@ -15,6 +15,7 @@
  */
 package org.kabeja;
 
+import org.apache.tomcat.jni.Directory;
 import org.kabeja.dxf.DXFDocument;
 import org.kabeja.parser.DXFParser;
 import org.kabeja.parser.Parser;
@@ -47,9 +48,13 @@ public class Main {
         //InputStream fi = Thread.currentThread().getContextClassLoader().getResourceAsStream();
 
         main.process();
-        File f = ResourceUtils.getFile("classpath:samples/dxf/draft1.dxf");
-        //File f = new File("E:/tmp/draft1.dxf");
-        String output = "E:/tmp/draft1.svg";
+        String dxfName = "TopView";
+        File f = ResourceUtils.getFile("classpath:samples/dxf/"+dxfName+".dxf");
+        File outFile = new File("E:/tmp");
+        if(!outFile.exists()){
+            outFile.mkdir();
+        }
+        String output = "E:/tmp/"+dxfName+".svg";
         if (f.exists() && f.isFile()) {
             main.parseFile(f, output);
         }
