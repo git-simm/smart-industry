@@ -117,6 +117,12 @@
                     <b class="arrow icon-angle-down"></b>
                 </a>
                 <ul class="submenu">
+                    <li onclick="smart.train.index.open('方案列表', '/solution/list')">
+                        <a href="javascript:void(0)">
+                            <i class="icon-double-angle-right"></i>
+                            方案列表
+                        </a>
+                    </li>
                     <li onclick="smart.train.index.open('文件上传', '/file/uploader')">
                         <a href="javascript:void(0)">
                             <i class="icon-double-angle-right"></i>
