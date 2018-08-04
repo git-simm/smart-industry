@@ -12,7 +12,7 @@
         </commentGenerator>
 
         <jdbcConnection driverClass="com.mysql.jdbc.Driver"
-                        connectionURL="jdbc:mysql://localhost:3306/mytest"
+                        connectionURL="jdbc:mysql://localhost:3306/smart-industry"
                         userId="root"
                         password="admin">
         </jdbcConnection>
@@ -24,7 +24,7 @@
         <javaClientGenerator targetPackage="smart.industry.train.biz.mapper"
                              targetProject="src/main/java" type="XMLMAPPER"/>
 
-        <!-- 配置不生成Exmaple文件> -->
-        <table tableName="user" domainObjectName="User" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+        <!-- 配置生成Exmaple文件> -->
+        <table tableName="design_class" domainObjectName="DesignClass" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
     </context>
 </generatorConfiguration>

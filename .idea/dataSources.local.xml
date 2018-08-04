@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="dataSourceStorageLocal">
-    <data-source name="mytest@localhost" uuid="7ae1e208-3f4f-448d-b9fc-15e68d170aba">
+    <data-source name="smart-industry@localhost" uuid="0ba1af6b-655f-4dd5-bc89-8f34cce29579">
       <database-info product="MySQL" version="5.7.15-log" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.46 ( Revision: 9cc87a48e75c2d2e87c1a293b2862ce651cb256e )">
         <extra-name-characters>#@</extra-name-characters>
         <identifier-quote-string>`</identifier-quote-string>
@@ -9,7 +9,7 @@
       <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower" />
       <secret-storage>master_key</secret-storage>
       <user-name>root</user-name>
-      <introspection-schemas>*:mytest</introspection-schemas>
+      <introspection-schemas>*:smart-industry</introspection-schemas>
     </data-source>
   </component>
 </project>

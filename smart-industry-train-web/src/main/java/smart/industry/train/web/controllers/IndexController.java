@@ -79,10 +79,10 @@ public class IndexController {
         //System.out.println("exception=" + exception);
         if(redirect!=null && StringUtils.isNotBlank(redirect.getRequestUrl())){
             if(redirect.getRequestUrl().contains("login"))
-                return "/";
+                return "/index";
             return redirect.getRequestUrl();
         }
-        return "/";
+        return "/index";
     }
     /**
      * 退出

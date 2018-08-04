@@ -30,8 +30,6 @@ import javax.servlet.http.HttpSession;
 @ControllerAdvice
 public class MyMvcAdvice extends ResponseEntityExceptionHandler {
     private static final Logger logger = LoggerFactory.getLogger(MyMvcAdvice.class);
-    @Resource
-    MessageSourceUtils messageSourceUtils;
 
     @Autowired
     ResourceUrlProvider resourceUrlProvider;
@@ -74,12 +72,15 @@ public class MyMvcAdvice extends ResponseEntityExceptionHandler {
     /**
      * 接口层异常:参数校验,转换等标准的spring异常
      */
-    @Override
+    /*@Override
+    @ExceptionHandler({
+            Exception.class
+    })
     protected ResponseEntity<Object> handleExceptionInternal(Exception ex, Object body, HttpHeaders headers,
                                                              HttpStatus status, WebRequest request) {
         logger.error("Global catch exception log: ", ex);
-        return ResponseEntity.ok((Object) new ResponseJson(2001, messageSourceUtils.getMessage("exp.interfaces")));
-    }
+        throw ex;
+    }*/
 
     /**
      * 业务层异常:自定义的业务校验,操作等异常
@@ -101,9 +102,9 @@ public class MyMvcAdvice extends ResponseEntityExceptionHandler {
     /**
      * 其它异常:未处理的其它异常
      */
-    @ExceptionHandler({ Throwable.class })
+    /*@ExceptionHandler({ Throwable.class })
     public final ResponseEntity<ResponseJson> handleThrowable(Throwable ex, WebRequest request) {
         logger.error("Global catch exception log: ", ex);
-        return ResponseEntity.ok(new ResponseJson(2001, ex.getMessage()));
-    }
+        throw ex;
+    }*/
 }

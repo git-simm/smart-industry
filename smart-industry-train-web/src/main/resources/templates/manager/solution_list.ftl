@@ -37,7 +37,7 @@
         </div>
     </div>
     <#elseif section="scripts">
-        <@jsRef "/static/_resources/ztree/jquery.ztree.core.js"/>
+        <@jsRef "/static/_resources/ztree/jquery.ztree.all.js"/>
         <@jsRef "/static/_resources/context/context.js"/>
         <@jsRef "/static/js/manager/solution.list.js"/>
     </#if>

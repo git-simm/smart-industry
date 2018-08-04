@@ -2,9 +2,27 @@ Zq.Utility.RegisterNameSpace("solution.list");
 (function (ns, undefined) {
     var setting = {
         view: {
+            expandSpeed:"fast",
             dblClickExpand: function (treeId, treeNode) {
                 return treeNode.level > 0;
             }
+        },
+        edit:{
+            drag:{
+                isMove:true,
+                prev:true,
+                next:true,
+                borderMax:10,
+                borderMin:-5,
+                minMoveSize:5,
+                maxShowNodeNum:5,
+                autoOpenTime:500
+            },
+            enabled:true,
+            editNameSelectAll:true,
+            renameTitle:"重命名",
+            showRemoveBtn:false,
+            showRenameBtn:true
         },
         data: {
             simpleData: {
@@ -15,46 +33,38 @@ Zq.Utility.RegisterNameSpace("solution.list");
             //onRightClick: OnRightClick
         }
     };
-
-    var zNodes =[
-        { id:1, pId:0, name:"解决方案中心", open:true},
-        { id:11, pId:1, name:"父节点 1-1", open:true},
-        { id:111, pId:11, name:"叶子节点 1-1-1"},
-        { id:112, pId:11, name:"叶子节点 1-1-2"},
-        { id:113, pId:11, name:"叶子节点 1-1-3"},
-        { id:114, pId:11, name:"叶子节点 1-1-4"},
-        { id:12, pId:1, name:"父节点 1-2", open:true},
-        { id:121, pId:12, name:"叶子节点 1-2-1"},
-        { id:122, pId:12, name:"叶子节点 1-2-2"},
-        { id:123, pId:12, name:"叶子节点 1-2-3"},
-        { id:124, pId:12, name:"叶子节点 1-2-4"},
-        { id:13, pId:1, name:"父节点 1-3", open:true},
-        { id:131, pId:13, name:"叶子节点 1-3-1"},
-        { id:132, pId:13, name:"叶子节点 1-3-2"},
-        { id:133, pId:13, name:"叶子节点 1-3-3"},
-        { id:134, pId:13, name:"叶子节点 1-3-4"}
-    ];
-    var addCount = 1;
     ns.addTreeNode = function() {
-        var newNode = { name:"增加" + (addCount++)};
-        if (zTree.getSelectedNodes()[0]) {
+        var content = window.prompt("分类名", "我的分类");
+        var newNode = { name:content};
+        var parent = zTree.getSelectedNodes()[0];
+        if (parent) {
+            newNode.pId = parent.id;
             newNode.checked = zTree.getSelectedNodes()[0].checked;
-            zTree.addNodes(zTree.getSelectedNodes()[0], newNode);
+            ns.add(newNode,function(id){
+                zTree.addNodes(zTree.getSelectedNodes()[0], newNode);
+                ns.calcSort();
+            });
         } else {
-            zTree.addNodes(null, newNode);
+            //zTree.addNodes(null, newNode);
+            layer.alert("请先选中一个父级节点");
         }
     }
     ns.removeTreeNode = function() {
         var nodes = zTree.getSelectedNodes();
         if (nodes && nodes.length>0) {
+            var ids = [];
             if (nodes[0].children && nodes[0].children.length > 0) {
                 var msg = "要删除的节点是父节点，如果删除将连同子节点一起删掉。\n\n请确认！";
                 if (confirm(msg)==true){
-                    zTree.removeNode(nodes[0]);
+                    var nodes = getChildNodes(nodes[0]);
+                    ids = ids.concat(nodes);
                 }
             } else {
-                zTree.removeNode(nodes[0]);
+                ids.push(nodes[0].id);
             }
+            ns.remove(ids,function(){
+                zTree.removeNode(nodes[0]);
+            });
         }
     }
     ns.checkTreeNode = function(checked) {
@@ -67,14 +77,112 @@ Zq.Utility.RegisterNameSpace("solution.list");
         $.fn.zTree.init($("#treeDemo"), setting, zNodes);
     }
 
-    var zTree, rMenu;
+    var zTree;
     /**
      * 初始化ztree控件
      */
     ns.init = function () {
-        zTree = $.fn.zTree.init($("#soluTree"), setting, zNodes);
-        rMenu = $("#rMenu");
+        ns.getList(function(data){
+            zTree = $.fn.zTree.init($("#soluTree"), setting, data);
+        });
     }
+
+    //-------- 方案 ajax 交互  begin-----------------------
+    ns.getList = function(callback){
+        $.ajax({
+            async: false,
+            url: Zq.Utility.GetPath("/solucls/list"),
+            success:function(data){
+                if(data!=null && data.length>0){
+                    data[0].open=true;
+                }
+                callback(data);
+            }
+        });
+    }
+    ns.add = function(entity,callback) {
+        $.ajax({
+            async: false,
+            type: "Post",
+            url: Zq.Utility.GetPath("/solucls/add"),
+            data: entity,
+            success:function(id){
+                entity.id = id;
+                callback(id);
+            }
+        });
+    }
+    /**
+     *删除事件
+     * @param entity
+     * @param callback
+     */
+    ns.remove = function(ids,callback) {
+        $.ajax({
+            async: false,
+            type: "Post",
+            url: Zq.Utility.GetPath("/solucls/del"),
+            dataType:"json",
+            contentType : 'application/json;charset=utf-8',
+            data: JSON.stringify(ids),
+            success:function(result){
+                callback(result);
+            }
+        });
+    }
+    //重新计算排序码
+    ns.calcSort = function(callback){
+        //获取数控件序列
+        var list = getNodes(zTree.getNodes()[0]);
+        console.log(list);
+        $.ajax({
+            async: false,
+            type: "Post",
+            url: Zq.Utility.GetPath("/solucls/calcSort"),
+            dataType:"json",
+            data: JSON.stringify(list),
+            contentType : 'application/json;charset=utf-8',
+            success:function(result){
+                if(callback){
+                    callback(result);
+                }
+            }
+        });
+    }
+
+    /**
+     * 递归获取所有的数节点信息
+     */
+    function getNodes(node,i){
+        var arr =[];
+        if(i==undefined)i=0;
+        if(node.sort !== i){
+            node.sort = i;
+            arr.push({id:node.id,sort:i});
+        }
+        if(node.children && node.children.length>0){
+            $.each(node.children,function(index,obj){
+                //获取子记录
+                arr = arr.concat(getNodes(obj,index));
+            });
+        }
+        return arr;
+    }
+    /**
+     * 递归获取所有的数节点信息
+     */
+    function getChildNodes(node){
+        var arr =[];
+        arr.push(node.id);
+        if(node.children && node.children.length>0){
+            $.each(node.children,function(index,obj){
+                //获取子记录
+                arr = arr.concat(getChildNodes(obj));
+            });
+        }
+        return arr;
+    }
+    //-------- 方案 ajax 交互  end-----------------------
 })(solution.list);
 
 $(function () {
@@ -86,10 +194,10 @@ $(function () {
                 e.preventDefault();
                 solution.list.addTreeNode();
             }},
-        {text: '修改节点',action: function(e){
+        /*{text: '修改节点',action: function(e){
                 e.preventDefault();
                 solution.list.resetTree();
-            }},
+            }},*/
         {text: '删除节点', action: function(e){
                 e.preventDefault();
                 solution.list.removeTreeNode();

@@ -1,4 +1,4 @@
-package smart.industry.train.web.controllers;
+package smart.industry.train.web.controllers.manager;
 
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.subject.Subject;
