@@ -2,6 +2,6 @@ spring:
   datasource:
     druid:
       driver-class-name: com.mysql.jdbc.Driver
-      url: jdbc:mysql://127.0.0.1:3306/mytest
+      url: jdbc:mysql://127.0.0.1:3306/smart-industry
       username: root
       password: admin
