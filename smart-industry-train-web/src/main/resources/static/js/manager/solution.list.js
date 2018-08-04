@@ -3,11 +3,13 @@ Zq.Utility.RegisterNameSpace("solution.list");
     var setting = {
         view: {
             expandSpeed:"fast",
+            selectedMulti:false,
             dblClickExpand: function (treeId, treeNode) {
                 return treeNode.level > 0;
             }
         },
         edit:{
+            enable:true,
             drag:{
                 isMove:true,
                 prev:true,
@@ -18,7 +20,6 @@ Zq.Utility.RegisterNameSpace("solution.list");
                 maxShowNodeNum:5,
                 autoOpenTime:500
             },
-            enabled:true,
             editNameSelectAll:true,
             renameTitle:"重命名",
             showRemoveBtn:false,
@@ -31,10 +32,15 @@ Zq.Utility.RegisterNameSpace("solution.list");
         },
         callback: {
             //onRightClick: OnRightClick
+            beforeDrag: zTreeBeforeDrag,
+            beforeDrop: zTreeBeforeDrop,
+            onDrop: zTreeOnDrop,
+            onRename: zTreeOnRename
         }
     };
     ns.addTreeNode = function() {
         var content = window.prompt("分类名", "我的分类");
+        if(!content) return;
         var newNode = { name:content};
         var parent = zTree.getSelectedNodes()[0];
         if (parent) {
@@ -87,6 +93,65 @@ Zq.Utility.RegisterNameSpace("solution.list");
         });
     }
 
+    //-------------------------
+    //拖拽前校验事件
+    function zTreeBeforeDrag(treeId, treeNodes) {
+        //根节点不允许拖拽
+        if(treeNodes[0].pId ==null){
+            layer.alert("根节点不允许拖拽");
+            return false;
+        }
+        return true;
+    };
+
+    /**
+     * Drop前校验事件
+     * @param treeId
+     * @param treeNodes
+     * @param targetNode
+     * @param moveType
+     * @returns {boolean}
+     */
+    function zTreeBeforeDrop(treeId, treeNodes, targetNode, moveType) {
+        if(targetNode && targetNode.pId == null && moveType=="prev"){
+            layer.alert("不允许新建根节点");
+            return false;
+        }
+        return true;
+    };
+
+    /**
+     * Drop完成
+     * @param event
+     * @param treeId
+     * @param treeNodes
+     * @param targetNode
+     * @param moveType
+     */
+    function zTreeOnDrop(event, treeId, treeNodes, targetNode, moveType) {
+        ns.calcSort();
+        //alert(treeNodes.length + "," + (targetNode ? (targetNode.tId + ", " + targetNode.name) : "isRoot" ));
+    };
+
+    /**
+     * 重命名完成
+     * @param event
+     * @param treeId
+     * @param treeNode
+     * @param isCancel
+     */
+    function zTreeOnRename(event, treeId, treeNode, isCancel) {
+        $.ajax({
+            async: false,
+            type: "Post",
+            url: Zq.Utility.GetPath("/solucls/update"),
+            data: {id:treeNode.id,name:treeNode.name},
+            success:function(id){
+                //entity.id = id;
+                //callback(id);
+            }
+        });
+    }
     //-------- 方案 ajax 交互  begin-----------------------
     ns.getList = function(callback){
         $.ajax({
@@ -134,7 +199,6 @@ Zq.Utility.RegisterNameSpace("solution.list");
     ns.calcSort = function(callback){
         //获取数控件序列
         var list = getNodes(zTree.getNodes()[0]);
-        console.log(list);
         $.ajax({
             async: false,
             type: "Post",

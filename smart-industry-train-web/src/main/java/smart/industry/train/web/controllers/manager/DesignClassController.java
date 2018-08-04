@@ -5,8 +5,6 @@ import org.springframework.web.bind.annotation.*;
 import smart.industry.train.biz.dao.DesignClassBiz;
 import smart.industry.train.biz.entity.DesignClass;
 import smart.industry.utils.annotations.Post;
-
-import java.util.Arrays;
 import java.util.List;
 
 @Controller
@@ -34,7 +32,15 @@ public class DesignClassController {
     public int add(DesignClass entity){
         return designClassBiz.add(entity);
     }
-
+    /**
+     * 添加分类
+     * @param entity
+     * @return
+     */
+    @Post("/update")
+    public int update(DesignClass entity){
+        return designClassBiz.update(entity);
+    }
     /**
      * 删除事件
      * @param ids
