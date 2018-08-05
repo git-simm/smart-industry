@@ -96,27 +96,39 @@ Zq.Utility.RegisterNameSpace("train.lines");
         });
     }
 
+    ns.Lights = [];
+    ns.openLight = function(){
+        $.each(ns.Lights,function(i,light){
+            light.open();
+        });
+    }
+    ns.closeLight = function(){
+        $.each(ns.Lights,function(i,light){
+            light.close();
+        });
+    }
+
     ns.AddLight = function (group) {
         //车头大灯
-        ThreeSimm.AddLight({
+        ns.Lights.push(ThreeSimm.AddLight({
             group: group,
             lightPosition: new THREE.Vector3(-250, -25, 0),
             targetPosition: new THREE.Vector3(-10000, -35, 0)
-        });
+        }));
         //车尾灯1
-        ThreeSimm.AddLight({
+        ns.Lights.push(ThreeSimm.AddLight({
             group: group,
             lightPosition: new THREE.Vector3(195, -20, -22),
             targetPosition: new THREE.Vector3(10000, -35, -22),
             color: 0xff0000
-        });
+        }));
         //车尾灯2
-        ThreeSimm.AddLight({
+        ns.Lights.push(ThreeSimm.AddLight({
             group: group,
             lightPosition: new THREE.Vector3(195, -20, 22),
             targetPosition: new THREE.Vector3(10000, -35, 22),
             color: 0xff0000
-        });
+        }));
     }
 
     /**

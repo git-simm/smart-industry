@@ -67,6 +67,8 @@ window.ThreeSimm = window.Zq || {};
         };
         var param = $.extend({}, defaultParam, param);
         var light = new THREE.SpotLight(param.color, 2, 500, Math.PI / 6, 2);
+        //color, intensity, distance, angle, penumbra, decay
+        light.visible = false;
         //球体模型(半径为5)
         var bulbGeometry = new THREE.SphereGeometry(5, 20, 20);
         var bulbMat = new THREE.MeshStandardMaterial({
@@ -91,7 +93,6 @@ window.ThreeSimm = window.Zq || {};
         light.shadowCameraFar = 200;
         light.shadowCameraFov = 30;
         light.shadowCameraVisible = true;
-
         light.shadowMapWidth = 1024;
         light.shadowMapHeight = 1024;
         light.shadowDarkness = 0.3;
@@ -112,5 +113,18 @@ window.ThreeSimm = window.Zq || {};
         ballMesh.castShadow = true;
         light.target = ballMesh;
         param.group.add(ballMesh);
+        return new MyLight(ballMesh,light);
     }
 })(ThreeSimm);
+//灯光
+var MyLight = function(ball,light){
+    this.param = {};
+    this.param.ball = ball;
+    this.param.light = light;
+    this.open = function(){
+        light.visible = true;
+    }
+    this.close =function(){
+        light.visible = false;
+    }
+}
