@@ -41,7 +41,8 @@
                 content : text
             });*/
             var height = document.body.clientHeight - 75;
-            var content = '<iframe class="page_iframe" scrolling="auto" frameborder="0"  src="' + url + '" style="width:100%;height:' + height + 'px;"></iframe>';
+            var path = Zq.Utility.GetPath(url);
+            var content = '<iframe class="page_iframe" scrolling="auto" frameborder="0"  src="' + path + '" style="width:100%;height:' + height + 'px;"></iframe>';
             $('#tabs').tabs('add', {
                 title: text,
                 closable: true,

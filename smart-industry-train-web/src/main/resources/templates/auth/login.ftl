@@ -83,7 +83,7 @@
                 url: Zq.Utility.GetPath("/loginvalid"),
                 data: $(".form-signin").serializeObject(),
                 success:function(url){
-                    window.location.href = Zq.Utility.GetPath(url);
+                    window.location.href = url;
                 },
                 error: function (ex) {
                     $("#btn_login").removeAttr("disabled");
