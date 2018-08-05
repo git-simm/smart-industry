@@ -6,9 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ca438869-ff4f-47d5-a47e-64243f73bc98" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-    </list>
+    <list default="true" id="ca438869-ff4f-47d5-a47e-64243f73bc98" name="Default" comment="提交两个远程访问linux的工具" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/smart-industry-train-web/target/" />
@@ -278,8 +276,8 @@
     <packageJsonPaths />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="487" />
-    <option name="y" value="58" />
+    <option name="x" value="273" />
+    <option name="y" value="82" />
     <option name="width" value="1428" />
     <option name="height" value="850" />
   </component>
@@ -302,6 +300,11 @@
               <item name="smart-industry" type="b2602c69:ProjectViewProjectNode" />
               <item name="smart-industry" type="462c0819:PsiDirectoryNode" />
               <item name="target" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="smart-industry" type="b2602c69:ProjectViewProjectNode" />
+              <item name="smart-industry" type="462c0819:PsiDirectoryNode" />
+              <item name="tools" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -333,20 +336,20 @@
     <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.annotationProcessors" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\myworkspace\git\smart-industry\smart-industry-train-web\src\main\resources\static" />
-      <recent name="D:\myworkspace\git\smart-industry\smart-industry-train-web\src\main\resources\templates" />
-      <recent name="D:\myworkspace\git\smart-industry\smart-industry-train-web\src\main\resources\templates\user" />
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="smart.industry.utils.exceptions" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\myworkspace\git\smart-industry\tools" />
       <recent name="D:\myworkspace\git\smart-industry\sql" />
       <recent name="D:\myworkspace\git\smart-industry\smart-industry-train-web\src\main\resources\templates\analysis" />
       <recent name="D:\myworkspace\git\smart-industry\smart-industry-train-web\src\main\resources\svg" />
       <recent name="D:\myworkspace\git\smart-industry\smart-industry-train-web\src\main\resources\static\_resources\ztree" />
-      <recent name="D:\myworkspace\git\smart-industry\smart-industry-train-web\target\classes\static\_resources\ztree" />
     </key>
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="smart.industry.utils.exceptions" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\myworkspace\git\smart-industry\smart-industry-train-web\src\main\resources\static" />
+      <recent name="D:\myworkspace\git\smart-industry\smart-industry-train-web\src\main\resources\templates" />
+      <recent name="D:\myworkspace\git\smart-industry\smart-industry-train-web\src\main\resources\templates\user" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -652,7 +655,7 @@
       <workItem from="1532612566168" duration="1800000" />
       <workItem from="1532846335399" duration="25933000" />
       <workItem from="1533345527527" duration="49616000" />
-      <workItem from="1533482104201" duration="4782000" />
+      <workItem from="1533482104201" duration="5051000" />
     </task>
     <task id="LOCAL-00001" summary="集成shiro登录验证功能">
       <created>1532255184656</created>
@@ -738,7 +741,14 @@
       <option name="project" value="LOCAL" />
       <updated>1533487270510</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="提交两个远程访问linux的工具">
+      <created>1533487484484</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1533487484484</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -753,7 +763,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="152014000" />
+    <option name="totallyTimeSpent" value="152283000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -765,7 +775,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="390" y="47" width="1142" height="680" extended-state="0" />
+    <frame x="89" y="83" width="1142" height="680" extended-state="1" />
     <layout>
       <window_info anchor="right" id="Palette" order="5" />
       <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.50067025" side_tool="true" weight="0.75606275" />
@@ -820,7 +830,8 @@
     <MESSAGE value="完成模拟调试的简单demo" />
     <MESSAGE value="保存一个初始化脚本" />
     <MESSAGE value="发布到阿里云" />
-    <option name="LAST_COMMIT_MESSAGE" value="发布到阿里云" />
+    <MESSAGE value="提交两个远程访问linux的工具" />
+    <option name="LAST_COMMIT_MESSAGE" value="提交两个远程访问linux的工具" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
