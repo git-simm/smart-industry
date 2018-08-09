@@ -1,0 +1,248 @@
+[21:44:35:040] [INFO] - org.springframework.boot.StartupInfoLogger.logStarting(StartupInfoLogger.java:48) - Starting WebApplication on simm with PID 5876 (D:\myworkspace\git\smart-industry\smart-industry-train-web\target\classes started by dell in D:\myworkspace\git\smart-industry)
+[21:44:35:041] [INFO] - org.springframework.boot.SpringApplication.logStartupProfileInfo(SpringApplication.java:597) - The following profiles are active: dev
+[21:44:41:286] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:179) - Starting service [Tomcat]
+[21:44:41:286] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:179) - Starting Servlet Engine: Apache Tomcat/8.5.23
+[21:44:41:331] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:179) - Initializing Spring embedded WebApplicationContext
+[21:44:47:072] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:179) - Initializing ProtocolHandler ["http-nio-9999"]
+[21:44:47:073] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:179) - Starting ProtocolHandler ["http-nio-9999"]
+[21:44:47:076] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:179) - Using a shared selector for servlet write/read
+[21:44:47:082] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:179) - Initializing Spring FrameworkServlet 'dispatcherServlet'
+[21:44:47:105] [INFO] - org.springframework.boot.StartupInfoLogger.logStarted(StartupInfoLogger.java:57) - Started WebApplication in 12.579 seconds (JVM running for 368.094)
+[21:44:50:283] [INFO] - smart.industry.train.web.controllers.UserController.list(UserController.java:34) - This is an info message
+[21:44:50:380] [INFO] - com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:922) - {dataSource-2} inited
+[21:46:11:973] [INFO] - com.alibaba.druid.pool.DruidDataSource.close(DruidDataSource.java:1817) - {dataSource-2} closed
+[21:46:13:582] [INFO] - org.springframework.boot.StartupInfoLogger.logStarting(StartupInfoLogger.java:48) - Starting WebApplication on simm with PID 5876 (D:\myworkspace\git\smart-industry\smart-industry-train-web\target\classes started by dell in D:\myworkspace\git\smart-industry)
+[21:46:13:583] [INFO] - org.springframework.boot.SpringApplication.logStartupProfileInfo(SpringApplication.java:597) - The following profiles are active: dev
+[21:46:16:129] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:179) - Starting service [Tomcat]
+[21:46:16:130] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:179) - Starting Servlet Engine: Apache Tomcat/8.5.23
+[21:46:16:170] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:179) - Initializing Spring embedded WebApplicationContext
+[21:46:22:197] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:179) - Initializing ProtocolHandler ["http-nio-9999"]
+[21:46:22:197] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:179) - Starting ProtocolHandler ["http-nio-9999"]
+[21:46:22:198] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:179) - Using a shared selector for servlet write/read
+[21:46:22:204] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:179) - Initializing Spring FrameworkServlet 'dispatcherServlet'
+[21:46:22:216] [INFO] - org.springframework.boot.StartupInfoLogger.logStarted(StartupInfoLogger.java:57) - Started WebApplication in 8.863 seconds (JVM running for 463.206)
+[21:53:42:488] [INFO] - org.springframework.boot.StartupInfoLogger.logStarting(StartupInfoLogger.java:48) - Starting WebApplication on simm with PID 2672 (D:\myworkspace\git\smart-industry\smart-industry-train-web\target\classes started by dell in D:\myworkspace\git\smart-industry)
+[21:53:42:549] [INFO] - org.springframework.boot.SpringApplication.logStartupProfileInfo(SpringApplication.java:597) - The following profiles are active: dev
+[21:53:42:790] [INFO] - org.hibernate.validator.internal.util.Version.<clinit>(Version.java:30) - HV000001: Hibernate Validator 5.3.6.Final
+[21:53:47:867] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:179) - Starting service [Tomcat]
+[21:53:47:869] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:179) - Starting Servlet Engine: Apache Tomcat/8.5.23
+[21:53:48:027] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:179) - Initializing Spring embedded WebApplicationContext
+[21:53:55:175] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:179) - Initializing ProtocolHandler ["http-nio-9999"]
+[21:53:55:188] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:179) - Starting ProtocolHandler ["http-nio-9999"]
+[21:53:55:206] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:179) - Using a shared selector for servlet write/read
+[21:53:55:224] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:179) - Initializing Spring FrameworkServlet 'dispatcherServlet'
+[21:53:55:283] [INFO] - org.springframework.boot.StartupInfoLogger.logStarted(StartupInfoLogger.java:57) - Started WebApplication in 14.005 seconds (JVM running for 17.273)
+[21:54:19:314] [INFO] - com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:922) - {dataSource-1} inited
+[21:54:19:760] [INFO] - smart.industry.train.web.controllers.UserController.list(UserController.java:34) - This is an info message
+[22:06:00:575] [INFO] - com.alibaba.druid.pool.DruidDataSource.close(DruidDataSource.java:1817) - {dataSource-1} closed
+[22:06:01:816] [INFO] - org.springframework.boot.StartupInfoLogger.logStarting(StartupInfoLogger.java:48) - Starting WebApplication on simm with PID 2672 (D:\myworkspace\git\smart-industry\smart-industry-train-web\target\classes started by dell in D:\myworkspace\git\smart-industry)
+[22:06:01:816] [INFO] - org.springframework.boot.SpringApplication.logStartupProfileInfo(SpringApplication.java:597) - The following profiles are active: dev
+[22:06:04:264] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:179) - Starting service [Tomcat]
+[22:06:04:264] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:179) - Starting Servlet Engine: Apache Tomcat/8.5.23
+[22:06:04:304] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:179) - Initializing Spring embedded WebApplicationContext
+[22:06:10:203] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:179) - Initializing ProtocolHandler ["http-nio-9999"]
+[22:06:10:203] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:179) - Starting ProtocolHandler ["http-nio-9999"]
+[22:06:10:205] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:179) - Using a shared selector for servlet write/read
+[22:06:10:210] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:179) - Initializing Spring FrameworkServlet 'dispatcherServlet'
+[22:06:10:222] [INFO] - org.springframework.boot.StartupInfoLogger.logStarted(StartupInfoLogger.java:57) - Started WebApplication in 8.654 seconds (JVM running for 752.213)
+[22:13:01:977] [INFO] - smart.industry.train.web.controllers.UserController.list(UserController.java:34) - This is an info message
+[22:13:02:070] [INFO] - com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:922) - {dataSource-2} inited
+[22:17:59:708] [INFO] - smart.industry.train.web.controllers.UserController.list(UserController.java:34) - This is an info message
+[22:28:52:234] [INFO] - com.alibaba.druid.pool.DruidDataSource.close(DruidDataSource.java:1817) - {dataSource-2} closed
+[22:28:53:849] [INFO] - org.springframework.boot.StartupInfoLogger.logStarting(StartupInfoLogger.java:48) - Starting WebApplication on simm with PID 2672 (D:\myworkspace\git\smart-industry\smart-industry-train-web\target\classes started by dell in D:\myworkspace\git\smart-industry)
+[22:28:53:849] [INFO] - org.springframework.boot.SpringApplication.logStartupProfileInfo(SpringApplication.java:597) - The following profiles are active: dev
+[22:28:57:776] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:179) - Starting service [Tomcat]
+[22:28:57:777] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:179) - Starting Servlet Engine: Apache Tomcat/8.5.23
+[22:28:57:822] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:179) - Initializing Spring embedded WebApplicationContext
+[22:29:03:836] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:179) - Initializing ProtocolHandler ["http-nio-9999"]
+[22:29:03:837] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:179) - Starting ProtocolHandler ["http-nio-9999"]
+[22:29:03:838] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:179) - Using a shared selector for servlet write/read
+[22:29:03:844] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:179) - Initializing Spring FrameworkServlet 'dispatcherServlet'
+[22:29:03:857] [INFO] - org.springframework.boot.StartupInfoLogger.logStarted(StartupInfoLogger.java:57) - Started WebApplication in 10.813 seconds (JVM running for 2125.847)
+[22:29:21:242] [INFO] - org.springframework.boot.StartupInfoLogger.logStarting(StartupInfoLogger.java:48) - Starting WebApplication on simm with PID 2672 (D:\myworkspace\git\smart-industry\smart-industry-train-web\target\classes started by dell in D:\myworkspace\git\smart-industry)
+[22:29:21:243] [INFO] - org.springframework.boot.SpringApplication.logStartupProfileInfo(SpringApplication.java:597) - The following profiles are active: dev
+[22:29:24:584] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:179) - Starting service [Tomcat]
+[22:29:24:584] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:179) - Starting Servlet Engine: Apache Tomcat/8.5.23
+[22:29:24:625] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:179) - Initializing Spring embedded WebApplicationContext
+[22:29:31:909] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:179) - Initializing ProtocolHandler ["http-nio-9999"]
+[22:29:31:909] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:179) - Starting ProtocolHandler ["http-nio-9999"]
+[22:29:31:910] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:179) - Using a shared selector for servlet write/read
+[22:29:31:922] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:179) - Initializing Spring FrameworkServlet 'dispatcherServlet'
+[22:29:31:936] [INFO] - org.springframework.boot.StartupInfoLogger.logStarted(StartupInfoLogger.java:57) - Started WebApplication in 10.942 seconds (JVM running for 2153.926)
+[22:33:39:071] [INFO] - org.springframework.boot.StartupInfoLogger.logStarting(StartupInfoLogger.java:48) - Starting WebApplication on simm with PID 2672 (D:\myworkspace\git\smart-industry\smart-industry-train-web\target\classes started by dell in D:\myworkspace\git\smart-industry)
+[22:33:39:072] [INFO] - org.springframework.boot.SpringApplication.logStartupProfileInfo(SpringApplication.java:597) - The following profiles are active: dev
+[22:33:42:517] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:179) - Starting service [Tomcat]
+[22:33:42:518] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:179) - Starting Servlet Engine: Apache Tomcat/8.5.23
+[22:33:42:623] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:179) - Initializing Spring embedded WebApplicationContext
+[22:33:48:434] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:179) - Initializing ProtocolHandler ["http-nio-9999"]
+[22:33:48:440] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:179) - Starting ProtocolHandler ["http-nio-9999"]
+[22:33:48:442] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:179) - Using a shared selector for servlet write/read
+[22:33:48:459] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:179) - Initializing Spring FrameworkServlet 'dispatcherServlet'
+[22:33:48:484] [INFO] - org.springframework.boot.StartupInfoLogger.logStarted(StartupInfoLogger.java:57) - Started WebApplication in 9.614 seconds (JVM running for 2410.475)
+[22:35:08:665] [INFO] - org.springframework.boot.StartupInfoLogger.logStarting(StartupInfoLogger.java:48) - Starting WebApplication on simm with PID 2672 (D:\myworkspace\git\smart-industry\smart-industry-train-web\target\classes started by dell in D:\myworkspace\git\smart-industry)
+[22:35:08:666] [INFO] - org.springframework.boot.SpringApplication.logStartupProfileInfo(SpringApplication.java:597) - The following profiles are active: dev
+[22:35:13:130] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:179) - Starting service [Tomcat]
+[22:35:13:131] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:179) - Starting Servlet Engine: Apache Tomcat/8.5.23
+[22:35:13:170] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:179) - Initializing Spring embedded WebApplicationContext
+[22:35:19:038] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:179) - Initializing ProtocolHandler ["http-nio-9999"]
+[22:35:19:038] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:179) - Starting ProtocolHandler ["http-nio-9999"]
+[22:35:19:040] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:179) - Using a shared selector for servlet write/read
+[22:35:19:045] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:179) - Initializing Spring FrameworkServlet 'dispatcherServlet'
+[22:35:19:056] [INFO] - org.springframework.boot.StartupInfoLogger.logStarted(StartupInfoLogger.java:57) - Started WebApplication in 10.684 seconds (JVM running for 2501.046)
+[22:36:31:883] [INFO] - org.springframework.boot.StartupInfoLogger.logStarting(StartupInfoLogger.java:48) - Starting WebApplication on simm with PID 2672 (D:\myworkspace\git\smart-industry\smart-industry-train-web\target\classes started by dell in D:\myworkspace\git\smart-industry)
+[22:36:31:883] [INFO] - org.springframework.boot.SpringApplication.logStartupProfileInfo(SpringApplication.java:597) - The following profiles are active: dev
+[22:36:35:424] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:179) - Starting service [Tomcat]
+[22:36:35:425] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:179) - Starting Servlet Engine: Apache Tomcat/8.5.23
+[22:36:35:490] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:179) - Initializing Spring embedded WebApplicationContext
+[22:36:41:853] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:179) - Initializing ProtocolHandler ["http-nio-9999"]
+[22:36:41:854] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:179) - Starting ProtocolHandler ["http-nio-9999"]
+[22:36:41:856] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:179) - Using a shared selector for servlet write/read
+[22:36:41:864] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:179) - Initializing Spring FrameworkServlet 'dispatcherServlet'
+[22:36:41:882] [INFO] - org.springframework.boot.StartupInfoLogger.logStarted(StartupInfoLogger.java:57) - Started WebApplication in 10.205 seconds (JVM running for 2583.873)
+[22:37:48:089] [INFO] - org.springframework.boot.StartupInfoLogger.logStarting(StartupInfoLogger.java:48) - Starting WebApplication on simm with PID 2672 (D:\myworkspace\git\smart-industry\smart-industry-train-web\target\classes started by dell in D:\myworkspace\git\smart-industry)
+[22:37:48:089] [INFO] - org.springframework.boot.SpringApplication.logStartupProfileInfo(SpringApplication.java:597) - The following profiles are active: dev
+[22:37:50:954] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:179) - Starting service [Tomcat]
+[22:37:50:954] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:179) - Starting Servlet Engine: Apache Tomcat/8.5.23
+[22:37:50:995] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:179) - Initializing Spring embedded WebApplicationContext
+[22:37:56:889] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:179) - Initializing ProtocolHandler ["http-nio-9999"]
+[22:37:56:889] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:179) - Starting ProtocolHandler ["http-nio-9999"]
+[22:37:56:891] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:179) - Using a shared selector for servlet write/read
+[22:37:56:896] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:179) - Initializing Spring FrameworkServlet 'dispatcherServlet'
+[22:37:56:908] [INFO] - org.springframework.boot.StartupInfoLogger.logStarted(StartupInfoLogger.java:57) - Started WebApplication in 9.464 seconds (JVM running for 2658.898)
+[22:45:11:141] [INFO] - org.springframework.boot.StartupInfoLogger.logStarting(StartupInfoLogger.java:48) - Starting WebApplication on simm with PID 2672 (D:\myworkspace\git\smart-industry\smart-industry-train-web\target\classes started by dell in D:\myworkspace\git\smart-industry)
+[22:45:11:142] [INFO] - org.springframework.boot.SpringApplication.logStartupProfileInfo(SpringApplication.java:597) - The following profiles are active: dev
+[22:45:14:130] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:179) - Starting service [Tomcat]
+[22:45:14:130] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:179) - Starting Servlet Engine: Apache Tomcat/8.5.23
+[22:45:14:172] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:179) - Initializing Spring embedded WebApplicationContext
+[22:45:19:672] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:179) - Initializing ProtocolHandler ["http-nio-9999"]
+[22:45:19:672] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:179) - Starting ProtocolHandler ["http-nio-9999"]
+[22:45:19:674] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:179) - Using a shared selector for servlet write/read
+[22:45:19:678] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:179) - Initializing Spring FrameworkServlet 'dispatcherServlet'
+[22:45:19:690] [INFO] - org.springframework.boot.StartupInfoLogger.logStarted(StartupInfoLogger.java:57) - Started WebApplication in 9.035 seconds (JVM running for 3101.68)
+[22:47:24:099] [INFO] - org.springframework.boot.StartupInfoLogger.logStarting(StartupInfoLogger.java:48) - Starting WebApplication on simm with PID 2672 (D:\myworkspace\git\smart-industry\smart-industry-train-web\target\classes started by dell in D:\myworkspace\git\smart-industry)
+[22:47:24:100] [INFO] - org.springframework.boot.SpringApplication.logStartupProfileInfo(SpringApplication.java:597) - The following profiles are active: dev
+[22:47:26:584] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:179) - Starting service [Tomcat]
+[22:47:26:585] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:179) - Starting Servlet Engine: Apache Tomcat/8.5.23
+[22:47:26:622] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:179) - Initializing Spring embedded WebApplicationContext
+[22:47:34:584] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:179) - Initializing ProtocolHandler ["http-nio-9999"]
+[22:47:34:585] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:179) - Starting ProtocolHandler ["http-nio-9999"]
+[22:47:34:587] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:179) - Using a shared selector for servlet write/read
+[22:47:34:593] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:179) - Initializing Spring FrameworkServlet 'dispatcherServlet'
+[22:47:34:607] [INFO] - org.springframework.boot.StartupInfoLogger.logStarted(StartupInfoLogger.java:57) - Started WebApplication in 10.662 seconds (JVM running for 3236.597)
+[22:47:37:551] [INFO] - smart.industry.train.web.controllers.UserController.list(UserController.java:34) - This is an info message
+[22:47:37:632] [INFO] - com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:922) - {dataSource-3} inited
+[22:55:18:409] [INFO] - smart.industry.train.web.controllers.UserController.list(UserController.java:34) - This is an info message
+[23:07:16:135] [INFO] - com.alibaba.druid.pool.DruidDataSource.close(DruidDataSource.java:1817) - {dataSource-3} closed
+[23:07:17:618] [INFO] - org.springframework.boot.StartupInfoLogger.logStarting(StartupInfoLogger.java:48) - Starting WebApplication on simm with PID 2672 (D:\myworkspace\git\smart-industry\smart-industry-train-web\target\classes started by dell in D:\myworkspace\git\smart-industry)
+[23:07:17:619] [INFO] - org.springframework.boot.SpringApplication.logStartupProfileInfo(SpringApplication.java:597) - The following profiles are active: dev
+[23:07:20:882] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:179) - Starting service [Tomcat]
+[23:07:20:883] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:179) - Starting Servlet Engine: Apache Tomcat/8.5.23
+[23:07:20:920] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:179) - Initializing Spring embedded WebApplicationContext
+[23:07:28:671] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:179) - Initializing ProtocolHandler ["http-nio-9999"]
+[23:07:28:671] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:179) - Starting ProtocolHandler ["http-nio-9999"]
+[23:07:28:673] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:179) - Using a shared selector for servlet write/read
+[23:07:28:694] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:179) - Initializing Spring FrameworkServlet 'dispatcherServlet'
+[23:07:28:722] [INFO] - org.springframework.boot.StartupInfoLogger.logStarted(StartupInfoLogger.java:57) - Started WebApplication in 11.473 seconds (JVM running for 4430.712)
+[23:07:29:861] [INFO] - smart.industry.train.web.controllers.UserController.list(UserController.java:34) - This is an info message
+[23:07:30:088] [INFO] - com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:922) - {dataSource-4} inited
+[23:08:46:488] [INFO] - smart.industry.train.web.controllers.UserController.list(UserController.java:34) - This is an info message
+[23:13:36:080] [INFO] - com.alibaba.druid.pool.DruidDataSource.close(DruidDataSource.java:1817) - {dataSource-4} closed
+[23:13:37:095] [INFO] - org.springframework.boot.StartupInfoLogger.logStarting(StartupInfoLogger.java:48) - Starting WebApplication on simm with PID 2672 (D:\myworkspace\git\smart-industry\smart-industry-train-web\target\classes started by dell in D:\myworkspace\git\smart-industry)
+[23:13:37:096] [INFO] - org.springframework.boot.SpringApplication.logStartupProfileInfo(SpringApplication.java:597) - The following profiles are active: dev
+[23:13:41:447] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:179) - Starting service [Tomcat]
+[23:13:41:448] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:179) - Starting Servlet Engine: Apache Tomcat/8.5.23
+[23:13:41:494] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:179) - Initializing Spring embedded WebApplicationContext
+[23:13:46:837] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:179) - Initializing ProtocolHandler ["http-nio-9999"]
+[23:13:46:837] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:179) - Starting ProtocolHandler ["http-nio-9999"]
+[23:13:46:838] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:179) - Using a shared selector for servlet write/read
+[23:13:46:843] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:179) - Initializing Spring FrameworkServlet 'dispatcherServlet'
+[23:13:46:855] [INFO] - org.springframework.boot.StartupInfoLogger.logStarted(StartupInfoLogger.java:57) - Started WebApplication in 10.088 seconds (JVM running for 4808.846)
+[23:15:42:764] [INFO] - org.springframework.boot.StartupInfoLogger.logStarting(StartupInfoLogger.java:48) - Starting WebApplication on simm with PID 2672 (D:\myworkspace\git\smart-industry\smart-industry-train-web\target\classes started by dell in D:\myworkspace\git\smart-industry)
+[23:15:42:764] [INFO] - org.springframework.boot.SpringApplication.logStartupProfileInfo(SpringApplication.java:597) - The following profiles are active: dev
+[23:15:46:936] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:179) - Starting service [Tomcat]
+[23:15:46:936] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:179) - Starting Servlet Engine: Apache Tomcat/8.5.23
+[23:15:46:981] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:179) - Initializing Spring embedded WebApplicationContext
+[23:15:53:073] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:179) - Initializing ProtocolHandler ["http-nio-9999"]
+[23:15:53:073] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:179) - Starting ProtocolHandler ["http-nio-9999"]
+[23:15:53:074] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:179) - Using a shared selector for servlet write/read
+[23:15:53:079] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:179) - Initializing Spring FrameworkServlet 'dispatcherServlet'
+[23:15:53:091] [INFO] - org.springframework.boot.StartupInfoLogger.logStarted(StartupInfoLogger.java:57) - Started WebApplication in 10.578 seconds (JVM running for 4935.082)
+[23:15:53:872] [INFO] - smart.industry.train.web.controllers.UserController.list(UserController.java:34) - This is an info message
+[23:15:53:964] [INFO] - com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:922) - {dataSource-5} inited
+[23:17:05:882] [INFO] - com.alibaba.druid.pool.DruidDataSource.close(DruidDataSource.java:1817) - {dataSource-5} closed
+[23:17:06:701] [INFO] - org.springframework.boot.StartupInfoLogger.logStarting(StartupInfoLogger.java:48) - Starting WebApplication on simm with PID 2672 (D:\myworkspace\git\smart-industry\smart-industry-train-web\target\classes started by dell in D:\myworkspace\git\smart-industry)
+[23:17:06:702] [INFO] - org.springframework.boot.SpringApplication.logStartupProfileInfo(SpringApplication.java:597) - The following profiles are active: dev
+[23:17:10:151] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:179) - Starting service [Tomcat]
+[23:17:10:151] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:179) - Starting Servlet Engine: Apache Tomcat/8.5.23
+[23:17:10:188] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:179) - Initializing Spring embedded WebApplicationContext
+[23:17:16:291] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:179) - Initializing ProtocolHandler ["http-nio-9999"]
+[23:17:16:292] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:179) - Starting ProtocolHandler ["http-nio-9999"]
+[23:17:16:295] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:179) - Using a shared selector for servlet write/read
+[23:17:16:303] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:179) - Initializing Spring FrameworkServlet 'dispatcherServlet'
+[23:17:16:328] [INFO] - org.springframework.boot.StartupInfoLogger.logStarted(StartupInfoLogger.java:57) - Started WebApplication in 9.909 seconds (JVM running for 5018.319)
+[23:17:17:762] [INFO] - smart.industry.train.web.controllers.UserController.list(UserController.java:34) - This is an info message
+[23:17:17:952] [INFO] - com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:922) - {dataSource-6} inited
+[23:21:04:303] [INFO] - com.alibaba.druid.pool.DruidDataSource.close(DruidDataSource.java:1817) - {dataSource-6} closed
+[23:21:05:114] [INFO] - org.springframework.boot.StartupInfoLogger.logStarting(StartupInfoLogger.java:48) - Starting WebApplication on simm with PID 2672 (D:\myworkspace\git\smart-industry\smart-industry-train-web\target\classes started by dell in D:\myworkspace\git\smart-industry)
+[23:21:05:115] [INFO] - org.springframework.boot.SpringApplication.logStartupProfileInfo(SpringApplication.java:597) - The following profiles are active: dev
+[23:21:09:596] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:179) - Starting service [Tomcat]
+[23:21:09:596] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:179) - Starting Servlet Engine: Apache Tomcat/8.5.23
+[23:21:09:647] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:179) - Initializing Spring embedded WebApplicationContext
+[23:21:15:074] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:179) - Initializing ProtocolHandler ["http-nio-9999"]
+[23:21:15:075] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:179) - Starting ProtocolHandler ["http-nio-9999"]
+[23:21:15:076] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:179) - Using a shared selector for servlet write/read
+[23:21:15:083] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:179) - Initializing Spring FrameworkServlet 'dispatcherServlet'
+[23:21:15:095] [INFO] - org.springframework.boot.StartupInfoLogger.logStarted(StartupInfoLogger.java:57) - Started WebApplication in 10.173 seconds (JVM running for 5257.085)
+[23:22:56:561] [INFO] - org.springframework.boot.StartupInfoLogger.logStarting(StartupInfoLogger.java:48) - Starting WebApplication on simm with PID 2672 (D:\myworkspace\git\smart-industry\smart-industry-train-web\target\classes started by dell in D:\myworkspace\git\smart-industry)
+[23:22:56:562] [INFO] - org.springframework.boot.SpringApplication.logStartupProfileInfo(SpringApplication.java:597) - The following profiles are active: dev
+[23:23:00:280] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:179) - Starting service [Tomcat]
+[23:23:00:281] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:179) - Starting Servlet Engine: Apache Tomcat/8.5.23
+[23:23:00:323] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:179) - Initializing Spring embedded WebApplicationContext
+[23:23:06:616] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:179) - Initializing ProtocolHandler ["http-nio-9999"]
+[23:23:06:616] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:179) - Starting ProtocolHandler ["http-nio-9999"]
+[23:23:06:618] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:179) - Using a shared selector for servlet write/read
+[23:23:06:628] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:179) - Initializing Spring FrameworkServlet 'dispatcherServlet'
+[23:23:06:645] [INFO] - org.springframework.boot.StartupInfoLogger.logStarted(StartupInfoLogger.java:57) - Started WebApplication in 10.426 seconds (JVM running for 5368.636)
+[23:23:10:399] [INFO] - smart.industry.train.web.controllers.UserController.list(UserController.java:34) - This is an info message
+[23:23:10:477] [INFO] - com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:922) - {dataSource-7} inited
+[23:23:15:595] [INFO] - com.alibaba.druid.pool.DruidDataSource.close(DruidDataSource.java:1817) - {dataSource-7} closed
+[23:23:17:179] [INFO] - org.springframework.boot.StartupInfoLogger.logStarting(StartupInfoLogger.java:48) - Starting WebApplication on simm with PID 2672 (D:\myworkspace\git\smart-industry\smart-industry-train-web\target\classes started by dell in D:\myworkspace\git\smart-industry)
+[23:23:17:180] [INFO] - org.springframework.boot.SpringApplication.logStartupProfileInfo(SpringApplication.java:597) - The following profiles are active: dev
+[23:23:21:344] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:179) - Starting service [Tomcat]
+[23:23:21:344] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:179) - Starting Servlet Engine: Apache Tomcat/8.5.23
+[23:23:21:390] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:179) - Initializing Spring embedded WebApplicationContext
+[23:23:28:914] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:179) - Initializing ProtocolHandler ["http-nio-9999"]
+[23:23:28:914] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:179) - Starting ProtocolHandler ["http-nio-9999"]
+[23:23:28:917] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:179) - Using a shared selector for servlet write/read
+[23:23:28:948] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:179) - Initializing Spring FrameworkServlet 'dispatcherServlet'
+[23:23:28:969] [INFO] - org.springframework.boot.StartupInfoLogger.logStarted(StartupInfoLogger.java:57) - Started WebApplication in 12.208 seconds (JVM running for 5390.959)
+[23:27:02:002] [INFO] - org.springframework.boot.StartupInfoLogger.logStarting(StartupInfoLogger.java:48) - Starting WebApplication on simm with PID 2672 (D:\myworkspace\git\smart-industry\smart-industry-train-web\target\classes started by dell in D:\myworkspace\git\smart-industry)
+[23:27:02:003] [INFO] - org.springframework.boot.SpringApplication.logStartupProfileInfo(SpringApplication.java:597) - The following profiles are active: dev
+[23:27:06:492] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:179) - Starting service [Tomcat]
+[23:27:06:492] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:179) - Starting Servlet Engine: Apache Tomcat/8.5.23
+[23:27:06:551] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:179) - Initializing Spring embedded WebApplicationContext
+[23:27:13:674] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:179) - Initializing ProtocolHandler ["http-nio-9999"]
+[23:27:13:674] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:179) - Starting ProtocolHandler ["http-nio-9999"]
+[23:27:13:677] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:179) - Using a shared selector for servlet write/read
+[23:27:13:682] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:179) - Initializing Spring FrameworkServlet 'dispatcherServlet'
+[23:27:13:696] [INFO] - org.springframework.boot.StartupInfoLogger.logStarted(StartupInfoLogger.java:57) - Started WebApplication in 12.021 seconds (JVM running for 5615.686)
+[23:30:26:446] [INFO] - org.springframework.boot.StartupInfoLogger.logStarting(StartupInfoLogger.java:48) - Starting WebApplication on simm with PID 2672 (D:\myworkspace\git\smart-industry\smart-industry-train-web\target\classes started by dell in D:\myworkspace\git\smart-industry)
+[23:30:26:447] [INFO] - org.springframework.boot.SpringApplication.logStartupProfileInfo(SpringApplication.java:597) - The following profiles are active: dev
+[23:30:33:006] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:179) - Starting service [Tomcat]
+[23:30:33:006] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:179) - Starting Servlet Engine: Apache Tomcat/8.5.23
+[23:30:33:101] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:179) - Initializing Spring embedded WebApplicationContext
+[23:30:39:392] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:179) - Initializing ProtocolHandler ["http-nio-9999"]
+[23:30:39:393] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:179) - Starting ProtocolHandler ["http-nio-9999"]
+[23:30:39:394] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:179) - Using a shared selector for servlet write/read
+[23:30:39:399] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:179) - Initializing Spring FrameworkServlet 'dispatcherServlet'
+[23:30:39:411] [INFO] - org.springframework.boot.StartupInfoLogger.logStarted(StartupInfoLogger.java:57) - Started WebApplication in 13.354 seconds (JVM running for 5821.401)
+[23:46:00:486] [INFO] - org.springframework.boot.StartupInfoLogger.logStarting(StartupInfoLogger.java:48) - Starting WebApplication on simm with PID 2672 (D:\myworkspace\git\smart-industry\smart-industry-train-web\target\classes started by dell in D:\myworkspace\git\smart-industry)
+[23:46:00:487] [INFO] - org.springframework.boot.SpringApplication.logStartupProfileInfo(SpringApplication.java:597) - The following profiles are active: dev
+[23:46:04:856] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:179) - Starting service [Tomcat]
+[23:46:04:856] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:179) - Starting Servlet Engine: Apache Tomcat/8.5.23
+[23:46:04:896] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:179) - Initializing Spring embedded WebApplicationContext
+[23:46:11:094] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:179) - Initializing ProtocolHandler ["http-nio-9999"]
+[23:46:11:095] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:179) - Starting ProtocolHandler ["http-nio-9999"]
+[23:46:11:098] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:179) - Using a shared selector for servlet write/read
+[23:46:11:106] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:179) - Initializing Spring FrameworkServlet 'dispatcherServlet'
+[23:46:11:120] [INFO] - org.springframework.boot.StartupInfoLogger.logStarted(StartupInfoLogger.java:57) - Started WebApplication in 10.914 seconds (JVM running for 6753.111)

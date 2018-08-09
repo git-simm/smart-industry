@@ -1,0 +1,462 @@
+[08:50:40:841] [DEBUG] - org.springframework.boot.StartupInfoLogger.logStarting(StartupInfoLogger.java:51) - Running with Spring Boot v1.5.9.RELEASE, Spring v4.3.13.RELEASE
+[08:50:41:170] [DEBUG] - org.hibernate.validator.internal.util.logging.LoggerFactory.make(LoggerFactory.java:19) - Logging Provider: org.jboss.logging.Log4j2LoggerProvider
+[08:50:41:221] [DEBUG] - org.hibernate.validator.internal.engine.resolver.DefaultTraversableResolver.detectJPA(DefaultTraversableResolver.java:70) - Cannot find javax.persistence.Persistence on classpath. Assuming non JPA 2 environment. All properties will per default be traversable.
+[08:50:43:574] [DEBUG] - org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider.findCandidateComponents(ClassPathScanningCandidateComponentProvider.java:294) - Identified candidate component class: file [D:\myworkspace\git\smart-industry\smart-industry-train-biz\target\classes\smart\industry\train\biz\mapper\DesignClassMapper.class]
+[08:50:43:578] [DEBUG] - org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider.findCandidateComponents(ClassPathScanningCandidateComponentProvider.java:294) - Identified candidate component class: file [D:\myworkspace\git\smart-industry\smart-industry-train-biz\target\classes\smart\industry\train\biz\mapper\UserMapper.class]
+[08:50:43:579] [DEBUG] - org.mybatis.spring.mapper.ClassPathMapperScanner.processBeanDefinitions(ClassPathMapperScanner.java:180) - Creating MapperFactoryBean with name 'designClassMapper' and 'smart.industry.train.biz.mapper.DesignClassMapper' mapperInterface
+[08:50:43:579] [DEBUG] - org.mybatis.spring.mapper.ClassPathMapperScanner.processBeanDefinitions(ClassPathMapperScanner.java:216) - Enabling autowire by type for MapperFactoryBean with name 'designClassMapper'.
+[08:50:43:580] [DEBUG] - org.mybatis.spring.mapper.ClassPathMapperScanner.processBeanDefinitions(ClassPathMapperScanner.java:180) - Creating MapperFactoryBean with name 'userMapper' and 'smart.industry.train.biz.mapper.UserMapper' mapperInterface
+[08:50:43:580] [DEBUG] - org.mybatis.spring.mapper.ClassPathMapperScanner.processBeanDefinitions(ClassPathMapperScanner.java:216) - Enabling autowire by type for MapperFactoryBean with name 'userMapper'.
+[08:50:45:931] [DEBUG] - org.hibernate.validator.internal.engine.resolver.DefaultTraversableResolver.detectJPA(DefaultTraversableResolver.java:70) - Cannot find javax.persistence.Persistence on classpath. Assuming non JPA 2 environment. All properties will per default be traversable.
+[08:50:45:953] [DEBUG] - org.hibernate.validator.internal.engine.resolver.DefaultTraversableResolver.detectJPA(DefaultTraversableResolver.java:70) - Cannot find javax.persistence.Persistence on classpath. Assuming non JPA 2 environment. All properties will per default be traversable.
+[08:50:45:962] [DEBUG] - org.hibernate.validator.internal.engine.ConfigurationImpl.messageInterpolator(ConfigurationImpl.java:163) - Setting custom MessageInterpolator of type org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator
+[08:50:45:964] [DEBUG] - org.hibernate.validator.internal.engine.ConfigurationImpl.constraintValidatorFactory(ConfigurationImpl.java:185) - Setting custom ConstraintValidatorFactory of type org.springframework.validation.beanvalidation.SpringConstraintValidatorFactory
+[08:50:45:966] [DEBUG] - org.hibernate.validator.internal.engine.ConfigurationImpl.parameterNameProvider(ConfigurationImpl.java:199) - Setting custom ParameterNameProvider of type com.sun.proxy.$Proxy71
+[08:50:45:970] [DEBUG] - org.hibernate.validator.internal.xml.ValidationXmlParser.getValidationXmlInputStream(ValidationXmlParser.java:99) - Trying to load META-INF/validation.xml for XML based Validator configuration.
+[08:50:45:973] [DEBUG] - org.hibernate.validator.internal.xml.ResourceLoaderHelper.getResettableInputStreamForPath(ResourceLoaderHelper.java:47) - Trying to load META-INF/validation.xml via user class loader
+[08:50:45:975] [DEBUG] - org.hibernate.validator.internal.xml.ResourceLoaderHelper.getResettableInputStreamForPath(ResourceLoaderHelper.java:54) - Trying to load META-INF/validation.xml via TCCL
+[08:50:45:976] [DEBUG] - org.hibernate.validator.internal.xml.ResourceLoaderHelper.getResettableInputStreamForPath(ResourceLoaderHelper.java:60) - Trying to load META-INF/validation.xml via Hibernate Validator's class loader
+[08:50:45:977] [DEBUG] - org.hibernate.validator.internal.xml.ValidationXmlParser.getValidationXmlInputStream(ValidationXmlParser.java:106) - No META-INF/validation.xml found. Using annotation based configuration only.
+[08:50:46:298] [DEBUG] - org.apache.ibatis.logging.LogFactory.setImplementation(LogFactory.java:135) - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+[08:50:46:480] [DEBUG] - org.apache.ibatis.logging.LogFactory.setImplementation(LogFactory.java:135) - Logging initialized using 'class org.apache.ibatis.logging.log4j2.Log4j2Impl' adapter.
+[08:50:47:270] [DEBUG] - org.apache.ibatis.io.VFS.getInstance(VFS.java:84) - Using VFS adapter org.mybatis.spring.boot.autoconfigure.SpringBootVFS
+[08:50:47:273] [DEBUG] - org.apache.ibatis.io.ResolverUtil.addIfMatching(ResolverUtil.java:256) - Checking to see if class smart.industry.train.biz.mapper.DesignClassMapper matches criteria [is assignable to Object]
+[08:50:47:273] [DEBUG] - org.apache.ibatis.io.ResolverUtil.addIfMatching(ResolverUtil.java:256) - Checking to see if class smart.industry.train.biz.mapper.UserMapper matches criteria [is assignable to Object]
+[08:50:47:274] [DEBUG] - org.mybatis.spring.SqlSessionFactoryBean.buildSqlSessionFactory(SqlSessionFactoryBean.java:437) - Scanned package: 'smart.industry.train.biz.mapper' for aliases
+[08:50:47:274] [DEBUG] - org.mybatis.spring.SqlSessionFactoryBean.buildSqlSessionFactory(SqlSessionFactoryBean.java:455) - Registered plugin: 'com.github.pagehelper.PageInterceptor@7cd6aedc'
+[08:50:47:537] [DEBUG] - org.mybatis.spring.SqlSessionFactoryBean.buildSqlSessionFactory(SqlSessionFactoryBean.java:529) - Parsed mapper file: 'file [D:\myworkspace\git\smart-industry\smart-industry-train-biz\target\classes\mapper\DesignClassMapper.xml]'
+[08:50:47:561] [DEBUG] - org.mybatis.spring.SqlSessionFactoryBean.buildSqlSessionFactory(SqlSessionFactoryBean.java:529) - Parsed mapper file: 'file [D:\myworkspace\git\smart-industry\smart-industry-train-biz\target\classes\mapper\UserMapper.xml]'
+[08:50:47:596] [DEBUG] - org.apache.shiro.spring.LifecycleBeanPostProcessor.postProcessBeforeInitialization(LifecycleBeanPostProcessor.java:86) - Initializing bean [userRealm]...
+[08:50:50:330] [DEBUG] - org.apache.shiro.spring.web.ShiroFilterFactoryBean.createInstance(ShiroFilterFactoryBean.java:424) - Creating Shiro Filter instance.
+[08:50:50:379] [DEBUG] - org.apache.shiro.web.filter.mgt.DefaultFilterChainManager.createChain(DefaultFilterChainManager.java:127) - Creating chain [/static/**] from String definition [anon]
+[08:50:50:379] [DEBUG] - org.apache.shiro.web.filter.mgt.DefaultFilterChainManager.applyChainConfig(DefaultFilterChainManager.java:278) - Attempting to apply path [/static/**] to filter [anon] with config [null]
+[08:50:50:382] [DEBUG] - org.apache.shiro.web.filter.mgt.DefaultFilterChainManager.createChain(DefaultFilterChainManager.java:127) - Creating chain [/logout] from String definition [logout]
+[08:50:50:383] [DEBUG] - org.apache.shiro.web.filter.mgt.DefaultFilterChainManager.applyChainConfig(DefaultFilterChainManager.java:278) - Attempting to apply path [/logout] to filter [logout] with config [null]
+[08:50:50:384] [DEBUG] - org.apache.shiro.web.filter.mgt.DefaultFilterChainManager.createChain(DefaultFilterChainManager.java:127) - Creating chain [/loginvalid] from String definition [anon]
+[08:50:50:384] [DEBUG] - org.apache.shiro.web.filter.mgt.DefaultFilterChainManager.applyChainConfig(DefaultFilterChainManager.java:278) - Attempting to apply path [/loginvalid] to filter [anon] with config [null]
+[08:50:50:384] [DEBUG] - org.apache.shiro.web.filter.mgt.DefaultFilterChainManager.createChain(DefaultFilterChainManager.java:127) - Creating chain [/error] from String definition [anon]
+[08:50:50:385] [DEBUG] - org.apache.shiro.web.filter.mgt.DefaultFilterChainManager.applyChainConfig(DefaultFilterChainManager.java:278) - Attempting to apply path [/error] to filter [anon] with config [null]
+[08:50:50:386] [DEBUG] - org.apache.shiro.web.filter.mgt.DefaultFilterChainManager.createChain(DefaultFilterChainManager.java:127) - Creating chain [/**] from String definition [authc]
+[08:50:50:386] [DEBUG] - org.apache.shiro.web.filter.mgt.DefaultFilterChainManager.applyChainConfig(DefaultFilterChainManager.java:278) - Attempting to apply path [/**] to filter [authc] with config [null]
+[08:50:50:502] [DEBUG] - org.apache.shiro.spring.web.ShiroFilterFactoryBean.postProcessBeforeInitialization(ShiroFilterFactoryBean.java:501) - Found filter chain candidate filter 'requestContextFilter'
+[08:50:50:630] [DEBUG] - org.apache.shiro.spring.web.ShiroFilterFactoryBean.postProcessBeforeInitialization(ShiroFilterFactoryBean.java:501) - Found filter chain candidate filter 'hiddenHttpMethodFilter'
+[08:50:50:744] [DEBUG] - org.apache.shiro.spring.web.ShiroFilterFactoryBean.postProcessBeforeInitialization(ShiroFilterFactoryBean.java:501) - Found filter chain candidate filter 'httpPutFormContentFilter'
+[08:50:50:799] [DEBUG] - org.apache.shiro.spring.web.ShiroFilterFactoryBean.postProcessBeforeInitialization(ShiroFilterFactoryBean.java:501) - Found filter chain candidate filter 'characterEncodingFilter'
+[08:50:53:222] [DEBUG] - org.hibernate.validator.internal.engine.resolver.DefaultTraversableResolver.detectJPA(DefaultTraversableResolver.java:70) - Cannot find javax.persistence.Persistence on classpath. Assuming non JPA 2 environment. All properties will per default be traversable.
+[08:50:53:222] [DEBUG] - org.hibernate.validator.internal.engine.ConfigurationImpl.messageInterpolator(ConfigurationImpl.java:163) - Setting custom MessageInterpolator of type org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator
+[08:50:53:223] [DEBUG] - org.hibernate.validator.internal.engine.ConfigurationImpl.constraintValidatorFactory(ConfigurationImpl.java:185) - Setting custom ConstraintValidatorFactory of type org.springframework.validation.beanvalidation.SpringConstraintValidatorFactory
+[08:50:53:223] [DEBUG] - org.hibernate.validator.internal.engine.ConfigurationImpl.parameterNameProvider(ConfigurationImpl.java:199) - Setting custom ParameterNameProvider of type com.sun.proxy.$Proxy71
+[08:50:53:223] [DEBUG] - org.hibernate.validator.internal.xml.ValidationXmlParser.getValidationXmlInputStream(ValidationXmlParser.java:99) - Trying to load META-INF/validation.xml for XML based Validator configuration.
+[08:50:53:223] [DEBUG] - org.hibernate.validator.internal.xml.ResourceLoaderHelper.getResettableInputStreamForPath(ResourceLoaderHelper.java:47) - Trying to load META-INF/validation.xml via user class loader
+[08:50:53:224] [DEBUG] - org.hibernate.validator.internal.xml.ResourceLoaderHelper.getResettableInputStreamForPath(ResourceLoaderHelper.java:54) - Trying to load META-INF/validation.xml via TCCL
+[08:50:53:224] [DEBUG] - org.hibernate.validator.internal.xml.ResourceLoaderHelper.getResettableInputStreamForPath(ResourceLoaderHelper.java:60) - Trying to load META-INF/validation.xml via Hibernate Validator's class loader
+[08:50:53:225] [DEBUG] - org.hibernate.validator.internal.xml.ValidationXmlParser.getValidationXmlInputStream(ValidationXmlParser.java:106) - No META-INF/validation.xml found. Using annotation based configuration only.
+[10:12:17:704] [DEBUG] - org.apache.shiro.spring.LifecycleBeanPostProcessor.postProcessBeforeDestruction(LifecycleBeanPostProcessor.java:118) - Destroying bean [securityManager]...
+[10:12:19:184] [DEBUG] - org.springframework.boot.StartupInfoLogger.logStarting(StartupInfoLogger.java:51) - Running with Spring Boot v1.5.9.RELEASE, Spring v4.3.13.RELEASE
+[10:12:20:794] [DEBUG] - org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider.findCandidateComponents(ClassPathScanningCandidateComponentProvider.java:294) - Identified candidate component class: file [D:\myworkspace\git\smart-industry\smart-industry-train-biz\target\classes\smart\industry\train\biz\mapper\DesignClassMapper.class]
+[10:12:20:795] [DEBUG] - org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider.findCandidateComponents(ClassPathScanningCandidateComponentProvider.java:294) - Identified candidate component class: file [D:\myworkspace\git\smart-industry\smart-industry-train-biz\target\classes\smart\industry\train\biz\mapper\UserMapper.class]
+[10:12:20:795] [DEBUG] - org.mybatis.spring.mapper.ClassPathMapperScanner.processBeanDefinitions(ClassPathMapperScanner.java:180) - Creating MapperFactoryBean with name 'designClassMapper' and 'smart.industry.train.biz.mapper.DesignClassMapper' mapperInterface
+[10:12:20:795] [DEBUG] - org.mybatis.spring.mapper.ClassPathMapperScanner.processBeanDefinitions(ClassPathMapperScanner.java:216) - Enabling autowire by type for MapperFactoryBean with name 'designClassMapper'.
+[10:12:20:796] [DEBUG] - org.mybatis.spring.mapper.ClassPathMapperScanner.processBeanDefinitions(ClassPathMapperScanner.java:180) - Creating MapperFactoryBean with name 'userMapper' and 'smart.industry.train.biz.mapper.UserMapper' mapperInterface
+[10:12:20:796] [DEBUG] - org.mybatis.spring.mapper.ClassPathMapperScanner.processBeanDefinitions(ClassPathMapperScanner.java:216) - Enabling autowire by type for MapperFactoryBean with name 'userMapper'.
+[10:12:21:135] [DEBUG] - org.hibernate.validator.internal.engine.resolver.DefaultTraversableResolver.detectJPA(DefaultTraversableResolver.java:70) - Cannot find javax.persistence.Persistence on classpath. Assuming non JPA 2 environment. All properties will per default be traversable.
+[10:12:21:138] [DEBUG] - org.hibernate.validator.internal.engine.resolver.DefaultTraversableResolver.detectJPA(DefaultTraversableResolver.java:70) - Cannot find javax.persistence.Persistence on classpath. Assuming non JPA 2 environment. All properties will per default be traversable.
+[10:12:21:139] [DEBUG] - org.hibernate.validator.internal.engine.ConfigurationImpl.messageInterpolator(ConfigurationImpl.java:163) - Setting custom MessageInterpolator of type org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator
+[10:12:21:139] [DEBUG] - org.hibernate.validator.internal.engine.ConfigurationImpl.constraintValidatorFactory(ConfigurationImpl.java:185) - Setting custom ConstraintValidatorFactory of type org.springframework.validation.beanvalidation.SpringConstraintValidatorFactory
+[10:12:21:140] [DEBUG] - org.hibernate.validator.internal.engine.ConfigurationImpl.parameterNameProvider(ConfigurationImpl.java:199) - Setting custom ParameterNameProvider of type com.sun.proxy.$Proxy71
+[10:12:21:140] [DEBUG] - org.hibernate.validator.internal.xml.ValidationXmlParser.getValidationXmlInputStream(ValidationXmlParser.java:99) - Trying to load META-INF/validation.xml for XML based Validator configuration.
+[10:12:21:140] [DEBUG] - org.hibernate.validator.internal.xml.ResourceLoaderHelper.getResettableInputStreamForPath(ResourceLoaderHelper.java:47) - Trying to load META-INF/validation.xml via user class loader
+[10:12:21:141] [DEBUG] - org.hibernate.validator.internal.xml.ResourceLoaderHelper.getResettableInputStreamForPath(ResourceLoaderHelper.java:54) - Trying to load META-INF/validation.xml via TCCL
+[10:12:21:142] [DEBUG] - org.hibernate.validator.internal.xml.ResourceLoaderHelper.getResettableInputStreamForPath(ResourceLoaderHelper.java:60) - Trying to load META-INF/validation.xml via Hibernate Validator's class loader
+[10:12:21:143] [DEBUG] - org.hibernate.validator.internal.xml.ValidationXmlParser.getValidationXmlInputStream(ValidationXmlParser.java:106) - No META-INF/validation.xml found. Using annotation based configuration only.
+[10:12:21:160] [DEBUG] - org.apache.ibatis.logging.LogFactory.setImplementation(LogFactory.java:135) - Logging initialized using 'class org.apache.ibatis.logging.log4j2.Log4j2Impl' adapter.
+[10:12:21:490] [DEBUG] - org.apache.ibatis.io.ResolverUtil.addIfMatching(ResolverUtil.java:256) - Checking to see if class smart.industry.train.biz.mapper.DesignClassMapper matches criteria [is assignable to Object]
+[10:12:21:491] [DEBUG] - org.apache.ibatis.io.ResolverUtil.addIfMatching(ResolverUtil.java:256) - Checking to see if class smart.industry.train.biz.mapper.UserMapper matches criteria [is assignable to Object]
+[10:12:21:491] [DEBUG] - org.mybatis.spring.SqlSessionFactoryBean.buildSqlSessionFactory(SqlSessionFactoryBean.java:437) - Scanned package: 'smart.industry.train.biz.mapper' for aliases
+[10:12:21:491] [DEBUG] - org.mybatis.spring.SqlSessionFactoryBean.buildSqlSessionFactory(SqlSessionFactoryBean.java:455) - Registered plugin: 'com.github.pagehelper.PageInterceptor@59688e43'
+[10:12:21:512] [DEBUG] - org.mybatis.spring.SqlSessionFactoryBean.buildSqlSessionFactory(SqlSessionFactoryBean.java:529) - Parsed mapper file: 'file [D:\myworkspace\git\smart-industry\smart-industry-train-biz\target\classes\mapper\DesignClassMapper.xml]'
+[10:12:21:527] [DEBUG] - org.mybatis.spring.SqlSessionFactoryBean.buildSqlSessionFactory(SqlSessionFactoryBean.java:529) - Parsed mapper file: 'file [D:\myworkspace\git\smart-industry\smart-industry-train-biz\target\classes\mapper\UserMapper.xml]'
+[10:12:21:532] [DEBUG] - org.apache.shiro.spring.LifecycleBeanPostProcessor.postProcessBeforeInitialization(LifecycleBeanPostProcessor.java:86) - Initializing bean [userRealm]...
+[10:12:22:338] [DEBUG] - org.apache.shiro.spring.web.ShiroFilterFactoryBean.createInstance(ShiroFilterFactoryBean.java:424) - Creating Shiro Filter instance.
+[10:12:22:339] [DEBUG] - org.apache.shiro.web.filter.mgt.DefaultFilterChainManager.createChain(DefaultFilterChainManager.java:127) - Creating chain [/static/**] from String definition [anon]
+[10:12:22:339] [DEBUG] - org.apache.shiro.web.filter.mgt.DefaultFilterChainManager.applyChainConfig(DefaultFilterChainManager.java:278) - Attempting to apply path [/static/**] to filter [anon] with config [null]
+[10:12:22:339] [DEBUG] - org.apache.shiro.web.filter.mgt.DefaultFilterChainManager.createChain(DefaultFilterChainManager.java:127) - Creating chain [/logout] from String definition [logout]
+[10:12:22:339] [DEBUG] - org.apache.shiro.web.filter.mgt.DefaultFilterChainManager.applyChainConfig(DefaultFilterChainManager.java:278) - Attempting to apply path [/logout] to filter [logout] with config [null]
+[10:12:22:339] [DEBUG] - org.apache.shiro.web.filter.mgt.DefaultFilterChainManager.createChain(DefaultFilterChainManager.java:127) - Creating chain [/loginvalid] from String definition [anon]
+[10:12:22:339] [DEBUG] - org.apache.shiro.web.filter.mgt.DefaultFilterChainManager.applyChainConfig(DefaultFilterChainManager.java:278) - Attempting to apply path [/loginvalid] to filter [anon] with config [null]
+[10:12:22:340] [DEBUG] - org.apache.shiro.web.filter.mgt.DefaultFilterChainManager.createChain(DefaultFilterChainManager.java:127) - Creating chain [/error] from String definition [anon]
+[10:12:22:340] [DEBUG] - org.apache.shiro.web.filter.mgt.DefaultFilterChainManager.applyChainConfig(DefaultFilterChainManager.java:278) - Attempting to apply path [/error] to filter [anon] with config [null]
+[10:12:22:340] [DEBUG] - org.apache.shiro.web.filter.mgt.DefaultFilterChainManager.createChain(DefaultFilterChainManager.java:127) - Creating chain [/**] from String definition [authc]
+[10:12:22:340] [DEBUG] - org.apache.shiro.web.filter.mgt.DefaultFilterChainManager.applyChainConfig(DefaultFilterChainManager.java:278) - Attempting to apply path [/**] to filter [authc] with config [null]
+[10:12:22:437] [DEBUG] - org.apache.shiro.spring.web.ShiroFilterFactoryBean.postProcessBeforeInitialization(ShiroFilterFactoryBean.java:501) - Found filter chain candidate filter 'requestContextFilter'
+[10:12:22:541] [DEBUG] - org.apache.shiro.spring.web.ShiroFilterFactoryBean.postProcessBeforeInitialization(ShiroFilterFactoryBean.java:501) - Found filter chain candidate filter 'hiddenHttpMethodFilter'
+[10:12:22:604] [DEBUG] - org.apache.shiro.spring.web.ShiroFilterFactoryBean.postProcessBeforeInitialization(ShiroFilterFactoryBean.java:501) - Found filter chain candidate filter 'httpPutFormContentFilter'
+[10:12:22:650] [DEBUG] - org.apache.shiro.spring.web.ShiroFilterFactoryBean.postProcessBeforeInitialization(ShiroFilterFactoryBean.java:501) - Found filter chain candidate filter 'characterEncodingFilter'
+[10:12:24:434] [DEBUG] - org.hibernate.validator.internal.engine.resolver.DefaultTraversableResolver.detectJPA(DefaultTraversableResolver.java:70) - Cannot find javax.persistence.Persistence on classpath. Assuming non JPA 2 environment. All properties will per default be traversable.
+[10:12:24:434] [DEBUG] - org.hibernate.validator.internal.engine.ConfigurationImpl.messageInterpolator(ConfigurationImpl.java:163) - Setting custom MessageInterpolator of type org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator
+[10:12:24:434] [DEBUG] - org.hibernate.validator.internal.engine.ConfigurationImpl.constraintValidatorFactory(ConfigurationImpl.java:185) - Setting custom ConstraintValidatorFactory of type org.springframework.validation.beanvalidation.SpringConstraintValidatorFactory
+[10:12:24:435] [DEBUG] - org.hibernate.validator.internal.engine.ConfigurationImpl.parameterNameProvider(ConfigurationImpl.java:199) - Setting custom ParameterNameProvider of type com.sun.proxy.$Proxy71
+[10:12:24:435] [DEBUG] - org.hibernate.validator.internal.xml.ValidationXmlParser.getValidationXmlInputStream(ValidationXmlParser.java:99) - Trying to load META-INF/validation.xml for XML based Validator configuration.
+[10:12:24:435] [DEBUG] - org.hibernate.validator.internal.xml.ResourceLoaderHelper.getResettableInputStreamForPath(ResourceLoaderHelper.java:47) - Trying to load META-INF/validation.xml via user class loader
+[10:12:24:435] [DEBUG] - org.hibernate.validator.internal.xml.ResourceLoaderHelper.getResettableInputStreamForPath(ResourceLoaderHelper.java:54) - Trying to load META-INF/validation.xml via TCCL
+[10:12:24:436] [DEBUG] - org.hibernate.validator.internal.xml.ResourceLoaderHelper.getResettableInputStreamForPath(ResourceLoaderHelper.java:60) - Trying to load META-INF/validation.xml via Hibernate Validator's class loader
+[10:12:24:436] [DEBUG] - org.hibernate.validator.internal.xml.ValidationXmlParser.getValidationXmlInputStream(ValidationXmlParser.java:106) - No META-INF/validation.xml found. Using annotation based configuration only.
+[10:15:13:797] [DEBUG] - org.mybatis.spring.SqlSessionUtils.getSqlSession(SqlSessionUtils.java:97) - Creating a new SqlSession
+[10:15:13:819] [DEBUG] - org.mybatis.spring.SqlSessionUtils.registerSessionHolder(SqlSessionUtils.java:148) - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7527829d] was not registered for synchronization because synchronization is not active
+[10:15:14:773] [DEBUG] - org.mybatis.spring.transaction.SpringManagedTransaction.openConnection(SpringManagedTransaction.java:87) - JDBC Connection [com.mysql.jdbc.JDBC4Connection@6dd2e9f5] will not be managed by Spring
+[10:15:14:779] [DEBUG] - org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:159) - ==>  Preparing: select id, `name`, psw, sex from user WHERE `name` = ? 
+[10:15:14:812] [DEBUG] - org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:159) - ==> Parameters: 张三(String)
+[10:15:14:837] [DEBUG] - org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:159) - <==      Total: 1
+[10:15:14:840] [DEBUG] - com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:129) - stmt enter cache
+[10:15:14:842] [DEBUG] - org.mybatis.spring.SqlSessionUtils.closeSqlSession(SqlSessionUtils.java:191) - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7527829d]
+[10:15:14:847] [DEBUG] - org.apache.shiro.realm.AuthenticatingRealm.getAuthenticationInfo(AuthenticatingRealm.java:572) - Looked up AuthenticationInfo [smart.industry.train.biz.entity.User@30eb43cc] from doGetAuthenticationInfo
+[10:15:14:848] [DEBUG] - org.apache.shiro.realm.AuthenticatingRealm.cacheAuthenticationInfoIfPossible(AuthenticatingRealm.java:510) - AuthenticationInfo caching is disabled for info [smart.industry.train.biz.entity.User@30eb43cc].  Submitted token: [org.apache.shiro.authc.UsernamePasswordToken - 张三, rememberMe=false].
+[10:15:14:848] [DEBUG] - org.apache.shiro.authc.credential.SimpleCredentialsMatcher.equals(SimpleCredentialsMatcher.java:96) - Performing credentials equality check for tokenCredentials of type [java.lang.String and accountCredentials of type [java.lang.String]
+[10:15:14:848] [DEBUG] - org.apache.shiro.authc.credential.SimpleCredentialsMatcher.equals(SimpleCredentialsMatcher.java:102) - Both credentials arguments can be easily converted to byte arrays.  Performing array equals comparison
+[10:15:14:849] [DEBUG] - org.apache.shiro.authc.AbstractAuthenticator.authenticate(AbstractAuthenticator.java:233) - Authentication successful for token [org.apache.shiro.authc.UsernamePasswordToken - 张三, rememberMe=false].  Returned account [smart.industry.train.biz.entity.User@30eb43cc]
+[10:15:14:849] [DEBUG] - org.apache.shiro.subject.support.DefaultSubjectContext.resolveSecurityManager(DefaultSubjectContext.java:101) - No SecurityManager available in subject context map.  Falling back to SecurityUtils.getSecurityManager() lookup.
+[10:15:14:850] [DEBUG] - org.apache.shiro.mgt.DefaultSecurityManager.resolveSession(DefaultSecurityManager.java:440) - Context already contains a session.  Returning.
+[10:15:14:850] [DEBUG] - org.apache.shiro.subject.support.DefaultSubjectContext.resolveSecurityManager(DefaultSubjectContext.java:101) - No SecurityManager available in subject context map.  Falling back to SecurityUtils.getSecurityManager() lookup.
+[10:15:14:850] [DEBUG] - org.apache.shiro.web.servlet.SimpleCookie.addCookieHeader(SimpleCookie.java:226) - Added HttpServletResponse Cookie [rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Sat, 04-Aug-2018 02:15:14 GMT]
+[10:15:14:851] [DEBUG] - org.apache.shiro.mgt.AbstractRememberMeManager.onSuccessfulLogin(AbstractRememberMeManager.java:290) - AuthenticationToken did not indicate RememberMe is requested.  RememberMe functionality will not be executed for corresponding account.
+[10:15:15:973] [DEBUG] - smart.industry.train.web.controllers.UserController.list(UserController.java:33) - This is a debug message
+[10:15:16:016] [DEBUG] - org.mybatis.spring.SqlSessionUtils.getSqlSession(SqlSessionUtils.java:97) - Creating a new SqlSession
+[10:15:16:017] [DEBUG] - org.mybatis.spring.SqlSessionUtils.registerSessionHolder(SqlSessionUtils.java:148) - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3c42c549] was not registered for synchronization because synchronization is not active
+[10:15:16:020] [DEBUG] - org.mybatis.spring.transaction.SpringManagedTransaction.openConnection(SpringManagedTransaction.java:87) - JDBC Connection [com.mysql.jdbc.JDBC4Connection@6dd2e9f5] will not be managed by Spring
+[10:15:16:021] [DEBUG] - org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:159) - ==>  Preparing: select id, `name`, psw, sex from user 
+[10:15:16:025] [DEBUG] - org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:159) - ==> Parameters: 
+[10:15:16:030] [DEBUG] - org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:159) - <==      Total: 2
+[10:15:16:031] [DEBUG] - com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:129) - stmt enter cache
+[10:15:16:032] [DEBUG] - org.mybatis.spring.SqlSessionUtils.closeSqlSession(SqlSessionUtils.java:191) - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3c42c549]
+[10:18:15:921] [DEBUG] - smart.industry.train.web.controllers.UserController.list(UserController.java:33) - This is a debug message
+[10:18:15:923] [DEBUG] - org.mybatis.spring.SqlSessionUtils.getSqlSession(SqlSessionUtils.java:97) - Creating a new SqlSession
+[10:18:15:923] [DEBUG] - org.mybatis.spring.SqlSessionUtils.registerSessionHolder(SqlSessionUtils.java:148) - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@53d8a7b4] was not registered for synchronization because synchronization is not active
+[10:18:15:938] [DEBUG] - org.mybatis.spring.transaction.SpringManagedTransaction.openConnection(SpringManagedTransaction.java:87) - JDBC Connection [com.mysql.jdbc.JDBC4Connection@6dd2e9f5] will not be managed by Spring
+[10:18:15:939] [DEBUG] - org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:159) - ==>  Preparing: select id, `name`, psw, sex from user 
+[10:18:15:940] [DEBUG] - org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:159) - ==> Parameters: 
+[10:18:15:956] [DEBUG] - org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:159) - <==      Total: 2
+[10:18:15:957] [DEBUG] - org.mybatis.spring.SqlSessionUtils.closeSqlSession(SqlSessionUtils.java:191) - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@53d8a7b4]
+[10:19:16:868] [DEBUG] - smart.industry.train.web.controllers.UserController.list(UserController.java:33) - This is a debug message
+[10:19:16:871] [DEBUG] - org.mybatis.spring.SqlSessionUtils.getSqlSession(SqlSessionUtils.java:97) - Creating a new SqlSession
+[10:19:16:872] [DEBUG] - org.mybatis.spring.SqlSessionUtils.registerSessionHolder(SqlSessionUtils.java:148) - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3f4798b3] was not registered for synchronization because synchronization is not active
+[10:19:16:919] [DEBUG] - org.mybatis.spring.transaction.SpringManagedTransaction.openConnection(SpringManagedTransaction.java:87) - JDBC Connection [com.mysql.jdbc.JDBC4Connection@6dd2e9f5] will not be managed by Spring
+[10:19:16:920] [DEBUG] - org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:159) - ==>  Preparing: select id, `name`, psw, sex from user 
+[10:19:16:921] [DEBUG] - org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:159) - ==> Parameters: 
+[10:19:16:989] [DEBUG] - org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:159) - <==      Total: 2
+[10:19:17:003] [DEBUG] - org.mybatis.spring.SqlSessionUtils.closeSqlSession(SqlSessionUtils.java:191) - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3f4798b3]
+[10:19:17:905] [DEBUG] - org.apache.shiro.spring.LifecycleBeanPostProcessor.postProcessBeforeDestruction(LifecycleBeanPostProcessor.java:118) - Destroying bean [securityManager]...
+[10:19:17:918] [DEBUG] - com.alibaba.druid.pool.PreparedStatementPool.closeRemovedStatement(PreparedStatementPool.java:160) - stmt exit cache
+[10:19:17:919] [DEBUG] - com.alibaba.druid.pool.PreparedStatementPool.closeRemovedStatement(PreparedStatementPool.java:160) - stmt exit cache
+[10:19:19:046] [DEBUG] - org.springframework.boot.StartupInfoLogger.logStarting(StartupInfoLogger.java:51) - Running with Spring Boot v1.5.9.RELEASE, Spring v4.3.13.RELEASE
+[10:19:21:356] [DEBUG] - org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider.findCandidateComponents(ClassPathScanningCandidateComponentProvider.java:294) - Identified candidate component class: file [D:\myworkspace\git\smart-industry\smart-industry-train-biz\target\classes\smart\industry\train\biz\mapper\DesignClassMapper.class]
+[10:19:21:357] [DEBUG] - org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider.findCandidateComponents(ClassPathScanningCandidateComponentProvider.java:294) - Identified candidate component class: file [D:\myworkspace\git\smart-industry\smart-industry-train-biz\target\classes\smart\industry\train\biz\mapper\UserMapper.class]
+[10:19:21:357] [DEBUG] - org.mybatis.spring.mapper.ClassPathMapperScanner.processBeanDefinitions(ClassPathMapperScanner.java:180) - Creating MapperFactoryBean with name 'designClassMapper' and 'smart.industry.train.biz.mapper.DesignClassMapper' mapperInterface
+[10:19:21:357] [DEBUG] - org.mybatis.spring.mapper.ClassPathMapperScanner.processBeanDefinitions(ClassPathMapperScanner.java:216) - Enabling autowire by type for MapperFactoryBean with name 'designClassMapper'.
+[10:19:21:358] [DEBUG] - org.mybatis.spring.mapper.ClassPathMapperScanner.processBeanDefinitions(ClassPathMapperScanner.java:180) - Creating MapperFactoryBean with name 'userMapper' and 'smart.industry.train.biz.mapper.UserMapper' mapperInterface
+[10:19:21:358] [DEBUG] - org.mybatis.spring.mapper.ClassPathMapperScanner.processBeanDefinitions(ClassPathMapperScanner.java:216) - Enabling autowire by type for MapperFactoryBean with name 'userMapper'.
+[10:19:21:755] [DEBUG] - org.hibernate.validator.internal.engine.resolver.DefaultTraversableResolver.detectJPA(DefaultTraversableResolver.java:70) - Cannot find javax.persistence.Persistence on classpath. Assuming non JPA 2 environment. All properties will per default be traversable.
+[10:19:21:762] [DEBUG] - org.hibernate.validator.internal.engine.resolver.DefaultTraversableResolver.detectJPA(DefaultTraversableResolver.java:70) - Cannot find javax.persistence.Persistence on classpath. Assuming non JPA 2 environment. All properties will per default be traversable.
+[10:19:21:763] [DEBUG] - org.hibernate.validator.internal.engine.ConfigurationImpl.messageInterpolator(ConfigurationImpl.java:163) - Setting custom MessageInterpolator of type org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator
+[10:19:21:764] [DEBUG] - org.hibernate.validator.internal.engine.ConfigurationImpl.constraintValidatorFactory(ConfigurationImpl.java:185) - Setting custom ConstraintValidatorFactory of type org.springframework.validation.beanvalidation.SpringConstraintValidatorFactory
+[10:19:21:766] [DEBUG] - org.hibernate.validator.internal.engine.ConfigurationImpl.parameterNameProvider(ConfigurationImpl.java:199) - Setting custom ParameterNameProvider of type com.sun.proxy.$Proxy71
+[10:19:21:766] [DEBUG] - org.hibernate.validator.internal.xml.ValidationXmlParser.getValidationXmlInputStream(ValidationXmlParser.java:99) - Trying to load META-INF/validation.xml for XML based Validator configuration.
+[10:19:21:768] [DEBUG] - org.hibernate.validator.internal.xml.ResourceLoaderHelper.getResettableInputStreamForPath(ResourceLoaderHelper.java:47) - Trying to load META-INF/validation.xml via user class loader
+[10:19:21:769] [DEBUG] - org.hibernate.validator.internal.xml.ResourceLoaderHelper.getResettableInputStreamForPath(ResourceLoaderHelper.java:54) - Trying to load META-INF/validation.xml via TCCL
+[10:19:21:770] [DEBUG] - org.hibernate.validator.internal.xml.ResourceLoaderHelper.getResettableInputStreamForPath(ResourceLoaderHelper.java:60) - Trying to load META-INF/validation.xml via Hibernate Validator's class loader
+[10:19:21:772] [DEBUG] - org.hibernate.validator.internal.xml.ValidationXmlParser.getValidationXmlInputStream(ValidationXmlParser.java:106) - No META-INF/validation.xml found. Using annotation based configuration only.
+[10:19:21:802] [DEBUG] - org.apache.ibatis.logging.LogFactory.setImplementation(LogFactory.java:135) - Logging initialized using 'class org.apache.ibatis.logging.log4j2.Log4j2Impl' adapter.
+[10:19:22:257] [DEBUG] - org.apache.ibatis.io.ResolverUtil.addIfMatching(ResolverUtil.java:256) - Checking to see if class smart.industry.train.biz.mapper.DesignClassMapper matches criteria [is assignable to Object]
+[10:19:22:258] [DEBUG] - org.apache.ibatis.io.ResolverUtil.addIfMatching(ResolverUtil.java:256) - Checking to see if class smart.industry.train.biz.mapper.UserMapper matches criteria [is assignable to Object]
+[10:19:22:258] [DEBUG] - org.mybatis.spring.SqlSessionFactoryBean.buildSqlSessionFactory(SqlSessionFactoryBean.java:437) - Scanned package: 'smart.industry.train.biz.mapper' for aliases
+[10:19:22:258] [DEBUG] - org.mybatis.spring.SqlSessionFactoryBean.buildSqlSessionFactory(SqlSessionFactoryBean.java:455) - Registered plugin: 'com.github.pagehelper.PageInterceptor@65c7f57c'
+[10:19:22:281] [DEBUG] - org.mybatis.spring.SqlSessionFactoryBean.buildSqlSessionFactory(SqlSessionFactoryBean.java:529) - Parsed mapper file: 'file [D:\myworkspace\git\smart-industry\smart-industry-train-biz\target\classes\mapper\DesignClassMapper.xml]'
+[10:19:22:291] [DEBUG] - org.mybatis.spring.SqlSessionFactoryBean.buildSqlSessionFactory(SqlSessionFactoryBean.java:529) - Parsed mapper file: 'file [D:\myworkspace\git\smart-industry\smart-industry-train-biz\target\classes\mapper\UserMapper.xml]'
+[10:19:22:298] [DEBUG] - org.apache.shiro.spring.LifecycleBeanPostProcessor.postProcessBeforeInitialization(LifecycleBeanPostProcessor.java:86) - Initializing bean [userRealm]...
+[10:19:23:003] [DEBUG] - org.apache.shiro.spring.web.ShiroFilterFactoryBean.createInstance(ShiroFilterFactoryBean.java:424) - Creating Shiro Filter instance.
+[10:19:23:003] [DEBUG] - org.apache.shiro.web.filter.mgt.DefaultFilterChainManager.createChain(DefaultFilterChainManager.java:127) - Creating chain [/static/**] from String definition [anon]
+[10:19:23:003] [DEBUG] - org.apache.shiro.web.filter.mgt.DefaultFilterChainManager.applyChainConfig(DefaultFilterChainManager.java:278) - Attempting to apply path [/static/**] to filter [anon] with config [null]
+[10:19:23:004] [DEBUG] - org.apache.shiro.web.filter.mgt.DefaultFilterChainManager.createChain(DefaultFilterChainManager.java:127) - Creating chain [/logout] from String definition [logout]
+[10:19:23:004] [DEBUG] - org.apache.shiro.web.filter.mgt.DefaultFilterChainManager.applyChainConfig(DefaultFilterChainManager.java:278) - Attempting to apply path [/logout] to filter [logout] with config [null]
+[10:19:23:004] [DEBUG] - org.apache.shiro.web.filter.mgt.DefaultFilterChainManager.createChain(DefaultFilterChainManager.java:127) - Creating chain [/loginvalid] from String definition [anon]
+[10:19:23:004] [DEBUG] - org.apache.shiro.web.filter.mgt.DefaultFilterChainManager.applyChainConfig(DefaultFilterChainManager.java:278) - Attempting to apply path [/loginvalid] to filter [anon] with config [null]
+[10:19:23:004] [DEBUG] - org.apache.shiro.web.filter.mgt.DefaultFilterChainManager.createChain(DefaultFilterChainManager.java:127) - Creating chain [/error] from String definition [anon]
+[10:19:23:004] [DEBUG] - org.apache.shiro.web.filter.mgt.DefaultFilterChainManager.applyChainConfig(DefaultFilterChainManager.java:278) - Attempting to apply path [/error] to filter [anon] with config [null]
+[10:19:23:004] [DEBUG] - org.apache.shiro.web.filter.mgt.DefaultFilterChainManager.createChain(DefaultFilterChainManager.java:127) - Creating chain [/**] from String definition [authc]
+[10:19:23:004] [DEBUG] - org.apache.shiro.web.filter.mgt.DefaultFilterChainManager.applyChainConfig(DefaultFilterChainManager.java:278) - Attempting to apply path [/**] to filter [authc] with config [null]
+[10:19:23:044] [DEBUG] - org.apache.shiro.spring.web.ShiroFilterFactoryBean.postProcessBeforeInitialization(ShiroFilterFactoryBean.java:501) - Found filter chain candidate filter 'requestContextFilter'
+[10:19:23:071] [DEBUG] - org.apache.shiro.spring.web.ShiroFilterFactoryBean.postProcessBeforeInitialization(ShiroFilterFactoryBean.java:501) - Found filter chain candidate filter 'hiddenHttpMethodFilter'
+[10:19:23:090] [DEBUG] - org.apache.shiro.spring.web.ShiroFilterFactoryBean.postProcessBeforeInitialization(ShiroFilterFactoryBean.java:501) - Found filter chain candidate filter 'httpPutFormContentFilter'
+[10:19:23:108] [DEBUG] - org.apache.shiro.spring.web.ShiroFilterFactoryBean.postProcessBeforeInitialization(ShiroFilterFactoryBean.java:501) - Found filter chain candidate filter 'characterEncodingFilter'
+[10:19:24:655] [DEBUG] - org.hibernate.validator.internal.engine.resolver.DefaultTraversableResolver.detectJPA(DefaultTraversableResolver.java:70) - Cannot find javax.persistence.Persistence on classpath. Assuming non JPA 2 environment. All properties will per default be traversable.
+[10:19:24:655] [DEBUG] - org.hibernate.validator.internal.engine.ConfigurationImpl.messageInterpolator(ConfigurationImpl.java:163) - Setting custom MessageInterpolator of type org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator
+[10:19:24:655] [DEBUG] - org.hibernate.validator.internal.engine.ConfigurationImpl.constraintValidatorFactory(ConfigurationImpl.java:185) - Setting custom ConstraintValidatorFactory of type org.springframework.validation.beanvalidation.SpringConstraintValidatorFactory
+[10:19:24:656] [DEBUG] - org.hibernate.validator.internal.engine.ConfigurationImpl.parameterNameProvider(ConfigurationImpl.java:199) - Setting custom ParameterNameProvider of type com.sun.proxy.$Proxy71
+[10:19:24:656] [DEBUG] - org.hibernate.validator.internal.xml.ValidationXmlParser.getValidationXmlInputStream(ValidationXmlParser.java:99) - Trying to load META-INF/validation.xml for XML based Validator configuration.
+[10:19:24:656] [DEBUG] - org.hibernate.validator.internal.xml.ResourceLoaderHelper.getResettableInputStreamForPath(ResourceLoaderHelper.java:47) - Trying to load META-INF/validation.xml via user class loader
+[10:19:24:656] [DEBUG] - org.hibernate.validator.internal.xml.ResourceLoaderHelper.getResettableInputStreamForPath(ResourceLoaderHelper.java:54) - Trying to load META-INF/validation.xml via TCCL
+[10:19:24:657] [DEBUG] - org.hibernate.validator.internal.xml.ResourceLoaderHelper.getResettableInputStreamForPath(ResourceLoaderHelper.java:60) - Trying to load META-INF/validation.xml via Hibernate Validator's class loader
+[10:19:24:657] [DEBUG] - org.hibernate.validator.internal.xml.ValidationXmlParser.getValidationXmlInputStream(ValidationXmlParser.java:106) - No META-INF/validation.xml found. Using annotation based configuration only.
+[10:20:55:962] [DEBUG] - smart.industry.train.web.controllers.UserController.list(UserController.java:33) - This is a debug message
+[10:20:55:965] [DEBUG] - org.mybatis.spring.SqlSessionUtils.getSqlSession(SqlSessionUtils.java:97) - Creating a new SqlSession
+[10:20:55:966] [DEBUG] - org.mybatis.spring.SqlSessionUtils.registerSessionHolder(SqlSessionUtils.java:148) - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2a25c302] was not registered for synchronization because synchronization is not active
+[10:20:56:331] [DEBUG] - org.mybatis.spring.transaction.SpringManagedTransaction.openConnection(SpringManagedTransaction.java:87) - JDBC Connection [com.mysql.jdbc.JDBC4Connection@798ccb09] will not be managed by Spring
+[10:20:56:332] [DEBUG] - org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:159) - ==>  Preparing: select id, `name`, psw, sex from user 
+[10:20:56:332] [DEBUG] - org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:159) - ==> Parameters: 
+[10:20:56:336] [DEBUG] - org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:159) - <==      Total: 2
+[10:20:56:337] [DEBUG] - com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:129) - stmt enter cache
+[10:20:56:338] [DEBUG] - org.mybatis.spring.SqlSessionUtils.closeSqlSession(SqlSessionUtils.java:191) - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2a25c302]
+[10:26:31:909] [DEBUG] - smart.industry.train.web.controllers.UserController.list(UserController.java:33) - This is a debug message
+[10:26:31:915] [DEBUG] - org.mybatis.spring.SqlSessionUtils.getSqlSession(SqlSessionUtils.java:97) - Creating a new SqlSession
+[10:26:31:917] [DEBUG] - org.mybatis.spring.SqlSessionUtils.registerSessionHolder(SqlSessionUtils.java:148) - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@23dc946a] was not registered for synchronization because synchronization is not active
+[10:26:31:947] [DEBUG] - org.mybatis.spring.transaction.SpringManagedTransaction.openConnection(SpringManagedTransaction.java:87) - JDBC Connection [com.mysql.jdbc.JDBC4Connection@798ccb09] will not be managed by Spring
+[10:26:31:948] [DEBUG] - org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:159) - ==>  Preparing: select id, `name`, psw, sex from user 
+[10:26:31:950] [DEBUG] - org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:159) - ==> Parameters: 
+[10:26:31:991] [DEBUG] - org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:159) - <==      Total: 2
+[10:26:31:992] [DEBUG] - org.mybatis.spring.SqlSessionUtils.closeSqlSession(SqlSessionUtils.java:191) - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@23dc946a]
+[11:15:43:177] [DEBUG] - smart.industry.train.web.controllers.UserController.list(UserController.java:33) - This is a debug message
+[11:15:43:185] [DEBUG] - org.mybatis.spring.SqlSessionUtils.getSqlSession(SqlSessionUtils.java:97) - Creating a new SqlSession
+[11:15:43:187] [DEBUG] - org.mybatis.spring.SqlSessionUtils.registerSessionHolder(SqlSessionUtils.java:148) - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6b4d26bd] was not registered for synchronization because synchronization is not active
+[11:15:43:195] [DEBUG] - org.mybatis.spring.transaction.SpringManagedTransaction.openConnection(SpringManagedTransaction.java:87) - JDBC Connection [com.mysql.jdbc.JDBC4Connection@798ccb09] will not be managed by Spring
+[11:15:43:196] [DEBUG] - org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:159) - ==>  Preparing: select id, `name`, psw, sex from user 
+[11:15:43:198] [DEBUG] - org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:159) - ==> Parameters: 
+[11:15:43:216] [DEBUG] - org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:159) - <==      Total: 2
+[11:15:43:217] [DEBUG] - org.mybatis.spring.SqlSessionUtils.closeSqlSession(SqlSessionUtils.java:191) - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6b4d26bd]
+[11:15:53:193] [DEBUG] - smart.industry.train.web.controllers.UserController.list(UserController.java:33) - This is a debug message
+[11:15:53:195] [DEBUG] - org.mybatis.spring.SqlSessionUtils.getSqlSession(SqlSessionUtils.java:97) - Creating a new SqlSession
+[11:15:53:195] [DEBUG] - org.mybatis.spring.SqlSessionUtils.registerSessionHolder(SqlSessionUtils.java:148) - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@21243c75] was not registered for synchronization because synchronization is not active
+[11:15:53:196] [DEBUG] - org.mybatis.spring.transaction.SpringManagedTransaction.openConnection(SpringManagedTransaction.java:87) - JDBC Connection [com.mysql.jdbc.JDBC4Connection@798ccb09] will not be managed by Spring
+[11:15:53:198] [DEBUG] - org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:159) - ==>  Preparing: select id, `name`, psw, sex from user 
+[11:15:53:198] [DEBUG] - org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:159) - ==> Parameters: 
+[11:15:53:233] [DEBUG] - org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:159) - <==      Total: 2
+[11:15:53:234] [DEBUG] - org.mybatis.spring.SqlSessionUtils.closeSqlSession(SqlSessionUtils.java:191) - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@21243c75]
+[11:16:10:192] [DEBUG] - smart.industry.train.web.controllers.UserController.list(UserController.java:33) - This is a debug message
+[11:16:10:194] [DEBUG] - org.mybatis.spring.SqlSessionUtils.getSqlSession(SqlSessionUtils.java:97) - Creating a new SqlSession
+[11:16:10:194] [DEBUG] - org.mybatis.spring.SqlSessionUtils.registerSessionHolder(SqlSessionUtils.java:148) - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1acc5946] was not registered for synchronization because synchronization is not active
+[11:16:10:195] [DEBUG] - org.mybatis.spring.transaction.SpringManagedTransaction.openConnection(SpringManagedTransaction.java:87) - JDBC Connection [com.mysql.jdbc.JDBC4Connection@798ccb09] will not be managed by Spring
+[11:16:10:196] [DEBUG] - org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:159) - ==>  Preparing: select id, `name`, psw, sex from user 
+[11:16:10:197] [DEBUG] - org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:159) - ==> Parameters: 
+[11:16:10:216] [DEBUG] - org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:159) - <==      Total: 2
+[11:16:10:216] [DEBUG] - org.mybatis.spring.SqlSessionUtils.closeSqlSession(SqlSessionUtils.java:191) - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1acc5946]
+[11:26:20:132] [DEBUG] - smart.industry.train.web.controllers.UserController.list(UserController.java:33) - This is a debug message
+[11:26:20:133] [DEBUG] - org.mybatis.spring.SqlSessionUtils.getSqlSession(SqlSessionUtils.java:97) - Creating a new SqlSession
+[11:26:20:134] [DEBUG] - org.mybatis.spring.SqlSessionUtils.registerSessionHolder(SqlSessionUtils.java:148) - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@23f0207] was not registered for synchronization because synchronization is not active
+[11:26:20:138] [DEBUG] - org.mybatis.spring.transaction.SpringManagedTransaction.openConnection(SpringManagedTransaction.java:87) - JDBC Connection [com.mysql.jdbc.JDBC4Connection@798ccb09] will not be managed by Spring
+[11:26:20:139] [DEBUG] - org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:159) - ==>  Preparing: select id, `name`, psw, sex from user 
+[11:26:20:139] [DEBUG] - org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:159) - ==> Parameters: 
+[11:26:20:143] [DEBUG] - org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:159) - <==      Total: 2
+[11:26:20:144] [DEBUG] - org.mybatis.spring.SqlSessionUtils.closeSqlSession(SqlSessionUtils.java:191) - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@23f0207]
+[11:28:20:017] [DEBUG] - smart.industry.train.web.controllers.UserController.list(UserController.java:33) - This is a debug message
+[11:28:20:019] [DEBUG] - org.mybatis.spring.SqlSessionUtils.getSqlSession(SqlSessionUtils.java:97) - Creating a new SqlSession
+[11:28:20:019] [DEBUG] - org.mybatis.spring.SqlSessionUtils.registerSessionHolder(SqlSessionUtils.java:148) - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7550780b] was not registered for synchronization because synchronization is not active
+[11:28:20:021] [DEBUG] - org.mybatis.spring.transaction.SpringManagedTransaction.openConnection(SpringManagedTransaction.java:87) - JDBC Connection [com.mysql.jdbc.JDBC4Connection@798ccb09] will not be managed by Spring
+[11:28:20:021] [DEBUG] - org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:159) - ==>  Preparing: select id, `name`, psw, sex from user 
+[11:28:20:022] [DEBUG] - org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:159) - ==> Parameters: 
+[11:28:20:025] [DEBUG] - org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:159) - <==      Total: 2
+[11:28:20:026] [DEBUG] - org.mybatis.spring.SqlSessionUtils.closeSqlSession(SqlSessionUtils.java:191) - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7550780b]
+[11:36:52:630] [DEBUG] - smart.industry.train.web.controllers.UserController.list(UserController.java:33) - This is a debug message
+[11:36:52:633] [DEBUG] - org.mybatis.spring.SqlSessionUtils.getSqlSession(SqlSessionUtils.java:97) - Creating a new SqlSession
+[11:36:52:634] [DEBUG] - org.mybatis.spring.SqlSessionUtils.registerSessionHolder(SqlSessionUtils.java:148) - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7534a505] was not registered for synchronization because synchronization is not active
+[11:36:52:715] [DEBUG] - org.mybatis.spring.transaction.SpringManagedTransaction.openConnection(SpringManagedTransaction.java:87) - JDBC Connection [com.mysql.jdbc.JDBC4Connection@798ccb09] will not be managed by Spring
+[11:36:52:716] [DEBUG] - org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:159) - ==>  Preparing: select id, `name`, psw, sex from user 
+[11:36:52:717] [DEBUG] - org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:159) - ==> Parameters: 
+[11:36:52:749] [DEBUG] - org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:159) - <==      Total: 2
+[11:36:52:751] [DEBUG] - org.mybatis.spring.SqlSessionUtils.closeSqlSession(SqlSessionUtils.java:191) - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7534a505]
+[11:44:17:697] [DEBUG] - smart.industry.train.web.controllers.UserController.list(UserController.java:33) - This is a debug message
+[11:44:17:700] [DEBUG] - org.mybatis.spring.SqlSessionUtils.getSqlSession(SqlSessionUtils.java:97) - Creating a new SqlSession
+[11:44:17:700] [DEBUG] - org.mybatis.spring.SqlSessionUtils.registerSessionHolder(SqlSessionUtils.java:148) - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@405ee6cb] was not registered for synchronization because synchronization is not active
+[11:44:17:705] [DEBUG] - org.mybatis.spring.transaction.SpringManagedTransaction.openConnection(SpringManagedTransaction.java:87) - JDBC Connection [com.mysql.jdbc.JDBC4Connection@798ccb09] will not be managed by Spring
+[11:44:17:706] [DEBUG] - org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:159) - ==>  Preparing: select id, `name`, psw, sex from user 
+[11:44:17:707] [DEBUG] - org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:159) - ==> Parameters: 
+[11:44:17:710] [DEBUG] - org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:159) - <==      Total: 2
+[11:44:17:711] [DEBUG] - org.mybatis.spring.SqlSessionUtils.closeSqlSession(SqlSessionUtils.java:191) - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@405ee6cb]
+[11:45:48:185] [DEBUG] - smart.industry.train.web.controllers.UserController.list(UserController.java:33) - This is a debug message
+[11:45:48:188] [DEBUG] - org.mybatis.spring.SqlSessionUtils.getSqlSession(SqlSessionUtils.java:97) - Creating a new SqlSession
+[11:45:48:188] [DEBUG] - org.mybatis.spring.SqlSessionUtils.registerSessionHolder(SqlSessionUtils.java:148) - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5b2999fb] was not registered for synchronization because synchronization is not active
+[11:45:48:192] [DEBUG] - org.mybatis.spring.transaction.SpringManagedTransaction.openConnection(SpringManagedTransaction.java:87) - JDBC Connection [com.mysql.jdbc.JDBC4Connection@798ccb09] will not be managed by Spring
+[11:45:48:193] [DEBUG] - org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:159) - ==>  Preparing: select id, `name`, psw, sex from user 
+[11:45:48:194] [DEBUG] - org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:159) - ==> Parameters: 
+[11:45:48:196] [DEBUG] - org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:159) - <==      Total: 2
+[11:45:48:197] [DEBUG] - org.mybatis.spring.SqlSessionUtils.closeSqlSession(SqlSessionUtils.java:191) - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5b2999fb]
+[11:53:19:024] [DEBUG] - smart.industry.train.web.controllers.UserController.list(UserController.java:33) - This is a debug message
+[11:53:19:026] [DEBUG] - org.mybatis.spring.SqlSessionUtils.getSqlSession(SqlSessionUtils.java:97) - Creating a new SqlSession
+[11:53:19:027] [DEBUG] - org.mybatis.spring.SqlSessionUtils.registerSessionHolder(SqlSessionUtils.java:148) - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@38bc81fa] was not registered for synchronization because synchronization is not active
+[11:53:19:035] [DEBUG] - org.mybatis.spring.transaction.SpringManagedTransaction.openConnection(SpringManagedTransaction.java:87) - JDBC Connection [com.mysql.jdbc.JDBC4Connection@798ccb09] will not be managed by Spring
+[11:53:19:036] [DEBUG] - org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:159) - ==>  Preparing: select id, `name`, psw, sex from user 
+[11:53:19:037] [DEBUG] - org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:159) - ==> Parameters: 
+[11:53:19:044] [DEBUG] - org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:159) - <==      Total: 2
+[11:53:19:045] [DEBUG] - org.mybatis.spring.SqlSessionUtils.closeSqlSession(SqlSessionUtils.java:191) - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@38bc81fa]
+[12:28:59:242] [DEBUG] - smart.industry.train.web.controllers.UserController.list(UserController.java:33) - This is a debug message
+[12:28:59:250] [DEBUG] - org.mybatis.spring.SqlSessionUtils.getSqlSession(SqlSessionUtils.java:97) - Creating a new SqlSession
+[12:28:59:299] [DEBUG] - org.mybatis.spring.SqlSessionUtils.registerSessionHolder(SqlSessionUtils.java:148) - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4ad2cb12] was not registered for synchronization because synchronization is not active
+[12:28:59:308] [DEBUG] - org.mybatis.spring.transaction.SpringManagedTransaction.openConnection(SpringManagedTransaction.java:87) - JDBC Connection [com.mysql.jdbc.JDBC4Connection@798ccb09] will not be managed by Spring
+[12:28:59:311] [DEBUG] - org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:159) - ==>  Preparing: select id, `name`, psw, sex from user 
+[12:28:59:313] [DEBUG] - org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:159) - ==> Parameters: 
+[12:28:59:326] [DEBUG] - org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:159) - <==      Total: 2
+[12:28:59:330] [DEBUG] - org.mybatis.spring.SqlSessionUtils.closeSqlSession(SqlSessionUtils.java:191) - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4ad2cb12]
+[12:49:13:692] [DEBUG] - org.apache.shiro.web.servlet.SimpleCookie.addCookieHeader(SimpleCookie.java:226) - Added HttpServletResponse Cookie [rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Sat, 04-Aug-2018 04:49:13 GMT]
+[12:49:19:520] [DEBUG] - org.mybatis.spring.SqlSessionUtils.getSqlSession(SqlSessionUtils.java:97) - Creating a new SqlSession
+[12:49:19:520] [DEBUG] - org.mybatis.spring.SqlSessionUtils.registerSessionHolder(SqlSessionUtils.java:148) - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3f114624] was not registered for synchronization because synchronization is not active
+[12:49:19:524] [DEBUG] - org.mybatis.spring.transaction.SpringManagedTransaction.openConnection(SpringManagedTransaction.java:87) - JDBC Connection [com.mysql.jdbc.JDBC4Connection@798ccb09] will not be managed by Spring
+[12:49:19:525] [DEBUG] - org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:159) - ==>  Preparing: select id, `name`, psw, sex from user WHERE `name` = ? 
+[12:49:19:526] [DEBUG] - org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:159) - ==> Parameters: 张三(String)
+[12:49:19:529] [DEBUG] - org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:159) - <==      Total: 1
+[12:49:19:530] [DEBUG] - com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:129) - stmt enter cache
+[12:49:19:531] [DEBUG] - org.mybatis.spring.SqlSessionUtils.closeSqlSession(SqlSessionUtils.java:191) - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3f114624]
+[12:49:19:532] [DEBUG] - org.apache.shiro.realm.AuthenticatingRealm.getAuthenticationInfo(AuthenticatingRealm.java:572) - Looked up AuthenticationInfo [smart.industry.train.biz.entity.User@2892cda8] from doGetAuthenticationInfo
+[12:49:19:532] [DEBUG] - org.apache.shiro.realm.AuthenticatingRealm.cacheAuthenticationInfoIfPossible(AuthenticatingRealm.java:510) - AuthenticationInfo caching is disabled for info [smart.industry.train.biz.entity.User@2892cda8].  Submitted token: [org.apache.shiro.authc.UsernamePasswordToken - 张三, rememberMe=false].
+[12:49:19:533] [DEBUG] - org.apache.shiro.authc.credential.SimpleCredentialsMatcher.equals(SimpleCredentialsMatcher.java:96) - Performing credentials equality check for tokenCredentials of type [java.lang.String and accountCredentials of type [java.lang.String]
+[12:49:19:533] [DEBUG] - org.apache.shiro.authc.credential.SimpleCredentialsMatcher.equals(SimpleCredentialsMatcher.java:102) - Both credentials arguments can be easily converted to byte arrays.  Performing array equals comparison
+[12:49:19:533] [DEBUG] - org.apache.shiro.authc.AbstractAuthenticator.authenticate(AbstractAuthenticator.java:233) - Authentication successful for token [org.apache.shiro.authc.UsernamePasswordToken - 张三, rememberMe=false].  Returned account [smart.industry.train.biz.entity.User@2892cda8]
+[12:49:19:534] [DEBUG] - org.apache.shiro.subject.support.DefaultSubjectContext.resolveSecurityManager(DefaultSubjectContext.java:101) - No SecurityManager available in subject context map.  Falling back to SecurityUtils.getSecurityManager() lookup.
+[12:49:19:534] [DEBUG] - org.apache.shiro.mgt.DefaultSecurityManager.resolveSession(DefaultSecurityManager.java:440) - Context already contains a session.  Returning.
+[12:49:19:534] [DEBUG] - org.apache.shiro.subject.support.DefaultSubjectContext.resolveSecurityManager(DefaultSubjectContext.java:101) - No SecurityManager available in subject context map.  Falling back to SecurityUtils.getSecurityManager() lookup.
+[12:49:19:535] [DEBUG] - org.apache.shiro.web.servlet.SimpleCookie.addCookieHeader(SimpleCookie.java:226) - Added HttpServletResponse Cookie [rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Sat, 04-Aug-2018 04:49:19 GMT]
+[12:49:19:535] [DEBUG] - org.apache.shiro.mgt.AbstractRememberMeManager.onSuccessfulLogin(AbstractRememberMeManager.java:290) - AuthenticationToken did not indicate RememberMe is requested.  RememberMe functionality will not be executed for corresponding account.
+[12:49:19:817] [DEBUG] - smart.industry.train.web.controllers.UserController.list(UserController.java:33) - This is a debug message
+[12:49:19:820] [DEBUG] - org.mybatis.spring.SqlSessionUtils.getSqlSession(SqlSessionUtils.java:97) - Creating a new SqlSession
+[12:49:19:820] [DEBUG] - org.mybatis.spring.SqlSessionUtils.registerSessionHolder(SqlSessionUtils.java:148) - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@54a417be] was not registered for synchronization because synchronization is not active
+[12:49:19:821] [DEBUG] - org.mybatis.spring.transaction.SpringManagedTransaction.openConnection(SpringManagedTransaction.java:87) - JDBC Connection [com.mysql.jdbc.JDBC4Connection@798ccb09] will not be managed by Spring
+[12:49:19:822] [DEBUG] - org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:159) - ==>  Preparing: select id, `name`, psw, sex from user 
+[12:49:19:822] [DEBUG] - org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:159) - ==> Parameters: 
+[12:49:19:828] [DEBUG] - org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:159) - <==      Total: 2
+[12:49:19:830] [DEBUG] - org.mybatis.spring.SqlSessionUtils.closeSqlSession(SqlSessionUtils.java:191) - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@54a417be]
+[12:49:38:224] [DEBUG] - org.mybatis.spring.SqlSessionUtils.getSqlSession(SqlSessionUtils.java:97) - Creating a new SqlSession
+[12:49:38:224] [DEBUG] - org.mybatis.spring.SqlSessionUtils.registerSessionHolder(SqlSessionUtils.java:148) - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@62912a35] was not registered for synchronization because synchronization is not active
+[12:49:38:225] [DEBUG] - org.mybatis.spring.transaction.SpringManagedTransaction.openConnection(SpringManagedTransaction.java:87) - JDBC Connection [com.mysql.jdbc.JDBC4Connection@798ccb09] will not be managed by Spring
+[12:49:38:226] [DEBUG] - org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:159) - ==>  Preparing: select id, createdate, createby, modifydate, modifyby, `name`, pid, sort from design_class order by pid,sort 
+[12:49:38:226] [DEBUG] - org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:159) - ==> Parameters: 
+[12:49:38:234] [DEBUG] - org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:159) - <==      Total: 10
+[12:49:38:235] [DEBUG] - com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:129) - stmt enter cache
+[12:49:38:236] [DEBUG] - org.mybatis.spring.SqlSessionUtils.closeSqlSession(SqlSessionUtils.java:191) - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@62912a35]
+[12:55:23:312] [DEBUG] - org.apache.shiro.web.servlet.SimpleCookie.addCookieHeader(SimpleCookie.java:226) - Added HttpServletResponse Cookie [rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Sat, 04-Aug-2018 04:55:23 GMT]
+[12:55:23:313] [DEBUG] - org.apache.shiro.mgt.DefaultSecurityManager.logout(DefaultSecurityManager.java:558) - Logging out subject with primary principal smart.industry.train.biz.entity.User@2892cda8
+[12:55:28:768] [DEBUG] - org.mybatis.spring.SqlSessionUtils.getSqlSession(SqlSessionUtils.java:97) - Creating a new SqlSession
+[12:55:28:769] [DEBUG] - org.mybatis.spring.SqlSessionUtils.registerSessionHolder(SqlSessionUtils.java:148) - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4218ea67] was not registered for synchronization because synchronization is not active
+[12:55:28:772] [DEBUG] - org.mybatis.spring.transaction.SpringManagedTransaction.openConnection(SpringManagedTransaction.java:87) - JDBC Connection [com.mysql.jdbc.JDBC4Connection@798ccb09] will not be managed by Spring
+[12:55:28:772] [DEBUG] - org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:159) - ==>  Preparing: select id, `name`, psw, sex from user WHERE `name` = ? 
+[12:55:28:773] [DEBUG] - org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:159) - ==> Parameters: 李四(String)
+[12:55:28:776] [DEBUG] - org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:159) - <==      Total: 1
+[12:55:28:776] [DEBUG] - org.mybatis.spring.SqlSessionUtils.closeSqlSession(SqlSessionUtils.java:191) - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4218ea67]
+[12:55:28:777] [DEBUG] - org.apache.shiro.realm.AuthenticatingRealm.getAuthenticationInfo(AuthenticatingRealm.java:572) - Looked up AuthenticationInfo [smart.industry.train.biz.entity.User@45df3b28] from doGetAuthenticationInfo
+[12:55:28:777] [DEBUG] - org.apache.shiro.realm.AuthenticatingRealm.cacheAuthenticationInfoIfPossible(AuthenticatingRealm.java:510) - AuthenticationInfo caching is disabled for info [smart.industry.train.biz.entity.User@45df3b28].  Submitted token: [org.apache.shiro.authc.UsernamePasswordToken - 李四, rememberMe=false].
+[12:55:28:777] [DEBUG] - org.apache.shiro.authc.credential.SimpleCredentialsMatcher.equals(SimpleCredentialsMatcher.java:96) - Performing credentials equality check for tokenCredentials of type [java.lang.String and accountCredentials of type [java.lang.String]
+[12:55:28:777] [DEBUG] - org.apache.shiro.authc.credential.SimpleCredentialsMatcher.equals(SimpleCredentialsMatcher.java:102) - Both credentials arguments can be easily converted to byte arrays.  Performing array equals comparison
+[12:55:28:777] [DEBUG] - org.apache.shiro.authc.AbstractAuthenticator.authenticate(AbstractAuthenticator.java:233) - Authentication successful for token [org.apache.shiro.authc.UsernamePasswordToken - 李四, rememberMe=false].  Returned account [smart.industry.train.biz.entity.User@45df3b28]
+[12:55:28:778] [DEBUG] - org.apache.shiro.subject.support.DefaultSubjectContext.resolveSecurityManager(DefaultSubjectContext.java:101) - No SecurityManager available in subject context map.  Falling back to SecurityUtils.getSecurityManager() lookup.
+[12:55:28:778] [DEBUG] - org.apache.shiro.mgt.DefaultSecurityManager.resolveSession(DefaultSecurityManager.java:440) - Context already contains a session.  Returning.
+[12:55:28:778] [DEBUG] - org.apache.shiro.subject.support.DefaultSubjectContext.resolveSecurityManager(DefaultSubjectContext.java:101) - No SecurityManager available in subject context map.  Falling back to SecurityUtils.getSecurityManager() lookup.
+[12:55:28:778] [DEBUG] - org.apache.shiro.web.servlet.SimpleCookie.addCookieHeader(SimpleCookie.java:226) - Added HttpServletResponse Cookie [rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Sat, 04-Aug-2018 04:55:28 GMT]
+[12:55:28:778] [DEBUG] - org.apache.shiro.mgt.AbstractRememberMeManager.onSuccessfulLogin(AbstractRememberMeManager.java:290) - AuthenticationToken did not indicate RememberMe is requested.  RememberMe functionality will not be executed for corresponding account.
+[12:55:29:112] [DEBUG] - smart.industry.train.web.controllers.UserController.list(UserController.java:33) - This is a debug message
+[12:55:29:114] [DEBUG] - org.mybatis.spring.SqlSessionUtils.getSqlSession(SqlSessionUtils.java:97) - Creating a new SqlSession
+[12:55:29:114] [DEBUG] - org.mybatis.spring.SqlSessionUtils.registerSessionHolder(SqlSessionUtils.java:148) - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5b77cc5] was not registered for synchronization because synchronization is not active
+[12:55:29:115] [DEBUG] - org.mybatis.spring.transaction.SpringManagedTransaction.openConnection(SpringManagedTransaction.java:87) - JDBC Connection [com.mysql.jdbc.JDBC4Connection@798ccb09] will not be managed by Spring
+[12:55:29:116] [DEBUG] - org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:159) - ==>  Preparing: select id, `name`, psw, sex from user 
+[12:55:29:117] [DEBUG] - org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:159) - ==> Parameters: 
+[12:55:29:120] [DEBUG] - org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:159) - <==      Total: 2
+[12:55:29:121] [DEBUG] - org.mybatis.spring.SqlSessionUtils.closeSqlSession(SqlSessionUtils.java:191) - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5b77cc5]
+[13:32:37:746] [DEBUG] - smart.industry.train.web.controllers.UserController.list(UserController.java:33) - This is a debug message
+[13:32:37:752] [DEBUG] - org.mybatis.spring.SqlSessionUtils.getSqlSession(SqlSessionUtils.java:97) - Creating a new SqlSession
+[13:32:37:754] [DEBUG] - org.mybatis.spring.SqlSessionUtils.registerSessionHolder(SqlSessionUtils.java:148) - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1a6eedf5] was not registered for synchronization because synchronization is not active
+[13:32:37:760] [DEBUG] - org.mybatis.spring.transaction.SpringManagedTransaction.openConnection(SpringManagedTransaction.java:87) - JDBC Connection [com.mysql.jdbc.JDBC4Connection@798ccb09] will not be managed by Spring
+[13:32:37:762] [DEBUG] - org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:159) - ==>  Preparing: select id, `name`, psw, sex from user 
+[13:32:37:764] [DEBUG] - org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:159) - ==> Parameters: 
+[13:32:37:776] [DEBUG] - org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:159) - <==      Total: 2
+[13:32:37:777] [DEBUG] - org.mybatis.spring.SqlSessionUtils.closeSqlSession(SqlSessionUtils.java:191) - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1a6eedf5]
+[13:40:19:016] [DEBUG] - smart.industry.train.web.controllers.UserController.list(UserController.java:33) - This is a debug message
+[13:40:19:018] [DEBUG] - org.mybatis.spring.SqlSessionUtils.getSqlSession(SqlSessionUtils.java:97) - Creating a new SqlSession
+[13:40:19:019] [DEBUG] - org.mybatis.spring.SqlSessionUtils.registerSessionHolder(SqlSessionUtils.java:148) - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@659cd9d8] was not registered for synchronization because synchronization is not active
+[13:40:19:084] [DEBUG] - org.mybatis.spring.transaction.SpringManagedTransaction.openConnection(SpringManagedTransaction.java:87) - JDBC Connection [com.mysql.jdbc.JDBC4Connection@798ccb09] will not be managed by Spring
+[13:40:19:084] [DEBUG] - org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:159) - ==>  Preparing: select id, `name`, psw, sex from user 
+[13:40:19:085] [DEBUG] - org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:159) - ==> Parameters: 
+[13:40:19:131] [DEBUG] - org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:159) - <==      Total: 2
+[13:40:19:132] [DEBUG] - org.mybatis.spring.SqlSessionUtils.closeSqlSession(SqlSessionUtils.java:191) - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@659cd9d8]
+[13:46:17:952] [DEBUG] - org.mybatis.spring.SqlSessionUtils.getSqlSession(SqlSessionUtils.java:97) - Creating a new SqlSession
+[13:46:17:953] [DEBUG] - org.mybatis.spring.SqlSessionUtils.registerSessionHolder(SqlSessionUtils.java:148) - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@c9233b9] was not registered for synchronization because synchronization is not active
+[13:46:17:970] [DEBUG] - org.mybatis.spring.transaction.SpringManagedTransaction.openConnection(SpringManagedTransaction.java:87) - JDBC Connection [com.mysql.jdbc.JDBC4Connection@798ccb09] will not be managed by Spring
+[13:46:17:971] [DEBUG] - org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:159) - ==>  Preparing: select id, createdate, createby, modifydate, modifyby, `name`, pid, sort from design_class order by pid,sort 
+[13:46:17:971] [DEBUG] - org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:159) - ==> Parameters: 
+[13:46:17:994] [DEBUG] - org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:159) - <==      Total: 10
+[13:46:17:994] [DEBUG] - org.mybatis.spring.SqlSessionUtils.closeSqlSession(SqlSessionUtils.java:191) - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@c9233b9]
+[23:31:33:925] [DEBUG] - org.springframework.boot.StartupInfoLogger.logStarting(StartupInfoLogger.java:51) - Running with Spring Boot v1.5.9.RELEASE, Spring v4.3.13.RELEASE
+[23:31:34:460] [DEBUG] - org.hibernate.validator.internal.util.logging.LoggerFactory.make(LoggerFactory.java:19) - Logging Provider: org.jboss.logging.Log4j2LoggerProvider
+[23:31:34:528] [DEBUG] - org.hibernate.validator.internal.engine.resolver.DefaultTraversableResolver.detectJPA(DefaultTraversableResolver.java:70) - Cannot find javax.persistence.Persistence on classpath. Assuming non JPA 2 environment. All properties will per default be traversable.
+[23:31:36:426] [DEBUG] - org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider.findCandidateComponents(ClassPathScanningCandidateComponentProvider.java:294) - Identified candidate component class: file [D:\myworkspace\git\smart-industry\smart-industry-train-biz\target\classes\smart\industry\train\biz\mapper\DesignClassMapper.class]
+[23:31:36:427] [DEBUG] - org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider.findCandidateComponents(ClassPathScanningCandidateComponentProvider.java:294) - Identified candidate component class: file [D:\myworkspace\git\smart-industry\smart-industry-train-biz\target\classes\smart\industry\train\biz\mapper\UserMapper.class]
+[23:31:36:427] [DEBUG] - org.mybatis.spring.mapper.ClassPathMapperScanner.processBeanDefinitions(ClassPathMapperScanner.java:180) - Creating MapperFactoryBean with name 'designClassMapper' and 'smart.industry.train.biz.mapper.DesignClassMapper' mapperInterface
+[23:31:36:428] [DEBUG] - org.mybatis.spring.mapper.ClassPathMapperScanner.processBeanDefinitions(ClassPathMapperScanner.java:216) - Enabling autowire by type for MapperFactoryBean with name 'designClassMapper'.
+[23:31:36:429] [DEBUG] - org.mybatis.spring.mapper.ClassPathMapperScanner.processBeanDefinitions(ClassPathMapperScanner.java:180) - Creating MapperFactoryBean with name 'userMapper' and 'smart.industry.train.biz.mapper.UserMapper' mapperInterface
+[23:31:36:429] [DEBUG] - org.mybatis.spring.mapper.ClassPathMapperScanner.processBeanDefinitions(ClassPathMapperScanner.java:216) - Enabling autowire by type for MapperFactoryBean with name 'userMapper'.
+[23:31:38:649] [DEBUG] - org.hibernate.validator.internal.engine.resolver.DefaultTraversableResolver.detectJPA(DefaultTraversableResolver.java:70) - Cannot find javax.persistence.Persistence on classpath. Assuming non JPA 2 environment. All properties will per default be traversable.
+[23:31:38:668] [DEBUG] - org.hibernate.validator.internal.engine.resolver.DefaultTraversableResolver.detectJPA(DefaultTraversableResolver.java:70) - Cannot find javax.persistence.Persistence on classpath. Assuming non JPA 2 environment. All properties will per default be traversable.
+[23:31:38:679] [DEBUG] - org.hibernate.validator.internal.engine.ConfigurationImpl.messageInterpolator(ConfigurationImpl.java:163) - Setting custom MessageInterpolator of type org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator
+[23:31:38:681] [DEBUG] - org.hibernate.validator.internal.engine.ConfigurationImpl.constraintValidatorFactory(ConfigurationImpl.java:185) - Setting custom ConstraintValidatorFactory of type org.springframework.validation.beanvalidation.SpringConstraintValidatorFactory
+[23:31:38:683] [DEBUG] - org.hibernate.validator.internal.engine.ConfigurationImpl.parameterNameProvider(ConfigurationImpl.java:199) - Setting custom ParameterNameProvider of type com.sun.proxy.$Proxy71
+[23:31:38:687] [DEBUG] - org.hibernate.validator.internal.xml.ValidationXmlParser.getValidationXmlInputStream(ValidationXmlParser.java:99) - Trying to load META-INF/validation.xml for XML based Validator configuration.
+[23:31:38:690] [DEBUG] - org.hibernate.validator.internal.xml.ResourceLoaderHelper.getResettableInputStreamForPath(ResourceLoaderHelper.java:47) - Trying to load META-INF/validation.xml via user class loader
+[23:31:38:691] [DEBUG] - org.hibernate.validator.internal.xml.ResourceLoaderHelper.getResettableInputStreamForPath(ResourceLoaderHelper.java:54) - Trying to load META-INF/validation.xml via TCCL
+[23:31:38:692] [DEBUG] - org.hibernate.validator.internal.xml.ResourceLoaderHelper.getResettableInputStreamForPath(ResourceLoaderHelper.java:60) - Trying to load META-INF/validation.xml via Hibernate Validator's class loader
+[23:31:38:693] [DEBUG] - org.hibernate.validator.internal.xml.ValidationXmlParser.getValidationXmlInputStream(ValidationXmlParser.java:106) - No META-INF/validation.xml found. Using annotation based configuration only.
+[23:31:38:945] [DEBUG] - org.apache.ibatis.logging.LogFactory.setImplementation(LogFactory.java:135) - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+[23:31:39:096] [DEBUG] - org.apache.ibatis.logging.LogFactory.setImplementation(LogFactory.java:135) - Logging initialized using 'class org.apache.ibatis.logging.log4j2.Log4j2Impl' adapter.
+[23:31:39:717] [DEBUG] - org.apache.ibatis.io.VFS.getInstance(VFS.java:84) - Using VFS adapter org.mybatis.spring.boot.autoconfigure.SpringBootVFS
+[23:31:39:719] [DEBUG] - org.apache.ibatis.io.ResolverUtil.addIfMatching(ResolverUtil.java:256) - Checking to see if class smart.industry.train.biz.mapper.DesignClassMapper matches criteria [is assignable to Object]
+[23:31:39:720] [DEBUG] - org.apache.ibatis.io.ResolverUtil.addIfMatching(ResolverUtil.java:256) - Checking to see if class smart.industry.train.biz.mapper.UserMapper matches criteria [is assignable to Object]
+[23:31:39:720] [DEBUG] - org.mybatis.spring.SqlSessionFactoryBean.buildSqlSessionFactory(SqlSessionFactoryBean.java:437) - Scanned package: 'smart.industry.train.biz.mapper' for aliases
+[23:31:39:721] [DEBUG] - org.mybatis.spring.SqlSessionFactoryBean.buildSqlSessionFactory(SqlSessionFactoryBean.java:455) - Registered plugin: 'com.github.pagehelper.PageInterceptor@13b3a206'
+[23:31:40:138] [DEBUG] - org.mybatis.spring.SqlSessionFactoryBean.buildSqlSessionFactory(SqlSessionFactoryBean.java:529) - Parsed mapper file: 'file [D:\myworkspace\git\smart-industry\smart-industry-train-biz\target\classes\mapper\DesignClassMapper.xml]'
+[23:31:40:161] [DEBUG] - org.mybatis.spring.SqlSessionFactoryBean.buildSqlSessionFactory(SqlSessionFactoryBean.java:529) - Parsed mapper file: 'file [D:\myworkspace\git\smart-industry\smart-industry-train-biz\target\classes\mapper\UserMapper.xml]'
+[23:31:40:186] [DEBUG] - org.apache.shiro.spring.LifecycleBeanPostProcessor.postProcessBeforeInitialization(LifecycleBeanPostProcessor.java:86) - Initializing bean [userRealm]...
+[23:31:41:995] [DEBUG] - org.apache.shiro.spring.web.ShiroFilterFactoryBean.createInstance(ShiroFilterFactoryBean.java:424) - Creating Shiro Filter instance.
+[23:31:42:032] [DEBUG] - org.apache.shiro.web.filter.mgt.DefaultFilterChainManager.createChain(DefaultFilterChainManager.java:127) - Creating chain [/static/**] from String definition [anon]
+[23:31:42:033] [DEBUG] - org.apache.shiro.web.filter.mgt.DefaultFilterChainManager.applyChainConfig(DefaultFilterChainManager.java:278) - Attempting to apply path [/static/**] to filter [anon] with config [null]
+[23:31:42:035] [DEBUG] - org.apache.shiro.web.filter.mgt.DefaultFilterChainManager.createChain(DefaultFilterChainManager.java:127) - Creating chain [/logout] from String definition [logout]
+[23:31:42:035] [DEBUG] - org.apache.shiro.web.filter.mgt.DefaultFilterChainManager.applyChainConfig(DefaultFilterChainManager.java:278) - Attempting to apply path [/logout] to filter [logout] with config [null]
+[23:31:42:036] [DEBUG] - org.apache.shiro.web.filter.mgt.DefaultFilterChainManager.createChain(DefaultFilterChainManager.java:127) - Creating chain [/loginvalid] from String definition [anon]
+[23:31:42:036] [DEBUG] - org.apache.shiro.web.filter.mgt.DefaultFilterChainManager.applyChainConfig(DefaultFilterChainManager.java:278) - Attempting to apply path [/loginvalid] to filter [anon] with config [null]
+[23:31:42:036] [DEBUG] - org.apache.shiro.web.filter.mgt.DefaultFilterChainManager.createChain(DefaultFilterChainManager.java:127) - Creating chain [/error] from String definition [anon]
+[23:31:42:037] [DEBUG] - org.apache.shiro.web.filter.mgt.DefaultFilterChainManager.applyChainConfig(DefaultFilterChainManager.java:278) - Attempting to apply path [/error] to filter [anon] with config [null]
+[23:31:42:037] [DEBUG] - org.apache.shiro.web.filter.mgt.DefaultFilterChainManager.createChain(DefaultFilterChainManager.java:127) - Creating chain [/**] from String definition [authc]
+[23:31:42:037] [DEBUG] - org.apache.shiro.web.filter.mgt.DefaultFilterChainManager.applyChainConfig(DefaultFilterChainManager.java:278) - Attempting to apply path [/**] to filter [authc] with config [null]
+[23:31:42:130] [DEBUG] - org.apache.shiro.spring.web.ShiroFilterFactoryBean.postProcessBeforeInitialization(ShiroFilterFactoryBean.java:501) - Found filter chain candidate filter 'requestContextFilter'
+[23:31:42:194] [DEBUG] - org.apache.shiro.spring.web.ShiroFilterFactoryBean.postProcessBeforeInitialization(ShiroFilterFactoryBean.java:501) - Found filter chain candidate filter 'hiddenHttpMethodFilter'
+[23:31:42:237] [DEBUG] - org.apache.shiro.spring.web.ShiroFilterFactoryBean.postProcessBeforeInitialization(ShiroFilterFactoryBean.java:501) - Found filter chain candidate filter 'httpPutFormContentFilter'
+[23:31:42:275] [DEBUG] - org.apache.shiro.spring.web.ShiroFilterFactoryBean.postProcessBeforeInitialization(ShiroFilterFactoryBean.java:501) - Found filter chain candidate filter 'characterEncodingFilter'
+[23:31:44:991] [DEBUG] - org.hibernate.validator.internal.engine.resolver.DefaultTraversableResolver.detectJPA(DefaultTraversableResolver.java:70) - Cannot find javax.persistence.Persistence on classpath. Assuming non JPA 2 environment. All properties will per default be traversable.
+[23:31:44:992] [DEBUG] - org.hibernate.validator.internal.engine.ConfigurationImpl.messageInterpolator(ConfigurationImpl.java:163) - Setting custom MessageInterpolator of type org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator
+[23:31:44:992] [DEBUG] - org.hibernate.validator.internal.engine.ConfigurationImpl.constraintValidatorFactory(ConfigurationImpl.java:185) - Setting custom ConstraintValidatorFactory of type org.springframework.validation.beanvalidation.SpringConstraintValidatorFactory
+[23:31:44:992] [DEBUG] - org.hibernate.validator.internal.engine.ConfigurationImpl.parameterNameProvider(ConfigurationImpl.java:199) - Setting custom ParameterNameProvider of type com.sun.proxy.$Proxy71
+[23:31:44:992] [DEBUG] - org.hibernate.validator.internal.xml.ValidationXmlParser.getValidationXmlInputStream(ValidationXmlParser.java:99) - Trying to load META-INF/validation.xml for XML based Validator configuration.
+[23:31:44:992] [DEBUG] - org.hibernate.validator.internal.xml.ResourceLoaderHelper.getResettableInputStreamForPath(ResourceLoaderHelper.java:47) - Trying to load META-INF/validation.xml via user class loader
+[23:31:44:993] [DEBUG] - org.hibernate.validator.internal.xml.ResourceLoaderHelper.getResettableInputStreamForPath(ResourceLoaderHelper.java:54) - Trying to load META-INF/validation.xml via TCCL
+[23:31:44:994] [DEBUG] - org.hibernate.validator.internal.xml.ResourceLoaderHelper.getResettableInputStreamForPath(ResourceLoaderHelper.java:60) - Trying to load META-INF/validation.xml via Hibernate Validator's class loader
+[23:31:44:994] [DEBUG] - org.hibernate.validator.internal.xml.ValidationXmlParser.getValidationXmlInputStream(ValidationXmlParser.java:106) - No META-INF/validation.xml found. Using annotation based configuration only.
+[23:31:58:281] [DEBUG] - org.mybatis.spring.SqlSessionUtils.getSqlSession(SqlSessionUtils.java:97) - Creating a new SqlSession
+[23:31:58:291] [DEBUG] - org.mybatis.spring.SqlSessionUtils.registerSessionHolder(SqlSessionUtils.java:148) - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@41f7e808] was not registered for synchronization because synchronization is not active
+[23:31:59:212] [DEBUG] - org.mybatis.spring.SqlSessionUtils.closeSqlSession(SqlSessionUtils.java:191) - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@41f7e808]
+[23:31:59:233] [DEBUG] - org.apache.shiro.web.servlet.SimpleCookie.addCookieHeader(SimpleCookie.java:226) - Added HttpServletResponse Cookie [rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Sat, 04-Aug-2018 15:31:59 GMT]
+[23:51:44:219] [DEBUG] - org.mybatis.spring.SqlSessionUtils.getSqlSession(SqlSessionUtils.java:97) - Creating a new SqlSession
+[23:51:44:220] [DEBUG] - org.mybatis.spring.SqlSessionUtils.registerSessionHolder(SqlSessionUtils.java:148) - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@100ee743] was not registered for synchronization because synchronization is not active
+[23:51:44:226] [DEBUG] - org.mybatis.spring.transaction.SpringManagedTransaction.openConnection(SpringManagedTransaction.java:87) - JDBC Connection [com.mysql.jdbc.JDBC4Connection@1a7f8642] will not be managed by Spring
+[23:51:44:234] [DEBUG] - org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:159) - ==>  Preparing: select id, `name`, psw, sex from user WHERE `name` = ? 
+[23:51:44:289] [DEBUG] - org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:159) - ==> Parameters: 张三(String)
+[23:51:44:350] [DEBUG] - org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:159) - <==      Total: 0
+[23:51:44:355] [DEBUG] - com.alibaba.druid.pool.PreparedStatementPool.put(PreparedStatementPool.java:129) - stmt enter cache
+[23:51:44:356] [DEBUG] - org.mybatis.spring.SqlSessionUtils.closeSqlSession(SqlSessionUtils.java:191) - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@100ee743]
+[23:51:44:365] [DEBUG] - org.apache.shiro.web.servlet.SimpleCookie.addCookieHeader(SimpleCookie.java:226) - Added HttpServletResponse Cookie [rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Sat, 04-Aug-2018 15:51:44 GMT]
+[23:56:31:493] [DEBUG] - org.mybatis.spring.SqlSessionUtils.getSqlSession(SqlSessionUtils.java:97) - Creating a new SqlSession
+[23:56:31:494] [DEBUG] - org.mybatis.spring.SqlSessionUtils.registerSessionHolder(SqlSessionUtils.java:148) - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@26b289ae] was not registered for synchronization because synchronization is not active
+[23:56:31:582] [DEBUG] - org.mybatis.spring.transaction.SpringManagedTransaction.openConnection(SpringManagedTransaction.java:87) - JDBC Connection [com.mysql.jdbc.JDBC4Connection@1a7f8642] will not be managed by Spring
+[23:56:31:583] [DEBUG] - org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:159) - ==>  Preparing: select id, `name`, psw, sex from user WHERE `name` = ? 
+[23:56:31:583] [DEBUG] - org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:159) - ==> Parameters: 张三(String)
+[23:56:31:627] [DEBUG] - org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:159) - <==      Total: 0
+[23:56:31:628] [DEBUG] - org.mybatis.spring.SqlSessionUtils.closeSqlSession(SqlSessionUtils.java:191) - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@26b289ae]
+[23:56:31:639] [DEBUG] - org.apache.shiro.web.servlet.SimpleCookie.addCookieHeader(SimpleCookie.java:226) - Added HttpServletResponse Cookie [rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Sat, 04-Aug-2018 15:56:31 GMT]
+[23:57:06:821] [DEBUG] - org.mybatis.spring.SqlSessionUtils.getSqlSession(SqlSessionUtils.java:97) - Creating a new SqlSession
+[23:57:06:822] [DEBUG] - org.mybatis.spring.SqlSessionUtils.registerSessionHolder(SqlSessionUtils.java:148) - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4f2d4984] was not registered for synchronization because synchronization is not active
+[23:57:06:823] [DEBUG] - org.mybatis.spring.transaction.SpringManagedTransaction.openConnection(SpringManagedTransaction.java:87) - JDBC Connection [com.mysql.jdbc.JDBC4Connection@1a7f8642] will not be managed by Spring
+[23:57:06:824] [DEBUG] - org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:159) - ==>  Preparing: select id, `name`, psw, sex from user WHERE `name` = ? 
+[23:57:06:825] [DEBUG] - org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:159) - ==> Parameters: 张三(String)
+[23:57:06:853] [DEBUG] - org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:159) - <==      Total: 0
+[23:57:06:854] [DEBUG] - org.mybatis.spring.SqlSessionUtils.closeSqlSession(SqlSessionUtils.java:191) - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4f2d4984]
+[23:57:06:857] [DEBUG] - org.apache.shiro.web.servlet.SimpleCookie.addCookieHeader(SimpleCookie.java:226) - Added HttpServletResponse Cookie [rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Sat, 04-Aug-2018 15:57:06 GMT]

@@ -1,0 +1,10 @@
+smart\industry\train\biz\dao\UserBiz.class
+smart\industry\train\biz\interfaces\IMapper.class
+smart\industry\train\biz\mapper\UserMapper.class
+smart\industry\train\biz\mapper\DesignClassMapper.class
+smart\industry\train\biz\entity\DesignClass.class
+smart\industry\train\biz\entity\User.class
+smart\industry\train\biz\dao\PrincipalService.class
+smart\industry\train\biz\dao\DesignClassBiz.class
+smart\industry\train\biz\entity\base\baseEntity.class
+smart\industry\train\biz\dao\base\BaseBiz.class
