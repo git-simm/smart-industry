@@ -6,15 +6,16 @@
         <property name="autoDelimitKeywords" value="true"/>
         <property name="beginningDelimiter" value="`"/>
         <property name="endingDelimiter" value="`"/>
+        <property name="mapUnderscoreToCamelCase" value="true"/>
         <commentGenerator>
             <property name="suppressAllComments" value="true"/>
             <property name="suppressDate" value="true"/>
         </commentGenerator>
 
         <jdbcConnection driverClass="com.mysql.jdbc.Driver"
-                        connectionURL="jdbc:mysql://localhost:3306/smart-industry"
-                        userId="root"
-                        password="admin">
+                        connectionURL="jdbc:mysql://60.205.226.96:3306/smart-industry"
+                        userId="simm"
+                        password="Smart@industry123">
         </jdbcConnection>
 
         <javaModelGenerator targetPackage="smart.industry.train.biz.entity"
@@ -25,6 +26,20 @@
                              targetProject="src/main/java" type="XMLMAPPER"/>
 
         <!-- 配置生成Exmaple文件> -->
-        <table tableName="design_class" domainObjectName="DesignClass" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+        <table tableName="design_solution" domainObjectName="DesignSolution" enableCountByExample="false"
+               enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false"
+               selectByExampleQueryId="false">
+            <property name="useActualColumnNames" value="true"/>
+        </table>
+        <table tableName="design_solution_list" domainObjectName="DesignSolutionList" enableCountByExample="false"
+               enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false"
+               selectByExampleQueryId="false">
+            <property name="useActualColumnNames" value="true"/>
+        </table>
+        <table tableName="sys_upfiles" domainObjectName="SysUpfiles" enableCountByExample="false"
+               enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false"
+               selectByExampleQueryId="false">
+            <property name="useActualColumnNames" value="true"/>
+        </table>
     </context>
 </generatorConfiguration>

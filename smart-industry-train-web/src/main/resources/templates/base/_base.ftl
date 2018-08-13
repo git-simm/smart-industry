@@ -21,15 +21,17 @@
 <@cssRef url="/static/_resources/assets/css/ace-rtl.min.css"/>
 <@cssRef url="/static/_resources/assets/css/ace-skins.min.css"/>
 <@cssRef url="/static/css/ace.conver.css"/>
+<@cssRef url="/static/_resources/assets/css/jquery-ui.min.css"/>
 <@cssRef url="/static/css/main.css"/>
     <!--[if lte IE 8]>
         <@cssRef url="/static/_resources/assets/css/ace-ie.min.css"/>
     <![endif]-->
 <#nested "css" />
-<@jsRef url="/static/_resources/jquery/jquery-2.0.3.min.js"/>
-<@jsRef url="/static/_resources/assets/js/ace-extra.min.js"/>
-<@jsRef url="/static/_resources/common/utility.js"/>
-<@jsRef url="/static/_resources/common/common.js"/>
+    <@jsRef url="/static/_resources/jquery/jquery-2.0.3.min.js"/>
+    <@jsRef url="/static/_resources/assets/js/ace-extra.min.js"/>
+    <@jsRef url="/static/_resources/common/utility.js"/>
+    <@jsRef url="/static/_resources/common/common.js"/>
+    <@jsRef url="/static/js/common.js"/>
 </head>
 <body class="easyui-layout layout panel-noscroll" style="background-color:white;">
     <#nested "content" />
@@ -42,7 +44,7 @@
     <@jsRef "/static/_resources/bootstrap/js/bootstrap-table.js"/>
     <@jsRef "/static/_resources/bootstrap/js/bootstrap-table-zh-CN.js"/>
     <@jsRef "/static/_resources/layer/layer.js"/>
-    <@jsRef url="/static/_resources/assets/js/jquery-ui-1.10.3.custom.min.js"/>
+    <@jsRef url="/static/_resources/assets/js/jquery-ui.min.js"/>
     <@jsRef url="/static/_resources/assets/js/jquery.ui.touch-punch.min.js"/>
     <@jsRef url="/static/_resources/assets/js/jquery.slimscroll.min.js"/>
     <@jsRef url="/static/_resources/assets/js/jquery.easy-pie-chart.min.js"/>

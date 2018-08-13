@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import smart.industry.train.biz.dao.base.BaseBiz;
 import smart.industry.train.biz.entity.DesignClass;
+import smart.industry.train.biz.entity.base.Paging;
 import smart.industry.train.biz.mapper.DesignClassMapper;
 import smart.industry.utils.exceptions.AjaxException;
 import java.util.Date;
@@ -39,12 +40,18 @@ public class DesignClassBiz extends BaseBiz<DesignClassMapper,DesignClass> {
         if(!CollectionUtils.isEmpty(baseMapper.selectByCon(filter))) {
             throw new AjaxException("分类名称已经存在，无法创建");
         }
-        entity.setCreateby(principalService.getCurrentUser().getId());
-        entity.setCreatedate(new Date());
+        entity.setCreateBy(principalService.getCurrentUser().getId());
+        entity.setCreateDate(new Date());
         //基类方法
         super.add(entity);
         return baseMapper.selectByCon(entity).get(0).getId();
     }
+
+    @Override
+    public DesignClass getFilter(Paging paging) throws Exception {
+        return new DesignClass();
+    }
+
     /**
      * 计算排序码
      * @param list

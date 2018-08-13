@@ -3,27 +3,27 @@
 <mapper namespace="smart.industry.train.biz.mapper.DesignClassMapper">
   <resultMap id="BaseResultMap" type="smart.industry.train.biz.entity.DesignClass">
     <id column="id" jdbcType="INTEGER" property="id" />
-    <result column="createdate" jdbcType="DATE" property="createdate" />
-    <result column="createby" jdbcType="INTEGER" property="createby" />
-    <result column="modifydate" jdbcType="DATE" property="modifydate" />
-    <result column="modifyby" jdbcType="INTEGER" property="modifyby" />
+    <result column="createDate" jdbcType="DATE" property="createDate" />
+    <result column="createBy" jdbcType="INTEGER" property="createBy" />
+    <result column="modifyDate" jdbcType="DATE" property="modifyDate" />
+    <result column="modifyBy" jdbcType="INTEGER" property="modifyBy" />
     <result column="name" jdbcType="VARCHAR" property="name" />
     <result column="pId" jdbcType="INTEGER" property="pId" />
     <result column="sort" jdbcType="INTEGER" property="sort" />
   </resultMap>
   <sql id="Base_Column_List">
-    id, createdate, createby, modifydate, modifyby, `name`, pid, sort
+    id, createDate, createBy, modifyDate, modifyBy, `name`, pid, sort
   </sql>
   <sql id="Base_Where">
     <where>
-      <if test="createdate != null">
-        createdate = #{createdate,jdbcType=DATE}
+      <if test="createDate != null">
+        createDate = #{createDate,jdbcType=DATE}
       </if>
-      <if test="createby != null">
-        and createby = #{createby,jdbcType=INTEGER}
+      <if test="createBy != null">
+        and createBy = #{createBy,jdbcType=INTEGER}
       </if>
-      <if test="modifydate != null">
-        and modifydate = #{modifydate,jdbcType=DATE}
+      <if test="modifyDate != null">
+        and modifyDate = #{modifyDate,jdbcType=DATE}
       </if>
       <if test="modifyby != null">
         and modifyby = #{modifyby,jdbcType=INTEGER}
@@ -72,8 +72,8 @@
     insert into design_class (id, createdate, createby, 
       modifydate, modifyby, `name`, 
       pId, sort)
-    values (#{id,jdbcType=INTEGER}, #{createdate,jdbcType=DATE}, #{createby,jdbcType=INTEGER}, 
-      #{modifydate,jdbcType=DATE}, #{modifyby,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, 
+    values (#{id,jdbcType=INTEGER}, #{createDate,jdbcType=DATE}, #{createBy,jdbcType=INTEGER},
+      #{modifyDate,jdbcType=DATE}, #{modifyBy,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR},
       #{pId,jdbcType=INTEGER}, #{sort,jdbcType=INTEGER})
   </insert>
   <insert id="insertSelective" parameterType="smart.industry.train.biz.entity.DesignClass">
@@ -82,16 +82,16 @@
       <if test="id != null">
         id,
       </if>
-      <if test="createdate != null">
+      <if test="createDate != null">
         createdate,
       </if>
-      <if test="createby != null">
+      <if test="createBy != null">
         createby,
       </if>
-      <if test="modifydate != null">
+      <if test="modifyDate != null">
         modifydate,
       </if>
-      <if test="modifyby != null">
+      <if test="modifyBy != null">
         modifyby,
       </if>
       <if test="name != null">
@@ -108,17 +108,17 @@
       <if test="id != null">
         #{id,jdbcType=INTEGER},
       </if>
-      <if test="createdate != null">
-        #{createdate,jdbcType=DATE},
+      <if test="createDate != null">
+        #{createDate,jdbcType=DATE},
       </if>
-      <if test="createby != null">
-        #{createby,jdbcType=INTEGER},
+      <if test="createBy != null">
+        #{createBy,jdbcType=INTEGER},
       </if>
-      <if test="modifydate != null">
-        #{modifydate,jdbcType=DATE},
+      <if test="modifyDate != null">
+        #{modifyDate,jdbcType=DATE},
       </if>
-      <if test="modifyby != null">
-        #{modifyby,jdbcType=INTEGER},
+      <if test="modifyBy != null">
+        #{modifyBy,jdbcType=INTEGER},
       </if>
       <if test="name != null">
         #{name,jdbcType=VARCHAR},
@@ -134,17 +134,17 @@
   <update id="updateByPrimaryKeySelective" parameterType="smart.industry.train.biz.entity.DesignClass">
     update design_class
     <set>
-      <if test="createdate != null">
-        createdate = #{createdate,jdbcType=DATE},
+      <if test="createDate != null">
+        createDate = #{createDate,jdbcType=DATE},
       </if>
-      <if test="createby != null">
-        createby = #{createby,jdbcType=INTEGER},
+      <if test="createBy != null">
+        createBy = #{createBy,jdbcType=INTEGER},
       </if>
-      <if test="modifydate != null">
-        modifydate = #{modifydate,jdbcType=DATE},
+      <if test="modifyDate != null">
+        modifyDate = #{modifyDate,jdbcType=DATE},
       </if>
-      <if test="modifyby != null">
-        modifyby = #{modifyby,jdbcType=INTEGER},
+      <if test="modifyBy != null">
+        modifyBy = #{modifyBy,jdbcType=INTEGER},
       </if>
       <if test="name != null">
         `name` = #{name,jdbcType=VARCHAR},
@@ -160,10 +160,10 @@
   </update>
   <update id="updateByPrimaryKey" parameterType="smart.industry.train.biz.entity.DesignClass">
     update design_class
-    set createdate = #{createdate,jdbcType=DATE},
-      createby = #{createby,jdbcType=INTEGER},
-      modifydate = #{modifydate,jdbcType=DATE},
-      modifyby = #{modifyby,jdbcType=INTEGER},
+    set createDate = #{createDate,jdbcType=DATE},
+      createBy = #{createBy,jdbcType=INTEGER},
+      modifyDate = #{modifyDate,jdbcType=DATE},
+      modifyBy = #{modifyBy,jdbcType=INTEGER},
       `name` = #{name,jdbcType=VARCHAR},
       pId = #{pId,jdbcType=INTEGER},
       sort = #{sort,jdbcType=INTEGER}

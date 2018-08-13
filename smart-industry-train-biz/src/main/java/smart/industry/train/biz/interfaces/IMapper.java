@@ -1,5 +1,9 @@
 package smart.industry.train.biz.interfaces;
 
+import smart.industry.train.biz.entity.base.Paging;
+
+import java.util.List;
+
 public interface IMapper<T> {
     int deleteByPrimaryKey(Integer id);
 
@@ -8,6 +12,19 @@ public interface IMapper<T> {
     int insertSelective(T record);
 
     T selectByPrimaryKey(Integer id);
+
+    /**
+     * 加载所有的数据
+     * @return
+     */
+    List<T> selectAll();
+
+    /**
+     * 通过分页信息进行查询
+     * @param record
+     * @return
+     */
+    List<T> selectByCon(T record);
 
     int updateByPrimaryKeySelective(T record);
 

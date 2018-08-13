@@ -144,7 +144,7 @@ Zq.Utility.RegisterNameSpace("solution.list");
         $.ajax({
             async: false,
             type: "Post",
-            url: Zq.Utility.GetPath("/solucls/update"),
+            url: ("/solucls/update").geturl(),
             data: {id:treeNode.id,name:treeNode.name},
             success:function(id){
                 //entity.id = id;

@@ -3,11 +3,21 @@ package smart.industry.train.biz.dao.base;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 import smart.industry.train.biz.dao.PrincipalService;
-import smart.industry.train.biz.entity.base.baseEntity;
+import smart.industry.train.biz.entity.DesignSolution;
+import smart.industry.train.biz.entity.base.BaseEntity;
+import smart.industry.train.biz.entity.base.Paging;
 import smart.industry.train.biz.interfaces.IMapper;
-import java.util.Date;
+import smart.industry.utils.StringUtils;
 
-public class BaseBiz<TMapper extends IMapper<TEntity>,TEntity extends baseEntity> {
+import java.util.Date;
+import java.util.List;
+
+/**
+ * 抽象基类
+ * @param <TMapper>
+ * @param <TEntity>
+ */
+public abstract class BaseBiz<TMapper extends IMapper<TEntity>,TEntity extends BaseEntity> {
     @Autowired
     protected TMapper baseMapper;
     @Autowired
@@ -19,8 +29,8 @@ public class BaseBiz<TMapper extends IMapper<TEntity>,TEntity extends baseEntity
      */
     @Transactional
     public int add(TEntity entity){
-        entity.setCreateby(principalService.getCurrentUser().getId());
-        entity.setCreatedate(new Date());
+        entity.setCreateBy(principalService.getCurrentUser().getId());
+        entity.setCreateDate(new Date());
         return baseMapper.insertSelective(entity);
     }
     /**
@@ -30,8 +40,8 @@ public class BaseBiz<TMapper extends IMapper<TEntity>,TEntity extends baseEntity
      */
     @Transactional
     public int update(TEntity entity){
-        entity.setModifyby(principalService.getCurrentUser().getId());
-        entity.setModifydate(new Date());
+        entity.setModifyBy(principalService.getCurrentUser().getId());
+        entity.setModifyDate(new Date());
         return baseMapper.updateByPrimaryKeySelective(entity);
     }
 
@@ -53,4 +63,37 @@ public class BaseBiz<TMapper extends IMapper<TEntity>,TEntity extends baseEntity
     public TEntity selectByPrimaryKey(Integer id){
         return baseMapper.selectByPrimaryKey(id);
     }
+
+    /**
+     * 获取所有的记录
+     * @return
+     */
+    public List<TEntity> selectAll(){return baseMapper.selectAll();}
+    /**
+     * 获取分页信息
+     * @param paging
+     * @return
+     */
+    public List<TEntity> selectByCon(Paging paging){
+        TEntity filter = null;
+        try {
+            filter = getFilter(paging);
+            //TEntity filter = (TEntity) new BaseEntity();
+            if(StringUtils.isNotBlank(paging.getSort())){
+                filter.setOrderBy(String.format("%s %s",paging.getSort(),paging.getOrder()));
+            }
+            return baseMapper.selectByCon(filter);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    /**
+     * 获取过滤条件
+     * @param paging
+     * @return
+     * @throws Exception
+     */
+    public abstract TEntity getFilter(Paging paging) throws Exception;
 }

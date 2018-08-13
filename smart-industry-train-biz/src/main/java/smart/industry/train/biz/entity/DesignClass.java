@@ -2,9 +2,9 @@ package smart.industry.train.biz.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import smart.industry.train.biz.entity.base.baseEntity;
+import smart.industry.train.biz.entity.base.BaseEntity;
 
-public class DesignClass extends baseEntity {
+public class DesignClass extends BaseEntity {
     private String name;
 
     @JsonProperty("pId")

@@ -1,4 +1,4 @@
-﻿Zq.Utility.RegisterNameSpace("Cd.Common");
+﻿Zq.Utility.RegisterNameSpace("Smart.Common");
 (function(ns,undefined){
 	ns.GetUrl = function(url){
     	var contextPath = $("#hid_contextpath").val();
@@ -36,11 +36,11 @@
     	}
     	return true;
     }
-})(Cd.Common)
+})(Smart.Common)
 
 /**
  * 方法扩展，获取url
  */
 String.prototype.geturl = function() {
-	return Cd.Common.GetUrl(this);
+	return Smart.Common.GetUrl(this);
 }
