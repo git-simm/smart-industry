@@ -49,6 +49,7 @@ public class SolutionController {
     @RequestMapping("/addwin")
     public String addWin(Map<String, Object> map){
         map.put("entity",new DesignSolution());
+        map.put("formMode","add");
         return "manager/solution_edit";
     }
 
@@ -60,6 +61,7 @@ public class SolutionController {
     @RequestMapping("/editwin")
     public String editWin(int id,Map<String, Object> map){
         map.put("entity",new DesignSolution());
+        map.put("formMode","edit");
         return "manager/solution_edit";
     }
     /**
@@ -78,5 +80,25 @@ public class SolutionController {
         result.put("rows", list);
         result.put("total", p.getTotal());
         return result;
+    }
+
+    /**
+     * 新增
+     * @return
+     */
+    @Post("/add")
+    public Integer add(DesignSolution solution){
+        int r = designSolutionBiz.add(solution);
+        return solution.getId();
+    }
+
+    /**
+     * 编辑
+     * @param id
+     * @return
+     */
+    @Post("/edit")
+    public String win(int id){
+        return "manager/solution_edit";
     }
 }

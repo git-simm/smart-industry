@@ -87,13 +87,20 @@ var myUploader = function (options) {
             param.btn.text('开始上传');
         }
     });
-
-    var tempUploader = this.uploader;
+    /*var tempUploader = this.uploader;
     param.btn.on('click', function () {
         if (state === 'uploading') {
             tempUploader.stop();
         } else {
             tempUploader.upload();
         }
-    });
+    });*/
+    var tempUploader = this.uploader;
+    this.upload = function(){
+        if (param.state === 'uploading') {
+            tempUploader.stop();
+        } else {
+            tempUploader.upload();
+        }
+    }
 };

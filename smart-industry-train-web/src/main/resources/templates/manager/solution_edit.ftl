@@ -38,32 +38,29 @@
                 </ul>
                 <div class="tab-content" style="height: 350px;">
                     <div id="home3" class="tab-pane active">
-                        <div id="uploader1" class="wu-example">
+                        <div id="uploader1" class="uploader wu-example">
                             <!--用来存放文件信息-->
                             <div id="thelist1" class="uploader-list"></div>
                             <div class="btns">
-                                <div id="picker1">选择文件</div>
-                                <button id="ctlBtn1" class="btn btn-sm btn-default">开始上传</button>
+                                <div id="picker1" class="mypicker">选择文件</div>
                             </div>
                         </div>
                     </div>
                     <div id="profile3" class="tab-pane">
-                        <div id="uploader2" class="wu-example">
+                        <div id="uploader2" class="uploader wu-example">
                             <!--用来存放文件信息-->
                             <div id="thelist2" class="uploader-list"></div>
                             <div class="btns">
-                                <div id="picker2">选择文件</div>
-                                <button id="ctlBtn2" class="btn btn-sm btn-default">开始上传</button>
+                                <div id="picker2" class="mypicker">选择文件</div>
                             </div>
                         </div>
                     </div>
                     <div id="dropdown13" class="tab-pane">
-                        <div id="uploader3" class="wu-example">
+                        <div id="uploader3" class="uploader wu-example">
                             <!--用来存放文件信息-->
                             <div id="thelist3" class="uploader-list"></div>
                             <div class="btns">
-                                <div id="picker3">选择文件</div>
-                                <button id="ctlBtn3" class="btn btn-sm btn-default">开始上传</button>
+                                <div id="picker3" class="mypicker">选择文件</div>
                             </div>
                         </div>
                     </div>
@@ -97,45 +94,58 @@
 		            type: "Post",
 		            dataType:"json",
 		            url: url.geturl(),
-		            data: {json:JSON.stringify(obj)},
+		            data: obj,
 		            success: function (result) {
+                        //文件上传
+                        ns.upload();
 		                SmartMonitor.Common.Close(true);
 		            }
 		        });
 		    };
-		})(solution.edit);
-
-		$(function(){
-		    var uploader1 = new myUploader({
+            var accept = {
+                title: 'intoTypes',
+                extensions: 'rar,zip,doc,xls,docx,xlsx,pdf',
+                mimeTypes: '.rar,.zip,.doc,.xls,.docx,.xlsx,.pdf'
+            };
+            var uploader1 = new myUploader({
                 list: $('#thelist1'),
                 btn: $('#ctlBtn1'),
                 pick: '#picker1',
-                accept: {
-                    title: 'dxf',
-                    extensions: 'dxf',
-                    mimeTypes: 'application/dxf'
-                }
+                accept: accept
             });
             var uploader2 = new myUploader({
                 list: $('#thelist2'),
                 btn: $('#ctlBtn2'),
                 pick: '#picker2',
-                accept: {
-                    title: 'dxf',
-                    extensions: 'dxf',
-                    mimeTypes: 'application/dxf'
-                }
+                accept: accept
             });
             var uploader3 = new myUploader({
                 list: $('#thelist3'),
                 btn: $('#ctlBtn3'),
                 pick: '#picker3',
-                accept: {
-                    title: 'dxf',
-                    extensions: 'dxf',
-                    mimeTypes: 'application/dxf'
-                }
+                accept: accept
             });
+            /**
+             * 触发文件上传
+             */
+            ns.upload = function(){
+                uploader1.upload();
+                uploader2.upload();
+                uploader3.upload();
+            }
+		})(solution.edit);
+
+		var accept2 =  {
+            title: 'dxf',
+            extensions: 'dxf',
+            mimeTypes: 'application/dxf'
+        };
+
+		$(function(){
+            //调整按钮大小
+            setTimeout(function(){
+                $("div[id^='rt_rt_']").css({ width:72,height:29});
+            },1000);
         });
 	  </script>
 </#if>
