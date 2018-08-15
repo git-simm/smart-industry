@@ -1,4 +1,6 @@
-﻿// 文件上传
+﻿/**
+ * 文件上传插件
+ */
 var myUploader = function (options) {
     this.uploader = null;
     var param = {
@@ -45,19 +47,17 @@ var myUploader = function (options) {
         if (!$percent.length) {
             $percent = $('<div class="progress progress-striped active">' +
                 '<div class="progress-bar" role="progressbar" style="width: 0%">' +
-                '</div>' +
-                '</div>').appendTo($li).find('.progress-bar');
+                '</div></div>').appendTo($li).find('.progress-bar');
         }
-
         $li.find('p.state').text('上传中');
-
         $percent.css('width', percentage * 100 + '%');
     });
     //上传文件前，添加参数
     this.uploader.on('uploadBeforeSend', function (obj, data, headers) {
         // data.DelFilePath = parentObj.siblings(".upload-path").val();
         //  data.ItemCode = $("#txtItemCode").val();
-        data.solutionId = 123;
+        data.solutionId = solutionId;
+        data.fileType = param.fileType;
     });
 
     this.uploader.on('uploadSuccess', function (file) {
@@ -96,7 +96,10 @@ var myUploader = function (options) {
         }
     });*/
     var tempUploader = this.uploader;
-    this.upload = function(){
+    //设计方案ID
+    var solutionId = null;
+    this.upload = function(id){
+        solutionId = id;
         if (param.state === 'uploading') {
             tempUploader.stop();
         } else {

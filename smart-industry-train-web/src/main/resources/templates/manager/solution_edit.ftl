@@ -95,10 +95,10 @@
 		            dataType:"json",
 		            url: url.geturl(),
 		            data: obj,
-		            success: function (result) {
+		            success: function (id) {
                         //文件上传
-                        ns.upload();
-		                SmartMonitor.Common.Close(true);
+                        ns.upload(id);
+		                //SmartMonitor.Common.Close(true);
 		            }
 		        });
 		    };
@@ -111,27 +111,30 @@
                 list: $('#thelist1'),
                 btn: $('#ctlBtn1'),
                 pick: '#picker1',
+                fileType:1,
                 accept: accept
             });
             var uploader2 = new myUploader({
                 list: $('#thelist2'),
                 btn: $('#ctlBtn2'),
                 pick: '#picker2',
+                fileType:2,
                 accept: accept
             });
             var uploader3 = new myUploader({
                 list: $('#thelist3'),
                 btn: $('#ctlBtn3'),
                 pick: '#picker3',
+                fileType:3,
                 accept: accept
             });
             /**
              * 触发文件上传
              */
-            ns.upload = function(){
-                uploader1.upload();
-                uploader2.upload();
-                uploader3.upload();
+            ns.upload = function(id){
+                uploader1.upload(id);
+                uploader2.upload(id);
+                uploader3.upload(id);
             }
 		})(solution.edit);
 

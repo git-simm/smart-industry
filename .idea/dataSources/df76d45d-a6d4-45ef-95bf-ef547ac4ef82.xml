@@ -927,7 +927,7 @@
     <column id="232" parent="226" name="createDate">
       <Position>2</Position>
       <Comment>创建时间</Comment>
-      <DataType>date|0s</DataType>
+      <DataType>datetime|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="233" parent="226" name="createBy">
@@ -939,7 +939,7 @@
     <column id="234" parent="226" name="modifyDate">
       <Position>4</Position>
       <Comment>修改时间</Comment>
-      <DataType>date|0s</DataType>
+      <DataType>datetime|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="235" parent="226" name="modifyBy">
@@ -991,7 +991,7 @@
     <column id="243" parent="227" name="createDate">
       <Position>2</Position>
       <Comment>创建时间</Comment>
-      <DataType>date|0s</DataType>
+      <DataType>datetime|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="244" parent="227" name="createBy">
@@ -1003,7 +1003,7 @@
     <column id="245" parent="227" name="modifyDate">
       <Position>4</Position>
       <Comment>修改时间</Comment>
-      <DataType>date|0s</DataType>
+      <DataType>datetime|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="246" parent="227" name="modifyBy">
@@ -1046,7 +1046,7 @@
     <column id="252" parent="228" name="createDate">
       <Position>2</Position>
       <Comment>创建时间</Comment>
-      <DataType>date|0s</DataType>
+      <DataType>datetime|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="253" parent="228" name="createBy">
@@ -1108,12 +1108,13 @@
       <Comment>主键</Comment>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="263" parent="229" name="createDate">
       <Position>2</Position>
       <Comment>创建时间</Comment>
-      <DataType>date|0s</DataType>
+      <DataType>datetime|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="264" parent="229" name="createBy">
@@ -1125,7 +1126,7 @@
     <column id="265" parent="229" name="modifyDate">
       <Position>4</Position>
       <Comment>修改时间</Comment>
-      <DataType>date|0s</DataType>
+      <DataType>datetime|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="266" parent="229" name="modifyBy">
@@ -1134,10 +1135,10 @@
       <DataType>int(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="267" parent="229" name="fileName">
+    <column id="267" parent="229" name="suffix">
       <Position>6</Position>
-      <Comment>文件名</Comment>
-      <DataType>varchar(200)|0s</DataType>
+      <Comment>文件后缀</Comment>
+      <DataType>varchar(50)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="268" parent="229" name="filePath">
@@ -1146,50 +1147,56 @@
       <DataType>varchar(200)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="269" parent="229" name="suffix">
+    <column id="269" parent="229" name="fileName">
       <Position>8</Position>
-      <Comment>文件后缀</Comment>
-      <DataType>varchar(50)|0s</DataType>
+      <Comment>文件名</Comment>
+      <DataType>varchar(200)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="270" parent="229" name="PRIMARY">
+    <column id="270" parent="229" name="fileSize">
+      <Position>9</Position>
+      <Comment>文件尺寸</Comment>
+      <DataType>bigint(20)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="271" parent="229" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="271" parent="230" name="id">
+    <column id="272" parent="230" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="272" parent="230" name="name">
+    <column id="273" parent="230" name="name">
       <Position>2</Position>
       <DataType>varchar(50)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="273" parent="230" name="psw">
+    <column id="274" parent="230" name="psw">
       <Position>3</Position>
       <DataType>varchar(50)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="274" parent="230" name="sex">
+    <column id="275" parent="230" name="sex">
       <Position>4</Position>
       <DataType>bit(2)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="275" parent="230" name="id_UNIQUE">
+    <index id="276" parent="230" name="id_UNIQUE">
       <ColNames>id</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <key id="276" parent="230" name="PRIMARY">
+    <key id="277" parent="230" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="277" parent="230" name="id_UNIQUE">
+    <key id="278" parent="230" name="id_UNIQUE">
       <ColNames>id</ColNames>
       <UnderlyingIndexName>id_UNIQUE</UnderlyingIndexName>
     </key>

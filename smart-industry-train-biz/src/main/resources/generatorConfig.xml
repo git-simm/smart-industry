@@ -26,17 +26,7 @@
                              targetProject="src/main/java" type="XMLMAPPER"/>
 
         <!-- 配置生成Exmaple文件> -->
-        <table tableName="design_solution" domainObjectName="DesignSolution" enableCountByExample="false"
-               enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false"
-               selectByExampleQueryId="false">
-            <property name="useActualColumnNames" value="true"/>
-        </table>
-        <table tableName="design_solution_list" domainObjectName="DesignSolutionList" enableCountByExample="false"
-               enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false"
-               selectByExampleQueryId="false">
-            <property name="useActualColumnNames" value="true"/>
-        </table>
-        <table tableName="sys_upfiles" domainObjectName="SysUpfiles" enableCountByExample="false"
+        <table tableName="test" domainObjectName="TestEntity" enableCountByExample="false"
                enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false"
                selectByExampleQueryId="false">
             <property name="useActualColumnNames" value="true"/>
