@@ -15,8 +15,11 @@
     /**
      * Form表单验证
      */
-    ns.FormValid = function(){
-    	var $list = $("[required]","#form-main");
+    ns.FormValid = function(formId){
+    	if(formId==null){
+            formId = "#form-main";
+		}
+    	var $list = $("input[type='text'][required]",formId);
     	for(var i =0;i<$list.length;i++){
     		if($list.eq(i).val()==="") return false;
     	}

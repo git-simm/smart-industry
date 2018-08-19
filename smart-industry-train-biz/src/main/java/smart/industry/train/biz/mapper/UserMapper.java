@@ -1,12 +1,9 @@
 package smart.industry.train.biz.mapper;
 
-import org.springframework.stereotype.Service;
 import smart.industry.train.biz.entity.User;
+import smart.industry.train.biz.interfaces.IMapper;
 
-import java.util.List;
-
-@Service
-public interface UserMapper {
+public interface UserMapper extends IMapper<User> {
     int deleteByPrimaryKey(Integer id);
 
     int insert(User record);
@@ -14,10 +11,6 @@ public interface UserMapper {
     int insertSelective(User record);
 
     User selectByPrimaryKey(Integer id);
-
-    List<User> selectByUser(User record);
-
-    List<User> selectAll();
 
     int updateByPrimaryKeySelective(User record);
 

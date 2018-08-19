@@ -88,7 +88,7 @@ public class IndexController {
      * 退出
      * @return
      */
-    @PostMapping("/logout")
+    @RequestMapping("/logout")
     @ResponseBody
     public int logout() {
         Subject subject = SecurityUtils.getSubject();

@@ -1,24 +1,33 @@
 package smart.industry.train.web.controllers;
 
+import com.alibaba.fastjson.JSONObject;
+import org.apache.tomcat.util.http.fileupload.FileItem;
+import org.apache.tomcat.util.http.fileupload.FileItemFactory;
+import org.apache.tomcat.util.http.fileupload.RequestContext;
+import org.apache.tomcat.util.http.fileupload.disk.DiskFileItemFactory;
+import org.apache.tomcat.util.http.fileupload.servlet.ServletFileUpload;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.util.NumberUtils;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import smart.industry.train.biz.dao.SysUpfilesBiz;
 import smart.industry.train.biz.dao.base.DesignSolutionListBiz;
 import smart.industry.train.biz.entity.DesignSolutionList;
 import smart.industry.train.biz.entity.SysUpfiles;
+import smart.industry.utils.entity.MultipartFileParam;
 import smart.industry.utils.files.FileUtil;
 import smart.industry.utils.files.Md5Util;
+import smart.industry.utils.files.MultipartFileUploadUtil;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.Console;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.List;
 import java.util.UUID;
 
 /**
@@ -50,6 +59,7 @@ public class FileController {
     public String handleFileUpload(@RequestParam("file") MultipartFile file,HttpServletRequest req) {
         if (!file.isEmpty()) {
             try {
+                //MultipartFileParam param = MultipartFileUploadUtil.parse(req);
                 //计算文件MD5值
                 //Md5Util.getMD5(file);
                 //获取解决方案ID
@@ -77,6 +87,9 @@ public class FileController {
             } catch (IOException e) {
                 e.printStackTrace();
                 return "上传失败," + e.getMessage();
+            } catch (Exception e) {
+                e.printStackTrace();
+                return "上传失败," + e.getMessage();
             }
             return "上传成功";
         } else {
@@ -85,9 +98,9 @@ public class FileController {
     }
 
     /**
-     * 保存方案信息
-     * @param file
-     * @param solutionId
+     * 保存方案信息file
+     *      *
+     * @param  @param solutionId
      * @param fileType
      * @param fileId
      */

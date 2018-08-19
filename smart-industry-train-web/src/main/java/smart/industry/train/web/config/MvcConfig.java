@@ -1,23 +1,14 @@
 package smart.industry.train.web.config;
 
-import com.fasterxml.jackson.core.JsonParser;
-import com.fasterxml.jackson.core.JsonToken;
-import com.fasterxml.jackson.databind.DeserializationContext;
-import com.fasterxml.jackson.databind.JsonDeserializer;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.deser.std.NumberDeserializers;
-import com.fasterxml.jackson.databind.module.SimpleModule;
+import com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.converter.HttpMessageConverter;
-import org.springframework.http.converter.StringHttpMessageConverter;
-import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.springframework.web.servlet.resource.VersionResourceResolver;
 
-import java.io.IOException;
-import java.nio.charset.Charset;
 import java.util.List;
 
 @Configuration
@@ -49,27 +40,19 @@ public class MvcConfig extends WebMvcConfigurerAdapter {
 
     /**
      * 消息的序列化转换器
-     * @param list
+     * @param converters
      */
     @Override
-    public void configureMessageConverters(List<HttpMessageConverter<?>> list) {
-        StringHttpMessageConverter stringHttpMessageConverter = new StringHttpMessageConverter(Charset.forName("UTF-8"));
-        list.add(stringHttpMessageConverter);
-
-        MappingJackson2HttpMessageConverter mappingJackson2HttpMessageConverter = new MappingJackson2HttpMessageConverter();
-        ObjectMapper objectMapper = mappingJackson2HttpMessageConverter.getObjectMapper();
-        SimpleModule module = new SimpleModule();
-        module.addDeserializer(Byte.class, new JsonDeserializer<Byte>() {
-            @Override
-            public Byte deserialize(JsonParser p, DeserializationContext ctxt) throws IOException {
-
-                if (p.currentToken().equals(JsonToken.VALUE_FALSE)) {
-                    return 0;
-                }
-                return new NumberDeserializers.ByteDeserializer(Byte.class, null).deserialize(p, ctxt);
-            }
-        });
-        objectMapper.registerModule(module);
-        list.add(mappingJackson2HttpMessageConverter);
+    public void configureMessageConverters(List<HttpMessageConverter<?>> converters) {
+        //配置SpringMVC的消息序列化器
+        super.configureMessageConverters(converters);
+        /*
+         * 1.定义一个convert消息转换对象
+         * 2.添加fastJson配置信息，如：是否需要格式化返回的json数据
+         * 3.在convert中添加配置信息
+         * 4.将convert添加到converters当中
+         */
+        FastJsonHttpMessageConverter fastConverter = new FastJsonHttpDateConverter();
+        converters.add(fastConverter);
     }
 }

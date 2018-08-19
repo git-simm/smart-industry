@@ -24,6 +24,7 @@
             <postprocessor class="org.kabeja.processing.PolylineConverter" name="polyline.converter"/>
             <!-- removes invisible entities -->
             <postprocessor class="org.kabeja.processing.VisibilityFilter" name="visibility.filter"/>
+            <postprocessor class="org.kabeja.myfilters.filter2" name="my-filter2"/>
         </postprocessors>
         <!--A SAXFilter will work on the XML SAX events and can change,add or remove XML SAX events.-->
         <filters>
@@ -34,6 +35,7 @@
             <filter class="org.kabeja.xslt.SAXXSLTFilter" name="xslt">
                 <property name="http://xml.org/sax/features/is-standalone/" value="true"/>
             </filter>
+            <filter class="org.kabeja.myfilters.filter1" name="my-filter1"/>
         </filters>
         <!--A SAXSerializer will output the XML SAX events to a given stream.-->
         <serializers>
@@ -99,7 +101,8 @@
         </pipeline>
         <pipeline name="svg" description="Converts the draft to SVG">
             <generate name="svg"/>
-            <postprocess name="extend.mytest"/>
+            <postprocess name="my-filter2"/>
+            <filter name="my-filter1"/>
             <serialize name="svg"/>
         </pipeline>
         <pipeline name="debug" description="Helps to debug false bounds">

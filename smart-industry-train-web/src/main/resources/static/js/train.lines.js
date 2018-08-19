@@ -76,11 +76,11 @@ Zq.Utility.RegisterNameSpace("train.lines");
     ns.AddTrain = function (callback) {
         //3ds files dont store normal maps
         var loader = new THREE.TDSLoader();
-        loader.setPath(Zq.Utility.GetPath('/const/objs/train/'));
+        loader.setPath(Zq.Utility.GetPath('/static/const/objs/train/'));
         var material = train.textures.TrainMaterial.clone();
         material.transparent = true;
         material.opacity = 0.8;
-        loader.load(Zq.Utility.GetPath('/const/objs/train/AVEENG_L.3DS'), function (object) {
+        loader.load(Zq.Utility.GetPath('/static/const/objs/train/AVEENG_L.3DS'), function (object) {
             object.traverse(function (child) {
                 if (child instanceof THREE.Mesh) {
                     child.material = material;
@@ -137,7 +137,7 @@ Zq.Utility.RegisterNameSpace("train.lines");
      * @constructor
      */
     ns.AddTrain4 = function (callback) {
-        var path = Zq.Utility.GetPath("/const/objs/train/");
+        var path = Zq.Utility.GetPath("/static/const/objs/train/");
         var mtlLoader = new THREE.MTLLoader();
         mtlLoader.setPath(path);
         mtlLoader.load('AVEENG_L.mtl', function (materials) {

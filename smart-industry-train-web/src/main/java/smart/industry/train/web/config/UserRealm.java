@@ -10,6 +10,7 @@ import org.apache.shiro.subject.PrincipalCollection;
 import org.springframework.beans.factory.annotation.Autowired;
 import smart.industry.train.biz.dao.UserBiz;
 import smart.industry.train.biz.entity.User;
+import smart.industry.utils.encode.MD5;
 
 public class UserRealm extends AuthorizingRealm {
 
@@ -35,6 +36,8 @@ public class UserRealm extends AuthorizingRealm {
     protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken token) {
         UsernamePasswordToken utoken = (UsernamePasswordToken) token;// 获取用户输入的token
         String username = utoken.getUsername();
+        String psw = new String(utoken.getPassword());
+        utoken.setPassword(MD5.encode(psw).toCharArray());
         User user = userService.findUserByName(username);
         return new SimpleAuthenticationInfo(user, user.getPsw(), this.getClass().getName());// 放入shiro.调用CredentialsMatcher检验密码
     }

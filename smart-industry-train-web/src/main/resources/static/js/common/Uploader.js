@@ -25,11 +25,12 @@ var myUploader = function (options) {
         // 选择文件的按钮。可选。
         // 内部根据当前运行是创建，可能是input元素，也可能是flash.
         pick: param.pick,
-        chunked: true, //] [默认值：false] 是否要分片处理大文件上传。
+        chunked: false, //] [默认值：false] 是否要分片处理大文件上传。
         chunkSize: 5242880,//如果要分片，分多大一片？ 默认大小为5M.
         chunkRetry: 3,//如果某个分片由于网络问题出错，允许自动重传多少次？
         accept: param.accept
     });
+    var tempUploader = this.uploader;
     // 当有文件添加进来的时候
     this.uploader.on('fileQueued', function (file) {
         param.list.append('<div id="' + file.id + '" class="item">' +
@@ -52,6 +53,7 @@ var myUploader = function (options) {
         $li.find('p.state').text('上传中');
         $percent.css('width', percentage * 100 + '%');
     });
+
     //上传文件前，添加参数
     this.uploader.on('uploadBeforeSend', function (obj, data, headers) {
         // data.DelFilePath = parentObj.siblings(".upload-path").val();
@@ -95,7 +97,7 @@ var myUploader = function (options) {
             tempUploader.upload();
         }
     });*/
-    var tempUploader = this.uploader;
+
     //设计方案ID
     var solutionId = null;
     this.upload = function(id){

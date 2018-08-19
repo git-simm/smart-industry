@@ -3,9 +3,9 @@
 <mapper namespace="smart.industry.train.biz.mapper.DesignClassMapper">
   <resultMap id="BaseResultMap" type="smart.industry.train.biz.entity.DesignClass">
     <id column="id" jdbcType="INTEGER" property="id" />
-    <result column="createDate" jdbcType="DATE" property="createDate" />
+    <result column="createDate" jdbcType="TIMESTAMP" property="createDate" />
     <result column="createBy" jdbcType="INTEGER" property="createBy" />
-    <result column="modifyDate" jdbcType="DATE" property="modifyDate" />
+    <result column="modifyDate" jdbcType="TIMESTAMP" property="modifyDate" />
     <result column="modifyBy" jdbcType="INTEGER" property="modifyBy" />
     <result column="name" jdbcType="VARCHAR" property="name" />
     <result column="pId" jdbcType="INTEGER" property="pId" />
@@ -17,13 +17,13 @@
   <sql id="Base_Where">
     <where>
       <if test="createDate != null">
-        createDate = #{createDate,jdbcType=DATE}
+        createDate = #{createDate,jdbcType=TIMESTAMP}
       </if>
       <if test="createBy != null">
         and createBy = #{createBy,jdbcType=INTEGER}
       </if>
       <if test="modifyDate != null">
-        and modifyDate = #{modifyDate,jdbcType=DATE}
+        and modifyDate = #{modifyDate,jdbcType=TIMESTAMP}
       </if>
       <if test="modifyby != null">
         and modifyby = #{modifyby,jdbcType=INTEGER}
@@ -72,8 +72,8 @@
     insert into design_class (id, createdate, createby, 
       modifydate, modifyby, `name`, 
       pId, sort)
-    values (#{id,jdbcType=INTEGER}, #{createDate,jdbcType=DATE}, #{createBy,jdbcType=INTEGER},
-      #{modifyDate,jdbcType=DATE}, #{modifyBy,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR},
+    values (#{id,jdbcType=INTEGER}, #{createDate,jdbcType=TIMESTAMP}, #{createBy,jdbcType=INTEGER},
+      #{modifyDate,jdbcType=TIMESTAMP}, #{modifyBy,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR},
       #{pId,jdbcType=INTEGER}, #{sort,jdbcType=INTEGER})
   </insert>
   <insert id="insertSelective" parameterType="smart.industry.train.biz.entity.DesignClass">
@@ -109,13 +109,13 @@
         #{id,jdbcType=INTEGER},
       </if>
       <if test="createDate != null">
-        #{createDate,jdbcType=DATE},
+        #{createDate,jdbcType=TIMESTAMP},
       </if>
       <if test="createBy != null">
         #{createBy,jdbcType=INTEGER},
       </if>
       <if test="modifyDate != null">
-        #{modifyDate,jdbcType=DATE},
+        #{modifyDate,jdbcType=TIMESTAMP},
       </if>
       <if test="modifyBy != null">
         #{modifyBy,jdbcType=INTEGER},
@@ -135,13 +135,13 @@
     update design_class
     <set>
       <if test="createDate != null">
-        createDate = #{createDate,jdbcType=DATE},
+        createDate = #{createDate,jdbcType=TIMESTAMP},
       </if>
       <if test="createBy != null">
         createBy = #{createBy,jdbcType=INTEGER},
       </if>
       <if test="modifyDate != null">
-        modifyDate = #{modifyDate,jdbcType=DATE},
+        modifyDate = #{modifyDate,jdbcType=TIMESTAMP},
       </if>
       <if test="modifyBy != null">
         modifyBy = #{modifyBy,jdbcType=INTEGER},
@@ -160,9 +160,9 @@
   </update>
   <update id="updateByPrimaryKey" parameterType="smart.industry.train.biz.entity.DesignClass">
     update design_class
-    set createDate = #{createDate,jdbcType=DATE},
+    set createDate = #{createDate,jdbcType=TIMESTAMP},
       createBy = #{createBy,jdbcType=INTEGER},
-      modifyDate = #{modifyDate,jdbcType=DATE},
+      modifyDate = #{modifyDate,jdbcType=TIMESTAMP},
       modifyBy = #{modifyBy,jdbcType=INTEGER},
       `name` = #{name,jdbcType=VARCHAR},
       pId = #{pId,jdbcType=INTEGER},

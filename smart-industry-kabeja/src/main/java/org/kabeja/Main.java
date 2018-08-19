@@ -15,7 +15,6 @@
  */
 package org.kabeja;
 
-import org.apache.tomcat.jni.Directory;
 import org.kabeja.dxf.DXFDocument;
 import org.kabeja.parser.DXFParser;
 import org.kabeja.parser.Parser;
@@ -58,18 +57,6 @@ public class Main {
         if (f.exists() && f.isFile()) {
             main.parseFile(f, output);
         }
-    }
-
-    private static void printUsage() {
-        System.out
-                .println("\n Use: java -jar kabeja.jar <Options> sourcefile  <outputfile>"
-                        + "\n\nOptions:\n"
-                        + "  --help shows this and exit\n"
-                        + "  -nogui run only the cli, omit the user interface\n"
-                        + "  -pp process.xml set processing file to use\n"
-                        + "  -pipeline name  process the given pipeline\n\n"
-                        + "If the source is a directory,"
-                        + " all containing files will be converted.\n");
     }
 
     public void setPipeline(String name) {

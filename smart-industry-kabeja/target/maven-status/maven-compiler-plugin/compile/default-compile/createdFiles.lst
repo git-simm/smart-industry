@@ -34,6 +34,7 @@ org\kabeja\math\ParametricPlane.class
 org\kabeja\ui\Serviceable.class
 org\kabeja\ui\xml\SAXServiceContainerBuilder.class
 org\kabeja\parser\table\DXFVPortTableHandler.class
+org\kabeja\myfilters\filter2.class
 org\kabeja\xml\SAXPrettyOutputter.class
 org\kabeja\processing\event\ProcessingListener.class
 org\kabeja\parser\AbstractSectionHandler.class
@@ -107,6 +108,7 @@ org\kabeja\parser\objects\AbstractDXFObjectHandler.class
 org\kabeja\svg\SVGGenerator.class
 org\kabeja\ui\ServiceManager.class
 org\kabeja\svg\generators\SVGAttribGenerator.class
+org\kabeja\myfilters\filter1.class
 org\kabeja\svg\generators\SVGLWPolylineGenerator.class
 org\kabeja\parser\DXFBlocksSectionHandler.class
 org\kabeja\processing\helper\PolylineQueue.class

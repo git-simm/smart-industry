@@ -49,8 +49,13 @@ spring:
     expose-spring-macro-helpers: false
     #应用程序发布，如果有上下文路径，则可以使用
     request-context-attribute: request
+  #配置springmvc json序列化器  系统启用fastjson序列化器
+  #jackson:
+  #  date-format: yyyy-MM-dd HH:mm:ss
+  #  time-zone: GMT+8
 mybatis:
-  type-aliases-package: smart.industry.train.biz.mapper
+  #实体别名
+  type-aliases-package: smart.industry.train.biz.entity
   mapper-locations: classpath:mapper/*.xml
   configuration:
     # 开启驼峰命名大法

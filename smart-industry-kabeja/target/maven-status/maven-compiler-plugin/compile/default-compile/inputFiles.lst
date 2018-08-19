@@ -42,6 +42,7 @@ D:\myworkspace\git\smart-industry\smart-industry-kabeja\src\main\java\org\kabeja
 D:\myworkspace\git\smart-industry\smart-industry-kabeja\src\main\java\org\kabeja\svg\generators\SVGShapeGenerator.java
 D:\myworkspace\git\smart-industry\smart-industry-kabeja\src\main\java\org\kabeja\dxf\helpers\DXFSplineConverter.java
 D:\myworkspace\git\smart-industry\smart-industry-kabeja\src\main\java\org\kabeja\ui\model\SAXGeneratorTreeNode.java
+D:\myworkspace\git\smart-industry\smart-industry-kabeja\src\main\java\org\kabeja\myfilters\filter2.java
 D:\myworkspace\git\smart-industry\smart-industry-kabeja\src\main\java\org\kabeja\tools\CodePageParser.java
 D:\myworkspace\git\smart-industry\smart-industry-kabeja\src\main\java\org\kabeja\dxf\DXFLine.java
 D:\myworkspace\git\smart-industry\smart-industry-kabeja\src\main\java\org\kabeja\dxf\objects\DXFMLineStyleElement.java
@@ -110,6 +111,7 @@ D:\myworkspace\git\smart-industry\smart-industry-kabeja\src\main\java\org\kabeja
 D:\myworkspace\git\smart-industry\smart-industry-kabeja\src\main\java\org\kabeja\parser\DXFObjectsSectionHandler.java
 D:\myworkspace\git\smart-industry\smart-industry-kabeja\src\main\java\org\kabeja\dxf\objects\DXFDictionary.java
 D:\myworkspace\git\smart-industry\smart-industry-kabeja\src\main\java\org\kabeja\ui\model\SAXSerializersTreeNode.java
+D:\myworkspace\git\smart-industry\smart-industry-kabeja\src\main\java\org\kabeja\myfilters\filter1.java
 D:\myworkspace\git\smart-industry\smart-industry-kabeja\src\main\java\org\kabeja\svg\SVGContext.java
 D:\myworkspace\git\smart-industry\smart-industry-kabeja\src\main\java\org\kabeja\math\NURBSFixedNTELSPointIterator.java
 D:\myworkspace\git\smart-industry\smart-industry-kabeja\src\main\java\org\kabeja\parser\SAXParserBuilder.java

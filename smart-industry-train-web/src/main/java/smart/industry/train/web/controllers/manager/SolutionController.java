@@ -8,7 +8,6 @@ import org.apache.shiro.subject.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.multipart.MultipartFile;
 import smart.industry.train.biz.dao.DesignSolutionBiz;
 import smart.industry.train.biz.entity.DesignSolution;
 import smart.industry.train.biz.entity.User;
@@ -16,9 +15,6 @@ import smart.industry.train.biz.entity.base.Paging;
 import smart.industry.utils.annotations.Post;
 
 import javax.servlet.http.HttpServletRequest;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 
@@ -77,7 +73,7 @@ public class SolutionController {
         List<DesignSolution> list = designSolutionBiz.selectByCon(json);
         PageInfo<DesignSolution> p=new PageInfo<>(list);
         JSONObject result = new JSONObject();
-        result.put("rows", list);
+        result.put("rows", p.getList());
         result.put("total", p.getTotal());
         return result;
     }
