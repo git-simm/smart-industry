@@ -1,5 +1,6 @@
 package smart.industry.train.biz.dao;
 
+import org.apache.shiro.util.CollectionUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import smart.industry.train.biz.dao.base.BaseBiz;
@@ -7,6 +8,7 @@ import smart.industry.train.biz.entity.DesignSolution;
 import smart.industry.train.biz.entity.User;
 import smart.industry.train.biz.entity.base.Paging;
 import smart.industry.train.biz.mapper.UserMapper;
+import smart.industry.utils.exceptions.AjaxException;
 
 import java.util.List;
 
@@ -38,5 +40,19 @@ public class UserBiz  extends BaseBiz<UserMapper,User> {
         User filter = User.class.newInstance();
         filter.setName(paging.getSearchKey());
         return filter;
+    }
+
+    /**
+     * 用户验证
+     * @param user
+     * @return
+     */
+    public boolean validUsers(User user){
+        user.setFilter("code=#{code} and id!=#{id}");
+        List<User> users = selectByFilter(user);
+        if(CollectionUtils.isEmpty(users)) return true;
+        else{
+            throw new AjaxException(user.getCode()+"在数据库中已经存在，请重新输入");
+        }
     }
 }

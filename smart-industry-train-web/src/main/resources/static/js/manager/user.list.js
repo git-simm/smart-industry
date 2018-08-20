@@ -89,6 +89,7 @@
                         var content = $("#list_opr_template").html();
                         content = content.replace("{edit}", "user.list.Edit('" + row.id + "')");
                         content = content.replace("{del}", "user.list.Delete('" + row.id + "')");
+                        content = content.replace("{resetpsw}", "user.list.ResetPsw('" + row.id + "')")
                         return content;
                     }
                     //width: "30%"
@@ -154,6 +155,29 @@
                         //删除成功，刷新列表
                         ns.ReFresh();
                         Zq.Utility.Msg("删除成功");
+                    }
+                }
+            });
+        });
+    };
+    /**
+     * 重置密码
+     * @param id
+     * @constructor
+     */
+    ns.ResetPsw = function (id) {
+        //询问框
+        layer.confirm('确定要重置密码？', function () {
+            layer.closeAll('dialog');
+            $.ajax({
+                async: false,
+                type: "Get",
+                dataType:"json",
+                url: ("/user/reset?id=" + id).geturl(),
+                success: function (result) {
+                    if (result > 0) {
+                        ns.ReFresh();
+                        Zq.Utility.Msg("密码重置成功");
                     }
                 }
             });

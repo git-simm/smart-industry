@@ -17,4 +17,5 @@ public class BaseEntity {
     protected Date modifyDate;
     protected Integer modifyBy;
     protected String orderBy;
+    protected String filter;
 }

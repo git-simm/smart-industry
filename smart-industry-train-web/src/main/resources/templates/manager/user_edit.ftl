@@ -30,7 +30,7 @@
                 <label class="col-2 textRight noPadding-right red">密码：</label>
                 <div class="col-4">
                 <#if entity.sex??>
-                    <input type="password" name="psw" value="${entity.psw!}" required />
+                    <input type="password" name="psw" value="${entity.psw!}" disabled required />
                 <#else>
                     <input type="text" name="psw" value="123456" required />
                 </#if>
@@ -79,9 +79,9 @@
 		            async: false,
 		            type: "Post",
 		            dataType:"json",
-					contentType: 'application/json',
+					//contentType: 'application/json',
 		            url: url.geturl(),
-		            data: JSON.stringify(obj),
+		            data: obj,
 		            success: function (result) {
 		                SmartMonitor.Common.Close(true);
 		            }

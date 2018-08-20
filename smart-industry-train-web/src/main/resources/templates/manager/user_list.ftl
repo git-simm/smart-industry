@@ -29,6 +29,9 @@
                 <button class="btn btn-xs btn-info" title="编辑" onclick="{edit}">
                     <i class="icon-edit"></i>
                 </button>
+                <button class="btn btn-xs btn-info" title="重置密码" onclick="{resetpsw}">
+                    <i class="icon-lock"></i>
+                </button>
                 <button class="btn btn-xs btn-danger" title="删除" onclick="{del}">
                     <i class="icon-trash"></i>
                 </button>

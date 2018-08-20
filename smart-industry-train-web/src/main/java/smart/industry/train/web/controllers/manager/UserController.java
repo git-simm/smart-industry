@@ -79,7 +79,8 @@ public class UserController {
      * @return
      */
     @Post("/add")
-    public int add(@RequestBody User user){
+    public int add(User user){
+        userBiz.validUsers(user);
         user.setPsw(MD5.encode(user.getPsw()));
         return userBiz.add(user);
     }
@@ -90,7 +91,8 @@ public class UserController {
      * @return
      */
     @Post("/edit")
-    public int edit(@RequestBody User user){
+    public int edit(User user){
+        userBiz.validUsers(user);
         //不允许编辑密码
         user.setPsw(null);
         return userBiz.update(user);
@@ -104,5 +106,16 @@ public class UserController {
     @Post("/delete")
     public int delete(Integer id){
         return userBiz.delete(id);
+    }
+
+    /**
+     * 重置密码
+     * @param id
+     * @return
+     */
+    public int reset(Integer id){
+        User user = userBiz.selectByPrimaryKey(id);
+        user.setPsw(MD5.encode("123456"));
+        return userBiz.update(user);
     }
 }

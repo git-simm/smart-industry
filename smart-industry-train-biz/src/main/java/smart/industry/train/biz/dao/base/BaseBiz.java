@@ -1,6 +1,5 @@
 package smart.industry.train.biz.dao.base;
 
-import org.mybatis.spring.support.SqlSessionDaoSupport;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 import smart.industry.train.biz.dao.PrincipalService;
@@ -8,7 +7,6 @@ import smart.industry.train.biz.entity.base.BaseEntity;
 import smart.industry.train.biz.entity.base.Paging;
 import smart.industry.train.biz.interfaces.IMapper;
 import smart.industry.utils.StringUtils;
-
 import java.util.Date;
 import java.util.List;
 
@@ -91,6 +89,15 @@ public abstract class BaseBiz<TMapper extends IMapper<TEntity>,TEntity extends B
             e.printStackTrace();
         }
         return null;
+    }
+
+    /**
+     * 获取过滤条件
+     * @param entity
+     * @return
+     */
+    public List<TEntity> selectByFilter(TEntity entity){
+        return baseMapper.selectByFilter(entity);
     }
     /**
      * 获取过滤条件

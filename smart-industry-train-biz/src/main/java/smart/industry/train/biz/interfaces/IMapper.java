@@ -25,6 +25,12 @@ public interface IMapper<T> {
      * @return
      */
     List<T> selectByCon(T record);
+    /**
+     * 通过过滤条件进行查询
+     * @param record
+     * @return
+     */
+    List<T> selectByFilter(T record);
 
     int updateByPrimaryKeySelective(T record);
 

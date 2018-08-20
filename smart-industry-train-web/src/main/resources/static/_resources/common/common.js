@@ -83,7 +83,7 @@
             title: "修改密码",
             maxmin: false,
             area: ['400px', '300px'],
-            content: [ns.GetUrl('/ChangePassword'), 'yes'],
+            content: [ns.GetUrl('/changePsw'), 'yes'],
             end: function () {
                 if (SmartMonitor.Common.GetResult() === true) {
                     alert("密码修改成功，请重新登录");

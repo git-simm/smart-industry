@@ -6,10 +6,13 @@ import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.subject.Subject;
 import org.apache.shiro.web.util.SavedRequest;
 import org.apache.shiro.web.util.WebUtils;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+import smart.industry.train.biz.dao.UserBiz;
 import smart.industry.train.biz.entity.User;
 import smart.industry.utils.StringUtils;
+import smart.industry.utils.encode.MD5;
 import smart.industry.utils.exceptions.AjaxException;
 
 import javax.servlet.http.HttpServletRequest;
@@ -21,6 +24,8 @@ import java.util.Map;
 @Controller
 @RequestMapping("/")
 public class IndexController {
+    @Autowired
+    UserBiz userBiz;
     @RequestMapping("/")
     public String index(Map<String, Object> map){
         return index2(map);
@@ -35,6 +40,15 @@ public class IndexController {
         return "index";
     }
 
+    /**
+     * 修改密码
+     * @param map
+     * @return
+     */
+    @RequestMapping("/changePsw")
+    public String changePsw(Map<String, Object> map){
+        return "auth/changepsw";
+    }
     //用户登录 begin
     @GetMapping(value = "/login")
     public String login(HttpServletRequest request, Map<String, Object> map){
@@ -94,6 +108,28 @@ public class IndexController {
         Subject subject = SecurityUtils.getSubject();
         subject.logout();
         return 1;
+    }
+
+    /**
+     * 更新密码
+     * @param psw
+     * @param newpsw
+     * @param confirmpsw
+     * @return
+     */
+    @RequestMapping("/updatepsw")
+    @ResponseBody
+    public int updatepsw(String psw,String newpsw,String confirmpsw){
+        if(!newpsw.equals(confirmpsw)){
+            throw new AjaxException("新密码与确认密码不匹配，请重新输入");
+        }
+        String oldPsw = MD5.encode(psw);
+        User user = (User) SecurityUtils.getSubject().getPrincipal();
+        if(!user.getPsw().equals(oldPsw)){
+            throw new AjaxException("原始密码错误，请重新输入");
+        }
+        user.setPsw(MD5.encode(newpsw));
+        return userBiz.update(user);
     }
     //end
 }
