@@ -30,10 +30,14 @@
                 $.extend(params, { searchKey: $("input[name='searchkey']").val()});
                 return params;
             },
-            onDblClickRow: function(tr,el) {
-                ns.Edit(tr.ID);
+            onClickRow:function(tr,el){
+                $("tbody>tr[class='selected']",'#list').removeClass("selected");
+                $(el).addClass("selected");
             },
-            //showToggle:true,
+            onDblClickRow: function(tr,el) {
+                ns.Edit(tr.id);
+            },
+            showToggle:false,
             columns: [
                 {
                     field: 'Number',
@@ -101,8 +105,8 @@
                     sortable: false,
                     formatter: function (value, row, index) {
                         var content = $("#list_opr_template").html();
-                        content = content.replace("{edit}", "solution.list2.Edit('" + row.ID + "')");
-                        content = content.replace("{del}", "solution.list2.Delete('" + row.ID + "')");
+                        content = content.replace("{edit}", "solution.list2.Edit('" + row.id + "')");
+                        content = content.replace("{del}", "solution.list2.Delete('" + row.id + "')");
                         return content;
                     }
                     //width: "30%"

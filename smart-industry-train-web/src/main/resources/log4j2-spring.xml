@@ -75,7 +75,7 @@
 	</Appenders>
 	<Loggers>
         <!--<logger name="simm.spring.restapi" level="INFO"></logger>-->
-        <Root level="DEBUG">
+        <Root level="debug">
         	<appender-ref ref="console"/>
             <appender-ref ref="RollingFileDebug"/>
             <appender-ref ref="RollingFileInfo"/>

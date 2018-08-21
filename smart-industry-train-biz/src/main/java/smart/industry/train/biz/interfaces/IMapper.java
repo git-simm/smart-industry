@@ -18,13 +18,6 @@ public interface IMapper<T> {
      * @return
      */
     List<T> selectAll();
-
-    /**
-     * 通过分页信息进行查询
-     * @param record
-     * @return
-     */
-    List<T> selectByCon(T record);
     /**
      * 通过过滤条件进行查询
      * @param record

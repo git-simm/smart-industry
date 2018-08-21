@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import smart.industry.train.biz.dao.DesignSolutionBiz;
+import smart.industry.train.biz.dao.DesignSolutionListBiz;
 import smart.industry.train.biz.entity.DesignSolution;
 import smart.industry.train.biz.entity.User;
 import smart.industry.train.biz.entity.base.Paging;
@@ -28,6 +29,8 @@ public class SolutionController {
     private  HttpServletRequest request;
     @Autowired
     private DesignSolutionBiz designSolutionBiz;
+    @Autowired
+    private DesignSolutionListBiz designSolutionListBiz;
     @RequestMapping("/list")
     public String list(Map<String, Object> map){
         Subject subject = SecurityUtils.getSubject();
@@ -56,8 +59,11 @@ public class SolutionController {
      */
     @RequestMapping("/editwin")
     public String editWin(int id,Map<String, Object> map){
-        map.put("entity",new DesignSolution());
+        map.put("entity",designSolutionBiz.selectByPrimaryKey(id));
         map.put("formMode","edit");
+        map.put("type1",designSolutionListBiz.getListBySolution(id,1));
+        map.put("type2",designSolutionListBiz.getListBySolution(id,2));
+        map.put("type3",designSolutionListBiz.getListBySolution(id,3));
         return "manager/solution_edit";
     }
     /**
@@ -70,7 +76,7 @@ public class SolutionController {
     public JSONObject getList(Paging json, Map<String, Object> map){
         System.out.println(request);
         PageHelper.offsetPage(json.getOffset(),json.getLimit());
-        List<DesignSolution> list = designSolutionBiz.selectByCon(json);
+        List<DesignSolution> list = designSolutionBiz.selectByPage(json);
         PageInfo<DesignSolution> p=new PageInfo<>(list);
         JSONObject result = new JSONObject();
         result.put("rows", p.getList());

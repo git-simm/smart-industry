@@ -44,7 +44,7 @@ public class UserController {
     @ResponseBody
     public JSONObject getList(Paging json, Map<String, Object> map){
         PageHelper.offsetPage(json.getOffset(),json.getLimit());
-        List<User> users = userBiz.selectByCon(json);
+        List<User> users = userBiz.selectByPage(json);
         PageInfo<User> p=new PageInfo<>(users);
         JSONObject result = new JSONObject();
         result.put("rows", p.getList());

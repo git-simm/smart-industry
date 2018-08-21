@@ -1,18 +1,18 @@
 <#include "../base/_base.ftl"/>
 <@layout;section>
-<#if section="title"> 设计方案编辑
-<#elseif section="css">
-    <@cssRef url="/static/_resources/uploader/webuploader.css"/>
-    <@cssRef url="/static/css/myuploader.css"/>
-<#elseif section="content">
+    <#if section="title"> 设计方案编辑
+    <#elseif section="css">
+        <@cssRef url="/static/_resources/uploader/webuploader.css"/>
+        <@cssRef url="/static/css/myuploader.css"/>
+    <#elseif section="content">
 <div class="page-content mini-model">
     <form id="form-main" onsubmit="javascript: return false;">
-        <input type="hidden" name="id" value="${entity.id!}" />
+        <input type="hidden" name="id" value="${entity.id!}"/>
         <div class="mini-model-body bottom40">
             <div class="form-group padding10">
                 <label class="col-2 textRight noPadding-right red">名称：</label>
                 <div class="col-10">
-                 	<input type="text" name="name" value="${entity.name!}" required />
+                    <input type="text" name="name" value="${entity.name!}" required/>
                 </div>
             </div>
             <div class="tabbable tabs-left marginTop30">
@@ -40,6 +40,20 @@
                     <div id="home3" class="tab-pane active">
                         <div id="uploader1" class="uploader wu-example">
                             <!--用来存放文件信息-->
+                            <div class="uploader-list">
+                                <#if type1??>
+                                    <#list type1 as file>
+                                        <div class="dd-handle" fileid="${file.id}">
+                                            ${file.name!}
+                                            <div class="pull-right action-buttons">
+                                                <a class="red" href="#" onclick="solution.edit.delfile(${file.id})">
+                                                    <i class="icon-trash bigger-130"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </#list>
+                                </#if>
+                            </div>
                             <div id="thelist1" class="uploader-list"></div>
                             <div class="btns">
                                 <div id="picker1" class="mypicker">选择文件</div>
@@ -48,6 +62,20 @@
                     </div>
                     <div id="profile3" class="tab-pane">
                         <div id="uploader2" class="uploader wu-example">
+                            <div class="uploader-list">
+                                <#if type2??>
+                                    <#list type2 as file>
+                                    <div class="dd-handle" fileid="${file.id}">
+                                        ${file.name!}
+                                        <div class="pull-right action-buttons">
+                                            <a class="red" href="#" onclick="solution.edit.delfile(${file.id})">
+                                                <i class="icon-trash bigger-130"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    </#list>
+                                </#if>
+                            </div>
                             <!--用来存放文件信息-->
                             <div id="thelist2" class="uploader-list"></div>
                             <div class="btns">
@@ -57,6 +85,20 @@
                     </div>
                     <div id="dropdown13" class="tab-pane">
                         <div id="uploader3" class="uploader wu-example">
+                            <div class="uploader-list">
+                                <#if type3??>
+                                    <#list type3 as file>
+                                    <div class="dd-handle" fileid="${file.id}">
+                                        ${file.name!}
+                                        <div class="pull-right action-buttons">
+                                            <a class="red" href="#" onclick="solution.edit.delfile(${file.id})">
+                                                <i class="icon-trash bigger-130"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    </#list>
+                                </#if>
+                            </div>
                             <!--用来存放文件信息-->
                             <div id="thelist3" class="uploader-list"></div>
                             <div class="btns">
@@ -75,81 +117,92 @@
         </div>
     </form>
 </div>
-<#elseif section="scripts">
-    <@jsRef "/static/_resources/uploader/webuploader.js"/>
-    <@jsRef "/static/js/common/Uploader.js"/>
+    <#elseif section="scripts">
+        <@jsRef "/static/_resources/uploader/webuploader.js"/>
+        <@jsRef "/static/js/common/Uploader.js"/>
 	 <script type="text/javascript">
-	     Zq.Utility.RegisterNameSpace("solution.edit");
-		//闭包引入命名空间
-		(function (ns, undefined) {
-		    //新增方法
-		    ns.OK = function () {
-		        var url = "/solution/edit";
-		        if (SmartMonitor.Common.GetMode($("#form-main")) === "add") {
-		            url = "/solution/add";
-		        }
-		        var obj = $("#form-main").serializeObject();
-		        $.ajax({
-		            async: false,
-		            type: "Post",
-		            dataType:"json",
-		            url: url.geturl(),
-		            data: obj,
-		            success: function (id) {
-                        //文件上传
-                        ns.upload(id);
-		                //SmartMonitor.Common.Close(true);
-		            }
-		        });
-		    };
-            var accept = {
-                title: 'intoTypes',
-                extensions: 'rar,zip,doc,xls,docx,xlsx,pdf',
-                mimeTypes: '.rar,.zip,.doc,.xls,.docx,.xlsx,.pdf'
-            };
-            var uploader1 = new myUploader({
-                list: $('#thelist1'),
-                btn: $('#ctlBtn1'),
-                pick: '#picker1',
-                fileType:1,
-                accept: accept
-            });
-            var uploader2 = new myUploader({
-                list: $('#thelist2'),
-                btn: $('#ctlBtn2'),
-                pick: '#picker2',
-                fileType:2,
-                accept: accept
-            });
-            var uploader3 = new myUploader({
-                list: $('#thelist3'),
-                btn: $('#ctlBtn3'),
-                pick: '#picker3',
-                fileType:3,
-                accept: accept
-            });
-            /**
-             * 触发文件上传
-             */
-            ns.upload = function(id){
-                uploader1.upload(id);
-                uploader2.upload(id);
-                uploader3.upload(id);
-            }
-		})(solution.edit);
+         Zq.Utility.RegisterNameSpace("solution.edit");
+         //闭包引入命名空间
+         (function (ns, undefined) {
+             //新增方法
+             ns.OK = function () {
+                 var url = "/solution/edit";
+                 if (SmartMonitor.Common.GetMode($("#form-main")) === "add") {
+                     url = "/solution/add";
+                 }
+                 var obj = $("#form-main").serializeObject();
+                 $.ajax({
+                     async: false,
+                     type: "Post",
+                     dataType: "json",
+                     url: url.geturl(),
+                     data: obj,
+                     success: function (id) {
+                         //文件上传
+                         ns.upload(id);
+                         //SmartMonitor.Common.Close(true);
+                     }
+                 });
+             };
+             var accept = {
+                 title: 'intoTypes',
+                 extensions: 'rar,zip,doc,xls,docx,xlsx,pdf',
+                 mimeTypes: '.rar,.zip,.doc,.xls,.docx,.xlsx,.pdf'
+             };
+             var uploader1 = new myUploader({
+                 list: $('#thelist1'),
+                 btn: $('#ctlBtn1'),
+                 pick: '#picker1',
+                 fileType: 1,
+                 accept: accept
+             });
+             var uploader2 = new myUploader({
+                 list: $('#thelist2'),
+                 btn: $('#ctlBtn2'),
+                 pick: '#picker2',
+                 fileType: 2,
+                 accept: accept
+             });
+             var uploader3 = new myUploader({
+                 list: $('#thelist3'),
+                 btn: $('#ctlBtn3'),
+                 pick: '#picker3',
+                 fileType: 3,
+                 accept: accept
+             });
+             /**
+              * 触发文件上传
+              */
+             ns.upload = function (id) {
+                 uploader1.upload(id);
+                 uploader2.upload(id);
+                 uploader3.upload(id);
+             }
+             /**
+              * 删除文件
+              * @type {Array}
+              */
+             var dels = [];
+             ns.delfile = function (id) {
+                 //删除文件
+                 $("div[fileid='" + id + "']").remove();
+                 dels.push(id);
+                 console.log(dels);
+             }
+         })(solution.edit);
 
-		var accept2 =  {
-            title: 'dxf',
-            extensions: 'dxf',
-            mimeTypes: 'application/dxf'
-        };
+         var accept2 = {
+             title: 'dxf',
+             extensions: 'dxf',
+             mimeTypes: 'application/dxf'
+         };
 
-		$(function(){
-            //调整按钮大小
-            setTimeout(function(){
-                $("div[id^='rt_rt_']").css({ width:72,height:29});
-            },1000);
-        });
-	  </script>
-</#if>
+         $(function () {
+             //调整按钮大小
+             setTimeout(function () {
+                 $("div[id^='rt_rt_']").css({width: 72, height: 29});
+             }, 1000);
+         });
+     </script>
+    </#if>
 </@layout>

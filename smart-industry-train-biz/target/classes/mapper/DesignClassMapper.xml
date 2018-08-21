@@ -50,11 +50,14 @@
     <include refid="Base_Column_List" />
     from design_class order by pid,sort
   </select>
-  <select id="selectByCon" parameterType="smart.industry.train.biz.entity.DesignClass" resultMap="BaseResultMap">
+  <select id="selectByFilter" parameterType="DesignClass" resultMap="BaseResultMap">
     select
     <include refid="Base_Column_List" />
     from design_class
-    <include refid="Base_Where"/>
+    where ${filter}
+    <if test="orderBy != null">
+      order by ${orderBy}
+    </if>
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from design_class
@@ -68,7 +71,7 @@
     </foreach>
     )
   </delete>
-  <insert id="insert" parameterType="smart.industry.train.biz.entity.DesignClass">
+  <insert id="insert" parameterType="DesignClass">
     insert into design_class (id, createdate, createby, 
       modifydate, modifyby, `name`, 
       pId, sort)
@@ -76,7 +79,7 @@
       #{modifyDate,jdbcType=TIMESTAMP}, #{modifyBy,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR},
       #{pId,jdbcType=INTEGER}, #{sort,jdbcType=INTEGER})
   </insert>
-  <insert id="insertSelective" parameterType="smart.industry.train.biz.entity.DesignClass">
+  <insert id="insertSelective" parameterType="DesignClass">
     insert into design_class
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">

@@ -1,33 +1,20 @@
 package smart.industry.train.web.controllers;
 
-import com.alibaba.fastjson.JSONObject;
-import org.apache.tomcat.util.http.fileupload.FileItem;
-import org.apache.tomcat.util.http.fileupload.FileItemFactory;
-import org.apache.tomcat.util.http.fileupload.RequestContext;
-import org.apache.tomcat.util.http.fileupload.disk.DiskFileItemFactory;
-import org.apache.tomcat.util.http.fileupload.servlet.ServletFileUpload;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.util.NumberUtils;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
+import smart.industry.train.biz.dao.DesignSolutionListBiz;
 import smart.industry.train.biz.dao.SysUpfilesBiz;
-import smart.industry.train.biz.dao.base.DesignSolutionListBiz;
 import smart.industry.train.biz.entity.DesignSolutionList;
 import smart.industry.train.biz.entity.SysUpfiles;
-import smart.industry.utils.entity.MultipartFileParam;
 import smart.industry.utils.files.FileUtil;
-import smart.industry.utils.files.Md5Util;
-import smart.industry.utils.files.MultipartFileUploadUtil;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import java.io.Console;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.util.List;
 import java.util.UUID;
 
 /**

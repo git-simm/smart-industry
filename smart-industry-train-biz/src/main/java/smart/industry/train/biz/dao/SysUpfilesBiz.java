@@ -6,12 +6,15 @@ import smart.industry.train.biz.entity.SysUpfiles;
 import smart.industry.train.biz.entity.base.Paging;
 import smart.industry.train.biz.mapper.SysUpfilesMapper;
 
+import java.util.List;
+
 @Service
 public class SysUpfilesBiz extends BaseBiz<SysUpfilesMapper,SysUpfiles> {
     @Override
     public SysUpfiles getFilter(Paging paging) throws Exception {
         SysUpfiles filter = SysUpfiles.class.newInstance();
         filter.setFileName(paging.getSearchKey());
+        filter.setFilter("fileName like concat('%',#{fileName},'%')");
         return filter;
     }
 }

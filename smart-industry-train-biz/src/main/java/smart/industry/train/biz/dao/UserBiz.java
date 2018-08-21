@@ -28,7 +28,8 @@ public class UserBiz  extends BaseBiz<UserMapper,User> {
     public User findUserByName(String username) {
         User user = new User();
         user.setName(username);
-        List<User> users = userMapper.selectByCon(user);
+        user.setFilter("name=#{name}");
+        List<User> users = userMapper.selectByFilter(user);
         if(users!=null && users.size()>0){
             return users.get(0);
         }
@@ -39,6 +40,7 @@ public class UserBiz  extends BaseBiz<UserMapper,User> {
     public User getFilter(Paging paging) throws Exception {
         User filter = User.class.newInstance();
         filter.setName(paging.getSearchKey());
+        filter.setFilter("name like concat('%',#{name},'%')");
         return filter;
     }
 

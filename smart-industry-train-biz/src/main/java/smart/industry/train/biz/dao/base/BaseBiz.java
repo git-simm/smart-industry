@@ -76,7 +76,7 @@ public abstract class BaseBiz<TMapper extends IMapper<TEntity>,TEntity extends B
      * @param paging
      * @return
      */
-    public List<TEntity> selectByCon(Paging paging){
+    public List<TEntity> selectByPage(Paging paging){
         TEntity filter = null;
         try {
             filter = getFilter(paging);
@@ -84,7 +84,7 @@ public abstract class BaseBiz<TMapper extends IMapper<TEntity>,TEntity extends B
             if(StringUtils.isNotBlank(paging.getSort())){
                 filter.setOrderBy(String.format("%s %s",paging.getSort(),paging.getOrder()));
             }
-            return baseMapper.selectByCon(filter);
+            return baseMapper.selectByFilter(filter);
         } catch (Exception e) {
             e.printStackTrace();
         }
