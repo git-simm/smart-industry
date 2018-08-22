@@ -108,7 +108,8 @@ window.Zq.Utility = window.Zq.Utility || {};
             title: "模态对话框",
             maxmin: true, //开启最大化最小化按钮
             shade: 0.3,
-            end: null
+            end: null,
+            success: null
         }, param);
         //使用layer进行弹层
         if (parent && parent.layer) {

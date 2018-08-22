@@ -9,7 +9,6 @@ smart\industry\train\biz\dao\SysUpfilesBiz.class
 smart\industry\train\biz\dao\UserBiz.class
 smart\industry\train\biz\mapper\DesignSolutionListMapper.class
 smart\industry\train\biz\mapper\DesignClassMapper.class
-smart\industry\train\biz\dao\base\DesignSolutionListBiz.class
 smart\industry\train\biz\entity\User.class
 smart\industry\train\biz\mypoi\DesignXlsBiz$1.class
 smart\industry\train\biz\mapper\DesignSolutionMapper.class

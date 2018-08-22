@@ -1,9 +1,12 @@
 package smart.industry.train.biz.dao;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import smart.industry.train.biz.dao.base.BaseBiz;
 import smart.industry.train.biz.entity.DesignSolution;
 import smart.industry.train.biz.entity.DesignSolutionList;
+import smart.industry.train.biz.entity.SysUpfiles;
 import smart.industry.train.biz.entity.base.Paging;
 import smart.industry.train.biz.mapper.DesignSolutionListMapper;
 import smart.industry.train.biz.mapper.DesignSolutionMapper;
@@ -34,6 +37,18 @@ public class DesignSolutionListBiz extends BaseBiz<DesignSolutionListMapper,Desi
         filter.setSolutionId(solutionId);
         filter.setType(type);
         filter.setFilter("solutionId=#{solutionId} and type=#{type}");
+        return selectByFilter(filter);
+    }
+
+    /**
+     * 获取方案下所有的文件列表
+     * @param solutionId
+     * @return
+     */
+    public List<DesignSolutionList> getAllListBySolution(Integer solutionId) {
+        DesignSolutionList filter = new DesignSolutionList();
+        filter.setSolutionId(solutionId);
+        filter.setFilter("solutionId=#{solutionId}");
         return selectByFilter(filter);
     }
 }

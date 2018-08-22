@@ -8,14 +8,14 @@
             url: ('/solution/getlist').geturl(),
             method: 'post',
             dataType: "json",
-            contentType:"application/x-www-form-urlencoded",
+            contentType: "application/x-www-form-urlencoded",
             height: $(window).height() - 60,
             pagination: true, //分页
             silentSort: true, //自动记住排序项
             onlyInfoPagination: false,
-            showFooter:false,
-            striped:false,
-            buttonsClass:"sm",
+            showFooter: false,
+            striped: false,
+            buttonsClass: "sm",
             locale: "zh-CN", //表格汉化
             search: false, //显示搜索框
             checkboxHeader: true,
@@ -27,17 +27,17 @@
             sortName: "createDate",
             sortOrder: "desc",
             queryParams: function (params) {
-                $.extend(params, { searchKey: $("input[name='searchkey']").val()});
+                $.extend(params, {searchKey: $("input[name='searchkey']").val()});
                 return params;
             },
-            onClickRow:function(tr,el){
-                $("tbody>tr[class='selected']",'#list').removeClass("selected");
+            onClickRow: function (tr, el) {
+                $("tbody>tr[class='selected']", '#list').removeClass("selected");
                 $(el).addClass("selected");
             },
-            onDblClickRow: function(tr,el) {
+            onDblClickRow: function (tr, el) {
                 ns.Edit(tr.id);
             },
-            showToggle:false,
+            showToggle: false,
             columns: [
                 {
                     field: 'Number',
@@ -115,7 +115,7 @@
         });
         //高度重置
         $(window).resize(function () {
-            $('#list').bootstrapTable('resetView', { height: $(window).height() - 60 });
+            $('#list').bootstrapTable('resetView', {height: $(window).height() - 60});
         });
         //注册回车事件
         Zq.Utility.EnterEventRegister($("input[name='searchkey']"), ns.ReFresh);
@@ -128,11 +128,17 @@
 
     //新增方法
     ns.Add = function () {
+        var node = solution.list.GetSelectedNode();
+        if (node == null) {
+            layer.alert("请选择一个方案分类!");
+            return;
+        };
         Zq.Utility.OpenModal({
             title: "新增设计方案",
             maxmin: false,
             area: ['700px', '500px'],
             content: [('/solution/addwin').geturl(), 'yes'],
+            success: openSuc,
             end: function () {
                 if (SmartMonitor.Common.GetResult() === true) {
                     ns.ReFresh();
@@ -141,6 +147,13 @@
             }
         });
     };
+    //打开成功，赋值到字界面
+    function openSuc(layero) {
+        var node = solution.list.GetSelectedNode();
+        var child = layero.find("iframe")[0].contentWindow;
+        if (!child) return;
+        child.solution.edit.setData(node);
+    }
 
     //编辑方法
     ns.Edit = function (id) {
@@ -149,6 +162,7 @@
             maxmin: false,
             area: ['700px', '500px'],
             content: [('/solution/editwin?id=' + id).geturl(), 'yes'],
+            success: openSuc,
             end: function () {
                 if (SmartMonitor.Common.GetResult() === true) {
                     ns.ReFresh();
@@ -164,9 +178,9 @@
             layer.closeAll('dialog');
             $.ajax({
                 async: false,
-                type: "Get",
-                dataType:"json",	
-                url: ("/solution/delete?id=" + id).geturl(),
+                type: "Post",
+                dataType: "json",
+                url: ("/solution/del?id=" + id).geturl(),
                 success: function (result) {
                     if (result > 0) {
                         //删除成功，刷新列表

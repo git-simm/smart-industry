@@ -1,5 +1,6 @@
 package smart.industry.train.web.controllers.manager;
 
+import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
@@ -7,6 +8,7 @@ import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.subject.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 import smart.industry.train.biz.dao.DesignSolutionBiz;
 import smart.industry.train.biz.dao.DesignSolutionListBiz;
@@ -90,17 +92,30 @@ public class SolutionController {
      */
     @Post("/add")
     public Integer add(DesignSolution solution){
-        int r = designSolutionBiz.add(solution);
+        designSolutionBiz.add(solution);
         return solution.getId();
     }
 
     /**
-     * 编辑
+     * 编辑方案
+     * @param param 参数
+     * @return
+     */
+    @Post(value = "/edit",consumes="application/json")
+    @Transactional
+    public Integer edit(@RequestBody JSONObject param){
+        DesignSolution solution = JSONObject.parseObject(param.getString("solution"),DesignSolution.class);
+        List<Integer> fileIds = JSONArray.parseArray(param.getString("fileIds"),Integer.class);
+        designSolutionBiz.delFiles(fileIds);
+        return designSolutionBiz.update(solution);
+    }
+    /**
+     * 删除事件
      * @param id
      * @return
      */
-    @Post("/edit")
-    public String win(int id){
-        return "manager/solution_edit";
+    @Post(value = "/del")
+    public Integer del(Integer id){
+         return designSolutionBiz.delSolution(id);
     }
 }

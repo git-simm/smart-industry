@@ -38,6 +38,15 @@ Zq.Utility.RegisterNameSpace("solution.list");
             onRename: zTreeOnRename
         }
     };
+
+    ns.GetSelectedNode = function(){
+        var nodes = zTree.getSelectedNodes();
+        if(nodes && nodes.length>0){
+            return nodes[0];
+        }
+        return null;
+    }
+
     ns.addTreeNode = function() {
         var content = window.prompt("分类名", "我的分类");
         if(!content) return;
@@ -90,6 +99,11 @@ Zq.Utility.RegisterNameSpace("solution.list");
     ns.init = function () {
         ns.getList(function(data){
             zTree = $.fn.zTree.init($("#soluTree"), setting, data);
+            //选中第一个节点
+            var nodes = zTree.getNodes();
+            if (nodes.length>0) {
+                zTree.selectNode(nodes[0]);
+            }
         });
     }
 

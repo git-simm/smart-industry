@@ -11,8 +11,13 @@
         <div class="mini-model-body bottom40">
             <div class="form-group padding10">
                 <label class="col-2 textRight noPadding-right red">名称：</label>
-                <div class="col-10">
+                <div class="col-4">
                     <input type="text" name="name" value="${entity.name!}" required/>
+                </div>
+                <label class="col-2 textRight noPadding-right red">分类：</label>
+                <div class="col-4">
+                    <input id="className" type="text"/>
+                    <input type="text" name="classId" style="display: none;" value="${entity.classId!}"/>
                 </div>
             </div>
             <div class="tabbable tabs-left marginTop30">
@@ -126,24 +131,38 @@
          (function (ns, undefined) {
              //新增方法
              ns.OK = function () {
-                 var url = "/solution/edit";
-                 if (SmartMonitor.Common.GetMode($("#form-main")) === "add") {
-                     url = "/solution/add";
-                 }
+                 if (!Smart.Common.FormValid()) return false;
                  var obj = $("#form-main").serializeObject();
-                 $.ajax({
-                     async: false,
-                     type: "Post",
-                     dataType: "json",
-                     url: url.geturl(),
-                     data: obj,
-                     success: function (id) {
-                         //文件上传
-                         ns.upload(id);
-                         //SmartMonitor.Common.Close(true);
-                     }
-                 });
+                 if (SmartMonitor.Common.GetMode($("#form-main")) === "add") {
+                     $.ajax({
+                         async: false,
+                         type: "Post",
+                         dataType: "json",
+                         //contentType: 'application/json',
+                         url: "/solution/add".geturl(),
+                         data: obj,
+                         success: function (id) {
+                             //文件上传
+                             ns.upload(id);
+                         }
+                     });
+                 } else {
+                     var param = {solution: obj, fileIds: dels}
+                     $.ajax({
+                         async: false,
+                         type: "Post",
+                         dataType: "json",
+                         contentType: 'application/json',
+                         url: "/solution/edit".geturl(),
+                         data: JSON.stringify(param),
+                         success: function () {
+                             //文件上传
+                             ns.upload(obj.id);
+                         }
+                     });
+                 }
              };
+
              var accept = {
                  title: 'intoTypes',
                  extensions: 'rar,zip,doc,xls,docx,xlsx,pdf',
@@ -187,16 +206,19 @@
                  //删除文件
                  $("div[fileid='" + id + "']").remove();
                  dels.push(id);
-                 console.log(dels);
+             }
+
+             /**
+              * 设置选中的节点信息
+              * node
+              */
+             var classNode = {};
+             ns.setData = function (node) {
+                 classNode = node;
+                 $("#className").val(classNode.name);
+                 $("input[name='classId']").val(classNode.id);
              }
          })(solution.edit);
-
-         var accept2 = {
-             title: 'dxf',
-             extensions: 'dxf',
-             mimeTypes: 'application/dxf'
-         };
-
          $(function () {
              //调整按钮大小
              setTimeout(function () {
