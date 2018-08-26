@@ -80,7 +80,6 @@ public abstract class BaseBiz<TMapper extends IMapper<TEntity>,TEntity extends B
         TEntity filter = null;
         try {
             filter = getFilter(paging);
-            //TEntity filter = (TEntity) new BaseEntity();
             if(StringUtils.isNotBlank(paging.getSort())){
                 filter.setOrderBy(String.format("%s %s",paging.getSort(),paging.getOrder()));
             }

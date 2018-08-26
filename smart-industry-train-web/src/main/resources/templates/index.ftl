@@ -129,29 +129,29 @@
                             执行测试
                         </a>
                     </li>
-                    <li onclick="smart.train.index.open('文件上传', '/file/uploader')">
+                    <!--<li onclick="smart.train.index.open('文件上传', '/file/uploader')">
                         <a href="javascript:void(0)">
                             <i class="icon-double-angle-right"></i>
                             文件上传
                         </a>
-                    </li>
+                    </li>-->
                 </ul>
             </li>
-            <!-- <li>
+            <li>
                 <a href="#" class="dropdown-toggle">
                     <i class="icon icon-cog"></i>
                     <span class="menu-text"> 基础配置 </span>
                     <b class="arrow icon-angle-down"></b>
                 </a>
                 <ul class="submenu">
-                    <li onclick="smart.train.index.open('笔试题管理', '/WrittenManager/list')">
+                    <li onclick="smart.train.index.open('字典项管理', '/param/list')">
                         <a href="javascript:void(0)">
                             <i class="icon-double-angle-right"></i>
-                            笔试题管理
+                            字典项管理
                         </a>
                     </li>
                 </ul>
-            </li>-->
+            </li>
         </ul>
         <!--<div class="sidebar-collapse" id="sidebar-collapse">
             <i class="icon-double-angle-left" data-icon1="icon-double-angle-left" data-icon2="icon-double-angle-right"></i>

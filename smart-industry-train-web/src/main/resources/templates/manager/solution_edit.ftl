@@ -138,7 +138,6 @@
                          async: false,
                          type: "Post",
                          dataType: "json",
-                         //contentType: 'application/json',
                          url: "/solution/add".geturl(),
                          data: obj,
                          success: function (id) {

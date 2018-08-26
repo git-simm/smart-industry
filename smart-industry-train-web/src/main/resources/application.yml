@@ -65,3 +65,5 @@ security:
   basic:
     authorize-mode: none
 
+debug: true
+

@@ -26,7 +26,7 @@
                              targetProject="src/main/java" type="XMLMAPPER"/>
 
         <!-- 配置生成Exmaple文件> -->
-        <table tableName="user" domainObjectName="User" enableCountByExample="false"
+        <table tableName="param_group" domainObjectName="ParamGroup" enableCountByExample="false"
                enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false"
                selectByExampleQueryId="false">
             <property name="useActualColumnNames" value="true"/>
