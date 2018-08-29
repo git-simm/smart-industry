@@ -42,9 +42,9 @@
     //--------------------
     var i =0 ;
     function svgAnimal(){
-        //var svgDoc = document.getElementById("line_svg").getSVGDocument();
-        //map = Snap(svgDoc.getElementsByTagName("svg")[0]);
-        //var paths = map.selectAll("path");
+        var svgDoc = document.getElementById("line_svg").getSVGDocument();
+        /* map = Snap(svgDoc.getElementsByTagName("svg")[0]);
+        var paths = map.selectAll("path");
         $.each(paths,function(i,obj){
             var len = obj.getTotalLength();
             obj.attr({
@@ -53,7 +53,7 @@
                 "stroke-dasharray": len + " " + len,
                 "stroke-dashoffset": len
             }).animate({"stroke-dashoffset": 10}, 2500,mina.easeinout);
-        });
+        }); */
         //开灯，关灯
         i++;
         if( i % 2 ){
@@ -70,24 +70,40 @@
      * @param svg
      * @param color
      */
+    var waitCount = 0;
     function changeFill(svg,color){
         if(svg.children && svg.children.length>0){
             $.each(svg.children,function(i,svgItem){
                 changeFill(svgItem,color);
             });
         }
+
+        waitCount++;
         if(!(svg.tagName=="svg" || svg.tagName=="defs")){
-            if(svg.tagName=="path") {
-                var len = svg.getTotalLength();
-                svg.attr({
-                    stroke: '#31ff42',
-                    strokeWidth: 10,
-                    "stroke-dasharray": len + " " + len,
-                    "stroke-dashoffset": len
-                }).animate({"stroke-dashoffset": 10}, 2500,mina.easeinout);
+            if(svg.tagName=="path" || svg.tagName=="line" || svg.tagName=="circle") {
+                setTimeout(function(){
+                    var len = svg.getTotalLength();
+                    $(svg).css({
+                        stroke: '#31ff42',
+                        strokeWidth: 6,
+                        "stroke-dasharray": len + " " + len,
+                        "stroke-dashoffset": len
+                    }).animate({"stroke-dashoffset": 10}, 50,mina.easeinout);
+                },10 * waitCount);
             }
         }
     }
+
+    function sleep(numberMillis) {
+        var now = new Date();
+        var exitTime = now.getTime() + numberMillis;
+        while (true) {
+            now = new Date();
+            if (now.getTime() > exitTime)
+                return;
+        }
+    }
+
     //----------------------
     var map;
     $(function(){
