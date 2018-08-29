@@ -7,6 +7,7 @@ import org.apache.shiro.subject.Subject;
 import org.apache.shiro.web.util.SavedRequest;
 import org.apache.shiro.web.util.WebUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.task.TaskExecutor;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import smart.industry.train.biz.dao.UserBiz;
@@ -25,6 +26,8 @@ import java.util.Map;
 @RequestMapping("/")
 public class IndexController {
     @Autowired
+    private TaskExecutor taskExecutor;
+    @Autowired
     UserBiz userBiz;
     @RequestMapping("/")
     public String index(Map<String, Object> map){
@@ -32,6 +35,14 @@ public class IndexController {
     }
     @RequestMapping("/index")
     public String index2(Map<String, Object> map){
+        /* 线程池技术
+        taskExecutor.execute(new Runnable() {
+            @Override
+            public void run() {
+                System.out.println("这是一个线程测试");
+            }
+        }); */
+
         Subject subject = SecurityUtils.getSubject();
         User user = (User)subject.getPrincipal();
         if(user!=null){

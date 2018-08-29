@@ -37,6 +37,8 @@ var myUploader = function (options) {
             '<h4 class="info">' + file.name + '</h4>' +
             '<p class="state">等待上传...</p>' +
             '</div>');
+
+        files.push(file.id);
     });
 
     // 文件上传过程中创建进度条实时显示。
@@ -53,13 +55,15 @@ var myUploader = function (options) {
         $li.find('p.state').text('上传中');
         $percent.css('width', percentage * 100 + '%');
     });
-
+    var files = [];
+    var completed = [];
     //上传文件前，添加参数
     this.uploader.on('uploadBeforeSend', function (obj, data, headers) {
         // data.DelFilePath = parentObj.siblings(".upload-path").val();
         //  data.ItemCode = $("#txtItemCode").val();
         data.solutionId = solutionId;
         data.fileType = param.fileType;
+
     });
 
     this.uploader.on('uploadSuccess', function (file) {
@@ -72,6 +76,7 @@ var myUploader = function (options) {
 
     this.uploader.on('uploadComplete', function (file) {
         $('#' + file.id).find('.progress').fadeOut();
+        completed.push(file.id);
     });
 
     this.uploader.on('all', function (type) {
@@ -100,12 +105,24 @@ var myUploader = function (options) {
 
     //设计方案ID
     var solutionId = null;
-    this.upload = function(id){
+    this.upload = function(id,callback){
         solutionId = id;
         if (param.state === 'uploading') {
             tempUploader.stop();
         } else {
             tempUploader.upload();
+            var interval = setInterval(function(){
+                if(files.length === completed.length){
+                    //清理掉定时器
+                    clearInterval(interval);
+                    //执行完毕后的回调
+                    callback();
+                }
+            }, 500);
         }
+    }
+
+    function sleep (time) {
+        return new Promise((resolve) => setTimeout(resolve, time));
     }
 };

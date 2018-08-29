@@ -68,7 +68,7 @@
                 },
                 {
                     title: '创建时间',
-                    field: 'createOn',
+                    field: 'createDate',
                     align: 'center',
                     width: "20%",
                     cellStyle: function (value, row, index, field) {

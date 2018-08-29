@@ -3,9 +3,17 @@
     <#if section="title">运行测试
     <#elseif section="css">
       <@cssRef "/static/_resources/layout/layout-default-latest.css"/>
+      <style type="text/css">
+          .svg_position{
+              position: absolute;top:0;left: 0;
+          }
+      </style>
     <#elseif section="content">
     <div class="ui-layout-center">
-        <embed id="line_svg" src="${request.contextPath}/static/svg/TopView.svg" class="col-md-12" type="image/svg+xml"/>
+        <div style="position: relative">
+            <embed id="bg_svg" src="${request.contextPath}/static/svg/TopView.svg" class="col-md-12 svg_position" type="image/svg+xml"/>
+            <embed id="line_svg" src="${request.contextPath}/static/svg/TopView.svg" class="col-md-12 svg_position" type="image/svg+xml"/>
+        </div>
     </div>
     <div class="ui-layout-west"></div>
     <div class="ui-layout-south">
@@ -29,11 +37,23 @@
     <#elseif section="scripts">
         <@jsRef "/static/_resources/layout/jquery-ui-latest.js"/>
         <@jsRef "/static/_resources/layout/jquery.layout-latest.js"/>
+        <@jsRef "/static/_resources/snap/snap.svg-min.js"/>
 <script type="application/javascript">
     //--------------------
     var i =0 ;
     function svgAnimal(){
-        var svgDoc = document.getElementById("line_svg").getSVGDocument();
+        //var svgDoc = document.getElementById("line_svg").getSVGDocument();
+        //map = Snap(svgDoc.getElementsByTagName("svg")[0]);
+        //var paths = map.selectAll("path");
+        $.each(paths,function(i,obj){
+            var len = obj.getTotalLength();
+            obj.attr({
+                stroke: '#31ff42',
+                strokeWidth: 10,
+                "stroke-dasharray": len + " " + len,
+                "stroke-dashoffset": len
+            }).animate({"stroke-dashoffset": 10}, 2500,mina.easeinout);
+        });
         //开灯，关灯
         i++;
         if( i % 2 ){
@@ -57,14 +77,19 @@
             });
         }
         if(!(svg.tagName=="svg" || svg.tagName=="defs")){
-            if(svg.setAttribute) {
-                setTimeout(function () {
-                    svg.setAttribute("fill", color);
-                },1000);
+            if(svg.tagName=="path") {
+                var len = svg.getTotalLength();
+                svg.attr({
+                    stroke: '#31ff42',
+                    strokeWidth: 10,
+                    "stroke-dasharray": len + " " + len,
+                    "stroke-dashoffset": len
+                }).animate({"stroke-dashoffset": 10}, 2500,mina.easeinout);
             }
         }
     }
     //----------------------
+    var map;
     $(function(){
         var myLayout =$("body").layout(
             {

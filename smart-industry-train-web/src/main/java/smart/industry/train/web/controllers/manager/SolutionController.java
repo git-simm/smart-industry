@@ -10,8 +10,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
+import smart.industry.train.biz.dao.DesignClassBiz;
 import smart.industry.train.biz.dao.DesignSolutionBiz;
 import smart.industry.train.biz.dao.DesignSolutionListBiz;
+import smart.industry.train.biz.entity.DesignClass;
 import smart.industry.train.biz.entity.DesignSolution;
 import smart.industry.train.biz.entity.User;
 import smart.industry.train.biz.entity.base.Paging;
@@ -33,6 +35,8 @@ public class SolutionController {
     private DesignSolutionBiz designSolutionBiz;
     @Autowired
     private DesignSolutionListBiz designSolutionListBiz;
+    @Autowired
+    private DesignClassBiz designClassBiz;
     @RequestMapping("/list")
     public String list(Map<String, Object> map){
         Subject subject = SecurityUtils.getSubject();
@@ -61,7 +65,12 @@ public class SolutionController {
      */
     @RequestMapping("/editwin")
     public String editWin(int id,Map<String, Object> map){
-        map.put("entity",designSolutionBiz.selectByPrimaryKey(id));
+        DesignSolution designSolution = designSolutionBiz.selectByPrimaryKey(id);
+        if(designSolution.getClassId()!=null){
+            DesignClass designClass = designClassBiz.selectByPrimaryKey(designSolution.getClassId());
+            map.put("className",designClass.getName());
+        }
+        map.put("entity",designSolution);
         map.put("formMode","edit");
         map.put("type1",designSolutionListBiz.getListBySolution(id,1));
         map.put("type2",designSolutionListBiz.getListBySolution(id,2));

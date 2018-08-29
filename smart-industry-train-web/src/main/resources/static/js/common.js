@@ -1,5 +1,5 @@
 ﻿Zq.Utility.RegisterNameSpace("Smart.Common");
-(function(ns,undefined){
+(function(ns,common){
 	ns.GetUrl = function(url){
     	var contextPath = $("#hid_contextpath").val();
     	return contextPath+url;
@@ -39,7 +39,24 @@
     	}
     	return true;
     }
-})(Smart.Common)
+
+    /**
+	 * 获取公选页面
+     */
+	//选择岗位
+    ns.selClass = function (callback,data) {
+        common.SetData(data);
+        Zq.Utility.OpenModal({
+            title: "选择分类",
+            maxmin: false,
+            area: ['350px', '450px'],
+            content: [ns.GetUrl('/common/selclass'), 'yes'],
+            end: function () {
+                common.End(callback);
+            }
+        });
+    }
+})(Smart.Common,SmartMonitor.Common)
 
 /**
  * 方法扩展，获取url

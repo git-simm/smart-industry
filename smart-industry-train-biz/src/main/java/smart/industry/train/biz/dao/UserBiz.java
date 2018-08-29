@@ -50,7 +50,10 @@ public class UserBiz  extends BaseBiz<UserMapper,User> {
      * @return
      */
     public boolean validUsers(User user){
-        user.setFilter("code=#{code} and id!=#{id}");
+        user.setFilter("code=#{code}");
+        if(user.getId()!=null){
+            user.setFilter(user.getFilter()+" and id!=#{id}");
+        }
         List<User> users = selectByFilter(user);
         if(CollectionUtils.isEmpty(users)) return true;
         else{

@@ -16,8 +16,13 @@
                 </div>
                 <label class="col-2 textRight noPadding-right red">分类：</label>
                 <div class="col-4">
-                    <input id="className" type="text"/>
-                    <input type="text" name="classId" style="display: none;" value="${entity.classId!}"/>
+                    <div class="input-group">
+                        <input type="hidden" name="classId" value="${entity.classId!}" />
+                        <input type="text" id="className" value="${className!}" required/>
+                        <span class="input-group-btn" onclick="solution.edit.selectClass()">
+                            <i class="icon-search"></i>
+                        </span>
+                    </div>
                 </div>
             </div>
             <div class="tabbable tabs-left marginTop30">
@@ -156,7 +161,11 @@
                          data: JSON.stringify(param),
                          success: function () {
                              //文件上传
-                             ns.upload(obj.id);
+                             ns.upload(obj.id,function () {
+                                 Zq.Utility.Msg("保存成功",function(){
+                                     SmartMonitor.Common.Close();
+                                 });
+                             });
                          }
                      });
                  }
@@ -191,10 +200,26 @@
              /**
               * 触发文件上传
               */
-             ns.upload = function (id) {
-                 uploader1.upload(id);
-                 uploader2.upload(id);
-                 uploader3.upload(id);
+             ns.upload = function (id,callback) {
+                 var r1 = false,r2 = false,r3 = false;
+                 uploader1.upload(id,function(){
+                     r1 = true;
+                 });
+                 uploader2.upload(id,function(){
+                     r2 = true;
+                 });
+                 uploader3.upload(id,function(){
+                     r3 = true;
+                 });
+                 //上传完毕
+                 var interval = setInterval(function(){
+                     if(r1 && r2 && r3){
+                         //清理掉定时器
+                         clearInterval(interval);
+                         //执行完毕后的回调
+                         callback();
+                     }
+                 }, 500);
              }
              /**
               * 删除文件
@@ -213,9 +238,22 @@
               */
              var classNode = {};
              ns.setData = function (node) {
-                 classNode = node;
-                 $("#className").val(classNode.name);
-                 $("input[name='classId']").val(classNode.id);
+                 if($("input[name='classId']").val()==""){
+                     $("#className").val(classNode.name);
+                     $("input[name='classId']").val(classNode.id);
+                     classNode = node;
+                 }else{
+                     classNode = {id:$("input[name='classId']").val(),name:$("#className").val()};
+                 }
+             }
+
+             //选择分类
+             ns.selectClass = function(){
+                 Smart.Common.selClass(function(node){
+                     $("input[name='classId']").val(node.id);
+                     $("#className").val(node.name);
+                     classNode = node;
+                 },classNode);
              }
          })(solution.edit);
          $(function () {

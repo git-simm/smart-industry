@@ -110,6 +110,7 @@ public class ParamController {
     @Post("/add")
     @Transactional
     public Integer add(ParamGroup entity){
+        paramGroupBiz.valid(entity);
         paramGroupBiz.add(entity);
         return entity.getId();
     }
@@ -122,6 +123,7 @@ public class ParamController {
         } catch (IOException e) {
             e.printStackTrace();
         }*/
+        paramGroupBiz.valid(entity);
         return paramGroupBiz.update(entity);
     }
     /**
@@ -137,12 +139,14 @@ public class ParamController {
     @Post("/addOption")
     @Transactional
     public Integer addOption(ParamOptions entity){
+        paramOptionsBiz.valid(entity);
         paramOptionsBiz.add(entity);
         return entity.getId();
     }
     @Post("/editOption")
     @Transactional
     public Integer editOption(ParamOptions entity){
+        paramOptionsBiz.valid(entity);
         return paramOptionsBiz.update(entity);
     }
     @Post("/delOption")
