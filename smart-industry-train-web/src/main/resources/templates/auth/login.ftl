@@ -1,4 +1,4 @@
-<#include "../base/_base.ftl"/>
+﻿<#include "../base/_base.ftl"/>
 <@layout;section>
     <#if section="title">  用户登录
     <#elseif section="css">
@@ -82,8 +82,12 @@
                 type: "Post",
                 url: Zq.Utility.GetPath("/loginvalid"),
                 data: $(".form-signin").serializeObject(),
-                success:function(url){
-                    window.location.href = url.geturl();
+                success:function(url){		    
+					var contextPath = $("#hid_contextpath").val();
+					if(!url.includes(contextPath)){
+						url = url.geturl();
+					}
+                    window.location.href = url;
                 },
                 error: function (ex) {
                     $("#btn_login").removeAttr("disabled");
