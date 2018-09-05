@@ -28,6 +28,7 @@
         <module>smart-industry-train-biz</module>
         <module>smart-industry-utils</module>
         <module>smart-industry-kabeja</module>
+        <module>smart-industry-dwg2svg</module>
     </modules>
     <!-- 工具类 -->
     <dependencies>

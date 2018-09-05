@@ -47,8 +47,10 @@ public class Main {
         //InputStream fi = Thread.currentThread().getContextClassLoader().getResourceAsStream();
 
         main.process();
-        String dxfName = "TopView";
-        File f = ResourceUtils.getFile("classpath:samples/dxf/"+dxfName+".dxf");
+        String dxfName = "sdf";
+        String fileName = dxfName+".dxf";
+        //String fileName = dxfName+".dwg";
+        File f = ResourceUtils.getFile("classpath:samples/dxf/"+ fileName);
         File outFile = new File("E:/tmp");
         if(!outFile.exists()){
             outFile.mkdir();

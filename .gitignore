@@ -17,6 +17,7 @@ buildNumber.properties
 #idea文件
 .idea
 logs
+tools
 
 # Log file
 *.log

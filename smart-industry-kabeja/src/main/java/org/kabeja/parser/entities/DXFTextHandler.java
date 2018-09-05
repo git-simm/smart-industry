@@ -19,6 +19,7 @@ import org.kabeja.dxf.DXFConstants;
 import org.kabeja.dxf.DXFEntity;
 import org.kabeja.dxf.DXFText;
 import org.kabeja.parser.DXFValue;
+import smart.industry.utils.encode.EncodeUtil;
 
 
 /**
@@ -97,8 +98,7 @@ public class DXFTextHandler extends AbstractEntityHandler {
                 //we set the content after the
                 //parsing is finished, so the
                 //DXFParser will get all infos
-                this.content = value.getValue();
-
+                this.content = EncodeUtil.unicodeToStr(value.getValue());
                 break;
 
             case TEXT_ALIGN:
