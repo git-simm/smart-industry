@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="smart.industry.train.biz.mapper.ParamOptionsMapper">
+  <resultMap id="BaseResultMap" type="smart.industry.train.biz.entity.ParamOptions">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="createDate" jdbcType="TIMESTAMP" property="createDate" />
+    <result column="createBy" jdbcType="INTEGER" property="createBy" />
+    <result column="modifyDate" jdbcType="TIMESTAMP" property="modifyDate" />
+    <result column="modifyBy" jdbcType="INTEGER" property="modifyBy" />
+    <result column="groupid" jdbcType="INTEGER" property="groupid" />
+    <result column="value" jdbcType="VARCHAR" property="value" />
+    <result column="showVal" jdbcType="VARCHAR" property="showVal" />
+    <result column="sort" jdbcType="INTEGER" property="sort" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, createDate, createBy, modifyDate, modifyBy, groupid, `value`, showVal, sort
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from param_options
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from param_options
+  </select>
+  <select id="selectByFilter" parameterType="ParamOptions" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from param_options
+    where ${filter}
+    <if test="orderBy != null">
+      order by ${orderBy}
+    </if>
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from param_options
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="smart.industry.train.biz.entity.ParamOptions">
+    insert into param_options (id, createDate, createBy, 
+      modifyDate, modifyBy, groupid, 
+      `value`, showVal, sort
+      )
+    values (#{id,jdbcType=INTEGER}, #{createDate,jdbcType=TIMESTAMP}, #{createBy,jdbcType=INTEGER},
+      #{modifyDate,jdbcType=TIMESTAMP}, #{modifyBy,jdbcType=INTEGER}, #{groupid,jdbcType=INTEGER},
+      #{value,jdbcType=VARCHAR}, #{showVal,jdbcType=VARCHAR}, #{sort,jdbcType=INTEGER}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="smart.industry.train.biz.entity.ParamOptions" useGeneratedKeys="true" keyProperty="id">
+    insert into param_options
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="createDate != null">
+        createDate,
+      </if>
+      <if test="createBy != null">
+        createBy,
+      </if>
+      <if test="modifyDate != null">
+        modifyDate,
+      </if>
+      <if test="modifyBy != null">
+        modifyBy,
+      </if>
+      <if test="groupid != null">
+        groupid,
+      </if>
+      <if test="value != null">
+        `value`,
+      </if>
+      <if test="showVal != null">
+        showVal,
+      </if>
+      <if test="sort != null">
+        sort,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="createDate != null">
+        #{createDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createBy != null">
+        #{createBy,jdbcType=INTEGER},
+      </if>
+      <if test="modifyDate != null">
+        #{modifyDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifyBy != null">
+        #{modifyBy,jdbcType=INTEGER},
+      </if>
+      <if test="groupid != null">
+        #{groupid,jdbcType=INTEGER},
+      </if>
+      <if test="value != null">
+        #{value,jdbcType=VARCHAR},
+      </if>
+      <if test="showVal != null">
+        #{showVal,jdbcType=VARCHAR},
+      </if>
+      <if test="sort != null">
+        #{sort,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="smart.industry.train.biz.entity.ParamOptions">
+    update param_options
+    <set>
+      <if test="createDate != null">
+        createDate = #{createDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createBy != null">
+        createBy = #{createBy,jdbcType=INTEGER},
+      </if>
+      <if test="modifyDate != null">
+        modifyDate = #{modifyDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifyBy != null">
+        modifyBy = #{modifyBy,jdbcType=INTEGER},
+      </if>
+      <if test="groupid != null">
+        groupid = #{groupid,jdbcType=INTEGER},
+      </if>
+      <if test="value != null">
+        `value` = #{value,jdbcType=VARCHAR},
+      </if>
+      <if test="showVal != null">
+        showVal = #{showVal,jdbcType=VARCHAR},
+      </if>
+      <if test="sort != null">
+        sort = #{sort,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="smart.industry.train.biz.entity.ParamOptions">
+    update param_options
+    set createDate = #{createDate,jdbcType=TIMESTAMP},
+      createBy = #{createBy,jdbcType=INTEGER},
+      modifyDate = #{modifyDate,jdbcType=TIMESTAMP},
+      modifyBy = #{modifyBy,jdbcType=INTEGER},
+      groupid = #{groupid,jdbcType=INTEGER},
+      `value` = #{value,jdbcType=VARCHAR},
+      showVal = #{showVal,jdbcType=VARCHAR},
+      sort = #{sort,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

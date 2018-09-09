@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="smart.industry.train.biz.mapper.SysUpfilesMapper">
+  <resultMap id="BaseResultMap" type="smart.industry.train.biz.entity.SysUpfiles">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="createDate" jdbcType="TIMESTAMP" property="createDate" />
+    <result column="createBy" jdbcType="INTEGER" property="createBy" />
+    <result column="modifyDate" jdbcType="TIMESTAMP" property="modifyDate" />
+    <result column="modifyBy" jdbcType="INTEGER" property="modifyBy" />
+    <result column="fileName" jdbcType="VARCHAR" property="fileName" />
+    <result column="filePath" jdbcType="VARCHAR" property="filePath" />
+    <result column="suffix" jdbcType="VARCHAR" property="suffix" />
+    <result column="fileSize" jdbcType="BIGINT" property="fileSize" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, createDate, createBy, modifyDate, modifyBy, fileName, filePath, suffix, fileSize
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from sys_upfiles
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from sys_upfiles
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="smart.industry.train.biz.entity.SysUpfiles">
+    insert into sys_upfiles (id, createDate, createBy, 
+      modifyDate, modifyBy, fileName, 
+      filePath, suffix, fileSize)
+    values (#{id,jdbcType=INTEGER}, #{createDate,jdbcType=TIMESTAMP}, #{createBy,jdbcType=INTEGER},
+      #{modifyDate,jdbcType=TIMESTAMP}, #{modifyBy,jdbcType=INTEGER}, #{fileName,jdbcType=VARCHAR},
+      #{filePath,jdbcType=VARCHAR}, #{suffix,jdbcType=VARCHAR}), #{fileSize,jdbcType=BIGINT})
+  </insert>
+  <insert id="insertSelective" parameterType="smart.industry.train.biz.entity.SysUpfiles" useGeneratedKeys="true" keyProperty="id">
+    insert into sys_upfiles
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="createDate != null">
+        createDate,
+      </if>
+      <if test="createBy != null">
+        createBy,
+      </if>
+      <if test="modifyDate != null">
+        modifyDate,
+      </if>
+      <if test="modifyBy != null">
+        modifyBy,
+      </if>
+      <if test="fileName != null">
+        fileName,
+      </if>
+      <if test="filePath != null">
+        filePath,
+      </if>
+      <if test="suffix != null">
+        suffix,
+      </if>
+      <if test="fileSize != null">
+        fileSize,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="createDate != null">
+        #{createDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createBy != null">
+        #{createBy,jdbcType=INTEGER},
+      </if>
+      <if test="modifyDate != null">
+        #{modifyDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifyBy != null">
+        #{modifyBy,jdbcType=INTEGER},
+      </if>
+      <if test="fileName != null">
+        #{fileName,jdbcType=VARCHAR},
+      </if>
+      <if test="filePath != null">
+        #{filePath,jdbcType=VARCHAR},
+      </if>
+      <if test="suffix != null">
+        #{suffix,jdbcType=VARCHAR},
+      </if>
+      <if test="fileSize != null">
+        #{fileSize,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="smart.industry.train.biz.entity.SysUpfiles">
+    update sys_upfiles
+    <set>
+      <if test="createDate != null">
+        createDate = #{createDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createBy != null">
+        createBy = #{createBy,jdbcType=INTEGER},
+      </if>
+      <if test="modifyDate != null">
+        modifyDate = #{modifyDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifyBy != null">
+        modifyBy = #{modifyBy,jdbcType=INTEGER},
+      </if>
+      <if test="fileName != null">
+        fileName = #{fileName,jdbcType=VARCHAR},
+      </if>
+      <if test="filePath != null">
+        filePath = #{filePath,jdbcType=VARCHAR},
+      </if>
+      <if test="suffix != null">
+        suffix = #{suffix,jdbcType=VARCHAR},
+      </if>
+      <if test="fileSize != null">
+        fileSize = #{fileSize,jdbcType=BIGINT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="smart.industry.train.biz.entity.SysUpfiles">
+    update sys_upfiles
+    set createDate = #{createDate,jdbcType=TIMESTAMP},
+      createBy = #{createBy,jdbcType=INTEGER},
+      modifyDate = #{modifyDate,jdbcType=TIMESTAMP},
+      modifyBy = #{modifyBy,jdbcType=INTEGER},
+      fileName = #{fileName,jdbcType=VARCHAR},
+      filePath = #{filePath,jdbcType=VARCHAR},
+      suffix = #{suffix,jdbcType=VARCHAR},
+      fileSize = #{fileSize,jdbcType=BIGINT}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>
