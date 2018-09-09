@@ -116,6 +116,10 @@ public class ParserBuilder {
         h = new DXFViewportHandler();
         handlerManager.addHandler(h);
 
+        //添加描述处理器
+        h = new DXFAttribHandler();
+        handlerManager.addHandler(h);
+
         // the table handler
         handlerManager = new DXFTableSectionHandler();
         parser.addHandler(handlerManager);
@@ -216,6 +220,9 @@ public class ParserBuilder {
         handlerManager.addHandler(h);
 
         h = new DXFViewportHandler();
+        handlerManager.addHandler(h);
+        //添加描述处理器
+        h = new DXFAttribHandler();
         handlerManager.addHandler(h);
 
         // the OBJECTS section

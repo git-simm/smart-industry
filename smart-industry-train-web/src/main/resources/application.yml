@@ -21,13 +21,14 @@ spring:
         test-on-return: false
         pool-prepared-statements: true
         max-pool-prepared-statement-per-connection-size: 20
+        # druid连接池监控
         filter:
           stat:
-            enabled: false
+            enabled: true
         web-stat-filter:
-          enabled: false
+          enabled: true
         stat-view-servlet:
-          enabled: false
+          enabled: true
   mvc:
     servlet:
       load-on-startup: 0

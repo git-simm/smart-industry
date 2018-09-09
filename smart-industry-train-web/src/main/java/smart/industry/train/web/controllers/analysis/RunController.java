@@ -15,4 +15,8 @@ public class RunController {
     public String test(Map<String, Object> map){
         return "analysis/test_run";
     }
+    @GetMapping("/test2")
+    public String test2(){
+        return "analysis/thumbnailViewer";
+    }
 }

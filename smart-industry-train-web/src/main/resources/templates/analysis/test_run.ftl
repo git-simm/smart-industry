@@ -3,16 +3,27 @@
     <#if section="title">运行测试
     <#elseif section="css">
       <@cssRef "/static/_resources/layout/layout-default-latest.css"/>
+      <@cssRef "/static/css/eagleEye.css"/>
       <style type="text/css">
-          .svg_position{
-              position: absolute;top:0;left: 0;
+          #mainViewContainer,.svg_position{
+              position: absolute;top:0;left: 0;bottom: 0;right: 0;height: 100%;width:100%;
           }
       </style>
     <#elseif section="content">
     <div class="ui-layout-center">
-        <div style="position: relative">
-            <embed id="bg_svg" src="${request.contextPath}/static/svg/TopView.svg" class="col-md-12 svg_position" type="image/svg+xml"/>
-            <embed id="line_svg" src="${request.contextPath}/static/svg/TopView.svg" class="col-md-12 svg_position" type="image/svg+xml"/>
+        <div id="mainViewContainer" style="position: relative">
+            <!--<embed id="bg_svg" src="${request.contextPath}/static/svg/new.svg" class="col-md-12 svg_position" type="image/svg+xml"/>-->
+            <embed id="line_svg" src="${request.contextPath}/static/svg/new.svg" class="col-md-12 svg_position" type="image/svg+xml"/>
+        </div>
+        <div id="thumbViewContainer">
+            <svg id="scopeContainer" class="thumbViewClass">
+                <g>
+                    <rect id="scope" fill="red" fill-opacity="0.1" stroke="red" stroke-width="2px" x="0" y="0" width="0" height="0"/>
+                    <line id="line1" stroke="red" stroke-width="2px" x1="0" y1="0" x2="0" y2="0"/>
+                    <line id="line2" stroke="red" stroke-width="2px" x1="0" y1="0" x2="0" y2="0"/>
+                </g>
+            </svg>
+            <embed id="thumbView" type="image/svg+xml" src="${request.contextPath}/static/svg/new.svg" class="thumbViewClass"/>
         </div>
     </div>
     <div class="ui-layout-west"></div>
@@ -38,6 +49,9 @@
         <@jsRef "/static/_resources/layout/jquery-ui-latest.js"/>
         <@jsRef "/static/_resources/layout/jquery.layout-latest.js"/>
         <@jsRef "/static/_resources/snap/snap.svg-min.js"/>
+        <@jsRef "/static/js/common/svg-pan-zoom.js"/>
+        <@jsRef "/static/js/common/thumbnailViewer.js"/>
+        <@jsRef "/static/js/manager/test.run.js"/>
 <script type="application/javascript">
     //--------------------
     var i =0 ;
@@ -64,7 +78,6 @@
             document.getElementById("train").contentWindow.train.lines.closeLight();
         }
     }
-
     /**
      * 改变svg的填充颜色
      * @param svg
@@ -72,25 +85,23 @@
      */
     var waitCount = 0;
     function changeFill(svg,color){
+        if(svg.tagName=="g" && svg.id=="CD_A3L_PRSC_SHH") return;
         if(svg.children && svg.children.length>0){
             $.each(svg.children,function(i,svgItem){
                 changeFill(svgItem,color);
             });
         }
-
         waitCount++;
-        if(!(svg.tagName=="svg" || svg.tagName=="defs")){
-            if(svg.tagName=="path" || svg.tagName=="line" || svg.tagName=="circle") {
-                setTimeout(function(){
-                    var len = svg.getTotalLength();
-                    $(svg).css({
-                        stroke: '#31ff42',
-                        strokeWidth: 6,
-                        "stroke-dasharray": len + " " + len,
-                        "stroke-dashoffset": len
-                    }).animate({"stroke-dashoffset": 10}, 50,mina.easeinout);
-                },10 * waitCount);
-            }
+        if(svg.tagName=="path" || svg.tagName=="line" || svg.tagName=="circle") {
+            setTimeout(function(){
+                var len = svg.getTotalLength();
+                $(svg).css({
+                    stroke: '#31ff42',
+                    strokeWidth: 0.2,
+                    "stroke-dasharray": len + " " + len,
+                    "stroke-dashoffset": len
+                }).animate({"stroke-dashoffset": 0}, 50,mina.easeinout);
+            },10 * waitCount);
         }
     }
 
@@ -129,6 +140,7 @@
                 west__maxSize: 300,
                 onresize: function () {
                     //$('#list').bootstrapTable('resetWidth');
+                    svgPanZoom.resize();
                 }
             }
         );

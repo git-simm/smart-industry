@@ -72,7 +72,6 @@
                     | *) kabeja   -> the default
                     +-->
                 <property name="bounds-rule" value="kabeja"/>
-
                 <!--+
                     | * you can choose a layout
                     |   by name:

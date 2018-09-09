@@ -229,11 +229,13 @@ public class DXFText extends DXFEntity {
     public double getHeight() {
         if (height != 0.0) {
             return height;
-        } else if (doc.getDXFStyle(this.textStyle) != null) {
-            return doc.getDXFStyle(this.textStyle).getTextHeight();
-        } else {
-            return 0.0;
         }
+        if(doc==null || this==null)
+            return 0.0;
+        if (doc.getDXFStyle(this.textStyle) != null) {
+            return doc.getDXFStyle(this.textStyle).getTextHeight();
+        }
+        return 0.0;
     }
 
     /**
