@@ -52,7 +52,7 @@ public class DXFBlock {
             while (i.hasNext()) {
                 DXFEntity entity = (DXFEntity) i.next();
                 Bounds b = entity.getBounds();
-
+                if(b==null) continue;
                 if (b.isValid()) {
                     bounds.addToBounds(b);
                 }
@@ -60,7 +60,6 @@ public class DXFBlock {
         } else {
             bounds.setValid(false);
         }
-
         return bounds;
     }
 

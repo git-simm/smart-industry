@@ -32,6 +32,7 @@ public class DXFDocument {
     private HashMap lineTypes = new HashMap();
     private HashMap dimensionStyles = new HashMap();
     private HashMap textStyles = new HashMap();
+    private HashMap attdefs = new HashMap();
 
     // the user coordinate systems
     private Hashtable ucs = new Hashtable();
@@ -243,6 +244,17 @@ public class DXFDocument {
 
     public Iterator getDXFDimensionStyleIterator() {
         return this.dimensionStyles.values().iterator();
+    }
+
+    /**
+     * 2018/09/16 by simm
+     * @param attdef
+     */
+    public void addAttdef(DXFAttdef attdef){
+        attdefs.put(attdef.getCode(),attdef);
+    }
+    public DXFAttdef getAttdef(String code){
+        return (DXFAttdef) this.attdefs.get(code);
     }
 
     public void addDXStyle(DXFStyle style) {

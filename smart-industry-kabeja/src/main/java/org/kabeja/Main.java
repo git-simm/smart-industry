@@ -47,7 +47,7 @@ public class Main {
         //InputStream fi = Thread.currentThread().getContextClassLoader().getResourceAsStream();
 
         main.process();
-        String dxfName = "sdf";
+        String dxfName = "test";
         String fileName = dxfName+".dxf";
         //String fileName = dxfName+".dwg";
         File f = ResourceUtils.getFile("classpath:samples/dxf/"+ fileName);

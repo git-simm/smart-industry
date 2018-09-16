@@ -37,6 +37,7 @@ public class DXFConstants {
     public final static String ENTITY_TYPE_3DSOLID = "3DSOLID";
 
     //Entity types
+    public final static String ENTITY_TYPE_ATTDEF = "ATTDEF";
     public final static String ENTITY_TYPE_ARC = "ARC";
     public final static String ENTITY_TYPE_ATTRIB = "ATTRIB";
     public final static String ENTITY_TYPE_BODY = "BODY";

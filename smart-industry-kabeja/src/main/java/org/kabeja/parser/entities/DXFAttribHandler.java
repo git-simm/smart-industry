@@ -15,9 +15,14 @@
 */
 package org.kabeja.parser.entities;
 
+import org.kabeja.dxf.DXFAttdef;
 import org.kabeja.dxf.DXFAttrib;
 import org.kabeja.dxf.DXFConstants;
 import org.kabeja.parser.DXFValue;
+import sun.plugin.javascript.navig.Array;
+
+import java.util.Arrays;
+import java.util.List;
 
 
 /**
@@ -26,6 +31,10 @@ import org.kabeja.parser.DXFValue;
 public class DXFAttribHandler extends DXFTextHandler {
     public static final int ATTRIB_VERTICAL_ALIGN = 74;
     public static final int ATTRIB_TEXT_LENGTH = 73;
+    public static final int ATTRIB_CODE = 2;
+    public static List<String> exceptArr = Arrays.asList(new String[]{
+            "comment en","comment cn","plant","function/tag","potential",
+            "suppression element","var.macro","conn.diagram symbol","release symbol","version symbol"});
 
     public DXFAttribHandler() {
         super();
@@ -37,15 +46,22 @@ public class DXFAttribHandler extends DXFTextHandler {
     public void parseGroup(int groupCode, DXFValue value) {
         switch (groupCode) {
             case ATTRIB_TEXT_LENGTH:
-
                 //ignore not used by
                 break;
-
             case ATTRIB_VERTICAL_ALIGN:
                 text.setValign(value.getIntegerValue());
-
                 break;
-
+            case ATTRIB_CODE:
+                DXFAttdef def = this.doc.getAttdef(value.getValue());
+                if(def != null){
+                    String code = this.doc.getAttdef(value.getValue()).getAttr();
+                    text.setCode(code);
+                    String temp = code.toLowerCase();
+                    if(exceptArr.contains(temp)){
+                        text.setVisibile(false);
+                    }
+                }
+                break;
             default:
                 super.parseGroup(groupCode, value);
         }

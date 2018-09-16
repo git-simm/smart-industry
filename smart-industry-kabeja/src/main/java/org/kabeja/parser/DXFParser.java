@@ -123,9 +123,6 @@ public class DXFParser implements HandlerManager, Handler, Parser, DXFHandler {
 
             while ((line = in.readLine()) != null) {
                 linecount++;
-                if(line.contains("ADOR+")){
-                    System.out.println(line);
-                }
                 if (key) {
                     currentKey = line;
                     key = false;
@@ -169,7 +166,6 @@ public class DXFParser implements HandlerManager, Handler, Parser, DXFHandler {
                 } else {
                     parse = false;
                 }
-
                 return;
             }
 

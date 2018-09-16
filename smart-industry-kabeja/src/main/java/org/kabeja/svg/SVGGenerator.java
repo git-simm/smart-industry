@@ -368,7 +368,7 @@ public class SVGGenerator extends AbstractSAXGenerator {
 
         while (i.hasNext()) {
             DXFEntity entity = (DXFEntity) i.next();
-
+            if(entity.getType().equals(DXFConstants.ENTITY_TYPE_ATTDEF)) continue;
             try {
                 SVGSAXGenerator gen = manager.getSVGGenerator(entity.getType());
                 gen.toSAX(handler, this.context, entity, transformContext);

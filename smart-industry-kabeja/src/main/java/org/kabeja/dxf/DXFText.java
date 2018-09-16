@@ -59,6 +59,8 @@ public class DXFText extends DXFEntity {
     protected boolean top = false;
     protected boolean bottom = false;
     protected boolean vertical_center = false;
+    protected String code = null;
+
     protected TextDocument textDoc = new TextDocument();
 
     /**
@@ -448,5 +450,13 @@ public class DXFText extends DXFEntity {
 
     public double getLength() {
         return 0;
+    }
+
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
     }
 }

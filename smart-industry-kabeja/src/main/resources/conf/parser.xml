@@ -11,13 +11,11 @@
             <handler class="org.kabeja.parser.table.DXFDimensionStyleTableHandler"/>
         </handlers>
     </handler>
-
     <!--+
         | The block and the entities handler use the same sub handlers.
         | If you have create a parser for an entity add the parser in
         | both sections.
         +-->
-
     <handler class="org.kabeja.parser.DXFBlocksSectionHandler">
         <handlers>
             <handler class="org.kabeja.parser.entities.DXFArcHandler"/>
@@ -43,13 +41,10 @@
             <handler class="org.kabeja.parser.entities.DXFSplineHandler"/>
         </handlers>
     </handler>
-
     <!--+
         |The entity section parser part
         |
         +-->
-
-
     <handler class="org.kabeja.parser.DXFEntitiesSectionHandler">
         <handlers>
             <handler class="org.kabeja.parser.entities.DXFArcHandler"/>
@@ -75,18 +70,13 @@
             <handler class="org.kabeja.parser.entities.DXFSplineHandler"/>
         </handlers>
     </handler>
-
-
     <!--+
         |The objects section parser part
         |
         +-->
-
-
     <handler class="org.kabeja.parser.DXFObjectsSectionHandler">
         <handlers>
             <handler class="org.kabeja.parser.objects.DXFImageDefHandler"/>
         </handlers>
     </handler>
-
 </parser>

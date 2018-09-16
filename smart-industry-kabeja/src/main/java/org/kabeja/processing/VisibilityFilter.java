@@ -15,9 +15,9 @@
 */
 package org.kabeja.processing;
 
-import org.kabeja.dxf.DXFDocument;
-import org.kabeja.dxf.DXFEntity;
-import org.kabeja.dxf.DXFLayer;
+import org.kabeja.dxf.*;
+import org.kabeja.svg.SVGGenerationException;
+import org.kabeja.svg.SVGSAXGenerator;
 
 import java.util.Iterator;
 import java.util.List;
