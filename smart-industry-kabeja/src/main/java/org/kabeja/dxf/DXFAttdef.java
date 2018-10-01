@@ -1,6 +1,6 @@
 package org.kabeja.dxf;
 
-public class DXFAttdef extends DXFEntity {
+public class DXFAttdef extends DXFText {
     public DXFAttdef() {
     }
 
@@ -11,6 +11,7 @@ public class DXFAttdef extends DXFEntity {
 
     private String code;
     private String attr;
+    private String value;
 
     public String getCode() {
         return code;
@@ -26,6 +27,14 @@ public class DXFAttdef extends DXFEntity {
 
     public void setAttr(String attr) {
         this.attr = attr;
+    }
+
+    public String getValue() {
+        return value;
+    }
+
+    public void setValue(String value) {
+        this.value = value;
     }
 
     /* (non-Javadoc)

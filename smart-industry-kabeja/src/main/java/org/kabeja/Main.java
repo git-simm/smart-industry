@@ -74,7 +74,9 @@ public class Main {
 
     public void process() {
         if (parser == null) {
-            parser = ParserBuilder.createDefaultParser();
+            parser =  ParserBuilder.buildFromXML(this.getClass().getResourceAsStream(
+                    "/conf/parser.xml"));
+            //parser = ParserBuilder.createDefaultParser();
         }
         setPipeline("svg");
         initialize();

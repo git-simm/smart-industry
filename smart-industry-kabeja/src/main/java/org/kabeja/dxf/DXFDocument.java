@@ -251,7 +251,8 @@ public class DXFDocument {
      * @param attdef
      */
     public void addAttdef(DXFAttdef attdef){
-        attdefs.put(attdef.getCode(),attdef);
+        //定义+layer+flags 唯一确定一条定义
+        attdefs.put(attdef.getCode() + "@" + attdef.getLayerName()+"@"+attdef.getFlags(),attdef);
     }
     public DXFAttdef getAttdef(String code){
         return (DXFAttdef) this.attdefs.get(code);
@@ -410,7 +411,7 @@ public class DXFDocument {
     }
 
     /**
-     * @param ID of the pattern (also called pattern name)
+     * @param id of the pattern (also called pattern name)
      * @return the DXFHatchPattern or null
      */
     public DXFHatchPattern getDXFHatchPattern(String id) {

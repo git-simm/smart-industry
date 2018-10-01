@@ -5,10 +5,10 @@
         <handlers>
             <handler class="org.kabeja.parser.table.DXFLayerTableHandler"/>
             <handler class="org.kabeja.parser.table.DXFLineTypeTableHandler"/>
-            <handler class="org.kabeja.parser.table.DXFViewTableHandler"/>
-            <handler class="org.kabeja.parser.table.DXFViewportTableHandler"/>
-            <handler class="org.kabeja.parser.table.DXFStyleTableHandler"/>
             <handler class="org.kabeja.parser.table.DXFDimensionStyleTableHandler"/>
+            <handler class="org.kabeja.parser.table.DXFStyleTableHandler"/>
+            <handler class="org.kabeja.parser.table.DXFVPortTableHandler"/>
+            <handler class="org.kabeja.parser.table.DXFViewTableHandler"/>
         </handlers>
     </handler>
     <!--+
@@ -39,6 +39,8 @@
             <handler class="org.kabeja.parser.entities.DXFBodyHandler"/>
             <handler class="org.kabeja.parser.entities.DXF3DSolidHandler"/>
             <handler class="org.kabeja.parser.entities.DXFSplineHandler"/>
+            <handler class="org.kabeja.parser.entities.DXFAttribHandler"/>
+            <handler class="org.kabeja.parser.entities.DXFAttdefHandler"/>
         </handlers>
     </handler>
     <!--+

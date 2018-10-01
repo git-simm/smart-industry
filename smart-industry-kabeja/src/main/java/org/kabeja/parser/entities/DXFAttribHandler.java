@@ -33,8 +33,9 @@ public class DXFAttribHandler extends DXFTextHandler {
     public static final int ATTRIB_TEXT_LENGTH = 73;
     public static final int ATTRIB_CODE = 2;
     public static List<String> exceptArr = Arrays.asList(new String[]{
-            "comment en","comment cn","plant","function/tag","potential",
-            "suppression element","var.macro","conn.diagram symbol","release symbol","version symbol"});
+            "comment en","comment cn","plant","function/tag","potential","kind",
+            "suppression element","var.macro","conn.diagram symbol","release symbol","version symbol",
+            "wire designation","wiredesign.auto.num.","core designation","comment","voltage"});
 
     public DXFAttribHandler() {
         super();
@@ -52,15 +53,7 @@ public class DXFAttribHandler extends DXFTextHandler {
                 text.setValign(value.getIntegerValue());
                 break;
             case ATTRIB_CODE:
-                DXFAttdef def = this.doc.getAttdef(value.getValue());
-                if(def != null){
-                    String code = this.doc.getAttdef(value.getValue()).getAttr();
-                    text.setCode(code);
-                    String temp = code.toLowerCase();
-                    if(exceptArr.contains(temp)){
-                        text.setVisibile(false);
-                    }
-                }
+                text.setCode(value.getValue());
                 break;
             default:
                 super.parseGroup(groupCode, value);
@@ -70,6 +63,25 @@ public class DXFAttribHandler extends DXFTextHandler {
     public void startDXFEntity() {
         text = new DXFAttrib();
     }
+
+    /*
+     * (non-Javadoc)
+     *
+     * @see org.dxf2svg.parser.entities.EntityHandler#endParsing()
+     */
+    @Override
+    public void endDXFEntity() {
+        DXFAttdef def = this.doc.getAttdef(text.getCode()+"@"+text.getLayerName()+"@"+text.getFlags());
+        if(def != null){
+            String temp = def.getAttr().toLowerCase();
+            if(exceptArr.contains(temp)){
+                text.setVisibile(false);
+            }
+            def.setValue(this.content);
+        }
+        super.endDXFEntity();
+    }
+
 
     /* (non-Javadoc)
      * @see de.miethxml.kabeja.parser.entities.DXFEntityHandler#getDXFEntityName()
