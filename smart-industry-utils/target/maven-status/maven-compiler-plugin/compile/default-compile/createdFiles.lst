@@ -3,6 +3,7 @@ smart\industry\utils\encode\MD5.class
 smart\industry\utils\exceptions\AjaxException.class
 smart\industry\utils\annotations\Post.class
 smart\industry\utils\files\MultipartFileUploadUtil.class
+smart\industry\utils\encode\EncodeUtil.class
 smart\industry\utils\enums\CodeEnum.class
 smart\industry\utils\entity\MultipartFileParam.class
 smart\industry\utils\entity\ResponseJson.class

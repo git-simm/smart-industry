@@ -173,8 +173,8 @@
 
              var accept = {
                  title: 'intoTypes',
-                 extensions: 'rar,zip,doc,xls,docx,xlsx,pdf',
-                 mimeTypes: '.rar,.zip,.doc,.xls,.docx,.xlsx,.pdf'
+                 extensions: 'rar,zip,doc,xls,docx,xlsx,pdf,dxf',
+                 mimeTypes: '.rar,.zip,.doc,.xls,.docx,.xlsx,.pdf,.dxf'
              };
              var uploader1 = new myUploader({
                  list: $('#thelist1'),

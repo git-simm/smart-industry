@@ -42,7 +42,6 @@ D:\myworkspace\git\smart-industry\smart-industry-kabeja\src\main\java\org\kabeja
 D:\myworkspace\git\smart-industry\smart-industry-kabeja\src\main\java\org\kabeja\svg\generators\SVGShapeGenerator.java
 D:\myworkspace\git\smart-industry\smart-industry-kabeja\src\main\java\org\kabeja\dxf\helpers\DXFSplineConverter.java
 D:\myworkspace\git\smart-industry\smart-industry-kabeja\src\main\java\org\kabeja\ui\model\SAXGeneratorTreeNode.java
-D:\myworkspace\git\smart-industry\smart-industry-kabeja\src\main\java\org\kabeja\myfilters\filter2.java
 D:\myworkspace\git\smart-industry\smart-industry-kabeja\src\main\java\org\kabeja\tools\CodePageParser.java
 D:\myworkspace\git\smart-industry\smart-industry-kabeja\src\main\java\org\kabeja\dxf\DXFLine.java
 D:\myworkspace\git\smart-industry\smart-industry-kabeja\src\main\java\org\kabeja\dxf\objects\DXFMLineStyleElement.java
@@ -220,6 +219,7 @@ D:\myworkspace\git\smart-industry\smart-industry-kabeja\src\main\java\org\kabeja
 D:\myworkspace\git\smart-industry\smart-industry-kabeja\src\main\java\org\kabeja\parser\objects\AbstractDXFObjectHandler.java
 D:\myworkspace\git\smart-industry\smart-industry-kabeja\src\main\java\org\kabeja\parser\entities\DXFTraceHandler.java
 D:\myworkspace\git\smart-industry\smart-industry-kabeja\src\main\java\org\kabeja\svg\generators\SVGTraceGenerator.java
+D:\myworkspace\git\smart-industry\smart-industry-kabeja\src\main\java\org\kabeja\dxf\DXFAttdef.java
 D:\myworkspace\git\smart-industry\smart-industry-kabeja\src\main\java\org\kabeja\dxf\helpers\HatchLineFamily.java
 D:\myworkspace\git\smart-industry\smart-industry-kabeja\src\main\java\org\kabeja\processing\AbstractPostProcessor.java
 D:\myworkspace\git\smart-industry\smart-industry-kabeja\src\main\java\org\kabeja\processing\helper\PolylineQueue.java
@@ -243,6 +243,7 @@ D:\myworkspace\git\smart-industry\smart-industry-kabeja\src\main\java\org\kabeja
 D:\myworkspace\git\smart-industry\smart-industry-kabeja\src\main\java\org\kabeja\dxf\DXFHatchPattern.java
 D:\myworkspace\git\smart-industry\smart-industry-kabeja\src\main\java\org\kabeja\parser\Parser.java
 D:\myworkspace\git\smart-industry\smart-industry-kabeja\src\main\java\org\kabeja\svg\dimension\LinearDimensionOutputter.java
+D:\myworkspace\git\smart-industry\smart-industry-kabeja\src\main\java\org\kabeja\myfilters\AttrMsgFilter.java
 D:\myworkspace\git\smart-industry\smart-industry-kabeja\src\main\java\org\kabeja\parser\entities\DXFHatchHandler.java
 D:\myworkspace\git\smart-industry\smart-industry-kabeja\src\main\java\org\kabeja\parser\objects\DXFImageDefHandler.java
 D:\myworkspace\git\smart-industry\smart-industry-kabeja\src\main\java\org\kabeja\dxf\helpers\PolylineSegment.java
@@ -266,6 +267,7 @@ D:\myworkspace\git\smart-industry\smart-industry-kabeja\src\main\java\org\kabeja
 D:\myworkspace\git\smart-industry\smart-industry-kabeja\src\main\java\org\kabeja\parser\objects\DXFPlotsettingsHandler.java
 D:\myworkspace\git\smart-industry\smart-industry-kabeja\src\main\java\org\kabeja\processing\VisibilityFilter.java
 D:\myworkspace\git\smart-industry\smart-industry-kabeja\src\main\java\org\kabeja\dxf\helpers\Point.java
+D:\myworkspace\git\smart-industry\smart-industry-kabeja\src\main\java\org\kabeja\parser\entities\DXFAttdefHandler.java
 D:\myworkspace\git\smart-industry\smart-industry-kabeja\src\main\java\org\kabeja\svg\tools\DXFSAXDocumentFactory.java
 D:\myworkspace\git\smart-industry\smart-industry-kabeja\src\main\java\org\kabeja\svg\SVGUtils.java
 D:\myworkspace\git\smart-industry\smart-industry-kabeja\src\main\java\org\kabeja\dxf\DXFExtrusion.java

@@ -34,7 +34,6 @@ org\kabeja\math\ParametricPlane.class
 org\kabeja\ui\Serviceable.class
 org\kabeja\ui\xml\SAXServiceContainerBuilder.class
 org\kabeja\parser\table\DXFVPortTableHandler.class
-org\kabeja\myfilters\filter2.class
 org\kabeja\xml\SAXPrettyOutputter.class
 org\kabeja\processing\event\ProcessingListener.class
 org\kabeja\parser\AbstractSectionHandler.class
@@ -114,6 +113,7 @@ org\kabeja\parser\DXFBlocksSectionHandler.class
 org\kabeja\processing\helper\PolylineQueue.class
 org\kabeja\svg\ui\PopUpButton.class
 org\kabeja\dxf\helpers\HatchBoundaryLoop.class
+org\kabeja\parser\entities\DXFAttdefHandler.class
 org\kabeja\parser\table\DXFStyleTableHandler.class
 org\kabeja\xml\SAXGenerator.class
 org\kabeja\ui\ProcessingUIComponent.class
@@ -161,6 +161,7 @@ org\kabeja\ui\model\SAXSerializerTreeNode.class
 org\kabeja\ui\model\PostProcessorTreeNode.class
 org\kabeja\svg\dimension\AbstractDimensionOutputter.class
 org\kabeja\dxf\DXFShape.class
+org\kabeja\myfilters\AttrMsgFilter.class
 org\kabeja\dxf\helpers\DXFMLineSegmentElement.class
 org\kabeja\dxf\DXFStyle.class
 org\kabeja\dxf\DXFHatch.class
@@ -266,6 +267,7 @@ org\kabeja\dxf\DXFMLine.class
 org\kabeja\dxf\DXFMText.class
 org\kabeja\parser\entities\DXFRayHandler.class
 org\kabeja\tools\SAXProcessingManagerBuilder.class
+org\kabeja\dxf\DXFAttdef.class
 org\kabeja\svg\generators\SVGEllipseGenerator.class
 org\kabeja\processing\AbstractPostProcessor.class
 org\kabeja\parser\table\DXFDimensionStyleTableHandler.class

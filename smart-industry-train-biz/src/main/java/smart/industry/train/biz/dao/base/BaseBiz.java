@@ -52,7 +52,13 @@ public abstract class BaseBiz<TMapper extends IMapper<TEntity>,TEntity extends B
     public int delete(Integer id){
         return baseMapper.deleteByPrimaryKey(id);
     }
-
+    /**
+     * 删除记录
+     * @param entity
+     * @return
+     */
+    @Transactional
+    public int deleteByFilter(TEntity entity){ return baseMapper.deleteByFilter(entity); }
     /**
      * 获取记录
      * @param id

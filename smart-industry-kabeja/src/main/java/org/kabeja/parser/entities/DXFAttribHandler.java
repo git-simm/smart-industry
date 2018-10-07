@@ -19,8 +19,6 @@ import org.kabeja.dxf.DXFAttdef;
 import org.kabeja.dxf.DXFAttrib;
 import org.kabeja.dxf.DXFConstants;
 import org.kabeja.parser.DXFValue;
-import sun.plugin.javascript.navig.Array;
-
 import java.util.Arrays;
 import java.util.List;
 

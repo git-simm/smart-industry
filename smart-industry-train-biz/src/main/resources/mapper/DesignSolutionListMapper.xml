@@ -36,7 +36,8 @@
     delete from design_solution_list
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="smart.industry.train.biz.entity.DesignSolutionList">
+  <insert id="insert" parameterType="smart.industry.train.biz.entity.DesignSolutionList"
+          useGeneratedKeys="true" keyProperty="id">
     insert into design_solution_list (id, createDate, createBy, 
       modifyDate, modifyBy, `name`, 
       solutionId, fileId, `type`, 
@@ -46,7 +47,8 @@
       #{solutionId,jdbcType=INTEGER}, #{fileId,jdbcType=INTEGER}, #{type,jdbcType=INTEGER}, 
       #{remark,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="smart.industry.train.biz.entity.DesignSolutionList">
+  <insert id="insertSelective" parameterType="smart.industry.train.biz.entity.DesignSolutionList"
+          useGeneratedKeys="true" keyProperty="id">
     insert into design_solution_list
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">

@@ -25,6 +25,8 @@ public interface IMapper<T> {
      */
     List<T> selectByFilter(T record);
 
+    int deleteByFilter(T record);
+
     int updateByPrimaryKeySelective(T record);
 
     int updateByPrimaryKey(T record);

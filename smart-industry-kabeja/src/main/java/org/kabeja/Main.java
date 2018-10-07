@@ -96,32 +96,17 @@ public class Main {
      * @param f
      * @param output
      */
-    public void parseFile(File f, String output) {
+    public DXFDocument parseFile(File f, String output) {
         try {
             this.parser.parse(new FileInputStream(f), encoding);
 
             DXFDocument doc = parser.getDocument();
             this.processorManager.process(doc, new HashMap(),
                     this.pipeline, new FileOutputStream(output));
-
-            // TODO move this into the svg block + gzip
-            // else {
-            // OutputStream out = null;
-            //
-            // out = new FileOutputStream(output);
-            //
-            // SAXPrettyOutputter writer = new SAXPrettyOutputter(out,
-            // SAXPrettyOutputter.DEFAULT_ENCODING);
-
-            // if (this.outputDTD) {
-            // writer.setDTD(SVGConstants.SVG_DTD_1_0);
-            // }
-            // SAXGenerator gen = new SVGGenerator();
-            // gen.setProperties(new HashMap());
-            // gen.generate(doc, writer);
-            // }
+            return doc;
         } catch (Exception e) {
             e.printStackTrace();
+            return null;
         }
     }
 

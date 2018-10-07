@@ -6,9 +6,13 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import smart.industry.train.biz.dao.DesignSolutionListBiz;
+import smart.industry.train.biz.dao.SysTasksBiz;
 import smart.industry.train.biz.dao.SysUpfilesBiz;
 import smart.industry.train.biz.entity.DesignSolutionList;
+import smart.industry.train.biz.entity.SysTasks;
 import smart.industry.train.biz.entity.SysUpfiles;
+import smart.industry.train.biz.enums.TaskStateEnum;
+import smart.industry.train.biz.threads.ResolveThread;
 import smart.industry.utils.files.FileUtil;
 
 import javax.servlet.http.HttpServletRequest;
@@ -29,6 +33,8 @@ public class FileController {
     private SysUpfilesBiz sysUpfilesBiz;
     @Autowired
     private DesignSolutionListBiz designSolutionListBiz;
+    @Autowired
+    private SysTasksBiz sysTasksBiz;
 
     @GetMapping("/uploader")
     public String uploader(){
@@ -67,7 +73,9 @@ public class FileController {
                 file.transferTo(fileSource);
                 //保存文件到数据库
                 Integer fileId = saveFile(file, fileSource);
-                saveDesignList(file, solutionId, fileType, fileId);
+                Integer detailId = saveDesignList(file, solutionId, fileType, fileId);
+                //保存系统同步任务
+                saveSysTask(detailId);
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
                 return "上传失败," + e.getMessage();
@@ -91,13 +99,27 @@ public class FileController {
      * @param fileType
      * @param fileId
      */
-    private void saveDesignList(MultipartFile file, Integer solutionId, Integer fileType, Integer fileId) {
+    private Integer saveDesignList(MultipartFile file, Integer solutionId, Integer fileType, Integer fileId) {
         DesignSolutionList item = new DesignSolutionList();
         item.setFileId(fileId);
         item.setSolutionId(solutionId);
         item.setType(fileType);
         item.setName(file.getOriginalFilename());
         designSolutionListBiz.add(item);
+        return item.getId();
+    }
+
+    /**
+     * 保存系统任务
+     *      *
+     * @param  @param solutionId
+     * @param detailId
+     */
+    private void saveSysTask(Integer detailId) {
+        SysTasks item = new SysTasks();
+        item.setDetailId(detailId);
+        item.setState(TaskStateEnum.Ready.getValue());
+        sysTasksBiz.add(item);
     }
 
     /**
