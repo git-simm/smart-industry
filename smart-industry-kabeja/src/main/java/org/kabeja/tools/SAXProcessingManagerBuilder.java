@@ -15,7 +15,6 @@
  */
 package org.kabeja.tools;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import org.kabeja.batik.tools.ImageBase64Encoder;
 import org.kabeja.parser.Parser;
 import org.kabeja.parser.SAXParserBuilder;
@@ -220,8 +219,7 @@ public class SAXProcessingManagerBuilder implements ContentHandler {
             if (ELEMENT_SAXFILTER.equals(localName) && this.config) {
                 this.properties = new HashMap();
                 name = atts.getValue(ATTRIBUTE_NAME);
-                Object instance = createInstance(atts.getValue(ATTRIBUTE_CLASS));
-                saxfilter = (SAXFilter)instance;
+                saxfilter = (SAXFilter)createInstance(atts.getValue(ATTRIBUTE_CLASS));
             } else if (ELEMENT_SAXSERIALIZER.equals(localName)) {
                 this.properties = new HashMap();
                 name = atts.getValue(ATTRIBUTE_NAME);
