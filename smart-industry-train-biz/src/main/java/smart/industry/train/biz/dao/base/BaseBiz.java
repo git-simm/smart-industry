@@ -27,7 +27,7 @@ public abstract class BaseBiz<TMapper extends IMapper<TEntity>,TEntity extends B
      */
     @Transactional
     public int add(TEntity entity){
-        entity.setCreateBy(principalService.getCurrentUser().getId());
+        entity.setCreateBy(getCurrentUserId());
         entity.setCreateDate(new Date());
         return baseMapper.insertSelective(entity);
     }
@@ -38,9 +38,22 @@ public abstract class BaseBiz<TMapper extends IMapper<TEntity>,TEntity extends B
      */
     @Transactional
     public int update(TEntity entity){
-        entity.setModifyBy(principalService.getCurrentUser().getId());
+        entity.setModifyBy(getCurrentUserId());
         entity.setModifyDate(new Date());
         return baseMapper.updateByPrimaryKeySelective(entity);
+    }
+
+    /**
+     * 获取当前用户ID
+     * @return
+     */
+    public Integer getCurrentUserId(){
+        try{
+            return principalService.getCurrentUser().getId();
+        }catch(Exception e){
+            e.printStackTrace();
+            return 1;
+        }
     }
 
     /**

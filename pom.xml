@@ -61,12 +61,12 @@
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
         </dependency>
-
-        <dependency>
+        <!-- 这个jar包要谨慎使用，会引起类型转换异常-->
+        <!-- <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-devtools</artifactId>
             <optional>true</optional>
-        </dependency>
+        </dependency> -->
 
         <dependency>
             <groupId>org.mybatis.spring.boot</groupId>

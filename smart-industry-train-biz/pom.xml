@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
     <artifactId>smart-industry-train-biz</artifactId>
-    <name>${project.artifactId} - ${project.version}</name>
+    <name>${project.artifactId}-${project.version}</name>
     <build>
         <plugins>
             <plugin>
@@ -53,12 +53,6 @@
             <groupId>org.apache.poi</groupId>
             <artifactId>poi-ooxml</artifactId>
             <version>RELEASE</version>
-        </dependency>
-        <dependency>
-            <groupId>smart.industry</groupId>
-            <artifactId>smart-industry-kabeja</artifactId>
-            <version>1.0</version>
-            <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>smart.industry</groupId>

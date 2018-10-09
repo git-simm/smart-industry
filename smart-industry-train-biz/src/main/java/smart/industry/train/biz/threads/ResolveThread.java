@@ -1,7 +1,5 @@
 package smart.industry.train.biz.threads;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import smart.industry.train.biz.dao.ResolveBiz;
 import smart.industry.train.biz.dao.SysTasksBiz;
 import smart.industry.train.biz.entity.SysTasks;
@@ -12,12 +10,13 @@ import java.util.List;
 /**
  * 任务解析线程
  */
-@Component
 public class ResolveThread extends Thread {
-    @Autowired
     private SysTasksBiz sysTasksBiz;
-    @Autowired
     private ResolveBiz resolveBiz;
+    public ResolveThread(SysTasksBiz sysTasksBiz,ResolveBiz resolveBiz){
+        this.sysTasksBiz = sysTasksBiz;
+        this.resolveBiz = resolveBiz;
+    }
     /**
      * 运行方法
      */

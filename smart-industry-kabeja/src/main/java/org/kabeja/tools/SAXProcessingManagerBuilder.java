@@ -294,9 +294,8 @@ public class SAXProcessingManagerBuilder implements ContentHandler {
 
     protected Object createInstance(String clazz) {
         try {
-            Class cl = this.getClass().getClassLoader().loadClass(clazz);
-            Object obj = cl.newInstance();
-
+            //Class cl = this.getClass().getClassLoader().loadClass(clazz);
+            Object obj = Class.forName(clazz).newInstance();
             return obj;
         } catch (ClassNotFoundException e) {
             e.printStackTrace();

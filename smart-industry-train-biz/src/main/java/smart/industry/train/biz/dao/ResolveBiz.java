@@ -72,8 +72,24 @@ public class ResolveBiz {
         if (f.exists() && f.isFile()) {
             //文件转换
             DXFDocument doc = main.parseFile(f, output);
-            //完成dxf信息的保存
-            saveDxfMsg(doc);
+            //1.修改系统任务的状态
+            sysTask.setState(TaskStateEnum.Converting.getValue());
+            sysTasksBiz.update(sysTask);
+            boolean succ = false;
+            try {
+                //完成dxf信息的保存
+                saveDxfMsg(doc);
+                succ = true;
+            }finally {
+                //3.修改系统任务的状态
+                if(succ){
+                    sysTask.setState(TaskStateEnum.Completed.getValue());
+                    sysTasksBiz.update(sysTask);
+                }else{
+                    sysTask.setState(TaskStateEnum.Ready.getValue());
+                    sysTasksBiz.update(sysTask);
+                }
+            }
         }
     }
 
@@ -83,7 +99,7 @@ public class ResolveBiz {
      */
     @Transactional
     public void saveDxfMsg(DXFDocument doc){
-        //先清理掉，有关改detailId的文件信息
+        //2.先清理掉，有关改detailId的文件信息
         DesignDetailBlock filter = new DesignDetailBlock();
         filter.setDetailId(detail.getId());
         filter.setFilter("detailId = #{detailId}");
@@ -111,9 +127,6 @@ public class ResolveBiz {
                 }
             }
         }
-        //3.修改系统任务的状态
-        sysTask.setState(TaskStateEnum.Completed.getValue());
-        sysTasksBiz.update(sysTask);
     }
 
     /**

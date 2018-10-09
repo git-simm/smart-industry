@@ -70,6 +70,7 @@
             <handler class="org.kabeja.parser.entities.DXFBodyHandler"/>
             <handler class="org.kabeja.parser.entities.DXF3DSolidHandler"/>
             <handler class="org.kabeja.parser.entities.DXFSplineHandler"/>
+            <handler class="org.kabeja.parser.entities.DXFAttdefHandler"/>
         </handlers>
     </handler>
     <!--+
