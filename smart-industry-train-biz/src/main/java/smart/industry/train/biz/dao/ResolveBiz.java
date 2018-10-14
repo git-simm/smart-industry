@@ -4,13 +4,15 @@ import org.kabeja.Main;
 import org.kabeja.dxf.DXFAttdef;
 import org.kabeja.dxf.DXFBlock;
 import org.kabeja.dxf.DXFDocument;
-import org.kabeja.dxf.DXFEntity;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.CollectionUtils;
 import smart.industry.train.biz.entity.*;
 import smart.industry.train.biz.enums.TaskStateEnum;
+import smart.industry.train.biz.mypoi.DesignXlsBiz;
 
 import java.io.File;
 import java.util.Iterator;
@@ -21,6 +23,7 @@ import java.util.List;
  */
 @Service
 public class ResolveBiz {
+    private final Logger logger = LoggerFactory.getLogger(ResolveBiz.class);
     /**
      * 设计方案明细
      */
@@ -50,15 +53,45 @@ public class ResolveBiz {
         if(detail == null) return;
         file = sysUpfilesBiz.selectByPrimaryKey(detail.getFileId());
         if(file == null) return;
-        if(file.getSuffix().equals(".dxf")){
-            try {
+        String suffix = file.getSuffix();
+        boolean succ = false;
+        //1.修改系统任务的状态
+        sysTask.setState(TaskStateEnum.Converting.getValue());
+        sysTasksBiz.update(sysTask);
+        try {
+            if(suffix.equals(".dxf")){
                 resolve();
-            } catch (Exception e) {
-                e.printStackTrace();
+            }else if(suffix.equals(".xls") || suffix.equals(".xlsx")){
+                //解析excel清单
+                resolveExcel();
+            }
+            succ = true;
+        } catch (Exception e) {
+            e.printStackTrace();
+            logger.error(e.getMessage(),e);
+        }finally {
+            //3.修改系统任务的状态
+            if(succ){
+                sysTask.setState(TaskStateEnum.Completed.getValue());
+                sysTasksBiz.update(sysTask);
+            }else{
+                sysTask.setState(TaskStateEnum.Ready.getValue());
+                sysTasksBiz.update(sysTask);
             }
         }
     }
 
+    /**
+     * 设计清单的解析
+     */
+    @Autowired
+    private DesignXlsBiz designXlsBiz;
+    /**
+     * 解析excel清单
+     */
+    public void resolveExcel() throws Exception {
+        designXlsBiz.resolve(file);
+    }
     /**
      * dxf文件转换成svg
      * @throws Exception
@@ -68,28 +101,12 @@ public class ResolveBiz {
         main.process();
         File f = new File(file.getFilePath());
         String suffix = file.getSuffix();
-        String output = f.getName().replace(suffix,".svg");
+        String output = f.getPath().replace(suffix,".svg");
         if (f.exists() && f.isFile()) {
             //文件转换
             DXFDocument doc = main.parseFile(f, output);
-            //1.修改系统任务的状态
-            sysTask.setState(TaskStateEnum.Converting.getValue());
-            sysTasksBiz.update(sysTask);
-            boolean succ = false;
-            try {
-                //完成dxf信息的保存
-                saveDxfMsg(doc);
-                succ = true;
-            }finally {
-                //3.修改系统任务的状态
-                if(succ){
-                    sysTask.setState(TaskStateEnum.Completed.getValue());
-                    sysTasksBiz.update(sysTask);
-                }else{
-                    sysTask.setState(TaskStateEnum.Ready.getValue());
-                    sysTasksBiz.update(sysTask);
-                }
-            }
+            //完成dxf信息的保存
+            saveDxfMsg(doc);
         }
     }
 

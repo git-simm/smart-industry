@@ -3,6 +3,7 @@ package smart.industry.train.web.controllers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.util.ResourceUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -60,11 +61,13 @@ public class FileController {
                 //获取解决方案ID
                 Integer solutionId = Integer.parseInt(req.getParameter("solutionId"));
                 Integer fileType = Integer.parseInt(req.getParameter("fileType"));
-                // 文件保存路径
-                String filePath = request.getSession().getServletContext().getRealPath("/uploader/");
-                File fileSourcePath = new File(filePath);
+                // 文件保存路径(获取资源路径 uploader)
                 String suffix = FileUtil.getSuffix(file.getOriginalFilename());
-                File fileSource = new File(fileSourcePath, UUID.randomUUID().toString()+ suffix);
+                String fileName = UUID.randomUUID().toString()+ suffix;
+                String folder = "/static/uploader/";
+                String relativePath = folder +fileName;
+                File fileSourcePath = new File(ResourceUtils.getFile("classpath:").getPath()+ folder);
+                File fileSource = new File(fileSourcePath, fileName);
                 System.out.println(fileSource.getPath());
                 if (!fileSourcePath.exists()) {
                     fileSourcePath.mkdirs();
@@ -74,7 +77,7 @@ public class FileController {
                 }
                 file.transferTo(fileSource);
                 //保存文件到数据库
-                Integer fileId = saveFile(file, fileSource);
+                Integer fileId = saveFile(file, fileSource,relativePath);
                 Integer detailId = saveDesignList(file, solutionId, fileType, fileId);
                 //保存系统同步任务
                 saveSysTask(detailId);
@@ -128,14 +131,16 @@ public class FileController {
      * 保存物理文件
      * @param file
      * @param fileSource
+     * @param relativePath
      * @return
      */
-    private Integer saveFile(MultipartFile file, File fileSource) {
+    private Integer saveFile(MultipartFile file, File fileSource, String relativePath) {
         SysUpfiles sysUpfiles = new SysUpfiles();
         sysUpfiles.setFileName(file.getOriginalFilename());
         sysUpfiles.setFilePath(fileSource.getPath());
         sysUpfiles.setSuffix(FileUtil.getSuffix(file.getOriginalFilename()));
         sysUpfiles.setFileSize(file.getSize());
+        sysUpfiles.setRelativePath(relativePath);
         sysUpfilesBiz.add(sysUpfiles);
         return sysUpfiles.getId();
     }

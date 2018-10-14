@@ -1,5 +1,6 @@
 package smart.industry.train.biz.dao;
 
+import com.alibaba.fastjson.JSONObject;
 import org.apache.shiro.util.CollectionUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -7,10 +8,17 @@ import org.springframework.transaction.annotation.Transactional;
 import smart.industry.train.biz.dao.base.BaseBiz;
 import smart.industry.train.biz.entity.DesignSolution;
 import smart.industry.train.biz.entity.DesignSolutionList;
+import smart.industry.train.biz.entity.SysUpfiles;
 import smart.industry.train.biz.entity.base.Paging;
+import smart.industry.train.biz.enums.FileTypeEnum;
 import smart.industry.train.biz.mapper.DesignSolutionMapper;
+import smart.industry.utils.StringUtils;
+import smart.industry.utils.exceptions.AjaxException;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
+import java.util.stream.Collectors;
 
 /**
  * 设计方案业务逻辑层
@@ -90,6 +98,74 @@ public class DesignSolutionBiz extends BaseBiz<DesignSolutionMapper,DesignSoluti
             }
             result += designSolutionListBiz.delete(file);
         }
+        return result;
+    }
+
+    /**
+     * 获取文件树
+     * @param id
+     * @return
+     */
+    @Transactional
+    public List<JSONObject> getFileTree(Integer id) {
+        DesignSolution solution = this.selectByPrimaryKey(id);
+        if(solution==null){
+            throw new AjaxException("不存在主键为["+id+"]的解决方案");
+        }
+        List<DesignSolutionList> solutionFiles = designSolutionListBiz.getAllListBySolution(id);
+        List<Integer> ids = solutionFiles.stream().map(a -> a.getFileId()).collect(Collectors.toList());
+        List<SysUpfiles> files = new ArrayList<>();
+        if(!CollectionUtils.isEmpty(ids)){
+            String param = StringUtils.join(ids,",");
+            SysUpfiles filter = new SysUpfiles();
+            filter.setFilter("id in ("+ param +")");
+            files = sysUpfilesBiz.selectByFilter(filter);
+        }
+        //开始拼装树状结构
+        List<JSONObject> result = new ArrayList<>();
+        result.addAll(wrapData(solutionFiles,files,FileTypeEnum.Design));
+        result.addAll(wrapData(solutionFiles,files,FileTypeEnum.Standard));
+        result.addAll(wrapData(solutionFiles,files,FileTypeEnum.Bill));
+        return result;
+    }
+
+    /**
+     * 组装数据
+     * @param solutionFiles
+     * @param files
+     * @param type
+     * @return
+     */
+    public List<JSONObject> wrapData(List<DesignSolutionList> solutionFiles,List<SysUpfiles> files ,FileTypeEnum type){
+        List<JSONObject> result = new ArrayList<>();
+        JSONObject root = new JSONObject();
+        String rootId = "10000"+type.getValue();
+        root.put("id" ,rootId );
+        root.put("pId" ,null );
+        root.put("name" ,type.getName() );
+        root.put("fileId",null);
+        root.put("filePath",null);
+        result.add(root);
+
+        List<DesignSolutionList> solutionListsFilter = solutionFiles.stream().filter(a->a.getType().equals(type.getValue())).collect(Collectors.toList());
+        solutionListsFilter.forEach(a->{
+            JSONObject obj = new JSONObject();
+            obj.put("id",a.getId());
+            obj.put("pId",rootId);
+            obj.put("fileId",a.getFileId());
+            Optional<SysUpfiles> fileOp = files.stream().filter(f->f.getId().equals(a.getFileId())).findFirst();
+            if(fileOp.isPresent()){
+                SysUpfiles file = fileOp.get();
+                String path = file.getRelativePath();
+                if(StringUtils.isNotBlank(path) && file.getSuffix().equals(".dxf")){
+                    path = file.getRelativePath().replace(file.getSuffix(),".svg");
+                }
+                obj.put("filePath",path);
+                String fileName = file.getFileName().replace(file.getSuffix(),"");
+                obj.put("name",fileName);
+            }
+            result.add(obj);
+        });
         return result;
     }
 }

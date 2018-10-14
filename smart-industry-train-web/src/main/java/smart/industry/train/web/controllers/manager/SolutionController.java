@@ -13,11 +13,11 @@ import org.springframework.web.bind.annotation.*;
 import smart.industry.train.biz.dao.DesignClassBiz;
 import smart.industry.train.biz.dao.DesignSolutionBiz;
 import smart.industry.train.biz.dao.DesignSolutionListBiz;
-import smart.industry.train.biz.entity.DesignClass;
-import smart.industry.train.biz.entity.DesignSolution;
-import smart.industry.train.biz.entity.User;
+import smart.industry.train.biz.dao.SysUpfilesBiz;
+import smart.industry.train.biz.entity.*;
 import smart.industry.train.biz.entity.base.Paging;
 import smart.industry.utils.annotations.Post;
+import smart.industry.utils.exceptions.AjaxException;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
@@ -93,6 +93,17 @@ public class SolutionController {
         result.put("rows", p.getList());
         result.put("total", p.getTotal());
         return result;
+    }
+
+    /**
+     * 获取所有的对象列表
+     * @param id
+     * @return
+     */
+    @Post("/getfiles")
+    @ResponseBody
+    public List<JSONObject> getFiles(Integer id){
+        return designSolutionBiz.getFileTree(id);
     }
 
     /**

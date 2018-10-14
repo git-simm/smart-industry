@@ -1,5 +1,6 @@
 package smart.industry.train.biz.interfaces;
 
+import smart.industry.train.biz.entity.base.BaseEntity;
 import smart.industry.train.biz.entity.base.Paging;
 
 import java.util.List;
@@ -30,4 +31,6 @@ public interface IMapper<T> {
     int updateByPrimaryKeySelective(T record);
 
     int updateByPrimaryKey(T record);
+
+    <TEntity extends BaseEntity> void batchAdd(List<TEntity> list);
 }

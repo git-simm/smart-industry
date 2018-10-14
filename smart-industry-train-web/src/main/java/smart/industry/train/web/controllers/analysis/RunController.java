@@ -12,7 +12,8 @@ import java.util.Map;
 @RequestMapping("/run")
 public class RunController {
     @GetMapping("/test")
-    public String test(Map<String, Object> map){
+    public String test(int id,Map<String, Object> map){
+        map.put("solutionId",id);
         return "analysis/test_run";
     }
     @GetMapping("/test2")

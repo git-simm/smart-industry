@@ -107,6 +107,7 @@
                         var content = $("#list_opr_template").html();
                         content = content.replace("{edit}", "solution.list2.Edit('" + row.id + "')");
                         content = content.replace("{del}", "solution.list2.Delete('" + row.id + "')");
+                        content = content.replace("{test}", "solution.list2.RunTest('" + row.id + "')");
                         return content;
                     }
                     //width: "30%"
@@ -171,6 +172,15 @@
             }
         });
     };
+    /**
+     * 运行测试
+     * @param id
+     * @constructor
+     */
+    ns.RunTest = function(id){
+        //从父级页面打开测试窗口
+        parent.smart.train.index.open("测试"+id,'/run/test?id=' + id);
+    }
     //删除
     ns.Delete = function (id) {
         //询问框

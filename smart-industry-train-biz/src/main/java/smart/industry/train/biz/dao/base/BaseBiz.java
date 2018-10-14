@@ -3,6 +3,8 @@ package smart.industry.train.biz.dao.base;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 import smart.industry.train.biz.dao.PrincipalService;
+import smart.industry.train.biz.entity.DesignExcelList;
+import smart.industry.train.biz.entity.SysDxfAttr;
 import smart.industry.train.biz.entity.base.BaseEntity;
 import smart.industry.train.biz.entity.base.Paging;
 import smart.industry.train.biz.interfaces.IMapper;
@@ -51,7 +53,7 @@ public abstract class BaseBiz<TMapper extends IMapper<TEntity>,TEntity extends B
         try{
             return principalService.getCurrentUser().getId();
         }catch(Exception e){
-            e.printStackTrace();
+            System.out.println(e.getMessage());
             return 1;
         }
     }
@@ -124,4 +126,13 @@ public abstract class BaseBiz<TMapper extends IMapper<TEntity>,TEntity extends B
      * @throws Exception
      */
     public abstract TEntity getFilter(Paging paging) throws Exception;
+
+    /**
+     * 批量添加实体
+     *
+     * @param list
+     */
+    public void batchAdd(List<TEntity> list) {
+         baseMapper.batchAdd(list);
+    }
 }

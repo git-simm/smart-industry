@@ -14,6 +14,8 @@ public class SysUpfiles extends BaseEntity {
 
     private String filePath;
 
+    private String relativePath;
+
     private String suffix;
 
     private Long fileSize;
@@ -64,5 +66,13 @@ public class SysUpfiles extends BaseEntity {
 
     public void setFileSize(Long fileSize) {
         this.fileSize = fileSize;
+    }
+
+    public String getRelativePath() {
+        return relativePath;
+    }
+
+    public void setRelativePath(String relativePath) {
+        this.relativePath = relativePath;
     }
 }

@@ -62,6 +62,9 @@
                 <button class="btn btn-xs btn-info" title="编辑" onclick="{edit}">
                     <i class="icon-edit"></i>
                 </button>
+                <button class="btn btn-xs btn-primary" title="测试" onclick="{test}">
+                    <i class="icon-rocket"></i>
+                </button>
                 <button class="btn btn-xs btn-danger" title="删除" onclick="{del}">
                     <i class="icon-trash"></i>
                 </button>

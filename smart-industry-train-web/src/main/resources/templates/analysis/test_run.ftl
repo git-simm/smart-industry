@@ -3,13 +3,36 @@
     <#if section="title">运行测试
     <#elseif section="css">
       <@cssRef "/static/_resources/layout/layout-default-latest.css"/>
+        <@cssRef url="/static/_resources/ztree/zTreeStyle/zTreeStyle.css"/>
       <@cssRef "/static/css/eagleEye.css"/>
       <style type="text/css">
           #mainViewContainer,.svg_position{
               position: absolute;top:0;left: 0;bottom: 0;right: 0;height: 100%;width:100%;
           }
-      </style>
+        .treeContainer{
+            position: absolute;
+            bottom: 0;
+            top: 25px;
+            left: 0;
+            right: 0;
+            border: 1px solid #ccc;
+            border-width: 0 1px 0 0;
+            background-color: ghostwhite;
+            overflow: auto;
+            overflow-y: auto;
+        }
+        .ztreeMenu{
+            height: 25px;
+            background: whitesmoke;
+            position: absolute;
+            right: 0;
+            left: 0;
+            padding-left: 10px;
+            padding-top: 3px;
+        }
+    </style>
     <#elseif section="content">
+    <input type="hidden" id="hid_solutionId" value="${solutionId!}"/>
     <div class="ui-layout-center">
         <div id="mainViewContainer" style="position: relative">
             <!--<embed id="bg_svg" src="${request.contextPath}/static/svg/new.svg" class="col-md-12 svg_position" type="image/svg+xml"/>-->
@@ -26,7 +49,14 @@
             <embed id="thumbView" type="image/svg+xml" src="${request.contextPath}/static/svg/new.svg" class="thumbViewClass"/>
         </div>
     </div>
-    <div class="ui-layout-west"></div>
+    <div class="ui-layout-west" style="padding: 0 !important">
+        <div style="position: relative;height: 100%;">
+            <div class="ztreeMenu">解决方案列表</div>
+            <div class="treeContainer">
+                <ul id="soluTree" class="ztree"></ul>
+            </div>
+        </div>
+    </div>
     <div class="ui-layout-south">
         <div style="position: absolute;top: 0 ;left:0; bottom: 0;width:50px; background: grey;padding: 4px;">
             <button class="btn btn-primary btn-sm width-100" onclick="svgAnimal();">
@@ -51,6 +81,8 @@
         <@jsRef "/static/_resources/snap/snap.svg-min.js"/>
         <@jsRef "/static/js/common/svg-pan-zoom.js"/>
         <@jsRef "/static/js/common/thumbnailViewer.js"/>
+        <@jsRef "/static/_resources/ztree/jquery.ztree.all.js"/>
+        <@jsRef "/static/js/manager/solution.tree.js"/>
         <@jsRef "/static/js/manager/test.run.js"/>
 <script type="application/javascript">
     //--------------------
@@ -122,16 +154,16 @@
             {
                 west__size: 300,
                 south__Size: 300,
-                west__initClosed: true,
+                west__initClosed: false,
                 //west__enableCursorHotkey: false,
                 //south__enableCursorHotkey: false,
                 //west__spacing_open: 0,
                 //west__spacing_closed: 0,
                 stateManagement__enabled: true,
                 spacing_open: 6, // ALL panes
-                spacing_closed: 20, // ALL panes
-                south__spacing_open: 6,
-                south__spacing_closed: 20,
+                spacing_closed: 30, // ALL panes
+                //south__spacing_open: 6,
+                //south__spacing_closed: 20,
                 togglerContent_open: "<div><</div>", //pane打开时，边框按钮中需要显示的内容可以是符号"<"等。需要加入默认css样式.ui-layout-toggler .content
                 togglerContent_closed: "<div>>></div>", //pane关闭时，同上。
                 south__minSize: 300,

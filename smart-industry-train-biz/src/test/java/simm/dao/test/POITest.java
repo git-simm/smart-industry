@@ -12,7 +12,7 @@ public class POITest {
     public void resolveTest(){
         DesignXlsBiz designXlsBiz = new DesignXlsBiz();
         try {
-            designXlsBiz.resolve("E:\\工作区\\01 本地项目\\罗总项目\\上海13号线图纸及清单\\DL-MP-SML13-V1.17.xls");
+            //designXlsBiz.resolve("E:\\工作区\\01 本地项目\\罗总项目\\上海13号线图纸及清单\\DL-MP-SML13-V1.17.xls");
         } catch (Exception e) {
             e.printStackTrace();
         }
