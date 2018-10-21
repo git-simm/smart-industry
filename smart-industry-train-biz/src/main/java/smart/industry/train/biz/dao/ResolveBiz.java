@@ -1,9 +1,7 @@
 package smart.industry.train.biz.dao;
 
 import org.kabeja.Main;
-import org.kabeja.dxf.DXFAttdef;
-import org.kabeja.dxf.DXFBlock;
-import org.kabeja.dxf.DXFDocument;
+import org.kabeja.dxf.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -141,6 +139,15 @@ public class ResolveBiz {
                     Integer attrId = saveDxfAttrMsg(dxfAttdef.getAttr());
                     //3.保存attr信息
                     saveBlockAttr(designDetailBlock.getId(),attrId,dxfAttdef.getAttr(),dxfAttdef.getValue());
+                }else if(entity instanceof DXFAttrib){
+                    DXFAttrib attrib = (DXFAttrib)entity;
+                    if(attrib.getAttdef()!=null){
+                        DXFAttdef dxfAttdef = attrib.getAttdef();
+                        //2.解析保存sys_attr信息
+                        Integer attrId = saveDxfAttrMsg(dxfAttdef.getAttr());
+                        //3.保存attr信息
+                        saveBlockAttr(designDetailBlock.getId(),attrId,dxfAttdef.getAttr(),attrib.getText());
+                    }
                 }
             }
         }

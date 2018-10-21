@@ -459,4 +459,17 @@ public class DXFText extends DXFEntity {
     public void setCode(String code) {
         this.code = code;
     }
+
+    /**
+     * 对应的属性定义
+     */
+    private DXFAttdef attdef;
+
+    public DXFAttdef getAttdef() {
+        return attdef;
+    }
+
+    public void setAttdef(DXFAttdef attdef) {
+        this.attdef = attdef;
+    }
 }

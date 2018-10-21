@@ -19,8 +19,6 @@ import org.kabeja.dxf.DXFAttdef;
 import org.kabeja.dxf.DXFAttrib;
 import org.kabeja.dxf.DXFConstants;
 import org.kabeja.parser.DXFValue;
-import java.util.Arrays;
-import java.util.List;
 
 
 /**
@@ -29,11 +27,12 @@ import java.util.List;
 public class DXFAttribHandler extends DXFTextHandler {
     public static final int ATTRIB_VERTICAL_ALIGN = 74;
     public static final int ATTRIB_TEXT_LENGTH = 73;
+    public static final int ATTRIB_FLAG = 70;
     public static final int ATTRIB_CODE = 2;
-    public static List<String> exceptArr = Arrays.asList(new String[]{
+    /*public static List<String> exceptArr = Arrays.asList(new String[]{
             "comment en","comment cn","plant","function/tag","potential","kind",
             "suppression element","var.macro","conn.diagram symbol","release symbol","version symbol",
-            "wire designation","wiredesign.auto.num.","core designation","comment","voltage"});
+            "wire designation","wiredesign.auto.num.","core designation","comment","voltage"}); */
 
     public DXFAttribHandler() {
         super();
@@ -51,6 +50,13 @@ public class DXFAttribHandler extends DXFTextHandler {
                 text.setValign(value.getIntegerValue());
                 break;
             case ATTRIB_CODE:
+                text.setCode(value.getValue());
+                break;
+            case ATTRIB_FLAG:
+                if(value.getValue().equals("9")){
+                    //隐藏属性
+                    text.setVisibile(false);
+                }
                 text.setCode(value.getValue());
                 break;
             default:
@@ -71,10 +77,10 @@ public class DXFAttribHandler extends DXFTextHandler {
     public void endDXFEntity() {
         DXFAttdef def = this.doc.getAttdef(text.getCode()+"@"+text.getLayerName()+"@"+text.getFlags());
         if(def != null){
-            String temp = def.getAttr().toLowerCase();
+            /*String temp = def.getAttr().toLowerCase();
             if(exceptArr.contains(temp)){
                 text.setVisibile(false);
-            }
+            }*/
             def.setValue(this.content);
         }
         super.endDXFEntity();
