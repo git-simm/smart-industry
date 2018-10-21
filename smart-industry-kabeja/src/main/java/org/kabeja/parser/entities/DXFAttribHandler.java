@@ -75,14 +75,14 @@ public class DXFAttribHandler extends DXFTextHandler {
      */
     @Override
     public void endDXFEntity() {
-        DXFAttdef def = this.doc.getAttdef(text.getCode()+"@"+text.getLayerName()+"@"+text.getFlags());
+        /*DXFAttdef def = this.doc.getAttdef(text.getCode()+"@"+text.getLayerName()+"@"+text.getFlags());
         if(def != null){
-            /*String temp = def.getAttr().toLowerCase();
+            String temp = def.getAttr().toLowerCase();
             if(exceptArr.contains(temp)){
                 text.setVisibile(false);
-            }*/
+            }
             def.setValue(this.content);
-        }
+        }*/
         super.endDXFEntity();
     }
 

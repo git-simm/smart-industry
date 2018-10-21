@@ -77,7 +77,6 @@ public class DXFInsertHandler extends AbstractEntityHandler {
     public boolean isFollowSequence() {
         return false;
     }
-
     /*
      * (non-Javadoc)
      *
@@ -143,14 +142,13 @@ public class DXFInsertHandler extends AbstractEntityHandler {
 
             case BLOCK_NAME:
                 insert.setBlockID(value.getValue());
-
+                doc.addDxfInsert(insert);
                 break;
 
             default:
                 super.parseCommonProperty(groupCode, value, insert);
         }
     }
-
     /*
      * (non-Javadoc)
      *

@@ -16,6 +16,11 @@
 package org.kabeja.dxf;
 
 import org.kabeja.dxf.helpers.Point;
+import org.springframework.util.CollectionUtils;
+
+import java.util.ArrayList;
+import java.util.Hashtable;
+import java.util.List;
 
 
 /**
@@ -32,6 +37,8 @@ public class DXFInsert extends DXFEntity {
     private double row_spacing = 0;
     private double column_spacing = 0;
     private String blockID = "";
+
+    private Hashtable<String,List<DXFEntity>> entities = new Hashtable<String,List<DXFEntity>>();
 
     /**
      *
@@ -266,5 +273,28 @@ public class DXFInsert extends DXFEntity {
 
     public double getLength() {
         return this.doc.getDXFBlock(this.blockID).getLength();
+    }
+
+    public void addDxfEntity(DXFEntity entity) {
+        if (entities.containsKey(entity.getType())) {
+            ((ArrayList) entities.get(entity.getType())).add(entity);
+        } else {
+            ArrayList list = new ArrayList();
+            list.add(entity);
+            entities.put(entity.getType(), list);
+        }
+    }
+
+    /**
+     * 获取属性实体
+     * @param index
+     * @return
+     */
+    public DXFEntity getAttrEntity(int index){
+        if(!this.entities.containsKey("ATTRIB")) return null;
+        List<DXFEntity> list = this.entities.get("ATTRIB");
+        if(CollectionUtils.isEmpty(list)) return null;
+        if(list.size()>index) return list.get(index);
+        return null;
     }
 }

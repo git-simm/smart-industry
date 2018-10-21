@@ -17,6 +17,7 @@ package org.kabeja.dxf;
 
 import org.kabeja.dxf.objects.DXFDictionary;
 import org.kabeja.dxf.objects.DXFObject;
+import smart.industry.utils.StringUtils;
 
 import java.util.*;
 
@@ -29,6 +30,8 @@ public class DXFDocument {
     public static final double DEFAULT_MARGIN = 5;
     private Hashtable layers = new Hashtable();
     private Hashtable blocks = new Hashtable();
+    private Hashtable inserts = new Hashtable();
+    private DXFInsert lastInsert = null;
     private HashMap lineTypes = new HashMap();
     private HashMap dimensionStyles = new HashMap();
     private HashMap textStyles = new HashMap();
@@ -126,6 +129,11 @@ public class DXFDocument {
 
         DXFLayer layer = this.getDXFLayer(entity.getLayerName());
         layer.addDXFEntity(entity);
+
+        //添加实体到最后一个dxfinsert对象中
+        if(lastInsert!=null){
+            lastInsert.addDxfEntity(entity);
+        }
     }
 
     public void addDXFBlock(DXFBlock block) {
@@ -135,6 +143,38 @@ public class DXFDocument {
 
     public DXFBlock getDXFBlock(String name) {
         return (DXFBlock) blocks.get(name);
+    }
+
+    public void addDxfInsert(DXFInsert insert){
+        insert.setDXFDocument(this);
+        lastInsert = insert;
+        if(!this.inserts.containsKey(insert.getBlockID())){
+            this.inserts.put(insert.getBlockID(),insert);
+        }
+    }
+
+    /**
+     * insert - block操作完成
+     */
+    public void clearLastInsert(){
+        //完成 block 属性值的 转换
+        Iterator iterator = this.getDXFBlock(lastInsert.getBlockID()).getDXFEntitiesIterator();
+        int i =0 ;
+        while (iterator.hasNext()){
+            DXFEntity entity = (DXFEntity) iterator.next();
+            if(entity instanceof DXFAttdef){
+                DXFAttdef attdef = (DXFAttdef)entity;
+                DXFEntity attr = lastInsert.getAttrEntity(i);
+                if(attr instanceof DXFText){
+                    if(StringUtils.isBlank((attdef.getValue()))){
+                        attdef.setValue(((DXFText)attr).getText());
+                    }
+                }
+                i++;
+            }
+            //blockIterator.remove();
+        }
+        lastInsert = null;
     }
 
     /**

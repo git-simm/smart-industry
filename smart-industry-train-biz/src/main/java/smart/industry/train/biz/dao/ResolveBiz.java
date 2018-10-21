@@ -139,15 +139,6 @@ public class ResolveBiz {
                     Integer attrId = saveDxfAttrMsg(dxfAttdef.getAttr());
                     //3.保存attr信息
                     saveBlockAttr(designDetailBlock.getId(),attrId,dxfAttdef.getAttr(),dxfAttdef.getValue());
-                }else if(entity instanceof DXFAttrib){
-                    DXFAttrib attrib = (DXFAttrib)entity;
-                    if(attrib.getAttdef()!=null){
-                        DXFAttdef dxfAttdef = attrib.getAttdef();
-                        //2.解析保存sys_attr信息
-                        Integer attrId = saveDxfAttrMsg(dxfAttdef.getAttr());
-                        //3.保存attr信息
-                        saveBlockAttr(designDetailBlock.getId(),attrId,dxfAttdef.getAttr(),attrib.getText());
-                    }
                 }
             }
         }

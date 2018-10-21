@@ -35,6 +35,7 @@ public class DXFParser implements HandlerManager, Handler, Parser, DXFHandler {
     public final static String EXTENSION = "dxf";
     private final static String SECTION_START = "SECTION";
     private final static String SECTION_END = "ENDSEC";
+    private final static String INSERT_END = "SEQEND";
     private final static String END_STREAM = "EOF";
     private final static int COMMAND_CODE = 0;
     public static final String DEFAULT_ENCODING = "";
@@ -182,6 +183,12 @@ public class DXFParser implements HandlerManager, Handler, Parser, DXFHandler {
 
                 parse = false;
 
+                return;
+            }
+            if ((keyCode == COMMAND_CODE) &&
+                    INSERT_END.equals(value.getValue())) {
+                //清理结束标签的标记
+                doc.clearLastInsert();
                 return;
             }
 
