@@ -17,6 +17,15 @@
     id, createDate, createBy, modifyDate, modifyBy, detailId, attrId, blockId, `value`, 
     attrName
   </sql>
+  <select id="selectByFilter" parameterType="DesignBlockAttr" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from design_block_attr
+    where ${filter}
+    <if test="orderBy != null">
+      order by ${orderBy}
+    </if>
+  </select>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />

@@ -33,6 +33,14 @@
     </style>
     <#elseif section="content">
     <input type="hidden" id="hid_solutionId" value="${solutionId!}"/>
+    <div class="ui-layout-west" style="padding: 0 !important">
+        <div style="position: relative;height: 100%;">
+            <div class="ztreeMenu">解决方案列表</div>
+            <div class="treeContainer">
+                <ul id="soluTree" class="ztree"></ul>
+            </div>
+        </div>
+    </div>
     <div class="ui-layout-center">
         <div id="mainViewContainer" style="position: relative">
             <!--<embed id="bg_svg" src="${request.contextPath}/static/svg/new.svg" class="col-md-12 svg_position" type="image/svg+xml"/>-->
@@ -47,14 +55,6 @@
                 </g>
             </svg>
             <embed id="thumbView" type="image/svg+xml" src="${request.contextPath}/static/svg/new.svg" class="thumbViewClass"/>
-        </div>
-    </div>
-    <div class="ui-layout-west" style="padding: 0 !important">
-        <div style="position: relative;height: 100%;">
-            <div class="ztreeMenu">解决方案列表</div>
-            <div class="treeContainer">
-                <ul id="soluTree" class="ztree"></ul>
-            </div>
         </div>
     </div>
     <div class="ui-layout-south">

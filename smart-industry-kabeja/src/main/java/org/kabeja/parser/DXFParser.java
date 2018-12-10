@@ -124,6 +124,9 @@ public class DXFParser implements HandlerManager, Handler, Parser, DXFHandler {
 
             while ((line = in.readLine()) != null) {
                 linecount++;
+                if(line.equals("/4.C3")){
+                    int i = 0;
+                }
                 if (key) {
                     currentKey = line;
                     key = false;

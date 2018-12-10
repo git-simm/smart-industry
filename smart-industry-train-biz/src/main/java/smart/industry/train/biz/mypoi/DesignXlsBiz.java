@@ -68,8 +68,10 @@ public class DesignXlsBiz {
         resolveHeader(row,fileId, colMap);
         for (int i = 1; i <= sheet.getLastRowNum(); i++) {
             Row tempRow = sheet.getRow(i);
+            DesignExcelList item = resolveRow(tempRow);
+            item.setFileId(fileId);
             //解析内容
-            list.add(resolveRow(tempRow));
+            list.add(item);
         }
         designExcelListBiz.batchAdd(list);
         //return InvokeResult.success(true);

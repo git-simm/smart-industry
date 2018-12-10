@@ -19,12 +19,18 @@ Zq.Utility.RegisterNameSpace("solution.tree");
     };
 
     /**
-     * 树节点点击
+     * 树节点点击(图形控件需要加载对应的文件)
      **/
     function treeClick(srcEvent, treeId, node, clickFlag){
         //替换svg中的元素
-        console.log(node.filePath);
-        $("#line_svg").attr("src" ,node.filePath);
+        var path = "";
+        if(node!=null && node.filePath != null) {
+            path = node.filePath;
+        }
+        console.log(path);
+        if(path.indexOf(".svg")>-1){
+            $("#line_svg").attr("src" ,path);
+        }
     }
 
     ns.GetSelectedNode = function(){

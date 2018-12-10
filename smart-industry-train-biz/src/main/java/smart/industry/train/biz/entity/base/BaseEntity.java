@@ -18,4 +18,6 @@ public class BaseEntity {
     protected Integer modifyBy;
     protected String orderBy;
     protected String filter;
+    //字段列表
+    protected String fields;
 }

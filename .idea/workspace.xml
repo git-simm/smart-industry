@@ -11,18 +11,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ca438869-ff4f-47d5-a47e-64243f73bc98" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/df76d45d-a6d4-45ef-95bf-ef547ac4ef82.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/df76d45d-a6d4-45ef-95bf-ef547ac4ef82.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/src/main/java/org/kabeja/dxf/DXFDocument.java" beforeDir="false" afterPath="$PROJECT_DIR$/smart-industry-kabeja/src/main/java/org/kabeja/dxf/DXFDocument.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/src/main/java/org/kabeja/dxf/DXFInsert.java" beforeDir="false" afterPath="$PROJECT_DIR$/smart-industry-kabeja/src/main/java/org/kabeja/dxf/DXFInsert.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/src/main/java/org/kabeja/parser/DXFParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/smart-industry-kabeja/src/main/java/org/kabeja/parser/DXFParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/src/main/java/org/kabeja/parser/entities/DXFAttribHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/smart-industry-kabeja/src/main/java/org/kabeja/parser/entities/DXFAttribHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/src/main/java/org/kabeja/parser/entities/DXFInsertHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/smart-industry-kabeja/src/main/java/org/kabeja/parser/entities/DXFInsertHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/dxf/DXFDocument.class" beforeDir="false" afterPath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/dxf/DXFDocument.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/dxf/DXFInsert.class" beforeDir="false" afterPath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/dxf/DXFInsert.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/parser/DXFParser.class" beforeDir="false" afterPath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/parser/DXFParser.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/parser/entities/DXFAttribHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/parser/entities/DXFAttribHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/parser/entities/DXFInsertHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/parser/entities/DXFInsertHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/dao/ResolveBiz.java" beforeDir="false" afterPath="$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/dao/ResolveBiz.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/dao/DesignBlockAttrBiz.java" beforeDir="false" afterPath="$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/dao/DesignBlockAttrBiz.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/dao/DesignDetailBlockBiz.java" beforeDir="false" afterPath="$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/dao/DesignDetailBlockBiz.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/dao/DesignExcelAttrBiz.java" beforeDir="false" afterPath="$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/dao/DesignExcelAttrBiz.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/dao/DesignExcelListBiz.java" beforeDir="false" afterPath="$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/dao/DesignExcelListBiz.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/entity/base/BaseEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/entity/base/BaseEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/mypoi/DesignXlsBiz.java" beforeDir="false" afterPath="$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/mypoi/DesignXlsBiz.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-train-biz/src/main/resources/mapper/DesignBlockAttrMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/smart-industry-train-biz/src/main/resources/mapper/DesignBlockAttrMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-train-biz/src/main/resources/mapper/DesignDetailBlockMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/smart-industry-train-biz/src/main/resources/mapper/DesignDetailBlockMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-train-biz/target/classes/smart/industry/train/biz/entity/base/baseEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/smart-industry-train-biz/target/classes/smart/industry/train/biz/entity/base/baseEntity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-train-web/src/main/java/smart/industry/train/web/controllers/analysis/RunController.java" beforeDir="false" afterPath="$PROJECT_DIR$/smart-industry-train-web/src/main/java/smart/industry/train/web/controllers/analysis/RunController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/static/js/manager/solution.tree.js" beforeDir="false" afterPath="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/static/js/manager/solution.tree.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/templates/analysis/test_run.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/templates/analysis/test_run.ftl" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -66,43 +69,57 @@
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="smart-industry: schema" type="c314c289:MysqlImplModel$Schema" />
       </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="smart-industry@60.205.226.96" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="smart-industry: schema" type="c314c289:MysqlImplModel$Schema" />
+        <item name="design_block_attr: table" type="98d5ac3d:MysqlImplModel$Table" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="smart-industry@60.205.226.96" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="smart-industry: schema" type="c314c289:MysqlImplModel$Schema" />
+        <item name="design_detail_block: table" type="98d5ac3d:MysqlImplModel$Table" />
+      </path>
     </expand>
     <select />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="DXFDocument.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/smart-industry-kabeja/src/main/java/org/kabeja/dxf/DXFDocument.java">
+      <file leaf-file-name="DesignExcelListBiz.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/dao/DesignExcelListBiz.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3212">
-              <caret line="176" selection-start-line="176" selection-end-line="176" />
+            <state relative-caret-position="351">
+              <caret line="95" column="5" lean-forward="true" selection-start-line="50" selection-start-column="3" selection-end-line="95" selection-end-column="5" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="parser.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/smart-industry-kabeja/src/main/resources/conf/parser.xml">
+      <file leaf-file-name="test.dxf" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/smart-industry-kabeja/src/main/resources/samples/dxf/test.dxf">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="638">
-              <caret line="29" column="63" selection-start-line="29" selection-start-column="63" selection-end-line="29" selection-end-column="63" />
+            <state relative-caret-position="2776">
+              <caret line="38511" column="7" selection-start-line="38511" selection-end-line="38511" selection-end-column="7" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="process.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/smart-industry-kabeja/src/main/resources/conf/process.xml">
+      <file leaf-file-name="DesignDetailBlockBiz.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/dao/DesignDetailBlockBiz.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="550">
-              <caret line="25" column="66" selection-start-line="25" selection-start-column="66" selection-end-line="25" selection-end-column="66" />
+            <state relative-caret-position="44">
+              <caret line="2" column="27" selection-start-line="2" selection-start-column="27" selection-end-line="2" selection-end-column="27" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DXFInsert.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/smart-industry-kabeja/src/main/java/org/kabeja/dxf/DXFInsert.java">
+      <file leaf-file-name="DesignBlockAttrBiz.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/dao/DesignBlockAttrBiz.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5126">
-              <caret line="296" selection-start-line="296" selection-end-line="296" />
+            <state relative-caret-position="241">
+              <caret line="24" column="45" selection-start-line="24" selection-start-column="33" selection-end-line="24" selection-end-column="45" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -110,24 +127,47 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/smart-industry-kabeja/src/main/java/org/kabeja/Main.java">
+      <file leaf-file-name="DesignDetailBlockMapper.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/smart-industry-train-biz/src/main/resources/mapper/DesignDetailBlockMapper.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="386">
-              <caret line="108" column="24" selection-start-line="108" selection-start-column="24" selection-end-line="108" selection-end-column="24" />
+            <state relative-caret-position="132">
+              <caret line="21" column="2" selection-start-line="21" selection-start-column="2" selection-end-line="29" selection-end-column="11" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ResolveBiz.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/dao/ResolveBiz.java">
+      <file leaf-file-name="DesignBlockAttrMapper.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/smart-industry-train-biz/src/main/resources/mapper/DesignBlockAttrMapper.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="146" column="7" lean-forward="true" selection-start-line="146" selection-start-column="7" selection-end-line="146" selection-end-column="7" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="method#saveBlockMsg#0;class#ResolveBiz#0" />
-              </folding>
+            <state relative-caret-position="132">
+              <caret line="12" column="25" selection-start-line="12" selection-start-column="20" selection-end-line="12" selection-end-column="25" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DesignExcelListMapper.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/smart-industry-train-biz/src/main/resources/mapper/DesignExcelListMapper.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="767">
+              <caret line="114" column="77" selection-start-line="114" selection-start-column="77" selection-end-line="114" selection-end-column="77" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DesignSolutionMapper.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/smart-industry-train-biz/src/main/resources/mapper/DesignSolutionMapper.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="440">
+              <caret line="29" column="11" lean-forward="true" selection-start-line="21" selection-start-column="2" selection-end-line="29" selection-end-column="11" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DesignExcelAttrBiz.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/dao/DesignExcelAttrBiz.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="351">
+              <caret line="38" column="5" lean-forward="true" selection-start-line="21" selection-start-column="4" selection-end-line="38" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -151,12 +191,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>beforeSend</find>
-      <find>checkTreeNode</find>
-      <find>svgContainer</find>
-      <find>loadGlobalConfig</find>
-      <find>testData</find>
-      <find />
       <find>mainViewId</find>
       <find>mainViewObjectElem</find>
       <find>root</find>
@@ -181,6 +215,12 @@
       <find>deleteByFilter</find>
       <find>endDXFEntity</find>
       <find>parseEntity</find>
+      <find>run/test</find>
+      <find>soluTree</find>
+      <find>GetSelectedNode</find>
+      <find />
+      <find>/4.C3</find>
+      <find>CODE_10</find>
     </findStrings>
     <replaceStrings>
       <replace>.mypicker</replace>
@@ -198,13 +238,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/dao/SysTasksBiz.java" />
-        <option value="$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/dao/SysDxfAttrBiz.java" />
-        <option value="$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/dao/DesignDetailBlockBiz.java" />
-        <option value="$PROJECT_DIR$/smart-industry-kabeja/src/main/java/org/kabeja/Main.java" />
-        <option value="$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/dao/DesignBlockAttrBiz.java" />
-        <option value="$PROJECT_DIR$/smart-industry-train-biz/src/main/resources/mapper/DesignDetailBlockMapper.xml" />
-        <option value="$PROJECT_DIR$/smart-industry-train-biz/src/main/resources/mapper/DesignBlockAttrMapper.xml" />
         <option value="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/templates/manager/solution_edit.ftl" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/conf/process.xml" />
@@ -222,33 +255,40 @@
         <option value="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/static/js/manager/solution.list.js" />
         <option value="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/templates/manager/solution_list.ftl" />
         <option value="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/static/js/manager/solution.list2.js" />
-        <option value="$PROJECT_DIR$/smart-industry-train-web/src/main/java/smart/industry/train/web/controllers/analysis/RunController.java" />
-        <option value="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/templates/analysis/test_run.ftl" />
         <option value="$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/entity/SysUpfiles.java" />
         <option value="$PROJECT_DIR$/smart-industry-train-biz/src/main/resources/mapper/SysUpfilesMapper.xml" />
         <option value="$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/dao/DesignSolutionBiz.java" />
-        <option value="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/static/js/manager/solution.tree.js" />
         <option value="$PROJECT_DIR$/smart-industry-train-web/src/main/java/smart/industry/train/web/controllers/FileController.java" />
         <option value="$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/interfaces/IMapper.java" />
-        <option value="$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/dao/DesignExcelAttrBiz.java" />
-        <option value="$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/dao/DesignExcelListBiz.java" />
         <option value="$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/entity/DesignExcelAttr.java" />
         <option value="$PROJECT_DIR$/smart-industry-train-biz/src/test/java/simm/dao/test/POITest.java" />
-        <option value="$PROJECT_DIR$/smart-industry-train-biz/src/main/resources/mapper/DesignExcelAttrMapper.xml" />
         <option value="$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/dao/base/BaseBiz.java" />
         <option value="$PROJECT_DIR$/smart-industry-train-biz/src/main/resources/generatorConfig.xml" />
         <option value="$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/mapper/DesignExcelListMapper.java" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/df76d45d-a6d4-45ef-95bf-ef547ac4ef82/console.sql" />
-        <option value="$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/mypoi/DesignXlsBiz.java" />
-        <option value="$PROJECT_DIR$/smart-industry-train-biz/src/main/resources/mapper/DesignExcelListMapper.xml" />
         <option value="$PROJECT_DIR$/smart-industry-kabeja/src/main/java/org/kabeja/dxf/DXFAttrib.java" />
         <option value="$PROJECT_DIR$/smart-industry-kabeja/src/main/java/org/kabeja/dxf/DXFText.java" />
-        <option value="$PROJECT_DIR$/smart-industry-kabeja/src/main/java/org/kabeja/parser/DXFParser.java" />
         <option value="$PROJECT_DIR$/smart-industry-kabeja/src/main/java/org/kabeja/parser/entities/DXFInsertHandler.java" />
         <option value="$PROJECT_DIR$/smart-industry-kabeja/src/main/java/org/kabeja/parser/entities/DXFAttribHandler.java" />
         <option value="$PROJECT_DIR$/smart-industry-kabeja/src/main/java/org/kabeja/dxf/DXFInsert.java" />
         <option value="$PROJECT_DIR$/smart-industry-kabeja/src/main/java/org/kabeja/dxf/DXFDocument.java" />
         <option value="$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/dao/ResolveBiz.java" />
+        <option value="$PROJECT_DIR$/smart-industry-train-web/src/main/java/smart/industry/train/web/config/MybatisConfig.java" />
+        <option value="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/templates/analysis/test_run.ftl" />
+        <option value="$PROJECT_DIR$/smart-industry-train-web/src/main/java/smart/industry/train/web/controllers/analysis/RunController.java" />
+        <option value="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/static/js/manager/solution.tree.js" />
+        <option value="$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/entity/DesignExcelList.java" />
+        <option value="$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/mypoi/DesignXlsBiz.java" />
+        <option value="$PROJECT_DIR$/smart-industry-train-biz/src/main/resources/mapper/DesignExcelAttrMapper.xml" />
+        <option value="$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/dao/DesignExcelAttrBiz.java" />
+        <option value="$PROJECT_DIR$/smart-industry-train-biz/src/main/resources/mapper/DesignExcelListMapper.xml" />
+        <option value="$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/entity/base/BaseEntity.java" />
+        <option value="$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/dao/DesignExcelListBiz.java" />
+        <option value="$PROJECT_DIR$/smart-industry-kabeja/src/main/java/org/kabeja/parser/DXFParser.java" />
+        <option value="$PROJECT_DIR$/smart-industry-train-biz/src/main/resources/mapper/DesignDetailBlockMapper.xml" />
+        <option value="$PROJECT_DIR$/smart-industry-train-biz/src/main/resources/mapper/DesignBlockAttrMapper.xml" />
+        <option value="$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/dao/DesignBlockAttrBiz.java" />
+        <option value="$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/dao/DesignDetailBlockBiz.java" />
       </list>
     </option>
   </component>
@@ -286,10 +326,9 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="206" />
-    <option name="y" value="70" />
-    <option name="width" value="1555" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="162" />
+    <option name="width" value="1704" />
     <option name="height" value="960" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -310,42 +349,52 @@
             <path>
               <item name="smart-industry" type="b2602c69:ProjectViewProjectNode" />
               <item name="smart-industry" type="462c0819:PsiDirectoryNode" />
-              <item name="smart-industry-kabeja" type="462c0819:PsiDirectoryNode" />
+              <item name="smart-industry-train-biz" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="smart-industry" type="b2602c69:ProjectViewProjectNode" />
               <item name="smart-industry" type="462c0819:PsiDirectoryNode" />
-              <item name="smart-industry-kabeja" type="462c0819:PsiDirectoryNode" />
+              <item name="smart-industry-train-biz" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="smart-industry" type="b2602c69:ProjectViewProjectNode" />
               <item name="smart-industry" type="462c0819:PsiDirectoryNode" />
-              <item name="smart-industry-kabeja" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="smart-industry" type="b2602c69:ProjectViewProjectNode" />
-              <item name="smart-industry" type="462c0819:PsiDirectoryNode" />
-              <item name="smart-industry-kabeja" type="462c0819:PsiDirectoryNode" />
+              <item name="smart-industry-train-biz" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="smart-industry" type="b2602c69:ProjectViewProjectNode" />
               <item name="smart-industry" type="462c0819:PsiDirectoryNode" />
-              <item name="smart-industry-kabeja" type="462c0819:PsiDirectoryNode" />
+              <item name="smart-industry-train-biz" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="kabeja" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="smart-industry" type="b2602c69:ProjectViewProjectNode" />
               <item name="smart-industry" type="462c0819:PsiDirectoryNode" />
-              <item name="smart-industry-kabeja" type="462c0819:PsiDirectoryNode" />
+              <item name="smart-industry-train-biz" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="biz" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="smart-industry" type="b2602c69:ProjectViewProjectNode" />
+              <item name="smart-industry" type="462c0819:PsiDirectoryNode" />
+              <item name="smart-industry-train-biz" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="biz" type="462c0819:PsiDirectoryNode" />
+              <item name="dao" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="smart-industry" type="b2602c69:ProjectViewProjectNode" />
+              <item name="smart-industry" type="462c0819:PsiDirectoryNode" />
+              <item name="smart-industry-train-biz" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
@@ -353,23 +402,63 @@
             <path>
               <item name="smart-industry" type="b2602c69:ProjectViewProjectNode" />
               <item name="smart-industry" type="462c0819:PsiDirectoryNode" />
-              <item name="smart-industry-kabeja" type="462c0819:PsiDirectoryNode" />
+              <item name="smart-industry-train-biz" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="conf" type="462c0819:PsiDirectoryNode" />
+              <item name="mapper" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="smart-industry" type="b2602c69:ProjectViewProjectNode" />
               <item name="smart-industry" type="462c0819:PsiDirectoryNode" />
               <item name="smart-industry-train-web" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="smart-industry" type="b2602c69:ProjectViewProjectNode" />
+              <item name="smart-industry" type="462c0819:PsiDirectoryNode" />
+              <item name="smart-industry-train-web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="smart-industry" type="b2602c69:ProjectViewProjectNode" />
+              <item name="smart-industry" type="462c0819:PsiDirectoryNode" />
+              <item name="smart-industry-train-web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="smart-industry" type="b2602c69:ProjectViewProjectNode" />
+              <item name="smart-industry" type="462c0819:PsiDirectoryNode" />
+              <item name="smart-industry-train-web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="smart-industry" type="b2602c69:ProjectViewProjectNode" />
+              <item name="smart-industry" type="462c0819:PsiDirectoryNode" />
+              <item name="smart-industry-train-web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="smart-industry" type="b2602c69:ProjectViewProjectNode" />
+              <item name="smart-industry" type="462c0819:PsiDirectoryNode" />
+              <item name="smart-industry-train-web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="svg" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="AndroidView" />
+      <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -381,7 +470,7 @@
     <property name="RequestMappingsPanelWidth0" value="75" />
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="RequestMappingsPanelWidth2" value="75" />
-    <property name="SearchEverywhereHistoryKey" value="org.kabeja.batik.tools.ImageBase64Encoder&#9;PSI&#9;JAVA://org.kabeja.batik.tools.ImageBase64Encoder&#10; org.kabeja.xslt.SAXXSLTFilter&#9;PSI&#9;JAVA://org.kabeja.xslt.SAXXSLTFilter&#10;ImageBase64Encoder&#9;PSI&#9;JAVA://org.kabeja.batik.tools.ImageBase64Encoder&#10;objs/train/AVEENG_L.3DS&#9;FILE&#9;file://D:/myworkspace/git/smart-industry/smart-industry-train-web/src/main/resources/static/const/objs/train/AVEENG_L.3DS&#10;WebMvcConfigurationSupport&#9;PSI&#9;JAVA://org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport&#10;org.apache.shiro.web.servlet.SimpleCookie&#9;PSI&#9;JAVA://org.apache.shiro.web.servlet.SimpleCookie" />
+    <property name="SearchEverywhereHistoryKey" value="/run/test&#9;FILE&#9;jar://C:/Users/dell/.m2/repository/junit/junit/4.12/junit-4.12-sources.jar!/junit/runner/TestRunListener.java&#10;run/test&#9;FILE&#9;jar://C:/Users/dell/.m2/repository/junit/junit/4.12/junit-4.12.jar!/junit/runner/TestRunListener.class&#10;org.kabeja.batik.tools.ImageBase64Encoder&#9;PSI&#9;JAVA://org.kabeja.batik.tools.ImageBase64Encoder&#10; org.kabeja.xslt.SAXXSLTFilter&#9;PSI&#9;JAVA://org.kabeja.xslt.SAXXSLTFilter&#10;ImageBase64Encoder&#9;PSI&#9;JAVA://org.kabeja.batik.tools.ImageBase64Encoder&#10;objs/train/AVEENG_L.3DS&#9;FILE&#9;file://D:/myworkspace/git/smart-industry/smart-industry-train-web/src/main/resources/static/const/objs/train/AVEENG_L.3DS&#10;WebMvcConfigurationSupport&#9;PSI&#9;JAVA://org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport&#10;org.apache.shiro.web.servlet.SimpleCookie&#9;PSI&#9;JAVA://org.apache.shiro.web.servlet.SimpleCookie" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="add_unversioned_files" value="$PROJECT_DIR$/smart-industry-kabeja/src/main/java/org/kabeja/tools/CodePageParser.java&#10;D:/myworkspace/git/smart-industry/smart-industry-kabeja/src/main/java/org/kabeja/tools/SAXProcessingManagerBuilder.java" />
     <property name="aspect.path.notification.shown" value="true" />
@@ -433,7 +522,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.WebApplication">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="MD5" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="smart.industry.utils.encode.MD5" />
       <module name="smart-industry-utils" />
@@ -764,6 +853,8 @@
       <workItem from="1540087209153" duration="18011000" />
       <workItem from="1540137936712" duration="1319000" />
       <workItem from="1540139314578" duration="17000" />
+      <workItem from="1544268296648" duration="9794000" />
+      <workItem from="1544444505002" duration="5400000" />
     </task>
     <task id="LOCAL-00001" summary="集成shiro登录验证功能">
       <created>1532255184656</created>
@@ -1053,7 +1144,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="483345000" />
+    <option name="totallyTimeSpent" value="498539000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1075,12 +1166,13 @@
       <window_info anchor="bottom" id="Database Changes" order="4" show_stripe_button="false" />
       <window_info id="Capture Tool" order="7" />
       <window_info id="Designer" order="0" />
-      <window_info anchor="right" id="Database" order="9" visible="true" weight="0.16353887" />
+      <window_info active="true" anchor="right" id="Database" order="9" visible="true" weight="0.121313676" />
       <window_info id="Structure" order="6" sideWeight="0.50119334" side_tool="true" weight="0.21179625" />
       <window_info anchor="right" id="Ant Build" order="7" weight="0.1541555" />
       <window_info id="UI Designer" order="2" />
-      <window_info anchor="bottom" id="Debug" order="10" sideWeight="0.57171583" weight="0.29001585" />
+      <window_info anchor="bottom" id="Debug" order="10" sideWeight="0.57171583" visible="true" weight="0.17689015" />
       <window_info anchor="bottom" id="TODO" order="13" weight="0.32952926" />
+      <window_info anchor="bottom" id="Messages" order="2" weight="0.2339515" />
       <window_info anchor="right" id="Palette&#9;" order="2" />
       <window_info id="Image Layers" order="1" />
       <window_info anchor="bottom" id="Java Enterprise" order="3" weight="0.32952926" />
@@ -1089,8 +1181,8 @@
       <window_info anchor="bottom" id="Version Control" order="5" weight="0.32952926" />
       <window_info anchor="bottom" id="Spring" order="0" weight="0.3281027" />
       <window_info anchor="bottom" id="Terminal" order="1" weight="0.32952926" />
-      <window_info content_ui="combo" id="Project" order="5" sideWeight="0.4988067" visible="true" weight="0.1769437" />
-      <window_info anchor="right" id="Bean Validation" order="4" weight="0.32935917" />
+      <window_info content_ui="combo" id="Project" order="5" sideWeight="0.4988067" visible="true" weight="0.22453083" />
+      <window_info anchor="right" id="Bean Validation" order="4" weight="0.32908848" />
       <window_info id="Web" order="4" side_tool="true" />
       <window_info anchor="right" id="Theme Preview" order="3" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -1103,7 +1195,6 @@
       <window_info anchor="bottom" id="Database Console" order="14" weight="0.17546362" />
       <window_info anchor="bottom" id="Find" order="7" sideWeight="0.49932975" weight="0.3837375" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="6" type="SLIDING" weight="0.4" />
-      <window_info anchor="bottom" id="Messages" order="2" weight="0.4507846" />
       <window_info anchor="bottom" id="Message" order="6" />
     </layout>
     <layout-to-restore>
@@ -1195,6 +1286,24 @@
           <properties />
           <option name="timeStamp" value="362" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/smart-industry-kabeja/src/main/java/org/kabeja/Main.java</url>
+          <line>59</line>
+          <properties />
+          <option name="timeStamp" value="396" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/smart-industry-kabeja/src/main/java/org/kabeja/Main.java</url>
+          <line>100</line>
+          <properties />
+          <option name="timeStamp" value="397" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/dao/ResolveBiz.java</url>
+          <line>131</line>
+          <properties />
+          <option name="timeStamp" value="399" />
+        </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
@@ -1204,7 +1313,7 @@
           <properties />
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="395" />
+      <option name="time" value="400" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="SpringBootApplicationConfigurationType">
@@ -1302,115 +1411,122 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/entity/DesignExcelAttr.java">
+    <entry file="file://$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/mapper/DesignSolutionListMapper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="21" column="26" selection-start-line="21" selection-start-column="20" selection-end-line="21" selection-end-column="26" />
+        <state relative-caret-position="88">
+          <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/logs/error.log">
+    <entry file="file://$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/interfaces/IMapper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="8" column="97" selection-start-line="8" selection-start-column="97" selection-end-line="8" selection-end-column="97" />
+        <state relative-caret-position="374">
+          <caret line="26" column="17" selection-start-line="26" selection-start-column="17" selection-end-line="26" selection-end-column="17" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/smart-industry-train-biz/src/main/resources/mapper/DesignDetailBlockMapper.xml">
+    <entry file="file://$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/dao/UserBiz.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="27" column="11" lean-forward="true" selection-start-line="25" selection-start-column="2" selection-end-line="27" selection-end-column="11" />
+        <state relative-caret-position="117">
+          <caret line="34" column="9" lean-forward="true" selection-start-line="28" selection-start-column="8" selection-end-line="34" selection-end-column="9" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/smart-industry-train-biz/src/test/java/simm/dao/test/POITest.java">
+    <entry file="file://$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/threads/ThreadService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="17" column="9" selection-start-line="17" selection-start-column="9" selection-end-line="17" selection-end-column="9" />
+        <state relative-caret-position="63">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/smart-industry-train-biz/src/main/resources/mapper/DesignExcelAttrMapper.xml">
+    <entry file="file://$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/threads/ResolveThread.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="257">
-          <caret line="28" column="11" selection-start-line="28" selection-start-column="11" selection-end-line="28" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/mapper/DesignExcelListMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="10" column="48" lean-forward="true" selection-start-line="10" selection-start-column="48" selection-end-line="10" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/dao/DesignExcelAttrBiz.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="9" column="18" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/dao/DesignExcelListBiz.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="11" column="70" selection-start-line="11" selection-start-column="70" selection-end-line="11" selection-end-column="70" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/dao/base/BaseBiz.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="227">
-          <caret line="56" column="21" selection-start-line="56" selection-start-column="21" selection-end-line="56" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/smart-industry-train-biz/src/main/resources/mapper/DesignClassMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="11" column="63" selection-start-line="11" selection-start-column="63" selection-end-line="11" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/smart-industry-train-biz/src/main/resources/generatorConfig.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="682">
-          <caret line="31" column="64" selection-start-line="31" selection-start-column="64" selection-end-line="31" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/smart-industry-train-biz/src/main/resources/mapper/DesignExcelListMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
-          <caret line="667" column="54" lean-forward="true" selection-start-line="667" selection-start-column="54" selection-end-line="667" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/df76d45d-a6d4-45ef-95bf-ef547ac4ef82/console.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22">
-          <caret line="1" column="34" lean-forward="true" selection-start-line="1" selection-start-column="34" selection-end-line="1" selection-end-column="34" />
+        <state relative-caret-position="-638">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/mypoi/DesignXlsBiz.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="638">
-          <caret line="52" column="22" selection-start-line="52" selection-start-column="22" selection-end-line="52" selection-end-column="22" />
+        <state relative-caret-position="22">
+          <caret line="71" column="35" lean-forward="true" selection-start-line="71" selection-start-column="35" selection-end-line="71" selection-end-column="35" />
         </state>
       </provider>
     </entry>
-    <entry file="das://df76d45d-a6d4-45ef-95bf-ef547ac4ef82/schema/smart-industry/table/sys_dxfAttr">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/enums/TaskStateEnum.java">
+    <entry file="file://$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/mapper/DesignExcelAttrMapper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="5" column="12" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
+        <state relative-caret-position="88">
+          <caret line="5" column="50" lean-forward="true" selection-start-line="5" selection-start-column="50" selection-end-line="5" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/smart-industry-train-biz/src/main/resources/mapper/DesignExcelAttrMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="30" column="11" lean-forward="true" selection-start-line="22" selection-start-column="2" selection-end-line="30" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/entity/base/BaseEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="21" column="27" selection-start-line="21" selection-start-column="21" selection-end-line="21" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/entity/DesignExcelList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_171/src.zip!/java/util/HashMap.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="13661">
+          <caret line="751" selection-start-line="751" selection-end-line="751" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/dao/DesignSolutionListBiz.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="44" column="24" selection-start-line="44" selection-start-column="24" selection-end-line="44" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_171/src.zip!/java/util/stream/Collectors.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="1209" column="30" selection-start-line="1209" selection-start-column="30" selection-end-line="1209" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/smart-industry-train-web/src/main/java/smart/industry/train/web/controllers/analysis/RunController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="638">
+          <caret line="32" column="35" selection-start-line="32" selection-start-column="35" selection-end-line="32" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/smart-industry-train-web/src/main/java/smart/industry/train/web/controllers/FileController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="31" column="13" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/smart-industry-train-web/src/main/java/smart/industry/train/web/controllers/MoniController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/smart-industry-train-web/src/main/java/smart/industry/train/web/controllers/manager/SolutionController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="105" column="38" selection-start-line="105" selection-start-column="33" selection-end-line="105" selection-end-column="44" />
         </state>
       </provider>
     </entry>
@@ -1428,38 +1544,231 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/entity/DesignDetailBlock.java">
+    <entry file="file://$PROJECT_DIR$/smart-industry-kabeja/src/main/java/org/kabeja/processing/PostProcessorConfig.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="25">
-          <caret line="22" selection-start-line="22" selection-end-line="22" />
+        <state relative-caret-position="241">
+          <caret line="48" selection-start-line="48" selection-end-line="48" />
+          <folding>
+            <element signature="e#1338#1339#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/entity/DesignBlockAttr.java">
+    <entry file="file://$PROJECT_DIR$/smart-industry-kabeja/src/main/java/org/kabeja/processing/VisibilityFilter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-638">
-          <caret line="6" selection-start-line="6" selection-end-line="6" />
+        <state relative-caret-position="241">
+          <caret line="55" selection-start-line="55" selection-end-line="55" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/smart-industry-kabeja/src/main/java/org/kabeja/dxf/DXFAttdef.java">
+    <entry file="file://$PROJECT_DIR$/smart-industry-kabeja/src/main/java/org/kabeja/myfilters/AttrMsgFilter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="32">
-          <caret line="32" selection-start-line="32" selection-end-line="32" />
+        <state relative-caret-position="175">
+          <caret line="18" column="16" selection-start-line="18" selection-start-column="16" selection-end-line="18" selection-end-column="16" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/threads/ThreadService.java">
+    <entry file="file://$PROJECT_DIR$/smart-industry-kabeja/src/main/java/org/kabeja/processing/ProcessingManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="21" column="45" selection-start-line="21" selection-start-column="45" selection-end-line="21" selection-end-column="45" />
+        <state relative-caret-position="219">
+          <caret line="135" column="19" lean-forward="true" selection-start-line="135" selection-start-column="19" selection-end-line="135" selection-end-column="19" />
+          <folding>
+            <element signature="e#2690#2691#0" expanded="true" />
+            <element signature="e#2758#2759#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/threads/ResolveThread.java">
+    <entry file="file://$PROJECT_DIR$/smart-industry-kabeja/src/main/java/org/kabeja/processing/ProcessPipeline.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="428">
-          <caret line="45" column="29" selection-start-line="45" selection-start-column="29" selection-end-line="45" selection-end-column="29" />
+        <state relative-caret-position="242">
+          <caret line="59" column="19" lean-forward="true" selection-start-line="59" selection-start-column="19" selection-end-line="59" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/smart-industry-kabeja/src/main/java/org/kabeja/processing/PostProcessor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="261">
+          <caret line="39" column="17" lean-forward="true" selection-start-line="39" selection-start-column="17" selection-end-line="39" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/smart-industry-kabeja/src/main/java/org/kabeja/processing/extend/MyPostProcessor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="107">
+          <caret line="25" column="16" selection-start-line="25" selection-start-column="16" selection-end-line="25" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/smart-industry-kabeja/src/main/java/org/kabeja/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="100" selection-start-line="100" selection-end-line="100" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/smart-industry-kabeja/src/main/java/org/kabeja/parser/DXFValue.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="241">
+          <caret line="39" selection-start-line="39" selection-end-line="39" />
+          <folding>
+            <element signature="e#972#973#0" expanded="true" />
+            <element signature="e#1003#1004#0" expanded="true" />
+            <element signature="e#1063#1064#0" expanded="true" />
+            <element signature="e#1160#1161#0" expanded="true" />
+            <element signature="e#1201#1202#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/smart-industry-kabeja/src/main/java/org/kabeja/parser/entities/DXFAttribHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="219">
+          <caret line="64" selection-start-line="64" selection-end-line="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/smart-industry-kabeja/src/main/java/org/kabeja/parser/DXFEntitiesSectionHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="241">
+          <caret line="79" selection-start-line="79" selection-end-line="79" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/smart-industry-kabeja/src/main/java/org/kabeja/parser/DXFParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="197">
+          <caret line="128" column="17" lean-forward="true" selection-start-line="128" selection-start-column="17" selection-end-line="128" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/smart-industry-utils/src/main/java/smart/industry/utils/encode/EncodeUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="447">
+          <caret line="56" selection-start-line="56" selection-end-line="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/dao/base/BaseBiz.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="30" column="16" lean-forward="true" selection-start-line="30" selection-start-column="16" selection-end-line="30" selection-end-column="16" />
+          <folding>
+            <element signature="e#3379#3380#0" expanded="true" />
+            <element signature="e#3421#3422#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/dao/DesignClassBiz.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="183">
+          <caret line="45" column="14" selection-start-line="45" selection-start-column="14" selection-end-line="45" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/dao/ResolveBiz.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="131" column="62" selection-start-line="131" selection-start-column="50" selection-end-line="131" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/mapper/DesignBlockAttrMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="10" column="13" lean-forward="true" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/smart-industry-kabeja/src/main/java/org/kabeja/parser/entities/DXFTextHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1231">
+          <caret line="192" column="5" lean-forward="true" selection-start-line="192" selection-start-column="5" selection-end-line="192" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/dao/DesignExcelAttrBiz.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="351">
+          <caret line="38" column="5" lean-forward="true" selection-start-line="21" selection-start-column="4" selection-end-line="38" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/dao/DesignExcelListBiz.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="351">
+          <caret line="95" column="5" lean-forward="true" selection-start-line="50" selection-start-column="3" selection-end-line="95" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/smart-industry-train-biz/src/main/resources/mapper/DesignExcelListMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="767">
+          <caret line="114" column="77" selection-start-line="114" selection-start-column="77" selection-end-line="114" selection-end-column="77" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/smart-industry-train-biz/src/main/resources/mapper/DesignSolutionMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="440">
+          <caret line="29" column="11" lean-forward="true" selection-start-line="21" selection-start-column="2" selection-end-line="29" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/dao/DesignSolutionBiz.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="48" column="47" lean-forward="true" selection-start-line="48" selection-start-column="47" selection-end-line="48" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/smart-industry-train-biz/src/main/resources/mapper/DesignDetailBlockMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="21" column="2" selection-start-line="21" selection-start-column="2" selection-end-line="29" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/smart-industry-train-biz/src/main/resources/mapper/DesignBlockAttrMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="12" column="25" selection-start-line="12" selection-start-column="20" selection-end-line="12" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://df76d45d-a6d4-45ef-95bf-ef547ac4ef82/schema/smart-industry/table/design_block_attr">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" text="attrName like 'Representation%' and value !=''">
+            <filter text="attrName like 'Representation%' and value !=''" />
+            <filter text="attrName like 'Representation%' and value&gt;''" />
+            <filter text="blockId = 103" />
+            <filter text="blockId = 101" />
+            <filter text="blockId = 96" />
+            <filter text="blockId = 92" />
+            <filter text="value='CREC'" />
+            <filter text="value='DRK_R'" />
+            <filter text="value like '%/4.C2%'" />
+            <filter text="blockId=6" />
+          </filtering>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/smart-industry-kabeja/src/main/resources/samples/dxf/test.dxf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2776">
+          <caret line="38511" column="7" selection-start-line="38511" selection-end-line="38511" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/dao/DesignBlockAttrBiz.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="241">
+          <caret line="24" column="45" selection-start-line="24" selection-start-column="33" selection-end-line="24" selection-end-column="45" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1470,210 +1779,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/smart-industry-kabeja/src/main/java/org/kabeja/parser/entities/DXFTextHandler.java">
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_171/src.zip!/java/util/function/Predicate.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="143">
-          <caret line="31" column="54" lean-forward="true" selection-start-line="31" selection-start-column="4" selection-end-line="31" selection-end-column="54" />
+        <state relative-caret-position="183">
+          <caret line="48" column="12" selection-start-line="48" selection-start-column="12" selection-end-line="48" selection-end-column="12" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/smart-industry-kabeja/src/main/java/org/kabeja/parser/entities/DXFEntityHandler.java">
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_171/jre/lib/ext/nashorn.jar!/jdk/nashorn/internal/runtime/regexp/joni/Regex.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="699">
-          <caret line="56" column="32" selection-start-line="56" selection-start-column="20" selection-end-line="56" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/smart-industry-kabeja/src/main/java/org/kabeja/parser/entities/AbstractEntityHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="25" column="71" selection-start-line="25" selection-start-column="55" selection-end-line="25" selection-end-column="71" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/smart-industry-kabeja/src/main/java/org/kabeja/parser/ParserBuilder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="177">
-          <caret line="64" column="25" lean-forward="true" selection-start-line="64" selection-start-column="25" selection-end-line="64" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/smart-industry-kabeja/src/main/java/org/kabeja/dxf/DXFLayer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="52" lean-forward="true" selection-start-line="52" selection-end-line="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/smart-industry-kabeja/src/main/java/org/kabeja/parser/dxf/DXFHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="22" column="16" selection-start-line="22" selection-start-column="16" selection-end-line="22" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/smart-industry-kabeja/src/main/java/org/kabeja/parser/DXFValue.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="191">
-          <caret line="39" selection-start-line="39" selection-end-line="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/smart-industry-kabeja/src/main/java/org/kabeja/parser/DXFBlocksSectionHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3674">
-          <caret line="192" column="32" selection-start-line="192" selection-start-column="32" selection-end-line="192" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/smart-industry-kabeja/src/main/java/org/kabeja/dxf/DXFEntity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-176">
-          <caret line="21" column="22" selection-start-line="21" selection-start-column="22" selection-end-line="21" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/smart-industry-kabeja/src/main/java/org/kabeja/dxf/DXFText.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="10">
-          <caret line="25" column="20" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/smart-industry-kabeja/src/main/java/org/kabeja/dxf/DXFAttrib.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="21" column="34" selection-start-line="21" selection-start-column="34" selection-end-line="21" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/smart-industry-kabeja/src/main/java/org/kabeja/parser/entities/DXFAttribHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1034">
-          <caret line="67" column="22" selection-start-line="67" selection-start-column="22" selection-end-line="67" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/smart-industry-kabeja/src/main/java/org/kabeja/parser/DXFEntitiesSectionHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="79" selection-start-line="79" selection-end-line="79" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/smart-industry-kabeja/src/main/java/org/kabeja/parser/DXFParser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="362">
-          <caret line="134" selection-start-line="134" selection-end-line="134" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/smart-industry-kabeja/src/main/resources/conf/parser.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="638">
-          <caret line="29" column="63" selection-start-line="29" selection-start-column="63" selection-end-line="29" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/smart-industry-kabeja/src/main/resources/conf/process.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="550">
-          <caret line="25" column="66" selection-start-line="25" selection-start-column="66" selection-end-line="25" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/smart-industry-kabeja/src/main/java/org/kabeja/processing/VisibilityFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="39" column="42" selection-start-line="39" selection-start-column="38" selection-end-line="39" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/smart-industry-kabeja/src/main/java/org/kabeja/dxf/DXFBlock.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="121">
-          <caret line="100" column="19" selection-start-line="100" selection-start-column="11" selection-end-line="100" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/smart-industry-kabeja/src/main/java/org/kabeja/parser/entities/DXFInsertHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="106">
-          <caret line="135" column="22" lean-forward="true" selection-start-line="135" selection-start-column="22" selection-end-line="135" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/smart-industry-kabeja/src/main/java/org/kabeja/dxf/DXFInsert.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5126">
-          <caret line="296" selection-start-line="296" selection-end-line="296" />
+        <state relative-caret-position="183">
+          <caret line="112" column="19" selection-start-line="112" selection-start-column="19" selection-end-line="112" selection-end-column="19" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#3242#3243#0" expanded="true" />
+            <element signature="e#3301#3302#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/smart-industry-kabeja/src/main/java/org/kabeja/dxf/DXFDocument.java">
+    <entry file="file://$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/dao/DesignDetailBlockBiz.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3212">
-          <caret line="176" selection-start-line="176" selection-end-line="176" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://df76d45d-a6d4-45ef-95bf-ef547ac4ef82/schema/smart-industry/table/sys_upfiles">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://df76d45d-a6d4-45ef-95bf-ef547ac4ef82/schema/smart-industry/table/design_solution_list">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://df76d45d-a6d4-45ef-95bf-ef547ac4ef82/schema/smart-industry/table/design_block_attr">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true">
-            <filter text="value like '%/4.C2%'" />
-            <filter text="blockId=6" />
-            <filter text="attrName ='Item'" />
-            <filter text="value like '%DRBCB%'" />
-            <filter text="value like '%DEBSK_L%'" />
-            <filter text="value like '%EDCU3_L%'" />
-            <filter text="value like '%SAL%'" />
-            <filter text="value like '%S_SI_CEL%'" />
-            <filter text="value like '%DCPB2%'" />
-            <filter text="value like '%DCPB2_R%'" />
-          </filtering>
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://df76d45d-a6d4-45ef-95bf-ef547ac4ef82/schema/smart-industry/table/sys_tasks">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/smart-industry-kabeja/src/main/java/org/kabeja/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="386">
-          <caret line="108" column="24" selection-start-line="108" selection-start-column="24" selection-end-line="108" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/dao/ResolveBiz.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="146" column="7" lean-forward="true" selection-start-line="146" selection-start-column="7" selection-end-line="146" selection-end-column="7" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#saveBlockMsg#0;class#ResolveBiz#0" />
-          </folding>
+        <state relative-caret-position="44">
+          <caret line="2" column="27" selection-start-line="2" selection-start-column="27" selection-end-line="2" selection-end-column="27" />
         </state>
       </provider>
     </entry>

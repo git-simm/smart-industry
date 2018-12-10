@@ -11,6 +11,22 @@ import java.util.Map;
 @Controller
 @RequestMapping("/run")
 public class RunController {
+    /**
+     * 加载测试窗口
+     * @return
+     */
+    /*
+    @GetMapping("/test")
+    public String test(){
+        return "analysis/test_run";
+    }*/
+
+    /**
+     * 执行具体的解决方案
+     * @param id
+     * @param map
+     * @return
+     */
     @GetMapping("/test")
     public String test(int id,Map<String, Object> map){
         map.put("solutionId",id);
