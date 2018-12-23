@@ -11,17 +11,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ca438869-ff4f-47d5-a47e-64243f73bc98" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/df76d45d-a6d4-45ef-95bf-ef547ac4ef82.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/df76d45d-a6d4-45ef-95bf-ef547ac4ef82.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/parser/DXFParser.class" beforeDir="false" afterPath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/parser/DXFParser.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/dao/DesignSolutionBiz.java" beforeDir="false" afterPath="$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/dao/DesignSolutionBiz.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/entity/DesignSolution.java" beforeDir="false" afterPath="$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/entity/DesignSolution.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-train-biz/src/main/resources/mapper/DesignSolutionMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/smart-industry-train-biz/src/main/resources/mapper/DesignSolutionMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-train-web/src/main/java/smart/industry/train/web/controllers/manager/SolutionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/smart-industry-train-web/src/main/java/smart/industry/train/web/controllers/manager/SolutionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/static/js/manager/solution.list2.js" beforeDir="false" afterPath="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/static/js/manager/solution.list2.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/static/js/manager/solution.tree.js" beforeDir="false" afterPath="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/static/js/manager/solution.tree.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/templates/analysis/test_run.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/templates/analysis/test_run.ftl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/templates/manager/solution_edit.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/templates/manager/solution_edit.ftl" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -866,7 +857,7 @@
       <workItem from="1544444505002" duration="5472000" />
       <workItem from="1544532315187" duration="7429000" />
       <workItem from="1544863900689" duration="10478000" />
-      <workItem from="1545564661074" duration="7045000" />
+      <workItem from="1545564661074" duration="7534000" />
     </task>
     <task id="LOCAL-00001" summary="集成shiro登录验证功能">
       <created>1532255184656</created>
@@ -1127,7 +1118,14 @@
       <option name="project" value="LOCAL" />
       <updated>1544455804499</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="提交block对应的跳转界面">
+      <created>1545576880107</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1545576880107</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1163,7 +1161,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="523563000" />
+    <option name="totallyTimeSpent" value="524052000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
