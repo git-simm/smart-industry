@@ -14,6 +14,12 @@ public class DesignSolution extends BaseEntity {
 
     private Integer classId;
 
+    private Integer billCount;
+
+    private Integer standardCount;
+
+    private Integer designCount;
+
     private String remark;
 
     public Date getCreateDate() {
@@ -46,6 +52,30 @@ public class DesignSolution extends BaseEntity {
 
     public void setClassId(Integer classId) {
         this.classId = classId;
+    }
+
+    public Integer getBillCount() {
+        return billCount;
+    }
+
+    public void setBillCount(Integer billCount) {
+        this.billCount = billCount;
+    }
+
+    public Integer getStandardCount() {
+        return standardCount;
+    }
+
+    public void setStandardCount(Integer standardCount) {
+        this.standardCount = standardCount;
+    }
+
+    public Integer getDesignCount() {
+        return designCount;
+    }
+
+    public void setDesignCount(Integer designCount) {
+        this.designCount = designCount;
     }
 
     public String getRemark() {

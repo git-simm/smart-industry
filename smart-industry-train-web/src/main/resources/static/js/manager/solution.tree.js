@@ -23,14 +23,78 @@ Zq.Utility.RegisterNameSpace("solution.tree");
      **/
     function treeClick(srcEvent, treeId, node, clickFlag){
         //替换svg中的元素
-        var path = "";
-        if(node!=null && node.filePath != null) {
-            path = node.filePath;
-        }
+        if(node==null || node.filePath == null) return;
+        var path = node.filePath;
         console.log(path);
         if(path.indexOf(".svg")>-1){
             $("#line_svg").attr("src" ,path);
         }
+        var linkMap = node.linkMap;
+        if(linkMap==null) return;
+        setTimeout(function (args) {
+            //console.log("开始计算链接")
+            ns.setLink(linkMap);
+        }, 1000);
+    }
+
+    /**
+     * 设置link-map
+     * @param linkMap
+     * @constructor
+     */
+    ns.setLink = function(linkMap){
+        var svgDoc = document.getElementById("line_svg").getSVGDocument();
+        var map = Snap(svgDoc.getElementsByTagName("svg")[0]);
+        for(var key in linkMap){
+            var set = map.selectAll('g#'+key);
+            // 遍历填色
+            set.forEach(function(element, index) {
+                var box = element.getBBox();
+                element.append(createLink(box,map));
+                element.attr("style",'stroke:#f0f;').click(function(){
+                    selectLinkNode(linkMap[key]);
+                });
+            });
+        }
+    }
+    function selectLinkNode(fileName){
+        //跳转到具体的node节点
+        console.log("准备跳转");
+        var node = zTree.getNodeByParam("name", fileName, null);
+        treeClick(null,null,node);
+        zTree.selectNode(node);
+    }
+    /**
+     * 创建一个链接
+     * @param map
+     * @constructor
+     */
+    function createLink(box,map){
+        var link = map.paper.rect(box.x,box.y,box.width,box.height,2).attr({
+            "smart-type":"link",
+            fill:"#0b1e66",
+            "fill-opacity": 0.5,
+            stroke:"#0b1e66",
+            transform: "scale(1.1)"
+        });
+        // link.hover(function(e){
+        //     // var rect = e.target;
+        //     // rect.setAttributeNS(null, "fill", "#00ff21")
+        //     //移入
+        //     this.attr({
+        //         //transform: "scale(1.1)",
+        //         fill:"#00ff21"
+        //     });
+        // },function (e) {
+        //     // var rect = e.target;
+        //     // rect.setAttributeNS(null, "fill", "#0b1e66")
+        //     //移除
+        //     this.attr({
+        //         //transform:"scale(0.9)",
+        //         fill:"#0b1e66"
+        //     });
+        // });
+        return link;
     }
 
     ns.GetSelectedNode = function(){

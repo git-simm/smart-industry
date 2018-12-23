@@ -9,10 +9,13 @@
     <result column="modifyBy" jdbcType="INTEGER" property="modifyBy" />
     <result column="name" jdbcType="VARCHAR" property="name" />
     <result column="classId" jdbcType="INTEGER" property="classId" />
+    <result column="billCount" jdbcType="INTEGER" property="billCount" />
+    <result column="standardCount" jdbcType="INTEGER" property="standardCount" />
+    <result column="designCount" jdbcType="INTEGER" property="designCount" />
     <result column="remark" jdbcType="VARCHAR" property="remark" />
   </resultMap>
   <sql id="Base_Column_List">
-    id, createDate, createBy, modifyDate, modifyBy, `name`, classId, remark
+    id, createDate, createBy, modifyDate, modifyBy, `name`, classId,billCount,standardCount, designCount,remark
   </sql>
   <select id="selectAll" resultMap="BaseResultMap">
     select
@@ -41,10 +44,11 @@
   <insert id="insert" parameterType="smart.industry.train.biz.entity.DesignSolution">
     insert into design_solution (id, createDate, createBy, 
       modifyDate, modifyBy, `name`, 
-      classId, remark)
+      classId, billCount,standardCount, designCount,remark)
     values (#{id,jdbcType=INTEGER}, #{createDate,jdbcType=TIMESTAMP}, #{createBy,jdbcType=INTEGER},
       #{modifyDate,jdbcType=TIMESTAMP}, #{modifyBy,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR},
-      #{classId,jdbcType=INTEGER}, #{remark,jdbcType=VARCHAR})
+      #{classId,jdbcType=INTEGER},#{billCount,jdbcType=INTEGER},#{standardCount,jdbcType=INTEGER},
+       #{designCount,jdbcType=INTEGER},#{remark,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="smart.industry.train.biz.entity.DesignSolution" useGeneratedKeys="true" keyProperty="id">
     insert into design_solution
@@ -69,6 +73,15 @@
       </if>
       <if test="classId != null">
         classId,
+      </if>
+      <if test="billCount != null">
+        billCount,
+      </if>
+      <if test="standardCount != null">
+        standardCount,
+      </if>
+      <if test="designCount != null">
+        designCount,
       </if>
       <if test="remark != null">
         remark,
@@ -96,6 +109,15 @@
       <if test="classId != null">
         #{classId,jdbcType=INTEGER},
       </if>
+      <if test="billCount != null">
+        #{billCount,jdbcType=INTEGER},
+      </if>
+      <if test="standardCount != null">
+        #{standardCount,jdbcType=INTEGER},
+      </if>
+      <if test="designCount != null">
+        #{designCount,jdbcType=INTEGER},
+      </if>
       <if test="remark != null">
         #{remark,jdbcType=VARCHAR},
       </if>
@@ -122,6 +144,15 @@
       <if test="classId != null">
         classId = #{classId,jdbcType=INTEGER},
       </if>
+      <if test="billCount != null">
+        billCount = #{billCount,jdbcType=INTEGER},
+      </if>
+      <if test="standardCount != null">
+        standardCount = #{standardCount,jdbcType=INTEGER},
+      </if>
+      <if test="designCount != null">
+        designCount = #{designCount,jdbcType=INTEGER},
+      </if>
       <if test="remark != null">
         remark = #{remark,jdbcType=VARCHAR},
       </if>
@@ -136,6 +167,9 @@
       modifyBy = #{modifyBy,jdbcType=INTEGER},
       `name` = #{name,jdbcType=VARCHAR},
       classId = #{classId,jdbcType=INTEGER},
+      billCount = #{billCount,jdbcType=INTEGER},
+      standardCount = #{standardCount,jdbcType=INTEGER},
+      designCount = #{designCount,jdbcType=INTEGER},
       remark = #{remark,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>

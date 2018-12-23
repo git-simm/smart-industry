@@ -3,7 +3,7 @@
     <#if section="title">运行测试
     <#elseif section="css">
       <@cssRef "/static/_resources/layout/layout-default-latest.css"/>
-        <@cssRef url="/static/_resources/ztree/zTreeStyle/zTreeStyle.css"/>
+      <@cssRef "/static/_resources/ztree/zTreeStyle/zTreeStyle.css"/>
       <@cssRef "/static/css/eagleEye.css"/>
       <style type="text/css">
           #mainViewContainer,.svg_position{

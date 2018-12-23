@@ -1644,18 +1644,36 @@
       <DataType>int(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="370" parent="231" name="remark">
+    <column id="370" parent="231" name="billCount">
       <Position>8</Position>
+      <Comment>清单数</Comment>
+      <DataType>int(11)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="371" parent="231" name="standardCount">
+      <Position>9</Position>
+      <Comment>基准文件数</Comment>
+      <DataType>int(11)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="372" parent="231" name="designCount">
+      <Position>10</Position>
+      <Comment>设计文件数</Comment>
+      <DataType>int(11)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="373" parent="231" name="remark">
+      <Position>11</Position>
       <Comment>方案描述</Comment>
       <DataType>varchar(1000)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="371" parent="231" name="PRIMARY">
+    <key id="374" parent="231" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="372" parent="232" name="id">
+    <column id="375" parent="232" name="id">
       <Position>1</Position>
       <Comment>主键</Comment>
       <DataType>int(11)|0s</DataType>
@@ -1663,143 +1681,143 @@
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="373" parent="232" name="createDate">
+    <column id="376" parent="232" name="createDate">
       <Position>2</Position>
       <Comment>创建时间</Comment>
       <DataType>datetime|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="374" parent="232" name="createBy">
+    <column id="377" parent="232" name="createBy">
       <Position>3</Position>
       <Comment>创建人</Comment>
       <DataType>int(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="375" parent="232" name="modifyDate">
+    <column id="378" parent="232" name="modifyDate">
       <Position>4</Position>
       <Comment>修改时间</Comment>
       <DataType>date|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="376" parent="232" name="modifyBy">
+    <column id="379" parent="232" name="modifyBy">
       <Position>5</Position>
       <Comment>修改人</Comment>
       <DataType>int(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="377" parent="232" name="name">
+    <column id="380" parent="232" name="name">
       <Position>6</Position>
       <Comment>方案名</Comment>
       <DataType>varchar(200)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="378" parent="232" name="solutionId">
+    <column id="381" parent="232" name="solutionId">
       <Position>7</Position>
       <Comment>设计方案ID</Comment>
       <DataType>int(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="379" parent="232" name="fileId">
+    <column id="382" parent="232" name="fileId">
       <Position>8</Position>
       <Comment>对应的文件列表ID</Comment>
       <DataType>int(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="380" parent="232" name="type">
+    <column id="383" parent="232" name="type">
       <Position>9</Position>
       <Comment>文件类型</Comment>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="381" parent="232" name="remark">
+    <column id="384" parent="232" name="remark">
       <Position>10</Position>
       <Comment>方案描述</Comment>
       <DataType>varchar(1000)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="382" parent="232" name="PRIMARY">
+    <key id="385" parent="232" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="383" parent="233" name="id">
+    <column id="386" parent="233" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="384" parent="233" name="createDate">
+    <column id="387" parent="233" name="createDate">
       <Position>2</Position>
       <Comment>创建时间</Comment>
       <DataType>datetime|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="385" parent="233" name="createBy">
+    <column id="388" parent="233" name="createBy">
       <Position>3</Position>
       <Comment>创建人</Comment>
       <DataType>int(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="386" parent="233" name="modifyDate">
+    <column id="389" parent="233" name="modifyDate">
       <Position>4</Position>
       <Comment>修改时间</Comment>
       <DataType>datetime|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="387" parent="233" name="modifyBy">
+    <column id="390" parent="233" name="modifyBy">
       <Position>5</Position>
       <Comment>修改人</Comment>
       <DataType>int(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="388" parent="233" name="name">
+    <column id="391" parent="233" name="name">
       <Position>6</Position>
       <Comment>分组名</Comment>
       <DataType>varchar(200)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="389" parent="233" name="paramType">
+    <column id="392" parent="233" name="paramType">
       <Position>7</Position>
       <Comment>类型</Comment>
       <DataType>varchar(50)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="390" parent="233" name="defaultVal">
+    <column id="393" parent="233" name="defaultVal">
       <Position>8</Position>
       <Comment>默认值</Comment>
       <DataType>varchar(200)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="391" parent="233" name="remark">
+    <column id="394" parent="233" name="remark">
       <Position>9</Position>
       <Comment>说明</Comment>
       <DataType>varchar(500)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="392" parent="233" name="valid">
+    <column id="395" parent="233" name="valid">
       <Position>10</Position>
       <Comment>是否有效</Comment>
       <DataType>bit(1)|0s</DataType>
       <DefaultExpression>b&apos;1&apos;</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="393" parent="233" name="param_group_id_uindex">
+    <index id="396" parent="233" name="param_group_id_uindex">
       <ColNames>id</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <key id="394" parent="233" name="PRIMARY">
+    <key id="397" parent="233" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="395" parent="233" name="param_group_id_uindex">
+    <key id="398" parent="233" name="param_group_id_uindex">
       <ColNames>id</ColNames>
       <UnderlyingIndexName>param_group_id_uindex</UnderlyingIndexName>
     </key>
-    <column id="396" parent="234" name="id">
+    <column id="399" parent="234" name="id">
       <Position>1</Position>
       <Comment>主键</Comment>
       <DataType>int(11)|0s</DataType>
@@ -1807,183 +1825,183 @@
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="397" parent="234" name="createDate">
+    <column id="400" parent="234" name="createDate">
       <Position>2</Position>
       <Comment>创建时间</Comment>
       <DataType>datetime|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="398" parent="234" name="createBy">
+    <column id="401" parent="234" name="createBy">
       <Position>3</Position>
       <Comment>创建人</Comment>
       <DataType>int(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="399" parent="234" name="modifyDate">
+    <column id="402" parent="234" name="modifyDate">
       <Position>4</Position>
       <Comment>修改时间</Comment>
       <DataType>datetime|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="400" parent="234" name="modifyBy">
+    <column id="403" parent="234" name="modifyBy">
       <Position>5</Position>
       <Comment>修改人</Comment>
       <DataType>int(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="401" parent="234" name="groupid">
+    <column id="404" parent="234" name="groupid">
       <Position>6</Position>
       <Comment>所属分组</Comment>
       <DataType>int(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="402" parent="234" name="value">
+    <column id="405" parent="234" name="value">
       <Position>7</Position>
       <Comment>值</Comment>
       <DataType>varchar(200)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="403" parent="234" name="showVal">
+    <column id="406" parent="234" name="showVal">
       <Position>8</Position>
       <Comment>显示值</Comment>
       <DataType>varchar(200)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="404" parent="234" name="sort">
+    <column id="407" parent="234" name="sort">
       <Position>9</Position>
       <Comment>排序码</Comment>
       <DataType>int(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="405" parent="234" name="param_options_id_uindex">
+    <index id="408" parent="234" name="param_options_id_uindex">
       <ColNames>id</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <key id="406" parent="234" name="PRIMARY">
+    <key id="409" parent="234" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="407" parent="234" name="param_options_id_uindex">
+    <key id="410" parent="234" name="param_options_id_uindex">
       <ColNames>id</ColNames>
       <UnderlyingIndexName>param_options_id_uindex</UnderlyingIndexName>
     </key>
-    <column id="408" parent="235" name="id">
+    <column id="411" parent="235" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="409" parent="235" name="createDate">
+    <column id="412" parent="235" name="createDate">
       <Position>2</Position>
       <Comment>创建时间</Comment>
       <DataType>datetime|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="410" parent="235" name="createBy">
+    <column id="413" parent="235" name="createBy">
       <Position>3</Position>
       <Comment>创建人</Comment>
       <DataType>int(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="411" parent="235" name="modifyDate">
+    <column id="414" parent="235" name="modifyDate">
       <Position>4</Position>
       <Comment>修改时间</Comment>
       <DataType>datetime|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="412" parent="235" name="modifyBy">
+    <column id="415" parent="235" name="modifyBy">
       <Position>5</Position>
       <Comment>修改人</Comment>
       <DataType>int(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="413" parent="235" name="name">
+    <column id="416" parent="235" name="name">
       <Position>6</Position>
       <Comment>属性名</Comment>
       <DataType>varchar(500)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="414" parent="235" name="id_UNIQUE">
+    <index id="417" parent="235" name="id_UNIQUE">
       <ColNames>id</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <key id="415" parent="235" name="PRIMARY">
+    <key id="418" parent="235" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="416" parent="235" name="id_UNIQUE">
+    <key id="419" parent="235" name="id_UNIQUE">
       <ColNames>id</ColNames>
       <UnderlyingIndexName>id_UNIQUE</UnderlyingIndexName>
     </key>
-    <column id="417" parent="236" name="id">
+    <column id="420" parent="236" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="418" parent="236" name="createDate">
+    <column id="421" parent="236" name="createDate">
       <Position>2</Position>
       <Comment>创建时间</Comment>
       <DataType>datetime|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="419" parent="236" name="createBy">
+    <column id="422" parent="236" name="createBy">
       <Position>3</Position>
       <Comment>创建人</Comment>
       <DataType>int(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="420" parent="236" name="modifyDate">
+    <column id="423" parent="236" name="modifyDate">
       <Position>4</Position>
       <Comment>修改时间</Comment>
       <DataType>datetime|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="421" parent="236" name="modifyBy">
+    <column id="424" parent="236" name="modifyBy">
       <Position>5</Position>
       <Comment>修改人</Comment>
       <DataType>int(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="422" parent="236" name="detailId">
+    <column id="425" parent="236" name="detailId">
       <Position>6</Position>
       <Comment>方案子项ID</Comment>
       <DataType>int(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="423" parent="236" name="state">
+    <column id="426" parent="236" name="state">
       <Position>7</Position>
       <Comment>转换状态(0:待转换;1:转换中;2:转换完成)</Comment>
       <DataType>int(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="424" parent="236" name="retries">
+    <column id="427" parent="236" name="retries">
       <Position>8</Position>
       <Comment>重试次数</Comment>
       <DataType>int(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="425" parent="236" name="id_UNIQUE">
+    <index id="428" parent="236" name="id_UNIQUE">
       <ColNames>id</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <key id="426" parent="236" name="PRIMARY">
+    <key id="429" parent="236" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="427" parent="236" name="id_UNIQUE">
+    <key id="430" parent="236" name="id_UNIQUE">
       <ColNames>id</ColNames>
       <UnderlyingIndexName>id_UNIQUE</UnderlyingIndexName>
     </key>
-    <column id="428" parent="237" name="id">
+    <column id="431" parent="237" name="id">
       <Position>1</Position>
       <Comment>主键</Comment>
       <DataType>int(11)|0s</DataType>
@@ -1991,137 +2009,137 @@
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="429" parent="237" name="createDate">
+    <column id="432" parent="237" name="createDate">
       <Position>2</Position>
       <Comment>创建时间</Comment>
       <DataType>datetime|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="430" parent="237" name="createBy">
+    <column id="433" parent="237" name="createBy">
       <Position>3</Position>
       <Comment>创建人</Comment>
       <DataType>int(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="431" parent="237" name="modifyDate">
+    <column id="434" parent="237" name="modifyDate">
       <Position>4</Position>
       <Comment>修改时间</Comment>
       <DataType>datetime|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="432" parent="237" name="modifyBy">
+    <column id="435" parent="237" name="modifyBy">
       <Position>5</Position>
       <Comment>修改人</Comment>
       <DataType>int(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="433" parent="237" name="suffix">
+    <column id="436" parent="237" name="suffix">
       <Position>6</Position>
       <Comment>文件后缀</Comment>
       <DataType>varchar(50)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="434" parent="237" name="filePath">
+    <column id="437" parent="237" name="filePath">
       <Position>7</Position>
       <Comment>文件路径</Comment>
       <DataType>varchar(200)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="435" parent="237" name="relativePath">
+    <column id="438" parent="237" name="relativePath">
       <Position>8</Position>
       <Comment>相对路径</Comment>
       <DataType>varchar(200)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="436" parent="237" name="fileName">
+    <column id="439" parent="237" name="fileName">
       <Position>9</Position>
       <Comment>文件名</Comment>
       <DataType>varchar(200)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="437" parent="237" name="fileSize">
+    <column id="440" parent="237" name="fileSize">
       <Position>10</Position>
       <Comment>文件尺寸</Comment>
       <DataType>bigint(20)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="438" parent="237" name="PRIMARY">
+    <key id="441" parent="237" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="439" parent="238" name="id">
+    <column id="442" parent="238" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="440" parent="238" name="createDate">
+    <column id="443" parent="238" name="createDate">
       <Position>2</Position>
       <Comment>创建时间</Comment>
       <DataType>datetime|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="441" parent="238" name="createBy">
+    <column id="444" parent="238" name="createBy">
       <Position>3</Position>
       <Comment>创建人</Comment>
       <DataType>int(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="442" parent="238" name="modifyDate">
+    <column id="445" parent="238" name="modifyDate">
       <Position>4</Position>
       <Comment>修改时间</Comment>
       <DataType>datetime|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="443" parent="238" name="modifyBy">
+    <column id="446" parent="238" name="modifyBy">
       <Position>5</Position>
       <Comment>修改人</Comment>
       <DataType>int(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="444" parent="238" name="name">
+    <column id="447" parent="238" name="name">
       <Position>6</Position>
       <DataType>varchar(50)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="445" parent="238" name="code">
+    <column id="448" parent="238" name="code">
       <Position>7</Position>
       <DataType>varchar(50)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="446" parent="238" name="psw">
+    <column id="449" parent="238" name="psw">
       <Position>8</Position>
       <DataType>varchar(50)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="447" parent="238" name="sex">
+    <column id="450" parent="238" name="sex">
       <Position>9</Position>
       <DataType>bit(1)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="448" parent="238" name="remark">
+    <column id="451" parent="238" name="remark">
       <Position>10</Position>
       <DataType>varchar(2000)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="449" parent="238" name="department">
+    <column id="452" parent="238" name="department">
       <Position>11</Position>
       <DataType>varchar(200)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="450" parent="238" name="id_UNIQUE">
+    <index id="453" parent="238" name="id_UNIQUE">
       <ColNames>id</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <key id="451" parent="238" name="PRIMARY">
+    <key id="454" parent="238" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="452" parent="238" name="id_UNIQUE">
+    <key id="455" parent="238" name="id_UNIQUE">
       <ColNames>id</ColNames>
       <UnderlyingIndexName>id_UNIQUE</UnderlyingIndexName>
     </key>

@@ -85,17 +85,20 @@
                 },
                 {
                     title: '基准文件',
-                    field: 'IP',
+                    field: 'standardCount',
+                    align: 'right',
                     width: "20%"
                 },
                 {
                     title: '设计文件',
-                    field: 'DbName',
+                    field: 'designCount',
+                    align: 'right',
                     width: "20%"
                 },
                 {
                     title: '清单',
-                    field: 'User',
+                    field: 'billCount',
+                    align: 'right',
                     width: "20%"
                 },
                 {

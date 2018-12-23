@@ -163,7 +163,7 @@
                              //文件上传
                              ns.upload(obj.id,function () {
                                  Zq.Utility.Msg("保存成功",function(){
-                                     SmartMonitor.Common.Close();
+                                     SmartMonitor.Common.Close(true);
                                  });
                              });
                          }
@@ -216,10 +216,27 @@
                      if(r1 && r2 && r3){
                          //清理掉定时器
                          clearInterval(interval);
-                         //执行完毕后的回调
-                         callback();
+                         //发起请求,统计解决方案对应的文件信息
+                         fileSummary(id,callback);
                      }
                  }, 500);
+             }
+             /**
+             * 文件统计
+             */
+             function fileSummary(id,callback){
+                 $.ajax({
+                     async: false,
+                     type: "Post",
+                     dataType: "json",
+                     url: "/solution/fileSummary".geturl(),
+                     data: {id:id},
+                     success: function () {
+                        if(callback){
+                            callback();
+                        }
+                     }
+                 });
              }
              /**
               * 删除文件

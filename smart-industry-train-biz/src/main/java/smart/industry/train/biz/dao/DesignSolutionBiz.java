@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import smart.industry.train.biz.dao.base.BaseBiz;
+import smart.industry.train.biz.entity.DesignDetailBlock;
 import smart.industry.train.biz.entity.DesignSolution;
 import smart.industry.train.biz.entity.DesignSolutionList;
 import smart.industry.train.biz.entity.SysUpfiles;
@@ -19,6 +20,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 /**
  * 设计方案业务逻辑层
@@ -29,6 +31,8 @@ public class DesignSolutionBiz extends BaseBiz<DesignSolutionMapper,DesignSoluti
     private SysUpfilesBiz sysUpfilesBiz;
     @Autowired
     private DesignSolutionListBiz designSolutionListBiz;
+    @Autowired
+    private DesignDetailBlockBiz designDetailBlockBiz;
 
     @Override
     public DesignSolution getFilter(Paging paging) throws IllegalAccessException, InstantiationException {
@@ -163,9 +167,30 @@ public class DesignSolutionBiz extends BaseBiz<DesignSolutionMapper,DesignSoluti
                 obj.put("filePath",path);
                 String fileName = file.getFileName().replace(file.getSuffix(),"");
                 obj.put("name",fileName);
+                //这个位置需要做性能优化，一次查询所有的相关数据
+                obj.put("linkMap",designDetailBlockBiz.getLinkMap(a.getId()));
             }
             result.add(obj);
         });
         return result;
+    }
+
+    /**
+     * 文件数量统计
+     * @param id
+     * @return
+     */
+    @Transactional
+    public Integer fileSummary(Integer id) {
+        //获取所有的文件，归类进行处理
+        List<DesignSolutionList> solutionFiles = designSolutionListBiz.getAllListBySolution(id);
+        Long designCount = solutionFiles.stream().filter(a->a.getType().equals(FileTypeEnum.Design.getValue())).count();
+        Long standardCount = solutionFiles.stream().filter(a->a.getType().equals(FileTypeEnum.Standard.getValue())).count();
+        Long billCount = solutionFiles.stream().filter(a->a.getType().equals(FileTypeEnum.Bill.getValue())).count();
+        DesignSolution designSolution = baseMapper.selectByPrimaryKey(id);
+        designSolution.setBillCount(billCount.intValue());
+        designSolution.setDesignCount(designCount.intValue());
+        designSolution.setStandardCount(standardCount.intValue());
+        return baseMapper.updateByPrimaryKeySelective(designSolution);
     }
 }

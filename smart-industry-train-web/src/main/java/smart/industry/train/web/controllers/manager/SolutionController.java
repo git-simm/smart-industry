@@ -129,6 +129,17 @@ public class SolutionController {
         designSolutionBiz.delFiles(fileIds);
         return designSolutionBiz.update(solution);
     }
+
+    /**
+     * 文件信息统计
+     * @param id
+     * @return
+     */
+    @Post(value = "/fileSummary")
+    @Transactional
+    public Integer fileSummary(Integer id){
+        return designSolutionBiz.fileSummary(id);
+    }
     /**
      * 删除事件
      * @param id
