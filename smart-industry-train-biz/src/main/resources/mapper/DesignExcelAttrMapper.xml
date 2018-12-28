@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="smart.industry.train.biz.mapper.DesignExcelAttrMapper">
+  <resultMap id="BaseResultMap" type="smart.industry.train.biz.entity.DesignExcelAttr">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="createDate" jdbcType="TIMESTAMP" property="createDate" />
+    <result column="createBy" jdbcType="INTEGER" property="createBy" />
+    <result column="modifyDate" jdbcType="TIMESTAMP" property="modifyDate" />
+    <result column="modifyBy" jdbcType="INTEGER" property="modifyBy" />
+    <result column="attrName" jdbcType="VARCHAR" property="attrName" />
+    <result column="colName" jdbcType="VARCHAR" property="colName" />
+    <result column="fileId" jdbcType="INTEGER" property="fileId"/>
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, createDate, createBy, modifyDate, modifyBy, attrName, colName,fileId
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from design_excel_attr
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <select id="selectByFilter" parameterType="DesignExcelAttr" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from design_excel_attr
+    where ${filter}
+    <if test="orderBy != null">
+      order by ${orderBy}
+    </if>
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from design_excel_attr
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByFilter" parameterType="smart.industry.train.biz.entity.DesignExcelAttr">
+    delete from design_excel_attr where ${filter}
+  </delete>
+  <insert id="insert" parameterType="smart.industry.train.biz.entity.DesignExcelAttr"
+          useGeneratedKeys="true" keyProperty="id">
+    insert into design_excel_attr (id, createDate, createBy, 
+      modifyDate, modifyBy, attrName, 
+      colName,fileId)
+    values (#{id,jdbcType=INTEGER}, #{createDate,jdbcType=TIMESTAMP}, #{createBy,jdbcType=INTEGER}, 
+      #{modifyDate,jdbcType=TIMESTAMP}, #{modifyBy,jdbcType=INTEGER}, #{attrName,jdbcType=VARCHAR}, 
+      #{colName,jdbcType=VARCHAR},#{fileId,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="smart.industry.train.biz.entity.DesignExcelAttr"
+          useGeneratedKeys="true" keyProperty="id">
+    insert into design_excel_attr
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="createDate != null">
+        createDate,
+      </if>
+      <if test="createBy != null">
+        createBy,
+      </if>
+      <if test="modifyDate != null">
+        modifyDate,
+      </if>
+      <if test="modifyBy != null">
+        modifyBy,
+      </if>
+      <if test="attrName != null">
+        attrName,
+      </if>
+      <if test="colName != null">
+        colName,
+      </if>
+      <if test="fileId != null">
+        fileId,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="createDate != null">
+        #{createDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createBy != null">
+        #{createBy,jdbcType=INTEGER},
+      </if>
+      <if test="modifyDate != null">
+        #{modifyDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifyBy != null">
+        #{modifyBy,jdbcType=INTEGER},
+      </if>
+      <if test="attrName != null">
+        #{attrName,jdbcType=VARCHAR},
+      </if>
+      <if test="colName != null">
+        #{colName,jdbcType=VARCHAR},
+      </if>
+      <if test="fileId != null">
+        #{fileId,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="smart.industry.train.biz.entity.DesignExcelAttr">
+    update design_excel_attr
+    <set>
+      <if test="createDate != null">
+        createDate = #{createDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createBy != null">
+        createBy = #{createBy,jdbcType=INTEGER},
+      </if>
+      <if test="modifyDate != null">
+        modifyDate = #{modifyDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifyBy != null">
+        modifyBy = #{modifyBy,jdbcType=INTEGER},
+      </if>
+      <if test="attrName != null">
+        attrName = #{attrName,jdbcType=VARCHAR},
+      </if>
+      <if test="colName != null">
+        colName = #{colName,jdbcType=VARCHAR},
+      </if>
+      <if test="fileId != null">
+        fileId = #{fileId,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="smart.industry.train.biz.entity.DesignExcelAttr">
+    update design_excel_attr
+    set createDate = #{createDate,jdbcType=TIMESTAMP},
+      createBy = #{createBy,jdbcType=INTEGER},
+      modifyDate = #{modifyDate,jdbcType=TIMESTAMP},
+      modifyBy = #{modifyBy,jdbcType=INTEGER},
+      attrName = #{attrName,jdbcType=VARCHAR},
+      colName = #{colName,jdbcType=VARCHAR},
+      fileId = #{fileId,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

@@ -1,0 +1,995 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="smart.industry.train.biz.mapper.DesignExcelListMapper">
+  <resultMap id="BaseResultMap" type="smart.industry.train.biz.entity.DesignExcelList">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="createDate" jdbcType="TIMESTAMP" property="createDate" />
+    <result column="createBy" jdbcType="INTEGER" property="createBy" />
+    <result column="modifyDate" jdbcType="TIMESTAMP" property="modifyDate" />
+    <result column="modifyBy" jdbcType="INTEGER" property="modifyBy" />
+    <result column="fileId" jdbcType="INTEGER" property="fileId"/>
+    <result column="col1" jdbcType="VARCHAR" property="col1" />
+    <result column="col2" jdbcType="VARCHAR" property="col2" />
+    <result column="col3" jdbcType="VARCHAR" property="col3" />
+    <result column="col4" jdbcType="VARCHAR" property="col4" />
+    <result column="col5" jdbcType="VARCHAR" property="col5" />
+    <result column="col6" jdbcType="VARCHAR" property="col6" />
+    <result column="col7" jdbcType="VARCHAR" property="col7" />
+    <result column="col8" jdbcType="VARCHAR" property="col8" />
+    <result column="col9" jdbcType="VARCHAR" property="col9" />
+    <result column="col10" jdbcType="VARCHAR" property="col10" />
+    <result column="col11" jdbcType="VARCHAR" property="col11" />
+    <result column="col12" jdbcType="VARCHAR" property="col12" />
+    <result column="col13" jdbcType="VARCHAR" property="col13" />
+    <result column="col14" jdbcType="VARCHAR" property="col14" />
+    <result column="col15" jdbcType="VARCHAR" property="col15" />
+    <result column="col16" jdbcType="VARCHAR" property="col16" />
+    <result column="col17" jdbcType="VARCHAR" property="col17" />
+    <result column="col18" jdbcType="VARCHAR" property="col18" />
+    <result column="col19" jdbcType="VARCHAR" property="col19" />
+    <result column="col20" jdbcType="VARCHAR" property="col20" />
+    <result column="col21" jdbcType="VARCHAR" property="col21" />
+    <result column="col22" jdbcType="VARCHAR" property="col22" />
+    <result column="col23" jdbcType="VARCHAR" property="col23" />
+    <result column="col24" jdbcType="VARCHAR" property="col24" />
+    <result column="col25" jdbcType="VARCHAR" property="col25" />
+    <result column="col26" jdbcType="VARCHAR" property="col26" />
+    <result column="col27" jdbcType="VARCHAR" property="col27" />
+    <result column="col28" jdbcType="VARCHAR" property="col28" />
+    <result column="col29" jdbcType="VARCHAR" property="col29" />
+    <result column="col30" jdbcType="VARCHAR" property="col30" />
+    <result column="col31" jdbcType="VARCHAR" property="col31" />
+    <result column="col32" jdbcType="VARCHAR" property="col32" />
+    <result column="col33" jdbcType="VARCHAR" property="col33" />
+    <result column="col34" jdbcType="VARCHAR" property="col34" />
+    <result column="col35" jdbcType="VARCHAR" property="col35" />
+    <result column="col36" jdbcType="VARCHAR" property="col36" />
+    <result column="col37" jdbcType="VARCHAR" property="col37" />
+    <result column="col38" jdbcType="VARCHAR" property="col38" />
+    <result column="col39" jdbcType="VARCHAR" property="col39" />
+    <result column="col40" jdbcType="VARCHAR" property="col40" />
+    <result column="col41" jdbcType="VARCHAR" property="col41" />
+    <result column="col42" jdbcType="VARCHAR" property="col42" />
+    <result column="col43" jdbcType="VARCHAR" property="col43" />
+    <result column="col44" jdbcType="VARCHAR" property="col44" />
+    <result column="col45" jdbcType="VARCHAR" property="col45" />
+    <result column="col46" jdbcType="VARCHAR" property="col46" />
+    <result column="col47" jdbcType="VARCHAR" property="col47" />
+    <result column="col48" jdbcType="VARCHAR" property="col48" />
+    <result column="col49" jdbcType="VARCHAR" property="col49" />
+    <result column="col50" jdbcType="VARCHAR" property="col50" />
+    <result column="col51" jdbcType="VARCHAR" property="col51" />
+    <result column="col52" jdbcType="VARCHAR" property="col52" />
+    <result column="col53" jdbcType="VARCHAR" property="col53" />
+    <result column="col54" jdbcType="VARCHAR" property="col54" />
+    <result column="col55" jdbcType="VARCHAR" property="col55" />
+    <result column="col56" jdbcType="VARCHAR" property="col56" />
+    <result column="col57" jdbcType="VARCHAR" property="col57" />
+    <result column="col58" jdbcType="VARCHAR" property="col58" />
+    <result column="col59" jdbcType="VARCHAR" property="col59" />
+    <result column="col60" jdbcType="VARCHAR" property="col60" />
+    <result column="col61" jdbcType="VARCHAR" property="col61" />
+    <result column="col62" jdbcType="VARCHAR" property="col62" />
+    <result column="col63" jdbcType="VARCHAR" property="col63" />
+    <result column="col64" jdbcType="VARCHAR" property="col64" />
+    <result column="col65" jdbcType="VARCHAR" property="col65" />
+    <result column="col66" jdbcType="VARCHAR" property="col66" />
+    <result column="col67" jdbcType="VARCHAR" property="col67" />
+    <result column="col68" jdbcType="VARCHAR" property="col68" />
+    <result column="col69" jdbcType="VARCHAR" property="col69" />
+    <result column="col70" jdbcType="VARCHAR" property="col70" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, createDate, createBy, modifyDate, modifyBy,fileId, col1, col2, col3, col4, col5, col6,
+    col7, col8, col9, col10, col11, col12, col13, col14, col15, col16, col17, col18, 
+    col19, col20, col21, col22, col23, col24, col25, col26, col27, col28, col29, col30, 
+    col31, col32, col33, col34, col35, col36, col37, col38, col39, col40, col41, col42, 
+    col43, col44, col45, col46, col47, col48, col49, col50, col51, col52, col53, col54, 
+    col55, col56, col57, col58, col59, col60, col61, col62, col63, col64, col65, col66, 
+    col67, col68, col69, col70
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from design_excel_list
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <select id="selectByFilter" parameterType="DesignExcelList" resultMap="BaseResultMap">
+    select
+    <if test="fields != null">
+      ${fields}
+    </if>
+    <if test="fields == null">
+      <include refid="Base_Column_List" />
+    </if>
+    from design_excel_list
+    where ${filter}
+    <if test="orderBy != null">
+      order by ${orderBy}
+    </if>
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from design_excel_list
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="smart.industry.train.biz.entity.DesignExcelList">
+    insert into design_excel_list (id, createDate, createBy, 
+      modifyDate, modifyBy, fileId, col1,
+      col2, col3, col4, col5, 
+      col6, col7, col8, col9, 
+      col10, col11, col12, 
+      col13, col14, col15, 
+      col16, col17, col18, 
+      col19, col20, col21, 
+      col22, col23, col24, 
+      col25, col26, col27, 
+      col28, col29, col30, 
+      col31, col32, col33, 
+      col34, col35, col36, 
+      col37, col38, col39, 
+      col40, col41, col42, 
+      col43, col44, col45, 
+      col46, col47, col48, 
+      col49, col50, col51, 
+      col52, col53, col54, 
+      col55, col56, col57, 
+      col58, col59, col60, 
+      col61, col62, col63, 
+      col64, col65, col66, 
+      col67, col68, col69, 
+      col70)
+    values (#{id,jdbcType=INTEGER}, #{createDate,jdbcType=TIMESTAMP}, #{createBy,jdbcType=INTEGER}, 
+      #{modifyDate,jdbcType=TIMESTAMP}, #{modifyBy,jdbcType=INTEGER},#{fileId,jdbcType=INTEGER}, #{col1,jdbcType=VARCHAR},
+      #{col2,jdbcType=VARCHAR}, #{col3,jdbcType=VARCHAR}, #{col4,jdbcType=VARCHAR}, #{col5,jdbcType=VARCHAR}, 
+      #{col6,jdbcType=VARCHAR}, #{col7,jdbcType=VARCHAR}, #{col8,jdbcType=VARCHAR}, #{col9,jdbcType=VARCHAR}, 
+      #{col10,jdbcType=VARCHAR}, #{col11,jdbcType=VARCHAR}, #{col12,jdbcType=VARCHAR}, 
+      #{col13,jdbcType=VARCHAR}, #{col14,jdbcType=VARCHAR}, #{col15,jdbcType=VARCHAR}, 
+      #{col16,jdbcType=VARCHAR}, #{col17,jdbcType=VARCHAR}, #{col18,jdbcType=VARCHAR}, 
+      #{col19,jdbcType=VARCHAR}, #{col20,jdbcType=VARCHAR}, #{col21,jdbcType=VARCHAR}, 
+      #{col22,jdbcType=VARCHAR}, #{col23,jdbcType=VARCHAR}, #{col24,jdbcType=VARCHAR}, 
+      #{col25,jdbcType=VARCHAR}, #{col26,jdbcType=VARCHAR}, #{col27,jdbcType=VARCHAR}, 
+      #{col28,jdbcType=VARCHAR}, #{col29,jdbcType=VARCHAR}, #{col30,jdbcType=VARCHAR}, 
+      #{col31,jdbcType=VARCHAR}, #{col32,jdbcType=VARCHAR}, #{col33,jdbcType=VARCHAR}, 
+      #{col34,jdbcType=VARCHAR}, #{col35,jdbcType=VARCHAR}, #{col36,jdbcType=VARCHAR}, 
+      #{col37,jdbcType=VARCHAR}, #{col38,jdbcType=VARCHAR}, #{col39,jdbcType=VARCHAR}, 
+      #{col40,jdbcType=VARCHAR}, #{col41,jdbcType=VARCHAR}, #{col42,jdbcType=VARCHAR}, 
+      #{col43,jdbcType=VARCHAR}, #{col44,jdbcType=VARCHAR}, #{col45,jdbcType=VARCHAR}, 
+      #{col46,jdbcType=VARCHAR}, #{col47,jdbcType=VARCHAR}, #{col48,jdbcType=VARCHAR}, 
+      #{col49,jdbcType=VARCHAR}, #{col50,jdbcType=VARCHAR}, #{col51,jdbcType=VARCHAR}, 
+      #{col52,jdbcType=VARCHAR}, #{col53,jdbcType=VARCHAR}, #{col54,jdbcType=VARCHAR}, 
+      #{col55,jdbcType=VARCHAR}, #{col56,jdbcType=VARCHAR}, #{col57,jdbcType=VARCHAR}, 
+      #{col58,jdbcType=VARCHAR}, #{col59,jdbcType=VARCHAR}, #{col60,jdbcType=VARCHAR}, 
+      #{col61,jdbcType=VARCHAR}, #{col62,jdbcType=VARCHAR}, #{col63,jdbcType=VARCHAR}, 
+      #{col64,jdbcType=VARCHAR}, #{col65,jdbcType=VARCHAR}, #{col66,jdbcType=VARCHAR}, 
+      #{col67,jdbcType=VARCHAR}, #{col68,jdbcType=VARCHAR}, #{col69,jdbcType=VARCHAR}, 
+      #{col70,jdbcType=VARCHAR})
+  </insert>
+  <insert id="batchAdd" parameterType="java.util.List">
+    insert into design_excel_list (createDate, createBy,
+      modifyDate, modifyBy,fileId, col1,
+      col2, col3, col4, col5,
+      col6, col7, col8, col9,
+      col10, col11, col12,
+      col13, col14, col15,
+      col16, col17, col18,
+      col19, col20, col21,
+      col22, col23, col24,
+      col25, col26, col27,
+      col28, col29, col30,
+      col31, col32, col33,
+      col34, col35, col36,
+      col37, col38, col39,
+      col40, col41, col42,
+      col43, col44, col45,
+      col46, col47, col48,
+      col49, col50, col51,
+      col52, col53, col54,
+      col55, col56, col57,
+      col58, col59, col60,
+      col61, col62, col63,
+      col64, col65, col66,
+      col67, col68, col69,
+      col70)
+    values
+    <foreach collection="list" item="item" index="index" separator=",">
+      (#{item.createDate,jdbcType=TIMESTAMP}, #{item.createBy,jdbcType=INTEGER},
+      #{item.modifyDate,jdbcType=TIMESTAMP}, #{item.modifyBy,jdbcType=INTEGER},#{item.fileId,jdbcType=INTEGER}, #{item.col1,jdbcType=VARCHAR},
+      #{item.col2,jdbcType=VARCHAR}, #{item.col3,jdbcType=VARCHAR}, #{item.col4,jdbcType=VARCHAR}, #{item.col5,jdbcType=VARCHAR},
+      #{item.col6,jdbcType=VARCHAR}, #{item.col7,jdbcType=VARCHAR}, #{item.col8,jdbcType=VARCHAR}, #{item.col9,jdbcType=VARCHAR},
+      #{item.col10,jdbcType=VARCHAR}, #{item.col11,jdbcType=VARCHAR}, #{item.col12,jdbcType=VARCHAR},
+      #{item.col13,jdbcType=VARCHAR}, #{item.col14,jdbcType=VARCHAR}, #{item.col15,jdbcType=VARCHAR},
+      #{item.col16,jdbcType=VARCHAR}, #{item.col17,jdbcType=VARCHAR}, #{item.col18,jdbcType=VARCHAR},
+      #{item.col19,jdbcType=VARCHAR}, #{item.col20,jdbcType=VARCHAR}, #{item.col21,jdbcType=VARCHAR},
+      #{item.col22,jdbcType=VARCHAR}, #{item.col23,jdbcType=VARCHAR}, #{item.col24,jdbcType=VARCHAR},
+      #{item.col25,jdbcType=VARCHAR}, #{item.col26,jdbcType=VARCHAR}, #{item.col27,jdbcType=VARCHAR},
+      #{item.col28,jdbcType=VARCHAR}, #{item.col29,jdbcType=VARCHAR}, #{item.col30,jdbcType=VARCHAR},
+      #{item.col31,jdbcType=VARCHAR}, #{item.col32,jdbcType=VARCHAR}, #{item.col33,jdbcType=VARCHAR},
+      #{item.col34,jdbcType=VARCHAR}, #{item.col35,jdbcType=VARCHAR}, #{item.col36,jdbcType=VARCHAR},
+      #{item.col37,jdbcType=VARCHAR}, #{item.col38,jdbcType=VARCHAR}, #{item.col39,jdbcType=VARCHAR},
+      #{item.col40,jdbcType=VARCHAR}, #{item.col41,jdbcType=VARCHAR}, #{item.col42,jdbcType=VARCHAR},
+      #{item.col43,jdbcType=VARCHAR}, #{item.col44,jdbcType=VARCHAR}, #{item.col45,jdbcType=VARCHAR},
+      #{item.col46,jdbcType=VARCHAR}, #{item.col47,jdbcType=VARCHAR}, #{item.col48,jdbcType=VARCHAR},
+      #{item.col49,jdbcType=VARCHAR}, #{item.col50,jdbcType=VARCHAR}, #{item.col51,jdbcType=VARCHAR},
+      #{item.col52,jdbcType=VARCHAR}, #{item.col53,jdbcType=VARCHAR}, #{item.col54,jdbcType=VARCHAR},
+      #{item.col55,jdbcType=VARCHAR}, #{item.col56,jdbcType=VARCHAR}, #{item.col57,jdbcType=VARCHAR},
+      #{item.col58,jdbcType=VARCHAR}, #{item.col59,jdbcType=VARCHAR}, #{item.col60,jdbcType=VARCHAR},
+      #{item.col61,jdbcType=VARCHAR}, #{item.col62,jdbcType=VARCHAR}, #{item.col63,jdbcType=VARCHAR},
+      #{item.col64,jdbcType=VARCHAR}, #{item.col65,jdbcType=VARCHAR}, #{item.col66,jdbcType=VARCHAR},
+      #{item.col67,jdbcType=VARCHAR}, #{item.col68,jdbcType=VARCHAR}, #{item.col69,jdbcType=VARCHAR},
+      #{item.col70,jdbcType=VARCHAR})
+    </foreach>
+  </insert>
+  <insert id="insertSelective" parameterType="smart.industry.train.biz.entity.DesignExcelList">
+    insert into design_excel_list
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="createDate != null">
+        createDate,
+      </if>
+      <if test="createBy != null">
+        createBy,
+      </if>
+      <if test="modifyDate != null">
+        modifyDate,
+      </if>
+      <if test="modifyBy != null">
+        modifyBy,
+      </if>
+      <if test="fileId != null">
+        fileId,
+      </if>
+      <if test="col1 != null">
+        col1,
+      </if>
+      <if test="col2 != null">
+        col2,
+      </if>
+      <if test="col3 != null">
+        col3,
+      </if>
+      <if test="col4 != null">
+        col4,
+      </if>
+      <if test="col5 != null">
+        col5,
+      </if>
+      <if test="col6 != null">
+        col6,
+      </if>
+      <if test="col7 != null">
+        col7,
+      </if>
+      <if test="col8 != null">
+        col8,
+      </if>
+      <if test="col9 != null">
+        col9,
+      </if>
+      <if test="col10 != null">
+        col10,
+      </if>
+      <if test="col11 != null">
+        col11,
+      </if>
+      <if test="col12 != null">
+        col12,
+      </if>
+      <if test="col13 != null">
+        col13,
+      </if>
+      <if test="col14 != null">
+        col14,
+      </if>
+      <if test="col15 != null">
+        col15,
+      </if>
+      <if test="col16 != null">
+        col16,
+      </if>
+      <if test="col17 != null">
+        col17,
+      </if>
+      <if test="col18 != null">
+        col18,
+      </if>
+      <if test="col19 != null">
+        col19,
+      </if>
+      <if test="col20 != null">
+        col20,
+      </if>
+      <if test="col21 != null">
+        col21,
+      </if>
+      <if test="col22 != null">
+        col22,
+      </if>
+      <if test="col23 != null">
+        col23,
+      </if>
+      <if test="col24 != null">
+        col24,
+      </if>
+      <if test="col25 != null">
+        col25,
+      </if>
+      <if test="col26 != null">
+        col26,
+      </if>
+      <if test="col27 != null">
+        col27,
+      </if>
+      <if test="col28 != null">
+        col28,
+      </if>
+      <if test="col29 != null">
+        col29,
+      </if>
+      <if test="col30 != null">
+        col30,
+      </if>
+      <if test="col31 != null">
+        col31,
+      </if>
+      <if test="col32 != null">
+        col32,
+      </if>
+      <if test="col33 != null">
+        col33,
+      </if>
+      <if test="col34 != null">
+        col34,
+      </if>
+      <if test="col35 != null">
+        col35,
+      </if>
+      <if test="col36 != null">
+        col36,
+      </if>
+      <if test="col37 != null">
+        col37,
+      </if>
+      <if test="col38 != null">
+        col38,
+      </if>
+      <if test="col39 != null">
+        col39,
+      </if>
+      <if test="col40 != null">
+        col40,
+      </if>
+      <if test="col41 != null">
+        col41,
+      </if>
+      <if test="col42 != null">
+        col42,
+      </if>
+      <if test="col43 != null">
+        col43,
+      </if>
+      <if test="col44 != null">
+        col44,
+      </if>
+      <if test="col45 != null">
+        col45,
+      </if>
+      <if test="col46 != null">
+        col46,
+      </if>
+      <if test="col47 != null">
+        col47,
+      </if>
+      <if test="col48 != null">
+        col48,
+      </if>
+      <if test="col49 != null">
+        col49,
+      </if>
+      <if test="col50 != null">
+        col50,
+      </if>
+      <if test="col51 != null">
+        col51,
+      </if>
+      <if test="col52 != null">
+        col52,
+      </if>
+      <if test="col53 != null">
+        col53,
+      </if>
+      <if test="col54 != null">
+        col54,
+      </if>
+      <if test="col55 != null">
+        col55,
+      </if>
+      <if test="col56 != null">
+        col56,
+      </if>
+      <if test="col57 != null">
+        col57,
+      </if>
+      <if test="col58 != null">
+        col58,
+      </if>
+      <if test="col59 != null">
+        col59,
+      </if>
+      <if test="col60 != null">
+        col60,
+      </if>
+      <if test="col61 != null">
+        col61,
+      </if>
+      <if test="col62 != null">
+        col62,
+      </if>
+      <if test="col63 != null">
+        col63,
+      </if>
+      <if test="col64 != null">
+        col64,
+      </if>
+      <if test="col65 != null">
+        col65,
+      </if>
+      <if test="col66 != null">
+        col66,
+      </if>
+      <if test="col67 != null">
+        col67,
+      </if>
+      <if test="col68 != null">
+        col68,
+      </if>
+      <if test="col69 != null">
+        col69,
+      </if>
+      <if test="col70 != null">
+        col70,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="createDate != null">
+        #{createDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createBy != null">
+        #{createBy,jdbcType=INTEGER},
+      </if>
+      <if test="modifyDate != null">
+        #{modifyDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifyBy != null">
+        #{modifyBy,jdbcType=INTEGER},
+      </if>
+      <if test="fileId != null">
+        #{fileId,jdbcType=INTEGER},
+      </if>
+      <if test="col1 != null">
+        #{col1,jdbcType=VARCHAR},
+      </if>
+      <if test="col2 != null">
+        #{col2,jdbcType=VARCHAR},
+      </if>
+      <if test="col3 != null">
+        #{col3,jdbcType=VARCHAR},
+      </if>
+      <if test="col4 != null">
+        #{col4,jdbcType=VARCHAR},
+      </if>
+      <if test="col5 != null">
+        #{col5,jdbcType=VARCHAR},
+      </if>
+      <if test="col6 != null">
+        #{col6,jdbcType=VARCHAR},
+      </if>
+      <if test="col7 != null">
+        #{col7,jdbcType=VARCHAR},
+      </if>
+      <if test="col8 != null">
+        #{col8,jdbcType=VARCHAR},
+      </if>
+      <if test="col9 != null">
+        #{col9,jdbcType=VARCHAR},
+      </if>
+      <if test="col10 != null">
+        #{col10,jdbcType=VARCHAR},
+      </if>
+      <if test="col11 != null">
+        #{col11,jdbcType=VARCHAR},
+      </if>
+      <if test="col12 != null">
+        #{col12,jdbcType=VARCHAR},
+      </if>
+      <if test="col13 != null">
+        #{col13,jdbcType=VARCHAR},
+      </if>
+      <if test="col14 != null">
+        #{col14,jdbcType=VARCHAR},
+      </if>
+      <if test="col15 != null">
+        #{col15,jdbcType=VARCHAR},
+      </if>
+      <if test="col16 != null">
+        #{col16,jdbcType=VARCHAR},
+      </if>
+      <if test="col17 != null">
+        #{col17,jdbcType=VARCHAR},
+      </if>
+      <if test="col18 != null">
+        #{col18,jdbcType=VARCHAR},
+      </if>
+      <if test="col19 != null">
+        #{col19,jdbcType=VARCHAR},
+      </if>
+      <if test="col20 != null">
+        #{col20,jdbcType=VARCHAR},
+      </if>
+      <if test="col21 != null">
+        #{col21,jdbcType=VARCHAR},
+      </if>
+      <if test="col22 != null">
+        #{col22,jdbcType=VARCHAR},
+      </if>
+      <if test="col23 != null">
+        #{col23,jdbcType=VARCHAR},
+      </if>
+      <if test="col24 != null">
+        #{col24,jdbcType=VARCHAR},
+      </if>
+      <if test="col25 != null">
+        #{col25,jdbcType=VARCHAR},
+      </if>
+      <if test="col26 != null">
+        #{col26,jdbcType=VARCHAR},
+      </if>
+      <if test="col27 != null">
+        #{col27,jdbcType=VARCHAR},
+      </if>
+      <if test="col28 != null">
+        #{col28,jdbcType=VARCHAR},
+      </if>
+      <if test="col29 != null">
+        #{col29,jdbcType=VARCHAR},
+      </if>
+      <if test="col30 != null">
+        #{col30,jdbcType=VARCHAR},
+      </if>
+      <if test="col31 != null">
+        #{col31,jdbcType=VARCHAR},
+      </if>
+      <if test="col32 != null">
+        #{col32,jdbcType=VARCHAR},
+      </if>
+      <if test="col33 != null">
+        #{col33,jdbcType=VARCHAR},
+      </if>
+      <if test="col34 != null">
+        #{col34,jdbcType=VARCHAR},
+      </if>
+      <if test="col35 != null">
+        #{col35,jdbcType=VARCHAR},
+      </if>
+      <if test="col36 != null">
+        #{col36,jdbcType=VARCHAR},
+      </if>
+      <if test="col37 != null">
+        #{col37,jdbcType=VARCHAR},
+      </if>
+      <if test="col38 != null">
+        #{col38,jdbcType=VARCHAR},
+      </if>
+      <if test="col39 != null">
+        #{col39,jdbcType=VARCHAR},
+      </if>
+      <if test="col40 != null">
+        #{col40,jdbcType=VARCHAR},
+      </if>
+      <if test="col41 != null">
+        #{col41,jdbcType=VARCHAR},
+      </if>
+      <if test="col42 != null">
+        #{col42,jdbcType=VARCHAR},
+      </if>
+      <if test="col43 != null">
+        #{col43,jdbcType=VARCHAR},
+      </if>
+      <if test="col44 != null">
+        #{col44,jdbcType=VARCHAR},
+      </if>
+      <if test="col45 != null">
+        #{col45,jdbcType=VARCHAR},
+      </if>
+      <if test="col46 != null">
+        #{col46,jdbcType=VARCHAR},
+      </if>
+      <if test="col47 != null">
+        #{col47,jdbcType=VARCHAR},
+      </if>
+      <if test="col48 != null">
+        #{col48,jdbcType=VARCHAR},
+      </if>
+      <if test="col49 != null">
+        #{col49,jdbcType=VARCHAR},
+      </if>
+      <if test="col50 != null">
+        #{col50,jdbcType=VARCHAR},
+      </if>
+      <if test="col51 != null">
+        #{col51,jdbcType=VARCHAR},
+      </if>
+      <if test="col52 != null">
+        #{col52,jdbcType=VARCHAR},
+      </if>
+      <if test="col53 != null">
+        #{col53,jdbcType=VARCHAR},
+      </if>
+      <if test="col54 != null">
+        #{col54,jdbcType=VARCHAR},
+      </if>
+      <if test="col55 != null">
+        #{col55,jdbcType=VARCHAR},
+      </if>
+      <if test="col56 != null">
+        #{col56,jdbcType=VARCHAR},
+      </if>
+      <if test="col57 != null">
+        #{col57,jdbcType=VARCHAR},
+      </if>
+      <if test="col58 != null">
+        #{col58,jdbcType=VARCHAR},
+      </if>
+      <if test="col59 != null">
+        #{col59,jdbcType=VARCHAR},
+      </if>
+      <if test="col60 != null">
+        #{col60,jdbcType=VARCHAR},
+      </if>
+      <if test="col61 != null">
+        #{col61,jdbcType=VARCHAR},
+      </if>
+      <if test="col62 != null">
+        #{col62,jdbcType=VARCHAR},
+      </if>
+      <if test="col63 != null">
+        #{col63,jdbcType=VARCHAR},
+      </if>
+      <if test="col64 != null">
+        #{col64,jdbcType=VARCHAR},
+      </if>
+      <if test="col65 != null">
+        #{col65,jdbcType=VARCHAR},
+      </if>
+      <if test="col66 != null">
+        #{col66,jdbcType=VARCHAR},
+      </if>
+      <if test="col67 != null">
+        #{col67,jdbcType=VARCHAR},
+      </if>
+      <if test="col68 != null">
+        #{col68,jdbcType=VARCHAR},
+      </if>
+      <if test="col69 != null">
+        #{col69,jdbcType=VARCHAR},
+      </if>
+      <if test="col70 != null">
+        #{col70,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="smart.industry.train.biz.entity.DesignExcelList">
+    update design_excel_list
+    <set>
+      <if test="createDate != null">
+        createDate = #{createDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createBy != null">
+        createBy = #{createBy,jdbcType=INTEGER},
+      </if>
+      <if test="modifyDate != null">
+        modifyDate = #{modifyDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifyBy != null">
+        modifyBy = #{modifyBy,jdbcType=INTEGER},
+      </if>
+      <if test="fileId != null">
+        fileId = #{fileId,jdbcType=INTEGER},
+      </if>
+      <if test="col1 != null">
+        col1 = #{col1,jdbcType=VARCHAR},
+      </if>
+      <if test="col2 != null">
+        col2 = #{col2,jdbcType=VARCHAR},
+      </if>
+      <if test="col3 != null">
+        col3 = #{col3,jdbcType=VARCHAR},
+      </if>
+      <if test="col4 != null">
+        col4 = #{col4,jdbcType=VARCHAR},
+      </if>
+      <if test="col5 != null">
+        col5 = #{col5,jdbcType=VARCHAR},
+      </if>
+      <if test="col6 != null">
+        col6 = #{col6,jdbcType=VARCHAR},
+      </if>
+      <if test="col7 != null">
+        col7 = #{col7,jdbcType=VARCHAR},
+      </if>
+      <if test="col8 != null">
+        col8 = #{col8,jdbcType=VARCHAR},
+      </if>
+      <if test="col9 != null">
+        col9 = #{col9,jdbcType=VARCHAR},
+      </if>
+      <if test="col10 != null">
+        col10 = #{col10,jdbcType=VARCHAR},
+      </if>
+      <if test="col11 != null">
+        col11 = #{col11,jdbcType=VARCHAR},
+      </if>
+      <if test="col12 != null">
+        col12 = #{col12,jdbcType=VARCHAR},
+      </if>
+      <if test="col13 != null">
+        col13 = #{col13,jdbcType=VARCHAR},
+      </if>
+      <if test="col14 != null">
+        col14 = #{col14,jdbcType=VARCHAR},
+      </if>
+      <if test="col15 != null">
+        col15 = #{col15,jdbcType=VARCHAR},
+      </if>
+      <if test="col16 != null">
+        col16 = #{col16,jdbcType=VARCHAR},
+      </if>
+      <if test="col17 != null">
+        col17 = #{col17,jdbcType=VARCHAR},
+      </if>
+      <if test="col18 != null">
+        col18 = #{col18,jdbcType=VARCHAR},
+      </if>
+      <if test="col19 != null">
+        col19 = #{col19,jdbcType=VARCHAR},
+      </if>
+      <if test="col20 != null">
+        col20 = #{col20,jdbcType=VARCHAR},
+      </if>
+      <if test="col21 != null">
+        col21 = #{col21,jdbcType=VARCHAR},
+      </if>
+      <if test="col22 != null">
+        col22 = #{col22,jdbcType=VARCHAR},
+      </if>
+      <if test="col23 != null">
+        col23 = #{col23,jdbcType=VARCHAR},
+      </if>
+      <if test="col24 != null">
+        col24 = #{col24,jdbcType=VARCHAR},
+      </if>
+      <if test="col25 != null">
+        col25 = #{col25,jdbcType=VARCHAR},
+      </if>
+      <if test="col26 != null">
+        col26 = #{col26,jdbcType=VARCHAR},
+      </if>
+      <if test="col27 != null">
+        col27 = #{col27,jdbcType=VARCHAR},
+      </if>
+      <if test="col28 != null">
+        col28 = #{col28,jdbcType=VARCHAR},
+      </if>
+      <if test="col29 != null">
+        col29 = #{col29,jdbcType=VARCHAR},
+      </if>
+      <if test="col30 != null">
+        col30 = #{col30,jdbcType=VARCHAR},
+      </if>
+      <if test="col31 != null">
+        col31 = #{col31,jdbcType=VARCHAR},
+      </if>
+      <if test="col32 != null">
+        col32 = #{col32,jdbcType=VARCHAR},
+      </if>
+      <if test="col33 != null">
+        col33 = #{col33,jdbcType=VARCHAR},
+      </if>
+      <if test="col34 != null">
+        col34 = #{col34,jdbcType=VARCHAR},
+      </if>
+      <if test="col35 != null">
+        col35 = #{col35,jdbcType=VARCHAR},
+      </if>
+      <if test="col36 != null">
+        col36 = #{col36,jdbcType=VARCHAR},
+      </if>
+      <if test="col37 != null">
+        col37 = #{col37,jdbcType=VARCHAR},
+      </if>
+      <if test="col38 != null">
+        col38 = #{col38,jdbcType=VARCHAR},
+      </if>
+      <if test="col39 != null">
+        col39 = #{col39,jdbcType=VARCHAR},
+      </if>
+      <if test="col40 != null">
+        col40 = #{col40,jdbcType=VARCHAR},
+      </if>
+      <if test="col41 != null">
+        col41 = #{col41,jdbcType=VARCHAR},
+      </if>
+      <if test="col42 != null">
+        col42 = #{col42,jdbcType=VARCHAR},
+      </if>
+      <if test="col43 != null">
+        col43 = #{col43,jdbcType=VARCHAR},
+      </if>
+      <if test="col44 != null">
+        col44 = #{col44,jdbcType=VARCHAR},
+      </if>
+      <if test="col45 != null">
+        col45 = #{col45,jdbcType=VARCHAR},
+      </if>
+      <if test="col46 != null">
+        col46 = #{col46,jdbcType=VARCHAR},
+      </if>
+      <if test="col47 != null">
+        col47 = #{col47,jdbcType=VARCHAR},
+      </if>
+      <if test="col48 != null">
+        col48 = #{col48,jdbcType=VARCHAR},
+      </if>
+      <if test="col49 != null">
+        col49 = #{col49,jdbcType=VARCHAR},
+      </if>
+      <if test="col50 != null">
+        col50 = #{col50,jdbcType=VARCHAR},
+      </if>
+      <if test="col51 != null">
+        col51 = #{col51,jdbcType=VARCHAR},
+      </if>
+      <if test="col52 != null">
+        col52 = #{col52,jdbcType=VARCHAR},
+      </if>
+      <if test="col53 != null">
+        col53 = #{col53,jdbcType=VARCHAR},
+      </if>
+      <if test="col54 != null">
+        col54 = #{col54,jdbcType=VARCHAR},
+      </if>
+      <if test="col55 != null">
+        col55 = #{col55,jdbcType=VARCHAR},
+      </if>
+      <if test="col56 != null">
+        col56 = #{col56,jdbcType=VARCHAR},
+      </if>
+      <if test="col57 != null">
+        col57 = #{col57,jdbcType=VARCHAR},
+      </if>
+      <if test="col58 != null">
+        col58 = #{col58,jdbcType=VARCHAR},
+      </if>
+      <if test="col59 != null">
+        col59 = #{col59,jdbcType=VARCHAR},
+      </if>
+      <if test="col60 != null">
+        col60 = #{col60,jdbcType=VARCHAR},
+      </if>
+      <if test="col61 != null">
+        col61 = #{col61,jdbcType=VARCHAR},
+      </if>
+      <if test="col62 != null">
+        col62 = #{col62,jdbcType=VARCHAR},
+      </if>
+      <if test="col63 != null">
+        col63 = #{col63,jdbcType=VARCHAR},
+      </if>
+      <if test="col64 != null">
+        col64 = #{col64,jdbcType=VARCHAR},
+      </if>
+      <if test="col65 != null">
+        col65 = #{col65,jdbcType=VARCHAR},
+      </if>
+      <if test="col66 != null">
+        col66 = #{col66,jdbcType=VARCHAR},
+      </if>
+      <if test="col67 != null">
+        col67 = #{col67,jdbcType=VARCHAR},
+      </if>
+      <if test="col68 != null">
+        col68 = #{col68,jdbcType=VARCHAR},
+      </if>
+      <if test="col69 != null">
+        col69 = #{col69,jdbcType=VARCHAR},
+      </if>
+      <if test="col70 != null">
+        col70 = #{col70,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="smart.industry.train.biz.entity.DesignExcelList">
+    update design_excel_list
+    set createDate = #{createDate,jdbcType=TIMESTAMP},
+      createBy = #{createBy,jdbcType=INTEGER},
+      modifyDate = #{modifyDate,jdbcType=TIMESTAMP},
+      modifyBy = #{modifyBy,jdbcType=INTEGER},
+      fileId = #{fileId,jdbcType=INTEGER},
+      col1 = #{col1,jdbcType=VARCHAR},
+      col2 = #{col2,jdbcType=VARCHAR},
+      col3 = #{col3,jdbcType=VARCHAR},
+      col4 = #{col4,jdbcType=VARCHAR},
+      col5 = #{col5,jdbcType=VARCHAR},
+      col6 = #{col6,jdbcType=VARCHAR},
+      col7 = #{col7,jdbcType=VARCHAR},
+      col8 = #{col8,jdbcType=VARCHAR},
+      col9 = #{col9,jdbcType=VARCHAR},
+      col10 = #{col10,jdbcType=VARCHAR},
+      col11 = #{col11,jdbcType=VARCHAR},
+      col12 = #{col12,jdbcType=VARCHAR},
+      col13 = #{col13,jdbcType=VARCHAR},
+      col14 = #{col14,jdbcType=VARCHAR},
+      col15 = #{col15,jdbcType=VARCHAR},
+      col16 = #{col16,jdbcType=VARCHAR},
+      col17 = #{col17,jdbcType=VARCHAR},
+      col18 = #{col18,jdbcType=VARCHAR},
+      col19 = #{col19,jdbcType=VARCHAR},
+      col20 = #{col20,jdbcType=VARCHAR},
+      col21 = #{col21,jdbcType=VARCHAR},
+      col22 = #{col22,jdbcType=VARCHAR},
+      col23 = #{col23,jdbcType=VARCHAR},
+      col24 = #{col24,jdbcType=VARCHAR},
+      col25 = #{col25,jdbcType=VARCHAR},
+      col26 = #{col26,jdbcType=VARCHAR},
+      col27 = #{col27,jdbcType=VARCHAR},
+      col28 = #{col28,jdbcType=VARCHAR},
+      col29 = #{col29,jdbcType=VARCHAR},
+      col30 = #{col30,jdbcType=VARCHAR},
+      col31 = #{col31,jdbcType=VARCHAR},
+      col32 = #{col32,jdbcType=VARCHAR},
+      col33 = #{col33,jdbcType=VARCHAR},
+      col34 = #{col34,jdbcType=VARCHAR},
+      col35 = #{col35,jdbcType=VARCHAR},
+      col36 = #{col36,jdbcType=VARCHAR},
+      col37 = #{col37,jdbcType=VARCHAR},
+      col38 = #{col38,jdbcType=VARCHAR},
+      col39 = #{col39,jdbcType=VARCHAR},
+      col40 = #{col40,jdbcType=VARCHAR},
+      col41 = #{col41,jdbcType=VARCHAR},
+      col42 = #{col42,jdbcType=VARCHAR},
+      col43 = #{col43,jdbcType=VARCHAR},
+      col44 = #{col44,jdbcType=VARCHAR},
+      col45 = #{col45,jdbcType=VARCHAR},
+      col46 = #{col46,jdbcType=VARCHAR},
+      col47 = #{col47,jdbcType=VARCHAR},
+      col48 = #{col48,jdbcType=VARCHAR},
+      col49 = #{col49,jdbcType=VARCHAR},
+      col50 = #{col50,jdbcType=VARCHAR},
+      col51 = #{col51,jdbcType=VARCHAR},
+      col52 = #{col52,jdbcType=VARCHAR},
+      col53 = #{col53,jdbcType=VARCHAR},
+      col54 = #{col54,jdbcType=VARCHAR},
+      col55 = #{col55,jdbcType=VARCHAR},
+      col56 = #{col56,jdbcType=VARCHAR},
+      col57 = #{col57,jdbcType=VARCHAR},
+      col58 = #{col58,jdbcType=VARCHAR},
+      col59 = #{col59,jdbcType=VARCHAR},
+      col60 = #{col60,jdbcType=VARCHAR},
+      col61 = #{col61,jdbcType=VARCHAR},
+      col62 = #{col62,jdbcType=VARCHAR},
+      col63 = #{col63,jdbcType=VARCHAR},
+      col64 = #{col64,jdbcType=VARCHAR},
+      col65 = #{col65,jdbcType=VARCHAR},
+      col66 = #{col66,jdbcType=VARCHAR},
+      col67 = #{col67,jdbcType=VARCHAR},
+      col68 = #{col68,jdbcType=VARCHAR},
+      col69 = #{col69,jdbcType=VARCHAR},
+      col70 = #{col70,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

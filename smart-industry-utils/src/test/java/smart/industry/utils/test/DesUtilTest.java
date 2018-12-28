@@ -1,5 +1,6 @@
 package smart.industry.utils.test;
 
+import org.junit.Assert;
 import org.junit.jupiter.api.Test;
 import smart.industry.utils.DesUtil;
 
@@ -20,5 +21,17 @@ public class DesUtilTest {
         } catch (Exception e1) {
             e1.printStackTrace();
         }
+    }
+
+    @Test
+    public void testString(){
+        String str = "000151|CD|DOR|1|||??????|CD";
+        int i = str.indexOf("|");
+        int j = str.indexOf("|||");
+        String fileName = str.substring(0,i);
+        String path = str.substring(0,j);
+        System.out.println(fileName);
+        System.out.println(path);
+        Assert.assertTrue(true);
     }
 }

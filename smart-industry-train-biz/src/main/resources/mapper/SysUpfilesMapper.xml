@@ -12,9 +12,10 @@
     <result column="relativePath" jdbcType="VARCHAR" property="relativePath"/>
     <result column="suffix" jdbcType="VARCHAR" property="suffix" />
     <result column="fileSize" jdbcType="BIGINT" property="fileSize" />
+    <result column="projPath" jdbcType="VARCHAR" property="projPath" />
   </resultMap>
   <sql id="Base_Column_List">
-    id, createDate, createBy, modifyDate, modifyBy, fileName, filePath, relativePath, suffix, fileSize
+    id, createDate, createBy, modifyDate, modifyBy, fileName, filePath, relativePath, suffix, fileSize, projPath
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
@@ -38,10 +39,11 @@
   <insert id="insert" parameterType="smart.industry.train.biz.entity.SysUpfiles">
     insert into sys_upfiles (id, createDate, createBy, 
       modifyDate, modifyBy, fileName, 
-      filePath,relativePath, suffix, fileSize)
+      filePath,relativePath, suffix, fileSize,projPath)
     values (#{id,jdbcType=INTEGER}, #{createDate,jdbcType=TIMESTAMP}, #{createBy,jdbcType=INTEGER},
       #{modifyDate,jdbcType=TIMESTAMP}, #{modifyBy,jdbcType=INTEGER}, #{fileName,jdbcType=VARCHAR},
-      #{filePath,jdbcType=VARCHAR},#{relativePath,jdbcType=VARCHAR}, #{suffix,jdbcType=VARCHAR}, #{fileSize,jdbcType=BIGINT})
+      #{filePath,jdbcType=VARCHAR},#{relativePath,jdbcType=VARCHAR}, #{suffix,jdbcType=VARCHAR},
+      #{fileSize,jdbcType=BIGINT}, #{projPath,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="smart.industry.train.biz.entity.SysUpfiles" useGeneratedKeys="true" keyProperty="id">
     insert into sys_upfiles
@@ -76,6 +78,9 @@
       <if test="fileSize != null">
         fileSize,
       </if>
+      <if test="projPath != null">
+        projPath,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -107,6 +112,9 @@
       </if>
       <if test="fileSize != null">
         #{fileSize,jdbcType=BIGINT},
+      </if>
+      <if test="projPath != null">
+        #{projPath,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
@@ -140,6 +148,9 @@
       <if test="fileSize != null">
         fileSize = #{fileSize,jdbcType=BIGINT},
       </if>
+      <if test="projPath != null">
+        projPath = #{projPath,jdbcType=VARCHAR},
+      </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
@@ -153,7 +164,8 @@
       filePath = #{filePath,jdbcType=VARCHAR},
       relativePath = #{relativePath,jdbcType=VARCHAR},
       suffix = #{suffix,jdbcType=VARCHAR},
-      fileSize = #{fileSize,jdbcType=BIGINT}
+      fileSize = #{fileSize,jdbcType=BIGINT},
+      projPath = #{projPath,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>

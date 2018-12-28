@@ -165,6 +165,7 @@ public class DesignSolutionBiz extends BaseBiz<DesignSolutionMapper,DesignSoluti
                     path = file.getRelativePath().replace(file.getSuffix(),".svg");
                 }
                 obj.put("filePath",path);
+                obj.put("projPath",file.getProjPath());
                 String fileName = file.getFileName().replace(file.getSuffix(),"");
                 obj.put("name",fileName);
                 //这个位置需要做性能优化，一次查询所有的相关数据

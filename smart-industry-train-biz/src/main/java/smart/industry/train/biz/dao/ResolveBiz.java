@@ -11,6 +11,7 @@ import org.springframework.util.CollectionUtils;
 import smart.industry.train.biz.entity.*;
 import smart.industry.train.biz.enums.TaskStateEnum;
 import smart.industry.train.biz.mypoi.DesignXlsBiz;
+import smart.industry.train.biz.mypoi.ReferBiz;
 
 import java.io.File;
 import java.util.Iterator;
@@ -62,6 +63,9 @@ public class ResolveBiz {
             }else if(suffix.equals(".xls") || suffix.equals(".xlsx")){
                 //解析excel清单
                 resolveExcel();
+            }else if(suffix.equals(".txt")){
+                //解析导出文件对应的elcad方案的路径
+                resolveRefer();
             }
             succ = true;
         } catch (Exception e) {
@@ -77,6 +81,15 @@ public class ResolveBiz {
                 sysTasksBiz.update(sysTask);
             }
         }
+    }
+
+    @Autowired
+    private ReferBiz referBiz;
+    /**
+     * 解析文件dxf在工程中的对应关系
+     */
+    private void resolveRefer() throws Exception {
+        referBiz.resolve(detail,file);
     }
 
     /**

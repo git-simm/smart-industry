@@ -20,6 +20,16 @@ public class SysUpfiles extends BaseEntity {
 
     private Long fileSize;
 
+    public String getProjPath() {
+        return projPath;
+    }
+
+    public void setProjPath(String projPath) {
+        this.projPath = projPath;
+    }
+
+    private String projPath;
+
     public Date getCreateDate() {
         return createDate;
     }
