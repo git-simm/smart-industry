@@ -33,7 +33,7 @@ Zq.Utility.RegisterNameSpace("solution.tree");
         if(linkMap==null) return;
         setTimeout(function (args) {
             //console.log("开始计算链接")
-            ns.setLink(linkMap);
+            ns.setLink(node,linkMap);
         }, 1000);
     }
 
@@ -42,7 +42,7 @@ Zq.Utility.RegisterNameSpace("solution.tree");
      * @param linkMap
      * @constructor
      */
-    ns.setLink = function(linkMap){
+    ns.setLink = function(node,linkMap){
         var svgDoc = document.getElementById("line_svg").getSVGDocument();
         var map = Snap(svgDoc.getElementsByTagName("svg")[0]);
         for(var key in linkMap){
@@ -52,17 +52,23 @@ Zq.Utility.RegisterNameSpace("solution.tree");
                 var box = element.getBBox();
                 element.append(createLink(box,map));
                 element.attr("style",'stroke:#f0f;').click(function(){
-                    selectLinkNode(linkMap[key]);
+                    selectLinkNode(node,linkMap[key]);
                 });
             });
         }
     }
-    function selectLinkNode(fileName){
+    function selectLinkNode(node,fileName){
         //跳转到具体的node节点
         console.log("准备跳转");
-        var node = zTree.getNodeByParam("name", fileName, null);
-        treeClick(null,null,node);
-        zTree.selectNode(node);
+        var path = node.projPath.replace(node.name,"");
+        var index = path.lastIndexOf("|");
+        path = path.substr(0,index+1)+fileName;
+        var linkNode = zTree.getNodesByFilter(function(item){
+            var projPath = item.name + path;
+            return (item.projPath == projPath);
+        }, true); // 仅查找一个节点
+        treeClick(null,null,linkNode);
+        zTree.selectNode(linkNode);
     }
     /**
      * 创建一个链接
