@@ -57,14 +57,14 @@ Zq.Utility.RegisterNameSpace("solution.tree");
             });
         }
     }
-    function selectLinkNode(node,fileName){
+    function selectLinkNode(node,name){
         //跳转到具体的node节点
         console.log("准备跳转");
-        var path = node.projPath.replace(node.name,"");
+        var path = node.projPath.replace(node.fileName,"");
         var index = path.lastIndexOf("|");
-        path = path.substr(0,index+1)+fileName;
+        path = path.substr(0,index+1)+name;
         var linkNode = zTree.getNodesByFilter(function(item){
-            var projPath = item.name + path;
+            var projPath = item.fileName + path;
             return (item.projPath == projPath);
         }, true); // 仅查找一个节点
         treeClick(null,null,linkNode);

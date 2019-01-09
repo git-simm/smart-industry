@@ -16,7 +16,9 @@ import smart.industry.train.biz.mapper.DesignSolutionMapper;
 import smart.industry.utils.StringUtils;
 import smart.industry.utils.exceptions.AjaxException;
 
+import java.io.File;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -164,14 +166,37 @@ public class DesignSolutionBiz extends BaseBiz<DesignSolutionMapper,DesignSoluti
                 if(StringUtils.isNotBlank(path) && file.getSuffix().equals(".dxf")){
                     path = file.getRelativePath().replace(file.getSuffix(),".svg");
                 }
+                String projPath = file.getProjPath(),fileName = file.getFileName().replace(file.getSuffix(),"");
                 obj.put("filePath",path);
-                obj.put("projPath",file.getProjPath());
-                String fileName = file.getFileName().replace(file.getSuffix(),"");
+                obj.put("fileName",fileName);
+                obj.put("projPath",projPath);
+                //String fileName = file.getFileName().replace(file.getSuffix(),"");
+                if(StringUtils.isNotBlank(projPath)){
+                    fileName = projPath.substring(projPath.indexOf("|")+1);
+                    obj.put("folderPath",fileName.substring(0,fileName.lastIndexOf("|")));
+                    obj.put("relName" ,fileName.substring(fileName.lastIndexOf("|")+1));
+                }else{
+                    obj.put("folderPath",fileName);
+                    obj.put("relName","0");
+                }
                 obj.put("name",fileName);
                 //这个位置需要做性能优化，一次查询所有的相关数据
                 obj.put("linkMap",designDetailBlockBiz.getLinkMap(a.getId()));
             }
             result.add(obj);
+        });
+        //对结果进行排序
+        result.sort((o1,o2)->{
+            if(StringUtils.isBlank(o1.getString("folderPath"))) return -1;
+            if(StringUtils.isBlank(o2.getString("folderPath"))) return 1;
+            if(o1.getString("folderPath").equals(o2.getString("folderPath"))){
+                if(o1.getString("relName").length() == (o2.getString("relName").length())){
+                    return o1.getString("relName").compareTo(o2.getString("relName"));
+                }else{
+                    return o1.getString("relName").length() - o2.getString("relName").length();
+                }
+            }
+            return o1.getString("folderPath").compareTo(o2.getString("folderPath"));
         });
         return result;
     }
