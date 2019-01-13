@@ -147,7 +147,11 @@
                          data: obj,
                          success: function (id) {
                              //文件上传
-                             ns.upload(id);
+                             ns.upload(id,function () {
+                                 Zq.Utility.Msg("保存成功",function(){
+                                     SmartMonitor.Common.Close(true);
+                                 }
+                             )});
                          }
                      });
                  } else {

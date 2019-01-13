@@ -1,87 +1,383 @@
-CREATE DATABASE  IF NOT EXISTS `smart-industry` /*!40100 DEFAULT CHARACTER SET utf8 */;
-USE `smart-industry`;
--- MySQL dump 10.13  Distrib 5.7.12, for Win64 (x86_64)
---
--- Host: localhost    Database: smart-industry
--- ------------------------------------------------------
--- Server version	5.7.15-log
+create table design_block_attr
+(
+  id         int auto_increment
+    primary key,
+  createDate datetime     null
+  comment '创建时间',
+  createBy   int          null
+  comment '创建人',
+  modifyDate datetime     null
+  comment '修改时间',
+  modifyBy   int          null
+  comment '修改人',
+  detailId   int          null
+  comment '对应的设计方案明细ID',
+  attrId     int          null
+  comment '对应的属性信息ID',
+  blockId    int          null
+  comment 'block主键',
+  value      varchar(500) null
+  comment '属性值',
+  attrName   varchar(500) null
+  comment '属性名',
+  constraint id_UNIQUE
+  unique (id)
+)
+  comment '方案block对应的属性信息';
 
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
-/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
-/*!40103 SET TIME_ZONE='+00:00' */;
-/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
-/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
-/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
-/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+create table design_class
+(
+  id         int auto_increment
+  comment '主键'
+    primary key,
+  createDate datetime     null
+  comment '创建时间',
+  createBy   int          null
+  comment '创建人',
+  modifyDate datetime     null
+  comment '修改时间',
+  modifyBy   int          null
+  comment '修改人',
+  name       varchar(200) null
+  comment '分类名',
+  pId        int          null
+  comment '父级id',
+  sort       int          null
+  comment '排序码(系统自动创建)',
+  constraint id_UNIQUE
+  unique (id)
+)
+  comment '方案分类';
 
---
--- Table structure for table `design_class`
---
+create table design_detail_block
+(
+  id         int auto_increment
+    primary key,
+  createDate datetime     null
+  comment '创建时间',
+  createBy   int          null
+  comment '创建人',
+  modifyDate datetime     null
+  comment '修改时间',
+  modifyBy   int          null
+  comment '修改人',
+  detailId   int          null
+  comment '对应的设计方案明细ID',
+  name       varchar(500) null
+  comment '方案明细对应的block信息',
+  constraint id_UNIQUE
+  unique (id)
+)
+  comment '方案明细block信息';
 
-DROP TABLE IF EXISTS `design_class`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `design_class` (
-  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '主键',
-  `createdate` date DEFAULT NULL COMMENT '创建时间',
-  `createby` int(11) DEFAULT NULL COMMENT '创建人',
-  `modifydate` date DEFAULT NULL COMMENT '修改时间',
-  `modifyby` int(11) DEFAULT NULL COMMENT '修改人',
-  `name` varchar(200) DEFAULT NULL COMMENT '分类名',
-  `pId` int(11) DEFAULT NULL COMMENT '父级id',
-  `sort` int(11) DEFAULT NULL COMMENT '排序码(系统自动创建)',
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `id_UNIQUE` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8 COMMENT='方案分类';
-/*!40101 SET character_set_client = @saved_cs_client */;
+create table design_excel_attr
+(
+  id         int auto_increment
+    primary key,
+  createDate datetime     null
+  comment '创建时间',
+  createBy   int          null
+  comment '创建人',
+  modifyDate datetime     null
+  comment '修改时间',
+  modifyBy   int          null
+  comment '修改人',
+  attrName   varchar(500) null
+  comment '属性名称',
+  colName    varchar(100) null
+  comment '系统列名',
+  fileId     int          null
+  comment '清单文件ID',
+  constraint id_UNIQUE
+  unique (id)
+)
+  comment '设计清单属性定义';
 
---
--- Dumping data for table `design_class`
---
+create table design_excel_list
+(
+  id         int auto_increment
+    primary key,
+  createDate datetime     null
+  comment '创建时间',
+  createBy   int          null
+  comment '创建人',
+  modifyDate datetime     null
+  comment '修改时间',
+  modifyBy   int          null
+  comment '修改人',
+  fileId     int          null
+  comment '文件ID',
+  col1       varchar(200) null,
+  col2       varchar(200) null,
+  col3       varchar(200) null,
+  col4       varchar(200) null,
+  col5       varchar(200) null,
+  col6       varchar(200) null,
+  col7       varchar(200) null,
+  col8       varchar(200) null,
+  col9       varchar(200) null,
+  col10      varchar(200) null,
+  col11      varchar(200) null,
+  col12      varchar(200) null,
+  col13      varchar(200) null,
+  col14      varchar(200) null,
+  col15      varchar(200) null,
+  col16      varchar(200) null,
+  col17      varchar(200) null,
+  col18      varchar(200) null,
+  col19      varchar(200) null,
+  col20      varchar(200) null,
+  col21      varchar(200) null,
+  col22      varchar(200) null,
+  col23      varchar(200) null,
+  col24      varchar(200) null,
+  col25      varchar(200) null,
+  col26      varchar(200) null,
+  col27      varchar(200) null,
+  col28      varchar(200) null,
+  col29      varchar(200) null,
+  col30      varchar(200) null,
+  col31      varchar(200) null,
+  col32      varchar(200) null,
+  col33      varchar(200) null,
+  col34      varchar(200) null,
+  col35      varchar(200) null,
+  col36      varchar(200) null,
+  col37      varchar(200) null,
+  col38      varchar(200) null,
+  col39      varchar(200) null,
+  col40      varchar(200) null,
+  col41      varchar(200) null,
+  col42      varchar(200) null,
+  col43      varchar(200) null,
+  col44      varchar(200) null,
+  col45      varchar(200) null,
+  col46      varchar(200) null,
+  col47      varchar(200) null,
+  col48      varchar(200) null,
+  col49      varchar(200) null,
+  col50      varchar(200) null,
+  col51      varchar(200) null,
+  col52      varchar(200) null,
+  col53      varchar(200) null,
+  col54      varchar(200) null,
+  col55      varchar(200) null,
+  col56      varchar(200) null,
+  col57      varchar(200) null,
+  col58      varchar(200) null,
+  col59      varchar(200) null,
+  col60      varchar(200) null,
+  col61      varchar(200) null,
+  col62      varchar(200) null,
+  col63      varchar(200) null,
+  col64      varchar(200) null,
+  col65      varchar(200) null,
+  col66      varchar(200) null,
+  col67      varchar(200) null,
+  col68      varchar(200) null,
+  col69      varchar(200) null,
+  col70      varchar(200) null,
+  constraint id_UNIQUE
+  unique (id)
+)
+  comment '设计清单';
 
-LOCK TABLES `design_class` WRITE;
-/*!40000 ALTER TABLE `design_class` DISABLE KEYS */;
-INSERT INTO `design_class` VALUES (1,'2018-08-04',1,NULL,NULL,'解决方案中心',NULL,0),(2,'2018-08-04',1,NULL,NULL,'设计一部',1,0),(3,'2018-08-04',1,NULL,NULL,'设计二部',1,1),(4,'2018-08-04',1,NULL,NULL,'车灯设计',2,2),(5,'2018-08-04',1,NULL,NULL,'底盘设计',3,2),(6,'2018-08-04',1,NULL,NULL,'升降弓设计',3,3),(7,'2018-08-04',1,NULL,NULL,'尾灯设计',3,1),(8,'2018-08-04',1,'2018-08-04',1,'车厢设计',2,1),(9,'2018-08-04',1,'2018-08-04',1,'一部底盘',2,0),(10,'2018-08-04',1,NULL,NULL,'我的分类',3,0);
-/*!40000 ALTER TABLE `design_class` ENABLE KEYS */;
-UNLOCK TABLES;
+create table design_solution
+(
+  id            int auto_increment
+  comment '主键'
+    primary key,
+  createDate    datetime      null
+  comment '创建时间',
+  createBy      int           null
+  comment '创建人',
+  modifyDate    datetime      null
+  comment '修改时间',
+  modifyBy      int           null
+  comment '修改人',
+  name          varchar(200)  null
+  comment '方案名',
+  classId       int           null
+  comment '方案所属分类',
+  billCount     int           null
+  comment '清单数',
+  standardCount int           null
+  comment '基准文件数',
+  designCount   int           null
+  comment '设计文件数',
+  remark        varchar(1000) null
+  comment '方案描述'
+)
+  comment '设计方案';
 
---
--- Table structure for table `user`
---
+create table design_solution_list
+(
+  id         int auto_increment
+  comment '主键'
+    primary key,
+  createDate datetime      null
+  comment '创建时间',
+  createBy   int           null
+  comment '创建人',
+  modifyDate date          null
+  comment '修改时间',
+  modifyBy   int           null
+  comment '修改人',
+  name       varchar(200)  null
+  comment '方案名',
+  solutionId int           null
+  comment '设计方案ID',
+  fileId     int           null
+  comment '对应的文件列表ID',
+  type       int           not null
+  comment '文件类型',
+  remark     varchar(1000) null
+  comment '方案描述'
+)
+  comment '设计方案明细列表';
 
-DROP TABLE IF EXISTS `user`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `user` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(50) DEFAULT NULL,
-  `psw` varchar(50) DEFAULT NULL,
-  `sex` bit(2) DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `id_UNIQUE` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+create table param_group
+(
+  id         int auto_increment
+    primary key,
+  createDate datetime         null
+  comment '创建时间',
+  createBy   int              null
+  comment '创建人',
+  modifyDate datetime         null
+  comment '修改时间',
+  modifyBy   int              null
+  comment '修改人',
+  name       varchar(200)     null
+  comment '分组名',
+  paramType  varchar(50)      null
+  comment '类型',
+  defaultVal varchar(200)     null
+  comment '默认值',
+  remark     varchar(500)     null
+  comment '说明',
+  valid      bit default b'1' null
+  comment '是否有效',
+  constraint param_group_id_uindex
+  unique (id)
+)
+  comment '参数分组';
 
---
--- Dumping data for table `user`
---
+create table param_options
+(
+  id         int auto_increment
+  comment '主键'
+    primary key,
+  createDate datetime     null
+  comment '创建时间',
+  createBy   int          null
+  comment '创建人',
+  modifyDate datetime     null
+  comment '修改时间',
+  modifyBy   int          null
+  comment '修改人',
+  groupid    int          null
+  comment '所属分组',
+  value      varchar(200) null
+  comment '值',
+  showVal    varchar(200) null
+  comment '显示值',
+  sort       int          null
+  comment '排序码',
+  constraint param_options_id_uindex
+  unique (id)
+)
+  comment '参数项';
 
-LOCK TABLES `user` WRITE;
-/*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES (1,'张三','123',''),(2,'李四','123','');
-/*!40000 ALTER TABLE `user` ENABLE KEYS */;
-UNLOCK TABLES;
-/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+create table sys_dxfAttr
+(
+  id         int auto_increment
+    primary key,
+  createDate datetime     null
+  comment '创建时间',
+  createBy   int          null
+  comment '创建人',
+  modifyDate datetime     null
+  comment '修改时间',
+  modifyBy   int          null
+  comment '修改人',
+  name       varchar(500) null
+  comment '属性名',
+  constraint id_UNIQUE
+  unique (id)
+)
+  comment 'dxf属性列表';
 
-/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
-/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
-/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+create table sys_tasks
+(
+  id         int auto_increment
+    primary key,
+  createDate datetime null
+  comment '创建时间',
+  createBy   int      null
+  comment '创建人',
+  modifyDate datetime null
+  comment '修改时间',
+  modifyBy   int      null
+  comment '修改人',
+  detailId   int      null
+  comment '方案子项ID',
+  state      int      null
+  comment '转换状态(0:待转换;1:转换中;2:转换完成)',
+  retries    int      null
+  comment '重试次数',
+  constraint id_UNIQUE
+  unique (id)
+)
+  comment '系统自动转换任务';
 
--- Dump completed on 2018-08-05 13:59:40
+create table sys_upfiles
+(
+  id           int auto_increment
+  comment '主键'
+    primary key,
+  createDate   datetime     null
+  comment '创建时间',
+  createBy     int          null
+  comment '创建人',
+  modifyDate   datetime     null
+  comment '修改时间',
+  modifyBy     int          null
+  comment '修改人',
+  suffix       varchar(50)  null
+  comment '文件后缀',
+  filePath     varchar(200) null
+  comment '文件路径',
+  relativePath varchar(200) null
+  comment '相对路径',
+  fileName     varchar(200) null
+  comment '文件名',
+  fileSize     bigint       null
+  comment '文件尺寸',
+  projPath     varchar(200) null
+  comment '项目路径'
+)
+  comment '系统上载文件列表';
+
+create table user
+(
+  id         int auto_increment
+    primary key,
+  createDate datetime      null
+  comment '创建时间',
+  createBy   int           null
+  comment '创建人',
+  modifyDate datetime      null
+  comment '修改时间',
+  modifyBy   int           null
+  comment '修改人',
+  name       varchar(50)   null,
+  code       varchar(50)   null,
+  psw        varchar(50)   null,
+  sex        bit           null,
+  remark     varchar(2000) null,
+  department varchar(200)  null,
+  constraint id_UNIQUE
+  unique (id)
+);
+

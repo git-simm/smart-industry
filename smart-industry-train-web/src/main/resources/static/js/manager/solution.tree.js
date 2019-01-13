@@ -24,7 +24,7 @@ Zq.Utility.RegisterNameSpace("solution.tree");
     function treeClick(srcEvent, treeId, node, clickFlag){
         //替换svg中的元素
         if(node==null || node.filePath == null) return;
-        var path = node.filePath;
+        var path = Zq.Utility.GetPath(node.filePath);
         console.log(path);
         if(path.indexOf(".svg")>-1){
             $("#line_svg").attr("src" ,path);
