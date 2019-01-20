@@ -30,19 +30,19 @@
                     <li class="active">
                         <a data-toggle="tab" href="#home3" aria-expanded="true">
                             <i class="pink ace-icon fa fa-tachometer bigger-110"></i>
-                            基准
+                            原理图
                         </a>
                     </li>
                     <li class="">
                         <a data-toggle="tab" href="#profile3" aria-expanded="false">
                             <i class="blue ace-icon fa fa-user bigger-110"></i>
-                            设计
+                            布线图
                         </a>
                     </li>
                     <li class="">
                         <a data-toggle="tab" href="#dropdown13" aria-expanded="false">
                             <i class="ace-icon fa fa-rocket"></i>
-                            清单
+                            布线清单
                         </a>
                     </li>
                 </ul>

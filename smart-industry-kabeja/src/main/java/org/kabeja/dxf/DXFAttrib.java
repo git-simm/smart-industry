@@ -23,6 +23,17 @@ public class DXFAttrib extends DXFText {
     public DXFAttrib() {
     }
 
+    @Override
+    public String getCode() {
+        return code;
+    }
+
+    @Override
+    public void setCode(String code) {
+        this.code = code;
+    }
+
+    private String code;
     /* (non-Javadoc)
      * @see de.miethxml.kabeja.dxf.DXFEntity#getType()
      */

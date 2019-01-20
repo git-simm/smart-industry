@@ -36,8 +36,6 @@ public class FileController {
     private SysUpfilesBiz sysUpfilesBiz;
     @Autowired
     private DesignSolutionListBiz designSolutionListBiz;
-    @Autowired
-    private SysTasksBiz sysTasksBiz;
 
     @GetMapping("/uploader")
     public String uploader(){
@@ -79,8 +77,6 @@ public class FileController {
                 //保存文件到数据库
                 Integer fileId = saveFile(file, fileSource,relativePath);
                 Integer detailId = saveDesignList(file, solutionId, fileType, fileId);
-                //保存系统同步任务
-                saveSysTask(detailId);
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
                 return "上传失败," + e.getMessage();
@@ -112,19 +108,6 @@ public class FileController {
         item.setName(file.getOriginalFilename());
         designSolutionListBiz.add(item);
         return item.getId();
-    }
-
-    /**
-     * 保存系统任务
-     *      *
-     * @param  @param solutionId
-     * @param detailId
-     */
-    private void saveSysTask(Integer detailId) {
-        SysTasks item = new SysTasks();
-        item.setDetailId(detailId);
-        item.setState(TaskStateEnum.Ready.getValue());
-        sysTasksBiz.add(item);
     }
 
     /**

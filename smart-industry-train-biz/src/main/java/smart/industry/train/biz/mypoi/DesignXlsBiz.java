@@ -50,7 +50,7 @@ public class DesignXlsBiz {
      * @throws Exception
      */
     @Transactional(rollbackFor = Exception.class)
-    public void resolve(final SysUpfiles file) throws Exception {
+    public boolean resolve(final SysUpfiles file) throws Exception {
         String filePath = file.getFilePath();
         Integer fileId = file.getId();
         HashMap<String, Integer> colMap = new HashMap<>();
@@ -74,6 +74,7 @@ public class DesignXlsBiz {
             list.add(item);
         }
         designExcelListBiz.batchAdd(list);
+        return true;
         //return InvokeResult.success(true);
     }
 

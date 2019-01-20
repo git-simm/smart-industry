@@ -15,7 +15,6 @@
  */
 package org.kabeja.tools;
 
-import org.kabeja.batik.tools.ImageBase64Encoder;
 import org.kabeja.parser.Parser;
 import org.kabeja.parser.SAXParserBuilder;
 import org.kabeja.processing.PostProcessor;

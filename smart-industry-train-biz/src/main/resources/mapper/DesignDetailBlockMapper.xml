@@ -9,9 +9,10 @@
     <result column="modifyBy" jdbcType="INTEGER" property="modifyBy" />
     <result column="detailId" jdbcType="INTEGER" property="detailId" />
     <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="symbolName" jdbcType="VARCHAR" property="symbolName"/>
   </resultMap>
   <sql id="Base_Column_List">
-    id, createDate, createBy, modifyDate, modifyBy, detailId, `name`
+    id, createDate, createBy, modifyDate, modifyBy, detailId, `name`,symbolName
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
@@ -38,10 +39,10 @@
   <insert id="insert" parameterType="smart.industry.train.biz.entity.DesignDetailBlock">
     insert into design_detail_block (id, createDate, createBy, 
       modifyDate, modifyBy, detailId, 
-      `name`)
+      `name`,symbolName)
     values (#{id,jdbcType=INTEGER}, #{createDate,jdbcType=TIMESTAMP}, #{createBy,jdbcType=INTEGER}, 
       #{modifyDate,jdbcType=TIMESTAMP}, #{modifyBy,jdbcType=INTEGER}, #{detailId,jdbcType=INTEGER}, 
-      #{name,jdbcType=VARCHAR})
+      #{name,jdbcType=VARCHAR},#{symbolName,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="smart.industry.train.biz.entity.DesignDetailBlock"
           useGeneratedKeys="true" keyProperty="id">
@@ -68,6 +69,9 @@
       <if test="name != null">
         `name`,
       </if>
+      <if test="symbolName != null">
+        symbolName,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -90,6 +94,9 @@
       </if>
       <if test="name != null">
         #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="symbolName != null">
+        #{symbolName,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
@@ -114,6 +121,9 @@
       <if test="name != null">
         `name` = #{name,jdbcType=VARCHAR},
       </if>
+      <if test="symbolName != null">
+        symbolName = #{symbolName,jdbcType=VARCHAR},
+      </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
@@ -124,7 +134,8 @@
       modifyDate = #{modifyDate,jdbcType=TIMESTAMP},
       modifyBy = #{modifyBy,jdbcType=INTEGER},
       detailId = #{detailId,jdbcType=INTEGER},
-      `name` = #{name,jdbcType=VARCHAR}
+      `name` = #{name,jdbcType=VARCHAR},
+      symbolName = #{symbolName,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>

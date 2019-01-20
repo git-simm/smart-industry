@@ -42,7 +42,7 @@ public class ReferBiz {
      * @throws Exception
      */
     @Transactional(rollbackFor = Exception.class)
-    public void resolve(DesignSolutionList detail, final SysUpfiles file) throws Exception {
+    public boolean resolve(DesignSolutionList detail, final SysUpfiles file) throws Exception {
         String filePath = file.getFilePath();
         Integer fileId = file.getId();
         Map<String, Integer> map = new HashMap<String, Integer>();
@@ -61,8 +61,10 @@ public class ReferBiz {
                 updateFileProjPath(solutionFiles,fileName,path);
             }
             br.close();
+            return true;
         } catch (Exception e) {
             System.err.println("read errors :" + e);
+            return false;
         }
         //designExcelListBiz.batchAdd(list);
         //return InvokeResult.success(true);

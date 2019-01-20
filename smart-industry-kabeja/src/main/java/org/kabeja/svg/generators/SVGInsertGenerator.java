@@ -15,6 +15,7 @@
 */
 package org.kabeja.svg.generators;
 
+import org.kabeja.dxf.DXFAttrib;
 import org.kabeja.dxf.DXFBlock;
 import org.kabeja.dxf.DXFEntity;
 import org.kabeja.dxf.DXFInsert;
@@ -113,9 +114,17 @@ public class SVGInsertGenerator extends AbstractSVGSAXGenerator {
                 attr.addAttribute(SVGConstants.XLINK_NAMESPACE, "href",
                         "xlink:href", "CDATA",
                         "#" + SVGUtils.validateID(insert.getBlockID()));
+                DXFEntity et = insert.getAttrEntity(0);
+                if(et != null){
+                    DXFAttrib temp = (DXFAttrib)et;
+                    if(temp!=null){
+                        SVGUtils.addAttribute(attr,"entity-key",temp.getText());
+                    }else{
+                        SVGUtils.addAttribute(attr,"entity-key",et.getID());
+                    }
+                }
 
                 SVGUtils.emptyElement(handler, SVGConstants.SVG_USE, attr);
-
                 // SVGUtils.endElement(handler, SVGConstants.SVG_GROUP);
                 buf.delete(0, buf.length());
             }

@@ -297,4 +297,14 @@ public class DXFInsert extends DXFEntity {
         if(list.size()>index) return list.get(index);
         return null;
     }
+
+    /**
+     * 获取属性列表
+     * @return
+     */
+    public List<DXFEntity> getAttrList(){
+        if(!this.entities.containsKey("ATTRIB")) return null;
+        List<DXFEntity> list = this.entities.get("ATTRIB");
+        return list;
+    }
 }

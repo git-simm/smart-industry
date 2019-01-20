@@ -4,7 +4,7 @@ package smart.industry.train.biz.enums;
  * 文件类型枚举
  */
 public enum FileTypeEnum {
-    Standard(1,"基准"),Design(2,"设计"),Bill(3,"清单");
+    Standard(1,"原理图"),Design(2,"布线图"),Bill(3,"布线清单");
     int value;
     String name;
     FileTypeEnum(int value,String name) {

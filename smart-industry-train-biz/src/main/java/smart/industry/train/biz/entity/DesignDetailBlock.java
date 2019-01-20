@@ -19,6 +19,8 @@ public class DesignDetailBlock extends BaseEntity {
 
     private String name;
 
+    private String symbolName;
+
     public Integer getId() {
         return id;
     }
@@ -73,5 +75,13 @@ public class DesignDetailBlock extends BaseEntity {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getSymbolName() {
+        return symbolName;
+    }
+
+    public void setSymbolName(String symbolName) {
+        this.symbolName = symbolName;
     }
 }

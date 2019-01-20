@@ -46,7 +46,8 @@ Zq.Utility.RegisterNameSpace("solution.tree");
         var svgDoc = document.getElementById("line_svg").getSVGDocument();
         var map = Snap(svgDoc.getElementsByTagName("svg")[0]);
         for(var key in linkMap){
-            var set = map.selectAll('g#'+key);
+            //var set = map.selectAll('g#'+key);
+            var set = map.selectAll('use[entity-key="'+ key +'"]');
             // 遍历填色
             set.forEach(function(element, index) {
                 var box = element.getBBox();

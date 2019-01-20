@@ -60,7 +60,7 @@ public class DXFText extends DXFEntity {
     protected boolean bottom = false;
     protected boolean vertical_center = false;
     protected String code = null;
-
+    private String flag;
     protected TextDocument textDoc = new TextDocument();
 
     /**
@@ -167,6 +167,14 @@ public class DXFText extends DXFEntity {
         }
 
         return bounds;
+    }
+
+    public String getFlag() {
+        return flag;
+    }
+
+    public void setFlag(String flag) {
+        this.flag = flag;
     }
 
     /**

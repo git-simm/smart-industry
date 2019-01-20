@@ -60,7 +60,6 @@ public class SVGSAXGeneratorManager {
         this.generators.put(DXFConstants.ENTITY_TYPE_ARC, new SVGArcGenerator());
         this.generators.put(DXFConstants.ENTITY_TYPE_ATTRIB,
                 new SVGAttribGenerator());
-
         this.generators.put(DXFConstants.ENTITY_TYPE_CIRCLE,
                 new SVGCircleGenerator());
         this.generators.put(DXFConstants.ENTITY_TYPE_DIMENSION,

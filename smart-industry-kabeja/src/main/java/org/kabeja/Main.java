@@ -50,7 +50,8 @@ public class Main {
         String dxfName = "test";
         String fileName = dxfName+".dxf";
         //String fileName = dxfName+".dwg";
-        File f = ResourceUtils.getFile("classpath:samples/dxf/"+ fileName);
+        //File f = ResourceUtils.getFile("classpath:samples/dxf/"+ fileName);
+        File f = ResourceUtils.getFile("E:/tmp/"+ fileName);
         File outFile = new File("E:/tmp");
         if(!outFile.exists()){
             outFile.mkdir();

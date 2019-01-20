@@ -3,7 +3,7 @@
     <#if section="title">方案管理
     <#elseif section="css">
     <#elseif section="content">
-    <div class="col-md-12">
+    <div class="col-12 col-md-12 col-sm-12">
         <div class="mini-model">
             <table class="table table-bordered table-hover table-striped marginBottom0">
                 <caption>
@@ -24,7 +24,7 @@
                     </div>
                 </caption>
             </table>
-            <table id="list" class="table table-bordered table-hover"></table>
+            <table id="list" class="table table-bordered table-hover col-12"></table>
             <div style="display: none;" id="list_opr_template">
                 <button class="btn btn-xs btn-info" title="编辑" onclick="{edit}">
                     <i class="icon-edit"></i>

@@ -57,7 +57,8 @@ public class DXFAttribHandler extends DXFTextHandler {
                     //隐藏属性
                     text.setVisibile(false);
                 }
-                text.setCode(value.getValue());
+                text.setFlag(value.getValue());
+                //text.setCode(value.getValue());
                 break;
             default:
                 super.parseGroup(groupCode, value);
