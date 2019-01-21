@@ -13,6 +13,7 @@ import smart.industry.utils.StringUtils;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -47,7 +48,9 @@ public class DesignDetailBlockBiz extends BaseBiz<DesignDetailBlockMapper,Design
         List<DesignBlockAttr> blockAttrs = designBlockAttrBiz.getBlockLink(detailId);
         Map<String, String> map = new HashMap<>();
         for (DesignBlockAttr attr:blockAttrs) {
-            DesignDetailBlock block = blocks.stream().filter(a->a.getId().equals(attr.getBlockId())).findFirst().get();
+            Optional<DesignDetailBlock> blockOptional = blocks.stream().filter(a->a.getId().equals(attr.getBlockId())).findFirst();
+            if(!blockOptional.isPresent()) continue;
+            DesignDetailBlock block = blockOptional.get();
             String fileName = resolveFileName(attr.getValue());
             if(StringUtils.isNotBlank(fileName)){
                 map.put(block.getName(),fileName);

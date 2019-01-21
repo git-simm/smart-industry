@@ -6,11 +6,15 @@ import smart.industry.train.biz.entity.SysTasks;
 import smart.industry.train.biz.enums.TaskStateEnum;
 
 import java.util.List;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 /**
  * 任务解析线程
  */
 public class ResolveThread extends Thread {
+    //创建一个线程池，最大10个线程
+    private ExecutorService executorService = Executors.newFixedThreadPool(10);
     private SysTasksBiz sysTasksBiz;
     private ResolveBiz resolveBiz;
     public ResolveThread(SysTasksBiz sysTasksBiz,ResolveBiz resolveBiz){
@@ -43,7 +47,8 @@ public class ResolveThread extends Thread {
      */
     public void startResolveTasks(List<SysTasks> tasks){
         for (SysTasks sysTasks : tasks){
-            resolveBiz.resolveTask(sysTasks);
+            //开启线程池，多线程运行
+            executorService.submit(() -> resolveBiz.resolveTask(sysTasks));
         }
     }
 

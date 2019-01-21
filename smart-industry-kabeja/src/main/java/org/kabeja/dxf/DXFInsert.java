@@ -37,6 +37,15 @@ public class DXFInsert extends DXFEntity {
     private double row_spacing = 0;
     private double column_spacing = 0;
     private String blockID = "";
+    private String key;
+
+    public String getKey() {
+        return key;
+    }
+
+    public void setKey(String key) {
+        this.key = key;
+    }
 
     private Hashtable<String,List<DXFEntity>> entities = new Hashtable<String,List<DXFEntity>>();
 

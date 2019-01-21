@@ -17,6 +17,7 @@ import smart.industry.train.biz.mypoi.ReferBiz;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 
@@ -42,9 +43,38 @@ public class ResolveBiz {
     @Autowired
     private DesignBlockAttrBiz designBlockAttrBiz;
 
-    private DesignSolutionList detail;
-    private SysUpfiles file;
-    private SysTasks sysTask;
+    /**
+     * 临时变量
+     */
+    class TempData{
+        private DesignSolutionList detail;
+        private SysUpfiles file;
+        private SysTasks sysTask;
+
+        public DesignSolutionList getDetail() {
+            return detail;
+        }
+
+        public void setDetail(DesignSolutionList detail) {
+            this.detail = detail;
+        }
+
+        public SysUpfiles getFile() {
+            return file;
+        }
+
+        public void setFile(SysUpfiles file) {
+            this.file = file;
+        }
+
+        public SysTasks getSysTask() {
+            return sysTask;
+        }
+
+        public void setSysTask(SysTasks sysTask) {
+            this.sysTask = sysTask;
+        }
+    }
 
     /**
      * 任务解析
@@ -52,25 +82,26 @@ public class ResolveBiz {
      * @param sysTasks
      */
     public void resolveTask(SysTasks sysTasks) {
-        this.sysTask = sysTasks;
-        detail = designSolutionListBiz.selectByPrimaryKey(sysTasks.getDetailId());
-        if (detail == null) return;
-        file = sysUpfilesBiz.selectByPrimaryKey(detail.getFileId());
-        if (file == null) return;
-        String suffix = file.getSuffix();
+        TempData data = new TempData();
+        data.sysTask = sysTasks;
+        data.detail = designSolutionListBiz.selectByPrimaryKey(sysTasks.getDetailId());
+        if (data.detail == null) return;
+        data.file = sysUpfilesBiz.selectByPrimaryKey(data.detail.getFileId());
+        if (data.file == null) return;
+        String suffix = data.file.getSuffix();
         boolean succ = false;
         //1.修改系统任务的状态
-        sysTask.setState(TaskStateEnum.Converting.getValue());
-        sysTasksBiz.update(sysTask);
+        data.sysTask.setState(TaskStateEnum.Converting.getValue());
+        sysTasksBiz.update(data.sysTask);
         try {
             if (suffix.equals(".dxf")) {
-                succ = resolve();
+                succ = resolve(data);
             } else if (suffix.equals(".xls") || suffix.equals(".xlsx")) {
                 //解析excel清单
-                succ = resolveExcel();
+                succ = resolveExcel(data);
             } else if (suffix.equals(".txt")) {
                 //解析导出文件对应的elcad方案的路径
-                succ = resolveRefer();
+                succ = resolveRefer(data);
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -78,11 +109,11 @@ public class ResolveBiz {
         } finally {
             //3.修改系统任务的状态
             if (succ) {
-                sysTask.setState(TaskStateEnum.Completed.getValue());
-                sysTasksBiz.update(sysTask);
+                data.sysTask.setState(TaskStateEnum.Completed.getValue());
+                sysTasksBiz.update(data.sysTask);
             } else {
-                sysTask.setState(TaskStateEnum.Ready.getValue());
-                sysTasksBiz.update(sysTask);
+                data.sysTask.setState(TaskStateEnum.Ready.getValue());
+                sysTasksBiz.update(data.sysTask);
             }
         }
     }
@@ -93,8 +124,8 @@ public class ResolveBiz {
     /**
      * 解析文件dxf在工程中的对应关系
      */
-    private boolean resolveRefer() throws Exception {
-        return referBiz.resolve(detail, file);
+    private boolean resolveRefer(TempData data) throws Exception {
+        return referBiz.resolve(data.detail, data.file);
     }
 
     /**
@@ -106,8 +137,8 @@ public class ResolveBiz {
     /**
      * 解析excel清单
      */
-    public boolean resolveExcel() throws Exception {
-        return designXlsBiz.resolve(file);
+    public boolean resolveExcel(TempData data) throws Exception {
+        return designXlsBiz.resolve(data.file);
     }
 
     /**
@@ -115,17 +146,17 @@ public class ResolveBiz {
      *
      * @throws Exception
      */
-    public boolean resolve() throws Exception {
+    public boolean resolve(TempData data) throws Exception {
         Main main = new Main();
         main.process();
-        File f = new File(file.getFilePath());
-        String suffix = file.getSuffix();
+        File f = new File(data.file.getFilePath());
+        String suffix = data.file.getSuffix();
         String output = f.getPath().replace(suffix, ".svg");
         if (f.exists() && f.isFile()) {
             //文件转换
             DXFDocument doc = main.parseFile(f, output);
             //完成dxf信息的保存
-            saveDxfMsg(doc);
+            saveDxfMsg(doc,data);
             return true;
         }
         else{
@@ -139,15 +170,15 @@ public class ResolveBiz {
      * @param doc
      */
     @Transactional
-    public void saveDxfMsg(DXFDocument doc) {
+    public void saveDxfMsg(DXFDocument doc,TempData data) {
         //2.先清理掉，有关改detailId的文件信息
         DesignDetailBlock filter = new DesignDetailBlock();
-        filter.setDetailId(detail.getId());
+        filter.setDetailId(data.detail.getId());
         filter.setFilter("detailId = #{detailId}");
         designDetailBlockBiz.deleteByFilter(filter);
 
         DesignBlockAttr filter2 = new DesignBlockAttr();
-        filter2.setDetailId(detail.getId());
+        filter2.setDetailId(data.detail.getId());
         filter2.setFilter("detailId = #{detailId}");
         designBlockAttrBiz.deleteByFilter(filter2);
 
@@ -171,7 +202,7 @@ public class ResolveBiz {
         /**
          * 解析层
          */
-        parseLayer(doc);
+        parseLayer(doc,data);
     }
 
     /**
@@ -179,7 +210,7 @@ public class ResolveBiz {
      *
      * @param doc
      */
-    private void parseLayer(DXFDocument doc) {
+    private void parseLayer(DXFDocument doc,TempData data) {
         //遍历layer
 //        Iterator i = doc.getDXFLayerIterator();
 //        while (i.hasNext()) {
@@ -189,7 +220,7 @@ public class ResolveBiz {
         //解析图片信息
         DXFLayer layer = doc.getDXFLayer("SYMBOL");
         if (layer != null) {
-            this.parseEntity(doc, layer);
+            this.parseEntity(doc, layer,data);
         }
     }
 
@@ -199,14 +230,14 @@ public class ResolveBiz {
      * @param doc
      * @param layer
      */
-    protected void parseEntity(DXFDocument doc, DXFLayer layer) {
+    protected void parseEntity(DXFDocument doc, DXFLayer layer,TempData data) {
         //String lt = layer.getLineType();
         // the stroke-width
         //int lineWeight = layer.getLineWeight();
         // the stroke-width
         Double lw = null;
         Iterator types = layer.getDXFEntityTypeIterator();
-
+        List<DesignBlockAttr> blockAttrs = new ArrayList<>();
         while (types.hasNext()) {
             String type = (String) types.next();
             ArrayList list = (ArrayList) layer.getDXFEntities(type);
@@ -217,7 +248,7 @@ public class ResolveBiz {
                     DXFInsert insert = (DXFInsert) entity;
                     //获取key值
                     String ek = getEntityKey(insert);
-                    DesignDetailBlock designDetailBlock = saveBlockMsg(insert.getBlockID(),ek);
+                    DesignDetailBlock designDetailBlock = saveBlockMsg(insert.getBlockID(),ek,data);
                     //2.解析保存sys_attr信息
                     List<DXFEntity> attrs = insert.getAttrList();//获取图标对应的属性
                     //保存实体信息
@@ -228,16 +259,22 @@ public class ResolveBiz {
                             DXFAttdef def = doc.getAttdef(key);
                             if(def!= null){
                                 String attrName = def.getAttr();
-                                Integer attrId = saveDxfAttrMsg(attrName);
-                                //3.保存attr信息
-                                saveBlockAttr(designDetailBlock.getId(),attrId,attrName,attrib.getText());
+                                if(attrName.contains("Representation")){
+                                    Integer attrId = saveDxfAttrMsg(attrName);
+                                    //3.保存attr信息(搜集所有的信息，准备批量保存)
+                                    blockAttrs.add(getBlockAttr(designDetailBlock.getId(),attrId,attrName,attrib.getText(),data));
+                                    //saveBlockAttr(designDetailBlock.getId(),attrId,attrName,attrib.getText());
+                                }
                             }
                         }
-
                     }
                 }
             }
         }
+        //批量保存
+        blockAttrs.forEach(a->{
+            designBlockAttrBiz.add(a);
+        });
     }
 
     /**
@@ -246,17 +283,14 @@ public class ResolveBiz {
      * @return
      */
     private String getEntityKey(DXFInsert insert){
-        DXFEntity et = insert.getAttrEntity(0);
-        if(et != null){
-            DXFAttrib temp = (DXFAttrib)et;
-            if(temp!=null){
-                return temp.getText();
-            }else{
-                return et.getID();
-            }
-        }
-        return null;
+        return insert.getKey();
     }
+
+    /**
+     * 属性缓存
+     */
+    private static HashMap<String,Integer> attrCache = new HashMap<>();
+    private static Object _lock = new Object();
     /**
      * 保存dxf属性信息
      *
@@ -264,17 +298,23 @@ public class ResolveBiz {
      */
     @Transactional
     public Integer saveDxfAttrMsg(String name) {
-        //1.读取数据库中待执行的任务列表
-        SysDxfAttr filter = new SysDxfAttr();
-        filter.setName(name);
-        filter.setFilter("name = #{name}");
-        List<SysDxfAttr> attrs = sysDxfAttrBiz.selectByFilter(filter);
-        if (CollectionUtils.isEmpty(attrs)) {
-            //保存成新的记录
-            sysDxfAttrBiz.add(filter);
-            return filter.getId();
-        } else {
-            return attrs.get(0).getId();
+        if(attrCache.containsKey(name))return attrCache.get(name);
+        synchronized (_lock){
+            if(attrCache.containsKey(name))return attrCache.get(name);
+            //1.读取数据库中待执行的任务列表
+            SysDxfAttr filter = new SysDxfAttr();
+            filter.setName(name);
+            filter.setFilter("name = #{name}");
+            List<SysDxfAttr> attrs = sysDxfAttrBiz.selectByFilter(filter);
+            if (CollectionUtils.isEmpty(attrs)) {
+                //保存成新的记录
+                sysDxfAttrBiz.add(filter);
+                attrCache.put(name,filter.getId());
+                return filter.getId();
+            } else {
+                attrCache.put(name,attrs.get(0).getId());
+                return attrs.get(0).getId();
+            }
         }
     }
 
@@ -284,9 +324,9 @@ public class ResolveBiz {
      * @param blockName
      */
     @Transactional
-    public DesignDetailBlock saveBlockMsg(String blockName,String key) {
+    public DesignDetailBlock saveBlockMsg(String blockName,String key,TempData data) {
         DesignDetailBlock block = new DesignDetailBlock();
-        block.setDetailId(detail.getId());
+        block.setDetailId(data.detail.getId());
         block.setName(key);
         block.setSymbolName(blockName);
         designDetailBlockBiz.add(block);
@@ -301,13 +341,31 @@ public class ResolveBiz {
      * @param attrVal
      */
     @Transactional
-    public void saveBlockAttr(Integer blockId, Integer attrId, String attrName, String attrVal) {
+    public void saveBlockAttr(Integer blockId, Integer attrId, String attrName, String attrVal,TempData data) {
         DesignBlockAttr attr = new DesignBlockAttr();
-        attr.setDetailId(detail.getId());
+        attr.setDetailId(data.detail.getId());
         attr.setAttrName(attrName);
         attr.setAttrId(attrId);
         attr.setBlockId(blockId);
         attr.setValue(attrVal);
         designBlockAttrBiz.add(attr);
+    }
+
+    /**
+     * 获取实体
+     * @param blockId
+     * @param attrId
+     * @param attrName
+     * @param attrVal
+     * @return
+     */
+    public DesignBlockAttr getBlockAttr(Integer blockId, Integer attrId, String attrName, String attrVal,TempData data) {
+        DesignBlockAttr attr = new DesignBlockAttr();
+        attr.setDetailId(data.detail.getId());
+        attr.setAttrName(attrName);
+        attr.setAttrId(attrId);
+        attr.setBlockId(blockId);
+        attr.setValue(attrVal);
+        return attr;
     }
 }

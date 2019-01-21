@@ -1,45 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="smart.industry.train.biz.mapper.DesignBlockAttrMapper">
-  <resultMap id="BaseResultMap" type="smart.industry.train.biz.entity.DesignBlockAttr">
-    <id column="id" jdbcType="INTEGER" property="id" />
-    <result column="createDate" jdbcType="TIMESTAMP" property="createDate" />
-    <result column="createBy" jdbcType="INTEGER" property="createBy" />
-    <result column="modifyDate" jdbcType="TIMESTAMP" property="modifyDate" />
-    <result column="modifyBy" jdbcType="INTEGER" property="modifyBy" />
-    <result column="detailId" jdbcType="INTEGER" property="detailId" />
-    <result column="attrId" jdbcType="INTEGER" property="attrId" />
-    <result column="blockId" jdbcType="INTEGER" property="blockId" />
-    <result column="value" jdbcType="VARCHAR" property="value" />
-    <result column="attrName" jdbcType="VARCHAR" property="attrName" />
-  </resultMap>
-  <sql id="Base_Column_List">
+    <resultMap id="BaseResultMap" type="smart.industry.train.biz.entity.DesignBlockAttr">
+        <id column="id" jdbcType="INTEGER" property="id"/>
+        <result column="createDate" jdbcType="TIMESTAMP" property="createDate"/>
+        <result column="createBy" jdbcType="INTEGER" property="createBy"/>
+        <result column="modifyDate" jdbcType="TIMESTAMP" property="modifyDate"/>
+        <result column="modifyBy" jdbcType="INTEGER" property="modifyBy"/>
+        <result column="detailId" jdbcType="INTEGER" property="detailId"/>
+        <result column="attrId" jdbcType="INTEGER" property="attrId"/>
+        <result column="blockId" jdbcType="INTEGER" property="blockId"/>
+        <result column="value" jdbcType="VARCHAR" property="value"/>
+        <result column="attrName" jdbcType="VARCHAR" property="attrName"/>
+    </resultMap>
+    <sql id="Base_Column_List">
     id, createDate, createBy, modifyDate, modifyBy, detailId, attrId, blockId, `value`, 
     attrName
   </sql>
-  <select id="selectByFilter" parameterType="DesignBlockAttr" resultMap="BaseResultMap">
-    select
-    <include refid="Base_Column_List" />
-    from design_block_attr
-    where ${filter}
-    <if test="orderBy != null">
-      order by ${orderBy}
-    </if>
-  </select>
-  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
-    select 
-    <include refid="Base_Column_List" />
-    from design_block_attr
-    where id = #{id,jdbcType=INTEGER}
-  </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    <select id="selectByFilter" parameterType="DesignBlockAttr" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from design_block_attr
+        where ${filter}
+        <if test="orderBy != null">
+            order by ${orderBy}
+        </if>
+    </select>
+    <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from design_block_attr
+        where id = #{id,jdbcType=INTEGER}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from design_block_attr
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <delete id="deleteByFilter" parameterType="smart.industry.train.biz.entity.DesignBlockAttr">
+    <delete id="deleteByFilter" parameterType="smart.industry.train.biz.entity.DesignBlockAttr">
     delete from design_block_attr where ${filter}
   </delete>
-  <insert id="insert" parameterType="smart.industry.train.biz.entity.DesignBlockAttr">
+    <insert id="insert" parameterType="smart.industry.train.biz.entity.DesignBlockAttr">
     insert into design_block_attr (id, createDate, createBy, 
       modifyDate, modifyBy, detailId, 
       attrId, blockId, `value`, 
@@ -49,107 +49,116 @@
       #{attrId,jdbcType=INTEGER}, #{blockId,jdbcType=INTEGER}, #{value,jdbcType=VARCHAR}, 
       #{attrName,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="smart.industry.train.biz.entity.DesignBlockAttr">
-    insert into design_block_attr
-    <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="id != null">
-        id,
-      </if>
-      <if test="createDate != null">
-        createDate,
-      </if>
-      <if test="createBy != null">
-        createBy,
-      </if>
-      <if test="modifyDate != null">
-        modifyDate,
-      </if>
-      <if test="modifyBy != null">
-        modifyBy,
-      </if>
-      <if test="detailId != null">
-        detailId,
-      </if>
-      <if test="attrId != null">
-        attrId,
-      </if>
-      <if test="blockId != null">
-        blockId,
-      </if>
-      <if test="value != null">
-        `value`,
-      </if>
-      <if test="attrName != null">
-        attrName,
-      </if>
-    </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="id != null">
-        #{id,jdbcType=INTEGER},
-      </if>
-      <if test="createDate != null">
-        #{createDate,jdbcType=TIMESTAMP},
-      </if>
-      <if test="createBy != null">
-        #{createBy,jdbcType=INTEGER},
-      </if>
-      <if test="modifyDate != null">
-        #{modifyDate,jdbcType=TIMESTAMP},
-      </if>
-      <if test="modifyBy != null">
-        #{modifyBy,jdbcType=INTEGER},
-      </if>
-      <if test="detailId != null">
-        #{detailId,jdbcType=INTEGER},
-      </if>
-      <if test="attrId != null">
-        #{attrId,jdbcType=INTEGER},
-      </if>
-      <if test="blockId != null">
-        #{blockId,jdbcType=INTEGER},
-      </if>
-      <if test="value != null">
-        #{value,jdbcType=VARCHAR},
-      </if>
-      <if test="attrName != null">
-        #{attrName,jdbcType=VARCHAR},
-      </if>
-    </trim>
-  </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="smart.industry.train.biz.entity.DesignBlockAttr">
-    update design_block_attr
-    <set>
-      <if test="createDate != null">
-        createDate = #{createDate,jdbcType=TIMESTAMP},
-      </if>
-      <if test="createBy != null">
-        createBy = #{createBy,jdbcType=INTEGER},
-      </if>
-      <if test="modifyDate != null">
-        modifyDate = #{modifyDate,jdbcType=TIMESTAMP},
-      </if>
-      <if test="modifyBy != null">
-        modifyBy = #{modifyBy,jdbcType=INTEGER},
-      </if>
-      <if test="detailId != null">
-        detailId = #{detailId,jdbcType=INTEGER},
-      </if>
-      <if test="attrId != null">
-        attrId = #{attrId,jdbcType=INTEGER},
-      </if>
-      <if test="blockId != null">
-        blockId = #{blockId,jdbcType=INTEGER},
-      </if>
-      <if test="value != null">
-        `value` = #{value,jdbcType=VARCHAR},
-      </if>
-      <if test="attrName != null">
-        attrName = #{attrName,jdbcType=VARCHAR},
-      </if>
-    </set>
-    where id = #{id,jdbcType=INTEGER}
-  </update>
-  <update id="updateByPrimaryKey" parameterType="smart.industry.train.biz.entity.DesignBlockAttr">
+    <!--批量提交数据-->
+    <insert id="batchAdd" parameterType="java.util.List">
+        insert into design_block_attr (createDate, createBy, detailId,
+        attrId, blockId, `value`,attrName) values
+        <foreach collection="list" item="item" index="index" separator=",">
+            (#{item.createDate, #{item.createBy}, #{item.detailId},#{item.attrId},
+            #{item.blockId}, #{item.value},#{item.attrName})
+        </foreach>
+    </insert>
+    <insert id="insertSelective" parameterType="smart.industry.train.biz.entity.DesignBlockAttr">
+        insert into design_block_attr
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                id,
+            </if>
+            <if test="createDate != null">
+                createDate,
+            </if>
+            <if test="createBy != null">
+                createBy,
+            </if>
+            <if test="modifyDate != null">
+                modifyDate,
+            </if>
+            <if test="modifyBy != null">
+                modifyBy,
+            </if>
+            <if test="detailId != null">
+                detailId,
+            </if>
+            <if test="attrId != null">
+                attrId,
+            </if>
+            <if test="blockId != null">
+                blockId,
+            </if>
+            <if test="value != null">
+                `value`,
+            </if>
+            <if test="attrName != null">
+                attrName,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                #{id,jdbcType=INTEGER},
+            </if>
+            <if test="createDate != null">
+                #{createDate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="createBy != null">
+                #{createBy,jdbcType=INTEGER},
+            </if>
+            <if test="modifyDate != null">
+                #{modifyDate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="modifyBy != null">
+                #{modifyBy,jdbcType=INTEGER},
+            </if>
+            <if test="detailId != null">
+                #{detailId,jdbcType=INTEGER},
+            </if>
+            <if test="attrId != null">
+                #{attrId,jdbcType=INTEGER},
+            </if>
+            <if test="blockId != null">
+                #{blockId,jdbcType=INTEGER},
+            </if>
+            <if test="value != null">
+                #{value,jdbcType=VARCHAR},
+            </if>
+            <if test="attrName != null">
+                #{attrName,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="smart.industry.train.biz.entity.DesignBlockAttr">
+        update design_block_attr
+        <set>
+            <if test="createDate != null">
+                createDate = #{createDate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="createBy != null">
+                createBy = #{createBy,jdbcType=INTEGER},
+            </if>
+            <if test="modifyDate != null">
+                modifyDate = #{modifyDate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="modifyBy != null">
+                modifyBy = #{modifyBy,jdbcType=INTEGER},
+            </if>
+            <if test="detailId != null">
+                detailId = #{detailId,jdbcType=INTEGER},
+            </if>
+            <if test="attrId != null">
+                attrId = #{attrId,jdbcType=INTEGER},
+            </if>
+            <if test="blockId != null">
+                blockId = #{blockId,jdbcType=INTEGER},
+            </if>
+            <if test="value != null">
+                `value` = #{value,jdbcType=VARCHAR},
+            </if>
+            <if test="attrName != null">
+                attrName = #{attrName,jdbcType=VARCHAR},
+            </if>
+        </set>
+        where id = #{id,jdbcType=INTEGER}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="smart.industry.train.biz.entity.DesignBlockAttr">
     update design_block_attr
     set createDate = #{createDate,jdbcType=TIMESTAMP},
       createBy = #{createBy,jdbcType=INTEGER},

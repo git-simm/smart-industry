@@ -61,8 +61,15 @@ public class DXFText extends DXFEntity {
     protected boolean vertical_center = false;
     protected String code = null;
     private String flag;
+    private String key;
     protected TextDocument textDoc = new TextDocument();
+    public String getKey() {
+        return key;
+    }
 
+    public void setKey(String key) {
+        this.key = key;
+    }
     /**
      *
      */

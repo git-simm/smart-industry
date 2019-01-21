@@ -52,8 +52,10 @@ Zq.Utility.RegisterNameSpace("solution.tree");
             set.forEach(function(element, index) {
                 var box = element.getBBox();
                 element.append(createLink(box,map));
+                element.key = key;
+                element.linkName = linkMap[key];
                 element.attr("style",'stroke:#f0f;').click(function(){
-                    selectLinkNode(node,linkMap[key]);
+                    selectLinkNode(node,this.linkName);
                 });
             });
         }

@@ -29,6 +29,7 @@ import org.xml.sax.SAXException;
 import org.xml.sax.helpers.AttributesImpl;
 
 import java.util.Map;
+import java.util.UUID;
 
 
 public class SVGInsertGenerator extends AbstractSVGSAXGenerator {
@@ -114,15 +115,10 @@ public class SVGInsertGenerator extends AbstractSVGSAXGenerator {
                 attr.addAttribute(SVGConstants.XLINK_NAMESPACE, "href",
                         "xlink:href", "CDATA",
                         "#" + SVGUtils.validateID(insert.getBlockID()));
-                DXFEntity et = insert.getAttrEntity(0);
-                if(et != null){
-                    DXFAttrib temp = (DXFAttrib)et;
-                    if(temp!=null){
-                        SVGUtils.addAttribute(attr,"entity-key",temp.getText());
-                    }else{
-                        SVGUtils.addAttribute(attr,"entity-key",et.getID());
-                    }
+                if(insert.getKey()==null){
+                    insert.setKey(UUID.randomUUID().toString());
                 }
+                SVGUtils.addAttribute(attr,"entity-key",insert.getKey());
 
                 SVGUtils.emptyElement(handler, SVGConstants.SVG_USE, attr);
                 // SVGUtils.endElement(handler, SVGConstants.SVG_GROUP);
