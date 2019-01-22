@@ -12,6 +12,17 @@ public class DXFAttdef extends DXFText {
     private String code;
     private String attr;
     private String value;
+    private String flag;
+
+    @Override
+    public String getFlag() {
+        return flag;
+    }
+
+    @Override
+    public void setFlag(String flag) {
+        this.flag = flag;
+    }
 
     public String getCode() {
         return code;

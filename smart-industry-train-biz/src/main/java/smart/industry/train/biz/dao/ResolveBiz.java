@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.CollectionUtils;
+import org.springframework.util.StringUtils;
 import smart.industry.train.biz.entity.*;
 import smart.industry.train.biz.enums.TaskStateEnum;
 import smart.industry.train.biz.mypoi.DesignXlsBiz;
@@ -215,7 +216,7 @@ public class ResolveBiz {
 //        Iterator i = doc.getDXFLayerIterator();
 //        while (i.hasNext()) {
 //            DXFLayer layer = (DXFLayer) i.next();
-//            this.parseEntity(doc,layer);
+//            this.parseEntity(doc,layer,data);
 //        }
         //解析图片信息
         DXFLayer layer = doc.getDXFLayer("SYMBOL");
@@ -251,16 +252,26 @@ public class ResolveBiz {
                     DesignDetailBlock designDetailBlock = saveBlockMsg(insert.getBlockID(),ek,data);
                     //2.解析保存sys_attr信息
                     List<DXFEntity> attrs = insert.getAttrList();//获取图标对应的属性
+                    //获取block对象信息
+                    DXFBlock block = doc.getDXFBlock(insert.getBlockID());
+                    List<DXFAttdef> attdefs = block.getDXFDefList();
+                    if(attrs==null) continue;
+                    int flag =0;
                     //保存实体信息
                     for (DXFEntity attr : attrs){
+                        if(flag >= attdefs.size()) break;
+                        //获取属性定义
+                        DXFAttdef def = attdefs.get(flag);
+                        flag++;
                         DXFAttrib attrib = (DXFAttrib)attr;
                         if(attrib != null){
-                            String key = attrib.getCode()+"@"+attrib.getLayerName()+"@"+attrib.getFlag();
-                            DXFAttdef def = doc.getAttdef(key);
                             if(def!= null){
                                 String attrName = def.getAttr();
-                                if(attrName.contains("Representation")){
+                                if(attrName.contains("Representation")|| attrName.contains("Wire")
+                                        || attrName.contains("Connector") || attrName.contains("Item")
+                                        || attrName.contains("Dest")){
                                     Integer attrId = saveDxfAttrMsg(attrName);
+                                    if(StringUtils.isEmpty(attrib.getText()))continue;
                                     //3.保存attr信息(搜集所有的信息，准备批量保存)
                                     blockAttrs.add(getBlockAttr(designDetailBlock.getId(),attrId,attrName,attrib.getText(),data));
                                     //saveBlockAttr(designDetailBlock.getId(),attrId,attrName,attrib.getText());

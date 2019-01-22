@@ -159,21 +159,21 @@ public class DXFDocument {
     public void clearLastInsert(){
         //完成 block 属性值的 转换
         Iterator iterator = this.getDXFBlock(lastInsert.getBlockID()).getDXFEntitiesIterator();
-        int i =0 ;
-        while (iterator.hasNext()){
-            DXFEntity entity = (DXFEntity) iterator.next();
-            if(entity instanceof DXFAttdef){
-                DXFAttdef attdef = (DXFAttdef)entity;
-                DXFEntity attr = lastInsert.getAttrEntity(i);
-                if(attr instanceof DXFText){
-                    if(StringUtils.isBlank((attdef.getValue()))){
-                        attdef.setValue(((DXFText)attr).getText());
-                    }
-                }
-                i++;
-            }
-            //blockIterator.remove();
-        }
+//        int i =0 ;
+//        while (iterator.hasNext()){
+//            DXFEntity entity = (DXFEntity) iterator.next();
+//            if(entity instanceof DXFAttdef){
+//                DXFAttdef attdef = (DXFAttdef)entity;
+//                DXFEntity attr = lastInsert.getAttrEntity(i);
+//                if(attr instanceof DXFText){
+//                    if(StringUtils.isBlank((attdef.getValue()))){
+//                        attdef.setValue(((DXFText)attr).getText());
+//                    }
+//                }
+//                i++;
+//            }
+//            //blockIterator.remove();
+//        }
         lastInsert = null;
     }
 
@@ -292,7 +292,7 @@ public class DXFDocument {
      */
     public void addAttdef(DXFAttdef attdef){
         //定义+layer+flags 唯一确定一条定义
-        attdefs.put(attdef.getCode() + "@" + attdef.getLayerName()+"@"+attdef.getFlags(),attdef);
+        attdefs.put(attdef.getCode() + "@" + attdef.getLayerName()+"@"+attdef.getFlag(),attdef);
     }
     public DXFAttdef getAttdef(String code){
         return (DXFAttdef) this.attdefs.get(code);

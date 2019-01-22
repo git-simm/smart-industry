@@ -45,13 +45,21 @@ Zq.Utility.RegisterNameSpace("solution.tree");
     ns.setLink = function(node,linkMap){
         var svgDoc = document.getElementById("line_svg").getSVGDocument();
         var map = Snap(svgDoc.getElementsByTagName("svg")[0]);
+        var gList = [];
         for(var key in linkMap){
             //var set = map.selectAll('g#'+key);
             var set = map.selectAll('use[entity-key="'+ key +'"]');
             // 遍历填色
             set.forEach(function(element, index) {
-                var box = element.getBBox();
-                element.append(createLink(box,map));
+                var g = element.node.href.baseVal;
+                if(gList.indexOf(g)==-1){
+                    gList.push(g);
+                    var set2 = map.selectAll('g'+g);
+                    set2.forEach(function(eg, i) {
+                        var box = eg.getBBox();
+                        eg.append(createLink(box,map));
+                    });
+                }
                 element.key = key;
                 element.linkName = linkMap[key];
                 element.attr("style",'stroke:#f0f;').click(function(){

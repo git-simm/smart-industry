@@ -12,6 +12,7 @@ public class DXFAttdefHandler extends DXFTextHandler {
     public final static String ENTITY_KEY = "ATTDEF";
     public final static int GROUPCODE_NAME = 2;
     public final static int GROUPCODE_ATTR = 3;
+    public final static int GROUPCODE_Flag = 70;
     public final static int GROUPCODE_VALUE = 1;
 
     private DXFAttdef attdef;
@@ -32,6 +33,9 @@ public class DXFAttdefHandler extends DXFTextHandler {
                 break;
             case GROUPCODE_VALUE:
                 attdef.setValue(value.getValue());
+                break;
+            case GROUPCODE_Flag:
+                attdef.setFlag(value.getValue());
                 break;
             default:
                 super.parseGroup(groupCode, value);

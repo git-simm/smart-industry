@@ -19,6 +19,7 @@ import org.kabeja.dxf.helpers.Point;
 
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 
 
 /**
@@ -186,5 +187,21 @@ public class DXFBlock {
         }
 
         return entity;
+    }
+
+    /**
+     * 获取所有的属性列表
+     * @return
+     */
+    public List<DXFAttdef> getDXFDefList() {
+        List<DXFAttdef> list = new ArrayList<>();
+        Iterator i = this.entities.iterator();
+        while (i.hasNext()) {
+            DXFEntity e = (DXFEntity) i.next();
+            if(e instanceof DXFAttdef){
+                list.add((DXFAttdef)e);
+            }
+        }
+        return list;
     }
 }
