@@ -8,20 +8,322 @@
   <component name="BookmarkManager">
     <bookmark url="file://$PROJECT_DIR$/smart-industry-train-web/src/main/java/smart/industry/train/web/controllers/manager/UserController.java" line="51" />
     <bookmark url="file://$PROJECT_DIR$/smart-industry-train-web/src/main/java/smart/industry/train/web/controllers/manager/ParamController.java" line="48" />
-    <bookmark url="file://$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/threads/ResolveThread.java" line="43" />
+    <bookmark url="file://$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/threads/ResolveThread.java" line="45" />
     <bookmark url="file://$PROJECT_DIR$/smart-industry-kabeja/src/main/java/org/kabeja/parser/entities/DXFAttribHandler.java" line="45" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ca438869-ff4f-47d5-a47e-64243f73bc98" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/smart-industry-utils/src/main/java/smart/industry/utils/environment/EnvUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/df76d45d-a6d4-45ef-95bf-ef547ac4ef82.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/df76d45d-a6d4-45ef-95bf-ef547ac4ef82.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/src/main/java/org/kabeja/dxf/DXFAttdef.java" beforeDir="false" afterPath="$PROJECT_DIR$/smart-industry-kabeja/src/main/java/org/kabeja/dxf/DXFAttdef.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/src/main/java/org/kabeja/dxf/DXFBlock.java" beforeDir="false" afterPath="$PROJECT_DIR$/smart-industry-kabeja/src/main/java/org/kabeja/dxf/DXFBlock.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/src/main/java/org/kabeja/dxf/DXFDocument.java" beforeDir="false" afterPath="$PROJECT_DIR$/smart-industry-kabeja/src/main/java/org/kabeja/dxf/DXFDocument.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/src/main/java/org/kabeja/parser/entities/DXFAttdefHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/smart-industry-kabeja/src/main/java/org/kabeja/parser/entities/DXFAttdefHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/dxf/DXFBlock.class" beforeDir="false" afterPath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/dxf/DXFBlock.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/dxf/DXFDocument.class" beforeDir="false" afterPath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/dxf/DXFDocument.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/dao/ResolveBiz.java" beforeDir="false" afterPath="$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/dao/ResolveBiz.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/static/js/manager/solution.tree.js" beforeDir="false" afterPath="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/static/js/manager/solution.tree.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/dxf/Bounds.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/dxf/DXF3DFace.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/dxf/DXF3DSolid.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/dxf/DXFArc.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/dxf/DXFAttrib.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/dxf/DXFBlock.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/dxf/DXFBody.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/dxf/DXFCircle.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/dxf/DXFColor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/dxf/DXFConstants.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/dxf/DXFDimension.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/dxf/DXFDimensionStyle.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/dxf/DXFDocument.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/dxf/DXFEllipse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/dxf/DXFEntity.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/dxf/DXFExtrusion.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/dxf/DXFHatch.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/dxf/DXFHatchPattern.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/dxf/DXFHeader.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/dxf/DXFImage.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/dxf/DXFInsert.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/dxf/DXFLWPolyline.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/dxf/DXFLayer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/dxf/DXFLeader.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/dxf/DXFLine.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/dxf/DXFLineType.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/dxf/DXFMLine.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/dxf/DXFMText.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/dxf/DXFPoint.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/dxf/DXFPolyline.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/dxf/DXFRay.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/dxf/DXFRegion.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/dxf/DXFShape.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/dxf/DXFSolid.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/dxf/DXFSpline.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/dxf/DXFStyle.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/dxf/DXFText.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/dxf/DXFTolerance.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/dxf/DXFTrace.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/dxf/DXFVPort.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/dxf/DXFVariable.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/dxf/DXFVertex.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/dxf/DXFView.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/dxf/DXFViewport.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/dxf/DXFXLine.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/dxf/helpers/DXFMLineSegment.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/dxf/helpers/DXFMLineSegmentElement.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/dxf/helpers/DXFMLineStyleElementDistanceComparator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/dxf/helpers/DXFSplineConverter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/dxf/helpers/DXFTextParser.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/dxf/helpers/DXFUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/dxf/helpers/Edge.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/dxf/helpers/HatchBoundaryLoop.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/dxf/helpers/HatchLineFamily.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/dxf/helpers/HatchLineIterator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/dxf/helpers/HatchLineSegment.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/dxf/helpers/HatchPattern.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/dxf/helpers/MLineConverter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/dxf/helpers/ParametricLine.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/dxf/helpers/Point.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/dxf/helpers/PolylineSegment.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/dxf/helpers/SplinePoint.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/dxf/helpers/StyledTextParagraph.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/dxf/helpers/TextDocument.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/dxf/helpers/Vector.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/dxf/objects/DXFDictionary$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/dxf/objects/DXFDictionary$DXFDictionaryRecord.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/dxf/objects/DXFDictionary.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/dxf/objects/DXFImageDefObject.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/dxf/objects/DXFLayout.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/dxf/objects/DXFMLineStyle.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/dxf/objects/DXFMLineStyleElement.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/dxf/objects/DXFObject.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/dxf/objects/DXFPlotSettings.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/io/StreamGenerator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/math/MathUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/math/NURBS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/math/NURBSAutoStepPointIterator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/math/NURBSFixedNTELSPointIterator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/math/ParametricPlane.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/math/TransformContext.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/parser/AbstractSectionHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/parser/DXFBlocksSectionHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/parser/DXFEntitiesSectionHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/parser/DXFHeaderSectionHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/parser/DXFObjectsSectionHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/parser/DXFParser.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/parser/DXFSectionHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/parser/DXFTableSectionHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/parser/DXFValue.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/parser/Handler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/parser/HandlerManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/parser/ParseException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/parser/Parser.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/parser/ParserBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/parser/SAXParserBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/parser/dxf/DXFHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/parser/dxf/filter/AbstractDXFStreamFilter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/parser/dxf/filter/DXFStreamEntityFilter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/parser/dxf/filter/DXFStreamFilter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/parser/dxf/filter/DXFStreamLayerFilter$ParseValue.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/parser/dxf/filter/DXFStreamLayerFilter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/parser/dxf/filter/DXFStreamSectionFilter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/parser/dxf/filter/FilterExample.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/parser/entities/AbstractEntityHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/parser/entities/DXF3DFaceHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/parser/entities/DXF3DSolidHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/parser/entities/DXFArcHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/parser/entities/DXFAttribHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/parser/entities/DXFBodyHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/parser/entities/DXFCircleHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/parser/entities/DXFDimensionHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/parser/entities/DXFEllipseHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/parser/entities/DXFEntityHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/parser/entities/DXFHatchHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/parser/entities/DXFImageHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/parser/entities/DXFInsertHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/parser/entities/DXFLWPolylineHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/parser/entities/DXFLeaderHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/parser/entities/DXFLineHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/parser/entities/DXFMLineHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/parser/entities/DXFMTextHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/parser/entities/DXFPolylineHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/parser/entities/DXFRayHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/parser/entities/DXFRegionHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/parser/entities/DXFShapeHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/parser/entities/DXFSolidHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/parser/entities/DXFSplineHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/parser/entities/DXFTextHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/parser/entities/DXFToleranceHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/parser/entities/DXFTraceHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/parser/entities/DXFViewportHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/parser/entities/DXFXLineHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/parser/header/HeaderModes.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/parser/objects/AbstractDXFObjectHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/parser/objects/DXFDictionaryHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/parser/objects/DXFImageDefHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/parser/objects/DXFLayoutHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/parser/objects/DXFMLineStyleHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/parser/objects/DXFObjectHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/parser/objects/DXFPlotsettingsHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/parser/table/AbstractTableHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/parser/table/DXFDimensionStyleTableHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/parser/table/DXFLayerTableHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/parser/table/DXFLineTypeTableHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/parser/table/DXFStyleTableHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/parser/table/DXFTableHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/parser/table/DXFVPortTableHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/parser/table/DXFViewTableHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/processing/AbstractConfigurable.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/processing/AbstractPostProcessor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/processing/BoundsDebugger.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/processing/BoundsFilter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/processing/Configurable.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/processing/ImageFilter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/processing/LayerFilter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/processing/PolylineConverter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/processing/PostProcessManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/processing/PostProcessor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/processing/PostProcessorConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/processing/ProcessPipeline.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/processing/ProcessingManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/processing/ProcessorException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/processing/ViewFilter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/processing/ViewportFilter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/processing/VisibilityFilter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/processing/event/ProcessingEvent.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/processing/event/ProcessingListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/processing/extend/MyPostProcessor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/processing/helper/MergeMap.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/processing/helper/PolylineQueue.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/processing/scripting/ScriptEngine.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/processing/scripting/ScriptException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/svg/DXF2SVGReader.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/svg/FixedStrokeWidthFilter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/svg/RootLayerFilter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/svg/SVGConstants.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/svg/SVGContext.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/svg/SVGFragmentGenerator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/svg/SVGGenerationException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/svg/SVGGenerator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/svg/SVGPathBoundaryGenerator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/svg/SVGSAXGenerator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/svg/SVGSAXGeneratorManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/svg/SVGUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/svg/StyleAttributeFilter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/svg/action/CanvasUpdateManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/svg/action/CanvasUpdateRunnable.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/svg/action/CustomActionView.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/svg/action/DXFDocumentAction.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/svg/action/GroupAction.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/svg/action/GroupActionUnSelector.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/svg/action/JSVGCanvasAction.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/svg/action/LayoutSwitchAction$1$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/svg/action/LayoutSwitchAction$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/svg/action/LayoutSwitchAction.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/svg/action/Messages.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/svg/action/PrintAction$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/svg/action/PrintAction.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/svg/action/SVGDocumentAction.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/svg/action/SelectionAction.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/svg/action/ToggleInteractorActionAdapter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/svg/action/ViewerAction.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/svg/dimension/AbstractDimensionOutputter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/svg/dimension/LinearDimensionOutputter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/svg/generators/AbstractSVGSAXGenerator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/svg/generators/SVG3DFaceGenerator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/svg/generators/SVG3DSolidGenerator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/svg/generators/SVGArcGenerator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/svg/generators/SVGAttribGenerator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/svg/generators/SVGBodyGenerator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/svg/generators/SVGCircleGenerator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/svg/generators/SVGDimensionGenerator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/svg/generators/SVGEllipseGenerator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/svg/generators/SVGHatchGenerator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/svg/generators/SVGImageGenerator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/svg/generators/SVGInsertGenerator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/svg/generators/SVGLWPolylineGenerator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/svg/generators/SVGLeaderGenerator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/svg/generators/SVGLineGenerator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/svg/generators/SVGMLineGenerator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/svg/generators/SVGMTextGenerator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/svg/generators/SVGPointGenerator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/svg/generators/SVGPolylineGenerator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/svg/generators/SVGRayGenerator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/svg/generators/SVGShapeGenerator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/svg/generators/SVGSolidGenerator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/svg/generators/SVGSplineGenerator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/svg/generators/SVGStyleGenerator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/svg/generators/SVGTextGenerator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/svg/generators/SVGToleranceGenerator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/svg/generators/SVGTraceGenerator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/svg/generators/SVGViewportGenerator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/svg/generators/SVGXLineGenerator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/svg/tools/DXFSAXDocumentFactory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/svg/tools/LayerSeparator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/svg/ui/PopUpButton$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/svg/ui/PopUpButton$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/svg/ui/PopUpButton.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/tools/CodePageParser.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/tools/ConfigHelper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/tools/FontManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/tools/SAXFilterConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/tools/SAXProcessingManagerBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/tools/SAXSerializerConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/ui/Application.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/ui/ApplicationMenuBar.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/ui/ApplicationToolBar.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/ui/Component.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/ui/DXFDocumentViewComponent.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/ui/ProcessingUIComponent.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/ui/PropertiesEditor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/ui/PropertiesListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/ui/ServiceManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/ui/Serviceable.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/ui/Startable.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/ui/UIException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/ui/ViewComponent.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/ui/event/DXFDocumentChangeEventProvider.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/ui/event/DXFDocumentChangeListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/ui/impl/AboutAction$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/ui/impl/AboutAction$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/ui/impl/AboutAction$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/ui/impl/AboutAction$BottomLineBorder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/ui/impl/AboutAction.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/ui/impl/AbstractPropertiesEditor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/ui/impl/DXFFileTransferHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/ui/impl/MemoryUsageToolbarComponent$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/ui/impl/MemoryUsageToolbarComponent.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/ui/impl/Messages.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/ui/impl/OpenProcessingAction$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/ui/impl/OpenProcessingAction.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/ui/impl/ProcessingUI$1$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/ui/impl/ProcessingUI$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/ui/impl/ProcessingUI$SwitchAction.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/ui/impl/ProcessingUI.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/ui/impl/ServiceContainer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/ui/model/AbstractProcessingTreeNode.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/ui/model/ParserTreeNode.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/ui/model/ParsersTreeNode.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/ui/model/PipelineTreeNode.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/ui/model/PipelinesTreeNode.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/ui/model/PostProcessorTreeNode.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/ui/model/PostProcessorsTreeNode.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/ui/model/ProcessingTreeModelPresenter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/ui/model/PropertiesTreeNode.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/ui/model/PropertyTreeNode.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/ui/model/SAXFilterTreeNode.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/ui/model/SAXFiltersTreeNode.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/ui/model/SAXGeneratorTreeNode.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/ui/model/SAXGeneratorsTreeNode.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/ui/model/SAXSerializerTreeNode.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/ui/model/SAXSerializersTreeNode.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/ui/xml/SAXServiceContainerBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/xml/AbstractSAXFilter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/xml/AbstractSAXGenerator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/xml/AbstractSAXSerializer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/xml/AggregatorGenerator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/xml/ConsoleSerializer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/xml/SAXFilter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/xml/SAXGenerator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/xml/SAXPrettyOutputter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/xml/SAXSerializer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/dao/DesignSolutionBiz.java" beforeDir="false" afterPath="$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/dao/DesignSolutionBiz.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/entity/SysTasks.java" beforeDir="false" afterPath="$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/entity/SysTasks.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/threads/ResolveThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/threads/ResolveThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-train-biz/src/main/resources/mapper/SysTasksMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/smart-industry-train-biz/src/main/resources/mapper/SysTasksMapper.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -65,6 +367,13 @@
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="smart-industry: schema" type="c314c289:MysqlImplModel$Schema" />
       </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="smart-industry@60.205.226.96" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="smart-industry: schema" type="c314c289:MysqlImplModel$Schema" />
+        <item name="sys_tasks: table" type="98d5ac3d:MysqlImplModel$Table" />
+      </path>
     </expand>
     <select />
   </component>
@@ -76,84 +385,53 @@
       <file leaf-file-name="ResolveBiz.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/dao/ResolveBiz.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="226">
-              <caret line="106" column="31" selection-start-line="106" selection-start-column="31" selection-end-line="106" selection-end-column="31" />
+            <state relative-caret-position="303">
+              <caret line="84" column="16" selection-start-line="84" selection-start-column="16" selection-end-line="84" selection-end-column="16" />
               <folding>
                 <element signature="docComment;field#designXlsBiz#0;class#ResolveBiz#0" />
-                <element signature="e#9030#9031#0" expanded="true" />
-                <element signature="e#9068#9069#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DXFDocument.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/smart-industry-kabeja/src/main/java/org/kabeja/dxf/DXFDocument.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="351">
-              <caret line="170" column="23" selection-start-line="170" selection-start-column="23" selection-end-line="170" selection-end-column="23" />
-              <folding>
-                <element signature="e#3552#3553#0" expanded="true" />
-                <element signature="e#3601#3602#0" expanded="true" />
-                <element signature="e#5702#5703#0" expanded="true" />
-                <element signature="e#5751#5752#0" expanded="true" />
-                <element signature="e#8390#8391#0" expanded="true" />
-                <element signature="e#8447#8448#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DXFAttdefHandler.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/smart-industry-kabeja/src/main/java/org/kabeja/parser/entities/DXFAttdefHandler.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
-              <caret line="38" column="22" selection-start-line="38" selection-start-column="22" selection-end-line="38" selection-end-column="22" />
-              <folding>
-                <element signature="e#1301#1302#0" expanded="true" />
-                <element signature="e#1338#1339#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DXFAttdef.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/smart-industry-kabeja/src/main/java/org/kabeja/dxf/DXFAttdef.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="308">
-              <caret line="16" column="13" lean-forward="true" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-              <folding>
-                <element signature="e#316#317#0" expanded="true" />
-                <element signature="e#343#344#0" expanded="true" />
-                <element signature="e#397#398#0" expanded="true" />
-                <element signature="e#429#430#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="solution.tree.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="solution.tree.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/smart-industry-train-web/src/main/resources/static/js/manager/solution.tree.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="286">
-              <caret line="61" column="17" selection-start-line="61" selection-start-column="17" selection-end-line="61" selection-end-column="17" />
+            <state relative-caret-position="138">
+              <caret line="95" column="11" lean-forward="true" selection-start-line="95" selection-start-column="11" selection-end-line="95" selection-end-column="11" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DesignDetailBlock.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/entity/DesignDetailBlock.java">
+      <file leaf-file-name="sys_tasks" pinned="false" current-in-tab="false">
+        <entry file="das://df76d45d-a6d4-45ef-95bf-ef547ac4ef82/schema/smart-industry/table/sys_tasks">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state>
+              <filtering enabled="true" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="design_block_attr" pinned="false" current-in-tab="true">
+        <entry file="das://df76d45d-a6d4-45ef-95bf-ef547ac4ef82/schema/smart-industry/table/design_block_attr">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state>
+              <filtering enabled="true">
+                <filter text="value='/4.E8'" />
+              </filtering>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SysTasks.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/entity/SysTasks.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="274">
-              <caret line="76" selection-start-line="76" selection-end-line="76" />
+            <state relative-caret-position="177">
+              <caret line="30" selection-start-line="30" selection-end-line="30" />
               <folding>
-                <element signature="e#1280#1281#0" expanded="true" />
-                <element signature="e#1320#1321#0" expanded="true" />
-                <element signature="e#1450#1451#0" expanded="true" />
-                <element signature="e#1487#1488#0" expanded="true" />
-                <element signature="e#1520#1521#0" expanded="true" />
-                <element signature="e#1572#1573#0" expanded="true" />
-                <element signature="e#1616#1617#0" expanded="true" />
+                <element signature="e#461#462#0" expanded="true" />
+                <element signature="e#491#492#0" expanded="true" />
+                <element signature="e#537#538#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -162,8 +440,44 @@
       <file leaf-file-name="console.sql" pinned="false" current-in-tab="false">
         <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/df76d45d-a6d4-45ef-95bf-ef547ac4ef82/console.sql">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="132">
-              <caret line="6" selection-start-line="6" selection-end-line="6" />
+            <state relative-caret-position="267">
+              <caret line="19" column="39" lean-forward="true" selection-start-line="19" selection-start-column="39" selection-end-line="19" selection-end-column="39" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DesignSolutionBiz.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/dao/DesignSolutionBiz.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="247">
+              <caret line="255" selection-start-line="255" selection-end-line="255" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ThreadService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/threads/ThreadService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="213">
+              <caret line="21" column="46" selection-start-line="21" selection-start-column="46" selection-end-line="21" selection-end-column="46" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ResolveThread.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/threads/ResolveThread.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="217">
+              <caret line="32" column="60" selection-start-line="32" selection-start-column="60" selection-end-line="32" selection-end-column="60" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EnvUtil.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/smart-industry-utils/src/main/java/smart/industry/utils/environment/EnvUtil.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="330">
+              <caret line="15" selection-start-line="15" selection-end-line="15" />
             </state>
           </provider>
         </entry>
@@ -234,9 +548,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/templates/analysis/test_run.ftl" />
-        <option value="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/static/js/train.js" />
-        <option value="$PROJECT_DIR$/smart-industry-train-web/src/main/java/smart/industry/train/web/controllers/manager/SolutionController.java" />
         <option value="$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/entity/DesignSolution.java" />
         <option value="$PROJECT_DIR$/smart-industry-train-biz/src/main/resources/mapper/DesignSolutionMapper.xml" />
         <option value="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/static/js/manager/solution.list2.js" />
@@ -262,7 +573,6 @@
         <option value="$PROJECT_DIR$/smart-industry-kabeja/src/main/java/org/kabeja/batik/tools/SAXPNGSerializer.java" />
         <option value="$PROJECT_DIR$/smart-industry-kabeja/src/main/java/org/kabeja/batik/tools/SAXTIFFSerializer.java" />
         <option value="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/templates/manager/user_list.ftl" />
-        <option value="$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/dao/DesignSolutionBiz.java" />
         <option value="$PROJECT_DIR$/smart-industry-kabeja/src/main/java/org/kabeja/parser/DXFParser.java" />
         <option value="$PROJECT_DIR$/smart-industry-kabeja/src/main/java/org/kabeja/Main.java" />
         <option value="$PROJECT_DIR$/smart-industry-train-biz/src/main/resources/mapper/DesignDetailBlockMapper.xml" />
@@ -274,7 +584,6 @@
         <option value="$PROJECT_DIR$/smart-industry-kabeja/src/main/java/org/kabeja/dxf/DXFText.java" />
         <option value="$PROJECT_DIR$/smart-industry-kabeja/src/main/java/org/kabeja/dxf/DXFInsert.java" />
         <option value="$PROJECT_DIR$/smart-industry-kabeja/src/main/java/org/kabeja/svg/generators/SVGInsertGenerator.java" />
-        <option value="$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/threads/ResolveThread.java" />
         <option value="$PROJECT_DIR$/smart-industry-train-biz/src/main/resources/mapper/DesignBlockAttrMapper.xml" />
         <option value="$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/dao/DesignDetailBlockBiz.java" />
         <option value="$PROJECT_DIR$/smart-industry-kabeja/src/main/java/org/kabeja/dxf/DXFAttdef.java" />
@@ -285,6 +594,11 @@
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/df76d45d-a6d4-45ef-95bf-ef547ac4ef82/console.sql" />
         <option value="$PROJECT_DIR$/smart-industry-train-web/target/smart-industry-train-web-1.0/WEB-INF/classes/static/js/manager/solution.tree.js" />
         <option value="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/static/js/manager/solution.tree.js" />
+        <option value="$PROJECT_DIR$/smart-industry-train-biz/src/main/resources/mapper/SysTasksMapper.xml" />
+        <option value="$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/entity/SysTasks.java" />
+        <option value="$PROJECT_DIR$/smart-industry-utils/src/main/java/smart/industry/utils/environment/EnvUtil.java" />
+        <option value="$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/dao/DesignSolutionBiz.java" />
+        <option value="$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/threads/ResolveThread.java" />
       </list>
     </option>
   </component>
@@ -336,10 +650,10 @@
     <packageJsonPaths />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-9" />
-    <option name="y" value="-9" />
-    <option name="width" value="1938" />
-    <option name="height" value="1048" />
+    <option name="x" value="417" />
+    <option name="y" value="57" />
+    <option name="width" value="1705" />
+    <option name="height" value="965" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -359,84 +673,15 @@
             <path>
               <item name="smart-industry" type="b2602c69:ProjectViewProjectNode" />
               <item name="smart-industry" type="462c0819:PsiDirectoryNode" />
-              <item name="smart-industry-kabeja" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="smart-industry" type="b2602c69:ProjectViewProjectNode" />
-              <item name="smart-industry" type="462c0819:PsiDirectoryNode" />
-              <item name="smart-industry-train-biz" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="smart-industry" type="b2602c69:ProjectViewProjectNode" />
-              <item name="smart-industry" type="462c0819:PsiDirectoryNode" />
-              <item name="smart-industry-train-web" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="smart-industry" type="b2602c69:ProjectViewProjectNode" />
-              <item name="smart-industry" type="462c0819:PsiDirectoryNode" />
-              <item name="smart-industry-train-web" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="smart-industry" type="b2602c69:ProjectViewProjectNode" />
-              <item name="smart-industry" type="462c0819:PsiDirectoryNode" />
-              <item name="smart-industry-train-web" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="smart-industry" type="b2602c69:ProjectViewProjectNode" />
-              <item name="smart-industry" type="462c0819:PsiDirectoryNode" />
-              <item name="smart-industry-train-web" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="smart-industry" type="b2602c69:ProjectViewProjectNode" />
-              <item name="smart-industry" type="462c0819:PsiDirectoryNode" />
-              <item name="smart-industry-train-web" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="smart-industry" type="b2602c69:ProjectViewProjectNode" />
-              <item name="smart-industry" type="462c0819:PsiDirectoryNode" />
-              <item name="smart-industry-train-web" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="smart-industry" type="b2602c69:ProjectViewProjectNode" />
-              <item name="smart-industry" type="462c0819:PsiDirectoryNode" />
-              <item name="smart-industry-train-web" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="manager" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="smart-industry" type="b2602c69:ProjectViewProjectNode" />
-              <item name="smart-industry" type="462c0819:PsiDirectoryNode" />
-              <item name="smart-industry-train-web" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="target" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="AndroidView" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -452,7 +697,7 @@
     <property name="add_unversioned_files" value="$PROJECT_DIR$/smart-industry-kabeja/src/main/java/org/kabeja/batik/tools/ImageBase64Encoder.java&#10;D:/myworkspace/git/smart-industry/smart-industry-train-web/target/smart-industry-train-web-1.0/WEB-INF/classes/static/js/manager/solution.tree.js&#10;D:/myworkspace/git/smart-industry/smart-industry-kabeja/src/main/java/org/kabeja/tools/CodePageParser.java&#10;D:/myworkspace/git/smart-industry/smart-industry-kabeja/src/main/java/org/kabeja/tools/SAXProcessingManagerBuilder.java" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="MySQL" />
-    <property name="database.console.LAST_STATE" value="false" />
+    <property name="database.console.LAST_STATE" value="true" />
     <property name="extract.method.default.visibility" value="private" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/smart-industry-utils/src/main/java/smart/industry/utils" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/smart-industry-kabeja/src/main/resources/lib" />
@@ -874,7 +1119,9 @@
       <workItem from="1547379653765" duration="9930000" />
       <workItem from="1547863629474" duration="37094000" />
       <workItem from="1547987723549" duration="15195000" />
-      <workItem from="1548158006629" duration="9636000" />
+      <workItem from="1548158006629" duration="9904000" />
+      <workItem from="1548247065502" duration="330000" />
+      <workItem from="1548420066334" duration="2174000" />
     </task>
     <task id="LOCAL-00001" summary="集成shiro登录验证功能">
       <created>1532255184656</created>
@@ -1184,7 +1431,14 @@
       <option name="project" value="LOCAL" />
       <updated>1548082927161</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="解析svg实体跳转关系">
+      <created>1548167932008</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1548167932009</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1220,7 +1474,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="617954000" />
+    <option name="totallyTimeSpent" value="620726000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1242,25 +1496,26 @@
       <window_info anchor="bottom" id="Database Changes" order="4" show_stripe_button="false" />
       <window_info id="Capture Tool" order="7" />
       <window_info id="Designer" order="0" />
-      <window_info anchor="right" id="Database" order="9" weight="0.13941018" />
+      <window_info anchor="right" id="Database" order="9" visible="true" weight="0.13941018" />
       <window_info id="Structure" order="6" sideWeight="0.502994" side_tool="true" weight="0.1930295" />
-      <window_info anchor="right" id="Ant Build" order="7" visible="true" weight="0.13404825" />
+      <window_info anchor="right" id="Ant Build" order="7" weight="0.13404825" />
       <window_info id="UI Designer" order="2" />
-      <window_info anchor="bottom" id="Debug" order="10" sideWeight="0.57171583" visible="true" weight="0.17403708" />
+      <window_info anchor="bottom" id="Debug" order="10" sideWeight="0.57171583" weight="0.24393724" />
       <window_info anchor="bottom" id="TODO" order="13" weight="0.3281027" />
       <window_info anchor="bottom" id="Messages" order="2" weight="0.2981455" />
       <window_info anchor="right" id="Palette&#9;" order="2" />
       <window_info id="Image Layers" order="1" />
       <window_info anchor="bottom" id="Java Enterprise" order="3" weight="0.3281027" />
       <window_info anchor="right" id="Capture Analysis" order="1" />
-      <window_info anchor="bottom" id="Run" order="9" sideWeight="0.62734586" weight="0.33760685" />
+      <window_info anchor="bottom" id="Run" order="9" sideWeight="0.62734586" weight="0.2382311" />
       <window_info anchor="bottom" id="Version Control" order="5" weight="0.44793153" />
       <window_info anchor="bottom" id="Spring" order="0" weight="0.47360912" />
       <window_info anchor="bottom" id="Terminal" order="1" sideWeight="0.5382038" weight="0.3281027" />
-      <window_info anchor="bottom" id="Database Console" order="14" weight="0.3566334" />
-      <window_info active="true" content_ui="combo" id="Project" order="5" sideWeight="0.497006" visible="true" weight="0.20442359" />
+      <window_info active="true" anchor="bottom" id="Database Console" order="14" visible="true" weight="0.27960056" />
+      <window_info content_ui="combo" id="Project" order="5" sideWeight="0.497006" visible="true" weight="0.17895442" />
       <window_info anchor="right" id="Bean Validation" order="4" weight="0.32908848" />
       <window_info id="Web" order="4" sideWeight="0.5042373" side_tool="true" weight="0.1930295" />
+      <window_info anchor="bottom" id="Find" order="7" sideWeight="0.49932975" weight="0.27960056" />
       <window_info anchor="right" id="Theme Preview" order="3" />
       <window_info id="Favorites" order="3" sideWeight="0.5042373" side_tool="true" weight="0.1930295" />
       <window_info anchor="bottom" id="Inspection" order="12" weight="0.4" />
@@ -1269,7 +1524,6 @@
       <window_info anchor="bottom" id="SQL Generator" order="10" weight="0.425107" />
       <window_info anchor="bottom" id="Thumbnails" order="14" weight="0.32952926" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="8" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="7" sideWeight="0.49932975" weight="0.5763195" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="6" type="SLIDING" weight="0.4" />
       <window_info anchor="bottom" id="Message" order="6" />
     </layout>
@@ -1368,6 +1622,12 @@
           <properties />
           <option name="timeStamp" value="561" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/dao/DesignSolutionBiz.java</url>
+          <line>254</line>
+          <properties />
+          <option name="timeStamp" value="563" />
+        </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
@@ -1377,7 +1637,7 @@
           <properties />
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="562" />
+      <option name="time" value="565" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="SpringBootApplicationConfigurationType">
@@ -1482,44 +1742,6 @@ delete from sys_tasks;</expression-string>
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/smart-industry-kabeja/src/main/java/org/kabeja/svg/SVGConstants.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-141">
-          <caret line="25" column="31" selection-start-line="25" selection-start-column="31" selection-end-line="25" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_171/src.zip!/org/xml/sax/helpers/AttributesImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6261">
-          <caret line="402" column="16" selection-start-line="402" selection-start-column="16" selection-end-line="402" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/smart-industry-kabeja/src/main/java/org/kabeja/svg/SVGGenerator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2119">
-          <caret line="644" column="61" selection-start-line="644" selection-start-column="61" selection-end-line="644" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/smart-industry-kabeja/src/main/java/org/kabeja/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="106" selection-start-line="106" selection-end-line="106" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/smart-industry-train-biz/src/main/resources/mapper/DesignDetailBlockMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3014">
-          <caret line="137" column="49" lean-forward="true" selection-start-line="137" selection-start-column="49" selection-end-line="137" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/smart-industry-kabeja/src/main/java/org/kabeja/parser/DXFEntitiesSectionHandler.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="218">
@@ -1542,10 +1764,6 @@ delete from sys_tasks;</expression-string>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="366">
           <caret line="177" column="18" selection-start-line="177" selection-start-column="18" selection-end-line="177" selection-end-column="18" />
-          <folding>
-            <element signature="e#4098#4099#0" expanded="true" />
-            <element signature="e#4123#4124#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1567,10 +1785,6 @@ delete from sys_tasks;</expression-string>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="110">
           <caret line="5" column="18" selection-start-line="5" selection-start-column="18" selection-end-line="5" selection-end-column="18" />
-          <folding>
-            <element signature="e#213#214#0" expanded="true" />
-            <element signature="e#246#247#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1595,16 +1809,6 @@ delete from sys_tasks;</expression-string>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/dao/DesignSolutionBiz.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3844">
-          <caret line="250" selection-start-line="250" selection-end-line="250" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/dao/SysDxfAttrBiz.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="110">
@@ -1616,12 +1820,6 @@ delete from sys_tasks;</expression-string>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="141">
           <caret line="21" column="34" lean-forward="true" selection-start-line="21" selection-start-column="34" selection-end-line="21" selection-end-column="34" />
-          <folding>
-            <element signature="e#799#800#0" expanded="true" />
-            <element signature="e#826#827#0" expanded="true" />
-            <element signature="e#880#881#0" expanded="true" />
-            <element signature="e#912#913#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1629,18 +1827,6 @@ delete from sys_tasks;</expression-string>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="286">
           <caret line="73" column="6" lean-forward="true" selection-start-line="73" selection-start-column="6" selection-end-line="73" selection-end-column="6" />
-          <folding>
-            <element signature="e#2252#2253#0" expanded="true" />
-            <element signature="e#2278#2279#0" expanded="true" />
-            <element signature="e#2316#2317#0" expanded="true" />
-            <element signature="e#2346#2347#0" expanded="true" />
-            <element signature="e#5105#5106#0" expanded="true" />
-            <element signature="e#5132#5133#0" expanded="true" />
-            <element signature="e#5172#5173#0" expanded="true" />
-            <element signature="e#5204#5205#0" expanded="true" />
-            <element signature="e#10869#10870#0" expanded="true" />
-            <element signature="e#10893#10894#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1669,13 +1855,6 @@ delete from sys_tasks;</expression-string>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="389">
           <caret line="67" column="25" selection-start-line="67" selection-start-column="25" selection-end-line="67" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/threads/ResolveThread.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="87">
-          <caret line="50" selection-start-line="50" selection-end-line="50" />
         </state>
       </provider>
     </entry>
@@ -1770,13 +1949,6 @@ delete from sys_tasks;</expression-string>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="142">
           <caret line="131" selection-start-line="131" selection-end-line="131" />
-          <folding>
-            <element signature="e#1287#1288#0" expanded="true" />
-            <element signature="e#1313#1314#0" expanded="true" />
-            <element signature="e#1351#1352#0" expanded="true" />
-            <element signature="e#1381#1382#0" expanded="true" />
-            <element signature="e#4071#4072#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1796,7 +1968,7 @@ delete from sys_tasks;</expression-string>
     </entry>
     <entry file="file://$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/entity/DesignDetailBlock.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="274">
+        <state relative-caret-position="1056">
           <caret line="76" selection-start-line="76" selection-end-line="76" />
           <folding>
             <element signature="e#1280#1281#0" expanded="true" />
@@ -1812,12 +1984,8 @@ delete from sys_tasks;</expression-string>
     </entry>
     <entry file="file://$PROJECT_DIR$/smart-industry-kabeja/src/main/java/org/kabeja/parser/entities/DXFAttdefHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
+        <state relative-caret-position="726">
           <caret line="38" column="22" selection-start-line="38" selection-start-column="22" selection-end-line="38" selection-end-column="22" />
-          <folding>
-            <element signature="e#1301#1302#0" expanded="true" />
-            <element signature="e#1338#1339#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1828,47 +1996,12 @@ delete from sys_tasks;</expression-string>
         </state>
       </provider>
     </entry>
-    <entry file="das://df76d45d-a6d4-45ef-95bf-ef547ac4ef82/schema/smart-industry/table/sys_tasks">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
     <entry file="das://df76d45d-a6d4-45ef-95bf-ef547ac4ef82/schema/smart-industry/table/sys_upfiles">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true">
             <filter text="relativePath like '%static/uploader/b0a8a5cd-bd4c-459c-92e2-958ff4c285cd.xls%'" />
           </filtering>
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://df76d45d-a6d4-45ef-95bf-ef547ac4ef82/schema/smart-industry/table/design_block_attr">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true">
-            <filter text="value='/4.E8'" />
-          </filtering>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/df76d45d-a6d4-45ef-95bf-ef547ac4ef82/console.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="6" selection-start-line="6" selection-end-line="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/dao/ResolveBiz.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="226">
-          <caret line="106" column="31" selection-start-line="106" selection-start-column="31" selection-end-line="106" selection-end-column="31" />
-          <folding>
-            <element signature="docComment;field#designXlsBiz#0;class#ResolveBiz#0" />
-            <element signature="e#9030#9031#0" expanded="true" />
-            <element signature="e#9068#9069#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1882,7 +2015,7 @@ delete from sys_tasks;</expression-string>
     <entry file="file://$PROJECT_DIR$/smart-industry-kabeja/src/main/java/org/kabeja/dxf/DXFAttdef.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="308">
-          <caret line="16" column="13" lean-forward="true" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
           <folding>
             <element signature="e#316#317#0" expanded="true" />
             <element signature="e#343#344#0" expanded="true" />
@@ -1894,23 +2027,106 @@ delete from sys_tasks;</expression-string>
     </entry>
     <entry file="file://$PROJECT_DIR$/smart-industry-kabeja/src/main/java/org/kabeja/dxf/DXFDocument.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="351">
+        <state relative-caret-position="3080">
           <caret line="170" column="23" selection-start-line="170" selection-start-column="23" selection-end-line="170" selection-end-column="23" />
           <folding>
             <element signature="e#3552#3553#0" expanded="true" />
             <element signature="e#3601#3602#0" expanded="true" />
-            <element signature="e#5702#5703#0" expanded="true" />
-            <element signature="e#5751#5752#0" expanded="true" />
-            <element signature="e#8390#8391#0" expanded="true" />
-            <element signature="e#8447#8448#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/smart-industry-train-biz/src/main/resources/mapper/DesignClassMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="9" column="43" selection-start-line="9" selection-start-column="36" selection-end-line="9" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/smart-industry-train-biz/src/main/resources/mapper/SysTasksMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="66">
+          <caret line="3" column="74" selection-start-line="3" selection-start-column="74" selection-end-line="3" selection-end-column="74" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/dao/ResolveBiz.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="303">
+          <caret line="84" column="16" selection-start-line="84" selection-start-column="16" selection-end-line="84" selection-end-column="16" />
+          <folding>
+            <element signature="docComment;field#designXlsBiz#0;class#ResolveBiz#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/threads/ResolveThread.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="217">
+          <caret line="32" column="60" selection-start-line="32" selection-start-column="60" selection-end-line="32" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/threads/ThreadService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="213">
+          <caret line="21" column="46" selection-start-line="21" selection-start-column="46" selection-end-line="21" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/smart-industry-utils/src/main/java/smart/industry/utils/environment/EnvUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/entity/SysTasks.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="177">
+          <caret line="30" selection-start-line="30" selection-end-line="30" />
+          <folding>
+            <element signature="e#461#462#0" expanded="true" />
+            <element signature="e#491#492#0" expanded="true" />
+            <element signature="e#537#538#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/dao/DesignSolutionBiz.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="255" selection-start-line="255" selection-end-line="255" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/smart-industry-train-web/src/main/resources/static/js/manager/solution.tree.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="61" column="17" selection-start-line="61" selection-start-column="17" selection-end-line="61" selection-end-column="17" />
+        <state relative-caret-position="138">
+          <caret line="95" column="11" lean-forward="true" selection-start-line="95" selection-start-column="11" selection-end-line="95" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://df76d45d-a6d4-45ef-95bf-ef547ac4ef82/schema/smart-industry/table/sys_tasks">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/df76d45d-a6d4-45ef-95bf-ef547ac4ef82/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="267">
+          <caret line="19" column="39" lean-forward="true" selection-start-line="19" selection-start-column="39" selection-end-line="19" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://df76d45d-a6d4-45ef-95bf-ef547ac4ef82/schema/smart-industry/table/design_block_attr">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true">
+            <filter text="value='/4.E8'" />
+          </filtering>
         </state>
       </provider>
     </entry>

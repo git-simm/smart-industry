@@ -9,10 +9,11 @@
     <result column="modifyBy" jdbcType="INTEGER" property="modifyBy" />
     <result column="detailId" jdbcType="INTEGER" property="detailId" />
     <result column="state" jdbcType="INTEGER" property="state" />
+    <result column="machine" jdbcType="VARCHAR" property="machine" />
     <result column="retries" jdbcType="INTEGER" property="retries" />
   </resultMap>
   <sql id="Base_Column_List">
-    id, createDate, createBy, modifyDate, modifyBy, detailId, `state`, retries
+    id, createDate, createBy, modifyDate, modifyBy, detailId, `state`, retries,machine
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
@@ -36,10 +37,10 @@
   <insert id="insert" parameterType="smart.industry.train.biz.entity.SysTasks">
     insert into sys_tasks (id, createDate, createBy, 
       modifyDate, modifyBy, detailId, 
-      `state`, retries)
+      `state`, retries,machine)
     values (#{id,jdbcType=INTEGER}, #{createDate,jdbcType=TIMESTAMP}, #{createBy,jdbcType=INTEGER}, 
       #{modifyDate,jdbcType=TIMESTAMP}, #{modifyBy,jdbcType=INTEGER}, #{detailId,jdbcType=INTEGER}, 
-      #{state,jdbcType=INTEGER}, #{retries,jdbcType=INTEGER})
+      #{state,jdbcType=INTEGER}, #{retries,jdbcType=INTEGER},#{machine,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="smart.industry.train.biz.entity.SysTasks">
     insert into sys_tasks
@@ -68,6 +69,9 @@
       <if test="retries != null">
         retries,
       </if>
+      <if test="machine != null">
+        machine,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -93,6 +97,9 @@
       </if>
       <if test="retries != null">
         #{retries,jdbcType=INTEGER},
+      </if>
+      <if test="machine != null">
+        #{machine,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
@@ -120,6 +127,9 @@
       <if test="retries != null">
         retries = #{retries,jdbcType=INTEGER},
       </if>
+      <if test="machine != null">
+        machine = #{machine,jdbcType=VARCHAR},
+      </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
@@ -131,7 +141,8 @@
       modifyBy = #{modifyBy,jdbcType=INTEGER},
       detailId = #{detailId,jdbcType=INTEGER},
       `state` = #{state,jdbcType=INTEGER},
-      retries = #{retries,jdbcType=INTEGER}
+      retries = #{retries,jdbcType=INTEGER},
+      machine = #{machine,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>

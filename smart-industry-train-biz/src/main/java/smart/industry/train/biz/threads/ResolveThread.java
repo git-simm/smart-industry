@@ -4,6 +4,7 @@ import smart.industry.train.biz.dao.ResolveBiz;
 import smart.industry.train.biz.dao.SysTasksBiz;
 import smart.industry.train.biz.entity.SysTasks;
 import smart.industry.train.biz.enums.TaskStateEnum;
+import smart.industry.utils.environment.EnvUtil;
 
 import java.util.List;
 import java.util.concurrent.ExecutorService;
@@ -30,7 +31,8 @@ public class ResolveThread extends Thread {
             //1.读取数据库中待执行的任务列表
             SysTasks filter = new SysTasks();
             filter.setState(TaskStateEnum.Ready.getValue());
-            filter.setFilter("state=#{state}");
+            filter.setMachine(EnvUtil.getMachineName());
+            filter.setFilter("state=#{state} and machine=#{machine}");
             List<SysTasks> tasks = sysTasksBiz.selectByFilter(filter);
             //2.运行执行逻辑
             if (tasks.size() > 0) {

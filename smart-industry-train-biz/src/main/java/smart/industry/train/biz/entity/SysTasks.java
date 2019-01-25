@@ -20,6 +20,15 @@ public class SysTasks extends BaseEntity {
     private Integer state;
 
     private Integer retries;
+    private String machine;
+
+    public String getMachine() {
+        return machine;
+    }
+
+    public void setMachine(String machine) {
+        this.machine = machine;
+    }
 
     public Integer getId() {
         return id;

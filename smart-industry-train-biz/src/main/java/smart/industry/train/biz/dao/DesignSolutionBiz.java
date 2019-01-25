@@ -15,10 +15,12 @@ import smart.industry.train.biz.enums.FileTypeEnum;
 import smart.industry.train.biz.enums.TaskStateEnum;
 import smart.industry.train.biz.mapper.DesignSolutionMapper;
 import smart.industry.utils.StringUtils;
+import smart.industry.utils.environment.EnvUtil;
 import smart.industry.utils.exceptions.AjaxException;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
@@ -250,6 +252,7 @@ public class DesignSolutionBiz extends BaseBiz<DesignSolutionMapper, DesignSolut
             SysTasks item = new SysTasks();
             item.setDetailId(detailId);
             item.setState(TaskStateEnum.Ready.getValue());
+            item.setMachine(EnvUtil.getMachineName());
             sysTasksBiz.add(item);
         }
     }
