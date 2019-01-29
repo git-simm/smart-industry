@@ -10,14 +10,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
-import smart.industry.train.biz.dao.DesignClassBiz;
-import smart.industry.train.biz.dao.DesignSolutionBiz;
-import smart.industry.train.biz.dao.DesignSolutionListBiz;
-import smart.industry.train.biz.dao.SysUpfilesBiz;
+import smart.industry.train.biz.dao.*;
 import smart.industry.train.biz.entity.*;
 import smart.industry.train.biz.entity.base.Paging;
 import smart.industry.utils.annotations.Post;
-import smart.industry.utils.exceptions.AjaxException;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
@@ -35,6 +31,8 @@ public class SolutionController {
     private DesignSolutionBiz designSolutionBiz;
     @Autowired
     private DesignSolutionListBiz designSolutionListBiz;
+    @Autowired
+    private DesignExcelListBiz designExcelListBiz;
     @Autowired
     private DesignClassBiz designClassBiz;
     @RequestMapping("/list")
@@ -106,6 +104,20 @@ public class SolutionController {
         return designSolutionBiz.getFileTree(id);
     }
 
+    /**
+     * 获取Exceldata
+     * @param fileId
+     * @return
+     */
+    @Post("/getExcelData")
+    @ResponseBody
+    public JSONObject getExcelData(Integer fileId){
+        List<JSONObject> data = designExcelListBiz.getExcelData(fileId);
+        JSONObject result = new JSONObject();
+        result.put("rows", data);
+        result.put("total", data.size());
+        return result;
+    }
     /**
      * 新增
      * @return

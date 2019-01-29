@@ -1,5 +1,6 @@
 package smart.industry.train.biz.dao.base;
 
+import com.alibaba.fastjson.JSONArray;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 import smart.industry.train.biz.dao.PrincipalService;

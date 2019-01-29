@@ -32,7 +32,7 @@ public class DesignExcelAttrBiz extends BaseBiz<DesignExcelAttrMapper,DesignExce
             filter.setFilter("fileId=#{fileId}");
         }
         else{
-            String str = StringUtil.join("','",fields);
+            String str = String.join("','",fields);
             filter.setFilter("fileId=#{fileId} and attrName in ('"+ str +"')");
         }
         return selectByFilter(filter);
