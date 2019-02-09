@@ -178,13 +178,16 @@ Zq.Utility.RegisterNameSpace("solution.tree");
             sortName: "Item",
             sortOrder: "desc",
             queryParams: function (params) {
-                $.extend(params, { fileId: $('#hid_fileId').val()});
+                $.extend(params, { fileId: $('#hid_fileId').val(),solutionId:$('#hid_solutionId').val()});
                 return params;
             },
             // onDblClickRow: function(tr,el) {
             //     ns.Edit(tr.id);
             // },
             //showToggle:true,
+            rowAttributes:function(row,index){
+                return { state: row.state };
+            },
             columns: [
                 {
                     field: 'Number',
@@ -208,6 +211,12 @@ Zq.Utility.RegisterNameSpace("solution.tree");
                 //     align: 'left',
                 //     width: "15%"
                 // },
+                {
+                    title: "Representation",
+                    field: "Representation",
+                    align: "left",
+                    width: "15%"
+                },
                 {
                     title: 'Wire_Number',
                     field: 'Wire_Number',
@@ -238,6 +247,17 @@ Zq.Utility.RegisterNameSpace("solution.tree");
                     align: 'left',
                     width: "15%"
                 },
+                {
+                    title: '状态',
+                    field: 'state',
+                    align: 'left',
+                    width: "15%",
+                    formatter: function (value, row, index) {
+                        if(value=="-1") return "缺失";
+                        if(value =="0") return "正常";
+                        if(value =="1") return "多出";
+                    }
+                }
             ]
         });
         //高度重置

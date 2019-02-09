@@ -2,6 +2,7 @@ package smart.industry.train.biz.dao;
 
 import org.springframework.stereotype.Service;
 import smart.industry.train.biz.dao.base.BaseBiz;
+import smart.industry.train.biz.entity.CompareRecord;
 import smart.industry.train.biz.entity.DesignBlockAttr;
 import smart.industry.train.biz.entity.base.Paging;
 import smart.industry.train.biz.mapper.DesignBlockAttrMapper;
@@ -27,5 +28,14 @@ public class DesignBlockAttrBiz extends BaseBiz<DesignBlockAttrMapper,DesignBloc
         filter.setDetailId(detailId);
         filter.setFilter("detailId=#{detailId} and attrName like 'Representation%' and value !=''");
         return selectByFilter(filter);
+    }
+
+    /**
+     * 获取待比对记录
+     * @param solutionId
+     * @return
+     */
+    public List<CompareRecord> getCompareRecordList(Integer solutionId){
+        return baseMapper.selectBySolutionId(solutionId);
     }
 }

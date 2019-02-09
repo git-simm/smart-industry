@@ -269,7 +269,8 @@ public class ResolveBiz {
                                 String attrName = def.getAttr();
                                 if(attrName.contains("Representation")|| attrName.contains("Wire")
                                         || attrName.contains("Connector") || attrName.contains("Item")
-                                        || attrName.contains("Dest")){
+                                        || attrName.contains("Dest") || attrName.contains("Location")
+                                        || attrName.contains("Function")){
                                     Integer attrId = saveDxfAttrMsg(attrName);
                                     if(StringUtils.isEmpty(attrib.getText()))continue;
                                     //3.保存attr信息(搜集所有的信息，准备批量保存)

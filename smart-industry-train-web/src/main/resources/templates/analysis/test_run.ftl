@@ -38,6 +38,14 @@
               padding-left: 10px;
               padding-top: 3px;
           }
+          tr[state='-1']{
+            background: #aaaaaa;
+            color: white;
+          }
+          tr[state='1']{
+              background: red;
+              color: white;
+          }
       </style>
     <#elseif section="content">
     <input type="hidden" id="hid_solutionId" value="${solutionId!}"/>

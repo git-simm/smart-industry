@@ -32,11 +32,29 @@
         from design_block_attr
         where id = #{id,jdbcType=INTEGER}
     </select>
-    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    <select id="selectBySolutionId" parameterType="java.lang.Integer" resultType="smart.industry.train.biz.entity.CompareRecord">
+       select * from (
+            select b.solutionId,a.detailId,a.blockId,
+              max(case a.attrName when 'Item' then a.`value` else null end) as Item,
+              max(case a.attrName when 'Representation' then a.`value` else null end) as Representation,
+              max(case a.attrName when 'Wire_Number' then a.`value` else null end) as WireNumber,
+              max(case a.attrName when 'Dest_1_Item' then a.`value` else null end) as DestItem1,
+              max(case a.attrName when 'Dest_1_Connector' then a.`value` else null end) as DestConnector1,
+              max(case a.attrName when 'Dest_2_Item' then a.`value` else null end) as DestItem2,
+              max(case a.attrName when 'Dest_2_Connector' then a.`value` else null end) as DestConnector2
+            from design_block_attr as a
+            left join design_solution_list as b on a.detailId = b.id
+            left join design_solution as c on b.solutionId = c.id
+            where a.attrName in('Item','Representation','Wire_Number','Dest_1_Item',
+                                'Dest_1_Connector','Dest_2_Item','Dest_2_Connector')
+            group by a.detailId,a.blockId) as a
+        where  solutionId = #{solutionId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from design_block_attr
     where id = #{id,jdbcType=INTEGER}
   </delete>
-    <delete id="deleteByFilter" parameterType="smart.industry.train.biz.entity.DesignBlockAttr">
+  <delete id="deleteByFilter" parameterType="smart.industry.train.biz.entity.DesignBlockAttr">
     delete from design_block_attr where ${filter}
   </delete>
     <insert id="insert" parameterType="smart.industry.train.biz.entity.DesignBlockAttr">

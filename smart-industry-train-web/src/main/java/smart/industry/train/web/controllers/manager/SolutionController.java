@@ -107,12 +107,13 @@ public class SolutionController {
     /**
      * 获取Exceldata
      * @param fileId
+     * @param solutionId
      * @return
      */
     @Post("/getExcelData")
     @ResponseBody
-    public JSONObject getExcelData(Integer fileId){
-        List<JSONObject> data = designExcelListBiz.getExcelData(fileId);
+    public JSONObject getExcelData(Integer fileId,Integer solutionId){
+        List<JSONObject> data = designExcelListBiz.getExcelData(fileId,solutionId);
         JSONObject result = new JSONObject();
         result.put("rows", data);
         result.put("total", data.size());
