@@ -57,11 +57,11 @@
             </div>
         </div>
     </div>
-    <div class="ui-layout-center">
+    <div class="ui-layout-center" style="background:beige;">
     <#--主窗口-->
         <div id="mainViewContainer" style="position: relative">
             <!--<embed id="bg_svg" src="${request.contextPath}/static/svg/new.svg" class="col-md-12 svg_position" type="image/svg+xml"/>-->
-            <embed id="line_svg" src="${request.contextPath}/static/svg/new.svg" class="col-md-12 svg_position"
+            <embed id="line_svg" class="col-md-12 svg_position"
                    type="image/svg+xml"/>
         </div>
     <#--鹰眼窗口-->
