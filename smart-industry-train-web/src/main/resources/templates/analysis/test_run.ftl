@@ -61,8 +61,7 @@
     <#--主窗口-->
         <div id="mainViewContainer" style="position: relative">
             <!--<embed id="bg_svg" src="${request.contextPath}/static/svg/new.svg" class="col-md-12 svg_position" type="image/svg+xml"/>-->
-            <embed id="line_svg" class="col-md-12 svg_position"
-                   type="image/svg+xml"/>
+            <embed id="line_svg" src="${request.contextPath}/static/svg/new.svg" class="col-md-12 svg_position" type="image/svg+xml"/>
         </div>
     <#--鹰眼窗口-->
         <div id="thumbViewContainer">
@@ -78,7 +77,7 @@
                    class="thumbViewClass"/>
         </div>
     <#--excel信息展示窗口-->
-        <div class="col-12 col-md-12 col-sm-12" id="excelList" style="display: none;">
+        <div class="col-12 col-md-12 col-sm-12 marginBottom0" id="excelList" style="display: none;">
             <input id="hid_fileId" type="hidden" value="-1"/>
             <div class="mini-model">
                 <table class="table table-bordered table-hover table-striped marginBottom0">
@@ -86,21 +85,12 @@
                         <div class="pullLeft marginTop5">
                             <label class="inline-block textRight">清单列表</label>
                         </div>
-                        <#--<div class="pullRight">-->
-                            <#--<div class="input-group width200">-->
-                                <#--<input class="form-control" placeholder="请输入方案名称"-->
-                                       <#--type="text" name="searchkey" value="" autocomplete="off"/>-->
-                                <#--<span class="input-group-addon" onclick="user.list.ReFresh()"><i class="icon-search"></i></span>-->
-                            <#--</div>-->
-                        <#--</div>-->
-                        <#--<div class="pullRight marginRight10">-->
-                            <#--<button class="btn btn-sm btn-primary" onclick="user.list.Add()"><i-->
-                                    <#--class="icon icon-plus"></i>&nbsp;新增-->
-                            <#--</button>-->
-                        <#--</div>-->
+                        <div class="pullRight marginRight10">
+                            <button class="btn btn-primary btn-sm" onclick=""><i class="glyphicon glyphicon-export"></i>&nbsp;导出比对清单</button>
+                        </div>
                     </caption>
                 </table>
-                <table id="list" class="table table-bordered table-hover col-12"></table>
+                <table id="list" class="table table-bordered table-hover col-12" style="background: white;"></table>
             </div>
         </div>
     </div>
@@ -168,7 +158,16 @@
     var waitCount = 0;
 
     function changeFill(svg, color) {
-        if (svg.tagName == "g" && svg.id == "CD_A3L_PRSC_SHH") return;
+        if (svg.id == "CD_A3L_PRSC_SHH") return;
+        //对use元素 进行统一处理
+        if (svg.tagName == "use") {
+            //console.log($(svg).attr("xlink:href"));
+            if($(svg).attr("xlink:href")=="#CD_A3L_PRSC_SHH"){
+                return;
+            }
+            $(svg).attr("color","#31ff42");
+            return;
+        }
         if (svg.children && svg.children.length > 0) {
             $.each(svg.children, function (i, svgItem) {
                 changeFill(svgItem, color);
