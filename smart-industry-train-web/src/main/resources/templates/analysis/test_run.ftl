@@ -120,6 +120,7 @@
         <@jsRef "/static/js/common/svg-pan-zoom.js"/>
         <@jsRef "/static/js/common/thumbnailViewer.js"/>
         <@jsRef "/static/_resources/ztree/jquery.ztree.all.js"/>
+        <@jsRef "/static/js/manager/svg.resolve.js"/>
         <@jsRef "/static/js/manager/solution.tree.js"/>
         <@jsRef "/static/js/manager/test.run.js"/>
 <script type="application/javascript">
@@ -183,7 +184,7 @@
                     "stroke-dasharray": len + " " + len,
                     "stroke-dashoffset": len
                 }).animate({"stroke-dashoffset": 0}, 50, mina.easeinout);
-            }, 10 * waitCount);
+            }, 5 * waitCount);
         }
     }
 

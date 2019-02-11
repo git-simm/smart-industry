@@ -38,7 +38,7 @@ Zq.Utility.RegisterNameSpace("solution.tree");
                 //console.log("开始计算链接")
                 ns.setLink(node,linkMap);
             }, 1000);
-
+            svg.resolve.sort(document.getElementById("line_svg").getSVGDocument());
         }else if(path.indexOf(".xls")>-1){
             $('#mainViewContainer').hide();
             $('#thumbViewContainer').hide();
