@@ -17,15 +17,15 @@ Zq.Utility.RegisterNameSpace("solution.tree");
             onClick: treeClick
         }
     };
-
+    ns.runTimes = 0;
     /**
      * 树节点点击(图形控件需要加载对应的文件)
      **/
     function treeClick(srcEvent, treeId, node, clickFlag){
+        ns.runTimes = 0;
         //替换svg中的元素
         if(node==null || node.filePath == null) return;
         var path = Zq.Utility.GetPath(node.filePath);
-        console.log(path);
         if(path.indexOf(".svg")>-1){
             $('#mainViewContainer').show();
             $('#thumbViewContainer').show();
@@ -37,8 +37,8 @@ Zq.Utility.RegisterNameSpace("solution.tree");
             setTimeout(function (args) {
                 //console.log("开始计算链接")
                 ns.setLink(node,linkMap);
+                svg.resolve.sort(document.getElementById("line_svg").getSVGDocument());
             }, 1000);
-            svg.resolve.sort(document.getElementById("line_svg").getSVGDocument());
         }else if(path.indexOf(".xls")>-1){
             $('#mainViewContainer').hide();
             $('#thumbViewContainer').hide();
@@ -146,14 +146,6 @@ Zq.Utility.RegisterNameSpace("solution.tree");
      * 初始化ztree控件
      */
     ns.init = function () {
-        ns.getList(function(data){
-            zTree = $.fn.zTree.init($("#soluTree"), setting, data);
-            //选中第一个节点
-            var nodes = zTree.getNodes();
-            if (nodes.length>0) {
-                zTree.selectNode(nodes[0]);
-            }
-        });
         //初始化一下excel表格
         $('#list').bootstrapTable({
             url: ('/solution/getExcelData').geturl(),
@@ -264,8 +256,40 @@ Zq.Utility.RegisterNameSpace("solution.tree");
         $(window).resize(function () {
             $('#list').bootstrapTable('resetView', { height: $(window).height() - 100 });
         });
+        ns.getList(function(data){
+            zTree = $.fn.zTree.init($("#soluTree"), setting, data);
+            //选中第一个有效节点
+            var nodes = zTree.getNodes();
+            if (nodes.length>0) {
+                var first = getFirstNode(nodes);
+                zTree.selectNode(first);
+                setTimeout(function (args) {
+                    treeClick(null,null,first);
+                }, 1000);
+            }
+        });
     }
     //-------- 方案 ajax 交互  begin-----------------------
+    /**
+     * 获取第一个有效节点
+     * @param nodes
+     * @returns {*}
+     */
+    function getFirstNode(nodes){
+        for(var index in nodes){
+            var node = nodes[index];
+            if(node && node.filePath){
+                return node;
+            }
+            if(node.children && node.children.length>0){
+                var temp = getFirstNode(node.children);
+                if(temp){
+                    return temp;
+                }
+            }
+        }
+        return null;
+    }
     ns.getList = function(callback){
         $.ajax({
             async: false,
@@ -275,7 +299,6 @@ Zq.Utility.RegisterNameSpace("solution.tree");
                 if(data!=null && data.length>0){
                     data[0].open=true;
                 }
-                console.log(data);
                 callback(data);
             }
         });

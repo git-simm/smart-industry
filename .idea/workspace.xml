@@ -13,9 +13,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ca438869-ff4f-47d5-a47e-64243f73bc98" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/static/js/manager/svg.resolve.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/static/js/manager/solution.tree.js" beforeDir="false" afterPath="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/static/js/manager/solution.tree.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/static/js/manager/svg.resolve.js" beforeDir="false" afterPath="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/static/js/manager/svg.resolve.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/templates/analysis/test_run.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/templates/analysis/test_run.ftl" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -71,8 +71,8 @@
       <file leaf-file-name="solution.tree.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/smart-industry-train-web/src/main/resources/static/js/manager/solution.tree.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="118">
-              <caret line="60" column="37" lean-forward="true" selection-start-line="60" selection-start-column="37" selection-end-line="60" selection-end-column="51" />
+            <state relative-caret-position="-594">
+              <caret column="30" selection-start-column="30" selection-end-column="43" />
             </state>
           </provider>
         </entry>
@@ -80,8 +80,8 @@
       <file leaf-file-name="svg.resolve.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/smart-industry-train-web/src/main/resources/static/js/manager/svg.resolve.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="748">
-              <caret line="52" column="14" lean-forward="true" selection-start-line="52" selection-start-column="14" selection-end-line="52" selection-end-column="14" />
+            <state relative-caret-position="1870">
+              <caret line="121" column="35" lean-forward="true" selection-start-line="121" selection-start-column="35" selection-end-line="121" selection-end-column="35" />
             </state>
           </provider>
         </entry>
@@ -98,8 +98,8 @@
       <file leaf-file-name="test_run.ftl" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/smart-industry-train-web/src/main/resources/templates/analysis/test_run.ftl">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-638">
-              <caret line="130" column="74" selection-start-line="130" selection-start-column="8" selection-end-line="130" selection-end-column="74" />
+            <state relative-caret-position="291">
+              <caret line="138" column="41" selection-start-line="138" selection-start-column="41" selection-end-line="138" selection-end-column="41" />
               <folding>
                 <element signature="e#1822#1854#0#HTML" expanded="true" />
                 <element signature="e#2970#3010#0#HTML" expanded="true" />
@@ -182,7 +182,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>my-filter1</find>
       <find>CODE_3</find>
       <find>28642</find>
       <find>DXFStyleTableHandler</find>
@@ -212,6 +211,7 @@
       <find>SVGGenerationException</find>
       <find>selectByFilter</find>
       <find>getListByFilter</find>
+      <find>srcEvent</find>
     </findStrings>
     <replaceStrings>
       <replace>.mypicker</replace>
@@ -277,8 +277,8 @@
         <option value="$PROJECT_DIR$/smart-industry-train-biz/src/main/resources/mapper/DesignBlockAttrMapper.xml" />
         <option value="$PROJECT_DIR$/smart-industry-train-web/src/main/java/smart/industry/train/web/controllers/manager/SolutionController.java" />
         <option value="$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/dao/DesignExcelListBiz.java" />
-        <option value="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/templates/analysis/test_run.ftl" />
         <option value="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/static/js/manager/solution.tree.js" />
+        <option value="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/templates/analysis/test_run.ftl" />
         <option value="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/static/js/manager/svg.resolve.js" />
       </list>
     </option>
@@ -1029,14 +1029,7 @@
       <workItem from="1548247065502" duration="330000" />
       <workItem from="1548420066334" duration="2233000" />
       <workItem from="1548478676638" duration="10005000" />
-      <workItem from="1548909682233" duration="31802000" />
-    </task>
-    <task id="LOCAL-00002" summary="集成shiro登录验证功能">
-      <created>1532263846767</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1532263846767</updated>
+      <workItem from="1548909682233" duration="45194000" />
     </task>
     <task id="LOCAL-00003" summary="集成webuploader文件上传模块">
       <created>1532357971149</created>
@@ -1374,7 +1367,14 @@
       <option name="project" value="LOCAL" />
       <updated>1549800788929</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="解析线段图像，准备排序">
+      <created>1549897113182</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1549897113182</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1410,7 +1410,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="662592000" />
+    <option name="totallyTimeSpent" value="675984000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1436,7 +1436,7 @@
       <window_info id="Structure" order="6" sideWeight="0.5044843" side_tool="true" weight="0.19101876" />
       <window_info anchor="right" id="Ant Build" order="7" visible="true" weight="0.13404825" />
       <window_info id="UI Designer" order="2" />
-      <window_info anchor="bottom" id="Debug" order="10" sideWeight="0.57171583" weight="0.18830243" />
+      <window_info active="true" anchor="bottom" id="Debug" order="10" sideWeight="0.57171583" visible="true" weight="0.17118402" />
       <window_info anchor="bottom" id="TODO" order="13" weight="0.3281027" />
       <window_info anchor="bottom" id="Messages" order="2" weight="0.34950072" />
       <window_info anchor="right" id="Palette&#9;" order="2" />
@@ -1510,7 +1510,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="添加多种类文件上传界面" />
     <MESSAGE value="当前进度：&#10;&#10;1、设计方案的新增，文件保存基本实现；&#10;&#10;2、遗留问题，大文件上传后切片post到后台，需要进行大文件整合；" />
     <MESSAGE value="完善用户管理功能" />
     <MESSAGE value="添加对解决方案上传文件的编辑功能" />
@@ -1535,7 +1534,8 @@
     <MESSAGE value="提交excel解析界面" />
     <MESSAGE value="提交excel信息比对逻辑" />
     <MESSAGE value="提交变色处理逻辑" />
-    <option name="LAST_COMMIT_MESSAGE" value="提交变色处理逻辑" />
+    <MESSAGE value="解析线段图像，准备排序" />
+    <option name="LAST_COMMIT_MESSAGE" value="解析线段图像，准备排序" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1561,7 +1561,7 @@
           <properties />
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="577" />
+      <option name="time" value="578" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="SpringBootApplicationConfigurationType">
@@ -2009,8 +2009,8 @@ delete from sys_tasks;</expression-string>
     </entry>
     <entry file="file://$PROJECT_DIR$/smart-industry-train-web/src/main/resources/templates/analysis/test_run.ftl">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-638">
-          <caret line="130" column="74" selection-start-line="130" selection-start-column="8" selection-end-line="130" selection-end-column="74" />
+        <state relative-caret-position="291">
+          <caret line="138" column="41" selection-start-line="138" selection-start-column="41" selection-end-line="138" selection-end-column="41" />
           <folding>
             <element signature="e#1822#1854#0#HTML" expanded="true" />
             <element signature="e#2970#3010#0#HTML" expanded="true" />
@@ -2021,15 +2021,15 @@ delete from sys_tasks;</expression-string>
     </entry>
     <entry file="file://$PROJECT_DIR$/smart-industry-train-web/src/main/resources/static/js/manager/solution.tree.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="118">
-          <caret line="60" column="37" lean-forward="true" selection-start-line="60" selection-start-column="37" selection-end-line="60" selection-end-column="51" />
+        <state relative-caret-position="-594">
+          <caret column="30" selection-start-column="30" selection-end-column="43" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/smart-industry-train-web/src/main/resources/static/js/manager/svg.resolve.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="748">
-          <caret line="52" column="14" lean-forward="true" selection-start-line="52" selection-start-column="14" selection-end-line="52" selection-end-column="14" />
+        <state relative-caret-position="1870">
+          <caret line="121" column="35" lean-forward="true" selection-start-line="121" selection-start-column="35" selection-end-line="121" selection-end-column="35" />
         </state>
       </provider>
     </entry>

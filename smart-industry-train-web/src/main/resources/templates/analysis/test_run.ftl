@@ -38,11 +38,13 @@
               padding-left: 10px;
               padding-top: 3px;
           }
-          tr[state='-1']{
-            background: #aaaaaa;
-            color: white;
+
+          tr[state='-1'] {
+              background: #aaaaaa;
+              color: white;
           }
-          tr[state='1']{
+
+          tr[state='1'] {
               background: red;
               color: white;
           }
@@ -61,7 +63,8 @@
     <#--主窗口-->
         <div id="mainViewContainer" style="position: relative">
             <!--<embed id="bg_svg" src="${request.contextPath}/static/svg/new.svg" class="col-md-12 svg_position" type="image/svg+xml"/>-->
-            <embed id="line_svg" src="${request.contextPath}/static/svg/new.svg" class="col-md-12 svg_position" type="image/svg+xml"/>
+            <embed id="line_svg" src="${request.contextPath}/static/svg/new.svg" class="col-md-12 svg_position"
+                   type="image/svg+xml"/>
         </div>
     <#--鹰眼窗口-->
         <div id="thumbViewContainer">
@@ -86,7 +89,8 @@
                             <label class="inline-block textRight">清单列表</label>
                         </div>
                         <div class="pullRight marginRight10">
-                            <button class="btn btn-primary btn-sm" onclick=""><i class="glyphicon glyphicon-export"></i>&nbsp;导出比对清单</button>
+                            <button class="btn btn-primary btn-sm" onclick=""><i class="glyphicon glyphicon-export"></i>&nbsp;导出比对清单
+                            </button>
                         </div>
                     </caption>
                 </table>
@@ -125,68 +129,54 @@
         <@jsRef "/static/js/manager/test.run.js"/>
 <script type="application/javascript">
     //--------------------
-    var i = 0;
-
     function svgAnimal() {
-        var svgDoc = document.getElementById("line_svg").getSVGDocument();
-        /* map = Snap(svgDoc.getElementsByTagName("svg")[0]);
-        var paths = map.selectAll("path");
-        $.each(paths,function(i,obj){
-            var len = obj.getTotalLength();
-            obj.attr({
-                stroke: '#31ff42',
-                strokeWidth: 10,
-                "stroke-dasharray": len + " " + len,
-                "stroke-dashoffset": len
-            }).animate({"stroke-dashoffset": 10}, 2500,mina.easeinout);
-        }); */
         //开灯，关灯
-        i++;
-        if (i % 2) {
-            changeFill(svgDoc, "#ff0000");
+        solution.tree.runTimes ++;
+        if (solution.tree.runTimes % 2) {
+            svg.resolve.wirePath("#ff0000");
             document.getElementById("train").contentWindow.train.lines.openLight();
         } else {
-            changeFill(svgDoc, "gray");
+            svg.resolve.wirePath("gray");
             document.getElementById("train").contentWindow.train.lines.closeLight();
         }
     }
 
-    /**
-     * 改变svg的填充颜色
-     * @param svg
-     * @param color
-     */
-    var waitCount = 0;
-
-    function changeFill(svg, color) {
-        if (svg.id == "CD_A3L_PRSC_SHH") return;
-        //对use元素 进行统一处理
-        if (svg.tagName == "use") {
-            //console.log($(svg).attr("xlink:href"));
-            if($(svg).attr("xlink:href")=="#CD_A3L_PRSC_SHH"){
-                return;
-            }
-            $(svg).attr("color","#31ff42");
-            return;
-        }
-        if (svg.children && svg.children.length > 0) {
-            $.each(svg.children, function (i, svgItem) {
-                changeFill(svgItem, color);
-            });
-        }
-        waitCount++;
-        if (svg.tagName == "path" || svg.tagName == "line" || svg.tagName == "circle") {
-            setTimeout(function () {
-                var len = svg.getTotalLength();
-                $(svg).css({
-                    stroke: '#31ff42',
-                    strokeWidth: 0.2,
-                    "stroke-dasharray": len + " " + len,
-                    "stroke-dashoffset": len
-                }).animate({"stroke-dashoffset": 0}, 50, mina.easeinout);
-            }, 5 * waitCount);
-        }
-    }
+    // /**
+    //  * 改变svg的填充颜色
+    //  * @param svg
+    //  * @param color
+    //  */
+    // var waitCount = 0;
+    //
+    // function changeFill(svg, color) {
+    //     if (svg.id == "CD_A3L_PRSC_SHH") return;
+    //     //对use元素 进行统一处理
+    //     if (svg.tagName == "use") {
+    //         //console.log($(svg).attr("xlink:href"));
+    //         if($(svg).attr("xlink:href")=="#CD_A3L_PRSC_SHH"){
+    //             return;
+    //         }
+    //         $(svg).attr("color","#31ff42");
+    //         return;
+    //     }
+    //     if (svg.children && svg.children.length > 0) {
+    //         $.each(svg.children, function (i, svgItem) {
+    //             changeFill(svgItem, color);
+    //         });
+    //     }
+    //     waitCount++;
+    //     if (svg.tagName == "path" || svg.tagName == "line" || svg.tagName == "circle") {
+    //         setTimeout(function () {
+    //             var len = svg.getTotalLength();
+    //             $(svg).css({
+    //                 stroke: '#31ff42',
+    //                 strokeWidth: 0.2,
+    //                 "stroke-dasharray": len + " " + len,
+    //                 "stroke-dashoffset": len
+    //             }).animate({"stroke-dashoffset": 0}, 50, mina.easeinout);
+    //         }, 5 * waitCount);
+    //     }
+    // }
 
     function sleep(numberMillis) {
         var now = new Date();
