@@ -103,6 +103,9 @@
             <button class="btn btn-primary btn-sm width-100" onclick="svgAnimal();">
                 <span class="icon icon-rocket"/>
             </button>
+            <button class="btn btn-primary btn-sm marginTop10 width-100" onclick="alert('单步运行');">
+                <span class="glyphicon glyphicon-arrow-down"/>
+            </button>
             <button class="btn btn-primary btn-sm marginTop10 width-100">
                 <span class="glyphicon glyphicon-export"></span>
             </button>

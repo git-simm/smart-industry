@@ -6,6 +6,7 @@ Zq.Utility.RegisterNameSpace("svg.resolve");
      * @type {Array}
      */
     var entities = [];
+    var timeoutList = [];
     //入口排序数组
     ns.entrySortArr = [];
 
@@ -28,8 +29,7 @@ Zq.Utility.RegisterNameSpace("svg.resolve");
             var key = node.key;
             var el = map.select(node.type + '[entity-key="'+ key +'"]');
             if(el==null) return;
-            waitCount++;
-            setTimeout(function () {
+            timeoutList.push(setTimeout(function () {
                 var len = el.getTotalLength();
                 el.attr({
                     stroke: color,
@@ -37,7 +37,7 @@ Zq.Utility.RegisterNameSpace("svg.resolve");
                     "stroke-dasharray": len + " " + len,
                     "stroke-dashoffset": len
                 }).animate({"stroke-dashoffset": 0}, 50,mina.easeinout);
-            }, 5 * waitCount);
+            }, 500 * node.sort));
         })
     }
     /**
@@ -62,9 +62,14 @@ Zq.Utility.RegisterNameSpace("svg.resolve");
      */
     ns.sort = function(svg){
         ns.entrySortArr = [];
+        timeoutList.forEach(function(a){
+            clearTimeout(a);
+        });
+        timeoutList = [];
         var map = Snap(svg.getElementsByTagName("svg")[0]);
         //整理 实体列表
         var entities = getEntities(map);
+        console.log(entities);
         //为实体信息排序
         //1.查找入口
         var entryList = [];
@@ -86,10 +91,11 @@ Zq.Utility.RegisterNameSpace("svg.resolve");
                 key:key,
                 nodes:[node]
             };
-            //wrapNodes;
             wrapNodes(group,node,entities);
             ns.entrySortArr.push(group);
         });
+        //排序结果
+        console.log(ns.entrySortArr);
     }
 
     /**
@@ -100,19 +106,51 @@ Zq.Utility.RegisterNameSpace("svg.resolve");
      */
     function wrapNodes(group,curr,nodes){
         var x = curr.x1,y = curr.y1;
-        if(curr.type=="line"){
+        if(curr.direction==1){
             x = curr.x2;
             y =curr.y2;
+        }else if(curr.direction==2){
+            x = curr.x1;
+            y =curr.y1;
         }
+        x = Number(x);
+        y = Number(y);
         //处理有效的记录
         var nextList = nodes.filter(function(node){
-            var b1 = (node.x1 ==x) && (node.y1 ==y) && (node.key!=curr.key);
-            var b2 = group.nodes.some(function(item){
+            if(node.key==curr.key) return false;
+            var bExists = group.nodes.some(function(item){
                 return item.key == node.key;
             });
-            return b1 && !b2;
+            if(bExists) return false;
+            //1.正向验证
+            var bX1 = rangeValid(node.x1,x);
+            var bY1 = rangeValid(node.y1,y);
+            var r = bX1 && bY1;
+            if(r){
+                //正方向
+                node.direction = 1;
+                return r;
+            }
+            //2.逆向验证
+            var bX2 = rangeValid(node.x2,x);
+            var bY2 = rangeValid(node.y2,y);
+            r = bX2 && bY2;
+            if(r){
+                //反方向
+                node.direction = 2;
+                return r;
+            }
+            //3.中间连接验证
+            r = centerLink(node,x,y,curr);
+            if(r){
+                return r;
+            }
+            //4.挂载多元素的关系查找
+            return multiLink(node,curr);
         });
         if(nextList==null) return;
+        //按序号排列好
+        var tempList = [];
         nextList.forEach(function(next){
             var temp = {};
             for(var p in next){
@@ -120,10 +158,100 @@ Zq.Utility.RegisterNameSpace("svg.resolve");
             }
             temp.sort = curr.sort + 1;
             group.nodes.push(temp);
-            wrapNodes(group,temp,nodes);
+            tempList.push(temp);
+        });
+        //递归组装
+        tempList.forEach(function(next){
+            wrapNodes(group,next,nodes);
         })
     }
 
+    /**
+     * 是否为中间连接
+     */
+    function centerLink(node,x,y,curr,cycle){
+        if(curr.type=="use" && !cycle){
+            var result = centerLink(node,Number(curr.x1),Number(curr.y1),curr,true);
+            if(result){
+                node.direction = 2;
+            }else{
+                node.direction = 1;
+                result = centerLink(node,Number(curr.x2),Number(curr.y2),curr,true);
+            }
+            return result;
+        }
+        var x1 = Number(node.x1),x2= Number(node.x2),y1= Number(node.y1),y2= Number(node.y2);
+        var max=0,min=0,r = false;
+        if(x1==x2 && x1==x){
+            max = Math.max(y1,y2);
+            min = Math.min(y1,y2);
+            r = (max>=y && min<=y);
+        }else if(y1==y2 && y1==y){
+            max = Math.max(x1,x2);
+            min = Math.min(x1,x2);
+            r = (max>=x && min<=x);
+        }
+        if(r){
+            node.direction = 1;
+        }
+        return r;
+    }
+
+    /**
+     * 一个元素上搭载多个连接点
+     * @param node
+     * @param x
+     * @param y
+     * @param curr
+     * @param cycle
+     */
+    function multiLink(node,curr,cycle){
+        var x1 = Number(curr.x1),x2= Number(curr.x2),y1= Number(curr.y1),y2= Number(curr.y2);
+        var nx1 = Number(node.x1),nx2= Number(node.x2),ny1= Number(node.y1),ny2= Number(node.y2);
+        var max=0,min=0,r = false,direction=1;
+
+        if(x1==x2 && x1==nx1){
+            //正向 y轴挂载多节点
+            max = Math.max(y1,y2);
+            min = Math.min(y1,y2);
+            r = (max>= ny1 && min<= ny1);
+            direction =1;
+        }else if(y1==y2 && y1==ny1){
+            //正向 x轴挂载多节点
+            max = Math.max(x1,x2);
+            min = Math.min(x1,x2);
+            r = (max>= nx1 && min<= nx1);
+            direction =1;
+        }else if(x1==x2 && x1 ==nx2){
+            //逆向 y轴挂载多节点
+            max = Math.max(y1,y2);
+            min = Math.min(y1,y2);
+            r = (max>= ny2 && min<= ny2);
+            direction =2;
+        }else if(y1==y2 && y1==ny2){
+            //逆向 x轴挂载多节点
+            max = Math.max(x1,x2);
+            min = Math.min(x1,x2);
+            r = (max>= nx2 && min<= nx2);
+            direction =2;
+        }
+        if(r){
+            node.direction = direction;
+        }
+        return r;
+    }
+    /**
+     * 范围验证
+     * @param val
+     * @param base
+     * @returns {boolean}
+     */
+    function rangeValid(val,base){
+        val = Number(val);
+        base = Number(base);
+        var rad = 2;
+        return (val -(base-rad) >0 ) && (val - (base + rad)<= 0);
+    }
     /**
      * 整理实体列表
      * @param svg
@@ -160,11 +288,14 @@ Zq.Utility.RegisterNameSpace("svg.resolve");
                 if(!trans) return;
                 var arr = trans.replace("t","").split(",");
                 if(arr.length<2) return;
+                var box = element.original.getBBox();
                 entities.push({
                     key:key,
                     type:"use",
                     x1:arr[0],
-                    y1:arr[1]
+                    y1:arr[1],
+                    x2:arr[0],
+                    y2:Number(arr[1])-box.height,
                 });
             }
             catch(e){
