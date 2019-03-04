@@ -113,11 +113,12 @@ Zq.Utility.RegisterNameSpace("svg.resolve");
             x = curr.x1;
             y =curr.y1;
         }
-        x = Number(x);
-        y = Number(y);
+        x = Number(x),y = Number(y);
         //处理有效的记录
         var nextList = nodes.filter(function(node){
-            if(node.key==curr.key) return false;
+            if(node.key==curr.key){
+                return false;
+            }
             var bExists = group.nodes.some(function(item){
                 return item.key == node.key;
             });
@@ -141,17 +142,34 @@ Zq.Utility.RegisterNameSpace("svg.resolve");
                 return r;
             }
             //3.中间连接验证
-            r = centerLink(node,x,y,curr);
-            if(r){
-                return r;
-            }
+            // r = centerLink(node,x,y,curr);
+            // if(r){
+            //     return r;
+            // }
             //4.挂载多元素的关系查找
             return multiLink(node,curr);
         });
         if(nextList==null) return;
+        //如果包含元器件信息，需要将4条边都包含进系统内
+        var newList = [],useArr =[];
+        for(var i=0;i<nextList.length;i++){
+            var node = nextList[i];
+            if(node.type=="use"){
+                //已经处理过了，则退出
+                if(useArr.includes(node.key)) continue;
+                useArr.push(node.key);
+                //得到关于元素组的所有信息
+                var list = nodes.filter(function(n){
+                    return n.key==node.key;
+                });
+                newList = newList.concat(list);
+            }else{
+                newList.push(node);
+            }
+        }
         //按序号排列好
         var tempList = [];
-        nextList.forEach(function(next){
+        newList.forEach(function(next){
             var temp = {};
             for(var p in next){
                 temp[p] = next[p];
@@ -192,7 +210,7 @@ Zq.Utility.RegisterNameSpace("svg.resolve");
             r = (max>=x && min<=x);
         }
         if(r){
-            node.direction = 1;
+            node.direction = 3;
         }
         return r;
     }
@@ -208,31 +226,69 @@ Zq.Utility.RegisterNameSpace("svg.resolve");
     function multiLink(node,curr,cycle){
         var x1 = Number(curr.x1),x2= Number(curr.x2),y1= Number(curr.y1),y2= Number(curr.y2);
         var nx1 = Number(node.x1),nx2= Number(node.x2),ny1= Number(node.y1),ny2= Number(node.y2);
-        var max=0,min=0,r = false,direction=1;
-
-        if(x1==x2 && x1==nx1){
+        var r = false,direction=1;
+        var maxX = Math.max(x1,x2),minX = Math.min(x1,x2);
+        var maxY = Math.max(y1,y2),minY = Math.min(y1,y2);
+        var maxNX = Math.max(nx1,nx2),minNX = Math.min(nx1,nx2);
+        var maxNY = Math.max(ny1,ny2),minNY = Math.min(ny1,ny2);
+        if((x1==x2) && (nx1==nx2) && (x1==nx1)){
+            //1.判断x轴上的重叠
             //正向 y轴挂载多节点
-            max = Math.max(y1,y2);
-            min = Math.min(y1,y2);
-            r = (max>= ny1 && min<= ny1);
+            r = (maxY>= ny1 && minY<= ny1);
+            //正向挂载
+            direction =1;
+            if(!r){
+                //反向挂载
+                r = (maxY>= ny2 && minY<= ny2);
+                direction =2;
+            }
+            if(!r){
+                //反向包含
+                r = (maxNY>= y1 && minNY<= y1);
+                direction =1;
+            }
+            if(!r){
+                //反向包含
+                r = (maxNY>= y2 && minNY<= y2);
+                direction =2;
+            }
+        }else if((y1==y2) && (ny1==ny2) && (y1==ny1)){
+            //2.判断y轴上的重叠
+            //正向 y轴挂载多节点
+            r = (maxX>= nx1 && minX<= nx1);
+            //正向挂载
+            direction =1;
+            if(!r){
+                //反向挂载
+                r = (maxX>= nx2 && minX<= nx2);
+                direction =2;
+            }
+            if(!r){
+                //反向包含
+                r = (maxNX>= x1 && minNX<= x1);
+                direction =1;
+            }
+            if(!r){
+                //反向包含
+                r = (maxNX>= x2 && minNX<= x2);
+                direction =2;
+            }
+        }//3.垂直挂接
+        else if(x1==x2 && x1==nx1){
+            //正向 y轴挂载多节点
+            r = (maxY>= ny1 && minY<= ny1);
             direction =1;
         }else if(y1==y2 && y1==ny1){
             //正向 x轴挂载多节点
-            max = Math.max(x1,x2);
-            min = Math.min(x1,x2);
-            r = (max>= nx1 && min<= nx1);
+            r = (maxX>= nx1 && minX<= nx1);
             direction =1;
         }else if(x1==x2 && x1 ==nx2){
             //逆向 y轴挂载多节点
-            max = Math.max(y1,y2);
-            min = Math.min(y1,y2);
-            r = (max>= ny2 && min<= ny2);
+            r = (maxY>= ny2 && minY<= ny2);
             direction =2;
         }else if(y1==y2 && y1==ny2){
             //逆向 x轴挂载多节点
-            max = Math.max(x1,x2);
-            min = Math.min(x1,x2);
-            r = (max>= nx2 && min<= nx2);
+            r = (maxX>= nx2 && minX<= nx2);
             direction =2;
         }
         if(r){
@@ -289,12 +345,38 @@ Zq.Utility.RegisterNameSpace("svg.resolve");
                 var arr = trans.replace("t","").split(",");
                 if(arr.length<2) return;
                 var box = element.original.getBBox();
+                //y轴扩展
                 entities.push({
                     key:key,
                     type:"use",
                     x1:arr[0],
                     y1:arr[1],
                     x2:arr[0],
+                    y2:Number(arr[1])-box.height,
+                });
+                //x轴扩展
+                entities.push({
+                    key:key,
+                    type:"use",
+                    x1:arr[0],
+                    y1:arr[1],
+                    x2:Number(arr[0])+ box.width,
+                    y2:arr[1],
+                });
+                entities.push({
+                    key:key,
+                    type:"use",
+                    x1:Number(arr[0])+ box.width,
+                    y1:arr[1],
+                    x2:Number(arr[0])+ box.width,
+                    y2:Number(arr[1])-box.height,
+                });
+                entities.push({
+                    key:key,
+                    type:"use",
+                    x1:arr[0],
+                    y1:Number(arr[1])-box.height,
+                    x2:Number(arr[0])+ box.width,
                     y2:Number(arr[1])-box.height,
                 });
             }

@@ -15,7 +15,6 @@
     <list default="true" id="ca438869-ff4f-47d5-a47e-64243f73bc98" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/static/js/manager/svg.resolve.js" beforeDir="false" afterPath="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/static/js/manager/svg.resolve.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/templates/analysis/test_run.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/templates/analysis/test_run.ftl" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -70,8 +69,8 @@
       <file leaf-file-name="solution.tree.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/smart-industry-train-web/src/main/resources/static/js/manager/solution.tree.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="352">
-              <caret line="70" column="23" lean-forward="true" selection-start-line="66" selection-start-column="20" selection-end-line="70" selection-end-column="23" />
+            <state relative-caret-position="1540">
+              <caret line="70" column="23" selection-start-line="66" selection-start-column="20" selection-end-line="70" selection-end-column="23" />
             </state>
           </provider>
         </entry>
@@ -79,8 +78,11 @@
       <file leaf-file-name="svg.resolve.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/smart-industry-train-web/src/main/resources/static/js/manager/svg.resolve.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="220" column="34" lean-forward="true" selection-start-line="220" selection-start-column="34" selection-end-line="220" selection-end-column="34" />
+            <state relative-caret-position="1200">
+              <caret line="274" column="13" lean-forward="true" selection-start-line="274" selection-start-column="13" selection-end-line="274" selection-end-column="13" />
+              <folding>
+                <element signature="e#7351#8881#0" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -97,8 +99,8 @@
       <file leaf-file-name="test_run.ftl" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/smart-industry-train-web/src/main/resources/templates/analysis/test_run.ftl">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-176">
-              <caret line="111" column="14" lean-forward="true" selection-start-line="111" selection-start-column="14" selection-end-line="111" selection-end-column="14" />
+            <state relative-caret-position="2442">
+              <caret line="111" column="14" selection-start-line="111" selection-start-column="14" selection-end-line="111" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -133,17 +135,8 @@
       <file leaf-file-name="List.java" pinned="false" current-in-tab="false">
         <entry file="jar://C:/Program Files/Java/jdk1.8.0_171/src.zip!/java/util/List.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2816">
+            <state relative-caret-position="3322">
               <caret line="151" column="16" selection-start-line="151" selection-start-column="16" selection-end-line="151" selection-end-column="16" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CollectionUtils.java" pinned="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/commons-collections/commons-collections/3.2.2/commons-collections-3.2.2-sources.jar!/org/apache/commons/collections/CollectionUtils.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="8976">
-              <caret line="408" column="13" selection-start-line="404" selection-start-column="12" selection-end-line="408" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -325,8 +318,8 @@
     <packageJsonPaths />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="777" />
-    <option name="y" value="42" />
+    <option name="x" value="776" />
+    <option name="y" value="41" />
     <option name="width" value="1705" />
     <option name="height" value="965" />
   </component>
@@ -345,6 +338,32 @@
             <path>
               <item name="smart-industry" type="b2602c69:ProjectViewProjectNode" />
               <item name="smart-industry" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="smart-industry" type="b2602c69:ProjectViewProjectNode" />
+              <item name="smart-industry" type="462c0819:PsiDirectoryNode" />
+              <item name="smart-industry-train-web" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="smart-industry" type="b2602c69:ProjectViewProjectNode" />
+              <item name="smart-industry" type="462c0819:PsiDirectoryNode" />
+              <item name="smart-industry-train-web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="smart-industry" type="b2602c69:ProjectViewProjectNode" />
+              <item name="smart-industry" type="462c0819:PsiDirectoryNode" />
+              <item name="smart-industry-train-web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="smart-industry" type="b2602c69:ProjectViewProjectNode" />
+              <item name="smart-industry" type="462c0819:PsiDirectoryNode" />
+              <item name="smart-industry-train-web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="smart-industry" type="b2602c69:ProjectViewProjectNode" />
@@ -800,14 +819,8 @@
       <workItem from="1548478676638" duration="10005000" />
       <workItem from="1548909682233" duration="45194000" />
       <workItem from="1550369913514" duration="444000" />
-      <workItem from="1550584628355" duration="17424000" />
-    </task>
-    <task id="LOCAL-00003" summary="集成webuploader文件上传模块">
-      <created>1532357971149</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1532357971149</updated>
+      <workItem from="1550584628355" duration="17511000" />
+      <workItem from="1551709339332" duration="6776000" />
     </task>
     <task id="LOCAL-00004" summary="添加des加密工具类">
       <created>1532528219823</created>
@@ -1145,7 +1158,14 @@
       <option name="project" value="LOCAL" />
       <updated>1549897113182</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="提交一部分的线路顺序解析算法">
+      <created>1551624947181</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1551624947181</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1181,7 +1201,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="693852000" />
+    <option name="totallyTimeSpent" value="700715000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1207,7 +1227,7 @@
       <window_info id="Structure" order="6" sideWeight="0.5044843" side_tool="true" weight="0.19101876" />
       <window_info anchor="right" id="Ant Build" order="7" visible="true" weight="0.117292225" />
       <window_info id="UI Designer" order="2" />
-      <window_info anchor="bottom" id="Debug" order="10" sideWeight="0.57171583" weight="0.22253923" />
+      <window_info active="true" anchor="bottom" id="Debug" order="10" sideWeight="0.57171583" visible="true" weight="0.18972896" />
       <window_info anchor="bottom" id="TODO" order="13" weight="0.3281027" />
       <window_info anchor="bottom" id="Messages" order="2" weight="0.5221113" />
       <window_info anchor="right" id="Palette&#9;" order="2" />
@@ -1218,7 +1238,7 @@
       <window_info anchor="bottom" id="Run" order="9" sideWeight="0.62734586" weight="0.2382311" />
       <window_info anchor="bottom" id="Spring" order="0" weight="0.47360912" />
       <window_info anchor="bottom" id="Terminal" order="1" sideWeight="0.5382038" weight="0.3281027" />
-      <window_info active="true" content_ui="combo" id="Project" order="5" sideWeight="0.4955157" visible="true" weight="0.17225201" />
+      <window_info content_ui="combo" id="Project" order="5" sideWeight="0.4955157" visible="true" weight="0.17426273" />
       <window_info anchor="right" id="Bean Validation" order="4" weight="0.32908848" />
       <window_info id="Web" order="4" sideWeight="0.5042373" side_tool="true" weight="0.1930295" />
       <window_info anchor="right" id="Theme Preview" order="3" />
@@ -1281,7 +1301,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="当前进度：&#10;&#10;1、设计方案的新增，文件保存基本实现；&#10;&#10;2、遗留问题，大文件上传后切片post到后台，需要进行大文件整合；" />
     <MESSAGE value="完善用户管理功能" />
     <MESSAGE value="添加对解决方案上传文件的编辑功能" />
     <MESSAGE value="完成解决方案的编辑与删除功能" />
@@ -1306,7 +1325,8 @@
     <MESSAGE value="提交excel信息比对逻辑" />
     <MESSAGE value="提交变色处理逻辑" />
     <MESSAGE value="解析线段图像，准备排序" />
-    <option name="LAST_COMMIT_MESSAGE" value="解析线段图像，准备排序" />
+    <MESSAGE value="提交一部分的线路顺序解析算法" />
+    <option name="LAST_COMMIT_MESSAGE" value="提交一部分的线路顺序解析算法" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1432,13 +1452,6 @@ delete from sys_tasks;</expression-string>
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/smart-industry-kabeja/src/main/java/org/kabeja/dxf/DXFBlock.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="151">
-          <caret line="195" column="40" selection-start-line="195" selection-start-column="27" selection-end-line="195" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/smart-industry-train-web/target/smart-industry-train-web-1.0/WEB-INF/classes/static/js/manager/solution.tree.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
@@ -1692,7 +1705,7 @@ delete from sys_tasks;</expression-string>
     </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_171/src.zip!/java/util/List.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2816">
+        <state relative-caret-position="3322">
           <caret line="151" column="16" selection-start-line="151" selection-start-column="16" selection-end-line="151" selection-end-column="16" />
         </state>
       </provider>
@@ -1764,22 +1777,28 @@ delete from sys_tasks;</expression-string>
     </entry>
     <entry file="file://$PROJECT_DIR$/smart-industry-train-web/src/main/resources/templates/analysis/test_run.ftl">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-176">
-          <caret line="111" column="14" lean-forward="true" selection-start-line="111" selection-start-column="14" selection-end-line="111" selection-end-column="14" />
+        <state relative-caret-position="2442">
+          <caret line="111" column="14" selection-start-line="111" selection-start-column="14" selection-end-line="111" selection-end-column="14" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/smart-industry-train-web/src/main/resources/static/js/manager/solution.tree.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="70" column="23" lean-forward="true" selection-start-line="66" selection-start-column="20" selection-end-line="70" selection-end-column="23" />
+        <state relative-caret-position="1540">
+          <caret line="70" column="23" selection-start-line="66" selection-start-column="20" selection-end-line="70" selection-end-column="23" />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/smart-industry-train-web/build.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/smart-industry-train-web/src/main/resources/static/js/manager/svg.resolve.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="220" column="34" lean-forward="true" selection-start-line="220" selection-start-column="34" selection-end-line="220" selection-end-column="34" />
+        <state relative-caret-position="1200">
+          <caret line="274" column="13" lean-forward="true" selection-start-line="274" selection-start-column="13" selection-end-line="274" selection-end-column="13" />
+          <folding>
+            <element signature="e#7351#8881#0" />
+          </folding>
         </state>
       </provider>
     </entry>
