@@ -78,9 +78,16 @@ Zq.Utility.RegisterNameSpace("solution.tree");
             });
         }
     }
+
+    /**
+     * 设置跳转节点
+     * @param node
+     * @param name
+     */
     function selectLinkNode(node,name){
         //跳转到具体的node节点
         console.log("准备跳转");
+        if(node.projPath==null) return;
         var path = node.projPath.replace(node.fileName,"");
         var index = path.lastIndexOf("|");
         path = path.substr(0,index+1)+name;
