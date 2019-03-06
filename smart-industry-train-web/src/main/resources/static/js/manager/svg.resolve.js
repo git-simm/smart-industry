@@ -32,12 +32,9 @@ Zq.Utility.RegisterNameSpace("svg.resolve");
                 'CD_K_PRSW_ACOD', 'CD_K_PRSW_ACO_D', 'CD_S_PRSW_ISS2', 'CD_K_PRSW_ACO4_S', 'CD_K_PRSW_ACO4_D']
         }];
     /**
-     * 实体信息存储
+     * 入口排序数组
      * @type {Array}
      */
-    var entities = [];
-    var timeoutList = [];
-    //入口排序数组
     ns.entrySortArr = [];
 //----------------------------------------------------------------------------------------------------------
 // ----------------------------------------------------------------------------------------------------------
@@ -52,7 +49,10 @@ Zq.Utility.RegisterNameSpace("svg.resolve");
      * @param color
      */
     var waitCount = 0;
-    var waitNodes = [];
+    // waitNodes 是等待执行的节点队列
+    // startNodes 是起始的节点队列
+    // stopKeys 是当前被阻塞的key值列表
+    var waitNodes = [], startNodes =[],stopNodes=[], stopKeys = [];
     var waitInterval = null;
     var wireIndex = 0;
     var fillColor ="red";
@@ -61,7 +61,7 @@ Zq.Utility.RegisterNameSpace("svg.resolve");
      * 初始化wait队列
      */
     function initWaitNodes(){
-        waitNodes = [];
+        waitNodes = [], startNodes =[],stopNodes=[], stopKeys = [];
         wireIndex = 0;
     }
     /**
@@ -76,7 +76,7 @@ Zq.Utility.RegisterNameSpace("svg.resolve");
         var map = Snap(svg.getElementsByTagName("svg")[0]);
         waitInterval = setInterval(function(){
             if(waitNodes.length==0) return;
-            wireIndex++;
+            wireIndex = waitNodes[0].sort;
             //选中元素
             var selected = waitNodes.filter(function(node){
                return node.sort == wireIndex;
@@ -85,13 +85,49 @@ Zq.Utility.RegisterNameSpace("svg.resolve");
             waitNodes = waitNodes.filter(function(node){
                 return node.sort != wireIndex;
             });
+            var normalList = getNormalNodes(selected);
             //变色
-            selected.forEach(function(node){
+            normalList.forEach(function(node){
                 changeColor(node,map);
             });
         },400);
     }
 
+    /**
+     * 处理运行的节点信息
+     * @param selected
+     * @returns {Array}
+     */
+    function getNormalNodes(selected){
+        //TODO:直接运行
+        return selected;
+        //TODO:半路停止
+        //选中节点分类，分成正常运行，与终止运行两种
+        var normalList = [];
+        selected.forEach(function(node){
+            if(node.action==actionEnum.stop){
+                if(startNodes.includes(node.key)){
+                    normalList.push(node);
+                }else{
+                    stopNodes.push(node);
+                    stopKeys.push(node.key);
+                }
+            }else {
+                if(stopKeys.includes(node.parent)){
+                    stopNodes.push(node);
+                    stopKeys.push(node.key);
+                }else{
+                    normalList.push(node);
+                }
+            }
+        });
+        if(normalList.length==0){
+            //本节点全部终止,则提前结束逻辑，将未处理完的节点全部移入终止节点中
+            stopNodes = stopNodes.concat(waitNodes);
+            waitNodes = [];
+        }
+        return normalList;
+    }
     /**
      * 变更颜色
      * @param node
@@ -114,8 +150,19 @@ Zq.Utility.RegisterNameSpace("svg.resolve");
      * @param color
      */
     function changeFill(group, color) {
-        fillColor = color;
-        waitNodes = group.nodes;
+        //TODO:需要完善 运行按钮的 可用控制逻辑
+        if(stopNodes.length>0){
+            //说明电流逻辑已经中断
+            startNodes = [stopNodes[0].key];//开通第一个中断节点
+            waitNodes = stopNodes;
+            fillColor = "red";
+            stopNodes = [], stopKeys = [];
+        }else{
+            //初始化
+            initWaitNodes();
+            fillColor = color;
+            waitNodes = group.nodes;
+        }
     }
 //----------------------------------------------------------------------------------------------------------
 // ----------------------------------------------------------------------------------------------------------
@@ -142,10 +189,6 @@ Zq.Utility.RegisterNameSpace("svg.resolve");
      */
     ns.sort = function (svg) {
         ns.entrySortArr = [];
-        timeoutList.forEach(function (a) {
-            clearTimeout(a);
-        });
-        timeoutList = [];
         var map = Snap(svg.getElementsByTagName("svg")[0]);
         //整理 实体列表
         var entities = getEntities(map);
@@ -169,6 +212,7 @@ Zq.Utility.RegisterNameSpace("svg.resolve");
             node.sort = 1;
             var group = {
                 key: key,
+                parent: key,
                 nodes: [node]
             };
             /**
@@ -193,11 +237,9 @@ Zq.Utility.RegisterNameSpace("svg.resolve");
     function wrapNodes(group, curr, nodes) {
         var x = curr.x1, y = curr.y1;
         if (curr.direction == 1) {
-            x = curr.x2;
-            y = curr.y2;
+            x = curr.x2,y = curr.y2;
         } else if (curr.direction == 2) {
-            x = curr.x1;
-            y = curr.y1;
+            x = curr.x1,y = curr.y1;
         }
         x = Number(x), y = Number(y);
         //处理有效的记录
@@ -261,6 +303,7 @@ Zq.Utility.RegisterNameSpace("svg.resolve");
                 temp[p] = next[p];
             }
             temp.sort = curr.sort + 1;
+            temp.parent= curr.key;
             group.nodes.push(temp);
             tempList.push(temp);
         });
@@ -436,35 +479,19 @@ Zq.Utility.RegisterNameSpace("svg.resolve");
                 var config = getSymbolInfo(element);
                 //y轴扩展
                 entities.push($.extend({
-                    key: key,
-                    type: "use",
-                    x1: arr[0],
-                    y1: arr[1],
-                    x2: arr[0],
-                    y2: Number(arr[1]) - box.height,
+                    key: key, type: "use", x1: arr[0], y1: arr[1], x2: arr[0], y2: Number(arr[1]) - box.height,
                 },config));
                 //x轴扩展
                 entities.push($.extend({
-                    key: key,
-                    type: "use",
-                    x1: arr[0],
-                    y1: arr[1],
-                    x2: Number(arr[0]) + box.width,
-                    y2: arr[1],
+                    key: key, type: "use", x1: arr[0], y1: arr[1], x2: Number(arr[0]) + box.width, y2: arr[1],
                 },config));
                 entities.push($.extend({
-                    key: key,
-                    type: "use",
-                    x1: Number(arr[0]) + box.width,
-                    y1: arr[1],
+                    key: key, type: "use", x1: Number(arr[0]) + box.width, y1: arr[1],
                     x2: Number(arr[0]) + box.width,
                     y2: Number(arr[1]) - box.height,
                 },config));
                 entities.push($.extend({
-                    key: key,
-                    type: "use",
-                    x1: arr[0],
-                    y1: Number(arr[1]) - box.height,
+                    key: key, type: "use", x1: arr[0], y1: Number(arr[1]) - box.height,
                     x2: Number(arr[0]) + box.width,
                     y2: Number(arr[1]) - box.height,
                 },config));
