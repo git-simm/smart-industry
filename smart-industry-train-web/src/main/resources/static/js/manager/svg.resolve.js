@@ -235,6 +235,50 @@ Zq.Utility.RegisterNameSpace("svg.resolve");
      * @param nodes
      */
     function wrapNodes(group, curr, nodes) {
+        var nextList = getNextList(curr,nodes);
+        if (nextList == null) return;
+        //如果包含元器件信息，需要将4条边都包含进系统内
+        var newList = [], useArr = [];
+        for (var i = 0; i < nextList.length; i++) {
+            var node = nextList[i];
+            if (node.type == "use") {
+                //已经处理过了，则退出
+                if (useArr.includes(node.key)) continue;
+                useArr.push(node.key);
+                //得到关于元素组的所有信息
+                var list = nodes.filter(function (n) {
+                    return n.key == node.key;
+                });
+                newList = newList.concat(list);
+            } else {
+                newList.push(node);
+            }
+        }
+        //按序号排列好
+        var tempList = [];
+        newList.forEach(function (next) {
+            var temp = {};
+            for (var p in next) {
+                temp[p] = next[p];
+            }
+            temp.sort = curr.sort + 1;
+            temp.parent= curr.key;
+            group.nodes.push(temp);
+            tempList.push(temp);
+        });
+        //递归组装
+        tempList.forEach(function (next) {
+            wrapNodes(group, next, nodes);
+        })
+    }
+
+    /**
+     * 获取接下来的节点列表
+     * @param curr
+     * @param nodes
+     * @returns {*}
+     */
+    function getNextList(curr,nodes){
         var x = curr.x1, y = curr.y1;
         if (curr.direction == 1) {
             x = curr.x2,y = curr.y2;
@@ -277,42 +321,8 @@ Zq.Utility.RegisterNameSpace("svg.resolve");
             //4.挂载多元素的关系查找
             return multiLink(node, curr);
         });
-        if (nextList == null) return;
-        //如果包含元器件信息，需要将4条边都包含进系统内
-        var newList = [], useArr = [];
-        for (var i = 0; i < nextList.length; i++) {
-            var node = nextList[i];
-            if (node.type == "use") {
-                //已经处理过了，则退出
-                if (useArr.includes(node.key)) continue;
-                useArr.push(node.key);
-                //得到关于元素组的所有信息
-                var list = nodes.filter(function (n) {
-                    return n.key == node.key;
-                });
-                newList = newList.concat(list);
-            } else {
-                newList.push(node);
-            }
-        }
-        //按序号排列好
-        var tempList = [];
-        newList.forEach(function (next) {
-            var temp = {};
-            for (var p in next) {
-                temp[p] = next[p];
-            }
-            temp.sort = curr.sort + 1;
-            temp.parent= curr.key;
-            group.nodes.push(temp);
-            tempList.push(temp);
-        });
-        //递归组装
-        tempList.forEach(function (next) {
-            wrapNodes(group, next, nodes);
-        })
+        return nextList;
     }
-
     /**
      * 是否为中间连接
      */
