@@ -111,23 +111,6 @@ Zq.Utility.RegisterNameSpace("solution.tree");
             stroke:"#0b1e66",
             transform: "scale(1.1)"
         });
-        // link.hover(function(e){
-        //     // var rect = e.target;
-        //     // rect.setAttributeNS(null, "fill", "#00ff21")
-        //     //移入
-        //     this.attr({
-        //         //transform: "scale(1.1)",
-        //         fill:"#00ff21"
-        //     });
-        // },function (e) {
-        //     // var rect = e.target;
-        //     // rect.setAttributeNS(null, "fill", "#0b1e66")
-        //     //移除
-        //     this.attr({
-        //         //transform:"scale(0.9)",
-        //         fill:"#0b1e66"
-        //     });
-        // });
         return link;
     }
 
