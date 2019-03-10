@@ -369,6 +369,7 @@ Zq.Utility.RegisterNameSpace("svg.resolve");
             var nX1 = Number(node.x1), nX2 = Number(node.x2);
             var nY1 = Number(node.y1), nY2 = Number(node.y2);
             rad = node.type == "use" ? threshold : 0;
+            //分析元器件或线段间的包含关系
             var nXMin = Math.min(nX1, nX2) - rad, nXMax = Math.max(nX1, nX2) + rad;
             var nYMin = Math.min(nY1, nY2) - rad, nYMax = Math.max(nY1, nY2) + rad;
             var xIn = (nXMin >= cXMin && nXMin <= cXMax) || (nXMax >= cXMin && nXMax <= cXMax)
