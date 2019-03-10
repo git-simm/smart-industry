@@ -100,7 +100,7 @@
     </div>
     <div class="ui-layout-south">
         <div style="position: absolute;top: 0 ;left:0; bottom: 0;width:50px; background: grey;padding: 4px;">
-            <button class="btn btn-primary btn-sm width-100" onclick="svgAnimal();">
+            <button class="btn btn-primary btn-sm width-100" id="btn_run" onclick="svgAnimal();">
                 <span class="icon icon-rocket"/>
             </button>
             <button class="btn btn-primary btn-sm marginTop10 width-100" onclick="alert('单步运行');">

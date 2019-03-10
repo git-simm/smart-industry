@@ -76,7 +76,17 @@ Zq.Utility.RegisterNameSpace("svg.resolve");
         var svg = document.getElementById("line_svg").getSVGDocument();
         var map = Snap(svg.getElementsByTagName("svg")[0]);
         waitInterval = setInterval(function () {
-            if (waitNodes.length == 0) return;
+            if (waitNodes.length == 0) {
+                if(stopNodes.length > 0){
+                    var first = stopNodes[0];
+                    showStartBtn(true,first.x1 - 10,first.y1-10);
+                }else{
+                    $('#btn_run').prop('disabled',false);
+                    showStartBtn(false);
+                }
+                return;
+            }
+            $('#btn_run').prop('disabled',true);
             wireIndex = waitNodes[0].sort;
             //选中元素
             var selected = waitNodes.filter(function (node) {
@@ -171,8 +181,61 @@ Zq.Utility.RegisterNameSpace("svg.resolve");
         }
     }
 
+
 //----------------------------------------------------------------------------------------------------------
 // ----------------------------------------------------------------------------------------------------------
+    //--------- 启动按钮处理逻辑 begin ---------------------------------
+    var startBtn = null;
+    var btnIsShow = false;
+    /**
+     * 创建一个推进按钮
+     * @param map
+     * @constructor
+     */
+    function createStartBtn(map){
+
+        //1.添加一个播放按钮
+        startBtn = map.paper.image(Zq.Utility.GetPath('/static/svg/play_button.svg'),100,200,10,10).attr({
+            opacity: 0.3,
+            display:'none',
+        });
+        startBtn.mouseover(function(e){
+            this.animate({
+                opacity: 1,
+                //x:300
+            }, 100, mina.easeinout);
+        }).mouseout(function(e){
+            this.animate({
+                opacity: 0.3
+            }, 100, mina.easeinout);
+        }).click(function(e){
+            //运行未执行完的节点
+            changeFill(null,null);
+        });
+        var draft = map.select("g[id=\"draft\"]");
+        draft.append(startBtn);
+    }
+
+    /**
+     * 启动按钮的处理逻辑
+     * @param isShow
+     */
+    function showStartBtn(isShow,x,y){
+        if(!isShow && btnIsShow == isShow) return;
+        btnIsShow = isShow;
+        if(isShow){
+            startBtn.attr({
+                display: 'block',
+                x:x,
+                y:y,
+            });
+        }else{
+            startBtn.attr({
+                display: 'none',
+            });
+        }
+    }
+    //--------- 启动按钮处理逻辑 end -----------------------------------
     /**
      * 获取最长的分组
      * @returns {*}
@@ -197,6 +260,7 @@ Zq.Utility.RegisterNameSpace("svg.resolve");
     ns.sort = function (svg) {
         ns.entrySortArr = [];
         var map = Snap(svg.getElementsByTagName("svg")[0]);
+        createStartBtn(map);
         //整理 实体列表
         var entities = getEntities(map);
         //为实体信息排序
