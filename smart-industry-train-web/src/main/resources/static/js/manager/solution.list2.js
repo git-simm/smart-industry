@@ -84,19 +84,19 @@
                     width: "40%"
                 },
                 {
-                    title: '基准文件',
+                    title: '原理图',
                     field: 'standardCount',
                     align: 'right',
                     width: "20%"
                 },
                 {
-                    title: '设计文件',
+                    title: '布线图',
                     field: 'designCount',
                     align: 'right',
                     width: "20%"
                 },
                 {
-                    title: '清单',
+                    title: '布线清单',
                     field: 'billCount',
                     align: 'right',
                     width: "20%"

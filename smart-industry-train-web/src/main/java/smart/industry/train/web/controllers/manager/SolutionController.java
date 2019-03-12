@@ -113,7 +113,8 @@ public class SolutionController {
     @Post("/getExcelData")
     @ResponseBody
     public JSONObject getExcelData(Integer fileId,Integer solutionId){
-        List<JSONObject> data = designExcelListBiz.getExcelData(fileId,solutionId);
+        //List<JSONObject> data = designExcelListBiz.getExcelData(fileId,solutionId);
+        List<JSONObject> data = designExcelListBiz.getValidResult(fileId,solutionId);
         JSONObject result = new JSONObject();
         result.put("rows", data);
         result.put("total", data.size());

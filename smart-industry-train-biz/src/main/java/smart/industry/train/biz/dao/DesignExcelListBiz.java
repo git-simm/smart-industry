@@ -1,6 +1,8 @@
 package smart.industry.train.biz.dao;
 
 import com.alibaba.fastjson.JSONObject;
+import lombok.Data;
+import lombok.experimental.Accessors;
 import org.apache.commons.collections.CollectionUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -10,6 +12,8 @@ import smart.industry.train.biz.entity.DesignExcelAttr;
 import smart.industry.train.biz.entity.DesignExcelList;
 import smart.industry.train.biz.entity.base.Paging;
 import smart.industry.train.biz.mapper.DesignExcelListMapper;
+import smart.industry.utils.StringUtils;
+
 import java.lang.reflect.Field;
 import java.util.*;
 import java.util.stream.Collectors;
@@ -98,7 +102,7 @@ public class DesignExcelListBiz  extends BaseBiz<DesignExcelListMapper,DesignExc
      */
     private static List<String> _attrs = Arrays.asList("Item","Location","Function/Tag",
             "Representation","Wire_Number","Dest_1_Item",
-            "Dest_1_Connector","Dest_2_Item","Dest_2_Connector");
+            "Dest_1_Connector","Dest_1_Pin_assign","Dest_2_Item","Dest_2_Connector");
     /**
      * 获取excel数据
      * @param fileId
@@ -106,6 +110,18 @@ public class DesignExcelListBiz  extends BaseBiz<DesignExcelListMapper,DesignExc
      * @return
      */
     public List<JSONObject> getExcelData(Integer fileId,Integer solutionId) {
+        List<JSONObject> result = getExcelData(fileId);
+        //记录信息
+        List<CompareRecord> records = designBlockAttrBiz.getCompareRecordList(solutionId);
+        return getComparedResult(result,records);
+    }
+
+    /**
+     * 获取纯净的excel数据
+     * @param fileId
+     * @return
+     */
+    public List<JSONObject> getExcelData(Integer fileId){
         Map<String,String> attrRels = new HashMap<>();
         List<DesignExcelAttr> attrs = designExcelAttrBiz.getAttrListByFilter(fileId,_attrs);
         for (DesignExcelAttr attr: attrs ) {
@@ -114,17 +130,89 @@ public class DesignExcelListBiz  extends BaseBiz<DesignExcelListMapper,DesignExc
         List<DesignExcelList> list = getListByFilter(fileId, new ArrayList<>(attrRels.values()));
         List<JSONObject> result = list.stream().map(a->{
             JSONObject obj = new JSONObject();
+            obj.put("id",a.getId());
             for(Map.Entry<String,String> entry: attrRels.entrySet()){
                 obj.put(entry.getKey(),getValByFieldName(a,entry.getValue()));
             }
-            obj.put("state","1");
             return obj;
         }).collect(Collectors.toList());
+        return result;
+    }
+    /**
+     * 获取验证结果
+     * @param fileId
+     * @param solutionId
+     * @return
+     */
+    public List<JSONObject> getValidResult(Integer fileId,Integer solutionId){
+        List<JSONObject> list = getExcelData(fileId);
         //记录信息
-        List<CompareRecord> records = designBlockAttrBiz.getCompareRecordList(solutionId);
-        return getComparedResult(result,records);
+        for (Iterator ed = list.iterator(); ed.hasNext();) {
+            JSONObject excelItem = (JSONObject) ed.next();
+            String dest1Item = excelItem.getString("Dest_1_Item");
+            String dest1Connector = excelItem.getString("Dest_1_Connector");
+            String dest1Pin = excelItem.getString("Dest_1_Pin_assign");
+            Integer id = excelItem.getInteger("id");
+            String key = dest1Item + "@@" + dest1Connector;
+            ValidInfo valid = new ValidInfo();
+            if(StringUtils.isBlank(dest1Pin)){
+                valid.setValidFail(true);
+            }
+            if(!validMap.containsKey(key)){
+                valid.setDest1Item(dest1Item).setDest1Connector(dest1Connector);
+                if(dest1Pin.contains("M")){
+                    valid.setDest1PinM(dest1Pin);
+                }else if(dest1Pin.contains("F")){
+                    valid.setDest1PinF(dest1Pin);
+                }else{
+                    valid.setValidFail(true);
+                }
+                valid.getIds().add(id);
+                validMap.put(key,valid);
+            }else{
+                valid = validMap.get(key);
+                valid.getIds().add(id);
+                if(boolCompared(valid.getValidFail(),false)){
+                    if(StringUtils.isBlank(dest1Pin)){
+                        valid.setValidFail(true);
+                    }else if(dest1Pin.contains("M")){
+                        if(StringUtils.isBlank(valid.getDest1PinM())){
+                            valid.setDest1PinM(dest1Pin);
+                        }else{
+                            valid.setValidFail(true);
+                        }
+                    }else if(dest1Pin.contains("F")){
+                        valid.setDest1PinF(dest1Pin);
+                        if(StringUtils.isBlank(valid.getDest1PinF())){
+                            valid.setDest1PinF(dest1Pin);
+                        }else{
+                            valid.setValidFail(true);
+                        }
+                    }else{
+                        valid.setValidFail(true);
+                    }
+                }
+            }
+            if(boolCompared(valid.getValidFail(),true)){
+                //验证失败的状态(即标识该字段异常)
+                excelItem.put("state",1);
+            }
+        }
+        return list;
     }
 
+    /**
+     * 布尔值比较
+     * @param b1
+     * @param b2
+     * @return
+     */
+    private boolean boolCompared(Boolean b1,Boolean b2){
+        if(b1==null){
+            b1 = false;
+        }
+        return b1 == b2;
+    }
     /**
      * 获取比较结果
      * @param excelData
@@ -185,5 +273,26 @@ public class DesignExcelListBiz  extends BaseBiz<DesignExcelListMapper,DesignExc
             return false;
         }
         return val1.equals(val2);
+    }
+
+    /**
+     * 验证集合
+     */
+    public HashMap<String,ValidInfo> validMap = new HashMap<>();
+    /**
+     * 验证信息
+     */
+    @Data
+    @Accessors(chain = true)
+    class ValidInfo{
+        public ValidInfo(){
+            ids = new ArrayList<>();
+        }
+        private String dest1Item;
+        private String dest1Connector;
+        private String dest1PinM;
+        private String dest1PinF;
+        private List<Integer> ids;
+        private Boolean validFail;
     }
 }
