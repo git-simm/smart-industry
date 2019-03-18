@@ -167,11 +167,11 @@ public class DesignExcelListBiz  extends BaseBiz<DesignExcelListMapper,DesignExc
                 }else{
                     valid.setValidFail(true);
                 }
-                valid.getIds().add(id);
+                valid.getIds().add(excelItem);
                 validMap.put(key,valid);
             }else{
                 valid = validMap.get(key);
-                valid.getIds().add(id);
+                valid.getIds().add(excelItem);
                 if(boolCompared(valid.getValidFail(),false)){
                     if(StringUtils.isBlank(dest1Pin)){
                         valid.setValidFail(true);
@@ -292,7 +292,7 @@ public class DesignExcelListBiz  extends BaseBiz<DesignExcelListMapper,DesignExc
         private String dest1Connector;
         private String dest1PinM;
         private String dest1PinF;
-        private List<Integer> ids;
+        private List<JSONObject> ids;
         private Boolean validFail;
     }
 }

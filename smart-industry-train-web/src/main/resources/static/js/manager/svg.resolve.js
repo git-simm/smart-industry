@@ -289,7 +289,10 @@ Zq.Utility.RegisterNameSpace("svg.resolve");
         //----- 查找入口 end ----------------------------------
         if(entryList.length==0) return;
         var startNodes = [];
-        entryList.forEach(function (entry, index) {
+        //只取一个入口点
+        var list = entryList.sort(function(a,b){ return Number(b.y1)-Number(a.y1) });
+        var entries = [list[0]];
+        entries.forEach(function (entry, index) {
             var key = entry.key;
             var entity = entities.find(function (a, i) {
                 return a.key == key;

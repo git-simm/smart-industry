@@ -6,14 +6,20 @@
         <@cssRef "/static/_resources/ztree/zTreeStyle/zTreeStyle.css"/>
         <@cssRef "/static/css/eagleEye.css"/>
       <style type="text/css">
-          #mainViewContainer, .svg_position {
+          .svg_position {
               position: absolute;
-              top: 0;
-              left: 0;
-              bottom: 0;
-              right: 0;
-              height: 100%;
-              width: 100%;
+              top:40px !important;
+              left: 0px;
+              bottom: 0px;
+              right: 0px;
+              margin:0px !important;
+          }
+          .svg_position{
+              height: calc(100vh - 80px);
+          }
+          #topContainer{
+              position: absolute;top: 0 ;left:0; height: 40px;right:0; background: transparent;padding: 4px;
+              z-index: 10;
           }
 
           .treeContainer {
@@ -60,8 +66,16 @@
         </div>
     </div>
     <div class="ui-layout-center" style="background:beige;">
+        <div id="topContainer">
+            <button class="btn btn-primary btn-sm width100 marginLeft10 radius-3" id="btn_run" onclick="svgAnimal();">
+                <i class="icon icon-rocket" style="margin-right: 10px;"></i><span>运行</span>
+            </button>
+            <button class="btn btn-primary btn-sm width100 marginLeft10 radius-3">
+                <i class="icon icon-file" style="margin-right: 10px;"></i><span>导出</span>
+            </button>
+        </div>
     <#--主窗口-->
-        <div id="mainViewContainer" style="position: relative">
+        <div id="mainViewContainer" style="position: relative;margin: 0px;">
             <!--<embed id="bg_svg" src="${request.contextPath}/static/svg/new.svg" class="col-md-12 svg_position" type="image/svg+xml"/>-->
             <embed id="line_svg" src="${request.contextPath}/static/svg/new.svg" class="col-md-12 svg_position"
                    type="image/svg+xml"/>
@@ -98,29 +112,27 @@
             </div>
         </div>
     </div>
-    <div class="ui-layout-south">
-        <div style="position: absolute;top: 0 ;left:0; bottom: 0;width:50px; background: grey;padding: 4px;">
-            <button class="btn btn-primary btn-sm width-100" id="btn_run" onclick="svgAnimal();">
-                <span class="icon icon-rocket"/>
-            </button>
-            <button class="btn btn-primary btn-sm marginTop10 width-100" onclick="alert('单步运行');">
-                <span class="glyphicon glyphicon-arrow-down"/>
-            </button>
-            <button class="btn btn-primary btn-sm marginTop10 width-100">
-                <span class="glyphicon glyphicon-export"></span>
-            </button>
-        </div>
-        <div style="position: absolute;top: 0 ;left:50px; bottom: 0;right: 30%; background: black;">
-            <p class="light-green">继电器规则校验：校验时长10s，元器件yuan2正常...</p>
-            <p class="light-green">继电器规则校验：校验时长10s，元器件yuan3正常...</p>
-            <p class="light-green">继电器规则校验：校验时长10s，元器件yuan4正常...</p>
-            <p class="light-green">继电器规则校验：校验时长10s，元器件yuan5正常...</p>
-            <p class="red">继电器规则校验：校验时长10s，元器件yuan6 布线错误...</p>
-        </div>
-        <iframe id="train" style="position: absolute;top: 0 ;right:0; bottom: 0;width: 30%;height: 100%;"
-                src="${request.contextPath}/moni/train"></iframe>
-    </div>
+    <#--<div class="ui-layout-south">-->
+        <#--<div style="position: absolute;top: 0 ;left:0; bottom: 0;width:50px; background: grey;padding: 4px;">-->
+            <#--<button class="btn btn-primary btn-sm width-100" id="btn_run" onclick="svgAnimal();">-->
+                <#--<span class="icon icon-rocket"/>-->
+            <#--</button>-->
+            <#--<button class="btn btn-primary btn-sm marginTop10 width-100">-->
+                <#--<span class="glyphicon glyphicon-export"></span>-->
+            <#--</button>-->
+        <#--</div>-->
+        <#--<div style="position: absolute;top: 0 ;left:50px; bottom: 0;right: 30%; background: black;">-->
+            <#--<p class="light-green">继电器规则校验：校验时长10s，元器件yuan2正常...</p>-->
+            <#--<p class="light-green">继电器规则校验：校验时长10s，元器件yuan3正常...</p>-->
+            <#--<p class="light-green">继电器规则校验：校验时长10s，元器件yuan4正常...</p>-->
+            <#--<p class="light-green">继电器规则校验：校验时长10s，元器件yuan5正常...</p>-->
+            <#--<p class="red">继电器规则校验：校验时长10s，元器件yuan6 布线错误...</p>-->
+        <#--</div>-->
+        <#--<iframe id="train" style="position: absolute;top: 0 ;right:0; bottom: 0;width: 30%;height: 100%;"-->
+                <#--src="${request.contextPath}/moni/train"></iframe>-->
+    <#--</div>-->
     <#elseif section="scripts">
+        <@jsRef "/static/_resources/excel/xlsx.full.min.js"/>
         <@jsRef "/static/_resources/layout/jquery-ui-latest.js"/>
         <@jsRef "/static/_resources/layout/jquery.layout-latest.js"/>
         <@jsRef "/static/_resources/snap/snap.svg-min.js"/>
@@ -137,10 +149,10 @@
         solution.tree.runTimes ++;
         if (solution.tree.runTimes % 2) {
             svg.resolve.wirePath("#ff0000");
-            document.getElementById("train").contentWindow.train.lines.openLight();
+            //document.getElementById("train").contentWindow.train.lines.openLight();
         } else {
             svg.resolve.wirePath("gray");
-            document.getElementById("train").contentWindow.train.lines.closeLight();
+            //document.getElementById("train").contentWindow.train.lines.closeLight();
         }
     }
 
@@ -149,8 +161,8 @@
     $(function () {
         var myLayout = $("body").layout(
                 {
-                    west__size: 300,
-                    south__Size: 300,
+                    west__size: 200,
+                    //south__Size: 300,
                     west__initClosed: false,
                     //west__enableCursorHotkey: false,
                     //south__enableCursorHotkey: false,
@@ -163,8 +175,8 @@
                     //south__spacing_closed: 20,
                     togglerContent_open: "<div><</div>", //pane打开时，边框按钮中需要显示的内容可以是符号"<"等。需要加入默认css样式.ui-layout-toggler .content
                     togglerContent_closed: "<div>>></div>", //pane关闭时，同上。
-                    south__minSize: 300,
-                    south__maxSize: 300,
+                    //south__minSize: 300,
+                    //south__maxSize: 300,
                     west__minSize: 200,
                     west__maxSize: 300,
                     onresize: function () {

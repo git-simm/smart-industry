@@ -18,7 +18,7 @@
 
          .north {
              height: 60px;
-             background-color: #0173c7;
+             background-color: darkblue;
              color: white;
              position: fixed;
              top: 0;

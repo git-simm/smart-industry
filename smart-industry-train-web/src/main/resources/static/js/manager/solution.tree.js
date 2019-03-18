@@ -29,6 +29,7 @@ Zq.Utility.RegisterNameSpace("solution.tree");
         if(path.indexOf(".svg")>-1){
             $('#mainViewContainer').show();
             $('#thumbViewContainer').show();
+            $('#topContainer').show();
             $('#excelList').hide();
 
             $("#line_svg").attr("src" ,path);
@@ -42,6 +43,7 @@ Zq.Utility.RegisterNameSpace("solution.tree");
         }else if(path.indexOf(".xls")>-1){
             $('#mainViewContainer').hide();
             $('#thumbViewContainer').hide();
+            $('#topContainer').hide();
             $('#excelList').show();
             ns.getExcelData(node.fileId);
         }
