@@ -8,17 +8,25 @@
       <style type="text/css">
           .svg_position {
               position: absolute;
-              top:40px !important;
+              top: 40px !important;
               left: 0px;
               bottom: 0px;
               right: 0px;
-              margin:0px !important;
+              margin: 0px !important;
           }
-          .svg_position{
+
+          .svg_position {
               height: calc(100vh - 80px);
           }
-          #topContainer{
-              position: absolute;top: 0 ;left:0; height: 40px;right:0; background: transparent;padding: 4px;
+
+          #topContainer {
+              position: absolute;
+              top: 0;
+              left: 0;
+              height: 40px;
+              right: 0;
+              background: transparent;
+              padding: 4px;
               z-index: 10;
           }
 
@@ -70,9 +78,10 @@
             <button class="btn btn-primary btn-sm width100 marginLeft10 radius-3" id="btn_run" onclick="svgAnimal();">
                 <i class="icon icon-rocket" style="margin-right: 10px;"></i><span>运行</span>
             </button>
-            <button class="btn btn-primary btn-sm width100 marginLeft10 radius-3">
-                <i class="icon icon-file" style="margin-right: 10px;"></i><span>导出</span>
-            </button>
+            <#--<button class="btn btn-primary btn-sm width100 marginLeft10 radius-3"-->
+                    <#--onclick="solution.tree.export()">-->
+                <#--<i class="icon icon-file" style="margin-right: 10px;"></i><span>导出</span>-->
+            <#--</button>-->
         </div>
     <#--主窗口-->
         <div id="mainViewContainer" style="position: relative;margin: 0px;">
@@ -103,7 +112,8 @@
                             <label class="inline-block textRight">清单列表</label>
                         </div>
                         <div class="pullRight marginRight10">
-                            <button class="btn btn-primary btn-sm" onclick=""><i class="glyphicon glyphicon-export"></i>&nbsp;导出比对清单
+                            <button class="btn btn-primary btn-sm" onclick="solution.tree.export()">
+                                <i class="glyphicon glyphicon-export"></i>&nbsp;导出比对清单
                             </button>
                         </div>
                     </caption>
@@ -113,23 +123,23 @@
         </div>
     </div>
     <#--<div class="ui-layout-south">-->
-        <#--<div style="position: absolute;top: 0 ;left:0; bottom: 0;width:50px; background: grey;padding: 4px;">-->
-            <#--<button class="btn btn-primary btn-sm width-100" id="btn_run" onclick="svgAnimal();">-->
-                <#--<span class="icon icon-rocket"/>-->
-            <#--</button>-->
-            <#--<button class="btn btn-primary btn-sm marginTop10 width-100">-->
-                <#--<span class="glyphicon glyphicon-export"></span>-->
-            <#--</button>-->
-        <#--</div>-->
-        <#--<div style="position: absolute;top: 0 ;left:50px; bottom: 0;right: 30%; background: black;">-->
-            <#--<p class="light-green">继电器规则校验：校验时长10s，元器件yuan2正常...</p>-->
-            <#--<p class="light-green">继电器规则校验：校验时长10s，元器件yuan3正常...</p>-->
-            <#--<p class="light-green">继电器规则校验：校验时长10s，元器件yuan4正常...</p>-->
-            <#--<p class="light-green">继电器规则校验：校验时长10s，元器件yuan5正常...</p>-->
-            <#--<p class="red">继电器规则校验：校验时长10s，元器件yuan6 布线错误...</p>-->
-        <#--</div>-->
-        <#--<iframe id="train" style="position: absolute;top: 0 ;right:0; bottom: 0;width: 30%;height: 100%;"-->
-                <#--src="${request.contextPath}/moni/train"></iframe>-->
+    <#--<div style="position: absolute;top: 0 ;left:0; bottom: 0;width:50px; background: grey;padding: 4px;">-->
+    <#--<button class="btn btn-primary btn-sm width-100" id="btn_run" onclick="svgAnimal();">-->
+    <#--<span class="icon icon-rocket"/>-->
+    <#--</button>-->
+    <#--<button class="btn btn-primary btn-sm marginTop10 width-100">-->
+    <#--<span class="glyphicon glyphicon-export"></span>-->
+    <#--</button>-->
+    <#--</div>-->
+    <#--<div style="position: absolute;top: 0 ;left:50px; bottom: 0;right: 30%; background: black;">-->
+    <#--<p class="light-green">继电器规则校验：校验时长10s，元器件yuan2正常...</p>-->
+    <#--<p class="light-green">继电器规则校验：校验时长10s，元器件yuan3正常...</p>-->
+    <#--<p class="light-green">继电器规则校验：校验时长10s，元器件yuan4正常...</p>-->
+    <#--<p class="light-green">继电器规则校验：校验时长10s，元器件yuan5正常...</p>-->
+    <#--<p class="red">继电器规则校验：校验时长10s，元器件yuan6 布线错误...</p>-->
+    <#--</div>-->
+    <#--<iframe id="train" style="position: absolute;top: 0 ;right:0; bottom: 0;width: 30%;height: 100%;"-->
+    <#--src="${request.contextPath}/moni/train"></iframe>-->
     <#--</div>-->
     <#elseif section="scripts">
         <@jsRef "/static/_resources/excel/xlsx.full.min.js"/>
@@ -139,6 +149,11 @@
         <@jsRef "/static/js/common/svg-pan-zoom.js"/>
         <@jsRef "/static/js/common/thumbnailViewer.js"/>
         <@jsRef "/static/_resources/ztree/jquery.ztree.all.js"/>
+        <@jsRef "/static/_resources/excel/FileSaver.js"/>
+        <@jsRef "/static/_resources/excel/Blob.js"/>
+        <@jsRef "/static/_resources/excel/xlsx.core.min.js"/>
+        <@jsRef "/static/_resources/excel/Export2Excel.js"/>
+        <@jsRef "/static/js/common/exportUtil.js"/>
         <@jsRef "/static/js/manager/svg.resolve.js"/>
         <@jsRef "/static/js/manager/solution.tree.js"/>
         <@jsRef "/static/js/manager/test.run.js"/>
@@ -146,7 +161,7 @@
     //--------------------
     function svgAnimal() {
         //开灯，关灯
-        solution.tree.runTimes ++;
+        solution.tree.runTimes++;
         if (solution.tree.runTimes % 2) {
             svg.resolve.wirePath("#ff0000");
             //document.getElementById("train").contentWindow.train.lines.openLight();

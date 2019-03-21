@@ -45,7 +45,7 @@ Zq.Utility.RegisterNameSpace("solution.tree");
             $('#thumbViewContainer').hide();
             $('#topContainer').hide();
             $('#excelList').show();
-            ns.getExcelData(node.fileId);
+            ns.getExcelData(node.fileId,node);
         }
     }
 
@@ -310,11 +310,26 @@ Zq.Utility.RegisterNameSpace("solution.tree");
         return arr;
     }
     //-------- 方案 ajax 交互  end-----------------------
-//----------- excel清单交互方案 begin ---------------------
+    //----------- excel清单交互方案 begin ---------------------
+    ns.currExcel = null;
     //获取excel数据
-    ns.getExcelData = function(fileId,callback){
+    ns.getExcelData = function(fileId,node,callback){
+        ns.currExcel = node;
         $('#hid_fileId').val(fileId);
         $('#list').bootstrapTable('refresh');
+    }
+    /**
+     * excel导出功能
+     */
+    ns.export = function(){
+        var headers = ['Representation','Wire_Number','Dest_1_Item','Dest_1_Connector','Dest_2_Item','Dest_2_Connector'];
+        var data = $('#list').bootstrapTable('getData');
+        var list = data.map(function(item){
+           return headers.map(function(h){
+               return item[h];
+           });
+        });
+        exportUtil.export(headers,list,ns.currExcel.fileName);
     }
 //----------- excel清单交互方案 end ---------------------
 })(solution.tree);

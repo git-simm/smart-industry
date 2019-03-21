@@ -14,6 +14,7 @@ import smart.industry.train.biz.entity.base.Paging;
 import smart.industry.train.biz.mapper.DesignExcelListMapper;
 import smart.industry.utils.StringUtils;
 
+import java.lang.reflect.Array;
 import java.lang.reflect.Field;
 import java.util.*;
 import java.util.stream.Collectors;
@@ -144,8 +145,10 @@ public class DesignExcelListBiz  extends BaseBiz<DesignExcelListMapper,DesignExc
      * @param solutionId
      * @return
      */
-    public List<JSONObject> getValidResult(Integer fileId,Integer solutionId){
+    public Object[] getValidResult(Integer fileId, Integer solutionId){
         List<JSONObject> list = getExcelData(fileId);
+        Set<JSONObject> result = new LinkedHashSet<>();
+        validMap.clear();
         //记录信息
         for (Iterator ed = list.iterator(); ed.hasNext();) {
             JSONObject excelItem = (JSONObject) ed.next();
@@ -198,7 +201,13 @@ public class DesignExcelListBiz  extends BaseBiz<DesignExcelListMapper,DesignExc
                 excelItem.put("state",1);
             }
         }
-        return list;
+        //搜集结果
+        validMap.forEach((k,v)->{
+            if(boolCompared(v.getValidFail(),true)){
+                result.addAll(v.getIds());
+            }
+        });
+        return result.toArray();
     }
 
     /**
