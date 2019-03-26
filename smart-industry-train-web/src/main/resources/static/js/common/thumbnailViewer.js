@@ -1,5 +1,6 @@
 var thumbnailViewer = function(options){
-
+    var t_main = null;
+    var t_thumb = null;
     var getSVGDocument = function(objectElem){
         var svgDoc = objectElem.contentDocument;
         if(! svgDoc){
@@ -10,13 +11,13 @@ var thumbnailViewer = function(options){
     
     var bindThumbnail = function(main, thumb){
 
-        if(! window.main && main){
-            window.main = main;
+        if(! t_main && main){
+            t_main = main;
         }
-        if(! window.thumb && thumb){
-            window.thumb = thumb;
+        if(! t_thumb && thumb){
+            t_thumb = thumb;
         }
-        if(! window.main || ! window.thumb){
+        if(! t_main || ! t_thumb){
             return;
         }
 
@@ -27,22 +28,22 @@ var thumbnailViewer = function(options){
                 clearTimeout(resizeTimer);
             }
             resizeTimer = setTimeout(function () {
-                window.main.resize();
-                window.thumb.resize();
+                t_main.resize();
+                t_thumb.resize();
             }, interval);
         });
 
-        window.main.setOnZoom(function(level){
-            window.thumb.updateThumbScope();
+        t_main.setOnZoom(function(level){
+            t_thumb.updateThumbScope();
             if(options.onZoom){
-                options.onZoom(window.main, window.thumb, level);
+                options.onZoom(t_main, t_thumb, level);
             }
         });
 
-        window.main.setOnPan(function(point){
-            window.thumb.updateThumbScope();
+        t_main.setOnPan(function(point){
+            t_thumb.updateThumbScope();
             if(options.onPan){
-                options.onPan(window.main, window.thumb, point);
+                options.onPan(t_main, t_thumb, point);
             }
         });
 
@@ -79,13 +80,13 @@ var thumbnailViewer = function(options){
             */
         };
 
-        window.thumb.updateThumbScope = function(){
-            var scope = document.getElementById('scope');
-            var line1 = document.getElementById('line1');
-            var line2 = document.getElementById('line2');
-            _updateThumbScope(window.main, window.thumb, scope, line1, line2);
+        t_thumb.updateThumbScope = function(){
+            var scope = document.getElementById('scope'+ options.key);
+            var line1 = document.getElementById('line1'+options.key);
+            var line2 = document.getElementById('line2'+options.key);
+            _updateThumbScope(t_main, t_thumb, scope, line1, line2);
         }
-        window.thumb.updateThumbScope();
+        t_thumb.updateThumbScope();
 
         var _updateMainViewPan = function(clientX, clientY, scopeContainer, main, thumb){
             var dim = scopeContainer.getBoundingClientRect()
@@ -107,11 +108,11 @@ var thumbnailViewer = function(options){
             if(evt.which == 0 && evt.button == 0){
                 return false;
             }
-            var scopeContainer = document.getElementById('scopeContainer');
-            _updateMainViewPan(evt.clientX, evt.clientY, scopeContainer, window.main, window.thumb);
+            var scopeContainer = document.getElementById(options.scopeContainer);
+            _updateMainViewPan(evt.clientX, evt.clientY, scopeContainer, t_main, t_thumb);
         }
 
-        var scopeContainer = document.getElementById('scopeContainer');
+        var scopeContainer = document.getElementById(options.scopeContainer);
         scopeContainer.addEventListener('click', function(evt){
             updateMainViewPan(evt);
         });
@@ -120,10 +121,13 @@ var thumbnailViewer = function(options){
             updateMainViewPan(evt);
         });
     };
-
+    /**
+     * 主界面的变更监听
+     * @type {HTMLElement | null}
+     */
     var mainViewObjectElem = document.getElementById(options.mainViewId);
-    mainViewObjectElem.addEventListener("load", function(){
-
+    mainViewObjectElem.addEventListener("load", mainLoad, false);
+    function mainLoad(){
         var mainViewSVGDoc = getSVGDocument(mainViewObjectElem);
         if(options.onMainViewSVGLoaded){
             options.onMainViewSVGLoaded(mainViewSVGDoc);
@@ -131,15 +135,15 @@ var thumbnailViewer = function(options){
 
         var beforePan = function(oldPan, newPan){
             var stopHorizontal = false
-            , stopVertical = false
-            , gutterWidth = 100
-            , gutterHeight = 100
-            // Computed variables
-            , sizes = this.getSizes()
-            , leftLimit = -((sizes.viewBox.x + sizes.viewBox.width) * sizes.realZoom) + gutterWidth
-            , rightLimit = sizes.width - gutterWidth - (sizes.viewBox.x * sizes.realZoom)
-            , topLimit = -((sizes.viewBox.y + sizes.viewBox.height) * sizes.realZoom) + gutterHeight
-            , bottomLimit = sizes.height - gutterHeight - (sizes.viewBox.y * sizes.realZoom);
+                , stopVertical = false
+                , gutterWidth = 100
+                , gutterHeight = 100
+                // Computed variables
+                , sizes = this.getSizes()
+                , leftLimit = -((sizes.viewBox.x + sizes.viewBox.width) * sizes.realZoom) + gutterWidth
+                , rightLimit = sizes.width - gutterWidth - (sizes.viewBox.x * sizes.realZoom)
+                , topLimit = -((sizes.viewBox.y + sizes.viewBox.height) * sizes.realZoom) + gutterHeight
+                , bottomLimit = sizes.height - gutterHeight - (sizes.viewBox.y * sizes.realZoom);
             customPan = {};
             customPan.x = Math.max(leftLimit, Math.min(rightLimit, newPan.x));
             customPan.y = Math.max(topLimit, Math.min(bottomLimit, newPan.y));
@@ -158,8 +162,7 @@ var thumbnailViewer = function(options){
         if(options.onMainViewShown){
             options.onMainViewShown(mainViewSVGDoc, main);
         }
-
-    }, false);
+    }
 
     var thumbViewObjectElem = document.getElementById(options.thumbViewId);
     thumbViewObjectElem.addEventListener("load", function(){

@@ -33,13 +33,9 @@
     //在右边center区域打开菜单，新增tab
     ns.open = function(text, url) {
         if ($("#tabs").tabs('exists', text)) {
+            if(text)
             $('#tabs').tabs('select', text);
         } else {
-            /*$('#tabs').tabs('add', {
-                title : text,
-                closable : true,
-                content : text
-            });*/
             var height = document.body.clientHeight - 75;
             var path = Zq.Utility.GetPath(url);
             var content = '<iframe class="page_iframe" scrolling="auto" frameborder="0"  src="' + path + '" style="width:100%;height:' + height + 'px;"></iframe>';

@@ -1,6 +1,33 @@
-Zq.Utility.RegisterNameSpace("svg.resolve");
-//闭包引入命名空间
-(function (ns, undefined) {
+/**
+ * svg节点解析
+ */
+var svgNodeResolve = function(options){
+    this.options = {
+        node:options.node,
+        nodeOptions:options,
+        svg: null,
+        map: null,
+        entrySortArr:[]
+    }
+    /**
+     * 初始化组件
+     * @param root
+     */
+    this.init = function(root){
+        if(!root){
+            root = this;
+        }
+        root.options.svg = document.getElementById(options.mainId).getSVGDocument();
+        if(root.options.svg == null){
+            setTimeout(function(){
+                root.init(root);
+            },50);
+        }else{
+            root.options.map = Snap(root.options.svg.getElementsByTagName("svg")[0]);
+            root.sort();
+        }
+    }
+
     var actionEnum = {
         start: 1, //开始
         normal: 2, //正常流动
@@ -23,23 +50,24 @@ Zq.Utility.RegisterNameSpace("svg.resolve");
         },
         {
             type: actionEnum.stop,
-            list: ['CD_C_PRSW_01', 'CD_E_PRSW_L_INV', 'CD_H_PRSW_IL01', 'CD_H_PRSW_AC3',
-                'CD_H_PRSW_AC1', 'CD_S_PRSW_SM12', 'CD_S_PRSW_PS_10', 'CD_S_PRSW_ASNC', 'CD_S_PRSW_ASNO',
-                'CD_Q_PRSW_D1', 'CD_S_PRSW_01_1L', 'CD_S_PRSW_01_1L', 'CD_H_PRSW_AC2', 'CD_H_PRSW_MIC',
-                'CD_M_PRSW_3', 'CD_S_PRSW_CO_3', 'CD_B_PRSW_PS_01', 'CD_K_PRSW_SMVAR',
-                'CD_K_PRSW_ACO', 'CD_K_PRSW_ANO_WD', 'CD_K_PRSW_MNO1', 'CD_Y_PRSW_EMV_NC', 'CD_S_PRSW_PS11_',
-                'CD_S_PRSW_SM07', 'CD_S_PRSW_10', 'CD_S_PRSW_SM10', 'CD_S_PRSW_PS11', 'CD_S_PRSW_SM11',
-                'CD_K_PRSW_ACOD', 'CD_K_PRSW_ACO_D', 'CD_S_PRSW_ISS2', 'CD_K_PRSW_ACO4_S', 'CD_K_PRSW_ACO4_D']
+            // list: ['CD_C_PRSW_01', 'CD_E_PRSW_L_INV', 'CD_H_PRSW_IL01', 'CD_H_PRSW_AC3',
+            //     'CD_H_PRSW_AC1', 'CD_S_PRSW_SM12', 'CD_S_PRSW_PS_10', 'CD_S_PRSW_ASNC', 'CD_S_PRSW_ASNO',
+            //     'CD_Q_PRSW_D1', 'CD_S_PRSW_01_1L', 'CD_S_PRSW_01_1L', 'CD_H_PRSW_AC2', 'CD_H_PRSW_MIC',
+            //     'CD_M_PRSW_3', 'CD_S_PRSW_CO_3', 'CD_B_PRSW_PS_01', 'CD_K_PRSW_SMVAR',
+            //     'CD_K_PRSW_ACO', 'CD_K_PRSW_ANO_WD', 'CD_K_PRSW_MNO1', 'CD_Y_PRSW_EMV_NC', 'CD_S_PRSW_PS11_',
+            //     'CD_S_PRSW_SM07', 'CD_S_PRSW_10', 'CD_S_PRSW_SM10', 'CD_S_PRSW_PS11', 'CD_S_PRSW_SM11',
+            //     'CD_K_PRSW_ACOD', 'CD_K_PRSW_ACO_D', 'CD_S_PRSW_ISS2', 'CD_K_PRSW_ACO4_S', 'CD_K_PRSW_ACO4_D']
+            list:['CD_K_PRSW_']
         }];
+    // var stopList = ['CD_K_PRSW_'];
     /**
      * 入口排序数组
      * @type {Array}
      */
-    ns.entrySortArr = [];
 //----------------------------------------------------------------------------------------------------------
 // ----------------------------------------------------------------------------------------------------------
-    ns.wirePath = function (color) {
-        var group = getLongestGroup();
+    this.wirePath = function (color) {
+        var group = getLongestGroup(this.options);
         if (group == null) return;
         changeFill(group, color);
     }
@@ -68,25 +96,27 @@ Zq.Utility.RegisterNameSpace("svg.resolve");
     /**
      * 启动电流处理线程
      */
-    function wireThread() {
+    function wireThread(options) {
         if (waitInterval != null) {
             clearInterval(waitInterval);
             initWaitNodes();
         }
-        var svg = document.getElementById("line_svg").getSVGDocument();
-        var map = Snap(svg.getElementsByTagName("svg")[0]);
+        var map = options.map;
+        var btnRun = $('.btn_run',options.nodeOptions.main);
         waitInterval = setInterval(function () {
             if (waitNodes.length == 0) {
                 if(stopNodes.length > 0){
                     var first = stopNodes[0];
                     showStartBtn(true,first.x1 - 10,first.y1-10);
                 }else{
-                    $('#btn_run').prop('disabled',false);
+                    btnRun.prop('disabled',false);
                     showStartBtn(false);
                 }
                 return;
             }
-            $('#btn_run').prop('disabled',true);
+            btnRun.prop('disabled',true);
+            //运行中隐藏运行按钮，以免被多次点击
+            showStartBtn(false);
             wireIndex = waitNodes[0].sort;
             //选中元素
             var selected = waitNodes.filter(function (node) {
@@ -193,7 +223,6 @@ Zq.Utility.RegisterNameSpace("svg.resolve");
      * @constructor
      */
     function createStartBtn(map){
-
         //1.添加一个播放按钮
         startBtn = map.paper.image(Zq.Utility.GetPath('/static/svg/play_button.svg'),100,200,10,10).attr({
             opacity: 0.3,
@@ -240,11 +269,11 @@ Zq.Utility.RegisterNameSpace("svg.resolve");
      * 获取最长的分组
      * @returns {*}
      */
-    function getLongestGroup() {
-        if (ns.entrySortArr.length == 0) return null;
-        var longItem = ns.entrySortArr[0];
+    function getLongestGroup(options) {
+        if (options.entrySortArr.length == 0) return null;
+        var longItem = options.entrySortArr[0];
         var len = longItem.nodes.length;
-        ns.entrySortArr.forEach(function (group) {
+        options.entrySortArr.forEach(function (group) {
             if (group.nodes.length > len) {
                 longItem = group;
                 len = group.nodes.length;
@@ -276,11 +305,10 @@ Zq.Utility.RegisterNameSpace("svg.resolve");
     };
     /**
      * 为svg元素排序
-     * @param svg
      */
-    ns.sort = function (svg) {
-        ns.entrySortArr = [];
-        var map = Snap(svg.getElementsByTagName("svg")[0]);
+    this.sort = function () {
+        this.options.entrySortArr = [];
+        var map = this.options.map;
         //隐藏不用的文本
         hiddenText(map);
         createStartBtn(map);
@@ -289,7 +317,7 @@ Zq.Utility.RegisterNameSpace("svg.resolve");
         //为实体信息排序
         //----- 1.查找入口 begin ----------------------------------
         var entryList = entities.filter(function(entity){
-           return (entity.name=="CD_POT_PRSW_W1RR");
+            return (entity.name=="CD_POT_PRSW_W1RR");
         });
         //2.入口循环组装排序
         if (entryList.length == 0) {
@@ -331,14 +359,15 @@ Zq.Utility.RegisterNameSpace("svg.resolve");
             nodes: startNodes
         };
         //设置异步执行
+        var options = this.options;
         setTimeout(function () {
             wrapNodes(group, startNodes, entities);
-            ns.entrySortArr.push(group);
-            console.log(ns.entrySortArr);
+            options.entrySortArr.push(group);
+            console.log(options.entrySortArr);
         }, 0);
         //排序结果
         //启动变色执行线程
-        wireThread();
+        wireThread(options);
     }
 
     /**
@@ -471,9 +500,18 @@ Zq.Utility.RegisterNameSpace("svg.resolve");
             //解析其行为
             for (var i = 0; i < symbolConfig.length; i++) {
                 var config = symbolConfig[i];
-                if (config.list.includes(el.name)) {
-                    el.action = config.type;
-                    return el;
+                if(config.type == actionEnum.stop){
+                    for(var j =0;j<config.list.length;j++){
+                        if(el.name.includes(config.list[j])){
+                            el.action = config.type;
+                            return el;
+                        }
+                    }
+                }else{
+                    if (config.list.includes(el.name)) {
+                        el.action = config.type;
+                        return el;
+                    }
                 }
             }
         }
@@ -488,7 +526,4 @@ Zq.Utility.RegisterNameSpace("svg.resolve");
     function guid() {
         return (S4() + S4() + "-" + S4() + "-" + S4() + "-" + S4() + "-" + S4() + S4() + S4());
     }
-})(svg.resolve);
-
-$(function () {
-});
+}

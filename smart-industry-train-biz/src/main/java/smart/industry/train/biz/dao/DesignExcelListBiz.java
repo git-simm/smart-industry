@@ -103,7 +103,7 @@ public class DesignExcelListBiz  extends BaseBiz<DesignExcelListMapper,DesignExc
      */
     private static List<String> _attrs = Arrays.asList("Item","Location","Function/Tag",
             "Representation","Wire_Number","Dest_1_Item",
-            "Dest_1_Connector","Dest_1_Pin_assign","Dest_2_Item","Dest_2_Connector");
+            "Dest_1_Connector","Dest_1_Pin_assign","Dest_2_Item","Dest_2_Connector","Dest_2_Pin_assign");
     /**
      * 获取excel数据
      * @param fileId

@@ -18,6 +18,7 @@ Zq.Utility.RegisterNameSpace("solution.tree");
         }
     };
     ns.runTimes = 0;
+    ns.treeClick = treeClick;
     /**
      * 树节点点击(图形控件需要加载对应的文件)
      **/
@@ -27,23 +28,16 @@ Zq.Utility.RegisterNameSpace("solution.tree");
         if(node==null || node.filePath == null) return;
         var path = Zq.Utility.GetPath(node.filePath);
         if(path.indexOf(".svg")>-1){
-            $('#mainViewContainer').show();
-            $('#thumbViewContainer').show();
-            $('#topContainer').show();
+            //$('#mainViewContainer').show();
+            //$('#thumbViewContainer').show();
             $('#excelList').hide();
-
-            $("#line_svg").attr("src" ,path);
-            var linkMap = node.linkMap;
-            if(linkMap==null) return;
-            setTimeout(function (args) {
-                //console.log("开始计算链接")
-                ns.setLink(node,linkMap);
-                svg.resolve.sort(document.getElementById("line_svg").getSVGDocument());
-            }, 1000);
+            //$("#line_svg").attr("src" ,path);
+            //$("#thumbView").attr("src" ,path);
+            svg.node.open(node);
+            //card.view.treeClick(node);
         }else if(path.indexOf(".xls")>-1){
-            $('#mainViewContainer').hide();
-            $('#thumbViewContainer').hide();
-            $('#topContainer').hide();
+            //$('#mainViewContainer').hide();
+            //$('#thumbViewContainer').hide();
             $('#excelList').show();
             ns.getExcelData(node.fileId,node);
         }
@@ -93,12 +87,12 @@ Zq.Utility.RegisterNameSpace("solution.tree");
         var path = node.projPath.replace(node.fileName,"");
         var index = path.lastIndexOf("|");
         path = path.substr(0,index+1)+name;
-        var linkNode = zTree.getNodesByFilter(function(item){
+        var linkNode = ns.zTree.getNodesByFilter(function(item){
             var projPath = item.fileName + path;
             return (item.projPath == projPath);
         }, true); // 仅查找一个节点
         treeClick(null,null,linkNode);
-        zTree.selectNode(linkNode);
+        ns.zTree.selectNode(linkNode);
     }
     /**
      * 创建一个链接
@@ -117,23 +111,23 @@ Zq.Utility.RegisterNameSpace("solution.tree");
     }
 
     ns.GetSelectedNode = function(){
-        var nodes = zTree.getSelectedNodes();
+        var nodes = ns.zTree.getSelectedNodes();
         if(nodes && nodes.length>0){
             return nodes[0];
         }
         return null;
     }
     ns.checkTreeNode = function(checked) {
-        var nodes = zTree.getSelectedNodes();
+        var nodes = ns.zTree.getSelectedNodes();
         if (nodes && nodes.length>0) {
-            zTree.checkNode(nodes[0], checked, true);
+            ns.zTree.checkNode(nodes[0], checked, true);
         }
     }
     ns.resetTree = function() {
-        $.fn.zTree.init($("#soluTree"), setting, zNodes);
+        ns.zTree = $.fn.zTree.init($("#soluTree"), setting, zNodes);
     }
 
-    var zTree;
+    ns.zTree = null;
     /**
      * 初始化ztree控件
      */
@@ -144,7 +138,7 @@ Zq.Utility.RegisterNameSpace("solution.tree");
             method: 'post',
             dataType: "json",
             contentType:"application/x-www-form-urlencoded",
-            height: $(window).height() - 100,
+            height: $(window).height() - 230,
             pagination: false, //分页
             silentSort: true, //自动记住排序项
             onlyInfoPagination: false,
@@ -196,12 +190,6 @@ Zq.Utility.RegisterNameSpace("solution.tree");
                 //     width: "15%"
                 // },
                 {
-                    title: "Representation",
-                    field: "Representation",
-                    align: "left",
-                    width: "15%"
-                },
-                {
                     title: 'Wire_Number',
                     field: 'Wire_Number',
                     align: 'left',
@@ -232,6 +220,12 @@ Zq.Utility.RegisterNameSpace("solution.tree");
                     width: "15%"
                 },
                 {
+                    title: 'Dest_2_Pin_assign',
+                    field: 'Dest_2_Pin_assign',
+                    align: 'left',
+                    width: "15%"
+                },
+                {
                     title: '状态',
                     field: 'state',
                     align: 'left',
@@ -246,15 +240,15 @@ Zq.Utility.RegisterNameSpace("solution.tree");
         });
         //高度重置
         $(window).resize(function () {
-            $('#list').bootstrapTable('resetView', { height: $(window).height() - 100 });
+            $('#list').bootstrapTable('resetView', { height: $(window).height() - 230 });
         });
         ns.getList(function(data){
-            zTree = $.fn.zTree.init($("#soluTree"), setting, data);
+            ns.zTree = $.fn.zTree.init($("#soluTree"), setting, data);
             //选中第一个有效节点
-            var nodes = zTree.getNodes();
+            var nodes = ns.zTree.getNodes();
             if (nodes.length>0) {
                 var first = getFirstNode(nodes);
-                zTree.selectNode(first);
+                ns.zTree.selectNode(first);
                 setTimeout(function (args) {
                     treeClick(null,null,first);
                 }, 1000);
@@ -322,7 +316,7 @@ Zq.Utility.RegisterNameSpace("solution.tree");
      * excel导出功能
      */
     ns.export = function(){
-        var headers = ['Representation','Wire_Number','Dest_1_Item','Dest_1_Connector','Dest_2_Item','Dest_2_Connector'];
+        var headers = ['Wire_Number','Dest_1_Item','Dest_1_Connector','Dest_2_Item','Dest_2_Connector','Dest_2_Pin_assign'];
         var data = $('#list').bootstrapTable('getData');
         var list = data.map(function(item){
            return headers.map(function(h){
