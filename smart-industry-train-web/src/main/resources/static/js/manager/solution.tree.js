@@ -225,17 +225,17 @@ Zq.Utility.RegisterNameSpace("solution.tree");
                     align: 'left',
                     width: "15%"
                 },
-                {
-                    title: '状态',
-                    field: 'state',
-                    align: 'left',
-                    width: "15%",
-                    formatter: function (value, row, index) {
-                        if(value=="-1") return "缺失";
-                        if(value =="0") return "正常";
-                        if(value =="1") return "多出";
-                    }
-                }
+                // {
+                //     title: '状态',
+                //     field: 'state',
+                //     align: 'left',
+                //     width: "15%",
+                //     formatter: function (value, row, index) {
+                //         if(value=="-1") return "缺失";
+                //         if(value =="0") return "正常";
+                //         if(value =="1") return "多出";
+                //     }
+                // }
             ]
         });
         //高度重置
