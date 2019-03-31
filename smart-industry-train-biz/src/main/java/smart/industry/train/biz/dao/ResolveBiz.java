@@ -183,23 +183,6 @@ public class ResolveBiz {
         filter2.setFilter("detailId = #{detailId}");
         designBlockAttrBiz.deleteByFilter(filter2);
 
-//        Iterator blocks = doc.getDXFBlockIterator();
-//        while (blocks.hasNext()) {
-//            DXFBlock block = (DXFBlock) blocks.next();
-//            //1.保存block信息
-//            DesignDetailBlock designDetailBlock = saveBlockMsg(block.getName());
-//            Iterator entities = block.getDXFEntitiesIterator();
-//            while (entities.hasNext()) {
-//                Object entity = entities.next();
-//                if (entity instanceof DXFAttdef) {
-//                    DXFAttdef dxfAttdef = (DXFAttdef) entity;
-//                    //2.解析保存sys_attr信息
-//                    Integer attrId = saveDxfAttrMsg(dxfAttdef.getAttr());
-//                    //3.保存attr信息
-//                    saveBlockAttr(designDetailBlock.getId(), attrId, dxfAttdef.getAttr(), dxfAttdef.getValue());
-//                }
-//            }
-//        }
         /**
          * 解析层
          */
@@ -212,16 +195,32 @@ public class ResolveBiz {
      * @param doc
      */
     private void parseLayer(DXFDocument doc,TempData data) {
-        //遍历layer
-//        Iterator i = doc.getDXFLayerIterator();
-//        while (i.hasNext()) {
-//            DXFLayer layer = (DXFLayer) i.next();
-//            this.parseEntity(doc,layer,data);
-//        }
         //解析图片信息
         DXFLayer layer = doc.getDXFLayer("SYMBOL");
         if (layer != null) {
             this.parseEntity(doc, layer,data);
+        }
+        //解析dxf图的文件名
+        DXFLayer pen1 = doc.getDXFLayer("PEN1");
+        if (pen1 != null) {
+            this.parseTitle(doc, pen1,data);
+        }
+    }
+
+    /**
+     * 解析文件汉字标题
+     * @param doc
+     * @param layer
+     * @param data
+     */
+    protected void parseTitle(DXFDocument doc, DXFLayer layer,TempData data){
+        ArrayList list = (ArrayList) layer.getDXFEntities("ATTRIB");
+        String title = ((DXFAttrib)list.get(0)).getText();
+        //批量保存
+        data.file = sysUpfilesBiz.selectByPrimaryKey(data.detail.getFileId());
+        if(!StringUtils.isEmpty(title)){
+            data.file.setProjFile(title);
+            sysUpfilesBiz.update(data.file);
         }
     }
 

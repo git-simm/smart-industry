@@ -13,9 +13,11 @@
     <result column="suffix" jdbcType="VARCHAR" property="suffix" />
     <result column="fileSize" jdbcType="BIGINT" property="fileSize" />
     <result column="projPath" jdbcType="VARCHAR" property="projPath" />
+    <result column="projFile" jdbcType="VARCHAR" property="projFile" />
   </resultMap>
   <sql id="Base_Column_List">
-    id, createDate, createBy, modifyDate, modifyBy, fileName, filePath, relativePath, suffix, fileSize, projPath
+    id, createDate, createBy, modifyDate, modifyBy, fileName, filePath,
+    relativePath, suffix, fileSize, projPath,projFile
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
@@ -151,6 +153,9 @@
       <if test="projPath != null">
         projPath = #{projPath,jdbcType=VARCHAR},
       </if>
+      <if test="projFile != null">
+        projFile = #{projFile,jdbcType=VARCHAR},
+      </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
@@ -165,7 +170,8 @@
       relativePath = #{relativePath,jdbcType=VARCHAR},
       suffix = #{suffix,jdbcType=VARCHAR},
       fileSize = #{fileSize,jdbcType=BIGINT},
-      projPath = #{projPath,jdbcType=VARCHAR}
+      projPath = #{projPath,jdbcType=VARCHAR},
+      projFile = #{projFile,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>

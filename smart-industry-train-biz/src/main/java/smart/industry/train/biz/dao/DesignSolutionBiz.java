@@ -159,6 +159,7 @@ public class DesignSolutionBiz extends BaseBiz<DesignSolutionMapper, DesignSolut
         root.put("id", rootId);
         root.put("pId", null);
         root.put("name", type.getName());
+        root.put("projFile",type.getName());
         root.put("fileId", null);
         root.put("filePath", null);
         result.add(root);
@@ -190,6 +191,12 @@ public class DesignSolutionBiz extends BaseBiz<DesignSolutionMapper, DesignSolut
                     obj.put("relName", "0");
                 }
                 obj.put("name", fileName);
+                String projFile = file.getProjFile();
+                if(StringUtils.isBlank(projFile)){
+                    obj.put("projFile",fileName);
+                }else{
+                    obj.put("projFile",fileName+"("+projFile+")");
+                }
                 //这个位置需要做性能优化，一次查询所有的相关数据
                 obj.put("linkMap", designDetailBlockBiz.getLinkMap(a.getId()));
             }

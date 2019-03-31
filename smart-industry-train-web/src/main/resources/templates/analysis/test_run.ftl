@@ -113,6 +113,9 @@
           .fixed-table-container{
               padding-bottom: 0 !important;
           }
+          .fixed-table-body{
+              background: white;
+          }
       </style>
     <#elseif section="content">
     <input type="hidden" id="hid_solutionId" value="${solutionId!}"/>

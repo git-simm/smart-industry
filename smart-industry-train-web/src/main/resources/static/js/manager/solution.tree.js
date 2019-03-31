@@ -6,11 +6,16 @@ Zq.Utility.RegisterNameSpace("solution.tree");
             selectedMulti:false,
             dblClickExpand: function (treeId, treeNode) {
                 return treeNode.level > 0;
-            }
+            },
+            showTitle : true
         },
         data: {
             simpleData: {
                 enable: true
+            },
+            key: {
+                //title: "projFile",
+                name: "projFile"
             }
         },
         callback: {
