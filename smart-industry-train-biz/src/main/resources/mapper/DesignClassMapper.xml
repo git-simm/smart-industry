@@ -71,7 +71,8 @@
     </foreach>
     )
   </delete>
-  <insert id="insert" parameterType="DesignClass">
+  <insert id="insert" useGeneratedKeys="true" keyProperty="id"
+          parameterType="DesignClass">
     insert into design_class (id, createdate, createby, 
       modifydate, modifyby, `name`, 
       pId, sort)
@@ -79,7 +80,8 @@
       #{modifyDate,jdbcType=TIMESTAMP}, #{modifyBy,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR},
       #{pId,jdbcType=INTEGER}, #{sort,jdbcType=INTEGER})
   </insert>
-  <insert id="insertSelective" parameterType="DesignClass">
+  <insert id="insertSelective" useGeneratedKeys="true" keyProperty="id"
+          parameterType="DesignClass">
     insert into design_class
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
