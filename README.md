@@ -5,8 +5,8 @@
 Related technology
 ---
 
-* Conversion of DXF to SVG by kabaja.  
-* Snap.svg for SVG graphics analysis.  
-* MySQL as a data persistence service.  
-* Springboot as a service-side framework.
-* Bootstrap as a front-end framework.
+* **Kabaja** for Conversion of DXF to SVG.  
+* **Snap.svg** for SVG graphics analysis.  
+* **MySQL** as a data persistence service.  
+* **Springboot** as a service-side framework.
+* **Bootstrap** as a front-end framework.
