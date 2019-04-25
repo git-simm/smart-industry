@@ -4,7 +4,6 @@
 
 ### Related technology
 ---
-
 * **Kabaja** for Conversion of DXF to SVG.  
 * **Snap.svg** for SVG graphics analysis.  
 * **MySQL** as a data persistence service.  
@@ -12,5 +11,6 @@
 * **Bootstrap** as a front-end framework.
 
 ### 当前进度
+---
 1. 设计方案的新增，文件保存基本实现；
 2. 遗留问题，大文件上传后切片post到后台，需要进行大文件整合；
