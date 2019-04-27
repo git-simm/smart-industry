@@ -52,6 +52,17 @@ public class MvcConfig extends WebMvcConfigurerAdapter {
          * 3.在convert中添加配置信息
          * 4.将convert添加到converters当中
          */
+		 //        FastJsonHttpMessageConverter fastConverter = new FastJsonHttpMessageConverter();
+//        //创建Fastjosn对象并设定序列化规则
+//        FastJsonConfig fastJsonConfig = new FastJsonConfig();
+//        fastJsonConfig.setSerializerFeatures(SerializerFeature.PrettyFormat);
+//        List<MediaType> mediaTypes = new ArrayList<>();
+//        mediaTypes.add(MediaType.APPLICATION_JSON_UTF8);//设定json格式且编码为UTF-8
+//        fastConverter.setSupportedMediaTypes(mediaTypes);
+//        //规则赋予转换对象
+//        fastConverter.setFastJsonConfig(fastJsonConfig);
+//        fastJsonConfig.setDateFormat("yyyy-MM-dd HH:mm:ss");
+//        converters.add(fastConverter);
         FastJsonHttpMessageConverter fastConverter = new FastJsonHttpDateConverter();
         converters.add(fastConverter);
     }

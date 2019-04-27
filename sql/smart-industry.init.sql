@@ -65,6 +65,8 @@ create table design_detail_block
   comment '对应的设计方案明细ID',
   name       varchar(500) null
   comment '方案明细对应的block信息',
+  symbolName varchar(500) null
+  comment '图标名',
   constraint id_UNIQUE
   unique (id)
 )
@@ -312,19 +314,21 @@ create table sys_tasks
 (
   id         int auto_increment
     primary key,
-  createDate datetime null
+  createDate datetime     null
   comment '创建时间',
-  createBy   int      null
+  createBy   int          null
   comment '创建人',
-  modifyDate datetime null
+  modifyDate datetime     null
   comment '修改时间',
-  modifyBy   int      null
+  modifyBy   int          null
   comment '修改人',
-  detailId   int      null
+  detailId   int          null
   comment '方案子项ID',
-  state      int      null
+  state      int          null
   comment '转换状态(0:待转换;1:转换中;2:转换完成)',
-  retries    int      null
+  machine    varchar(100) null
+  comment '机器号',
+  retries    int          null
   comment '重试次数',
   constraint id_UNIQUE
   unique (id)
@@ -355,7 +359,9 @@ create table sys_upfiles
   fileSize     bigint       null
   comment '文件尺寸',
   projPath     varchar(200) null
-  comment '项目路径'
+  comment '项目路径',
+  projFile     varchar(200) null
+  comment '项目文件名称'
 )
   comment '系统上载文件列表';
 
@@ -381,3 +387,5 @@ create table user
   unique (id)
 );
 
+insert into user(name,code,psw,sex,remark) values('admin','admin','21232f297a57a5a743894a0e4a801fc3',1,'内置超级管理员');
+insert into design_class(name)values('设计方案中心');

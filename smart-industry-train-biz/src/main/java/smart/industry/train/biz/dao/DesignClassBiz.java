@@ -37,14 +37,15 @@ public class DesignClassBiz extends BaseBiz<DesignClassMapper,DesignClass> {
         DesignClass filter = new DesignClass();
         filter.setName(entity.getName());
         filter.setPId(entity.getPId());
-        if(!CollectionUtils.isEmpty(baseMapper.selectByCon(filter))) {
+        filter.setFilter("name=#{name} and pid=#{pId}");
+        if(!CollectionUtils.isEmpty(baseMapper.selectByFilter(filter))) {
             throw new AjaxException("分类名称已经存在，无法创建");
         }
         entity.setCreateBy(principalService.getCurrentUser().getId());
         entity.setCreateDate(new Date());
         //基类方法
         super.add(entity);
-        return baseMapper.selectByCon(entity).get(0).getId();
+        return entity.getId();
     }
 
     @Override
