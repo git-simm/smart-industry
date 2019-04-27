@@ -24,9 +24,9 @@ var svgNode = function (node) {
     this.create = function () {
         //loading层
         var index = layer.load(1, {
-            shade: [0.1,'#fff'] //0.3透明度的白色背景
+            shade: [0.1, '#fff'] //0.3透明度的白色背景
         });
-        try{
+        try {
             var key = 'main_' + this.options.node.id;
             this.options.mainId = key;
             //1.添加一个主界面信息
@@ -46,14 +46,14 @@ var svgNode = function (node) {
             //滚动到最右边
             $(".img-menu").scrollLeft(10000);
             //4.主界面逻辑处理
-            mainProcess(this.options,function(options){
+            mainProcess(this.options, function (options) {
                 //5.开始计算排序码
                 options.svgResolver = new svgNodeResolve(options);
                 options.svgResolver.init();
             });
-        }catch(ex){
+        } catch (ex) {
             console.error(ex);
-        }finally {
+        } finally {
             layer.close(index);
         }
     }
@@ -62,7 +62,7 @@ var svgNode = function (node) {
      * 创建主界面
      * @param options
      */
-    function mainProcess(options,callback) {
+    function mainProcess(options, callback) {
         var node = options.node;
         //创建一个新的主界面
         var linkMap = node.linkMap;
@@ -70,7 +70,7 @@ var svgNode = function (node) {
         setTimeout(function (args) {
             //console.log("开始计算链接")
             setLink(node, linkMap, options);
-            if(callback){
+            if (callback) {
                 callback(options);
             }
         }, 500);
@@ -83,6 +83,7 @@ var svgNode = function (node) {
      */
     function setLink(node, linkMap, options) {
         var svgDoc = document.getElementById(options.mainId).getSVGDocument();
+        if (svgDoc == null) return;
         var map = Snap(svgDoc.getElementsByTagName("svg")[0]);
         var gList = [];
         for (var key in linkMap) {
@@ -201,7 +202,7 @@ var svgNode = function (node) {
         //图标点击事件
         var selected = this.selected;
         var node = this.options.node;
-        $icon.on("click",function () {
+        $icon.on("click", function () {
             selected(node);
         });
     }
@@ -209,7 +210,7 @@ var svgNode = function (node) {
      * 选中
      */
     this.selected = function (node) {
-        if(!node){
+        if (!node) {
             node = this.options.node;
         }
         var zTree = solution.tree.zTree;
@@ -223,8 +224,8 @@ var svgNode = function (node) {
      * 窗口显示
      */
     this.show = function () {
-        this.options.eyeWin.css('visibility','visible');
-        this.options.main.css('visibility','visible');
+        this.options.eyeWin.css('visibility', 'visible');
+        this.options.main.css('visibility', 'visible');
         this.options.icon.addClass('selected');
     }
     //tip:(display:none 将元素直接卸载)(visible:hidden 隐藏，看不到摸得着)
@@ -232,24 +233,24 @@ var svgNode = function (node) {
      * 窗口隐藏
      */
     this.hide = function () {
-        this.options.eyeWin.css('visibility','hidden');
-        this.options.main.css('visibility','hidden');
+        this.options.eyeWin.css('visibility', 'hidden');
+        this.options.main.css('visibility', 'hidden');
         this.options.icon.removeClass('selected');
     }
     /**
      * 关闭窗口
      */
-    this.close = function(){
+    this.close = function () {
         this.options.main.remove();
         this.options.eyeWin.remove();
         this.options.icon.remove();
     }
     //----------------------------------------------------------------------
-    var runTimes  = 0;
+    var runTimes = 0;
     /**
      * 运行
      */
-    this.run = function() {
+    this.run = function () {
         //开灯，关灯
         runTimes++;
         if (runTimes % 2) {
@@ -298,7 +299,7 @@ Zq.Utility.RegisterNameSpace("svg.node");
     /**
      * 运行
      */
-    ns.run = function(){
+    ns.run = function () {
         ns.currentNode.run();
     }
     /**
@@ -307,9 +308,9 @@ Zq.Utility.RegisterNameSpace("svg.node");
     ns.close = function () {
         ns.currentNode.close();
         //数组删除
-        ns.nodes.splice($.inArray(ns.currentNode,ns.nodes),1);
-        if(ns.nodes.length>0){
-            ns.currentNode = ns.nodes[ns.nodes.length-1];
+        ns.nodes.splice($.inArray(ns.currentNode, ns.nodes), 1);
+        if (ns.nodes.length > 0) {
+            ns.currentNode = ns.nodes[ns.nodes.length - 1];
             ns.currentNode.selected();
         }
     }

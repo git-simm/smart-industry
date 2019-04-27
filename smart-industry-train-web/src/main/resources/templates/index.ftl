@@ -123,6 +123,12 @@
                             方案列表
                         </a>
                     </li>
+                    <li onclick="smart.train.index.open('测试方案', '/solution/cards')">
+                        <a href="javascript:void(0)">
+                            <i class="icon-double-angle-right"></i>
+                            测试方案
+                        </a>
+                    </li>
                     <#--<li onclick="smart.train.index.open('执行测试', '/run/test')">-->
                         <#--<a href="javascript:void(0)">-->
                             <#--<i class="icon-double-angle-right"></i>-->

@@ -46,6 +46,16 @@ public class SolutionController {
     }
 
     /**
+     * 卡片列表
+     * @param map
+     * @return
+     */
+    @RequestMapping("/cards")
+    public String cardList(Map<String,Object> map){
+        return "manager/solution_cards";
+    }
+
+    /**
      * 新增窗口
      * @return
      */
