@@ -1,15 +1,16 @@
 package smart.industry.train.biz.entity.base;
 
+import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.experimental.Accessors;
 
 import java.util.Date;
 
 /**
  * 基础实体
  */
-@Getter
-@Setter
+@Data
 public class BaseEntity {
     protected Integer id;
     protected Date createDate;

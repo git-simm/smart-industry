@@ -1,6 +1,7 @@
 package smart.industry.train.biz.entity;
 
 import lombok.Data;
+import lombok.experimental.Accessors;
 import smart.industry.train.biz.entity.base.BaseEntity;
 
 import java.util.Date;

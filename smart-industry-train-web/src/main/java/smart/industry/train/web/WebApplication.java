@@ -1,5 +1,6 @@
 package smart.industry.train.web;
 
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -10,6 +11,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 @EnableScheduling
 @EnableAutoConfiguration
 @EnableAspectJAutoProxy
+@MapperScan({"smart.industry.train.biz.mapper2","smart.industry.train.biz.mapper"})
 public class WebApplication {
 
     public static void main(String[] args) {
