@@ -147,7 +147,7 @@
             layer.closeAll('dialog');
             $.ajax({
                 async: false,
-                type: "Get",
+                type: "Post",
                 dataType:"json",	
                 url: ("/user/delete?id=" + id).geturl(),
                 success: function (result) {
@@ -171,7 +171,7 @@
             layer.closeAll('dialog');
             $.ajax({
                 async: false,
-                type: "Get",
+                type: "Post",
                 dataType:"json",
                 url: ("/user/reset?id=" + id).geturl(),
                 success: function (result) {

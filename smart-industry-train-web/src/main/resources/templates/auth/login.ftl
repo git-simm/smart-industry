@@ -55,7 +55,7 @@
 </style>
     <#elseif section="content">
 <div style="position: fixed; top: 0; left: 0; color: white;">
-    <h2 style="margin: 10px;">有轨车辆模拟仿真系统</h2>
+    <h2 style="margin: 10px;">轨道车辆功能动态模拟系统</h2>
 </div>
 	<form class="form-signin description" style="width: 400px;padding:20px 40px;" method="post" role="form" onsubmit="return false;">
         <h1 class="center" style="margin-top: 20px;margin-bottom: 10px;">用户登录</h1>

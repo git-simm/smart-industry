@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import smart.industry.train.biz.common.SysConfig;
 import smart.industry.train.biz.dao.UserBiz;
 import smart.industry.train.biz.entity.DesignSolution;
 import smart.industry.train.biz.entity.User;
@@ -26,60 +27,66 @@ import java.util.stream.Collectors;
 @RequestMapping("/user")
 public class UserController {
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
-
+    @Autowired
+    private SysConfig sysConfig;
     @Autowired
     private UserBiz userBiz;
 
     @RequestMapping("/say")
     @ResponseBody
-    public String sayHello(){
+    public String sayHello() {
         return "hello";
     }
 
     @RequestMapping("/list")
-    public String list(){
+    public String list() {
         return "manager/user_list";
     }
+
     @Post("/getlist")
     @ResponseBody
-    public JSONObject getList(Paging json, Map<String, Object> map){
-        PageHelper.offsetPage(json.getOffset(),json.getLimit());
+    public JSONObject getList(Paging json, Map<String, Object> map) {
+        PageHelper.offsetPage(json.getOffset(), json.getLimit());
         List<User> users = userBiz.selectByPage(json);
-        PageInfo<User> p=new PageInfo<>(users);
+        PageInfo<User> p = new PageInfo<>(users);
         JSONObject result = new JSONObject();
         result.put("rows", p.getList());
         result.put("total", p.getTotal());
         return result;
     }
+
     /**
      * 新增窗口
+     *
      * @return
      */
     @RequestMapping("/addwin")
-    public String addWin(Map<String, Object> map){
-        map.put("entity",new User());
-        map.put("formMode","add");
+    public String addWin(Map<String, Object> map) {
+        map.put("entity", new User());
+        map.put("formMode", "add");
         return "manager/user_edit";
     }
 
     /**
      * 编辑窗口
+     *
      * @param id
      * @return
      */
     @RequestMapping("/editwin")
-    public String editWin(int id,Map<String, Object> map){
-        map.put("entity",userBiz.selectByPrimaryKey(id));
-        map.put("formMode","edit");
+    public String editWin(int id, Map<String, Object> map) {
+        map.put("entity", userBiz.selectByPrimaryKey(id));
+        map.put("formMode", "edit");
         return "manager/user_edit";
     }
 
     /**
      * 新增
+     *
      * @return
      */
     @Post("/add")
-    public int add(User user){
+    public int add(User user) {
         userBiz.validUsers(user);
         user.setPsw(MD5.encode(user.getPsw()));
         return userBiz.add(user);
@@ -87,11 +94,12 @@ public class UserController {
 
     /**
      * 编辑
+     *
      * @param user
      * @return
      */
     @Post("/edit")
-    public int edit(User user){
+    public int edit(User user) {
         userBiz.validUsers(user);
         //不允许编辑密码
         user.setPsw(null);
@@ -100,22 +108,25 @@ public class UserController {
 
     /**
      * 编辑
+     *
      * @param id
      * @return
      */
     @Post("/delete")
-    public int delete(Integer id){
+    public int delete(Integer id) {
         return userBiz.delete(id);
     }
 
     /**
      * 重置密码
+     *
      * @param id
      * @return
      */
-    public int reset(Integer id){
+    @Post("/reset")
+    public int reset(Integer id) {
         User user = userBiz.selectByPrimaryKey(id);
-        user.setPsw(MD5.encode("123456"));
+        user.setPsw(MD5.encode(sysConfig.getResetPsw()));
         return userBiz.update(user);
     }
 }

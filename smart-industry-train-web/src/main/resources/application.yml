@@ -67,4 +67,8 @@ security:
     authorize-mode: none
 
 debug: true
-
+# 系统参数配置
+application:
+  param:
+     # 重置密码的值
+     resetPsw: 123456

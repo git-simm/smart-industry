@@ -5,7 +5,7 @@
 <html xml:lang="zh-CN" xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
 <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
-    <title><#nested "title"/> - 有轨车辆模拟系统</title>
+    <title><#nested "title"/> - 轨道车辆功能动态模拟系统</title>
     <link rel="shortcut icon" type="image/ico" href="${request.contextPath!}/favicon.ico">
     <!-- basic styles -->
 <@cssRef url="/static/_resources/assets/css/bootstrap.min.css"/>
