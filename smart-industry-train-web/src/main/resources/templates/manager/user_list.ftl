@@ -2,8 +2,16 @@
 <@layout;section>
     <#if section="title">方案管理
     <#elseif section="css">
+        <@cssRef url="/static/_resources/ztree/zTreeStyle/zTreeStyle.css"/>
+        <@cssRef url="/static/_resources/context/context.standalone.css"/>
     <#elseif section="content">
-    <div class="col-12 col-md-12 col-sm-12">
+    <div style="position: relative;" class="col-2">
+        <div class="ztreeMenu">组织架构</div>
+        <div class="treeContainer col-2">
+            <ul id="soluTree" class="ztree"></ul>
+        </div>
+    </div>
+    <div class="col-10 col-md-10 col-sm-10">
         <div class="mini-model">
             <table class="table table-bordered table-hover table-striped marginBottom0">
                 <caption>
@@ -39,6 +47,9 @@
         </div>
     </div>
     <#elseif section="scripts">
+        <@jsRef "/static/_resources/ztree/jquery.ztree.all.js"/>
+        <@jsRef "/static/_resources/context/context.js"/>
+        <@jsRef "/static/js/manager/org.manager.js"/>
         <@jsRef "/static/js/manager/user.list.js"/>
     </#if>
 </@layout>

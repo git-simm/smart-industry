@@ -1,6 +1,7 @@
 package smart.industry.train.biz.entity;
 
 import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import lombok.Data;
 import smart.industry.train.biz.entity.base.BaseEntity;
@@ -14,7 +15,9 @@ public class Organization extends BaseEntity {
     private Integer id;
     private String name;
     private String code;
+    @TableField("org_type")
     private Integer orgType;
+    @TableField("pId")
     private Integer pId;
     private String sort;
 }
