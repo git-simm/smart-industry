@@ -27,7 +27,7 @@
             </div>
             <div class="mini-model-footer">
                 <div class="textRight padding5">
-                    <button class="btn btn-sm btn-primary btn-round" onclick="select.class.ok()">保存</button>
+                    <button class="btn btn-sm btn-primary btn-round" onclick="select.org.ok()">保存</button>
                     <a id="close" class="btn btn-sm btn-default btn-round" onclick="SmartMonitor.Common.Close()">取消</a>
                 </div>
             </div>
@@ -37,7 +37,7 @@
         <@jsRef "/static/_resources/ztree/jquery.ztree.all.js"/>
         <@jsRef "/static/_resources/context/context.js"/>
         <script type="text/javascript">
-            Zq.Utility.RegisterNameSpace("select.class");
+            Zq.Utility.RegisterNameSpace("select.org");
             (function (ns, undefined) {
                 var setting = {
                     view: {
@@ -92,7 +92,7 @@
                 ns.ok = function () {
                     var selected = ns.GetSelectedNode();
                     if(selected==null){
-                        layer.alert("请选择一个分类!");
+                        layer.alert("请选择一个组织!");
                         return;
                     }
                     SmartMonitor.Common.Close(selected);
@@ -101,7 +101,7 @@
                 ns.getList = function(callback){
                     $.ajax({
                         async: false,
-                        url: Zq.Utility.GetPath("/solucls/list"),
+                        url: Zq.Utility.GetPath("/org/list"),
                         success:function(data){
                             if(data!=null && data.length>0){
                                 data[0].open=true;
@@ -111,9 +111,9 @@
                     });
                 }
                 //-------- 方案 ajax 交互  end-----------------------
-            })(select.class);
+            })(select.org);
             $(function () {
-                select.class.init();
+                select.org.init();
             });
         </script>
     </#if>

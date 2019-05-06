@@ -1,5 +1,6 @@
 package smart.industry.train.web.controllers.manager;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -36,7 +37,10 @@ public class OrganizationController {
      */
     @Post("/list")
     public List<Organization> list(){
-        return organizationMapper.selectList(null);
+        QueryWrapper<Organization> wrapper = new QueryWrapper<>();
+        wrapper.setEntity(new Organization());
+        wrapper.eq("1",1);
+        return organizationMapper.getOrgList(wrapper);
     }
 
     /**
@@ -59,7 +63,15 @@ public class OrganizationController {
      */
     @RequestMapping("/editwin")
     public String editWin(int id, Map<String, Object> map) {
-        map.put("entity", organizationMapper.selectById(id));
+        QueryWrapper<Organization> wrapper = new QueryWrapper<>();
+        wrapper.setEntity(new Organization());
+        wrapper.eq("id",id);
+        List<Organization> list = organizationMapper.getOrgList(wrapper);
+        if(list.size()>0){
+            map.put("entity", list.get(0));
+        }else{
+            map.put("entity", new Organization());
+        }
         map.put("formMode", "edit");
         return "manager/org_edit";
     }

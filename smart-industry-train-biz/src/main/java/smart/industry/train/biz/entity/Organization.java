@@ -20,4 +20,6 @@ public class Organization extends BaseEntity {
     @TableField("pId")
     private Integer pId;
     private String sort;
+    @TableField(exist = false)
+    private String pName;
 }

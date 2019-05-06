@@ -98,7 +98,6 @@ Zq.Utility.RegisterNameSpace("solution.list");
      */
     ns.init = function () {
         ns.getList(function(data){
-            console.log(data);
             zTree = $.fn.zTree.init($("#soluTree"), setting, data);
             //选中第一个节点
             var nodes = zTree.getNodes();

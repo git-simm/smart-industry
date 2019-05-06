@@ -17,4 +17,12 @@ public class CommonController {
     public String selClass(){
         return "common/select_class";
     }
+    /**
+     * 选择组织
+     * @return
+     */
+    @RequestMapping("/selectOrg")
+    public String selectOrg(){
+        return "common/select_org";
+    }
 }

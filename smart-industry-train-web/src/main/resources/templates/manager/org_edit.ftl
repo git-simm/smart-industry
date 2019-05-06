@@ -29,38 +29,43 @@
             <div class="form-group padding10">
                 <label class="col-2 textRight noPadding-right red">父级：</label>
                 <div class="col-4">
-                    <input type="text" name="pName" value="${entity.pName!}" disabled required />
-                    <input type="hidden" name="pId" value="${entity.pId!}" />
+                    <div class="input-group">
+                        <input type="text" name="pName" value="${entity.pName!}" readonly required />
+                        <input type="hidden" name="pId" value="${entity.pId!}" />
+                        <span class="input-group-btn" onclick="org.edit.selectOrg()">
+                            <i class="icon-search"></i>
+                        </span>
+                    </div>
                 </div>
                 <label class="col-2 textRight noPadding-right red">排序码：</label>
                 <div class="col-4">
-                    <input type="text" name="name" value="${entity.sort!}" required />
+                    <input type="text" name="sort" value="${entity.sort!}" required />
                 </div>
             </div>
             <div class="form-group padding10">
                 <label class="col-2 textRight noPadding-right red">类型：</label>
                 <div class="col-5">
 					<#if entity.orgType??>
-                        <input disabled class="radio width-20" type="radio" name="orgType" value="0" <#if entity.orgType>checked="checked"</#if> />公司
-                        <input disabled class="radio width-20" type="radio" name="orgType" value="1" <#if !entity.orgType>checked="checked"</#if>/>部门
-                        <input disabled class="radio width-20" type="radio" name="orgType" value="2" <#if !entity.orgType>checked="checked"</#if>/>工作组
+                        <input class="radio width-20" type="radio" name="orgType" value="0" <#if entity.orgType==0>checked="checked"</#if> />公司
+                        <input class="radio width-20" type="radio" name="orgType" value="1" <#if entity.orgType==1>checked="checked"</#if>/>部门
+                        <input class="radio width-20" type="radio" name="orgType" value="2" <#if entity.orgType==2>checked="checked"</#if>/>工作组
                     <#else>
-						<input disabled class="radio width-20" type="radio" name="orgType" value="0" checked="checked" />公司
-                    	<input disabled class="radio width-20" type="radio" name="orgType" value="1" />部门
-                        <input disabled class="radio width-20" type="radio" name="orgType" value="2" />工作组
+						<input class="radio width-20" type="radio" name="orgType" value="0" checked="checked" />公司
+                    	<input class="radio width-20" type="radio" name="orgType" value="1" />部门
+                        <input class="radio width-20" type="radio" name="orgType" value="2" />工作组
                     </#if>
                 </div>
             </div>
             <div class="form-group padding10">
-                <label class="col-2 textRight noPadding-right red">备注：</label>
+                <label class="col-2 textRight noPadding-right">备注：</label>
                 <div class="col-10">
-                    <input type="text" name="code" value="${entity.remark!}" required />
+                    <input type="text" name="remark" value="${entity.remark!}" required />
                 </div>
             </div>
         </div>
         <div class="mini-model-footer">
             <div class="textRight padding5">
-                <button class="btn btn-sm btn-primary btn-round" onclick="user.edit.OK()">保存</button>
+                <button class="btn btn-sm btn-primary btn-round" onclick="org.edit.OK()">保存</button>
                 <a id="close" class="btn btn-sm btn-default btn-round" onclick="SmartMonitor.Common.Close()">取消</a>
             </div>
         </div>
@@ -68,14 +73,21 @@
 </div>
 <#elseif section="scripts">
 	 <script type="text/javascript">
-	     Zq.Utility.RegisterNameSpace("user.edit");
+	     Zq.Utility.RegisterNameSpace("org.edit");
 		//闭包引入命名空间
 		(function (ns, undefined) {
+		    ns.parent = {};
+            //选择分类
+            ns.selectOrg = function(){
+                Smart.Common.selectOrg(function(node){
+
+                },ns.parent);
+            }
 		    //新增方法
 		    ns.OK = function () {
-		        var url = "/user/edit";
+		        var url = "/org/edit";
 		        if (SmartMonitor.Common.GetMode($("#form-main")) === "add") {
-		            url = "/user/add";
+		            url = "/org/add";
 		        }
                 if(!Smart.Common.FormValid()) return false;
 		
@@ -92,7 +104,7 @@
 		            }
 		        });
 		    };
-		})(user.edit);
+		})(org.edit);
          /**
           * 初始化方法
           */

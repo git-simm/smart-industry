@@ -56,6 +56,18 @@
             }
         });
     }
+    ns.selectOrg = function (callback,data) {
+    	common.SetData(data);
+        Zq.Utility.OpenModal({
+            title: "选择组织",
+            maxmin: false,
+            area: ['350px', '450px'],
+            content: [ns.GetUrl('/common/selectOrg'), 'yes'],
+            end: function () {
+                common.End(callback);
+            }
+        });
+    }
 })(Smart.Common,SmartMonitor.Common)
 
 /**

@@ -156,6 +156,7 @@ Zq.Utility.RegisterNameSpace("org.manager");
             var nodes = zTree.getNodes();
             if (nodes.length>0) {
                 zTree.selectNode(nodes[0]);
+                zTree.expandNode(nodes[0], true, true, true);
             }
         });
     }
