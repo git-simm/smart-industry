@@ -81,6 +81,10 @@
                     }
                 },
                 {
+                    title: '部门',
+                    field: 'department',
+                },
+                {
                     title: '操作',
                     align: 'center',
                     width: "150",

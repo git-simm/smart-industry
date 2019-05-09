@@ -27,7 +27,7 @@
                 </div>
             </div>
             <div class="form-group padding10">
-                <label class="col-2 textRight noPadding-right red">父级：</label>
+                <label class="col-2 textRight noPadding-right red">部门：</label>
                 <div class="col-4">
                     <div class="input-group">
                         <input type="text" name="pName" value="${entity.pName!}" readonly required />
@@ -59,7 +59,7 @@
             <div class="form-group padding10">
                 <label class="col-2 textRight noPadding-right">备注：</label>
                 <div class="col-10">
-                    <input type="text" name="remark" value="${entity.remark!}" required />
+                    <input type="text" name="remark" value="${entity.remark!}" />
                 </div>
             </div>
         </div>
@@ -80,7 +80,8 @@
             //选择分类
             ns.selectOrg = function(){
                 Smart.Common.selectOrg(function(node){
-
+                    $("input[name='pName']").val(node.name);
+                    $("input[name='pId']").val(node.id);
                 },ns.parent);
             }
 		    //新增方法
@@ -110,7 +111,7 @@
           */
 		$(function(){
             var selected = SmartMonitor.Common.GetData();
-            if(selected){
+            if(selected && selected.name){
                 $("input[name='pName']").val(selected.name);
                 $("input[name='pId']").val(selected.id);
                 $("input[name='orgType']").removeAttr("checked");

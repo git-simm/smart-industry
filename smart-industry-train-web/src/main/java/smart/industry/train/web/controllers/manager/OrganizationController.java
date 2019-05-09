@@ -1,5 +1,6 @@
 package smart.industry.train.web.controllers.manager;
 
+import com.alibaba.fastjson.JSON;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -65,7 +66,7 @@ public class OrganizationController {
     public String editWin(int id, Map<String, Object> map) {
         QueryWrapper<Organization> wrapper = new QueryWrapper<>();
         wrapper.setEntity(new Organization());
-        wrapper.eq("id",id);
+        wrapper.eq("a.id",id);
         List<Organization> list = organizationMapper.getOrgList(wrapper);
         if(list.size()>0){
             map.put("entity", list.get(0));

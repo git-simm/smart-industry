@@ -47,6 +47,18 @@
                 </div>
             </div>
             <div class="form-group padding10">
+                <label class="col-2 textRight noPadding-right red">父级：</label>
+                <div class="col-10">
+                    <div class="input-group">
+                        <input type="text" name="department" value="${entity.department!}" readonly required />
+                        <input type="hidden" name="orgId" value="${entity.orgId!}" />
+                        <span class="input-group-btn" onclick="user.edit.selectOrg()">
+                            <i class="icon-search"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group padding10">
                 <label class="col-2 textRight noPadding-right">备注：</label>
                 <div class="col-10">
                 	 <textarea style="width:100%" rows="3" type="text" name="remark">${entity.remark!}</textarea>
@@ -66,6 +78,13 @@
 	     Zq.Utility.RegisterNameSpace("user.edit");
 		//闭包引入命名空间
 		(function (ns, undefined) {
+            //选择分类
+            ns.selectOrg = function(){
+                Smart.Common.selectOrg(function(node){
+                    $("input[name='department']").val(node.name);
+                    $("input[name='orgId']").val(node.id);
+                },ns.parent);
+            }
 		    //新增方法
 		    ns.OK = function () {
 		        var url = "/user/edit";

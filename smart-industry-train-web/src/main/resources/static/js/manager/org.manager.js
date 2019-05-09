@@ -35,7 +35,7 @@ Zq.Utility.RegisterNameSpace("org.manager");
             beforeDrag: zTreeBeforeDrag,
             beforeDrop: zTreeBeforeDrop,
             onDrop: zTreeOnDrop,
-            onRename: zTreeOnRename
+            beforeEditName: zTreeBeforeEditName
         }
     };
 
@@ -54,8 +54,9 @@ Zq.Utility.RegisterNameSpace("org.manager");
         var parent = zTree.getSelectedNodes()[0];
         if(parent){
             ns.add({ newType:type },function () {
-                zTree.addNodes(zTree.getSelectedNodes()[0], {});
-                ns.calcSort();
+                //刷新树
+                layer.alert("组织新增成功");
+                ns.init();
             });
         }else{
             layer.alert("请先选中一个父级节点");
@@ -110,16 +111,19 @@ Zq.Utility.RegisterNameSpace("org.manager");
     };
 
     //编辑方法
-    ns.Edit = function (id) {
+    ns.edit = function (param,callback) {
+        //var selected = param.node;
+        //SmartMonitor.Common.SetData(selected);
         Zq.Utility.OpenModal({
             title: "编辑组织",
             maxmin: false,
             area: ['800px', '400px'],
-            content: [('/org/editwin?id=' + id).geturl(), 'yes'],
+            content: [('/org/editwin?id=' + param.node.id).geturl(), 'yes'],
             end: function () {
                 if (SmartMonitor.Common.GetResult() === true) {
-                    ns.ReFresh();
-                    Zq.Utility.Msg("保存成功");
+                    if(callback){
+                        callback();
+                    }
                 }
             }
         });
@@ -202,25 +206,20 @@ Zq.Utility.RegisterNameSpace("org.manager");
     };
 
     /**
-     * 重命名完成
-     * @param event
-     * @param treeId
-     * @param treeNode
-     * @param isCancel
+     * 编辑事件
      */
-    function zTreeOnRename(event, treeId, treeNode, isCancel) {
-        $.ajax({
-            async: false,
-            type: "Post",
-            url: ("/solucls/update").geturl(),
-            data: {id:treeNode.id,name:treeNode.name},
-            success:function(id){
-                //entity.id = id;
-                //callback(id);
-            }
+    function zTreeBeforeEditName(treeId, treeNode){
+        ns.edit({
+            id:treeId,
+            node:treeNode
+        },function () {
+            layer.alert("组织修改成功");
+            //刷新树
+            ns.init();
+            //zTree.reAsyncChildNodes(null, "refresh");
         });
+        return false;
     }
-
     /**
      * 右键菜单控制
      * @param treeId

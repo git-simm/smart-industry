@@ -22,6 +22,16 @@ public class User extends BaseEntity {
 
     private String department;
 
+    private Integer orgId;
+
+    public Integer getOrgId() {
+        return orgId;
+    }
+
+    public void setOrgId(Integer orgId) {
+        this.orgId = orgId;
+    }
+
     public Date getCreateDate() {
         return createDate;
     }

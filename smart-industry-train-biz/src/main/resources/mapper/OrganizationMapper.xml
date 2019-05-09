@@ -7,5 +7,6 @@
         <where>
             ${ew.sqlSegment}
         </where>
+        order by a.pId,a.sort
     </select>
 </mapper>
