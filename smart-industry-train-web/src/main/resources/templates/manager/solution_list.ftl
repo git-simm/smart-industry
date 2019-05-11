@@ -36,8 +36,11 @@
             </table>
             <table id="list" class="table table-bordered table-hover"></table>
             <div style="display: none;" id="list_opr_template">
-                <button class="btn btn-xs btn-info" title="编辑" onclick="{edit}">
+                <button class="btn btn-xs btn-default" title="编辑" onclick="{edit}">
                     <i class="icon-edit"></i>
+                </button>
+                <button class="btn btn-xs btn-primary" title="设置测试方案" onclick="{addcard}">
+                    <i class="icon-list"></i>
                 </button>
                 <button class="btn btn-xs btn-primary" title="测试" onclick="{test}">
                     <i class="icon-rocket"></i>

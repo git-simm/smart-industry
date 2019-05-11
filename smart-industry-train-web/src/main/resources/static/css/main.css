@@ -1971,3 +1971,7 @@ input {
 .ztree li span.button.switch.level0 {visibility:hidden; width:1px;}
 .ztree li ul.level0 {padding:0; background:none;}
 /*.ztree li span.button { background-size: cover !important;}*/
+
+.bootstrap-table .table:not(.table-condensed), .bootstrap-table .table:not(.table-condensed) > tbody > tr > th, .bootstrap-table .table:not(.table-condensed) > tfoot > tr > th, .bootstrap-table .table:not(.table-condensed) > thead > tr > td, .bootstrap-table .table:not(.table-condensed) > tbody > tr > td, .bootstrap-table .table:not(.table-condensed) > tfoot > tr > td {
+    padding: 4px !important;
+}

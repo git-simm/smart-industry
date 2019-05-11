@@ -272,10 +272,6 @@ $(function () {
                 e.preventDefault();
                 solution.list.addTreeNode();
             }},
-        /*{text: '修改节点',action: function(e){
-                e.preventDefault();
-                solution.list.resetTree();
-            }},*/
         {text: '删除节点', action: function(e){
                 e.preventDefault();
                 solution.list.removeTreeNode();

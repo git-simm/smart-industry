@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="smart.industry.train.biz.mapper2.DesignSolutionPartionListMapper">
+    <sql id="base_query">
+        select a.id,a.createBy,a.createDate,a.modifyBy,a.modifyDate,a.partionId,a.solutionFileId,
+                    d.fileName,d.projFile
+            from design_solution_partion_list as a
+            inner join design_solution_partion as b on a.partionId = b.id
+            left join design_solution_list as c on a.solutionFileId = c.id
+            left join sys_upfiles as d on c.fileId = d.id
+      </sql>
+    <select id="selectBySolutionId" parameterType="java.lang.Integer" resultType="smart.industry.train.biz.entity.DesignSolutionPartionList">
+        <include refid="base_query"/>
+        where b.solutionId = #{solutionId,jdbcType=INTEGER}
+    </select>
+    <select id="selectByPartionId" parameterType="java.lang.Integer" resultType="smart.industry.train.biz.entity.DesignSolutionPartionList">
+        <include refid="base_query"/>
+        where b.id = #{partionId,jdbcType=INTEGER}
+    </select>
+</mapper>

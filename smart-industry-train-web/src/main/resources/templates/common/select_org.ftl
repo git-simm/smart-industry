@@ -83,8 +83,8 @@
                             zTree.expandNode(nodes[0], true, true, true);
                         }
                     });
-                    var node = SmartMonitor.Common.GetData();
-                    console.log(node);
+                    // var node = SmartMonitor.Common.GetData();
+                    // console.log(node);
                     /*$(".datatable").on("dblclick", "tbody>tr", function () {
                         ns.OK();
                     });*/

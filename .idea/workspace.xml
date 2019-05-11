@@ -13,30 +13,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ca438869-ff4f-47d5-a47e-64243f73bc98" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/dao/OrganizationBiz.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/static/_resources/common/pinying.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/static/images/class.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/static/images/company.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/static/images/department.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/static/images/group.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/static/images/item.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/dao/DesignSolutionPartionBiz.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/entity/DesignSolutionPartion.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/entity/DesignSolutionPartionList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/mapper2/DesignSolutionPartionListMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/mapper2/DesignSolutionPartionMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/smart-industry-train-biz/src/main/resources/mapper/DesignSolutionPartionListMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/smart-industry-train-web/src/main/java/smart/industry/train/web/controllers/manager/PartionController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/static/_resources/vue/vue.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/templates/manager/partion_edit.ftl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/df76d45d-a6d4-45ef-95bf-ef547ac4ef82.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/df76d45d-a6d4-45ef-95bf-ef547ac4ef82.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/dao/UserBiz.java" beforeDir="false" afterPath="$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/dao/UserBiz.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/entity/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/entity/base/Paging.java" beforeDir="false" afterPath="$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/entity/base/Paging.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-train-biz/src/main/resources/mapper/OrganizationMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/smart-industry-train-biz/src/main/resources/mapper/OrganizationMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-train-biz/src/main/resources/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/smart-industry-train-biz/src/main/resources/mapper/UserMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-train-biz/target/classes/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/smart-industry-train-biz/target/classes/mapper/UserMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-train-biz/target/classes/smart/industry/train/biz/dao/UserBiz.class" beforeDir="false" afterPath="$PROJECT_DIR$/smart-industry-train-biz/target/classes/smart/industry/train/biz/dao/UserBiz.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-train-biz/target/classes/smart/industry/train/biz/entity/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/smart-industry-train-biz/target/classes/smart/industry/train/biz/entity/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-train-web/src/main/java/smart/industry/train/web/controllers/manager/OrganizationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/smart-industry-train-web/src/main/java/smart/industry/train/web/controllers/manager/OrganizationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-train-web/src/main/java/smart/industry/train/web/controllers/manager/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/smart-industry-train-web/src/main/java/smart/industry/train/web/controllers/manager/UserController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/static/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/static/css/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/static/js/manager/org.manager.js" beforeDir="false" afterPath="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/static/js/manager/org.manager.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/static/js/manager/solution.list.js" beforeDir="false" afterPath="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/static/js/manager/solution.list.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/static/js/manager/user.list.js" beforeDir="false" afterPath="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/static/js/manager/user.list.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/templates/manager/org_edit.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/templates/manager/org_edit.ftl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/templates/manager/user_edit.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/templates/manager/user_edit.ftl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/static/js/manager/solution.list2.js" beforeDir="false" afterPath="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/static/js/manager/solution.list2.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/templates/base/_base.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/templates/base/_base.ftl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/templates/common/select_org.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/templates/common/select_org.ftl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/templates/index.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/templates/index.ftl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/templates/manager/solution_cards.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/templates/manager/solution_cards.ftl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/templates/manager/solution_list.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/templates/manager/solution_list.ftl" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -80,20 +75,6 @@
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="smart-industry: schema" type="c314c289:MysqlImplModel$Schema" />
       </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="smart-industry@60.205.226.96" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="smart-industry: schema" type="c314c289:MysqlImplModel$Schema" />
-        <item name="organization: table" type="98d5ac3d:MysqlImplModel$Table" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="smart-industry@60.205.226.96" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="smart-industry: schema" type="c314c289:MysqlImplModel$Schema" />
-        <item name="user: table" type="98d5ac3d:MysqlImplModel$Table" />
-      </path>
     </expand>
     <select />
   </component>
@@ -102,11 +83,41 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="OrganizationController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/smart-industry-train-web/src/main/java/smart/industry/train/web/controllers/manager/OrganizationController.java">
+      <file leaf-file-name="solution.list.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/smart-industry-train-web/src/main/resources/static/js/manager/solution.list.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3476">
-              <caret line="158" selection-start-line="158" selection-end-line="158" />
+            <state relative-caret-position="66">
+              <caret line="40" selection-start-line="40" selection-end-line="40" />
+              <folding>
+                <element signature="e#93#1082#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="partion_edit.ftl" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/smart-industry-train-web/src/main/resources/templates/manager/partion_edit.ftl">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1730">
+              <caret line="101" column="44" selection-start-line="101" selection-start-column="44" selection-end-line="101" selection-end-column="44" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="solution_cards.ftl" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/smart-industry-train-web/src/main/resources/templates/manager/solution_cards.ftl">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1486">
+              <caret line="89" column="11" selection-start-line="89" selection-start-column="11" selection-end-line="89" selection-end-column="11" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PartionController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/smart-industry-train-web/src/main/java/smart/industry/train/web/controllers/manager/PartionController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="73">
+              <caret line="39" selection-start-line="39" selection-end-line="39" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -114,90 +125,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BaseMapper.class" pinned="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/com/baomidou/mybatis-plus-core/3.1.1/mybatis-plus-core-3.1.1.jar!/com/baomidou/mybatisplus/core/mapper/BaseMapper.class">
+      <file leaf-file-name="DesignSolutionPartionBiz.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/dao/DesignSolutionPartionBiz.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="178">
-              <caret line="24" column="8" selection-start-line="24" selection-start-column="8" selection-end-line="24" selection-end-column="8" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BaseBiz.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/dao/base/BaseBiz.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="119" column="25" selection-start-line="119" selection-start-column="25" selection-end-line="119" selection-end-column="25" />
-              <folding>
-                <element signature="e#3096#3097#0" expanded="true" />
-                <element signature="e#3152#3153#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="IMapper.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/interfaces/IMapper.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="316">
-              <caret line="26" column="12" selection-start-line="26" selection-start-column="12" selection-end-line="26" selection-end-column="12" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="org.manager.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/smart-industry-train-web/src/main/resources/static/js/manager/org.manager.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2237">
-              <caret line="154" column="37" selection-start-line="154" selection-start-column="37" selection-end-line="154" selection-end-column="37" />
-              <folding>
-                <element signature="e#357#613#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="user_edit.ftl" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/smart-industry-train-web/src/main/resources/templates/manager/user_edit.ftl">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="24" selection-start-column="24" selection-end-column="24" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_base.ftl" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/smart-industry-train-web/src/main/resources/templates/base/_base.ftl">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="101">
-              <caret line="24" column="28" selection-start-line="24" selection-start-column="28" selection-end-line="24" selection-end-column="28" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.css" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/smart-industry-train-web/src/main/resources/static/css/main.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
-              <caret line="1972" column="39" selection-start-line="1972" selection-start-column="39" selection-end-line="1972" selection-end-column="39" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DesignClassController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/smart-industry-train-web/src/main/java/smart/industry/train/web/controllers/manager/DesignClassController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="51" column="5" selection-start-line="43" selection-start-column="4" selection-end-line="51" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserBiz.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/dao/UserBiz.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="258">
-              <caret line="49" column="8" selection-start-line="49" selection-start-column="8" selection-end-line="56" selection-end-column="36" />
+            <state relative-caret-position="111">
+              <caret line="59" column="47" lean-forward="true" selection-start-line="59" selection-start-column="47" selection-end-line="59" selection-end-column="47" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -271,26 +203,12 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/static/_resources/excel/Export2Excel.js" />
-        <option value="$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/dao/DesignExcelListBiz.java" />
-        <option value="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/static/js/manager/svg.resolve.js" />
-        <option value="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/static/js/common/svg-pan-zoom.js" />
-        <option value="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/static/js/manager/card.view.js" />
-        <option value="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/static/js/manager/test.run.js" />
-        <option value="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/static/js/common/thumbnailViewer.js" />
-        <option value="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/static/js/manager/svg.node.resolve.js" />
-        <option value="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/static/js/manager/index.js" />
-        <option value="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/templates/analysis/test_run.ftl" />
-        <option value="$PROJECT_DIR$/smart-industry-train-biz/src/main/resources/mapper/SysUpfilesMapper.xml" />
         <option value="$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/dao/ResolveBiz.java" />
         <option value="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/static/js/manager/solution.tree.js" />
         <option value="$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/dao/DesignSolutionBiz.java" />
         <option value="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/static/js/manager/svg.node.js" />
         <option value="$PROJECT_DIR$/smart-industry-train-web/src/main/java/smart/industry/train/web/controllers/manager/SolutionController.java" />
-        <option value="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/templates/manager/solution_cards.ftl" />
-        <option value="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/templates/base/_base.ftl" />
         <option value="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/templates/auth/login.ftl" />
-        <option value="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/templates/index.ftl" />
         <option value="$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/common/SysConfig.java" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/df76d45d-a6d4-45ef-95bf-ef547ac4ef82/console_1.sql" />
         <option value="$PROJECT_DIR$/smart-industry-train-web/src/main/java/smart/industry/train/web/WebApplication.java" />
@@ -298,7 +216,6 @@
         <option value="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/application.yml" />
         <option value="$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/entity/SysUpfiles.java" />
         <option value="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/static/css/train.css" />
-        <option value="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/templates/manager/solution_list.ftl" />
         <option value="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/templates/manager/user_list.ftl" />
         <option value="$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/entity/base/BaseEntity.java" />
         <option value="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/static/js/manager/org.edit.js" />
@@ -307,7 +224,6 @@
         <option value="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/templates/common/select_class.ftl" />
         <option value="$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/mapper2/OrganizationMapper.java" />
         <option value="$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/entity/Organization.java" />
-        <option value="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/templates/common/select_org.ftl" />
         <option value="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/templates/manager/org_edit.ftl" />
         <option value="$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/entity/base/Paging.java" />
         <option value="$PROJECT_DIR$/smart-industry-train-biz/src/main/resources/mapper/OrganizationMapper.xml" />
@@ -318,10 +234,26 @@
         <option value="$PROJECT_DIR$/smart-industry-train-biz/src/main/resources/mapper/UserMapper.xml" />
         <option value="$PROJECT_DIR$/smart-industry-train-web/src/main/java/smart/industry/train/web/controllers/manager/UserController.java" />
         <option value="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/templates/manager/user_edit.ftl" />
-        <option value="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/static/js/manager/solution.list.js" />
         <option value="$PROJECT_DIR$/smart-industry-train-web/src/main/java/smart/industry/train/web/controllers/manager/OrganizationController.java" />
         <option value="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/static/js/manager/org.manager.js" />
         <option value="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/static/css/main.css" />
+        <option value="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/static/js/manager/solution.list.js" />
+        <option value="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/templates/index.ftl" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/df76d45d-a6d4-45ef-95bf-ef547ac4ef82/console.sql" />
+        <option value="$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/mapper2/DesignSolutionPartionMapper.java" />
+        <option value="$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/mapper2/DesignSolutionPartionListMapper.java" />
+        <option value="$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/dao/base/BaseBiz.java" />
+        <option value="$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/entity/DesignSolutionPartion.java" />
+        <option value="$PROJECT_DIR$/smart-industry-train-biz/src/main/resources/mapper/DesignSolutionPartionListMapper.xml" />
+        <option value="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/templates/base/_base.ftl" />
+        <option value="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/templates/common/select_org.ftl" />
+        <option value="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/templates/manager/solution_list.ftl" />
+        <option value="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/static/js/manager/solution.list2.js" />
+        <option value="$PROJECT_DIR$/smart-industry-train-web/src/main/java/smart/industry/train/web/controllers/manager/PartionController.java" />
+        <option value="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/templates/manager/partion_edit.ftl" />
+        <option value="$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/entity/DesignSolutionPartionList.java" />
+        <option value="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/templates/manager/solution_cards.ftl" />
+        <option value="$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/dao/DesignSolutionPartionBiz.java" />
       </list>
     </option>
   </component>
@@ -365,10 +297,10 @@
     <packageJsonPaths />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="47" />
-    <option name="y" value="367" />
+    <option name="x" value="235" />
+    <option name="y" value="78" />
     <option name="width" value="1775" />
-    <option name="height" value="785" />
+    <option name="height" value="858" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -431,7 +363,7 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="biz" type="462c0819:PsiDirectoryNode" />
-              <item name="common" type="462c0819:PsiDirectoryNode" />
+              <item name="dao" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="smart-industry" type="b2602c69:ProjectViewProjectNode" />
@@ -441,7 +373,7 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="biz" type="462c0819:PsiDirectoryNode" />
-              <item name="dao" type="462c0819:PsiDirectoryNode" />
+              <item name="mapper2" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="smart-industry" type="b2602c69:ProjectViewProjectNode" />
@@ -552,7 +484,7 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
+              <item name="_resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="smart-industry" type="b2602c69:ProjectViewProjectNode" />
@@ -562,7 +494,8 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="images" type="462c0819:PsiDirectoryNode" />
+              <item name="_resources" type="462c0819:PsiDirectoryNode" />
+              <item name="vue" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="smart-industry" type="b2602c69:ProjectViewProjectNode" />
@@ -602,7 +535,45 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="analysis" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="smart-industry" type="b2602c69:ProjectViewProjectNode" />
+              <item name="smart-industry" type="462c0819:PsiDirectoryNode" />
+              <item name="smart-industry-train-web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="common" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="smart-industry" type="b2602c69:ProjectViewProjectNode" />
+              <item name="smart-industry" type="462c0819:PsiDirectoryNode" />
+              <item name="smart-industry-train-web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
               <item name="manager" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="smart-industry" type="b2602c69:ProjectViewProjectNode" />
+              <item name="smart-industry" type="462c0819:PsiDirectoryNode" />
+              <item name="smart-industry-train-web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="scene" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="smart-industry" type="b2602c69:ProjectViewProjectNode" />
+              <item name="smart-industry" type="462c0819:PsiDirectoryNode" />
+              <item name="smart-industry-train-web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -640,23 +611,25 @@
       <recent name="smart.industry.utils.exceptions" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\myworkspace\git\smart-industry\smart-industry-train-web\src\main\resources\templates\manager" />
+      <recent name="D:\myworkspace\git\smart-industry\smart-industry-train-biz\src\main\resources\mapper" />
       <recent name="D:\myworkspace\git\smart-industry\smart-industry-train-web\src\main\resources\static\images" />
       <recent name="D:\myworkspace\git\smart-industry\smart-industry-train-web\src\main\resources\static\js\common" />
-      <recent name="D:\myworkspace\git\smart-industry\smart-industry-train-biz\src\main\resources\mapper" />
       <recent name="D:\myworkspace\git\smart-industry\smart-industry-train-web\src\main\resources\templates\common" />
-      <recent name="D:\myworkspace\git\smart-industry\smart-industry-train-web\src\main\resources\static\js\manager" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="smart.industry.train.biz.mapper2" />
+      <recent name="smart.industry.train.web.controllers.manager" />
+      <recent name="smart.industry.train.biz.entity" />
       <recent name="smart.industry.train.biz.mypoi" />
       <recent name="smart.industry.train.biz.dao" />
-      <recent name="smart.industry.train.biz.dao.base" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\myworkspace\git\smart-industry\smart-industry-train-web\src\main\resources\static\_resources\vue" />
       <recent name="D:\myworkspace\git\smart-industry\smart-industry-train-web\src\main\resources\static\images" />
       <recent name="D:\myworkspace\git\smart-industry\smart-industry-train-web\src\main\resources\static\_resources\common" />
       <recent name="D:\myworkspace\git\smart-industry\sql" />
       <recent name="D:\myworkspace\git\smart-industry\smart-industry-train-web\src\main\resources\static\js\common" />
-      <recent name="D:\myworkspace\git\smart-industry\smart-industry-train-web\src\main\resources\static\_resources\excel" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -1072,14 +1045,7 @@
       <workItem from="1557148246238" duration="5302000" />
       <workItem from="1557402641988" duration="1791000" />
       <workItem from="1557404521827" duration="6905000" />
-      <workItem from="1557537790490" duration="16240000" />
-    </task>
-    <task id="LOCAL-00023" summary="添加一个电流走向图的控制逻辑">
-      <created>1535549162286</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1535549162286</updated>
+      <workItem from="1557537790490" duration="32318000" />
     </task>
     <task id="LOCAL-00024" summary="添加一个电流走向图的控制逻辑">
       <created>1535550988334</created>
@@ -1417,7 +1383,14 @@
       <option name="project" value="LOCAL" />
       <updated>1557413161199</updated>
     </task>
-    <option name="localTasksCounter" value="72" />
+    <task id="LOCAL-00072" summary="完成组织架构管理功能">
+      <created>1557561175882</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1557561175883</updated>
+    </task>
+    <option name="localTasksCounter" value="73" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1453,7 +1426,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="907012000" />
+    <option name="totallyTimeSpent" value="923090000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1466,6 +1439,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="5" />
       <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.46179625" side_tool="true" weight="0.32952926" />
@@ -1474,13 +1448,13 @@
       <window_info anchor="bottom" id="Database Changes" order="4" show_stripe_button="false" />
       <window_info id="Capture Tool" order="7" />
       <window_info id="Designer" order="0" />
-      <window_info anchor="right" id="Database" order="9" weight="0.1769437" />
+      <window_info anchor="right" id="Database" order="9" weight="0.21782842" />
       <window_info id="Structure" order="6" sideWeight="0.5044843" side_tool="true" weight="0.19101876" />
-      <window_info anchor="right" id="Ant Build" order="7" visible="true" weight="0.17828418" />
+      <window_info anchor="right" id="Ant Build" order="7" visible="true" weight="0.13873994" />
       <window_info id="UI Designer" order="2" />
-      <window_info anchor="bottom" id="Debug" order="10" sideWeight="0.57171583" visible="true" weight="0.37232524" />
+      <window_info active="true" anchor="bottom" id="Debug" order="10" sideWeight="0.57171583" visible="true" weight="0.45221114" />
       <window_info anchor="bottom" id="TODO" order="13" weight="0.3281027" />
-      <window_info anchor="bottom" id="Messages" order="2" weight="0.22824536" />
+      <window_info anchor="bottom" id="Messages" order="2" weight="0.15263909" />
       <window_info anchor="right" id="Palette&#9;" order="2" />
       <window_info id="Image Layers" order="1" />
       <window_info anchor="bottom" id="Java Enterprise" order="3" weight="0.3281027" />
@@ -1489,7 +1463,8 @@
       <window_info anchor="bottom" id="Run" order="9" sideWeight="0.62734586" weight="0.50927246" />
       <window_info anchor="bottom" id="Spring" order="0" weight="0.47360912" />
       <window_info anchor="bottom" id="Terminal" order="1" sideWeight="0.5382038" weight="0.3281027" />
-      <window_info active="true" content_ui="combo" id="Project" order="5" sideWeight="0.4955157" visible="true" weight="0.21715818" />
+      <window_info anchor="bottom" id="Database Console" order="14" weight="0.2125535" />
+      <window_info content_ui="combo" id="Project" order="5" sideWeight="0.4955157" visible="true" weight="0.19906166" />
       <window_info anchor="right" id="Bean Validation" order="4" weight="0.32908848" />
       <window_info id="Web" order="4" sideWeight="0.5042373" side_tool="true" weight="0.1930295" />
       <window_info anchor="right" id="SciView" order="10" />
@@ -1501,7 +1476,6 @@
       <window_info anchor="bottom" id="Thumbnails" order="14" weight="0.32952926" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="8" weight="0.25" />
       <window_info anchor="bottom" id="Find" order="7" sideWeight="0.49932975" weight="0.24964337" />
-      <window_info anchor="bottom" id="Database Console" order="14" weight="0.2125535" />
       <window_info anchor="bottom" id="Dependency Viewer" order="10" weight="0.2510699" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="6" type="SLIDING" weight="0.4" />
       <window_info anchor="bottom" id="Message" order="6" />
@@ -1589,7 +1563,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="改进dxf-属性可见性识别方案，基本上实现完整的属性显隐处理" />
     <MESSAGE value="提交block对应的跳转界面" />
     <MESSAGE value="添加对项目文件路径的解析" />
     <MESSAGE value="发布一次" />
@@ -1614,7 +1587,8 @@
     <MESSAGE value="1.升级mybatis插件至自动化的mybatis-plus插件;" />
     <MESSAGE value="1.前端界面做一些传值处理" />
     <MESSAGE value="完成部分组织架构设置功能" />
-    <option name="LAST_COMMIT_MESSAGE" value="完成部分组织架构设置功能" />
+    <MESSAGE value="完成组织架构管理功能" />
+    <option name="LAST_COMMIT_MESSAGE" value="完成组织架构管理功能" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1631,6 +1605,18 @@
           <properties />
           <option name="timeStamp" value="609" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/smart-industry-train-web/src/main/java/smart/industry/train/web/controllers/manager/PartionController.java</url>
+          <line>103</line>
+          <properties />
+          <option name="timeStamp" value="615" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/smart-industry-train-web/src/main/java/smart/industry/train/web/controllers/manager/PartionController.java</url>
+          <line>38</line>
+          <properties />
+          <option name="timeStamp" value="617" />
+        </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
@@ -1640,7 +1626,7 @@
           <properties />
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="610" />
+      <option name="time" value="621" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="SpringBootApplicationConfigurationType">
@@ -1768,297 +1754,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/smart-industry-train-web/src/main/java/smart/industry/train/web/controllers/CommonController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="329">
-          <caret line="27" column="1" lean-forward="true" selection-start-line="27" selection-start-column="1" selection-end-line="27" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/smart-industry-train-web/src/main/resources/templates/common/select_class.ftl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-15">
-          <caret line="94" column="44" selection-start-line="94" selection-start-column="44" selection-end-line="94" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/smart-industry-train-biz/src/main/resources/mapper/DesignClassMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2574" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/entity/base/BaseEntity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="30" column="30" selection-start-line="30" selection-start-column="4" selection-end-line="30" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/baomidou/mybatis-plus-core/3.1.1/mybatis-plus-core-3.1.1.jar!/com/baomidou/mybatisplus/core/conditions/Wrapper.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="17" column="25" selection-start-line="17" selection-start-column="22" selection-end-line="17" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/baomidou/mybatis-plus-core/3.1.1/mybatis-plus-core-3.1.1.jar!/com/baomidou/mybatisplus/core/conditions/query/QueryWrapper.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-66">
-          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/smart-industry-train-web/src/main/resources/static/_resources/common/common.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22">
-          <caret line="73" column="4" selection-start-line="73" selection-start-column="4" selection-end-line="73" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/smart-industry-train-web/src/main/resources/templates/manager/param_edit.ftl">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/smart-industry-train-web/src/main/resources/templates/manager/solution_list.ftl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="439">
-          <caret line="53" column="48" selection-start-line="53" selection-start-column="48" selection-end-line="53" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/alibaba/fastjson/1.2.32/fastjson-1.2.32.jar!/com/alibaba/fastjson/JSON.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-27">
-          <caret line="586" column="25" selection-start-line="586" selection-start-column="25" selection-end-line="586" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/baomidou/mybatis-plus-annotation/3.1.1/mybatis-plus-annotation-3.1.1.jar!/com/baomidou/mybatisplus/annotation/TableField.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="16" column="18" selection-start-line="16" selection-start-column="18" selection-end-line="16" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/entity/Organization.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-275">
-          <caret line="18" column="24" lean-forward="true" selection-start-line="18" selection-start-column="24" selection-end-line="18" selection-end-column="24" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#672#673#0" expanded="true" />
-            <element signature="e#701#702#0" expanded="true" />
-            <element signature="e#745#746#0" expanded="true" />
-            <element signature="e#781#782#0" expanded="true" />
-            <element signature="e#668#669#0" expanded="true" />
-            <element signature="e#693#694#0" expanded="true" />
-            <element signature="e#730#731#0" expanded="true" />
-            <element signature="e#758#759#0" expanded="true" />
-            <element signature="e#789#790#0" expanded="true" />
-            <element signature="e#816#817#0" expanded="true" />
-            <element signature="e#856#857#0" expanded="true" />
-            <element signature="e#888#889#0" expanded="true" />
-            <element signature="e#919#920#0" expanded="true" />
-            <element signature="e#946#947#0" expanded="true" />
-            <element signature="e#986#987#0" expanded="true" />
-            <element signature="e#1018#1019#0" expanded="true" />
-            <element signature="e#1053#1054#0" expanded="true" />
-            <element signature="e#1083#1084#0" expanded="true" />
-            <element signature="e#1130#1131#0" expanded="true" />
-            <element signature="e#1168#1169#0" expanded="true" />
-            <element signature="e#1199#1200#0" expanded="true" />
-            <element signature="e#1225#1226#0" expanded="true" />
-            <element signature="e#1264#1265#0" expanded="true" />
-            <element signature="e#1294#1295#0" expanded="true" />
-            <element signature="e#1325#1326#0" expanded="true" />
-            <element signature="e#1352#1353#0" expanded="true" />
-            <element signature="e#1392#1393#0" expanded="true" />
-            <element signature="e#1424#1425#0" expanded="true" />
-            <element signature="e#1456#1457#0" expanded="true" />
-            <element signature="e#1484#1485#0" expanded="true" />
-            <element signature="e#1526#1527#0" expanded="true" />
-            <element signature="e#1560#1561#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/7ae1e208-3f4f-448d-b9fc-15e68d170aba/console.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="59" selection-start-column="59" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/smart-industry-train-web/src/main/resources/static/js/common.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1408">
-          <caret line="64" column="18" selection-start-line="64" selection-start-column="18" selection-end-line="64" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/smart-industry-train-web/src/main/resources/templates/common/select_org.ftl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1760">
-          <caret line="80" column="45" selection-start-line="80" selection-start-column="45" selection-end-line="80" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/smart-industry-train-web/src/main/resources/static/_resources/common/pinying.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="4" column="1506" selection-start-line="4" selection-start-column="1506" selection-end-line="4" selection-end-column="1506" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/smart-industry-train-web/src/main/resources/templates/base/resouceimp.ftl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="6" column="102" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="102" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/baomidou/mybatis-plus-core/3.1.1/mybatis-plus-core-3.1.1.jar!/com/baomidou/mybatisplus/core/conditions/interfaces/Compare.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="151">
-          <caret line="38" column="23" selection-start-line="38" selection-start-column="21" selection-end-line="38" selection-end-column="23" />
-          <folding>
-            <element signature="e#1247#1248#0" expanded="true" />
-            <element signature="e#1296#1297#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/mapper2/OrganizationMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/smart-industry-train-web/src/main/resources/templates/manager/user_list.ftl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-711">
-          <caret line="12" column="10" selection-start-line="12" selection-start-column="10" selection-end-line="12" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/smart-industry-train-web/src/main/resources/templates/manager/org_edit.ftl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1188">
-          <caret line="123" column="58" selection-start-line="123" selection-start-column="58" selection-end-line="123" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/smart-industry-train-biz/src/main/resources/mapper/SysDxfAttrMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2171" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/smart-industry-train-biz/src/main/resources/mapper/SysTasksMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="146" column="11" selection-end-line="147" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/smart-industry-train-biz/src/main/resources/mapper/SysUpfilesMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1650" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/smart-industry-train-biz/src/main/resources/mapper/DesignExcelListMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-8316" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/smart-industry-train-biz/src/main/resources/mapper/DesignDetailBlockMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1518" />
-      </provider>
-    </entry>
-    <entry file="das://df76d45d-a6d4-45ef-95bf-ef547ac4ef82/schema/smart-industry/table/design_solution">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://df76d45d-a6d4-45ef-95bf-ef547ac4ef82/schema/smart-industry/table/design_class">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/smart-industry-train-biz/src/main/resources/mapper/DesignSolutionMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-396" />
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-core/4.3.13.RELEASE/spring-core-4.3.13.RELEASE-sources.jar!/org/springframework/util/StringUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="55" column="22" selection-start-line="55" selection-start-column="22" selection-end-line="55" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/dao/OrganizationBiz.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="66" column="40" selection-start-line="66" selection-start-column="40" selection-end-line="66" selection-end-column="40" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/smart-industry-train-biz/src/main/resources/mapper/OrganizationMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="13" column="9" selection-start-line="13" selection-start-column="9" selection-end-line="13" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/mapper/UserMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="8" column="16" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/entity/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="26" column="26" selection-start-line="26" selection-start-column="19" selection-end-line="26" selection-end-column="26" />
-          <folding>
-            <element signature="e#500#501#0" expanded="true" />
-            <element signature="e#530#531#0" expanded="true" />
-            <element signature="e#576#577#0" expanded="true" />
-            <element signature="e#614#615#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/smart-industry-train-web/src/main/resources/static/js/manager/user.list.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="95" column="37" selection-start-line="95" selection-start-column="37" selection-end-line="95" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/smart-industry-train-biz/src/main/resources/mapper/UserMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="26" column="30" selection-start-line="26" selection-start-column="16" selection-end-line="26" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/smart-industry-train-web/src/main/resources/static/js/manager/solution.list.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="75" column="18" selection-start-line="75" selection-start-column="18" selection-end-line="75" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/smart-industry-train-web/src/main/java/smart/industry/train/web/controllers/manager/DesignClassController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
@@ -2081,17 +1776,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/dao/base/BaseBiz.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="119" column="25" selection-start-line="119" selection-start-column="25" selection-end-line="119" selection-end-column="25" />
-          <folding>
-            <element signature="e#3096#3097#0" expanded="true" />
-            <element signature="e#3152#3153#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/dao/UserBiz.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="258">
@@ -2099,13 +1783,6 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/smart-industry-train-web/src/main/java/smart/industry/train/web/controllers/manager/SolutionController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2031">
-          <caret line="26" column="13" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -2128,13 +1805,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="316">
           <caret line="26" column="12" selection-start-line="26" selection-start-column="12" selection-end-line="26" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/baomidou/mybatis-plus-core/3.1.1/mybatis-plus-core-3.1.1.jar!/com/baomidou/mybatisplus/core/mapper/BaseMapper.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="178">
-          <caret line="24" column="8" selection-start-line="24" selection-start-column="8" selection-end-line="24" selection-end-column="8" />
         </state>
       </provider>
     </entry>
@@ -2165,24 +1835,332 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/smart-industry-train-web/src/main/resources/templates/manager/user_edit.ftl">
+    <entry file="file://$PROJECT_DIR$/smart-industry-train-web/src/main/resources/static/css/main.css">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="117">
+          <caret line="1965" column="12" selection-start-line="1965" selection-start-column="12" selection-end-line="1965" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/smart-industry-train-web/build.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="11" column="46" selection-start-line="11" selection-start-column="46" selection-end-line="11" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/smart-industry-train-web/src/main/resources/templates/index.ftl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22">
+          <caret line="130" column="32" selection-start-line="130" selection-start-column="32" selection-end-line="130" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://df76d45d-a6d4-45ef-95bf-ef547ac4ef82/schema/smart-industry/table/design_solution.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="6" column="34" lean-forward="true" selection-start-line="6" selection-start-column="34" selection-end-line="6" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://df76d45d-a6d4-45ef-95bf-ef547ac4ef82/schema/smart-industry/table/design_solution">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
-          <caret column="24" selection-start-column="24" selection-end-column="24" />
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/entity/Organization.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="12" column="23" lean-forward="true" selection-start-line="11" selection-start-column="4" selection-end-line="12" selection-end-column="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#672#673#0" expanded="true" />
+            <element signature="e#701#702#0" expanded="true" />
+            <element signature="e#745#746#0" expanded="true" />
+            <element signature="e#781#782#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/entity/base/BaseEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/dao/DesignSolutionListBiz.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="19" column="95" lean-forward="true" selection-start-line="19" selection-start-column="35" selection-end-line="19" selection-end-column="95" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/mapper2/OrganizationMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="13" column="27" selection-start-line="13" selection-start-column="27" selection-end-line="13" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/mapper/DesignSolutionMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="12" column="19" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/smart-industry-train-biz/src/main/resources/mapper/OrganizationMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="2" column="52" selection-start-line="2" selection-start-column="52" selection-end-line="2" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://df76d45d-a6d4-45ef-95bf-ef547ac4ef82/schema/smart-industry/table/design_solution_list">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://df76d45d-a6d4-45ef-95bf-ef547ac4ef82/schema/smart-industry/table/sys_upfiles">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/smart-industry-train-biz/src/main/resources/mapper/DesignSolutionMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="37" column="19" lean-forward="true" selection-start-line="37" selection-start-column="19" selection-end-line="37" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/smart-industry-train-biz/src/main/resources/mapper/DesignSolutionListMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="15" column="2" selection-start-line="15" selection-start-column="2" selection-end-line="18" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/mapper2/DesignSolutionPartionMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="9" column="44" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="44" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/mapper2/DesignSolutionPartionListMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="13" column="42" selection-start-line="13" selection-start-column="42" selection-end-line="13" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/dao/base/BaseBiz.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="138" selection-start-line="138" selection-end-line="138" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/dao/OrganizationBiz.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="38" column="9" selection-start-line="27" selection-start-column="8" selection-end-line="38" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/baomidou/mybatis-plus-core/3.1.1/mybatis-plus-core-3.1.1.jar!/com/baomidou/mybatisplus/core/mapper/BaseMapper.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="178">
+          <caret line="20" column="8" selection-start-line="20" selection-start-column="8" selection-end-line="20" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/smart-industry-train-biz/src/main/resources/mapper/DesignSolutionPartionListMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="19" column="9" lean-forward="true" selection-start-line="19" selection-start-column="9" selection-end-line="19" selection-end-column="9" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/smart-industry-train-web/src/main/resources/templates/base/_base.ftl">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="101">
-          <caret line="24" column="28" selection-start-line="24" selection-start-column="28" selection-end-line="24" selection-end-column="28" />
+        <state relative-caret-position="167">
+          <caret line="24" column="37" lean-forward="true" selection-start-line="24" selection-start-column="37" selection-end-line="24" selection-end-column="37" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/smart-industry-train-web/src/main/resources/static/css/main.css">
+    <entry file="file://$PROJECT_DIR$/smart-industry-train-web/src/main/resources/templates/common/select_class.ftl">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="1972" column="39" selection-start-line="1972" selection-start-column="39" selection-end-line="1972" selection-end-column="39" />
+        <state relative-caret-position="-594" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/smart-industry-train-web/src/main/resources/templates/common/select_org.ftl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="362">
+          <caret line="58" column="21" selection-start-line="42" selection-start-column="20" selection-end-line="58" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/smart-industry-train-web/src/main/java/smart/industry/train/web/controllers/manager/SolutionController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="159">
+          <caret line="116" column="7" lean-forward="true" selection-start-line="116" selection-start-column="7" selection-end-line="116" selection-end-column="7" />
+          <folding>
+            <element signature="e#1651#1652#0" expanded="true" />
+            <element signature="e#1698#1699#0" expanded="true" />
+            <element signature="e#3466#3467#0" expanded="true" />
+            <element signature="e#3522#3523#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/smart-industry-train-web/src/main/resources/static/js/manager/solution.list2.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="446">
+          <caret line="202" column="37" lean-forward="true" selection-start-line="202" selection-start-column="37" selection-end-line="202" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/smart-industry-train-web/src/main/resources/templates/analysis/test_run.ftl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4928" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/smart-industry-train-web/src/main/resources/templates/manager/solution_list.ftl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4">
+          <caret line="41" column="68" selection-start-line="41" selection-start-column="62" selection-end-line="41" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/entity/DesignSolutionPartion.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="25" column="55" selection-start-line="25" selection-start-column="44" selection-end-line="25" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/smart-industry-train-web/src/main/resources/static/js/manager/solution.tree.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-351">
+          <caret line="29" column="13" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/smart-industry-train-web/src/main/resources/static/js/manager/org.edit.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-660" />
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-core/4.3.13.RELEASE/spring-core-4.3.13.RELEASE.jar!/org/springframework/cglib/proxy/MethodProxy.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="109">
+          <caret line="106" selection-start-line="106" selection-end-line="106" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-tx/4.3.13.RELEASE/spring-tx-4.3.13.RELEASE.jar!/org/springframework/transaction/interceptor/TransactionAspectSupport.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="131">
+          <caret line="167" selection-start-line="167" selection-end-line="167" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://df76d45d-a6d4-45ef-95bf-ef547ac4ef82/schema/smart-industry/table/design_solution_partion_list">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://df76d45d-a6d4-45ef-95bf-ef547ac4ef82/schema/smart-industry/table/design_solution_partion">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/df76d45d-a6d4-45ef-95bf-ef547ac4ef82/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="5" column="16" lean-forward="true" selection-start-line="5" selection-start-column="16" selection-end-line="5" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/entity/DesignSolutionPartionList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="13" column="30" lean-forward="true" selection-start-line="13" selection-start-column="30" selection-end-line="13" selection-end-column="30" />
+          <folding>
+            <element signature="e#796#797#0" expanded="true" />
+            <element signature="e#827#828#0" expanded="true" />
+            <element signature="e#875#876#0" expanded="true" />
+            <element signature="e#915#916#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/smart-industry-train-web/src/main/resources/templates/manager/user_edit.ftl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="572">
+          <caret line="101" column="34" lean-forward="true" selection-start-line="101" selection-start-column="34" selection-end-line="101" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/smart-industry-train-web/src/main/resources/static/js/manager/solution.list.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="66">
+          <caret line="40" selection-start-line="40" selection-end-line="40" />
+          <folding>
+            <element signature="e#93#1082#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/smart-industry-train-web/src/main/resources/templates/manager/partion_edit.ftl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1730">
+          <caret line="101" column="44" selection-start-line="101" selection-start-column="44" selection-end-line="101" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/smart-industry-train-web/src/main/resources/templates/manager/solution_cards.ftl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1486">
+          <caret line="89" column="11" selection-start-line="89" selection-start-column="11" selection-end-line="89" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/smart-industry-train-web/src/main/java/smart/industry/train/web/controllers/manager/PartionController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="73">
+          <caret line="39" selection-start-line="39" selection-end-line="39" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/dao/DesignSolutionPartionBiz.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="111">
+          <caret line="59" column="47" lean-forward="true" selection-start-line="59" selection-start-column="47" selection-end-line="59" selection-end-column="47" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

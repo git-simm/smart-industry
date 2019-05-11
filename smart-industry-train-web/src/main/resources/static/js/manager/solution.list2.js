@@ -104,13 +104,14 @@
                 {
                     title: '操作',
                     align: 'center',
-                    width: "150",
+                    width: "200",
                     sortable: false,
                     formatter: function (value, row, index) {
                         var content = $("#list_opr_template").html();
                         content = content.replace("{edit}", "solution.list2.Edit('" + row.id + "')");
                         content = content.replace("{del}", "solution.list2.Delete('" + row.id + "')");
                         content = content.replace("{test}", "solution.list2.RunTest('" + row.id + "')");
+                        content = content.replace("{addcard}", "solution.list2.AddCard(" + row.id + ",'"+ row.name +"')");
                         return content;
                     }
                     //width: "30%"
@@ -182,7 +183,18 @@
      */
     ns.RunTest = function(id){
         //从父级页面打开测试窗口
-        parent.smart.train.index.open("测试"+id,'/run/test?id=' + id);
+        window.open(('/run/test?id=' + id).geturl(),'_blank');
+        //parent.smart.train.index.open("测试"+id,);
+    }
+    /**
+     * 维护方案分类
+     * @param id
+     * @param name
+     * @constructor
+     */
+    ns.AddCard = function(id,name){
+        //从父级页面打开测试窗口
+        parent.smart.train.index.open("设置测试方案["+ name +"]",'/partion/cards?id=' + id);
     }
     //删除
     ns.Delete = function (id) {
