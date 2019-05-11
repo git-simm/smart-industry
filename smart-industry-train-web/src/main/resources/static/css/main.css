@@ -1970,3 +1970,4 @@ input {
 /*固定第一个元素*/
 .ztree li span.button.switch.level0 {visibility:hidden; width:1px;}
 .ztree li ul.level0 {padding:0; background:none;}
+/*.ztree li span.button { background-size: cover !important;}*/

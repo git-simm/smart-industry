@@ -69,11 +69,11 @@ Zq.Utility.RegisterNameSpace("solution.list");
         if (nodes && nodes.length>0) {
             var ids = [];
             if (nodes[0].children && nodes[0].children.length > 0) {
-                var msg = "要删除的节点是父节点，如果删除将连同子节点一起删掉。\n\n请确认！";
-                if (confirm(msg)==true){
+                var msg = "要删除的节点是目录，如果删除将连同子级节点一起删掉。\n\n请确认！";
+                layer.confirm(msg,{btn:['确定','取消']},function(){
                     var nodes = getChildNodes(nodes[0]);
                     ids = ids.concat(nodes);
-                }
+                })
             } else {
                 ids.push(nodes[0].id);
             }

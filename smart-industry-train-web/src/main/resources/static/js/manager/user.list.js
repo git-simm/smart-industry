@@ -3,7 +3,12 @@
 (function (ns, undefined) {
     //设置的实体
     ns.Entity = null;
+    ns.treeNode = null;
     ns.Init = function () {
+        org.manager.treeClickCallback = function(treeNode){
+            ns.treeNode = treeNode;
+            ns.ReFresh();
+        };
         $('#list').bootstrapTable({
             url: ('/user/getlist').geturl(),
             method: 'post',
@@ -28,6 +33,12 @@
             sortOrder: "desc",
             queryParams: function (params) {
                 $.extend(params, { searchKey: $("input[name='searchkey']").val()});
+                //获取父级节点过滤信息
+                if(ns.treeNode){
+                    params.orgId = ns.treeNode.id;
+                }else{
+                    params.orgId = 1;
+                }
                 return params;
             },
             onDblClickRow: function(tr,el) {
@@ -82,7 +93,7 @@
                 },
                 {
                     title: '部门',
-                    field: 'department',
+                    field: 'orgName',
                 },
                 {
                     title: '操作',

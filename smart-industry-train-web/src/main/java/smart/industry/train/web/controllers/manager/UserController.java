@@ -3,6 +3,7 @@ package smart.industry.train.web.controllers.manager;
 import com.alibaba.fastjson.JSONObject;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+import org.apache.commons.collections.CollectionUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +19,7 @@ import smart.industry.train.biz.entity.base.Paging;
 import smart.industry.train.web.models.MyUser;
 import smart.industry.utils.annotations.Post;
 import smart.industry.utils.encode.MD5;
+import smart.industry.utils.exceptions.AjaxException;
 
 import java.util.List;
 import java.util.Map;
@@ -75,7 +77,15 @@ public class UserController {
      */
     @RequestMapping("/editwin")
     public String editWin(int id, Map<String, Object> map) {
-        map.put("entity", userBiz.selectByPrimaryKey(id));
+        //获取用户信息
+        User filter = new User();
+        filter.setId(id);
+        filter.setFilter("id = #{id}");
+        List<User> users = userBiz.selectByFilter(filter);
+        if(CollectionUtils.isEmpty(users)){
+            throw new AjaxException("未找到用户信息");
+        }
+        map.put("entity", users.get(0));
         map.put("formMode", "edit");
         return "manager/user_edit";
     }

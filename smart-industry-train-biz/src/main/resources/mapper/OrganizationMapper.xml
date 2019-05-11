@@ -4,8 +4,10 @@
     <select id="getOrgList" resultType="smart.industry.train.biz.entity.Organization">
         SELECT a.*,b.name as pName FROM organization as a
         left join organization as b on a.pId = b.id
-        <where>
-            ${ew.sqlSegment}
+        <where> 1=1
+            <if test="ew != null and ew.sqlSegment !=null" >
+                and ${ew.sqlSegment}
+            </if>
         </where>
         order by a.pId,a.sort
     </select>

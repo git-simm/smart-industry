@@ -1,166 +1,178 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="smart.industry.train.biz.mapper.UserMapper">
-  <resultMap id="BaseResultMap" type="User">
-    <id column="id" jdbcType="INTEGER" property="id" />
-    <result column="createDate" jdbcType="TIMESTAMP" property="createDate" />
-    <result column="createBy" jdbcType="INTEGER" property="createBy" />
-    <result column="modifyDate" jdbcType="TIMESTAMP" property="modifyDate" />
-    <result column="modifyBy" jdbcType="INTEGER" property="modifyBy" />
-    <result column="name" jdbcType="VARCHAR" property="name" />
-    <result column="code" jdbcType="VARCHAR" property="code" />
-    <result column="psw" jdbcType="VARCHAR" property="psw" />
-    <result column="sex" jdbcType="BIT" property="sex" />
-    <result column="remark" jdbcType="VARCHAR" property="remark" />
-    <result column="department" jdbcType="VARCHAR" property="department" />
-  </resultMap>
-  <sql id="Base_Column_List">
-    id, createDate, createBy, modifyDate, modifyBy, `name`, code, psw, sex, remark, department
+    <resultMap id="BaseResultMap" type="User">
+        <id column="id" jdbcType="INTEGER" property="id"/>
+        <result column="createDate" jdbcType="TIMESTAMP" property="createDate"/>
+        <result column="createBy" jdbcType="INTEGER" property="createBy"/>
+        <result column="modifyDate" jdbcType="TIMESTAMP" property="modifyDate"/>
+        <result column="modifyBy" jdbcType="INTEGER" property="modifyBy"/>
+        <result column="name" jdbcType="VARCHAR" property="name"/>
+        <result column="code" jdbcType="VARCHAR" property="code"/>
+        <result column="psw" jdbcType="VARCHAR" property="psw"/>
+        <result column="sex" jdbcType="BIT" property="sex"/>
+        <result column="remark" jdbcType="VARCHAR" property="remark"/>
+        <result column="department" jdbcType="VARCHAR" property="department"/>
+        <result column="org_id" jdbcType="INTEGER" property="orgId"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+    id, createDate, createBy, modifyDate, modifyBy, `name`, code, psw, sex, remark, department,org_id
   </sql>
-  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
-    select 
-    <include refid="Base_Column_List" />
-    from user
-    where id = #{id,jdbcType=INTEGER}
-  </select>
-  <select id="selectByFilter" parameterType="User" resultMap="BaseResultMap">
-    select
-    <include refid="Base_Column_List" />
-    from user
-    where ${filter}
-    <if test="orderBy != null">
-      order by ${orderBy}
-    </if>
-  </select>
-  <select id="selectAll" resultMap="BaseResultMap">
-    select
-    <include refid="Base_Column_List"/>
-    from user
-  </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from user
+        where id = #{id,jdbcType=INTEGER}
+    </select>
+    <select id="selectByFilter" parameterType="User" resultMap="BaseResultMap">
+        select * from (
+        select a.id, a.createDate, a.createBy, a.modifyDate, a.modifyBy, a.`name`, a.code,
+        a.psw, a.sex, a.remark, a.department,a.org_id,b.name as orgName
+        from user as a
+        left join organization as b on a.org_id = b.id
+        ) as main
+        where ${filter}
+        <if test="orderBy != null">
+            order by ${orderBy}
+        </if>
+    </select>
+    <select id="selectAll" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from user
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from user
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="smart.industry.train.biz.entity.User">
+    <insert id="insert" parameterType="smart.industry.train.biz.entity.User">
     insert into user (id, createDate, createBy, 
       modifyDate, modifyBy, `name`, 
-      code, psw, sex, remark, 
-      department)
+      code, psw, sex, remark,org_id,department)
     values (#{id,jdbcType=INTEGER}, #{createDate,jdbcType=TIMESTAMP}, #{createBy,jdbcType=INTEGER}, 
       #{modifyDate,jdbcType=TIMESTAMP}, #{modifyBy,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, 
       #{code,jdbcType=VARCHAR}, #{psw,jdbcType=VARCHAR}, #{sex,jdbcType=BIT}, #{remark,jdbcType=VARCHAR}, 
-      #{department,jdbcType=VARCHAR})
+      #{orgId,jdbcType=INTEGER},#{department,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="smart.industry.train.biz.entity.User">
-    insert into user
-    <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="id != null">
-        id,
-      </if>
-      <if test="createDate != null">
-        createDate,
-      </if>
-      <if test="createBy != null">
-        createBy,
-      </if>
-      <if test="modifyDate != null">
-        modifyDate,
-      </if>
-      <if test="modifyBy != null">
-        modifyBy,
-      </if>
-      <if test="name != null">
-        `name`,
-      </if>
-      <if test="code != null">
-        code,
-      </if>
-      <if test="psw != null">
-        psw,
-      </if>
-      <if test="sex != null">
-        sex,
-      </if>
-      <if test="remark != null">
-        remark,
-      </if>
-      <if test="department != null">
-        department,
-      </if>
-    </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="id != null">
-        #{id,jdbcType=INTEGER},
-      </if>
-      <if test="createDate != null">
-        #{createDate,jdbcType=TIMESTAMP},
-      </if>
-      <if test="createBy != null">
-        #{createBy,jdbcType=INTEGER},
-      </if>
-      <if test="modifyDate != null">
-        #{modifyDate,jdbcType=TIMESTAMP},
-      </if>
-      <if test="modifyBy != null">
-        #{modifyBy,jdbcType=INTEGER},
-      </if>
-      <if test="name != null">
-        #{name,jdbcType=VARCHAR},
-      </if>
-      <if test="code != null">
-        #{code,jdbcType=VARCHAR},
-      </if>
-      <if test="psw != null">
-        #{psw,jdbcType=VARCHAR},
-      </if>
-      <if test="sex != null">
-        #{sex,jdbcType=BIT},
-      </if>
-      <if test="remark != null">
-        #{remark,jdbcType=VARCHAR},
-      </if>
-      <if test="department != null">
-        #{department,jdbcType=VARCHAR},
-      </if>
-    </trim>
-  </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="smart.industry.train.biz.entity.User">
-    update user
-    <set>
-      <if test="createDate != null">
-        createDate = #{createDate,jdbcType=TIMESTAMP},
-      </if>
-      <if test="createBy != null">
-        createBy = #{createBy,jdbcType=INTEGER},
-      </if>
-      <if test="modifyDate != null">
-        modifyDate = #{modifyDate,jdbcType=TIMESTAMP},
-      </if>
-      <if test="modifyBy != null">
-        modifyBy = #{modifyBy,jdbcType=INTEGER},
-      </if>
-      <if test="name != null">
-        `name` = #{name,jdbcType=VARCHAR},
-      </if>
-      <if test="code != null">
-        code = #{code,jdbcType=VARCHAR},
-      </if>
-      <if test="psw != null">
-        psw = #{psw,jdbcType=VARCHAR},
-      </if>
-      <if test="sex != null">
-        sex = #{sex,jdbcType=BIT},
-      </if>
-      <if test="remark != null">
-        remark = #{remark,jdbcType=VARCHAR},
-      </if>
-      <if test="department != null">
-        department = #{department,jdbcType=VARCHAR},
-      </if>
-    </set>
-    where id = #{id,jdbcType=INTEGER}
-  </update>
-  <update id="updateByPrimaryKey" parameterType="smart.industry.train.biz.entity.User">
+    <insert id="insertSelective" parameterType="smart.industry.train.biz.entity.User">
+        insert into user
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                id,
+            </if>
+            <if test="createDate != null">
+                createDate,
+            </if>
+            <if test="createBy != null">
+                createBy,
+            </if>
+            <if test="modifyDate != null">
+                modifyDate,
+            </if>
+            <if test="modifyBy != null">
+                modifyBy,
+            </if>
+            <if test="name != null">
+                `name`,
+            </if>
+            <if test="code != null">
+                code,
+            </if>
+            <if test="psw != null">
+                psw,
+            </if>
+            <if test="sex != null">
+                sex,
+            </if>
+            <if test="remark != null">
+                remark,
+            </if>
+            <if test="department != null">
+                department,
+            </if>
+            <if test="orgId != null">
+                org_id,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                #{id,jdbcType=INTEGER},
+            </if>
+            <if test="createDate != null">
+                #{createDate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="createBy != null">
+                #{createBy,jdbcType=INTEGER},
+            </if>
+            <if test="modifyDate != null">
+                #{modifyDate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="modifyBy != null">
+                #{modifyBy,jdbcType=INTEGER},
+            </if>
+            <if test="name != null">
+                #{name,jdbcType=VARCHAR},
+            </if>
+            <if test="code != null">
+                #{code,jdbcType=VARCHAR},
+            </if>
+            <if test="psw != null">
+                #{psw,jdbcType=VARCHAR},
+            </if>
+            <if test="sex != null">
+                #{sex,jdbcType=BIT},
+            </if>
+            <if test="remark != null">
+                #{remark,jdbcType=VARCHAR},
+            </if>
+            <if test="department != null">
+                #{department,jdbcType=VARCHAR},
+            </if>
+            <if test="orgId != null">
+                #{orgId,jdbcType=INTEGER},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="smart.industry.train.biz.entity.User">
+        update user
+        <set>
+            <if test="createDate != null">
+                createDate = #{createDate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="createBy != null">
+                createBy = #{createBy,jdbcType=INTEGER},
+            </if>
+            <if test="modifyDate != null">
+                modifyDate = #{modifyDate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="modifyBy != null">
+                modifyBy = #{modifyBy,jdbcType=INTEGER},
+            </if>
+            <if test="name != null">
+                `name` = #{name,jdbcType=VARCHAR},
+            </if>
+            <if test="code != null">
+                code = #{code,jdbcType=VARCHAR},
+            </if>
+            <if test="psw != null">
+                psw = #{psw,jdbcType=VARCHAR},
+            </if>
+            <if test="sex != null">
+                sex = #{sex,jdbcType=BIT},
+            </if>
+            <if test="remark != null">
+                remark = #{remark,jdbcType=VARCHAR},
+            </if>
+            <if test="department != null">
+                department = #{department,jdbcType=VARCHAR},
+            </if>
+            <if test="orgId != null">
+                org_id = #{orgId,jdbcType=INTEGER},
+            </if>
+        </set>
+        where id = #{id,jdbcType=INTEGER}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="smart.industry.train.biz.entity.User">
     update user
     set createDate = #{createDate,jdbcType=TIMESTAMP},
       createBy = #{createBy,jdbcType=INTEGER},
@@ -171,7 +183,8 @@
       psw = #{psw,jdbcType=VARCHAR},
       sex = #{sex,jdbcType=BIT},
       remark = #{remark,jdbcType=VARCHAR},
-      department = #{department,jdbcType=VARCHAR}
+      department = #{department,jdbcType=VARCHAR},
+      org_id = #{orgId,jdbcType=INTEGER}
     where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>

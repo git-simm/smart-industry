@@ -23,6 +23,25 @@ public class User extends BaseEntity {
     private String department;
 
     private Integer orgId;
+    private String orgIds;
+    private String orgName;
+
+    public String getOrgName() {
+        return orgName;
+    }
+
+    public void setOrgName(String orgName) {
+        this.orgName = orgName;
+    }
+
+    public String getOrgIds() {
+        return orgIds;
+    }
+
+    public void setOrgIds(String orgIds) {
+        this.orgIds = orgIds;
+    }
+
 
     public Integer getOrgId() {
         return orgId;

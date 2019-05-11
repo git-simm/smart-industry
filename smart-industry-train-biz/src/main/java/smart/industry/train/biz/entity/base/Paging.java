@@ -6,7 +6,20 @@ public class Paging {
 	private String order;
 	private Integer offset;
 	private Integer limit;
+	/**
+	 * 组织id
+	 */
+	public Integer orgId;
 	private String searchKey,filter;
+
+	public Integer getOrgId() {
+		return orgId;
+	}
+
+	public void setOrgId(Integer orgId) {
+		this.orgId = orgId;
+	}
+
 	public String getFilter() {
 		return filter;
 	}

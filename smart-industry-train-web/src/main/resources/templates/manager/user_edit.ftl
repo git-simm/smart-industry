@@ -1,57 +1,60 @@
 <#include "../base/_base.ftl"/>
 <@layout;section>
-<#if section="title"> 用户编辑
-<#elseif section="css">
+    <#if section="title"> 用户编辑
+    <#elseif section="css">
 <style type="text/css">
-	.radio{
-		display: inline;
-		vertical-align: middle;
-	}
+    .radio {
+        display: inline;
+        vertical-align: middle;
+    }
+
     .radio + .radio, .checkbox + .checkbox {
         margin-top: 4px;
     }
 </style>
-<#elseif section="content">
+    <#elseif section="content">
 <div class="page-content mini-model">
     <form id="form-main" onsubmit="javascript: return false;">
-        <input type="hidden" name="id" value="${entity.id!}" />
+        <input type="hidden" name="id" value="${entity.id!}"/>
         <div class="mini-model-body bottom40">
             <div class="form-group padding10">
                 <label class="col-2 textRight noPadding-right red">姓名：</label>
                 <div class="col-4">
-                 	<input type="text" name="name" value="${entity.name!}" required />
+                    <input type="text" name="name" value="${entity.name!}" required/>
                 </div>
                 <label class="col-2 textRight noPadding-right red">登录名：</label>
                 <div class="col-4">
-                    <input type="text" name="code" value="${entity.code!}" required />
+                    <input type="text" name="code" value="${entity.code!}" required/>
                 </div>
             </div>
             <div class="form-group padding10">
                 <label class="col-2 textRight noPadding-right red">密码：</label>
                 <div class="col-4">
                 <#if entity.sex??>
-                    <input type="password" name="psw" value="${entity.psw!}" disabled required />
+                    <input type="password" name="psw" value="${entity.psw!}" disabled required/>
                 <#else>
-                    <input type="text" name="psw" value="123456" required />
+                    <input type="text" name="psw" value="123456" required/>
                 </#if>
                 </div>
                 <label class="col-2 textRight noPadding-right red">性别：</label>
                 <div class="col-4">
 					<#if entity.sex??>
-                    	<input class="radio width-20" type="radio" name="sex" value="true" <#if entity.sex>checked="checked"</#if> />男
-                    	<input class="radio width-20" type="radio" name="sex" value="false" <#if !entity.sex>checked="checked"</#if>/>女
-					<#else>
-						<input class="radio width-20" type="radio" name="sex" value="true" checked="checked" />男
-                    	<input class="radio width-20" type="radio" name="sex" value="false" />女
-					</#if>
+                        <input class="radio width-20" type="radio" name="sex" value="true"
+                               <#if entity.sex>checked="checked"</#if> />男
+                        <input class="radio width-20" type="radio" name="sex" value="false"
+                               <#if !entity.sex>checked="checked"</#if>/>女
+                    <#else>
+						<input class="radio width-20" type="radio" name="sex" value="true" checked="checked"/>男
+                    	<input class="radio width-20" type="radio" name="sex" value="false"/>女
+                    </#if>
                 </div>
             </div>
             <div class="form-group padding10">
-                <label class="col-2 textRight noPadding-right red">父级：</label>
+                <label class="col-2 textRight noPadding-right red">部门：</label>
                 <div class="col-10">
                     <div class="input-group">
-                        <input type="text" name="department" value="${entity.department!}" readonly required />
-                        <input type="hidden" name="orgId" value="${entity.orgId!}" />
+                        <input type="text" name="department" value="${entity.orgName!}" readonly required/>
+                        <input type="hidden" name="orgId" value="${entity.orgId!}"/>
                         <span class="input-group-btn" onclick="user.edit.selectOrg()">
                             <i class="icon-search"></i>
                         </span>
@@ -61,7 +64,7 @@
             <div class="form-group padding10">
                 <label class="col-2 textRight noPadding-right">备注：</label>
                 <div class="col-10">
-                	 <textarea style="width:100%" rows="3" type="text" name="remark">${entity.remark!}</textarea>
+                    <textarea style="width:100%" rows="3" type="text" name="remark">${entity.remark!}</textarea>
                 </div>
             </div>
         </div>
@@ -73,40 +76,40 @@
         </div>
     </form>
 </div>
-<#elseif section="scripts">
+    <#elseif section="scripts">
 	 <script type="text/javascript">
-	     Zq.Utility.RegisterNameSpace("user.edit");
-		//闭包引入命名空间
-		(function (ns, undefined) {
-            //选择分类
-            ns.selectOrg = function(){
-                Smart.Common.selectOrg(function(node){
-                    $("input[name='department']").val(node.name);
-                    $("input[name='orgId']").val(node.id);
-                },ns.parent);
-            }
-		    //新增方法
-		    ns.OK = function () {
-		        var url = "/user/edit";
-		        if (SmartMonitor.Common.GetMode($("#form-main")) === "add") {
-		            url = "/user/add";
-		        }
-                if(!Smart.Common.FormValid()) return false;
-		
-		        var obj = $("#form-main").serializeObject();
-		        $.ajax({
-		            async: false,
-		            type: "Post",
-		            dataType:"json",
-					//contentType: 'application/json',
-		            url: url.geturl(),
-		            data: obj,
-		            success: function (result) {
-		                SmartMonitor.Common.Close(true);
-		            }
-		        });
-		    };
-		})(user.edit);
-	  </script>
-</#if>
+         Zq.Utility.RegisterNameSpace("user.edit");
+         //闭包引入命名空间
+         (function (ns, undefined) {
+             //选择分类
+             ns.selectOrg = function () {
+                 Smart.Common.selectOrg(function (node) {
+                     $("input[name='department']").val(node.name);
+                     $("input[name='orgId']").val(node.id);
+                 }, ns.parent);
+             }
+             //新增方法
+             ns.OK = function () {
+                 var url = "/user/edit";
+                 if (SmartMonitor.Common.GetMode($("#form-main")) === "add") {
+                     url = "/user/add";
+                 }
+                 if (!Smart.Common.FormValid()) return false;
+
+                 var obj = $("#form-main").serializeObject();
+                 $.ajax({
+                     async: false,
+                     type: "Post",
+                     dataType: "json",
+                     //contentType: 'application/json',
+                     url: url.geturl(),
+                     data: obj,
+                     success: function (result) {
+                         SmartMonitor.Common.Close(true);
+                     }
+                 });
+             };
+         })(user.edit);
+     </script>
+    </#if>
 </@layout>
