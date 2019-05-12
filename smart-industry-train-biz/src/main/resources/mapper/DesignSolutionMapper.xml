@@ -22,10 +22,11 @@
     <include refid="Base_Column_List" />
     from design_solution
   </select>
-  <select id="selectByFilter" parameterType="DesignSolution" resultMap="BaseResultMap">
-    select
-    <include refid="Base_Column_List" />
-    from design_solution
+  <select id="selectByFilter" parameterType="DesignSolution"
+          resultType="smart.industry.train.biz.entity.DesignSolution">
+    select * from
+    (select a.*,b.name as createByName from design_solution as a
+    left join user as b on a.createBy = b.id) as main
     where ${filter}
     <if test="orderBy != null">
        order by ${orderBy}

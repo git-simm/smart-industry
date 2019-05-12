@@ -19,7 +19,7 @@
             <div class="col-xs-4 col-sm-2 pricing-box">
                 <div class="widget-box widget-color-dark">
                     <div class="widget-header">
-                        <h5 class="widget-title bigger" style="color: black;">${card.name!}</h5>
+                        <h5 class="widget-title bigger" title="${card.name!}" style="color: black;">${card.name!}</h5>
                     </div>
 
                     <div class="widget-body">

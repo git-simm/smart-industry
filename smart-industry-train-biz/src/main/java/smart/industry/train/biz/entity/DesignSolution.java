@@ -20,7 +20,17 @@ public class DesignSolution extends BaseEntity {
 
     private Integer designCount;
 
+    private String createByName;
+
     private String remark;
+
+    public String getCreateByName() {
+        return createByName;
+    }
+
+    public void setCreateByName(String createByName) {
+        this.createByName = createByName;
+    }
 
     public Date getCreateDate() {
         return createDate;

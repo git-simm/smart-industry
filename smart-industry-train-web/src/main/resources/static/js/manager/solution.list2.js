@@ -57,7 +57,7 @@
                 },
                 {
                     title: '创建人',
-                    field: 'createBy',
+                    field: 'createByName',
                     align: 'left',
                     width: "20%",
                     cellStyle: function (value, row, index, field) {

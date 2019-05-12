@@ -37,6 +37,7 @@ Zq.Utility.RegisterNameSpace("org.manager");
             onDrop: zTreeOnDrop,
             beforeEditName: zTreeBeforeEditName,
             onClick:zTreeOnClick,
+            onRename: zTreeOnRename
         }
     };
     /**
@@ -57,12 +58,17 @@ Zq.Utility.RegisterNameSpace("org.manager");
         }
         return null;
     }
+    var types = ["公司","部门","工作组"];
     /**
      * 新增树节点
      * @param type
      */
     ns.addTreeNode = function(type) {
         var parent = zTree.getSelectedNodes()[0];
+        if(parent.orgType > type){
+            layer.alert("不允许在"+types[parent.orgType]+"下添加"+ types[type]);
+            return;
+        }
         if(parent){
             ns.add({ newType:type },function () {
                 //刷新树
@@ -215,11 +221,33 @@ Zq.Utility.RegisterNameSpace("org.manager");
         ns.calcSort();
         //alert(treeNodes.length + "," + (targetNode ? (targetNode.tId + ", " + targetNode.name) : "isRoot" ));
     };
-
+    /**
+     * 根节点重命名
+     * @param event
+     * @param treeId
+     * @param treeNode
+     * @param isCancel
+     */
+    function zTreeOnRename(event, treeId, treeNode, isCancel) {
+        $.ajax({
+            async: false,
+            type: "Post",
+            url: ("/org/edit").geturl(),
+            data: {id:treeNode.id,name:treeNode.name},
+            success:function(id){
+                //entity.id = id;
+                //callback(id);
+            }
+        });
+    }
     /**
      * 编辑事件
      */
     function zTreeBeforeEditName(treeId, treeNode){
+        if(treeNode.id ==1){
+            //根节点不允许编辑
+            return;
+        }
         ns.edit({
             id:treeId,
             node:treeNode
@@ -237,7 +265,7 @@ Zq.Utility.RegisterNameSpace("org.manager");
      * @param treeNode
      */
     function zTreeBeforeRightClick(treeId,treeNode){
-        console.log(treeNode);
+        //console.log(treeNode);
     }
     //-------- 方案 ajax 交互  begin-----------------------
     ns.getList = function(callback){

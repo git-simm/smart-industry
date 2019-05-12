@@ -116,6 +116,9 @@
           .fixed-table-body{
               background: white;
           }
+          .radius-4{
+              border-radius: 4px;
+          }
       </style>
     <#elseif section="content">
     <input type="hidden" id="hid_solutionId" value="${solutionId!}"/>
@@ -130,10 +133,10 @@
     </div>
     <div class="ui-layout-center" style="background:beige;padding: 0 !important;">
         <div id="topContainer_template" class="topContainer" style="display: none;">
-            <button class="btn btn-primary btn-sm width80 marginLeft10 radius-3 btn_run" onclick="svg.node.run()">
+            <button class="btn btn-primary btn-sm width80 marginLeft10 radius-4 btn_run" onclick="svg.node.run()">
                 <i class="icon icon-rocket" style="margin-right: 10px;"></i><span>运行</span>
             </button>
-            <button class="btn btn-primary btn-sm width80 marginLeft10 radius-3 btn_close" onclick="svg.node.close()">
+            <button class="btn btn-primary btn-sm width80 marginLeft10 radius-4 btn_close" onclick="svg.node.close()">
                 <i class="icon icon-eye-close" style="margin-right: 10px;"></i><span>关闭</span>
             </button>
         </div>
