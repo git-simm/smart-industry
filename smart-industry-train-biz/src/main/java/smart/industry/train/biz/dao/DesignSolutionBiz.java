@@ -6,10 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import smart.industry.train.biz.dao.base.BaseBiz;
-import smart.industry.train.biz.entity.DesignSolution;
-import smart.industry.train.biz.entity.DesignSolutionList;
-import smart.industry.train.biz.entity.SysTasks;
-import smart.industry.train.biz.entity.SysUpfiles;
+import smart.industry.train.biz.entity.*;
 import smart.industry.train.biz.entity.base.Paging;
 import smart.industry.train.biz.enums.FileTypeEnum;
 import smart.industry.train.biz.enums.TaskStateEnum;
@@ -115,19 +112,34 @@ public class DesignSolutionBiz extends BaseBiz<DesignSolutionMapper, DesignSolut
         return result;
     }
 
+    @Autowired
+    private DesignSolutionPartionBiz designSolutionPartionBiz;
     /**
      * 获取文件树
-     *
      * @param id
+     * @param cardId
      * @return
      */
     @Transactional
-    public List<JSONObject> getFileTree(Integer id) {
+    public List<JSONObject> getFileTree(Integer id,Integer cardId) {
+        //1.先获取卡片上对应的文件信息列表
+        List<Integer> fileList = new ArrayList<>();
+        if(cardId!=null){
+            List<DesignSolutionPartion> list = designSolutionPartionBiz.getCards(null,cardId);
+            if(list.size()>0){
+                fileList = list.get(0).getPartionList().stream().map(a->a.getSolutionFileId()).collect(Collectors.toList());
+            }
+        }
         DesignSolution solution = this.selectByPrimaryKey(id);
         if (solution == null) {
             throw new AjaxException("不存在主键为[" + id + "]的解决方案");
         }
         List<DesignSolutionList> solutionFiles = designSolutionListBiz.getAllListBySolution(id);
+        if(!CollectionUtils.isEmpty(fileList)){
+            List<Integer> finalFileList = fileList;
+            solutionFiles = solutionFiles.stream().filter(a-> finalFileList.contains(a.getId())).collect(Collectors.toList());
+        }
+
         List<Integer> ids = solutionFiles.stream().map(a -> a.getFileId()).collect(Collectors.toList());
         List<SysUpfiles> files = new ArrayList<>();
         if (!CollectionUtils.isEmpty(ids)) {

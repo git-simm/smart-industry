@@ -1,6 +1,6 @@
 <#include "../base/_base.ftl"/>
 <@layout;section>
-    <#if section="title">运行测试
+    <#if section="title">${partion.name!}
     <#elseif section="css">
         <@cssRef "/static/_resources/layout/layout-default-latest.css"/>
         <@cssRef "/static/_resources/ztree/zTreeStyle/zTreeStyle.css"/>
@@ -119,6 +119,7 @@
       </style>
     <#elseif section="content">
     <input type="hidden" id="hid_solutionId" value="${solutionId!}"/>
+    <input type="hidden" id="hid_cardId" value="${cardId!}"/>
     <div class="ui-layout-west" style="padding: 0 !important">
         <div style="position: relative;height: 100%;">
             <div class="ztreeMenu">解决方案列表</div>

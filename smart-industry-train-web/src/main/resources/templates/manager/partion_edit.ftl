@@ -142,6 +142,16 @@
                   initTree: function () {
                       var me = this;
                       me.getList(function (data) {
+                          me.entity.partionList = me.entity.partionList || [];
+                          var ids = me.entity.partionList.map(function (a) {
+                              return a.solutionFileId;
+                          }) || [];
+                          if (ids.length > 0) {
+                              data.forEach(function (a) {
+                                  a.checked = ids.includes(a.id);
+                              });
+                          }
+                          //对返回的数据做选中处理
                           me.zTree = $.fn.zTree.init($("#soluTree"), me.setting, data);
                           //选中第一个节点
                           var nodes = me.zTree.getNodes();

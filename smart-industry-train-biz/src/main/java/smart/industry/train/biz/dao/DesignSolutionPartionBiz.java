@@ -37,7 +37,9 @@ public class DesignSolutionPartionBiz extends BaseBiz<DesignSolutionPartionMappe
         //1.获取所有的测试方案
         QueryWrapper<DesignSolutionPartion> wrapper = new QueryWrapper<>();
         wrapper.setEntity(new DesignSolutionPartion());
-        wrapper.eq("solutionId",solutionId);
+        if(solutionId!=null){
+            wrapper.eq("solutionId",solutionId);
+        }
         if(id != null){
             wrapper.eq("id",id);
         }
@@ -50,9 +52,13 @@ public class DesignSolutionPartionBiz extends BaseBiz<DesignSolutionPartionMappe
             partionList = designSolutionPartionListMapper.selectBySolutionId(solutionId);
         }
         partionList.forEach(a->{
-            String fileName = a.getFileName().substring(0,a.getFileName().lastIndexOf("."));
             String projName = a.getProjFile();
-            if(StringUtils.isNotBlank(projName)){
+            if(!StringUtils.isEmpty(a.getProjPath())){
+                a.setShowName(a.getProjPath() + projName);
+                return;
+            }
+            String fileName = a.getFileName().substring(0,a.getFileName().lastIndexOf("."));
+            if(!StringUtils.isEmpty(projName)){
                 projName = "("+ projName +")";
             }else{
                 projName = "";

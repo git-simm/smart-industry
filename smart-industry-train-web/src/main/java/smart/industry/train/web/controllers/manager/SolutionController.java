@@ -106,12 +106,13 @@ public class SolutionController {
     /**
      * 获取所有的对象列表
      * @param id
+     * @param cardId
      * @return
      */
     @Post("/getfiles")
     @ResponseBody
-    public List<JSONObject> getFiles(Integer id){
-        return designSolutionBiz.getFileTree(id);
+    public List<JSONObject> getFiles(Integer id,Integer cardId){
+        return designSolutionBiz.getFileTree(id,cardId);
     }
 
     /**

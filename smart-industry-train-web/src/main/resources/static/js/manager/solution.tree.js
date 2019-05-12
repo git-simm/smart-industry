@@ -285,7 +285,7 @@ Zq.Utility.RegisterNameSpace("solution.tree");
         $.ajax({
             async: false,
             url: Zq.Utility.GetPath("/solution/getfiles"),
-            data:{id : $("#hid_solutionId").val()},
+            data:{id : $("#hid_solutionId").val(), cardId:$('#hid_cardId').val()},
             success:function(data){
                 if(data!=null && data.length>0){
                     data[0].open=true;

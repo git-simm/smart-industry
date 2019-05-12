@@ -3,7 +3,7 @@
 <mapper namespace="smart.industry.train.biz.mapper2.DesignSolutionPartionListMapper">
     <sql id="base_query">
         select a.id,a.createBy,a.createDate,a.modifyBy,a.modifyDate,a.partionId,a.solutionFileId,
-                    d.fileName,d.projFile
+                    d.fileName,d.projFile,d.projPath
             from design_solution_partion_list as a
             inner join design_solution_partion as b on a.partionId = b.id
             left join design_solution_list as c on a.solutionFileId = c.id

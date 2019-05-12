@@ -26,6 +26,16 @@ public class DesignSolutionPartionList extends BaseEntity {
     private String projFile;
     @TableField(exist = false)
     private String showName;
+    @TableField(exist = false)
+    private String projPath;
+
+    public String getProjPath() {
+        return projPath;
+    }
+
+    public void setProjPath(String projPath) {
+        this.projPath = projPath;
+    }
 
     public String getShowName() {
         return showName;
