@@ -38,7 +38,7 @@ public class UserRealm extends AuthorizingRealm {
         String username = utoken.getUsername();
         String psw = new String(utoken.getPassword());
         utoken.setPassword(MD5.encode(psw).toCharArray());
-        User user = userService.findUserByName(username);
+        User user = userService.findUserByCode(username);
         return new SimpleAuthenticationInfo(user, user.getPsw(), this.getClass().getName());// 放入shiro.调用CredentialsMatcher检验密码
     }
 }

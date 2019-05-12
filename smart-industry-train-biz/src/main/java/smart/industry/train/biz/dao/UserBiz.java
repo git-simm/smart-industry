@@ -43,6 +43,22 @@ public class UserBiz  extends BaseBiz<UserMapper,User> {
         return null;
     }
 
+    /**
+     * 获取用户信息
+     * @param code
+     * @return
+     */
+    public User findUserByCode(String code) {
+        User user = new User();
+        user.setCode(code);
+        user.setFilter("code=#{code}");
+        List<User> users = userMapper.selectByFilter(user);
+        if(users!=null && users.size()>0){
+            return users.get(0);
+        }
+        return null;
+    }
+
     @Override
     public User getFilter(Paging paging) throws Exception {
         User filter = User.class.newInstance();

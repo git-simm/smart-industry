@@ -108,4 +108,5 @@
         var contextPath = $("#hid_contextpath").val();
         return contextPath+url;
     }
+    ns.loadIndex = null;
 })(SmartMonitor.Common);

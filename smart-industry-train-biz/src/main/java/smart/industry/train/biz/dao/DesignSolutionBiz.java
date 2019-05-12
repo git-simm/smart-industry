@@ -10,6 +10,7 @@ import smart.industry.train.biz.entity.*;
 import smart.industry.train.biz.entity.base.Paging;
 import smart.industry.train.biz.enums.FileTypeEnum;
 import smart.industry.train.biz.enums.TaskStateEnum;
+import smart.industry.train.biz.mapper.DesignClassMapper;
 import smart.industry.train.biz.mapper.DesignSolutionMapper;
 import smart.industry.utils.StringUtils;
 import smart.industry.utils.environment.EnvUtil;
@@ -34,13 +35,51 @@ public class DesignSolutionBiz extends BaseBiz<DesignSolutionMapper, DesignSolut
     private DesignDetailBlockBiz designDetailBlockBiz;
     @Autowired
     private SysTasksBiz sysTasksBiz;
+    @Autowired
+    private DesignClassBiz designClassBiz;
+    @Autowired
+    private DesignClassMapper designClassMapper;
 
     @Override
     public DesignSolution getFilter(Paging paging) throws IllegalAccessException, InstantiationException {
         DesignSolution filter = DesignSolution.class.newInstance();
         filter.setName(paging.getSearchKey());
-        filter.setFilter("name like concat('%',#{name},'%')");
+        String filterSeq = "name like concat('%',#{name},'%')";
+        if(paging.getClassId()!=null){
+            List<String> classIds = getAllClassIds(paging.getClassId()).stream().map(a->a.toString()).collect(Collectors.toList());
+            filterSeq+=" and classId in ("+ String.join(",",classIds) +")";
+        }
+        filter.setFilter(filterSeq);
         return filter;
+    }
+
+    /**
+     * 获取组织架构下所有的信息
+     * @param parentId
+     * @return
+     */
+    public List<Integer> getAllClassIds(Integer parentId){
+        List<Integer> result = new ArrayList<>();
+        List<DesignClass> list = designClassBiz.getList();
+        getAllClassIds(list,result,parentId);
+        return result;
+    }
+
+    /**
+     * 获取所有组织架构信息
+     * @param list
+     * @param result
+     * @param parentId
+     * @return
+     */
+    private void getAllClassIds(List<DesignClass> list,List<Integer> result,Integer parentId){
+        if(result.contains(parentId)) return;
+        result.add(parentId);
+        //查找子级
+        List<Integer> children = list.stream().filter(a-> parentId.equals(a.getPId())).map(a->a.getId()).collect(Collectors.toList());
+        children.stream().forEach(a->{
+            getAllClassIds(list,result,a);
+        });
     }
 
     /**

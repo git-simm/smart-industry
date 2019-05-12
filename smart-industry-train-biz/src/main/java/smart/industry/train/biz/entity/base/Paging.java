@@ -10,7 +10,19 @@ public class Paging {
 	 * 组织id
 	 */
 	public Integer orgId;
+	/**
+	 * 分类id
+	 */
+	public Integer classId;
 	private String searchKey,filter;
+
+	public Integer getClassId() {
+		return classId;
+	}
+
+	public void setClassId(Integer classId) {
+		this.classId = classId;
+	}
 
 	public Integer getOrgId() {
 		return orgId;

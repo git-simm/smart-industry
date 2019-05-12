@@ -134,6 +134,7 @@
          Zq.Utility.RegisterNameSpace("solution.edit");
          //闭包引入命名空间
          (function (ns, undefined) {
+             var index = null;
              //新增方法
              ns.OK = function () {
                  if (!Smart.Common.FormValid()) return false;
@@ -152,10 +153,10 @@
                                      SmartMonitor.Common.Close(true);
                                  }
                              )});
-                         }
+                         },
                      });
                  } else {
-                     var param = {solution: obj, fileIds: dels}
+                     var param = {solution: obj, fileIds: dels};
                      $.ajax({
                          async: false,
                          type: "Post",
@@ -164,8 +165,13 @@
                          url: "/solution/edit".geturl(),
                          data: JSON.stringify(param),
                          success: function () {
+                             index = layer.load(0,{
+                                 shade: [0.1,'#000'] //0.1透明度的白色背景
+                             });
                              //文件上传
                              ns.upload(obj.id,function () {
+                                 //关闭弹窗
+                                 layer.close(index);
                                  Zq.Utility.Msg("保存成功",function(){
                                      SmartMonitor.Common.Close(true);
                                  });

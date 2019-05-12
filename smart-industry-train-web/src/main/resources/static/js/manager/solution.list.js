@@ -35,10 +35,20 @@ Zq.Utility.RegisterNameSpace("solution.list");
             beforeDrag: zTreeBeforeDrag,
             beforeDrop: zTreeBeforeDrop,
             onDrop: zTreeOnDrop,
-            onRename: zTreeOnRename
+            onRename: zTreeOnRename,
+            onClick:zTreeOnClick
         }
     };
-
+    /**
+     * 树节点点击
+     * @type {null}
+     */
+    ns.treeClickCallback = null;
+    function zTreeOnClick(event, treeId, treeNode) {
+        if(ns.treeClickCallback){
+            ns.treeClickCallback(treeNode);
+        }
+    };
     ns.GetSelectedNode = function(){
         var nodes = zTree.getSelectedNodes();
         if(nodes && nodes.length>0){
@@ -71,15 +81,18 @@ Zq.Utility.RegisterNameSpace("solution.list");
             if (nodes[0].children && nodes[0].children.length > 0) {
                 var msg = "要删除的节点是目录，如果删除将连同子级节点一起删掉。\n\n请确认！";
                 layer.confirm(msg,{btn:['确定','取消']},function(){
-                    var nodes = getChildNodes(nodes[0]);
+                    var nodes = getChildNodes(zTree.getSelectedNodes()[0]);
                     ids = ids.concat(nodes);
+                    ns.remove(ids,function(){
+                        zTree.removeNode(zTree.getSelectedNodes()[0]);
+                    });
                 })
             } else {
                 ids.push(nodes[0].id);
+                ns.remove(ids,function(){
+                    zTree.removeNode(zTree.getSelectedNodes()[0]);
+                });
             }
-            ns.remove(ids,function(){
-                zTree.removeNode(nodes[0]);
-            });
         }
     }
     ns.checkTreeNode = function(checked) {
@@ -197,17 +210,20 @@ Zq.Utility.RegisterNameSpace("solution.list");
      * @param callback
      */
     ns.remove = function(ids,callback) {
-        $.ajax({
-            async: false,
-            type: "Post",
-            url: Zq.Utility.GetPath("/solucls/del"),
-            dataType:"json",
-            contentType : 'application/json;charset=utf-8',
-            data: JSON.stringify(ids),
-            success:function(result){
-                callback(result);
-            }
-        });
+        layer.confirm("确定要删除该分类吗？",{btn:[ ' 确定','取消']},function(){
+            layer.closeAll('dialog');
+            $.ajax({
+                async: false,
+                type: "Post",
+                url: Zq.Utility.GetPath("/solucls/del"),
+                dataType:"json",
+                contentType : 'application/json;charset=utf-8',
+                data: JSON.stringify(ids),
+                success:function(result){
+                    callback(result);
+                }
+            });
+        })
     }
     //重新计算排序码
     ns.calcSort = function(callback){
@@ -268,11 +284,11 @@ $(function () {
 
     context.init({preventDoubleContext: false});
     context.attach('#soluTree', [
-        {text: '增加节点',action: function(e){
+        {text: '新增分类',action: function(e){
                 e.preventDefault();
                 solution.list.addTreeNode();
             }},
-        {text: '删除节点', action: function(e){
+        {text: '删除分类', action: function(e){
                 e.preventDefault();
                 solution.list.removeTreeNode();
             }}

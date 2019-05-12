@@ -3,7 +3,13 @@
 (function (ns, undefined) {
     //设置的实体
     ns.Entity = null;
+    ns.solutionClass = {};
     ns.Init = function () {
+        solution.list.treeClickCallback = function(treeNode){
+            ns.solutionClass = treeNode;
+            ns.ReFresh();
+        }
+
         $('#list').bootstrapTable({
             url: ('/solution/getlist').geturl(),
             method: 'post',
@@ -27,7 +33,10 @@
             sortName: "createDate",
             sortOrder: "desc",
             queryParams: function (params) {
-                $.extend(params, {searchKey: $("input[name='searchkey']").val()});
+                $.extend(params, {
+                    classId : ns.solutionClass.id,
+                    searchKey: $("input[name='searchkey']").val()
+                });
                 return params;
             },
             onClickRow: function (tr, el) {
@@ -70,7 +79,7 @@
                     title: '创建时间',
                     field: 'createDate',
                     align: 'center',
-                    width: "20%",
+                    width: "150px",
                     cellStyle: function (value, row, index, field) {
                         return {
                             title: value
@@ -81,7 +90,12 @@
                     title: '方案名',
                     field: 'name',
                     align: 'left',
-                    width: "40%"
+                    width: "40%",
+                    cellStyle: function (value, row, index, field) {
+                        return {
+                            title: value
+                        };
+                    }
                 },
                 {
                     title: '原理图',

@@ -76,3 +76,16 @@
 String.prototype.geturl = function() {
 	return Smart.Common.GetUrl(this);
 }
+
+$(function(){
+    /**
+     * ajax遮罩层处理
+     */
+    $(document).ajaxStart(function(){
+        SmartMonitor.Common.loadIndex = layer.load(0,{
+            shade: [0.1,'#000'] //0.1透明度的白色背景
+        });
+    }).ajaxStop(function(){
+        layer.close(SmartMonitor.Common.loadIndex)
+    });
+});

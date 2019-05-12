@@ -76,7 +76,11 @@ public class SolutionController {
         DesignSolution designSolution = designSolutionBiz.selectByPrimaryKey(id);
         if(designSolution.getClassId()!=null){
             DesignClass designClass = designClassBiz.selectByPrimaryKey(designSolution.getClassId());
-            map.put("className",designClass.getName());
+            if(designClass == null){
+                map.put("className","");
+            }else{
+                map.put("className",designClass.getName());
+            }
         }
         map.put("entity",designSolution);
         map.put("formMode","edit");
@@ -93,7 +97,6 @@ public class SolutionController {
     @Post("/getlist")
     @ResponseBody
     public JSONObject getList(Paging json, Map<String, Object> map){
-        System.out.println(request);
         PageHelper.offsetPage(json.getOffset(),json.getLimit());
         List<DesignSolution> list = designSolutionBiz.selectByPage(json);
         PageInfo<DesignSolution> p=new PageInfo<>(list);
