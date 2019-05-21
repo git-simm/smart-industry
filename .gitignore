@@ -39,3 +39,9 @@ tools
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
+dist/
+smart-industry-dwg2svg/src/
+smart-industry-kabeja/src/main/java/org/kabeja/processing/scripting/impl/
+smart-industry-kabeja/src/test/
+smart-industry-utils/src/main/java/json/
+smart-industry-utils/src/main/resources/

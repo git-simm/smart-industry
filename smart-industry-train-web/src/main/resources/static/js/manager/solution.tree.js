@@ -4,10 +4,7 @@ Zq.Utility.RegisterNameSpace("solution.tree");
         view: {
             expandSpeed:"fast",
             selectedMulti:false,
-            dblClickExpand: function (treeId, treeNode) {
-                return treeNode.level > 0;
-            },
-            showTitle : true
+            showTitle : true,
         },
         data: {
             simpleData: {

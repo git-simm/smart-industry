@@ -60,9 +60,6 @@
                       view: {
                           expandSpeed: "fast",
                           selectedMulti: false,
-                          dblClickExpand: function (treeId, treeNode) {
-                              return treeNode.level > 0;
-                          }
                       },
                       data: {
                           simpleData: {
