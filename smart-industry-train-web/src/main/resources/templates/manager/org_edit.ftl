@@ -92,8 +92,8 @@
              },
                      //获取编码
                      ns.getCode = function (obj) {
-                         var code = makePy($(obj).val());
-                         $("input[name='code']").val(code);
+                         var codes = makePy($(obj).val());
+                         $("input[name='code']").val(codes[0]);
                      },
                      //新增方法
                      ns.OK = function () {

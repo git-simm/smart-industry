@@ -131,8 +131,8 @@
         <@jsRef "/static/_resources/uploader/webuploader.js"/>
         <@jsRef "/static/js/common/Uploader.js"/>
 	 <script type="text/javascript">
+         //--闭包引入命名空间--
          Zq.Utility.RegisterNameSpace("solution.edit");
-         //闭包引入命名空间
          (function (ns, undefined) {
              var index = null;
              //新增方法
