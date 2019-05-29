@@ -97,9 +97,16 @@ security:
   basic:
     authorize-mode: none
 
-debug: true
+# druid配置
+druid:
+  monitor:
+    enable: true
+    user: admin
+    password: admin@123
 # 系统参数配置
 application:
   param:
      # 重置密码的值
      resetPsw: 123456
+
+debug: true

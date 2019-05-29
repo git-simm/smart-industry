@@ -1,5 +1,6 @@
 package smart.industry.train.biz.dao;
 
+import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import lombok.Data;
 import lombok.experimental.Accessors;
@@ -7,14 +8,15 @@ import org.apache.commons.collections.CollectionUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import smart.industry.train.biz.dao.base.BaseBiz;
+import smart.industry.train.biz.dao.check.strategies.CheckStrategy;
 import smart.industry.train.biz.entity.CompareRecord;
 import smart.industry.train.biz.entity.DesignExcelAttr;
 import smart.industry.train.biz.entity.DesignExcelList;
 import smart.industry.train.biz.entity.base.Paging;
+import smart.industry.train.biz.enums.CheckRuleEnum;
 import smart.industry.train.biz.mapper.DesignExcelListMapper;
 import smart.industry.utils.StringUtils;
 
-import java.lang.reflect.Array;
 import java.lang.reflect.Field;
 import java.util.*;
 import java.util.stream.Collectors;
@@ -139,6 +141,71 @@ public class DesignExcelListBiz  extends BaseBiz<DesignExcelListMapper,DesignExc
         }).collect(Collectors.toList());
         return result;
     }
+
+    /**
+     * excel检查
+     * @param fileId
+     * @param solutionId
+     */
+    public HashMap<String,Set<JSONObject>> excelCheck(Integer fileId, Integer solutionId){
+        List<CheckStrategy> checkStrategies = new ArrayList<>();
+        //遍历检查枚举类，生成校验策略列表
+        for(CheckRuleEnum ruleEnum:CheckRuleEnum.values()){
+            try {
+                checkStrategies.add((CheckStrategy) ruleEnum.getStrategyClazz().newInstance());
+            } catch (InstantiationException e) {
+                e.printStackTrace();
+            } catch (IllegalAccessException e) {
+                e.printStackTrace();
+            }
+        }
+        return excelCheck(fileId,solutionId,checkStrategies);
+    }
+    /**
+     * excel检查
+     * @param fileId
+     * @param solutionId
+     * @param checkStrategies
+     */
+    public HashMap<String,Set<JSONObject>> excelCheck(Integer fileId, Integer solutionId, List<CheckStrategy> checkStrategies){
+        //1.先把校验策略转换成结果列表
+        HashMap<String,HashMap<String,ValidInfo>> validMap = new HashMap<>();
+        HashMap<String,Set<JSONObject>> resultMap = new HashMap<>();
+        for (CheckStrategy checkStrategy:checkStrategies) {
+            String key = checkStrategy.CHECK_RULE_ENUM.getName();
+            validMap.put(key, new HashMap<>(1024));
+            resultMap.put(key, new LinkedHashSet<>(1024));
+        }
+        //2.获取excel数据
+        List<JSONObject> list = getExcelData(fileId);
+        //记录信息
+        for (Iterator ed = list.iterator(); ed.hasNext();) {
+            JSONObject excelItem = (JSONObject) ed.next();
+            //数据复制
+            JSONObject excelItemCopy = JSON.parseObject(excelItem.toJSONString());
+            for (CheckStrategy checkStrategy:checkStrategies) {
+                String key = checkStrategy.CHECK_RULE_ENUM.getName();
+                ValidInfo valid = checkStrategy.validItem(excelItemCopy,validMap.get(key));
+                if(boolCompared(valid.getValidFail(),true)){
+                    //验证失败的状态(即标识该字段异常)
+                    excelItemCopy.put("state",1);
+                }
+            }
+        }
+        for (CheckStrategy checkStrategy:checkStrategies) {
+            String key = checkStrategy.CHECK_RULE_ENUM.getName();
+            HashMap<String,ValidInfo> validResult = validMap.get(key);
+            Set<JSONObject> result = resultMap.get(key);
+            //搜集结果
+            validResult.forEach((k,v)->{
+                if(boolCompared(v.getValidFail(),true)){
+                    result.addAll(v.getIds());
+                }
+            });
+        }
+        return resultMap;
+    }
+
     /**
      * 获取验证结果
      * @param fileId
@@ -146,9 +213,10 @@ public class DesignExcelListBiz  extends BaseBiz<DesignExcelListMapper,DesignExc
      * @return
      */
     public Object[] getValidResult(Integer fileId, Integer solutionId){
+        //验证集合
+        HashMap<String,ValidInfo> validMap = new HashMap<>();
         List<JSONObject> list = getExcelData(fileId);
         Set<JSONObject> result = new LinkedHashSet<>();
-        validMap.clear();
         //记录信息
         for (Iterator ed = list.iterator(); ed.hasNext();) {
             JSONObject excelItem = (JSONObject) ed.next();
@@ -216,11 +284,11 @@ public class DesignExcelListBiz  extends BaseBiz<DesignExcelListMapper,DesignExc
      * @param b2
      * @return
      */
-    private boolean boolCompared(Boolean b1,Boolean b2){
-        if(b1==null){
+    public boolean boolCompared(Boolean b1,Boolean b2){
+        if(b1 == null){
             b1 = false;
         }
-        return b1 == b2;
+        return b1.equals(b2);
     }
     /**
      * 获取比较结果
@@ -284,16 +352,13 @@ public class DesignExcelListBiz  extends BaseBiz<DesignExcelListMapper,DesignExc
         return val1.equals(val2);
     }
 
-    /**
-     * 验证集合
-     */
-    public HashMap<String,ValidInfo> validMap = new HashMap<>();
+
     /**
      * 验证信息
      */
     @Data
     @Accessors(chain = true)
-    class ValidInfo{
+    public static class ValidInfo{
         public ValidInfo(){
             ids = new ArrayList<>();
         }
