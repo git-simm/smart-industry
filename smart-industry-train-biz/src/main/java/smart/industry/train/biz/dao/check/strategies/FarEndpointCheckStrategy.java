@@ -12,7 +12,7 @@ import java.util.HashMap;
  */
 public class FarEndpointCheckStrategy extends CheckStrategy {
     public FarEndpointCheckStrategy() {
-        super(CheckRuleEnum.FAR_ENDPOINT);
+        super(CheckRuleEnum.FAR_ENDPOINT,false);
     }
 
     @Override

@@ -30,15 +30,15 @@ public class ErrorLocationNameCheckStrategy extends CheckStrategy {
         String cable = excelItem.getString("Cable");
         String dest1Item = excelItem.getString("Dest_1_Item");
         if(!StringUtils.isEmpty(cable) && !StringUtils.isEmpty(dest1Item)){
-            String key = cable + "@@" + dest1Item;
+            String key = cable;
             if(!validMap.containsKey(key)){
                 validMap.put(key,valid);
             }
             valid = validMap.get(key);
             valid.getIds().add(excelItem);
+            long repeaters = valid.getIds().stream().map(a->a.getString("Dest_1_Item")).distinct().count();
             //超过一个，则认为校验失败
-            valid.setValidFail(valid.getIds().size() > 2);
-            validMap.put(key,valid);
+            valid.setValidFail(repeaters > 2);
         }
         return valid;
     }

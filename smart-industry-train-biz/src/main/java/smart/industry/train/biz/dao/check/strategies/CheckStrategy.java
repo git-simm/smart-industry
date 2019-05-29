@@ -15,6 +15,14 @@ public abstract class CheckStrategy{
      * 检查规则
      */
     public CheckRuleEnum CHECK_RULE_ENUM = null;
+    /**
+     * 是否启用
+     */
+    public boolean ENABLED = true;
+    public CheckStrategy(CheckRuleEnum ruleEnum,boolean enabled){
+        this.CHECK_RULE_ENUM = ruleEnum;
+        this.ENABLED = enabled;
+    }
     public CheckStrategy(CheckRuleEnum ruleEnum){
         this.CHECK_RULE_ENUM = ruleEnum;
     }

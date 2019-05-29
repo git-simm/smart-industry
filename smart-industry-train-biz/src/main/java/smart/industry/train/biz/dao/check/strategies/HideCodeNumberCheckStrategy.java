@@ -12,7 +12,7 @@ import java.util.HashMap;
  */
 public class HideCodeNumberCheckStrategy extends CheckStrategy{
     public HideCodeNumberCheckStrategy() {
-        super(CheckRuleEnum.HIDE_CORE_NUMBER);
+        super(CheckRuleEnum.HIDE_CORE_NUMBER,false);
     }
 
     @Override

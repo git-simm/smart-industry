@@ -152,7 +152,10 @@ public class DesignExcelListBiz  extends BaseBiz<DesignExcelListMapper,DesignExc
         //遍历检查枚举类，生成校验策略列表
         for(CheckRuleEnum ruleEnum:CheckRuleEnum.values()){
             try {
-                checkStrategies.add((CheckStrategy) ruleEnum.getStrategyClazz().newInstance());
+                CheckStrategy checkStrategy = (CheckStrategy) ruleEnum.getStrategyClazz().newInstance();
+                if(checkStrategy.ENABLED){
+                    checkStrategies.add(checkStrategy);
+                }
             } catch (InstantiationException e) {
                 e.printStackTrace();
             } catch (IllegalAccessException e) {

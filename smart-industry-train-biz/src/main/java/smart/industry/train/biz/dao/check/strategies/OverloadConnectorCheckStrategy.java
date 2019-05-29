@@ -12,7 +12,7 @@ import java.util.HashMap;
  */
 public class OverloadConnectorCheckStrategy extends CheckStrategy {
     public OverloadConnectorCheckStrategy() {
-        super(CheckRuleEnum.OVERLOAD_CONNECTOR);
+        super(CheckRuleEnum.OVERLOAD_CONNECTOR,false);
     }
 
     @Override

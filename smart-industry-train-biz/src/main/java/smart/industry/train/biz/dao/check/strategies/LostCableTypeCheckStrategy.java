@@ -12,7 +12,7 @@ import java.util.HashMap;
  */
 public class LostCableTypeCheckStrategy extends CheckStrategy {
     public LostCableTypeCheckStrategy() {
-        super(CheckRuleEnum.LOST_CABLE_TYPE);
+        super(CheckRuleEnum.LOST_CABLE_TYPE,false);
     }
 
     @Override

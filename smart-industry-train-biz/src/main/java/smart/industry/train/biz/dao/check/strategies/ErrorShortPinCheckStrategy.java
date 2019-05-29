@@ -12,7 +12,7 @@ import java.util.HashMap;
  */
 public class ErrorShortPinCheckStrategy extends CheckStrategy {
     public ErrorShortPinCheckStrategy() {
-        super(CheckRuleEnum.ERROR_SHORT_PIN);
+        super(CheckRuleEnum.ERROR_SHORT_PIN,false);
     }
 
     @Override

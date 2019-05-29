@@ -37,7 +37,6 @@ public class OnlyLocationNameCheckStrategy extends CheckStrategy {
             valid.getIds().add(excelItem);
             //超过一个，则认为校验失败
             valid.setValidFail(valid.getIds().size() != 1);
-            validMap.put(key,valid);
         }
         return valid;
     }

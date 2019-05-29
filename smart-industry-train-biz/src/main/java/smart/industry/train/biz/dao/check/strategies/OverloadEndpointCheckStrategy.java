@@ -12,7 +12,7 @@ import java.util.HashMap;
  */
 public class OverloadEndpointCheckStrategy extends CheckStrategy{
     public OverloadEndpointCheckStrategy() {
-        super(CheckRuleEnum.OVERLOAD_ENDPOINT);
+        super(CheckRuleEnum.OVERLOAD_ENDPOINT,false);
     }
 
     @Override

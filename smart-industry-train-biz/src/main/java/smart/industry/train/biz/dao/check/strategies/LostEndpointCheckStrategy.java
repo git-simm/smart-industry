@@ -12,7 +12,7 @@ import java.util.HashMap;
  */
 public class LostEndpointCheckStrategy extends CheckStrategy{
     public LostEndpointCheckStrategy() {
-        super(CheckRuleEnum.LOST_ENDPOINT);
+        super(CheckRuleEnum.LOST_ENDPOINT,false);
     }
 
     @Override
