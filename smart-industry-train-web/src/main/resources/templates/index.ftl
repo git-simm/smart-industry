@@ -50,7 +50,7 @@
 <div class="north">
     <div class="pull-left" style="padding: 10px;">
         <h1 title="点击返回首页选择模式"  onclick="javascript: window.open('${request.contextPath}/index', '_parent');" >
-            <img src="${request.contextPath}/static/favicon.ico" style="width: 40px;">&nbsp;轨道车辆功能动态模拟系统
+            <img src="${request.contextPath}/static/images/train.png" style="width: 70px;">&nbsp;轨道车辆功能动态模拟系统
         </h1>
     </div>
     <div class="navbar-header pull-right" role="navigation">
@@ -58,7 +58,7 @@
             <li style="background: none;height:60px;line-height:60px;">
                 <a data-toggle="dropdown" href="#" class="dropdown-toggle" style="background-color: transparent;">
                     <span class="user-info" style="line-height:20px; font-size: 16px;top:10px;">
-                        <small>欢迎光临</small>${user!}
+                        <small>欢迎登录</small>${user!}
                     </span>
                     <i class="icon-caret-down"></i>
                 </a>
