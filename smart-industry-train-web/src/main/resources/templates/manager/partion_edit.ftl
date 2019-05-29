@@ -121,7 +121,7 @@
                   getList: function (callback) {
                       $.ajax({
                           async: false,
-                          url: Zq.Utility.GetPath("/solution/getfiles"),
+                          url: Zq.Utility.GetPath("/solution/getfiles2"),
                           data: {id: this.entity.solutionId},
                           success: function (data) {
                               if (data != null && data.length > 0) {

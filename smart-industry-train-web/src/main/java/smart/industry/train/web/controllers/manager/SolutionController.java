@@ -115,7 +115,19 @@ public class SolutionController {
     @Post("/getfiles")
     @ResponseBody
     public List<JSONObject> getFiles(Integer id,Integer cardId){
-        return designSolutionBiz.getFileTree(id,cardId);
+        return designSolutionBiz.getFileTree(id,cardId,true);
+    }
+
+    /**
+     * 获取所有的对象列表(本接口不查询linkmap跳转关系)
+     * @param id
+     * @param cardId
+     * @return
+     */
+    @Post("/getfiles2")
+    @ResponseBody
+    public List<JSONObject> getFiles2(Integer id,Integer cardId){
+        return designSolutionBiz.getFileTree(id,cardId,false);
     }
 
     /**

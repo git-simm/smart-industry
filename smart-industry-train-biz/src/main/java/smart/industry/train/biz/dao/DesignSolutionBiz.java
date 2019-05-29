@@ -18,7 +18,6 @@ import smart.industry.utils.exceptions.AjaxException;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
@@ -157,10 +156,11 @@ public class DesignSolutionBiz extends BaseBiz<DesignSolutionMapper, DesignSolut
      * 获取文件树
      * @param id
      * @param cardId
+     * @param queryLink
      * @return
      */
     @Transactional
-    public List<JSONObject> getFileTree(Integer id,Integer cardId) {
+    public List<JSONObject> getFileTree(Integer id, Integer cardId, boolean queryLink) {
         //1.先获取卡片上对应的文件信息列表
         List<Integer> fileList = new ArrayList<>();
         if(cardId!=null){
@@ -189,9 +189,9 @@ public class DesignSolutionBiz extends BaseBiz<DesignSolutionMapper, DesignSolut
         }
         //开始拼装树状结构
         List<JSONObject> result = new ArrayList<>();
-        result.addAll(wrapData(solutionFiles, files, FileTypeEnum.Design));
-        result.addAll(wrapData(solutionFiles, files, FileTypeEnum.Standard));
-        result.addAll(wrapData(solutionFiles, files, FileTypeEnum.Bill));
+        result.addAll(wrapData(solutionFiles, files, FileTypeEnum.Design, queryLink));
+        result.addAll(wrapData(solutionFiles, files, FileTypeEnum.Standard, queryLink));
+        result.addAll(wrapData(solutionFiles, files, FileTypeEnum.Bill, queryLink));
         return result;
     }
 
@@ -201,9 +201,10 @@ public class DesignSolutionBiz extends BaseBiz<DesignSolutionMapper, DesignSolut
      * @param solutionFiles
      * @param files
      * @param type
+     * @param queryLink
      * @return
      */
-    public List<JSONObject> wrapData(List<DesignSolutionList> solutionFiles, List<SysUpfiles> files, FileTypeEnum type) {
+    public List<JSONObject> wrapData(List<DesignSolutionList> solutionFiles, List<SysUpfiles> files, FileTypeEnum type, boolean queryLink) {
         List<JSONObject> result = new ArrayList<>();
         JSONObject root = new JSONObject();
         String rootId = "10000" + type.getValue();
@@ -232,7 +233,6 @@ public class DesignSolutionBiz extends BaseBiz<DesignSolutionMapper, DesignSolut
                 obj.put("filePath", path);
                 obj.put("fileName", fileName);
                 obj.put("projPath", projPath);
-                //String fileName = file.getFileName().replace(file.getSuffix(),"");
                 if (StringUtils.isNotBlank(projPath)) {
                     fileName = projPath.substring(projPath.indexOf("|") + 1);
                     obj.put("folderPath", fileName.substring(0, fileName.lastIndexOf("|")));
@@ -248,8 +248,10 @@ public class DesignSolutionBiz extends BaseBiz<DesignSolutionMapper, DesignSolut
                 }else{
                     obj.put("projFile",fileName+"("+projFile+")");
                 }
-                //这个位置需要做性能优化，一次查询所有的相关数据
-                obj.put("linkMap", designDetailBlockBiz.getLinkMap(a.getId()));
+                if(queryLink){
+                    //这个位置需要做性能优化，一次查询所有的相关数据
+                    obj.put("linkMap", designDetailBlockBiz.getLinkMap(a.getId()));
+                }
             }
             result.add(obj);
         });

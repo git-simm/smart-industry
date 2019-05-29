@@ -12,18 +12,30 @@
             font-size: 15px;
             background: ghostwhite;
         }
+        .widgetWidth{
+            width: 200px !important;
+            float: left;
+        }
+        .widgetHeader{
+            display: inline-block;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+        .pricing-box{
+            margin: 5px;
+        }
     </style>
     <#elseif section="content">
     <div style="position: relative;" class="col-12" id="app">
         <#list cards as card>
-            <div class="col-xs-4 col-sm-2 pricing-box">
-                <div class="widget-box widget-color-dark">
-                    <div class="widget-header">
+            <div class="pricing-box widgetWidth">
+                <div class="widget-box widget-color-dark widgetWidth">
+                    <div class="widget-header widgetHeader" style="width:198px;">
                         <h5 class="widget-title bigger" title="${card.name!}" style="color: black;">${card.name!}</h5>
                     </div>
-
                     <div class="widget-body">
-                        <div class="widget-main" style="height: 160px;overflow:auto;">
+                        <div class="widget-main" style="height: 160px;overflow:auto;color: darkblue;">
                             <ul class="list-unstyled spaced2">
                                 <#list card.partionList as item>
                                     <li>
@@ -49,7 +61,7 @@
                 </div>
             </div>
         </#list>
-        <div class="col-xs-4 col-sm-2 pricing-box">
+        <div class="widgetWidth pricing-box">
             <button class="btn btn-light marginTop5" title="点击添加新的测试方案" @click="addCard">
                 <img src="${request.contextPath}/static/images/svg-add.svg" alt="">
             </button>
