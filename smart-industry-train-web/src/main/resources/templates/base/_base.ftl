@@ -1,3 +1,4 @@
+<#setting number_format="#">
 <#macro layout>
     <#include "resouceimp.ftl"/>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"

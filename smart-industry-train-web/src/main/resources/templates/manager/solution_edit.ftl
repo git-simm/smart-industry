@@ -98,7 +98,7 @@
                             <div class="uploader-list">
                                 <#if type3??>
                                     <#list type3 as file>
-                                    <div class="dd-handle" fileid="${file.id}">
+                                    <div class="dd-handle" fileid="${ file.id }">
                                         ${file.name!}
                                         <div class="pull-right action-buttons">
                                             <a class="red" href="#" onclick="solution.edit.delfile(${file.id})">

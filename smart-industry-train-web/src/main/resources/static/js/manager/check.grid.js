@@ -4,9 +4,10 @@ Zq.Utility.RegisterNameSpace("check.grid");
     ns.init = function () {
         //初始化一下excel表格
         $('#list').bootstrapTable({
-            height: $(window).height() - 100,
+            height: $(window).height() - 180,
+            sortable:false,
             pagination: false, //分页
-            silentSort: true, //自动记住排序项
+            silentSort: false, //自动记住排序项
             onlyInfoPagination: false,
             showFooter:false,
             striped:false,
@@ -19,25 +20,23 @@ Zq.Utility.RegisterNameSpace("check.grid");
             sidePagination: "server", //服务端处理分页
             pageSize: 25,
             uniqueId: "id",
-            sortName: "Item",
-            sortOrder: "desc",
             // onDblClickRow: function(tr,el) {
             //     ns.Edit(tr.id);
             // },
             //showToggle:true,
-            rowAttributes:function(row,index){
-                return { state: row.state };
-            },
+            // rowAttributes:function(row,index){
+            //     return { state: row.state };
+            // },
             columns: [
                 {
-                    field: 'Number',
+                    field: 'number',
                     title: '序号',
                     width: 60,
                     align: 'center',
                     sortable: false,
-                    formatter: function (value, row, index) {
-                        return index + 1;
-                    }
+                    // formatter: function (value, row, index) {
+                    //     return index + 1;
+                    // }
                 },
                 {
                     title: 'id',
@@ -45,47 +44,131 @@ Zq.Utility.RegisterNameSpace("check.grid");
                     //align: 'center',
                     visible: false
                 },
-                // {
-                //     title: 'Item',
-                //     field: 'Item',
-                //     align: 'left',
-                //     width: "15%"
-                // },
                 {
-                    title: 'Wire_Number',
+                    title: '车型(Plant)',
+                    field: 'Plant',
+                    align: 'left',
+                    width: "120px"
+                },
+                {
+                    title: '位置(Location)',
+                    field: 'Location',
+                    align: 'left',
+                    width: "120px"
+                },
+                {
+                    title: '电缆等级(Wire_Grade)',
+                    field: 'Wire_Grade',
+                    align: 'left',
+                    width: "150px"
+                },
+                {
+                    title: '屏蔽代码(Cable)',
+                    field: 'Cable',
+                    align: 'left',
+                    width: "120px"
+                },
+                {
+                    title: '线芯(Core_Number)',
+                    field: 'Core_Number',
+                    align: 'left',
+                    width: "140px"
+                },
+                {
+                    title: '线号(Wire_Number)',
                     field: 'Wire_Number',
                     align: 'left',
-                    width: "15%"
+                    width: "140px"
                 },
                 {
-                    title: 'Dest_1_Item',
+                    title: '电缆型号(Cable_type)',
+                    field: 'Cable_type',
+                    align: 'left',
+                    width: "150px"
+                },
+                {
+                    title: '版本(Revison_Modify)',
+                    field: 'Revison_Modify',
+                    align: 'left',
+                    width: "150px"
+                },
+                {
+                    title: '系统(Representation)',
+                    field: 'Representation',
+                    align: 'left',
+                    width: "150px"
+                },
+                {
+                    title: '始端车型(Dest_1_Plant)',
+                    field: 'Dest_1_Plant',
+                    align: 'left',
+                    width: "170px"
+                },
+                {
+                    title: '始端位置(Dest_1_Location)',
+                    field: 'Dest_1_Location',
+                    align: 'left',
+                    width: "200px"
+                },
+                {
+                    title: '始端名称(Dest_1_Item)',
                     field: 'Dest_1_Item',
                     align: 'left',
-                    width: "15%"
+                    width: "150px"
                 },
                 {
-                    title: 'Dest_1_Connector',
+                    title: '始端点位(Dest_1_Connector)',
                     field: 'Dest_1_Connector',
                     align: 'left',
-                    width: "15%"
+                    width: "200px"
                 },
                 {
-                    title: 'Dest_2_Item',
+                    title: '始端分配点（Dest_1_Pin_assign）',
+                    field: 'Dest_1_Pin_assign',
+                    align: 'left',
+                    width: "240px"
+                },
+                {
+                    title: '始端连接线型号(Dest_1_Endwire_Type)',
+                    field: 'Dest_1_Endwire_Type',
+                    align: 'left',
+                    width: "220px"
+                },
+                {
+                    title: '末端车型(Dest_2_Plant)',
+                    field: 'Dest_2_Plant',
+                    align: 'left',
+                    width: "180px"
+                },
+                {
+                    title: '末端位置(Dest_2_Location)',
+                    field: 'Dest_2_Location',
+                    align: 'left',
+                    width: "200px"
+                },
+                {
+                    title: '末端名称(Dest_2_Item)',
                     field: 'Dest_2_Item',
                     align: 'left',
-                    width: "15%"
+                    width: "150px"
                 },
                 {
-                    title: 'Dest_2_Connector',
+                    title: '末端点位(Dest_2_Connector)',
                     field: 'Dest_2_Connector',
                     align: 'left',
-                    width: "15%"
+                    width: "180px"
                 },
                 {
-                    title: 'Dest_2_Pin_assign',
+                    title: '末端分配点(Dest_2_Pin_assign)',
                     field: 'Dest_2_Pin_assign',
                     align: 'left',
-                    width: "15%"
+                    width: "200px"
+                },
+                {
+                    title: '末端连接线型号(Dest_2_Endwire_Type)',
+                    field: 'Dest_2_Endwire_Type',
+                    align: 'left',
+                    width: "240px"
                 },
                 // {
                 //     title: '状态',
@@ -102,7 +185,7 @@ Zq.Utility.RegisterNameSpace("check.grid");
         });
         //高度重置
         $(window).resize(function () {
-            $('#list').bootstrapTable('resetView', { height: $(window).height() - 100 });
+            $('#list').bootstrapTable('resetView', { height: $(window).height() - 180 });
         });
     };
     //----------- excel清单交互方案 begin ---------------------

@@ -105,10 +105,10 @@ public class DesignExcelListBiz  extends BaseBiz<DesignExcelListMapper,DesignExc
      * 属性列表
      */
     private static List<String> _attrs = Arrays.asList("Item","Location","Function/Tag",
-            "Representation","Wire_Number","Dest_1_Item",
-            "Dest_1_Connector","Dest_1_Pin_assign","Dest_2_Item","Dest_2_Connector","Dest_2_Pin_assign",
-            "Dest_1_Endwire_Type","Cable_type","Cable","Dest_1_Plant","Dest_2_Plant","Plant",
-            "Core_Number","Dest_1_Location","Wire_Grade");
+            "Representation","Wire_Number","Dest_1_Item","Dest_2_Item",
+            "Dest_1_Connector","Dest_2_Connector","Dest_1_Pin_assign","Dest_2_Pin_assign",
+            "Dest_1_Endwire_Type","Dest_2_Endwire_Type","Cable_type","Cable","Dest_1_Plant","Dest_2_Plant","Plant",
+            "Core_Number","Dest_1_Location","Dest_2_Location","Wire_Grade","Revison_Modify");
     /**
      * 获取excel数据
      * @param fileId
@@ -128,7 +128,7 @@ public class DesignExcelListBiz  extends BaseBiz<DesignExcelListMapper,DesignExc
      * @return
      */
     public List<JSONObject> getExcelData(Integer fileId){
-        Map<String,String> attrRels = new HashMap<>();
+        Map<String,String> attrRels = new LinkedHashMap<>();
         List<DesignExcelAttr> attrs = designExcelAttrBiz.getAttrListByFilter(fileId,_attrs);
         for (DesignExcelAttr attr: attrs ) {
             attrRels.put(attr.getAttrName(),attr.getColName());
@@ -136,6 +136,7 @@ public class DesignExcelListBiz  extends BaseBiz<DesignExcelListMapper,DesignExc
         List<DesignExcelList> list = getListByFilter(fileId, new ArrayList<>(attrRels.values()));
         List<JSONObject> result = list.stream().map(a->{
             JSONObject obj = new JSONObject();
+            obj.put("id",a.getId());
             obj.put("id",a.getId());
             for(Map.Entry<String,String> entry: attrRels.entrySet()){
                 obj.put(entry.getKey(),getValByFieldName(a,entry.getValue()));
@@ -184,12 +185,15 @@ public class DesignExcelListBiz  extends BaseBiz<DesignExcelListMapper,DesignExc
         }
         //2.获取excel数据
         List<JSONObject> list = getExcelData(fileId);
+        long index = 0;
         //记录信息
         for (Iterator ed = list.iterator(); ed.hasNext();) {
+            index ++;
             JSONObject excelItem = (JSONObject) ed.next();
-            //数据复制
-            JSONObject excelItemCopy = JSON.parseObject(excelItem.toJSONString());
+            excelItem.put("number",index);
             for (CheckStrategy checkStrategy:checkStrategies) {
+                //数据复制
+                JSONObject excelItemCopy = JSON.parseObject(excelItem.toJSONString());
                 CheckRuleEnum key = checkStrategy.CHECK_RULE_ENUM;
                 ValidInfo valid = checkStrategy.validItem(excelItemCopy,validMap.get(key));
                 if(boolCompared(valid.getValidFail(),true)){
@@ -214,7 +218,7 @@ public class DesignExcelListBiz  extends BaseBiz<DesignExcelListMapper,DesignExc
             JSONObject object = new JSONObject();
             object.put("key",item.getKey().getValue());
             object.put("name",item.getKey().getName());
-            object.put("list",item.getValue());
+            object.put("list",  item.getValue().stream().sorted(Comparator.comparingInt(a -> a.getInteger("number"))).collect(Collectors.toList()));
             array.add(object);
         }
         return array;

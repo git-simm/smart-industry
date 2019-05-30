@@ -53,15 +53,15 @@
               padding-top: 3px;
           }
 
-          tr[state='-1'] {
-              background: #aaaaaa;
-              color: white;
-          }
+          /*tr[state='-1'] {*/
+              /*background: #aaaaaa;*/
+              /*color: white;*/
+          /*}*/
 
-          tr[state='1'] {
-              background: red;
-              color: white;
-          }
+          /*tr[state='1'] {*/
+              /*background: red;*/
+              /*color: white;*/
+          /*}*/
 
           .img-menu, .img-menu li {
               list-style: none; /* 将默认的列表符号去掉 */
