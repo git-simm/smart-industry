@@ -39,6 +39,28 @@
     	}
     	return true;
     }
+    /**
+     * 重试
+     * @param counter 重试次数
+     * @param callback 回调
+     * @param interval 间隔
+     */
+    ns.retry = function (counter, callback,interval) {
+        var me = this;
+        interval = interval || 500;
+        setTimeout(function () {
+            try {
+                counter--;
+                if (callback) {
+                    callback();
+                }
+            } catch (ex) {
+                if (counter > 0) {
+                    me.retry(counter,callback,interval);
+                }
+            }
+        }, interval);
+    },
 
     /**
 	 * 获取公选页面

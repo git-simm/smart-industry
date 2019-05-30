@@ -131,6 +131,17 @@ public class SolutionController {
     }
 
     /**
+     * 获取检查数据
+     * @param fileId
+     * @param solutionId
+     * @return
+     */
+    @Post("/getCheckData")
+    @ResponseBody
+    public Object getCheckData(Integer fileId,Integer solutionId){
+        return designExcelListBiz.excelCheck(fileId,solutionId);
+    }
+    /**
      * 获取Exceldata
      * @param fileId
      * @param solutionId

@@ -49,7 +49,7 @@
     <#elseif section="content">
 <div class="north">
     <div class="pull-left" style="padding: 10px;">
-        <h1 title="点击返回首页选择模式"  onclick="javascript: window.open('${request.contextPath}/index', '_parent');" >
+        <h1 title="点击返回首页"  onclick="javascript: window.open('${request.contextPath}/index', '_parent');" >
             <img src="${request.contextPath}/static/images/train.png" style="width: 70px;">&nbsp;轨道车辆功能动态模拟系统
         </h1>
     </div>

@@ -33,6 +33,7 @@ Zq.Utility.RegisterNameSpace("solution.tree");
             //$('#mainViewContainer').show();
             //$('#thumbViewContainer').show();
             $('#excelList').hide();
+            test.run.layout.open('south');
             //$("#line_svg").attr("src" ,path);
             //$("#thumbView").attr("src" ,path);
             svg.node.open(node);
@@ -41,7 +42,8 @@ Zq.Utility.RegisterNameSpace("solution.tree");
             //$('#mainViewContainer').hide();
             //$('#thumbViewContainer').hide();
             $('#excelList').show();
-            ns.getExcelData(node.fileId,node);
+            test.run.layout.close('south');
+            check.grid.getExcelData(node.fileId,node);
         }
     }
 
@@ -134,116 +136,6 @@ Zq.Utility.RegisterNameSpace("solution.tree");
      * 初始化ztree控件
      */
     ns.init = function () {
-        //初始化一下excel表格
-        $('#list').bootstrapTable({
-            url: ('/solution/getExcelData').geturl(),
-            method: 'post',
-            dataType: "json",
-            contentType:"application/x-www-form-urlencoded",
-            height: $(window).height() - 230,
-            pagination: false, //分页
-            silentSort: true, //自动记住排序项
-            onlyInfoPagination: false,
-            showFooter:false,
-            striped:false,
-            buttonsClass:"sm",
-            locale: "zh-CN", //表格汉化
-            search: false, //显示搜索框
-            checkboxHeader: true,
-            maintainSelected: true,
-            clickToSelect: true,
-            sidePagination: "server", //服务端处理分页
-            pageSize: 25,
-            uniqueId: "id",
-            sortName: "Item",
-            sortOrder: "desc",
-            queryParams: function (params) {
-                $.extend(params, { fileId: $('#hid_fileId').val(),solutionId:$('#hid_solutionId').val()});
-                return params;
-            },
-            // onDblClickRow: function(tr,el) {
-            //     ns.Edit(tr.id);
-            // },
-            //showToggle:true,
-            rowAttributes:function(row,index){
-                return { state: row.state };
-            },
-            columns: [
-                {
-                    field: 'Number',
-                    title: '序号',
-                    width: 60,
-                    align: 'center',
-                    sortable: false,
-                    formatter: function (value, row, index) {
-                        return index + 1;
-                    }
-                },
-                {
-                    title: 'id',
-                    field: 'id',
-                    //align: 'center',
-                    visible: false
-                },
-                // {
-                //     title: 'Item',
-                //     field: 'Item',
-                //     align: 'left',
-                //     width: "15%"
-                // },
-                {
-                    title: 'Wire_Number',
-                    field: 'Wire_Number',
-                    align: 'left',
-                    width: "15%"
-                },
-                {
-                    title: 'Dest_1_Item',
-                    field: 'Dest_1_Item',
-                    align: 'left',
-                    width: "15%"
-                },
-                {
-                    title: 'Dest_1_Connector',
-                    field: 'Dest_1_Connector',
-                    align: 'left',
-                    width: "15%"
-                },
-                {
-                    title: 'Dest_2_Item',
-                    field: 'Dest_2_Item',
-                    align: 'left',
-                    width: "15%"
-                },
-                {
-                    title: 'Dest_2_Connector',
-                    field: 'Dest_2_Connector',
-                    align: 'left',
-                    width: "15%"
-                },
-                {
-                    title: 'Dest_2_Pin_assign',
-                    field: 'Dest_2_Pin_assign',
-                    align: 'left',
-                    width: "15%"
-                },
-                // {
-                //     title: '状态',
-                //     field: 'state',
-                //     align: 'left',
-                //     width: "15%",
-                //     formatter: function (value, row, index) {
-                //         if(value=="-1") return "缺失";
-                //         if(value =="0") return "正常";
-                //         if(value =="1") return "多出";
-                //     }
-                // }
-            ]
-        });
-        //高度重置
-        $(window).resize(function () {
-            $('#list').bootstrapTable('resetView', { height: $(window).height() - 230 });
-        });
         ns.getList(function(data){
             ns.zTree = $.fn.zTree.init($("#soluTree"), setting, data);
             //选中第一个有效节点
@@ -306,28 +198,6 @@ Zq.Utility.RegisterNameSpace("solution.tree");
         return arr;
     }
     //-------- 方案 ajax 交互  end-----------------------
-    //----------- excel清单交互方案 begin ---------------------
-    ns.currExcel = null;
-    //获取excel数据
-    ns.getExcelData = function(fileId,node,callback){
-        ns.currExcel = node;
-        $('#hid_fileId').val(fileId);
-        $('#list').bootstrapTable('refresh');
-    }
-    /**
-     * excel导出功能
-     */
-    ns.export = function(){
-        var headers = ['Wire_Number','Dest_1_Item','Dest_1_Connector','Dest_2_Item','Dest_2_Connector','Dest_2_Pin_assign'];
-        var data = $('#list').bootstrapTable('getData');
-        var list = data.map(function(item){
-           return headers.map(function(h){
-               return item[h];
-           });
-        });
-        exportUtil.export(headers,list,ns.currExcel.fileName);
-    }
-//----------- excel清单交互方案 end ---------------------
 })(solution.tree);
 
 $(function () {

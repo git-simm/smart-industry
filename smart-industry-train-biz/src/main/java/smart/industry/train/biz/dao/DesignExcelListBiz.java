@@ -1,6 +1,7 @@
 package smart.industry.train.biz.dao;
 
 import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import lombok.Data;
 import lombok.experimental.Accessors;
@@ -105,7 +106,9 @@ public class DesignExcelListBiz  extends BaseBiz<DesignExcelListMapper,DesignExc
      */
     private static List<String> _attrs = Arrays.asList("Item","Location","Function/Tag",
             "Representation","Wire_Number","Dest_1_Item",
-            "Dest_1_Connector","Dest_1_Pin_assign","Dest_2_Item","Dest_2_Connector","Dest_2_Pin_assign");
+            "Dest_1_Connector","Dest_1_Pin_assign","Dest_2_Item","Dest_2_Connector","Dest_2_Pin_assign",
+            "Dest_1_Endwire_Type","Cable_type","Cable","Dest_1_Plant","Dest_2_Plant","Plant",
+            "Core_Number","Dest_1_Location","Wire_Grade");
     /**
      * 获取excel数据
      * @param fileId
@@ -147,7 +150,7 @@ public class DesignExcelListBiz  extends BaseBiz<DesignExcelListMapper,DesignExc
      * @param fileId
      * @param solutionId
      */
-    public HashMap<String,Set<JSONObject>> excelCheck(Integer fileId, Integer solutionId){
+    public JSONArray excelCheck(Integer fileId, Integer solutionId){
         List<CheckStrategy> checkStrategies = new ArrayList<>();
         //遍历检查枚举类，生成校验策略列表
         for(CheckRuleEnum ruleEnum:CheckRuleEnum.values()){
@@ -170,12 +173,12 @@ public class DesignExcelListBiz  extends BaseBiz<DesignExcelListMapper,DesignExc
      * @param solutionId
      * @param checkStrategies
      */
-    public HashMap<String,Set<JSONObject>> excelCheck(Integer fileId, Integer solutionId, List<CheckStrategy> checkStrategies){
+    public JSONArray excelCheck(Integer fileId, Integer solutionId, List<CheckStrategy> checkStrategies){
         //1.先把校验策略转换成结果列表
-        HashMap<String,HashMap<String,ValidInfo>> validMap = new HashMap<>();
-        HashMap<String,Set<JSONObject>> resultMap = new HashMap<>();
+        HashMap<CheckRuleEnum,HashMap<String,ValidInfo>> validMap = new LinkedHashMap<>();
+        HashMap<CheckRuleEnum,Set<JSONObject>> resultMap = new LinkedHashMap<>();
         for (CheckStrategy checkStrategy:checkStrategies) {
-            String key = checkStrategy.CHECK_RULE_ENUM.getName();
+            CheckRuleEnum key = checkStrategy.CHECK_RULE_ENUM;
             validMap.put(key, new HashMap<>(1024));
             resultMap.put(key, new LinkedHashSet<>(1024));
         }
@@ -187,7 +190,7 @@ public class DesignExcelListBiz  extends BaseBiz<DesignExcelListMapper,DesignExc
             //数据复制
             JSONObject excelItemCopy = JSON.parseObject(excelItem.toJSONString());
             for (CheckStrategy checkStrategy:checkStrategies) {
-                String key = checkStrategy.CHECK_RULE_ENUM.getName();
+                CheckRuleEnum key = checkStrategy.CHECK_RULE_ENUM;
                 ValidInfo valid = checkStrategy.validItem(excelItemCopy,validMap.get(key));
                 if(boolCompared(valid.getValidFail(),true)){
                     //验证失败的状态(即标识该字段异常)
@@ -196,7 +199,7 @@ public class DesignExcelListBiz  extends BaseBiz<DesignExcelListMapper,DesignExc
             }
         }
         for (CheckStrategy checkStrategy:checkStrategies) {
-            String key = checkStrategy.CHECK_RULE_ENUM.getName();
+            CheckRuleEnum key = checkStrategy.CHECK_RULE_ENUM;
             HashMap<String,ValidInfo> validResult = validMap.get(key);
             Set<JSONObject> result = resultMap.get(key);
             //搜集结果
@@ -206,7 +209,15 @@ public class DesignExcelListBiz  extends BaseBiz<DesignExcelListMapper,DesignExc
                 }
             });
         }
-        return resultMap;
+        JSONArray array = new JSONArray();
+        for(Map.Entry<CheckRuleEnum,Set<JSONObject>> item : resultMap.entrySet()){
+            JSONObject object = new JSONObject();
+            object.put("key",item.getKey().getValue());
+            object.put("name",item.getKey().getName());
+            object.put("list",item.getValue());
+            array.add(object);
+        }
+        return array;
     }
 
     /**

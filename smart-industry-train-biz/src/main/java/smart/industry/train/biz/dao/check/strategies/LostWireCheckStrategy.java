@@ -31,8 +31,10 @@ public class LostWireCheckStrategy extends CheckStrategy {
         String dest1Location = excelItem.getString("Dest_1_Location");
         String dest1Item = excelItem.getString("Dest_1_Item");
         if(StringUtils.isEmpty(wireNumber)){
+            boolean b1 = (StringUtils.isNotBlank(dest1Location) && dest1Location.startsWith("-TB")) ;
+            boolean b2 = (StringUtils.isNotBlank(dest1Item) && dest1Item.startsWith("-TB")) ;
             //判断是否为空
-            valid.setValidFail(!(dest1Location.startsWith("-TB") && dest1Item.startsWith("-TB")));
+            valid.setValidFail(!(b1 && b2));
             valid.getIds().add(excelItem);
             validMap.put(UUID.randomUUID().toString(),valid);
         }

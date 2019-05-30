@@ -161,26 +161,7 @@
                 <embed type="image/svg+xml" src="" class="thumb_svg thumbViewClass"/>
             </div>
         </div>
-    <#--excel信息展示窗口-->
-        <div class="col-12 col-md-12 col-sm-12 marginBottom0" id="excelList"
-             style="position: absolute;top: 0px;z-index: 100;display: none;">
-            <input id="hid_fileId" type="hidden" value="-1"/>
-            <div class="mini-model">
-                <table class="table table-bordered table-hover table-striped marginBottom0">
-                    <caption>
-                        <div class="pullLeft marginTop5">
-                            <label class="inline-block textRight">清单列表</label>
-                        </div>
-                        <div class="pullRight marginRight10">
-                            <button class="btn btn-primary btn-sm" onclick="solution.tree.export()">
-                                <i class="glyphicon glyphicon-export"></i>&nbsp;导出比对清单
-                            </button>
-                        </div>
-                    </caption>
-                </table>
-                <table id="list" class="table table-bordered table-hover col-12" style="background: white;"></table>
-            </div>
-        </div>
+        <#include "check_grid.ftl"/>
     </div>
     <div class="ui-layout-south" style="background: black;">
         <div style="overflow:hidden;">
@@ -222,42 +203,8 @@
         <@jsRef "/static/js/common/exportUtil.js"/>
         <@jsRef "/static/js/manager/svg.node.js"/>
         <@jsRef "/static/js/manager/svg.node.resolve.js"/>
+        <@jsRef "/static/js/manager/check.grid.js"/>
         <@jsRef "/static/js/manager/solution.tree.js"/>
         <@jsRef "/static/js/manager/test.run.js"/>
-<script type="application/javascript">
-    //--------------------
-    //----------------------
-    var map;
-    $(function () {
-        var myLayout = $("body").layout(
-                {
-                    west__size: 200,
-                    south__Size: 140,
-                    west__initClosed: false,
-                    //west__enableCursorHotkey: false,
-                    //south__enableCursorHotkey: false,
-                    //west__spacing_open: 0,
-                    //west__spacing_closed: 0,
-                    stateManagement__enabled: true,
-                    spacing_open: 10, // ALL panes
-                    spacing_closed: 20, // ALL panes
-                    south__spacing_open: 10,
-                    south__spacing_closed: 30,
-                    togglerContent_open: "<div><</div>", //pane打开时，边框按钮中需要显示的内容可以是符号"<"等。需要加入默认css样式.ui-layout-toggler .content
-                    togglerContent_closed: "<div>>></div>", //pane关闭时，同上。
-                    south__togglerContent_open: "<div>︾</div>", //pane打开时，边框按钮中需要显示的内容可以是符号"<"等。需要加入默认css样式.ui-layout-toggler .content
-                    south__togglerContent_closed: "<div>︽</div>", //pane关闭时，同上。
-                    south__minSize: 140,
-                    south__maxSize: 140,
-                    west__minSize: 200,
-                    west__maxSize: 300,
-                    onresize: function () {
-                        //$('#list').bootstrapTable('resetWidth');
-                        svgPanZoom.resize();
-                    }
-                }
-        );
-    });
-</script>
     </#if>
 </@layout>
