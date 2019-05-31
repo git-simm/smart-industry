@@ -222,5 +222,40 @@ var Export2Excel = function(){
         }), title + ".xlsx");
         layer.close(index);
     }
+
+    /**
+     * 导出excel
+     * @param sheets
+     * @param excelTitle
+     */
+    this.export_sheets_to_excel = function(sheets,excelTitle) {
+        var index = layer.load(1, {
+            title:'文件下载中...',
+            content:'文件下载中...',
+            shade: [0.1,'#000'] //0.1透明度的白色背景
+        });
+        var wb = new Workbook();
+        //var me = this;
+        sheets.forEach(function (sheetConfig) {
+            /* original data */
+            var data = sheetConfig.jsonData;
+            data.unshift(sheetConfig.th);
+            var ws_name = sheetConfig.defaultTitle || '主数据列表';
+            var ws = sheet_from_array_of_arrays(data,sheetConfig.types);
+            /* add worksheet to workbook */
+            wb.SheetNames.push(ws_name);
+            wb.Sheets[ws_name] = ws;
+        });
+        var wbout = XLSX.write(wb, {
+            bookType: 'xlsx',
+            bookSST: false,
+            type: 'binary'
+        });
+        var title = excelTitle || '列表'
+        saveAs(new Blob([s2ab(wbout)], {
+            type: "application/octet-stream"
+        }), title + ".xlsx");
+        layer.close(index);
+    }
 };
 

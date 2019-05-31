@@ -61,7 +61,19 @@
             }
         }, interval);
     },
-
+    /**
+     * 确认下载
+     * @param msg
+     * @param yes
+     */
+    ns.confirm = function(msg,yes){
+        layer.confirm(msg, {btn: ['确定', '取消'], title: "提示"}, function (index) {
+            layer.close(index);
+            if (yes){
+                yes();
+            }
+        });
+    },
     /**
 	 * 获取公选页面
      */

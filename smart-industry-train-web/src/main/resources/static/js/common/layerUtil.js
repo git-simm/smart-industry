@@ -110,6 +110,18 @@ $.define('smart.utils.layerUtil', {
         });
     },
     /**
+     * 确认下载
+     * @param msg
+     * @param yes
+     */
+    confirm: function(msg,yes){
+        layer.confirm(msg, {btn: ['确定', '取消'], title: "提示"}, function () {
+            if (yes){
+                yes();
+            }
+        });
+    },
+    /**
      * 数据验证
      */
     dataValid: function (entity,rules) {

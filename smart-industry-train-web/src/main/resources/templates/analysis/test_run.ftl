@@ -161,7 +161,7 @@
                 <embed type="image/svg+xml" src="" class="thumb_svg thumbViewClass"/>
             </div>
         </div>
-        <#include "check_grid.ftl"/>
+        <#include "check_grid.ftl" />
     </div>
     <div class="ui-layout-south" style="background: black;">
         <div style="overflow:hidden;">

@@ -26,8 +26,8 @@
                             <label class="inline-block textRight">{{currentTab.name}}-清单列表</label>
                         </div>
                         <div class="pullRight marginRight10">
-                            <button class="btn btn-primary btn-sm" onclick="checkbox.grid.export()">
-                                <i class="glyphicon glyphicon-export"></i>&nbsp;导出比对清单
+                            <button class="btn btn-primary btn-sm" onclick="check.grid.export()">
+                                <i class="glyphicon glyphicon-export"></i>&nbsp;导出检查清单
                             </button>
                         </div>
                     </caption>
@@ -76,8 +76,11 @@
                 this.checkData = data;
                 //自动选中第一个tab
                 setTimeout(function(){
-                    $('#myTab li[count!=0]').eq(0).trigger('click');
-                    $('#myTab li[count!=0] a').eq(0).trigger('click')
+                    var list = $('#myTab li[count!=0]');
+                    if (list.length>0){
+                        list.eq(0).trigger('click');
+                        list.eq(0).find('a').trigger('click');
+                    }
                 },500);
             }
         }
