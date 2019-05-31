@@ -80,13 +80,15 @@
                     return r.key == item.key;
                 });
                 var me = this;
-                cols.forEach(function (col) {
-                    if (me.ruleInfo.requireds.includes(col.field)){
-                        col.cellStyle = {
-                            css:{"background-color":"red","color":"white"}
-                        };
-                    }
-                });
+                if(me.ruleInfo!=null){
+                    cols.forEach(function (col) {
+                        if (me.ruleInfo.requireds.includes(col.field)){
+                            col.cellStyle = {
+                                css:{"background-color":"red","color":"white"}
+                            };
+                        }
+                    });
+                }
                 return cols;
             },
             /**
