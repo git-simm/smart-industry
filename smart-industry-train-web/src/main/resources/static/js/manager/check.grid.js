@@ -4,7 +4,7 @@ Zq.Utility.RegisterNameSpace("check.grid");
     ns.columns = [
         {
             field: 'number',
-            title: '序号',
+            title: '行号',
             width: 60,
             align: 'center',
             sortable: false,
