@@ -33,6 +33,8 @@
                     </caption>
                 </table>
                 <table id="list" class="table table-bordered table-hover col-12"></table>
+                <p style="margin-top: 10px;height: 30px;color: darkred;">
+                    <b>备注</b>：{{ruleInfo.desc}}</p>
             </div>
         </div>
     </div>
@@ -46,6 +48,7 @@
         data: {
             checkData:{},
             currentTab:{},
+            ruleInfo:{}
         },
         mounted:function(){
             var me = this;
@@ -61,9 +64,30 @@
         methods: {
             tabClick:function(item){
                 this.currentTab = item;
-                console.log(item);
+                //刷新table的列参数
+                var columns = this.wrapColumns(item);
+                $('#list').bootstrapTable('refreshOptions',{columns:columns});
                 var show = {total:item.count,rows:item.list};
                 $('#list').bootstrapTable('load',show);
+            },
+            /**
+             * 标识列样式
+             */
+            wrapColumns:function(item){
+                var cols = JSON.parse(JSON.stringify(check.grid.columns));
+                var ruleConfig = check.grid.ruleConfig;
+                this.ruleInfo = ruleConfig.find(function (r) {
+                    return r.key == item.key;
+                });
+                var me = this;
+                cols.forEach(function (col) {
+                    if (me.ruleInfo.requireds.includes(col.field)){
+                        col.cellStyle = {
+                            css:{"background-color":"red","color":"white"}
+                        };
+                    }
+                });
+                return cols;
             },
             /**
              * 加载excel检查数据
@@ -80,6 +104,10 @@
                     if (list.length>0){
                         list.eq(0).trigger('click');
                         list.eq(0).find('a').trigger('click');
+                    }else{
+                        var first = $('#myTab li').eq(0);
+                        first.trigger('click');
+                        first.find('a').trigger('click');
                     }
                 },500);
             }
