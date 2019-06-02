@@ -83,18 +83,24 @@ public class ResolveBiz {
      * @param sysTasks
      */
     public void resolveTask(SysTasks sysTasks) {
-        TempData data = new TempData();
-        data.sysTask = sysTasks;
-        data.detail = designSolutionListBiz.selectByPrimaryKey(sysTasks.getDetailId());
-        if (data.detail == null) return;
-        data.file = sysUpfilesBiz.selectByPrimaryKey(data.detail.getFileId());
-        if (data.file == null) return;
-        String suffix = data.file.getSuffix();
         boolean succ = false;
-        //1.修改系统任务的状态
-        data.sysTask.setState(TaskStateEnum.Converting.getValue());
-        sysTasksBiz.update(data.sysTask);
+        TempData data = new TempData();
         try {
+            data.sysTask = sysTasks;
+            data.detail = designSolutionListBiz.selectByPrimaryKey(sysTasks.getDetailId());
+            if (data.detail == null) {
+                succ = true;
+                return;
+            }
+            data.file = sysUpfilesBiz.selectByPrimaryKey(data.detail.getFileId());
+            if (data.file == null) {
+                succ = true;
+                return;
+            }
+            String suffix = data.file.getSuffix();
+            //1.修改系统任务的状态
+            data.sysTask.setState(TaskStateEnum.Converting.getValue());
+            sysTasksBiz.update(data.sysTask);
             if (suffix.equals(".dxf")) {
                 succ = resolve(data);
             } else if (suffix.equals(".xls") || suffix.equals(".xlsx")) {
@@ -161,7 +167,7 @@ public class ResolveBiz {
             return true;
         }
         else{
-            return false;
+            return true;
         }
     }
 

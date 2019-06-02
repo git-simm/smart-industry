@@ -26,6 +26,9 @@
                             <label class="inline-block textRight">{{currentTab.name}}-清单列表</label>
                         </div>
                         <div class="pullRight marginRight10">
+                            <button class="btn btn-success btn-sm" onclick="check.grid.download()">
+                                <i class="glyphicon glyphicon-export"></i>&nbsp;下载源文件
+                            </button>
                             <button class="btn btn-primary btn-sm" onclick="check.grid.export()">
                                 <i class="glyphicon glyphicon-export"></i>&nbsp;导出检查清单
                             </button>
@@ -48,6 +51,7 @@
         data: {
             checkData:{},
             currentTab:{},
+            currExcel:{},
             ruleInfo:{}
         },
         mounted:function(){
@@ -99,6 +103,7 @@
                 data.forEach(function(item){
                     item.count = item.list.length;
                 })
+                this.currExcel = check.grid.currExcel;
                 this.checkData = data;
                 //自动选中第一个tab
                 setTimeout(function(){

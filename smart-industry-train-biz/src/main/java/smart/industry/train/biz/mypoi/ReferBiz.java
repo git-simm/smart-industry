@@ -44,11 +44,11 @@ public class ReferBiz {
     @Transactional(rollbackFor = Exception.class)
     public boolean resolve(DesignSolutionList detail, final SysUpfiles file) throws Exception {
         String filePath = file.getFilePath();
-        Integer fileId = file.getId();
-        Map<String, Integer> map = new HashMap<String, Integer>();
+        File f = new File(filePath);
+        if (!f.exists()) return true;
         /* 读取数据 */
         try {
-            BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(new File(filePath)),
+            BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(f),
                     "UTF-8"));
             //获取所有的文件，归类进行处理。拿到所有的对应文件，准备为其赋值
             List<DesignSolutionList> solutionFiles = designSolutionListBiz.getAllListBySolution(detail.getSolutionId());

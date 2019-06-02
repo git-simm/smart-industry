@@ -231,6 +231,7 @@ public class DesignSolutionBiz extends BaseBiz<DesignSolutionMapper, DesignSolut
                 }
                 String projPath = file.getProjPath(), fileName = file.getFileName().replace(file.getSuffix(), "");
                 obj.put("filePath", path);
+                obj.put("suffix", file.getSuffix());
                 obj.put("fileName", fileName);
                 obj.put("projPath", projPath);
                 if (StringUtils.isNotBlank(projPath)) {

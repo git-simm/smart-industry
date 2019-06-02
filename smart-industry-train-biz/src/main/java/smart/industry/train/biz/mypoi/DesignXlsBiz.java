@@ -54,7 +54,9 @@ public class DesignXlsBiz {
         String filePath = file.getFilePath();
         Integer fileId = file.getId();
         HashMap<String, Integer> colMap = new HashMap<>();
-        InputStream in = new FileInputStream(new File(filePath));
+        File f = new File(filePath);
+        if (!f.exists()) return true;
+        InputStream in = new FileInputStream(f);
         Workbook workbook;
         try {
             workbook = new HSSFWorkbook(in);

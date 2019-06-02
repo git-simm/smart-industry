@@ -375,6 +375,16 @@ Zq.Utility.RegisterNameSpace("check.grid");
             exportUtil.exportSheets(sheets,ns.currExcel.fileName+'检查清单');
         });
     }
+    /**
+     * 下载源文件
+     */
+    ns.download = function(){
+        var link = document.createElement('a');
+        link.setAttribute("download",ns.currExcel.fileName + ns.currExcel.suffix);
+        link.href = Zq.Utility.GetPath(ns.currExcel.filePath);
+        link.click();
+        //a.remove();
+    }
 //----------- excel清单交互方案 end ---------------------
 })(check.grid);
 
