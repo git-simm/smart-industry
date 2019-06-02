@@ -125,7 +125,6 @@ public class ResolveBiz {
      *
      * @param sysTasks
      */
-    @Transactional
     public void resolveTask(SysTasks sysTasks) {
         boolean succ = false;
         TempData data = new TempData();
@@ -187,6 +186,7 @@ public class ResolveBiz {
     /**
      * 解析excel清单
      */
+    @Transactional(rollbackFor = Exception.class)
     public boolean resolveExcel(TempData data) throws Exception {
         return designXlsBiz.resolve(data.file);
     }
@@ -196,6 +196,7 @@ public class ResolveBiz {
      *
      * @throws Exception
      */
+    @Transactional(rollbackFor = Exception.class)
     public boolean resolve(TempData data) throws Exception {
         Main main = new Main();
         main.process();
