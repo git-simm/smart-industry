@@ -49,7 +49,7 @@ public class DesignXlsBiz {
      * @return
      * @throws Exception
      */
-    @Transactional(rollbackFor = Exception.class)
+    //@Transactional(rollbackFor = Exception.class)
     public boolean resolve(final SysUpfiles file) throws Exception {
         String filePath = file.getFilePath();
         Integer fileId = file.getId();
@@ -88,12 +88,6 @@ public class DesignXlsBiz {
      * @param colMap
      */
     private void resolveHeader(Row row,Integer fileId, HashMap<String, Integer> colMap) {
-        //1.先清理掉，有关该excel的属性信息
-        DesignExcelAttr filter = new DesignExcelAttr();
-        filter.setFileId(fileId);
-        filter.setFilter("fileId = #{fileId}");
-        designExcelAttrBiz.deleteByFilter(filter);
-
         for (int flag = 0; flag < row.getLastCellNum(); flag++) {
             DesignExcelAttr excelAttr = new DesignExcelAttr();
             excelAttr.setAttrName(getValue(row.getCell(flag)).toString());

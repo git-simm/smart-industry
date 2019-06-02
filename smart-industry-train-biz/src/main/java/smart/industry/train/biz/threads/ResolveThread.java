@@ -49,8 +49,20 @@ public class ResolveThread extends Thread {
      */
     public void startResolveTasks(List<SysTasks> tasks){
         for (SysTasks sysTasks : tasks){
-            //开启线程池，多线程运行
-            executorService.submit(() -> resolveBiz.resolveTask(sysTasks));
+            try{
+                //1.先清理关联数据，避免死锁
+                resolveBiz.delRelationData(sysTasks);
+            }catch (Exception e){
+                e.printStackTrace();
+            }
+        }
+        for (SysTasks sysTasks : tasks){
+            try{
+                //2.开启线程池，多线程运行
+                executorService.submit(() -> resolveBiz.resolveTask(sysTasks));
+            }catch (Exception e){
+                e.printStackTrace();
+            }
         }
     }
 

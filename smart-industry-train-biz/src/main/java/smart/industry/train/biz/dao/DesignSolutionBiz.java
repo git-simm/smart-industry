@@ -3,6 +3,7 @@ package smart.industry.train.biz.dao;
 import com.alibaba.fastjson.JSONObject;
 import org.apache.shiro.util.CollectionUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import smart.industry.train.biz.dao.base.BaseBiz;
@@ -125,6 +126,8 @@ public class DesignSolutionBiz extends BaseBiz<DesignSolutionMapper, DesignSolut
                 result += sysUpfilesBiz.delete(detail.getFileId());
             }
             result += designSolutionListBiz.delete(detail.getId());
+            //删除关联的excel解析，属性解析等信息
+            result += resolveBiz.delRelationData(detail);
         }
         return result;
     }
@@ -146,9 +149,13 @@ public class DesignSolutionBiz extends BaseBiz<DesignSolutionMapper, DesignSolut
                 result += sysUpfilesBiz.delete(detail.getFileId());
             }
             result += designSolutionListBiz.delete(file);
+            //删除关联的excel解析，属性解析等信息
+            result += resolveBiz.delRelationData(detail);
         }
         return result;
     }
+    @Autowired
+    private ResolveBiz resolveBiz;
 
     @Autowired
     private DesignSolutionPartionBiz designSolutionPartionBiz;

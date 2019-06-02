@@ -112,6 +112,9 @@
     delete from design_excel_list
     where id = #{id,jdbcType=INTEGER}
   </delete>
+  <delete id="deleteByFilter" parameterType="smart.industry.train.biz.entity.DesignExcelList">
+    delete from design_excel_list where ${filter}
+  </delete>
   <insert id="insert" parameterType="smart.industry.train.biz.entity.DesignExcelList">
     insert into design_excel_list (id, createDate, createBy, 
       modifyDate, modifyBy, fileId, col1,

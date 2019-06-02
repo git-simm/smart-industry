@@ -38,7 +38,7 @@
             <charset>UTF-8</charset>
         </encoder>
     </appender>
-    <logger name="smart.industry" level="debug"/>
+    <logger name="smart.industry" level="info"/>
 
     <!-- 全局输出的方式 -->
     <root level="info">

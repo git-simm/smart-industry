@@ -17,10 +17,7 @@ import smart.industry.train.biz.mypoi.DesignXlsBiz;
 import smart.industry.train.biz.mypoi.ReferBiz;
 
 import java.io.File;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
+import java.util.*;
 
 /**
  * 解析组件
@@ -77,11 +74,58 @@ public class ResolveBiz {
         }
     }
 
+    @Autowired
+    private DesignExcelAttrBiz designExcelAttrBiz;
+    @Autowired
+    private DesignExcelListBiz designExcelListBiz;
+    /**
+     * 删除关联的属性信息
+     * @param detail
+     * @return
+     */
+    public Integer delRelationData(DesignSolutionList detail){
+        Integer result = 0;
+        //1.先清理掉，有关改detailId的文件信息
+        DesignDetailBlock filter = new DesignDetailBlock();
+        filter.setDetailId(detail.getId());
+        filter.setFilter("detailId = #{detailId}");
+        result += designDetailBlockBiz.deleteByFilter(filter);
+
+        DesignBlockAttr filter2 = new DesignBlockAttr();
+        filter2.setDetailId(detail.getId());
+        filter2.setFilter("detailId = #{detailId}");
+        result += designBlockAttrBiz.deleteByFilter(filter2);
+
+        //2.清理掉有关该excel的属性信息
+        DesignExcelAttr filter3 = new DesignExcelAttr();
+        filter3.setFileId(detail.getFileId());
+        filter3.setFilter("fileId = #{fileId}");
+        result += designExcelAttrBiz.deleteByFilter(filter3);
+        //删除excel明细
+        DesignExcelList filter4 = new DesignExcelList();
+        filter4.setFileId(detail.getFileId());
+        filter4.setFilter("fileId = #{fileId}");
+        result += designExcelListBiz.deleteByFilter(filter4);
+        return result;
+    }
+
+    /**
+     * 先清理关联数据
+     * @param sysTasks
+     */
+    @Transactional
+    public void delRelationData(SysTasks sysTasks) {
+        TempData data = new TempData();
+        data.sysTask = sysTasks;
+        data.detail = designSolutionListBiz.selectByPrimaryKey(sysTasks.getDetailId());
+        delRelationData(data.detail);
+    }
     /**
      * 任务解析
      *
      * @param sysTasks
      */
+    @Transactional
     public void resolveTask(SysTasks sysTasks) {
         boolean succ = false;
         TempData data = new TempData();
@@ -140,7 +184,6 @@ public class ResolveBiz {
      */
     @Autowired
     private DesignXlsBiz designXlsBiz;
-
     /**
      * 解析excel清单
      */
@@ -176,19 +219,7 @@ public class ResolveBiz {
      *
      * @param doc
      */
-    @Transactional
     public void saveDxfMsg(DXFDocument doc,TempData data) {
-        //2.先清理掉，有关改detailId的文件信息
-        DesignDetailBlock filter = new DesignDetailBlock();
-        filter.setDetailId(data.detail.getId());
-        filter.setFilter("detailId = #{detailId}");
-        designDetailBlockBiz.deleteByFilter(filter);
-
-        DesignBlockAttr filter2 = new DesignBlockAttr();
-        filter2.setDetailId(data.detail.getId());
-        filter2.setFilter("detailId = #{detailId}");
-        designBlockAttrBiz.deleteByFilter(filter2);
-
         /**
          * 解析层
          */
@@ -200,7 +231,7 @@ public class ResolveBiz {
      *
      * @param doc
      */
-    private void parseLayer(DXFDocument doc,TempData data) {
+    public void parseLayer(DXFDocument doc,TempData data) {
         //解析图片信息
         DXFLayer layer = doc.getDXFLayer("SYMBOL");
         if (layer != null) {
@@ -221,7 +252,10 @@ public class ResolveBiz {
      */
     protected void parseTitle(DXFDocument doc, DXFLayer layer,TempData data){
         ArrayList list = (ArrayList) layer.getDXFEntities("ATTRIB");
-        String title = ((DXFAttrib)list.get(0)).getText();
+        if(CollectionUtils.isEmpty(list)) return;
+        DXFAttrib attrib = ((DXFAttrib)list.get(0));
+        if(attrib==null) return;
+        String title = attrib.getText();
         //批量保存
         data.file = sysUpfilesBiz.selectByPrimaryKey(data.detail.getFileId());
         if(!StringUtils.isEmpty(title)){
