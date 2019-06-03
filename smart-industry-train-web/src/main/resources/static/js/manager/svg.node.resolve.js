@@ -363,7 +363,7 @@ var svgNodeResolve = function(options){
         setTimeout(function () {
             wrapNodes(group, startNodes, entities);
             options.entrySortArr.push(group);
-            console.log(options.entrySortArr);
+            //console.log(options.entrySortArr);
         }, 0);
         //排序结果
         //启动变色执行线程

@@ -325,7 +325,6 @@ Zq.Utility.RegisterNameSpace("check.grid");
             return;
         }
         $.ajax({
-            async: false,
             url: Zq.Utility.GetPath("/solution/getCheckData"),
             data:{fileId : fileId, solutionId:$('#hid_solutionId').val()},
             success:function(data){
