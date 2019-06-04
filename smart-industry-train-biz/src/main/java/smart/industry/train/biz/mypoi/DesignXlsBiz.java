@@ -60,25 +60,25 @@ public class DesignXlsBiz {
         Workbook workbook;
         try {
             workbook = new HSSFWorkbook(in);
+            Sheet sheet = workbook.getSheetAt(0);
+            List<DesignExcelList> list = new ArrayList<>();
+            Row row = sheet.getRow(0);
+            //解析标题
+            resolveHeader(row,fileId, colMap);
+            for (int i = 1; i <= sheet.getLastRowNum(); i++) {
+                Row tempRow = sheet.getRow(i);
+                DesignExcelList item = resolveRow(tempRow);
+                item.setFileId(fileId);
+                //解析内容
+                list.add(item);
+            }
+            designExcelListBiz.batchAdd(list);
+            return true;
         } catch (Exception ex) {
             return false;
         }finally {
             in.close();
         }
-        Sheet sheet = workbook.getSheetAt(0);
-        List<DesignExcelList> list = new ArrayList<>();
-        Row row = sheet.getRow(0);
-        //解析标题
-        resolveHeader(row,fileId, colMap);
-        for (int i = 1; i <= sheet.getLastRowNum(); i++) {
-            Row tempRow = sheet.getRow(i);
-            DesignExcelList item = resolveRow(tempRow);
-            item.setFileId(fileId);
-            //解析内容
-            list.add(item);
-        }
-        designExcelListBiz.batchAdd(list);
-        return true;
         //return InvokeResult.success(true);
     }
 
