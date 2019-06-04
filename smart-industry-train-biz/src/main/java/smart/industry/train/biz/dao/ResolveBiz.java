@@ -118,7 +118,9 @@ public class ResolveBiz {
         TempData data = new TempData();
         data.sysTask = sysTasks;
         data.detail = designSolutionListBiz.selectByPrimaryKey(sysTasks.getDetailId());
-        delRelationData(data.detail);
+        if(data.detail!=null){
+            delRelationData(data.detail);
+        }
     }
     /**
      * 任务解析
