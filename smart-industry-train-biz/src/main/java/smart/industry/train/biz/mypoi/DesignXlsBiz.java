@@ -61,7 +61,9 @@ public class DesignXlsBiz {
         try {
             workbook = new HSSFWorkbook(in);
         } catch (Exception ex) {
-            workbook = new XSSFWorkbook(in);
+            return false;
+        }finally {
+            in.close();
         }
         Sheet sheet = workbook.getSheetAt(0);
         List<DesignExcelList> list = new ArrayList<>();

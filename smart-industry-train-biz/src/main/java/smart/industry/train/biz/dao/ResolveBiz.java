@@ -145,6 +145,12 @@ public class ResolveBiz {
             String suffix = data.file.getSuffix();
             //1.修改系统任务的状态
             data.sysTask.setState(TaskStateEnum.Converting.getValue());
+            Integer retries = data.sysTask.getRetries();
+            if(retries==null) {
+                data.sysTask.setRetries(1);
+            }else{
+                data.sysTask.setRetries(retries + 1);
+            }
             sysTasksBiz.update(data.sysTask);
             if (suffix.equals(".dxf")) {
                 succ = resolve(data);
