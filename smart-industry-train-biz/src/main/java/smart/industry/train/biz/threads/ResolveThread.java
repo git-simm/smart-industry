@@ -32,7 +32,12 @@ public class ResolveThread extends Thread {
             SysTasks filter = new SysTasks();
             filter.setState(TaskStateEnum.Ready.getValue());
             filter.setMachine(EnvUtil.getMachineName());
-            filter.setFilter("state=#{state} and machine=#{machine}");
+            if(filter.getMachine()==null){
+                filter.setFilter("state=#{state} and machine is null");
+            }else{
+                filter.setFilter("state=#{state} and machine=#{machine}");
+            }
+
             List<SysTasks> tasks = sysTasksBiz.selectByFilter(filter);
             //2.运行执行逻辑
             if (tasks.size() > 0) {
