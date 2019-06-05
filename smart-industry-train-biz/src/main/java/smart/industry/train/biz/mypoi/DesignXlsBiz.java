@@ -1,5 +1,6 @@
 package smart.industry.train.biz.mypoi;
 
+import com.monitorjbl.xlsx.StreamingReader;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
@@ -56,18 +57,20 @@ public class DesignXlsBiz {
         HashMap<String, Integer> colMap = new HashMap<>();
         File f = new File(filePath);
         if (!f.exists()) return true;
-        InputStream in = new FileInputStream(f);
-        Workbook workbook;
+        FileInputStream in = new FileInputStream(f);
+        Workbook workbook = null;
         try {
-            workbook = new HSSFWorkbook(in);
+            workbook = StreamingReader.builder()
+                    .rowCacheSize(100)  //缓存到内存中的行数，默认是10
+                    .bufferSize(4096)  //读取资源时，缓存到内存的字节大小，默认是1024
+                    .open(in);  //打开资源，必须，可以是InputStream或者是File，注意：只能打开XLSX格式的文件
             Sheet sheet = workbook.getSheetAt(0);
             List<DesignExcelList> list = new ArrayList<>();
             Row row = sheet.getRow(0);
             //解析标题
             resolveHeader(row,fileId, colMap);
             for (int i = 1; i <= sheet.getLastRowNum(); i++) {
-                Row tempRow = sheet.getRow(i);
-                DesignExcelList item = resolveRow(tempRow);
+                DesignExcelList item = resolveRow(sheet.getRow(i));
                 item.setFileId(fileId);
                 //解析内容
                 list.add(item);
@@ -77,7 +80,12 @@ public class DesignXlsBiz {
         } catch (Exception ex) {
             return false;
         }finally {
-            in.close();
+            if(workbook!=null){
+                workbook.close();
+            }
+            if(in !=null){
+                in.close();
+            }
         }
         //return InvokeResult.success(true);
     }
