@@ -1,14 +1,11 @@
 package smart.industry.train.biz.mypoi;
 
 import com.monitorjbl.xlsx.StreamingReader;
-import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.*;
-import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 import smart.industry.train.biz.dao.DesignExcelAttrBiz;
 import smart.industry.train.biz.dao.DesignExcelListBiz;
 import smart.industry.train.biz.entity.DesignExcelAttr;
@@ -17,7 +14,6 @@ import smart.industry.train.biz.entity.SysUpfiles;
 
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.InputStream;
 import java.lang.reflect.Field;
 import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
@@ -78,6 +74,8 @@ public class DesignXlsBiz {
             designExcelListBiz.batchAdd(list);
             return true;
         } catch (Exception ex) {
+            ex.printStackTrace();
+            logger.error("excel解析失败",ex);
             return false;
         }finally {
             if(workbook!=null){
