@@ -230,8 +230,9 @@ Zq.Utility.RegisterNameSpace("check.grid");
         {
             key:12,
             name:'短接片PIN错误',
-            requireds:[],
-            desc:''
+            requireds:['Wire_Number','Dest_1_Item','Dest_1_Pin_assign'],
+            desc:'当【线号(Wire_Number)】为空时，【始端名称(Dest_1_Item)】以“-TB”开头，' +
+            '【始端分配点（Dest_1_Pin_assign）】的值必须是“0”或“6”才是正常数据，其余的都是异常数据并展示。'
         },
         {
             key:13,
@@ -249,20 +250,24 @@ Zq.Utility.RegisterNameSpace("check.grid");
         {
             key:15,
             name:'端子排过插',
-            requireds:[],
-            desc:''
+            equireds:['Wire_Number','Dest_1_Item','Dest_1_Connector'],
+            desc:'当【线号(Wire_Number)】不为空时，【始端名称(Dest_1_Item)】以“-TB”开头，按照【车型(Plant)】、【始端名称(Dest_1_Item)】、' +
+            '【始端点位(Dest_1_Connector)】分组行数小于等于5才是正常数据，大于5是异常数据并展示。'
         },
         {
             key:16,
             name:'连接器过插',
-            requireds:[],
-            desc:''
+            requireds:['Dest_1_Pin_assign','Plant','Dest_1_Item','Dest_1_Connector'],
+            desc:'当【始端分配点（Dest_1_Pin_assign）】等于【F,M】时，按照【车型(Plant)】、【始端名称(Dest_1_Item)】、' +
+            '【始端点位(Dest_1_Connector)】分组行数等于1才是正常数据，大于1是异常数据并展示。'
         },
         {
             key:17,
             name:'电缆线芯在端子排上过远',
-            requireds:[],
-            desc:''
+            requireds:['Cable','Dest_1_Item','Dest_1_Connector'],
+            desc:'当【屏蔽代码(Cable)】不为空，【始端名称(Dest_1_Item)】以“-TB”开头时，按照【【屏蔽代码(Cable)】】和【始端点位(Dest_1_Connector)】分组，' +
+            '获取【始端点位(Dest_1_Connector)】的最大和最小值，' +
+            '如果最大值与最小值的差小于等于10才是正常数据，大于10是异常数据并展示。'
         },
         {
             key:18,
@@ -270,6 +275,13 @@ Zq.Utility.RegisterNameSpace("check.grid");
             requireds:[],
             desc:''
         },
+        {
+            key:19,
+            name:'始末端车型缺失',
+            requireds:['Wire_Number','Dest_1_Plant','Dest_2_Plant'],
+            desc:'当【线号(Wire_Number)】不为空时，【始端车型(Dest_1_Plant)】或【末端车型（Dest_2_Plant）】' +
+            '必须不为空才是正常数据，其余的都是异常数据并展示。'
+        }
     ];
     ns.init = function () {
         //初始化一下excel表格

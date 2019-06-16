@@ -1,19 +1,28 @@
 package smart.industry.train.biz.mypoi;
 
-import com.monitorjbl.xlsx.StreamingReader;
-import org.apache.poi.ss.usermodel.*;
+import com.alibaba.excel.ExcelReader;
+import com.alibaba.excel.read.context.AnalysisContext;
+import com.alibaba.excel.read.event.AnalysisEventListener;
+import com.alibaba.excel.support.ExcelTypeEnum;
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.CellStyle;
+import org.apache.poi.ss.usermodel.Row;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+import org.springframework.util.StringUtils;
 import smart.industry.train.biz.dao.DesignExcelAttrBiz;
 import smart.industry.train.biz.dao.DesignExcelListBiz;
 import smart.industry.train.biz.entity.DesignExcelAttr;
 import smart.industry.train.biz.entity.DesignExcelList;
 import smart.industry.train.biz.entity.SysUpfiles;
 
+import java.io.BufferedInputStream;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.InputStream;
 import java.lang.reflect.Field;
 import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
@@ -44,48 +53,73 @@ public class DesignXlsBiz {
      *
      * @param file
      * @return
-     * @throws Exception
      */
-    //@Transactional(rollbackFor = Exception.class)
-    public boolean resolve(final SysUpfiles file) throws Exception {
+    @Transactional(rollbackFor = Exception.class)
+    public boolean resolve(final SysUpfiles file) {
         String filePath = file.getFilePath();
         Integer fileId = file.getId();
         HashMap<String, Integer> colMap = new HashMap<>();
         File f = new File(filePath);
         if (!f.exists()) return true;
-        FileInputStream in = new FileInputStream(f);
-        Workbook workbook = null;
-        try {
-            workbook = StreamingReader.builder()
-                    .rowCacheSize(100)  //缓存到内存中的行数，默认是10
-                    .bufferSize(4096)  //读取资源时，缓存到内存的字节大小，默认是1024
-                    .open(in);  //打开资源，必须，可以是InputStream或者是File，注意：只能打开XLSX格式的文件
-            Sheet sheet = workbook.getSheetAt(0);
-            List<DesignExcelList> list = new ArrayList<>();
-            Row row = sheet.getRow(0);
-            //解析标题
-            resolveHeader(row,fileId, colMap);
-            for (int i = 1; i <= sheet.getLastRowNum(); i++) {
-                DesignExcelList item = resolveRow(sheet.getRow(i));
-                item.setFileId(fileId);
-                //解析内容
-                list.add(item);
-            }
-            designExcelListBiz.batchAdd(list);
-            return true;
-        } catch (Exception ex) {
-            ex.printStackTrace();
-            logger.error("excel解析失败",ex);
-            return false;
-        }finally {
-            if(workbook!=null){
-                workbook.close();
-            }
-            if(in !=null){
-                in.close();
+        read(filePath,fileId,colMap,null);
+        //designExcelListBiz.batchAdd(list);
+        return true;
+    }
+
+    /**
+     * 读取所有的数据
+     * @param filepath
+     * @param fileId
+     * @param colMap
+     * @return
+     */
+    private void read(String filepath,Integer fileId,HashMap<String, Integer> colMap,ExcelTypeEnum excelTypeEnum) {
+        List<DesignExcelList> sheetContent = new ArrayList<>();
+        if(excelTypeEnum ==null){
+            if(isExcel2003(filepath)){
+                excelTypeEnum = ExcelTypeEnum.XLS;
+            }else{
+                excelTypeEnum = ExcelTypeEnum.XLSX;
             }
         }
-        //return InvokeResult.success(true);
+        try (InputStream is = new FileInputStream(filepath)) {
+            InputStream inputStream = new BufferedInputStream(is);
+            ExcelReader excelReader = new ExcelReader(inputStream,excelTypeEnum, null,
+                    new AnalysisEventListener<List<String>>() {
+                        @Override
+                        public void invoke(List<String> strings, AnalysisContext analysisContext) {
+                            if(strings != null && !StringUtils.isEmpty(strings.get(0))){
+                                if(analysisContext.getCurrentRowNum()==0){
+                                    //解析标题
+                                    resolveHeader(strings,fileId,colMap);
+                                }else {
+                                    DesignExcelList item = resolveRow(strings);
+                                    item.setFileId(fileId);
+                                    sheetContent.add(item);
+                                    if(sheetContent.size()>=200){
+                                        designExcelListBiz.batchAdd(sheetContent);
+                                        sheetContent.clear();
+                                    }
+                                }
+                            }
+                        }
+                        @Override
+                        public void doAfterAllAnalysed(AnalysisContext context) {
+
+                        }
+                    });
+            excelReader.read();
+        } catch (Exception e) {
+            e.printStackTrace();
+            logger.error("excel解析异常",e);
+            if(excelTypeEnum == ExcelTypeEnum.XLS){
+                read(filepath,fileId,colMap,ExcelTypeEnum.XLSX);
+            }
+        }
+        if(sheetContent.size() >0 ){
+            designExcelListBiz.batchAdd(sheetContent);
+        }
+        //return sheetContent;
     }
 
     /**
@@ -105,33 +139,87 @@ public class DesignXlsBiz {
             colMap.put(excelAttr.getColName(), excelAttr.getId());
         }
     }
-
     /**
-     * 字段信息缓冲
+     * 解析表头数据
+     *
+     * @param row
+     * @param fileId
+     * @param colMap
      */
-    public HashMap<String,Field> fieldMap = new HashMap<>();
+    private void resolveHeader(List<String> row,Integer fileId, HashMap<String, Integer> colMap) {
+        for (int flag = 0; flag < row.size(); flag++) {
+            DesignExcelAttr excelAttr = new DesignExcelAttr();
+            excelAttr.setAttrName(row.get(flag));
+            excelAttr.setColName("col" + (flag + 1));
+            excelAttr.setFileId(fileId);
+            designExcelAttrBiz.add(excelAttr);
+            colMap.put(excelAttr.getColName(), excelAttr.getId());
+        }
+    }
+
     /**
      * 解析行数据
      *
      * @param row
      */
     private DesignExcelList resolveRow(Row row) throws Exception {
+        HashMap<String,Field> fieldMap = new HashMap<>();
         DesignExcelList excelItem = new DesignExcelList();
         for (int flag = 0; flag < row.getLastCellNum(); flag++) {
             if(flag>=70) break; //字段解析上限为70
             String colName = "col" + (flag + 1);
             String colVal = getValue(row.getCell(flag)).toString();
             Field field = null;
-            if(fieldMap.containsKey(colName)){
-                field = fieldMap.get(colName);
-            }else{
-                field = excelItem.getClass().getDeclaredField(colName);
-                field.setAccessible(true);
-                fieldMap.put(colName,field);
-            }
+            field = getField(fieldMap, excelItem, colName);
             field.set(excelItem, colVal);
         }
         return excelItem;
+    }
+
+    /**
+     * 解析行数据
+     * @param row
+     * @return
+     * @throws Exception
+     */
+    private DesignExcelList resolveRow(List<String> row) {
+        HashMap<String,Field> fieldMap = new HashMap<>();
+        DesignExcelList excelItem = new DesignExcelList();
+        for (int flag = 0; flag < row.size(); flag++) {
+            if(flag>=70) break; //字段解析上限为70
+            String colName = "col" + (flag + 1);
+            String colVal = row.get(flag);
+            Field field = null;
+            try {
+                field = getField(fieldMap, excelItem, colName);
+                field.set(excelItem, colVal);
+            } catch (NoSuchFieldException e) {
+                e.printStackTrace();
+            } catch (IllegalAccessException e) {
+                e.printStackTrace();
+            }
+        }
+        return excelItem;
+    }
+
+    /**
+     * 获取字段值
+     * @param fieldMap
+     * @param excelItem
+     * @param colName
+     * @return
+     * @throws NoSuchFieldException
+     */
+    private Field getField(HashMap<String, Field> fieldMap, DesignExcelList excelItem, String colName) throws NoSuchFieldException {
+        Field field;
+        if(fieldMap.containsKey(colName)){
+            field = fieldMap.get(colName);
+        }else{
+            field = excelItem.getClass().getDeclaredField(colName);
+            field.setAccessible(true);
+            fieldMap.put(colName,field);
+        }
+        return field;
     }
 
     /**

@@ -9,17 +9,16 @@ import java.util.HashMap;
 import java.util.UUID;
 
 /**
- * 短接片PIN错误
+ * 车型缺失校验策略
  * @author manman.si
  */
-public class ErrorShortPinCheckStrategy extends CheckStrategy {
-    public ErrorShortPinCheckStrategy() {
-        super(CheckRuleEnum.ERROR_SHORT_PIN,true);
+public class LostEndPlantCheckStrategy extends CheckStrategy {
+    public LostEndPlantCheckStrategy() {
+        super(CheckRuleEnum.LOST_ENDPLANT);
     }
 
     /**
-     * 当【线号(Wire_Number)】为空时，【始端名称(Dest_1_Item)】以“-TB”开头，
-     * 【始端分配点（Dest_1_Pin_assign）】的值必须是“0”或“6”才是正常数据，其余的都是异常数据并展示。
+     * 当【线号(Wire_Number)】不为空时，【始端车型(Dest_1_Plant)】或【末端车型（Dest_2_Plant）】必须不为空才是正常数据，其余的都是异常数据并展示。
      * @param excelItem
      * @param validMap
      * @return
@@ -28,12 +27,11 @@ public class ErrorShortPinCheckStrategy extends CheckStrategy {
     public DesignExcelListBiz.ValidInfo validItem(JSONObject excelItem, HashMap<String, DesignExcelListBiz.ValidInfo> validMap) {
         DesignExcelListBiz.ValidInfo valid = new DesignExcelListBiz.ValidInfo();
         String wireNumber = excelItem.getString("Wire_Number");
-        String item = excelItem.getString("Dest_1_Item");
-        String assign = excelItem.getString("Dest_1_Pin_assign");
-        if(StringUtils.isEmpty(wireNumber) && StringUtils.isNotBlank(item)){
-            boolean b1 = item.startsWith("-TB");
-            boolean b2 = StringUtils.isNotBlank(assign) && (assign.equals("0") || assign.equals("6"));
-            valid.setValidFail(!(b1 && b2));
+        String plant1 = excelItem.getString("Dest_1_Plant");
+        String plant2 = excelItem.getString("Dest_2_Plant");
+        if(!StringUtils.isEmpty(wireNumber)){
+            //判断是否为空
+            valid.setValidFail(StringUtils.isEmpty(plant1) || StringUtils.isEmpty(plant2));
             valid.getIds().add(excelItem);
             validMap.put(UUID.randomUUID().toString(),valid);
         }
