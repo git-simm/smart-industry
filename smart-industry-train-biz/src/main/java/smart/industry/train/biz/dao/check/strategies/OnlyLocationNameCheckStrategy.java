@@ -5,6 +5,7 @@ import smart.industry.train.biz.dao.DesignExcelListBiz;
 import smart.industry.train.biz.enums.CheckRuleEnum;
 import smart.industry.utils.StringUtils;
 import java.util.HashMap;
+import java.util.Map;
 
 /**
  * 始末端名称的位置唯一
@@ -35,9 +36,20 @@ public class OnlyLocationNameCheckStrategy extends CheckStrategy {
             }
             valid = validMap.get(key);
             valid.getIds().add(excelItem);
-            //超过一个，则认为校验失败
-            valid.setValidFail(valid.getIds().size() > 1);
         }
         return valid;
+    }
+    /**
+     * 处理完成的回调
+     * @param validMap
+     * @return
+     */
+    @Override
+    public HashMap<String,DesignExcelListBiz.ValidInfo> endCallback(HashMap<String,DesignExcelListBiz.ValidInfo> validMap) {
+        //对所有的分组进行校验
+        for(Map.Entry<String,DesignExcelListBiz.ValidInfo> valid : validMap.entrySet()){
+            valid.getValue().setValidFail(valid.getValue().getIds().size()>1);
+        }
+        return validMap;
     }
 }

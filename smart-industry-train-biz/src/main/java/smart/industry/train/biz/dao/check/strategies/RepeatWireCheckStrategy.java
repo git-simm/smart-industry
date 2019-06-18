@@ -6,6 +6,7 @@ import smart.industry.train.biz.enums.CheckRuleEnum;
 import smart.industry.utils.StringUtils;
 
 import java.util.HashMap;
+import java.util.Map;
 
 /**
  * 线号重复
@@ -35,8 +36,20 @@ public class RepeatWireCheckStrategy extends CheckStrategy {
             }
             valid = validMap.get(key);
             valid.getIds().add(excelItem);
-            valid.setValidFail(valid.getIds().size()!=2);
         }
         return valid;
+    }
+    /**
+     * 处理完成的回调
+     * @param validMap
+     * @return
+     */
+    @Override
+    public HashMap<String,DesignExcelListBiz.ValidInfo> endCallback(HashMap<String,DesignExcelListBiz.ValidInfo> validMap) {
+        //对所有的分组进行校验
+        for(Map.Entry<String,DesignExcelListBiz.ValidInfo> valid : validMap.entrySet()){
+            valid.getValue().setValidFail(valid.getValue().getIds().size()!=2);
+        }
+        return validMap;
     }
 }

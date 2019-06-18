@@ -7,6 +7,7 @@ import smart.industry.train.biz.enums.CheckRuleEnum;
 import smart.industry.utils.StringUtils;
 
 import java.util.HashMap;
+import java.util.Map;
 
 /**
  * 端子排过插
@@ -46,10 +47,20 @@ public class OverloadEndpointCheckStrategy extends CheckStrategy{
             }
             valid = validMap.get(key);
             valid.getIds().add(excelItem);
-            long repeaters = valid.getIds().stream().count();
-            //大于5是异常数据
-            valid.setValidFail(repeaters > 5);
         }
         return valid;
+    }
+    /**
+     * 处理完成的回调
+     * @param validMap
+     * @return
+     */
+    @Override
+    public HashMap<String,DesignExcelListBiz.ValidInfo> endCallback(HashMap<String,DesignExcelListBiz.ValidInfo> validMap) {
+        //对所有的分组进行校验
+        for(Map.Entry<String,DesignExcelListBiz.ValidInfo> valid : validMap.entrySet()){
+            valid.getValue().setValidFail(valid.getValue().getIds().stream().count() > 5);
+        }
+        return validMap;
     }
 }

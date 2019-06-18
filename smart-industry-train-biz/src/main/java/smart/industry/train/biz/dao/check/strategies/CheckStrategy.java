@@ -47,4 +47,8 @@ public abstract class CheckStrategy{
         }
         return b1.equals(b2);
     }
+
+    public HashMap<String,DesignExcelListBiz.ValidInfo> endCallback(HashMap<String,DesignExcelListBiz.ValidInfo> validResult) {
+        return validResult;
+    }
 }

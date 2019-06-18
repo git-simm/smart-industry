@@ -205,6 +205,7 @@ public class DesignExcelListBiz  extends BaseBiz<DesignExcelListMapper,DesignExc
         for (CheckStrategy checkStrategy:checkStrategies) {
             CheckRuleEnum key = checkStrategy.CHECK_RULE_ENUM;
             HashMap<String,ValidInfo> validResult = validMap.get(key);
+            checkStrategy.endCallback(validResult);
             Set<JSONObject> result = resultMap.get(key);
             //搜集结果
             validResult.forEach((k,v)->{

@@ -1,12 +1,14 @@
 package smart.industry.train.biz.dao.check.strategies;
 
 import com.alibaba.fastjson.JSONObject;
+import org.apache.commons.collections.keyvalue.DefaultMapEntry;
 import org.apache.logging.log4j.util.Strings;
 import smart.industry.train.biz.dao.DesignExcelListBiz;
 import smart.industry.train.biz.enums.CheckRuleEnum;
 import smart.industry.utils.StringUtils;
 
-import java.util.HashMap;
+import java.util.*;
+import java.util.stream.Collectors;
 
 /**
  * 连接器过插
@@ -47,10 +49,20 @@ public class OverloadConnectorCheckStrategy extends CheckStrategy {
             }
             valid = validMap.get(key);
             valid.getIds().add(excelItem);
-            long repeaters = valid.getIds().stream().count();
-            //大于1是异常数据
-            valid.setValidFail(repeaters > 1);
         }
         return valid;
+    }
+    /**
+     * 处理完成的回调
+     * @param validMap
+     * @return
+     */
+    @Override
+    public HashMap<String,DesignExcelListBiz.ValidInfo> endCallback(HashMap<String,DesignExcelListBiz.ValidInfo> validMap) {
+        //对所有的分组进行校验
+        for(Map.Entry<String,DesignExcelListBiz.ValidInfo> valid : validMap.entrySet()){
+            valid.getValue().setValidFail(valid.getValue().getIds().stream().count() > 1);
+        }
+        return validMap;
     }
 }

@@ -45,41 +45,51 @@ public class FarEndpointCheckStrategy extends CheckStrategy {
             String key = cable + "@" + dest1Connector;
             if (!validMap.containsKey(key)) {
                 validMap.put(key, valid);
-                //对所有的分组进行校验
-                Set<String> keys = validMap.keySet();
-                List<Map.Entry<String,Integer>> keyList = new ArrayList<>();
-                for (String item:keys) {
-                    String[] arr = item.split("@");
-                    String keyTemp = arr[0];
-                    String num = arr[1];
-                    if (StringUtils.isBlank(num)) continue;
-                    Integer val;
-                    try{
-                        val = Integer.parseInt(num);
-                    }catch (Exception ex){
-                        ex.printStackTrace();
-                        continue;
-                    }
-                    Map.Entry<String,Integer> keyVal = new DefaultMapEntry(keyTemp,val);
-                    keyList.add(keyVal);
-                }
-                //查找到分组中最大的值和最小的值
-                Set<Map.Entry<String, Integer>> validSets = keyList.stream().filter(a -> a.getValue() != null).collect(Collectors.toSet());
-                Map<String, List<Map.Entry<String, Integer>>> groups = validSets.stream().collect(Collectors.groupingBy(a -> a.getKey()));
-                for (Map.Entry<String, List<Map.Entry<String, Integer>>> group: groups.entrySet()) {
-                    List<Map.Entry<String, Integer>> list = group.getValue();
-                    IntSummaryStatistics summaryStatistics = list.stream().mapToInt(a -> a.getValue()).summaryStatistics();
-                    Integer min = summaryStatistics.getMin();
-                    list.stream().forEach(a -> {
-                        //异常数据进行处理
-                        String errorKey = a.getKey() + "@" + a.getValue();
-                        validMap.get(errorKey).setValidFail(a.getValue() - min > 10);
-                    });
-                }
             }
             valid = validMap.get(key);
             valid.getIds().add(excelItem);
         }
         return valid;
+    }
+
+    /**
+     * 处理完成的回调
+     * @param validMap
+     * @return
+     */
+    @Override
+    public HashMap<String,DesignExcelListBiz.ValidInfo> endCallback(HashMap<String,DesignExcelListBiz.ValidInfo> validMap) {
+        //对所有的分组进行校验
+        Set<String> keys = validMap.keySet();
+        List<Map.Entry<String,Integer>> keyList = new ArrayList<>();
+        for (String item:keys) {
+            String[] arr = item.split("@");
+            String keyTemp = arr[0];
+            String num = arr[1];
+            if (StringUtils.isBlank(num)) continue;
+            Integer val;
+            try{
+                val = Integer.parseInt(num);
+            }catch (Exception ex){
+                ex.printStackTrace();
+                continue;
+            }
+            Map.Entry<String,Integer> keyVal = new DefaultMapEntry(keyTemp,val);
+            keyList.add(keyVal);
+        }
+        //查找到分组中最大的值和最小的值
+        Set<Map.Entry<String, Integer>> validSets = keyList.stream().filter(a -> a.getValue() != null).collect(Collectors.toSet());
+        Map<String, List<Map.Entry<String, Integer>>> groups = validSets.stream().collect(Collectors.groupingBy(a -> a.getKey()));
+        for (Map.Entry<String, List<Map.Entry<String, Integer>>> group: groups.entrySet()) {
+            List<Map.Entry<String, Integer>> list = group.getValue();
+            IntSummaryStatistics summaryStatistics = list.stream().mapToInt(a -> a.getValue()).summaryStatistics();
+            Integer min = summaryStatistics.getMin();
+            list.stream().forEach(a -> {
+                //异常数据进行处理
+                String errorKey = a.getKey() + "@" + a.getValue();
+                validMap.get(errorKey).setValidFail(a.getValue() - min > 10);
+            });
+        }
+        return validMap;
     }
 }
