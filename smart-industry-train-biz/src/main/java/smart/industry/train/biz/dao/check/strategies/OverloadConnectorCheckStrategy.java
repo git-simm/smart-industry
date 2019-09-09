@@ -33,7 +33,8 @@ public class OverloadConnectorCheckStrategy extends CheckStrategy {
         String plant = excelItem.getString("Plant");
         String dest1Item = excelItem.getString("Dest_1_Item");
         String dest1Connector = excelItem.getString("Dest_1_Connector");
-        if(StringUtils.isNotBlank(dest1PinAssign) && dest1PinAssign.equals("F,M")){
+        List<String> pins = Arrays.asList("F","M");
+        if(StringUtils.isNotBlank(dest1PinAssign) && pins.contains(dest1PinAssign)){
             if(Strings.isBlank(plant)){
                 plant = "";
             }

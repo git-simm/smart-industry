@@ -34,7 +34,7 @@ public class ErrorLocationConnectCheckStrategy extends CheckStrategy {
             String[] arr = dest1EndwireType.split("/");
             if(arr.length>1){
                 String num = arr[1];
-                valid.setValidFail(StringUtils.isNotBlank(cableType) && cableType.contains(num));
+                valid.setValidFail(StringUtils.isNotBlank(cableType) && !cableType.contains(num));
             }else{
                 valid.setValidFail(true);
             }

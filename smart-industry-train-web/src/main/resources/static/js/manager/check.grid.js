@@ -184,8 +184,8 @@ Zq.Utility.RegisterNameSpace("check.grid");
         {
             key:5,
             name:'电缆型号缺失',
-            requireds:[],
-            desc:''
+            requireds:['Wire_Number','Cable_type'],
+            desc:'当【线号(Wire_Number)】不为空时，【电缆型号(Cable_type)】必须不为空才是正常数据，其余的都是异常数据并展示。'
         },
         {
             key:6,
