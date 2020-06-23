@@ -9,7 +9,6 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 
 @SpringBootApplication(scanBasePackages = "smart.industry")
 @EnableScheduling
-@EnableAutoConfiguration
 @EnableAspectJAutoProxy
 @MapperScan({"smart.industry.train.biz.mapper2","smart.industry.train.biz.mapper"})
 public class WebApplication {
