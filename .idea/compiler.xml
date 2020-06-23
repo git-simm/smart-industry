@@ -7,11 +7,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="smart-industry-dwg2svg" />
+        <module name="smart-industry-utils" />
         <module name="smart-industry-train-biz" />
         <module name="smart-industry-train-web" />
         <module name="smart-industry-kabeja" />
-        <module name="smart-industry-utils" />
+        <module name="smart-industry-dwg2svg" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>

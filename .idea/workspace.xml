@@ -12,421 +12,10 @@
     <bookmark url="file://$PROJECT_DIR$/smart-industry-kabeja/src/main/java/org/kabeja/parser/entities/DXFAttribHandler.java" line="45" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ca438869-ff4f-47d5-a47e-64243f73bc98" name="Default" comment="优化校验策略的执行速度">
+    <list default="true" id="ca438869-ff4f-47d5-a47e-64243f73bc98" name="Default" comment="保存一哈">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/conf/parser.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/conf/process.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/icons/add_co.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/icons/ant_buildfile.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/icons/back.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/icons/browser.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/icons/button-back.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/icons/button-close.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/icons/button-next.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/icons/category.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/icons/collapse_all.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/icons/collapseall.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/icons/config_obj.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/icons/copy_edit.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/icons/cut_edit.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/icons/day_obj.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/icons/delete.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/icons/dir.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/icons/discovery.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/icons/expand_all.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/icons/file.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/icons/forward.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/icons/glyph6.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/icons/home.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/icons/home_nav.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/icons/indent.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/icons/new.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/icons/newdir.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/icons/newpackfolder_wiz.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/icons/next-button.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/icons/nls_search_obj.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/icons/open.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/icons/open_cad.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/icons/opendir.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/icons/page_obj.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/icons/paste_edit.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/icons/prefs01.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/icons/prefs_misc.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/icons/print.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/icons/project.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/icons/properties.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/icons/publish.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/icons/redo_edit.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/icons/refresh.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/icons/refresh_tab.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/icons/return.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/icons/save.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/icons/save_as.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/icons/save_edit.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/icons/saveall_edit.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/icons/saveas_edit.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/icons/search.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/icons/search_decl_obj.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/icons/search_goto.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/icons/search_history.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/icons/search_menu.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/icons/search_next.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/icons/search_prev.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/icons/search_ref_obj.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/icons/search_rem.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/icons/search_remall.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/icons/search_results_view.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/icons/search_sortmatch.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/icons/search_src.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/icons/search_stop.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/icons/searchm_obj.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/icons/searchres.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/icons/splash.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/icons/splash.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/icons/tasks.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/icons/text_edit.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/icons/tsearch_dpdn_obj.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/icons/tsearch_obj.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/icons/val.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/icons/view_menu.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/icons/workset.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/dxf/Bounds.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/dxf/DXF3DFace.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/dxf/DXF3DSolid.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/dxf/DXFArc.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/dxf/DXFAttrib.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/dxf/DXFBlock.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/dxf/DXFBody.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/dxf/DXFCircle.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/dxf/DXFColor.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/dxf/DXFConstants.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/dxf/DXFDimension.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/dxf/DXFDimensionStyle.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/dxf/DXFDocument.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/dxf/DXFEllipse.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/dxf/DXFEntity.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/dxf/DXFExtrusion.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/dxf/DXFHatch.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/dxf/DXFHatchPattern.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/dxf/DXFHeader.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/dxf/DXFImage.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/dxf/DXFInsert.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/dxf/DXFLWPolyline.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/dxf/DXFLayer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/dxf/DXFLeader.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/dxf/DXFLine.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/dxf/DXFLineType.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/dxf/DXFMLine.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/dxf/DXFMText.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/dxf/DXFPoint.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/dxf/DXFPolyline.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/dxf/DXFRay.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/dxf/DXFRegion.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/dxf/DXFShape.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/dxf/DXFSolid.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/dxf/DXFSpline.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/dxf/DXFStyle.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/dxf/DXFText.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/dxf/DXFTolerance.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/dxf/DXFTrace.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/dxf/DXFVPort.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/dxf/DXFVariable.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/dxf/DXFVertex.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/dxf/DXFView.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/dxf/DXFViewport.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/dxf/DXFXLine.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/dxf/helpers/DXFMLineSegment.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/dxf/helpers/DXFMLineSegmentElement.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/dxf/helpers/DXFMLineStyleElementDistanceComparator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/dxf/helpers/DXFSplineConverter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/dxf/helpers/DXFTextParser.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/dxf/helpers/DXFUtils.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/dxf/helpers/Edge.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/dxf/helpers/HatchBoundaryLoop.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/dxf/helpers/HatchLineFamily.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/dxf/helpers/HatchLineIterator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/dxf/helpers/HatchLineSegment.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/dxf/helpers/HatchPattern.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/dxf/helpers/MLineConverter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/dxf/helpers/ParametricLine.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/dxf/helpers/Point.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/dxf/helpers/PolylineSegment.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/dxf/helpers/SplinePoint.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/dxf/helpers/StyledTextParagraph.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/dxf/helpers/TextDocument.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/dxf/helpers/Vector.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/dxf/objects/DXFDictionary$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/dxf/objects/DXFDictionary$DXFDictionaryRecord.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/dxf/objects/DXFDictionary.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/dxf/objects/DXFImageDefObject.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/dxf/objects/DXFLayout.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/dxf/objects/DXFMLineStyle.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/dxf/objects/DXFMLineStyleElement.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/dxf/objects/DXFObject.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/dxf/objects/DXFPlotSettings.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/io/StreamGenerator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/math/MathUtils.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/math/NURBS.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/math/NURBSAutoStepPointIterator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/math/NURBSFixedNTELSPointIterator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/math/ParametricPlane.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/math/TransformContext.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/parser/AbstractSectionHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/parser/DXFBlocksSectionHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/parser/DXFEntitiesSectionHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/parser/DXFHeaderSectionHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/parser/DXFObjectsSectionHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/parser/DXFParser.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/parser/DXFSectionHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/parser/DXFTableSectionHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/parser/DXFValue.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/parser/Handler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/parser/HandlerManager.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/parser/ParseException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/parser/Parser.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/parser/ParserBuilder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/parser/SAXParserBuilder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/parser/dxf/DXFHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/parser/dxf/filter/AbstractDXFStreamFilter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/parser/dxf/filter/DXFStreamEntityFilter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/parser/dxf/filter/DXFStreamFilter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/parser/dxf/filter/DXFStreamLayerFilter$ParseValue.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/parser/dxf/filter/DXFStreamLayerFilter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/parser/dxf/filter/DXFStreamSectionFilter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/parser/dxf/filter/FilterExample.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/parser/entities/AbstractEntityHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/parser/entities/DXF3DFaceHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/parser/entities/DXF3DSolidHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/parser/entities/DXFArcHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/parser/entities/DXFAttribHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/parser/entities/DXFBodyHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/parser/entities/DXFCircleHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/parser/entities/DXFDimensionHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/parser/entities/DXFEllipseHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/parser/entities/DXFEntityHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/parser/entities/DXFHatchHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/parser/entities/DXFImageHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/parser/entities/DXFInsertHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/parser/entities/DXFLWPolylineHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/parser/entities/DXFLeaderHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/parser/entities/DXFLineHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/parser/entities/DXFMLineHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/parser/entities/DXFMTextHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/parser/entities/DXFPolylineHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/parser/entities/DXFRayHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/parser/entities/DXFRegionHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/parser/entities/DXFShapeHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/parser/entities/DXFSolidHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/parser/entities/DXFSplineHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/parser/entities/DXFTextHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/parser/entities/DXFToleranceHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/parser/entities/DXFTraceHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/parser/entities/DXFViewportHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/parser/entities/DXFXLineHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/parser/header/HeaderModes.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/parser/objects/AbstractDXFObjectHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/parser/objects/DXFDictionaryHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/parser/objects/DXFImageDefHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/parser/objects/DXFLayoutHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/parser/objects/DXFMLineStyleHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/parser/objects/DXFObjectHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/parser/objects/DXFPlotsettingsHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/parser/table/AbstractTableHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/parser/table/DXFDimensionStyleTableHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/parser/table/DXFLayerTableHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/parser/table/DXFLineTypeTableHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/parser/table/DXFStyleTableHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/parser/table/DXFTableHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/parser/table/DXFVPortTableHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/parser/table/DXFViewTableHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/processing/AbstractConfigurable.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/processing/AbstractPostProcessor.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/processing/BoundsDebugger.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/processing/BoundsFilter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/processing/Configurable.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/processing/ImageFilter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/processing/LayerFilter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/processing/PolylineConverter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/processing/PostProcessManager.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/processing/PostProcessor.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/processing/PostProcessorConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/processing/ProcessPipeline.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/processing/ProcessingManager.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/processing/ProcessorException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/processing/ViewFilter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/processing/ViewportFilter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/processing/VisibilityFilter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/processing/event/ProcessingEvent.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/processing/event/ProcessingListener.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/processing/extend/MyPostProcessor.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/processing/helper/MergeMap.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/processing/helper/PolylineQueue.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/processing/scripting/ScriptEngine.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/processing/scripting/ScriptException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/svg/DXF2SVGReader.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/svg/FixedStrokeWidthFilter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/svg/RootLayerFilter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/svg/SVGConstants.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/svg/SVGContext.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/svg/SVGFragmentGenerator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/svg/SVGGenerationException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/svg/SVGGenerator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/svg/SVGPathBoundaryGenerator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/svg/SVGSAXGenerator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/svg/SVGSAXGeneratorManager.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/svg/SVGUtils.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/svg/StyleAttributeFilter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/svg/action/CanvasUpdateManager.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/svg/action/CanvasUpdateRunnable.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/svg/action/CustomActionView.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/svg/action/DXFDocumentAction.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/svg/action/GroupAction.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/svg/action/GroupActionUnSelector.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/svg/action/JSVGCanvasAction.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/svg/action/LayoutSwitchAction$1$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/svg/action/LayoutSwitchAction$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/svg/action/LayoutSwitchAction.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/svg/action/Messages.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/svg/action/PrintAction$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/svg/action/PrintAction.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/svg/action/SVGDocumentAction.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/svg/action/SelectionAction.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/svg/action/ToggleInteractorActionAdapter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/svg/action/ViewerAction.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/svg/dimension/AbstractDimensionOutputter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/svg/dimension/LinearDimensionOutputter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/svg/generators/AbstractSVGSAXGenerator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/svg/generators/SVG3DFaceGenerator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/svg/generators/SVG3DSolidGenerator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/svg/generators/SVGArcGenerator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/svg/generators/SVGAttribGenerator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/svg/generators/SVGBodyGenerator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/svg/generators/SVGCircleGenerator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/svg/generators/SVGDimensionGenerator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/svg/generators/SVGEllipseGenerator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/svg/generators/SVGHatchGenerator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/svg/generators/SVGImageGenerator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/svg/generators/SVGInsertGenerator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/svg/generators/SVGLWPolylineGenerator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/svg/generators/SVGLeaderGenerator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/svg/generators/SVGLineGenerator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/svg/generators/SVGMLineGenerator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/svg/generators/SVGMTextGenerator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/svg/generators/SVGPointGenerator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/svg/generators/SVGPolylineGenerator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/svg/generators/SVGRayGenerator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/svg/generators/SVGShapeGenerator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/svg/generators/SVGSolidGenerator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/svg/generators/SVGSplineGenerator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/svg/generators/SVGStyleGenerator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/svg/generators/SVGTextGenerator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/svg/generators/SVGToleranceGenerator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/svg/generators/SVGTraceGenerator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/svg/generators/SVGViewportGenerator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/svg/generators/SVGXLineGenerator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/svg/tools/DXFSAXDocumentFactory.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/svg/tools/LayerSeparator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/svg/ui/PopUpButton$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/svg/ui/PopUpButton$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/svg/ui/PopUpButton.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/tools/CodePageParser.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/tools/ConfigHelper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/tools/FontManager.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/tools/SAXFilterConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/tools/SAXProcessingManagerBuilder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/tools/SAXSerializerConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/ui/Application.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/ui/ApplicationMenuBar.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/ui/ApplicationToolBar.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/ui/Component.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/ui/DXFDocumentViewComponent.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/ui/ProcessingUIComponent.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/ui/PropertiesEditor.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/ui/PropertiesListener.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/ui/ServiceManager.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/ui/Serviceable.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/ui/Startable.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/ui/UIException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/ui/ViewComponent.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/ui/event/DXFDocumentChangeEventProvider.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/ui/event/DXFDocumentChangeListener.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/ui/impl/AboutAction$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/ui/impl/AboutAction$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/ui/impl/AboutAction$3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/ui/impl/AboutAction$BottomLineBorder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/ui/impl/AboutAction.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/ui/impl/AbstractPropertiesEditor.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/ui/impl/DXFFileTransferHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/ui/impl/MemoryUsageToolbarComponent$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/ui/impl/MemoryUsageToolbarComponent.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/ui/impl/Messages.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/ui/impl/OpenProcessingAction$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/ui/impl/OpenProcessingAction.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/ui/impl/ProcessingUI$1$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/ui/impl/ProcessingUI$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/ui/impl/ProcessingUI$SwitchAction.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/ui/impl/ProcessingUI.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/ui/impl/ServiceContainer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/ui/model/AbstractProcessingTreeNode.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/ui/model/ParserTreeNode.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/ui/model/ParsersTreeNode.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/ui/model/PipelineTreeNode.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/ui/model/PipelinesTreeNode.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/ui/model/PostProcessorTreeNode.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/ui/model/PostProcessorsTreeNode.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/ui/model/ProcessingTreeModelPresenter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/ui/model/PropertiesTreeNode.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/ui/model/PropertyTreeNode.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/ui/model/SAXFilterTreeNode.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/ui/model/SAXFiltersTreeNode.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/ui/model/SAXGeneratorTreeNode.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/ui/model/SAXGeneratorsTreeNode.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/ui/model/SAXSerializerTreeNode.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/ui/model/SAXSerializersTreeNode.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/ui/xml/SAXServiceContainerBuilder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/xml/AbstractSAXFilter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/xml/AbstractSAXGenerator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/xml/AbstractSAXSerializer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/xml/AggregatorGenerator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/xml/ConsoleSerializer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/xml/SAXFilter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/xml/SAXGenerator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/xml/SAXPrettyOutputter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/org/kabeja/xml/SAXSerializer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/samples/dxf/SideView.dxf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/samples/dxf/TopView.dxf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/samples/dxf/draft1.dxf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/samples/dxf/draft2.dxf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/samples/dxf/draft3.dxf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/samples/dxf/draft4.dxf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/samples/dxf/hatch_1.dxf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/samples/dxf/hatch_16.dxf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-kabeja/target/classes/samples/dxf/mx30.dxf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-train-biz/target/classes/generatorConfig.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-train-biz/target/classes/mapper/DesignClassMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-train-biz/target/classes/mapper/UserMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-train-biz/target/classes/smart/industry/train/biz/dao/DesignClassBiz.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-train-biz/target/classes/smart/industry/train/biz/dao/PrincipalService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-train-biz/target/classes/smart/industry/train/biz/dao/UserBiz.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-train-biz/target/classes/smart/industry/train/biz/entity/DesignClass.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-train-biz/target/classes/smart/industry/train/biz/entity/User.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-train-biz/target/classes/smart/industry/train/biz/entity/base/baseEntity.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-train-biz/target/classes/smart/industry/train/biz/interfaces/IMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-train-biz/target/classes/smart/industry/train/biz/mapper/DesignClassMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-train-biz/target/classes/smart/industry/train/biz/mapper/UserMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-utils/src/main/java/smart/industry/utils/DesUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/smart-industry-utils/src/main/java/smart/industry/utils/DesUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-utils/target/classes/smart/industry/utils/DesUtil.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-utils/target/classes/smart/industry/utils/StringUtils.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-utils/target/classes/smart/industry/utils/annotations/Post.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-utils/target/classes/smart/industry/utils/entity/MultipartFileParam.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-utils/target/classes/smart/industry/utils/entity/RequestJson.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-utils/target/classes/smart/industry/utils/entity/ResponseJson.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-utils/target/classes/smart/industry/utils/enums/CodeEnum.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-utils/target/classes/smart/industry/utils/exceptions/AjaxException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-utils/target/classes/smart/industry/utils/files/MultipartFileUploadUtil.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-utils/target/classes/smart/industry/utils/resource/MessageSourceUtils.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-industry-utils/target/test-classes/smart/industry/utils/test/DesUtilTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-utils/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/smart-industry-utils/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-industry-utils/src/test/java/smart/industry/utils/test/DesUtilTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/smart-industry-utils/src/test/java/smart/industry/utils/test/DesUtilTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -475,15 +64,6 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/dao/check/strategies/FarEndpointCheckStrategy.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="504">
-              <caret line="49" column="39" selection-start-line="49" selection-start-column="39" selection-end-line="49" selection-end-column="39" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/smart-industry-train-web/src/main/java/smart/industry/train/web/WebApplication.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="238">
@@ -492,11 +72,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/smart-industry-utils/src/main/java/smart/industry/utils/DesUtil.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="322">
-              <caret line="23" column="12" lean-forward="true" selection-start-line="23" selection-start-column="12" selection-end-line="23" selection-end-column="12" />
+            <state relative-caret-position="210">
+              <caret line="15" column="22" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -505,46 +85,50 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/dao/check/strategies/ErrorShortPinCheckStrategy.java">
+        <entry file="file://$PROJECT_DIR$/smart-industry-train-biz/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="16" column="37" selection-start-line="16" selection-start-column="37" selection-end-line="16" selection-end-column="37" />
+            <state relative-caret-position="381">
+              <caret line="43" column="34" selection-start-line="43" selection-start-column="34" selection-end-line="43" selection-end-column="34" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/dao/check/strategies/ErrorPlantCheckStrategy.java">
+        <entry file="file://$PROJECT_DIR$/smart-industry-utils/src/test/java/smart/industry/utils/test/DesUtilTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="98">
-              <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+            <state relative-caret-position="95">
+              <caret line="16" column="19" selection-start-line="16" selection-start-column="19" selection-end-line="16" selection-end-column="19" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/dao/check/strategies/ErrorLocationNameCheckStrategy.java">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/smart-industry-utils/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="210">
-              <caret line="23" column="23" selection-start-line="23" selection-start-column="23" selection-end-line="23" selection-end-column="23" />
+              <caret line="15" column="44" selection-start-line="15" selection-start-column="44" selection-end-line="15" selection-end-column="44" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/dao/check/strategies/ErrorLocationConnectCheckStrategy.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="112">
-              <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-            </state>
-          </provider>
+        <entry file="file://$MAVEN_REPOSITORY$/org/apache/poi/poi/4.1.2/poi-4.1.2.pom">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/dao/check/strategies/LostCableTypeCheckStrategy.java">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/smart-industry-train-web/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="84">
-              <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+            <state relative-caret-position="-406">
+              <caret line="28" column="53" selection-start-line="28" selection-start-column="53" selection-end-line="28" selection-end-column="53" />
             </state>
           </provider>
         </entry>
@@ -586,8 +170,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>main</find>
-      <find>topContainer</find>
       <find>symbolConfig</find>
       <find>attach</find>
       <find>addContext</find>
@@ -616,6 +198,8 @@
       <find>buil</find>
       <find>fieldMap</find>
       <find>LOST_ENDPLANT</find>
+      <find>com.ibm.icu</find>
+      <find>icu4j</find>
     </findStrings>
     <replaceStrings>
       <replace>.mypicker</replace>
@@ -633,7 +217,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/static/js/manager/solution.list2.js" />
         <option value="$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/dao/UserBiz.java" />
         <option value="$PROJECT_DIR$/smart-industry-train-web/src/main/java/smart/industry/train/web/config/UserRealm.java" />
         <option value="$PROJECT_DIR$/smart-industry-train-web/src/main/java/smart/industry/train/web/controllers/manager/SolutionController.java" />
@@ -664,7 +247,6 @@
         <option value="$PROJECT_DIR$/smart-industry-train-web/src/main/resources/static/js/manager/svg.node.resolve.js" />
         <option value="$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/dao/ResolveBiz.java" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/df76d45d-a6d4-45ef-95bf-ef547ac4ef82/console.sql" />
-        <option value="$PROJECT_DIR$/smart-industry-utils/pom.xml" />
         <option value="$PROJECT_DIR$/smart-industry-utils/src/main/java/smart/industry/utils/excel/XlsReader.java" />
         <option value="$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/common/XlsStreamingReader.java" />
         <option value="$PROJECT_DIR$/smart-industry-train-biz/pom.xml" />
@@ -684,6 +266,8 @@
         <option value="$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/dao/check/strategies/ErrorLocationNameCheckStrategy.java" />
         <option value="$PROJECT_DIR$/smart-industry-train-web/src/main/java/smart/industry/train/web/WebApplication.java" />
         <option value="$PROJECT_DIR$/smart-industry-utils/src/main/java/smart/industry/utils/DesUtil.java" />
+        <option value="$PROJECT_DIR$/smart-industry-utils/src/test/java/smart/industry/utils/test/DesUtilTest.java" />
+        <option value="$PROJECT_DIR$/smart-industry-utils/pom.xml" />
       </list>
     </option>
   </component>
@@ -711,15 +295,6 @@
       <expand>
         <path>
           <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
-          <item name="smart-industry - 1.0" type="9519ce18:MavenProjectsStructure$ProjectNode" />
-        </path>
-        <path>
-          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
-          <item name="smart-industry - 1.0" type="9519ce18:MavenProjectsStructure$ProjectNode" />
-          <item name="Lifecycle" type="58874e2:MavenProjectsStructure$LifecycleNode" />
-        </path>
-        <path>
-          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
           <item name="smart-industry-train-web-1.0" type="9519ce18:MavenProjectsStructure$ProjectNode" />
         </path>
         <path>
@@ -731,11 +306,11 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1592" />
-    <option name="y" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1096" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="1625" />
+    <option name="y" value="128" />
+    <option name="width" value="1529" />
+    <option name="height" value="767" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -753,6 +328,24 @@
             <path>
               <item name="smart-industry" type="b2602c69:ProjectViewProjectNode" />
               <item name="smart-industry" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="smart-industry" type="b2602c69:ProjectViewProjectNode" />
+              <item name="smart-industry" type="462c0819:PsiDirectoryNode" />
+              <item name="smart-industry-train-web" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="smart-industry" type="b2602c69:ProjectViewProjectNode" />
+              <item name="smart-industry" type="462c0819:PsiDirectoryNode" />
+              <item name="smart-industry-train-web" type="462c0819:PsiDirectoryNode" />
+              <item name="target" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="smart-industry" type="b2602c69:ProjectViewProjectNode" />
+              <item name="smart-industry" type="462c0819:PsiDirectoryNode" />
+              <item name="smart-industry-train-web" type="462c0819:PsiDirectoryNode" />
+              <item name="target" type="462c0819:PsiDirectoryNode" />
+              <item name="smart-industry-train-web-1.0" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -1224,14 +817,7 @@
       <workItem from="1560867885568" duration="2008000" />
       <workItem from="1567932631735" duration="650000" />
       <workItem from="1592838575437" duration="1371000" />
-      <workItem from="1592875893326" duration="5438000" />
-    </task>
-    <task id="LOCAL-00050" summary="提交变色处理逻辑">
-      <created>1549800788927</created>
-      <option name="number" value="00050" />
-      <option name="presentableId" value="LOCAL-00050" />
-      <option name="project" value="LOCAL" />
-      <updated>1549800788929</updated>
+      <workItem from="1592875893326" duration="8415000" />
     </task>
     <task id="LOCAL-00051" summary="解析线段图像，准备排序">
       <created>1549897113182</created>
@@ -1569,7 +1155,14 @@
       <option name="project" value="LOCAL" />
       <updated>1592877360244</updated>
     </task>
-    <option name="localTasksCounter" value="99" />
+    <task id="LOCAL-00099" summary="保存一哈">
+      <created>1592881565120</created>
+      <option name="number" value="00099" />
+      <option name="presentableId" value="LOCAL-00099" />
+      <option name="project" value="LOCAL" />
+      <updated>1592881565120</updated>
+    </task>
+    <option name="localTasksCounter" value="100" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1605,7 +1198,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1056946000" />
+    <option name="totallyTimeSpent" value="1059923000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1617,29 +1210,28 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1592" y="-8" width="1936" height="1096" extended-state="6" />
-    <editor active="true" />
+    <frame x="1625" y="128" width="1529" height="767" extended-state="0" />
     <layout>
       <window_info id="Designer" order="0" />
       <window_info id="Image Layers" order="1" />
       <window_info id="UI Designer" order="2" />
       <window_info id="Favorites" order="3" sideWeight="0.5042373" side_tool="true" weight="0.1930295" />
       <window_info id="Web" order="4" sideWeight="0.5042373" side_tool="true" weight="0.1930295" />
-      <window_info active="true" content_ui="combo" id="Project" order="5" sideWeight="0.4955157" visible="true" weight="0.14285715" />
+      <window_info content_ui="combo" id="Project" order="5" sideWeight="0.4955157" visible="true" weight="0.21170865" />
       <window_info id="Structure" order="6" sideWeight="0.5044843" side_tool="true" weight="0.19101876" />
       <window_info id="Capture Tool" order="7" />
       <window_info anchor="bottom" id="Spring" order="0" weight="0.47360912" />
-      <window_info anchor="bottom" id="Application Servers" order="1" weight="0.29101285" />
+      <window_info anchor="bottom" id="Application Servers" order="1" weight="0.29075804" />
       <window_info anchor="bottom" id="Terminal" order="2" sideWeight="0.5382038" weight="0.3281027" />
       <window_info anchor="bottom" id="Messages" order="3" weight="0.33541018" />
-      <window_info anchor="bottom" id="Java Enterprise" order="4" weight="0.3281027" />
+      <window_info anchor="bottom" id="Java Enterprise" order="4" weight="0.3271028" />
       <window_info anchor="bottom" id="Database Changes" order="5" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="6" weight="0.2510699" />
+      <window_info anchor="bottom" id="Version Control" order="6" weight="0.47663552" />
       <window_info anchor="bottom" id="Message" order="7" />
       <window_info anchor="bottom" id="Find" order="8" sideWeight="0.49932975" weight="0.24964337" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.46179625" side_tool="true" weight="0.32952926" />
-      <window_info anchor="bottom" id="Run" order="10" sideWeight="0.62734586" visible="true" weight="0.49013498" />
-      <window_info anchor="bottom" id="Debug" order="11" sideWeight="0.57171583" weight="0.298027" />
+      <window_info anchor="bottom" id="Run" order="10" sideWeight="0.62734586" weight="0.47160885" />
+      <window_info anchor="bottom" id="Debug" order="11" sideWeight="0.57171583" weight="0.40083075" />
       <window_info anchor="bottom" id="SQL Generator" order="12" weight="0.17118402" />
       <window_info anchor="bottom" id="Dependency Viewer" order="13" weight="0.2510699" />
       <window_info anchor="bottom" id="Cvs" order="14" weight="0.25" />
@@ -1660,7 +1252,7 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="8" weight="0.25" />
       <window_info anchor="right" id="SciView" order="9" weight="0.3297587" />
       <window_info anchor="right" id="Database" order="10" weight="0.18900804" />
-      <window_info anchor="right" id="Maven" order="11" visible="true" weight="0.16791044" />
+      <window_info active="true" anchor="right" id="Maven" order="11" visible="true" weight="0.2049013" />
     </layout>
     <layout-to-restore>
       <window_info id="Designer" order="0" />
@@ -1756,7 +1348,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="提交新版线程图解析逻辑" />
     <MESSAGE value="svg图上添加继续运行按钮" />
     <MESSAGE value="提交一次代码" />
     <MESSAGE value="解决主界面布局问题" />
@@ -1781,7 +1372,8 @@
     <MESSAGE value="修改poi解析模式，处理大文件解析" />
     <MESSAGE value="提交所有的新规则" />
     <MESSAGE value="优化校验策略的执行速度" />
-    <option name="LAST_COMMIT_MESSAGE" value="优化校验策略的执行速度" />
+    <MESSAGE value="保存一哈" />
+    <option name="LAST_COMMIT_MESSAGE" value="保存一哈" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1930,38 +1522,11 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$MAVEN_REPOSITORY$/com/monitorjbl/xlsx-streamer/2.1.0/xlsx-streamer-2.1.0.jar!/com/monitorjbl/xlsx/impl/StreamingWorkbookReader.class" />
-    <entry file="file://$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/common/XlsStreamingReader.java" />
-    <entry file="file://$PROJECT_DIR$/smart-industry-utils/src/main/java/smart/industry/utils/excel/XlsReader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="22" column="11" selection-start-line="22" selection-start-column="11" selection-end-line="22" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://df76d45d-a6d4-45ef-95bf-ef547ac4ef82/schema/smart-industry/table/design_excel_list">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering>
-            <filter text="fileId=1915" />
-          </filtering>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/alibaba/easyexcel/1.1.1/easyexcel-1.1.1-sources.jar!/com/alibaba/excel/context/AnalysisContextImpl.java" />
-    <entry file="jar://$MAVEN_REPOSITORY$/com/alibaba/easyexcel/1.1.1/easyexcel-1.1.1-sources.jar!/com/alibaba/excel/analysis/ExcelAnalyserImpl.java" />
     <entry file="jar://$MAVEN_REPOSITORY$/com/alibaba/easyexcel/1.1.1/easyexcel-1.1.1-sources.jar!/com/alibaba/excel/analysis/ExcelAnalyser.java" />
     <entry file="jar://$MAVEN_REPOSITORY$/com/alibaba/easyexcel/1.1.1/easyexcel-1.1.1-sources.jar!/com/alibaba/excel/ExcelReader.java" />
     <entry file="file://$MAVEN_REPOSITORY$/com/alibaba/easyexcel/1.1.1/easyexcel-1.1.1.pom" />
     <entry file="jar://$MAVEN_REPOSITORY$/com/alibaba/easyexcel/1.1.1/easyexcel-1.1.1.jar!/com/alibaba/excel/ExcelReader.class" />
     <entry file="jar://$MAVEN_REPOSITORY$/com/alibaba/easyexcel/1.0.1/easyexcel-1.0.1.jar!/com/alibaba/excel/ExcelReader.class" />
-    <entry file="file://$PROJECT_DIR$/smart-industry-train-biz/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1430">
-          <caret line="65" column="46" selection-start-line="65" selection-start-column="46" selection-end-line="65" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/smart-industry-train-biz/src/main/java/smart/industry/train/biz/threads/ResolveThread.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1254">
@@ -2216,11 +1781,55 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/smart-industry-utils/src/main/java/smart/industry/utils/DesUtil.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="23" column="12" lean-forward="true" selection-start-line="23" selection-start-column="12" selection-end-line="23" selection-end-column="12" />
+        <state relative-caret-position="210">
+          <caret line="15" column="22" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/smart-industry-train-biz/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="381">
+          <caret line="43" column="34" selection-start-line="43" selection-start-column="34" selection-end-line="43" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/smart-industry-utils/src/test/java/smart/industry/utils/test/DesUtilTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="16" column="19" selection-start-line="16" selection-start-column="19" selection-end-line="16" selection-end-column="19" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/smart-industry-dwg2svg/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="15" column="46" lean-forward="true" selection-start-line="15" selection-start-column="46" selection-end-line="15" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/smart-industry-train-web/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-406">
+          <caret line="28" column="53" selection-start-line="28" selection-start-column="53" selection-end-line="28" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$MAVEN_REPOSITORY$/org/apache/poi/poi/4.1.2/poi-4.1.2.pom">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/smart-industry-utils/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="15" column="44" selection-start-line="15" selection-start-column="44" selection-end-line="15" selection-end-column="44" />
         </state>
       </provider>
     </entry>

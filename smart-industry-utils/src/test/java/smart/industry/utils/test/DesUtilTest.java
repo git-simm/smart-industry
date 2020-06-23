@@ -1,7 +1,7 @@
 package smart.industry.utils.test;
 
 import org.junit.Assert;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 import smart.industry.utils.DesUtil;
 
 public class DesUtilTest {
