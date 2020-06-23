@@ -1,7 +1,4 @@
 package smart.industry.utils;
-
-import org.junit.jupiter.api.Test;
-
 import java.security.SecureRandom;
 import javax.crypto.spec.DESKeySpec;
 import javax.crypto.SecretKeyFactory;
