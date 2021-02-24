@@ -370,7 +370,7 @@
       <recent name="smart.industry.utils.exceptions" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="Spring Boot.WebApplication">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.kabeja.Main" />
       <module name="smart-industry-kabeja" />
@@ -453,8 +453,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
         <item itemvalue="Spring Boot.WebApplication" />
+        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
