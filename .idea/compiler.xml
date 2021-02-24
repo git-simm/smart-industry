@@ -2,25 +2,23 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
-      <profile default="true" name="Default" enabled="true" />
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="smart-industry-utils" />
         <module name="smart-industry-train-biz" />
-        <module name="smart-industry-train-web" />
         <module name="smart-industry-kabeja" />
-        <module name="smart-industry-dwg2svg" />
+        <module name="smart-industry-utils" />
+        <module name="smart-industry-train-web" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="smart.industry.dwg2svg" target="1.8" />
+      <module name="smart-industry-dwg2svg" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="smart-industry-kabeja" options="-extdirs D:\04test\smart-industry\smart-industry-kabeja\src\main\resources\lib" />
+      <module name="smart-industry-kabeja" options="-extdirs D:\workspace\smart-industry2\smart-industry-kabeja\src\main\resources\lib" />
     </option>
   </component>
 </project>
